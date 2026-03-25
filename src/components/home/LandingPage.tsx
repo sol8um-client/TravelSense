@@ -555,9 +555,9 @@ function ProblemSection() {
   return (
     <section ref={sectionRef} className="relative overflow-hidden noise-overlay">
       <div className="absolute inset-0 bg-brand-gradient-dark" />
-      {/* Gradient accent blobs */}
-      <div className="absolute top-[20%] left-[10%] h-[500px] w-[500px] rounded-full bg-secondary/[0.04] blur-[200px] morph-blob" />
-      <div className="absolute bottom-[10%] right-[10%] h-[400px] w-[400px] rounded-full bg-silver/[0.02] blur-[180px]" />
+      {/* Gradient accent blobs — hidden on mobile for perf */}
+      <div className="hidden sm:block absolute top-[20%] left-[10%] h-[500px] w-[500px] rounded-full bg-secondary/[0.04] blur-[200px] morph-blob" />
+      <div className="hidden sm:block absolute bottom-[10%] right-[10%] h-[400px] w-[400px] rounded-full bg-silver/[0.02] blur-[180px]" />
       {/* Grid pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "radial-gradient(circle, rgba(176,184,196,0.3) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
 
@@ -565,50 +565,54 @@ function ProblemSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           {/* Left — Animated chaos visual */}
           <div className="relative flex items-center justify-center" data-reveal>
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 mx-auto">
-              {/* Central chaos icon */}
-              <motion.div className="absolute inset-0 flex items-center justify-center"
-                animate={{ rotate: [0, 3, -3, 0], x: [0, 2, -1, 0], y: [0, -1, 2, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
-                <div className="flex h-24 w-24 items-center justify-center rounded-full shadow-[0_0_50px_rgba(196,50,74,0.15)]"
-                  style={{ background: "linear-gradient(135deg, rgba(196,50,74,0.06), rgba(196,50,74,0.2))", border: "2px solid rgba(196,50,74,0.15)" }}>
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/[0.04] border border-white/[0.06]">
-                    <Layers className="h-8 w-8 text-secondary/70" strokeWidth={1.5} style={{ filter: "drop-shadow(0 2px 8px rgba(196,50,74,0.5))" }} />
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto">
+              {/* Central chaos icon — static on mobile, animated on desktop */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <motion.div
+                  animate={inView ? { rotate: [0, 3, -3, 0] } : {}}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <div className="flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-full shadow-[0_0_50px_rgba(196,50,74,0.15)]"
+                    style={{ background: "linear-gradient(135deg, rgba(196,50,74,0.06), rgba(196,50,74,0.2))", border: "2px solid rgba(196,50,74,0.15)" }}>
+                    <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-white/[0.04] border border-white/[0.06]">
+                      <Layers className="h-7 w-7 sm:h-8 sm:w-8 text-secondary/70" strokeWidth={1.5} style={{ filter: "drop-shadow(0 2px 8px rgba(196,50,74,0.5))" }} />
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
 
-              {/* Orbiting problem tabs */}
+              {/* Orbiting problem tabs — CSS animation on mobile (GPU-accelerated), Framer on desktop */}
               {([
-                { label: "Flights", Icon: Plane, angle: 0, radius: 110, dur: 15 },
-                { label: "Hotels", Icon: Hotel, angle: 72, radius: 120, dur: 18 },
-                { label: "Visa", Icon: FileText, angle: 144, radius: 105, dur: 14 },
-                { label: "Reviews", Icon: Star, angle: 216, radius: 125, dur: 20 },
-                { label: "Budget", Icon: DollarSign, angle: 288, radius: 115, dur: 16 },
-              ] as { label: string; Icon: LucideIcon; angle: number; radius: number; dur: number }[]).map((tab) => (
+                { label: "Flights", Icon: Plane, angle: 0, radius: 100, radiusSm: 85, dur: 15 },
+                { label: "Hotels", Icon: Hotel, angle: 72, radius: 120, radiusSm: 95, dur: 18 },
+                { label: "Visa", Icon: FileText, angle: 144, radius: 105, radiusSm: 88, dur: 14 },
+                { label: "Reviews", Icon: Star, angle: 216, radius: 125, radiusSm: 98, dur: 20 },
+                { label: "Budget", Icon: DollarSign, angle: 288, radius: 115, radiusSm: 92, dur: 16 },
+              ] as { label: string; Icon: LucideIcon; angle: number; radius: number; radiusSm: number; dur: number }[]).map((tab) => (
                 <motion.div
                   key={tab.label}
                   className="absolute top-1/2 left-1/2"
-                  animate={{ rotate: 360 }}
+                  animate={inView ? { rotate: 360 } : {}}
                   transition={{ duration: tab.dur, repeat: Infinity, ease: "linear" }}
-                  style={{ transformOrigin: "0 0" }}
+                  style={{ transformOrigin: "0 0", willChange: "transform" }}
                 >
                   <motion.div
-                    className="glass-card-dark flex items-center gap-2 rounded-full px-3.5 py-2 shadow-[0_4px_15px_rgba(0,0,0,0.2)]"
-                    style={{ transform: `rotate(${tab.angle}deg) translateX(${tab.radius}px) rotate(-${tab.angle}deg)` }}
-                    animate={{ rotate: -360 }}
+                    className="glass-card-dark flex items-center gap-1.5 sm:gap-2 rounded-full px-2.5 sm:px-3.5 py-1.5 sm:py-2 shadow-[0_4px_15px_rgba(0,0,0,0.2)]"
+                    style={{ transform: `rotate(${tab.angle}deg) translateX(var(--orbit-r)) rotate(-${tab.angle}deg)`, ["--orbit-r" as string]: `${tab.radiusSm}px` }}
+                    animate={inView ? { rotate: -360 } : {}}
                     transition={{ duration: tab.dur, repeat: Infinity, ease: "linear" }}
                   >
-                    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-secondary/10">
-                      <tab.Icon className="h-3 w-3 text-secondary/60" strokeWidth={2} />
+                    <style>{`@media(min-width:640px){[style*="--orbit-r"]{--orbit-r:${tab.radius}px !important}}`}</style>
+                    <div className="flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full bg-secondary/10">
+                      <tab.Icon className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-secondary/60" strokeWidth={2} />
                     </div>
-                    <span className="text-[10px] text-white/50 font-semibold tracking-wide">{tab.label}</span>
+                    <span className="text-[8px] sm:text-[10px] text-white/50 font-semibold tracking-wide">{tab.label}</span>
                   </motion.div>
                 </motion.div>
               ))}
 
-              {/* Broken connection lines */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 320 320">
+              {/* Broken connection lines — desktop only */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none hidden sm:block" viewBox="0 0 320 320">
                 {[
                   { x1: 120, y1: 80, x2: 200, y2: 60, d: 3 },
                   { x1: 220, y1: 130, x2: 250, y2: 200, d: 4.5 },
@@ -617,37 +621,36 @@ function ProblemSection() {
                 ].map((line, i) => (
                   <motion.line key={`broken-${i}`} x1={line.x1} y1={line.y1} x2={line.x2} y2={line.y2}
                     stroke="rgba(196,50,74,0.15)" strokeWidth="1" strokeDasharray="4 8"
-                    animate={{ opacity: [0, 0.4, 0], strokeDashoffset: [0, -20] }}
+                    animate={inView ? { opacity: [0, 0.4, 0], strokeDashoffset: [0, -20] } : {}}
                     transition={{ duration: line.d, repeat: Infinity, ease: "linear" }} />
                 ))}
               </svg>
 
-              {/* Pulsing chaos rings — slowed for premium feel */}
-              <motion.div className="absolute inset-8 rounded-full border border-dashed border-secondary/10"
-                animate={{ scale: [1, 1.06, 1], rotate: [0, 180] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }} />
-              <motion.div className="absolute inset-2 rounded-full border border-dashed border-silver/5"
-                animate={{ scale: [1, 0.96, 1], rotate: [0, -180] }}
+              {/* Pulsing chaos rings — simplified on mobile */}
+              <div className="absolute inset-8 rounded-full border border-dashed border-secondary/10 sm:animate-none"
+                style={{ animation: "spin 20s linear infinite" }} />
+              <motion.div className="hidden sm:block absolute inset-2 rounded-full border border-dashed border-silver/5"
+                animate={inView ? { scale: [1, 0.96, 1], rotate: [0, -180] } : {}}
                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }} />
 
-              {/* Floating error toasts — sequential, not simultaneous */}
+              {/* Floating error toasts */}
               {[
-                { text: "Price changed!", x: "-10%", y: "18%", delay: 0, dur: 8, mobile: true },
-                { text: "Hotel sold out", x: "72%", y: "62%", delay: 4, dur: 8, mobile: true },
+                { text: "Price changed!", x: "-10%", y: "18%", delay: 0, dur: 8 },
+                { text: "Hotel sold out", x: "72%", y: "62%", delay: 4, dur: 8 },
               ].map((toast, i) => (
                 <motion.div key={`toast-${i}`}
-                  className={cn("absolute rounded-lg bg-secondary/[0.08] border border-secondary/[0.12] px-3 py-1.5 backdrop-blur-sm pointer-events-none", !toast.mobile && "hidden sm:block")}
+                  className="absolute rounded-lg bg-secondary/[0.08] border border-secondary/[0.12] px-2 sm:px-3 py-1 sm:py-1.5 backdrop-blur-sm pointer-events-none"
                   style={{ left: toast.x, top: toast.y }}
-                  animate={{ opacity: [0, 0.8, 0.8, 0], y: [10, 0, 0, -10], scale: [0.8, 1, 1, 0.9] }}
+                  animate={inView ? { opacity: [0, 0.8, 0.8, 0], y: [10, 0, 0, -10] } : {}}
                   transition={{ duration: toast.dur, delay: toast.delay, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  <span className="text-[9px] text-secondary/70 font-mono font-bold tracking-wide whitespace-nowrap">{toast.text}</span>
+                  <span className="text-[8px] sm:text-[9px] text-secondary/70 font-mono font-bold tracking-wide whitespace-nowrap">{toast.text}</span>
                 </motion.div>
               ))}
 
-              {/* Warning pulse */}
-              <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
-                animate={{ width: [40, 200, 40], height: [40, 200, 40], opacity: [0.1, 0, 0.1] }}
+              {/* Warning pulse — desktop only */}
+              <motion.div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
+                animate={inView ? { width: [40, 200, 40], height: [40, 200, 40], opacity: [0.1, 0, 0.1] } : {}}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeOut" }}
                 style={{ background: "radial-gradient(circle, rgba(196,50,74,0.15) 0%, transparent 70%)" }} />
             </div>

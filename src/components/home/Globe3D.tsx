@@ -3,8 +3,20 @@
 import { Canvas, useFrame, useLoader } from "@react-three/fiber"
 import { Float, Stars } from "@react-three/drei"
 import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing"
-import { useRef, useMemo, Suspense } from "react"
+import { useRef, useMemo, Suspense, useState, useEffect } from "react"
 import * as THREE from "three"
+
+/* ═══ Mobile detection hook ═══ */
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener("resize", check)
+    return () => window.removeEventListener("resize", check)
+  }, [])
+  return isMobile
+}
 
 /* ═══ Brand Palette ═══ */
 const CHERRY = "#C4324A"
@@ -408,26 +420,33 @@ function Effects() {
 /* ═══ EXPORT ═══ */
 
 export default function Globe3D() {
+  const isMobile = useIsMobile()
+
   return (
     <Canvas
-      dpr={[1, 2]}
+      dpr={isMobile ? [1, 1] : [1, 2]}
       camera={{ position: [0, 0.1, 2.93], fov: 42 }}
-      gl={{ antialias: true, alpha: true }}
+      gl={{ antialias: !isMobile, alpha: true, powerPreference: isMobile ? "low-power" : "high-performance" }}
       style={{ background: "transparent" }}
+      frameloop="always"
     >
       <Suspense fallback={null}>
         <ambientLight intensity={0.6} />
         <directionalLight position={[3, 4, 5]} intensity={0.8} color="#f0f4ff" />
-        <pointLight position={[-2, 1, 4]} intensity={0.15} color="#b0c4de" />
+        {!isMobile && <pointLight position={[-2, 1, 4]} intensity={0.15} color="#b0c4de" />}
 
-        <Stars radius={80} depth={60} count={600} factor={2} saturation={0} fade speed={0.3} />
+        {!isMobile && <Stars radius={80} depth={60} count={600} factor={2} saturation={0} fade speed={0.3} />}
         <Atmosphere />
 
-        <Float speed={1.0} rotationIntensity={0.08} floatIntensity={0.12}>
+        {isMobile ? (
           <Earth />
-        </Float>
+        ) : (
+          <Float speed={1.0} rotationIntensity={0.08} floatIntensity={0.12}>
+            <Earth />
+          </Float>
+        )}
 
-        <Effects />
+        {!isMobile && <Effects />}
       </Suspense>
     </Canvas>
   )

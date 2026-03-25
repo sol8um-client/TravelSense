@@ -123,26 +123,26 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+      className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center p-0 sm:p-4"
       onClick={onClose}
     >
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
 
-      {/* Modal */}
+      {/* Modal — slides up on mobile, centered on desktop */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 40 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden"
+        className="relative w-full sm:max-w-lg bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl max-h-[92vh] sm:max-h-[85vh] flex flex-col overflow-hidden"
       >
-        {/* Header */}
-        <div className="relative bg-gradient-to-r from-[#0B1426] to-[#1B2D4E] px-6 py-5">
+        {/* Header — sticky with always-visible close button */}
+        <div className="relative bg-gradient-to-r from-[#0B1426] to-[#1B2D4E] px-5 sm:px-6 py-4 sm:py-5 flex-shrink-0">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors"
+            className="absolute top-3 sm:top-4 right-3 sm:right-4 text-white/80 hover:text-white transition-colors z-10 flex items-center justify-center h-8 w-8 rounded-full bg-white/10 hover:bg-white/20"
           >
             <X className="h-5 w-5" />
           </button>
@@ -176,8 +176,8 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
             </p>
           </motion.div>
         ) : (
-          /* Form */
-          <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          /* Form — scrollable on mobile */
+          <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-3 sm:space-y-4 overflow-y-auto flex-1">
             {/* Name — Required */}
             <div className="relative">
               <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
