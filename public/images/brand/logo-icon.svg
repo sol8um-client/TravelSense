@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Icon-only / Favicon version -->
+  <circle cx="24" cy="24" r="22" fill="#1B4B7A"/>
+  <!-- Compass rose -->
+  <path d="M24 6 L27 20 L24 24 L21 20 Z" fill="#E8923E"/>
+  <path d="M24 42 L27 28 L24 24 L21 28 Z" fill="#E8923E" opacity="0.6"/>
+  <path d="M6 24 L20 21 L24 24 L20 27 Z" fill="#FFFFFF" opacity="0.8"/>
+  <path d="M42 24 L28 21 L24 24 L28 27 Z" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="24" cy="24" r="3" fill="#FFFFFF"/>
+  <!-- Globe arcs -->
+  <path d="M10 16 Q17 12 24 12 Q31 12 38 16" stroke="#FFFFFF" stroke-width="1" fill="none" opacity="0.3"/>
+  <path d="M10 32 Q17 36 24 36 Q31 36 38 32" stroke="#FFFFFF" stroke-width="1" fill="none" opacity="0.3"/>
+</svg>

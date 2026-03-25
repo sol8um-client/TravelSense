@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 48" fill="none">
+  <!-- Concept 2: The Horizon Line — Full wordmark, ultra-minimal -->
+  <g>
+    <rect x="2" y="2" width="44" height="44" rx="6" fill="#2C2C2C"/>
+    <line x1="10" y1="26" x2="38" y2="26" stroke="#D4A853" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M18 26 A6 6 0 0 1 30 26" fill="#D4A853" opacity="0.9"/>
+    <line x1="24" y1="16" x2="24" y2="18" stroke="#D4A853" stroke-width="0.8" opacity="0.3" stroke-linecap="round"/>
+    <line x1="18" y1="17.5" x2="19.5" y2="19" stroke="#D4A853" stroke-width="0.6" opacity="0.2" stroke-linecap="round"/>
+    <line x1="30" y1="17.5" x2="28.5" y2="19" stroke="#D4A853" stroke-width="0.6" opacity="0.2" stroke-linecap="round"/>
+  </g>
+  <!-- Ultra-clean sans-serif: light weight "TRAVEL", bold "SENSE" -->
+  <text x="58" y="22" font-family="'Inter', Arial, sans-serif" font-size="20" font-weight="300" fill="#2C2C2C" letter-spacing="4">TRAVEL</text>
+  <text x="163" y="22" font-family="'Inter', Arial, sans-serif" font-size="20" font-weight="600" fill="#D4A853" letter-spacing="4">SENSE</text>
+  <line x1="58" y1="30" x2="270" y2="30" stroke="#D4A853" stroke-width="0.4" opacity="0.4"/>
+  <text x="58" y="42" font-family="'Inter', Arial, sans-serif" font-size="6.5" font-weight="300" fill="#9CA3AF" letter-spacing="4">JOURNEYS BEYOND ORDINARY</text>
+</svg>

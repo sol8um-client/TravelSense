@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Monogram: Stylized "TS" -->
+  <rect rx="12" ry="12" width="48" height="48" fill="#1B4B7A"/>
+  <!-- T letter -->
+  <text x="12" y="34" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF">T</text>
+  <!-- S letter -->
+  <text x="26" y="34" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#E8923E">S</text>
+</svg>

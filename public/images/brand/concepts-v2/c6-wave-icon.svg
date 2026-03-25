@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Concept 6: The Wave — Flowing path, Scott Dunn/Belmond inspired -->
+  <circle cx="24" cy="24" r="22" fill="#142850"/>
+
+  <!-- Primary flowing wave — elegant single stroke -->
+  <path d="M8 24 Q14 16 24 20 Q34 24 40 16" stroke="#D4917B" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+  <!-- Echo wave below -->
+  <path d="M8 30 Q14 22 24 26 Q34 30 40 22" stroke="#D4917B" stroke-width="1" fill="none" opacity="0.3" stroke-linecap="round"/>
+
+  <!-- Small dot accent (destination marker) -->
+  <circle cx="40" cy="16" r="1.8" fill="#D4917B"/>
+
+  <!-- Subtle star -->
+  <circle cx="14" cy="13" r="0.7" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="34" cy="11" r="0.5" fill="#FFFFFF" opacity="0.3"/>
+</svg>

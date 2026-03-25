@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Concept 4: The Gateway — Arch/doorway symbolizing new journeys -->
+  <circle cx="24" cy="24" r="22" fill="#1B4B7A"/>
+
+  <!-- Gateway arch — elegant, architectural -->
+  <path d="M15 36 L15 18 A9 9 0 0 1 33 18 L33 36" stroke="#C9A96E" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Inner arch echo (depth) -->
+  <path d="M18 36 L18 20 A6 6 0 0 1 30 20 L30 36" stroke="#FFFFFF" stroke-width="0.6" fill="none" opacity="0.2"/>
+
+  <!-- Keystone accent at top of arch -->
+  <circle cx="24" cy="13.5" r="1.5" fill="#C9A96E"/>
+
+  <!-- Path leading through the gateway -->
+  <line x1="24" y1="36" x2="24" y2="28" stroke="#C9A96E" stroke-width="0.8" opacity="0.3" stroke-dasharray="1.5 1.5"/>
+
+  <!-- Small star above gateway -->
+  <path d="M24 8 L24.4 9.5 L26 9.5 L24.8 10.4 L25.2 12 L24 11 L22.8 12 L23.2 10.4 L22 9.5 L23.6 9.5 Z" fill="#C9A96E" opacity="0.5"/>
+</svg>

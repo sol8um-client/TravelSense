@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Concept A: Refined Compass Rose — Classic navigation, premium feel -->
+  <!-- Outer ring with subtle gradient effect -->
+  <circle cx="24" cy="24" r="22" fill="#1B4B7A"/>
+  <circle cx="24" cy="24" r="20.5" stroke="#FFFFFF" stroke-width="0.5" opacity="0.15"/>
+  <circle cx="24" cy="24" r="18" stroke="#FFFFFF" stroke-width="0.3" opacity="0.1"/>
+
+  <!-- Compass cardinal points — N/S in amber, E/W in white -->
+  <!-- North (amber, prominent) -->
+  <path d="M24 7 L27 19 L24 22 L21 19 Z" fill="#E8923E"/>
+  <!-- South (amber, lighter) -->
+  <path d="M24 41 L27 29 L24 26 L21 29 Z" fill="#E8923E" opacity="0.55"/>
+  <!-- East -->
+  <path d="M41 24 L29 21 L26 24 L29 27 Z" fill="#FFFFFF" opacity="0.45"/>
+  <!-- West -->
+  <path d="M7 24 L19 21 L22 24 L19 27 Z" fill="#FFFFFF" opacity="0.75"/>
+
+  <!-- Intercardinal thin lines -->
+  <line x1="12" y1="12" x2="19" y2="19" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2"/>
+  <line x1="36" y1="12" x2="29" y2="19" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2"/>
+  <line x1="12" y1="36" x2="19" y2="29" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2"/>
+  <line x1="36" y1="36" x2="29" y2="29" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Center jewel -->
+  <circle cx="24" cy="24" r="3.5" fill="#FFFFFF"/>
+  <circle cx="24" cy="24" r="2" fill="#E8923E"/>
+
+  <!-- Globe latitude arcs -->
+  <path d="M10 17 Q17 13 24 13 Q31 13 38 17" stroke="#FFFFFF" stroke-width="0.7" fill="none" opacity="0.2"/>
+  <path d="M10 31 Q17 35 24 35 Q31 35 38 31" stroke="#FFFFFF" stroke-width="0.7" fill="none" opacity="0.2"/>
+</svg>

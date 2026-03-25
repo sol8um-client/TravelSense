@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 48" fill="none">
+  <!-- White version for dark backgrounds -->
+  <g transform="translate(0, 0)">
+    <circle cx="24" cy="24" r="22" fill="#FFFFFF" opacity="0.15"/>
+    <circle cx="24" cy="24" r="22" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.3"/>
+    <!-- Compass rose -->
+    <path d="M24 6 L27 20 L24 24 L21 20 Z" fill="#E8923E"/>
+    <path d="M24 42 L27 28 L24 24 L21 28 Z" fill="#E8923E" opacity="0.6"/>
+    <path d="M6 24 L20 21 L24 24 L20 27 Z" fill="#FFFFFF" opacity="0.8"/>
+    <path d="M42 24 L28 21 L24 24 L28 27 Z" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="24" cy="24" r="3" fill="#FFFFFF"/>
+    <path d="M10 16 Q17 12 24 12 Q31 12 38 16" stroke="#FFFFFF" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M10 32 Q17 36 24 36 Q31 36 38 32" stroke="#FFFFFF" stroke-width="1" fill="none" opacity="0.3"/>
+  </g>
+  <!-- Wordmark in white -->
+  <text x="56" y="20" font-family="'Playfair Display', Georgia, serif" font-size="22" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">Travel</text>
+  <text x="138" y="20" font-family="'Playfair Display', Georgia, serif" font-size="22" font-weight="700" fill="#E8923E" letter-spacing="-0.5">Sense</text>
+  <text x="56" y="38" font-family="'Inter', Arial, sans-serif" font-size="9" font-weight="400" fill="#FFFFFF" opacity="0.6" letter-spacing="2.5">YOUR TRUSTED TRAVEL PARTNER</text>
+</svg>

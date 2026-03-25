@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 48" fill="none">
+  <!-- Concept G: Flowing Globe — Full wordmark, teal + coral -->
+  <g>
+    <circle cx="24" cy="24" r="22" fill="#1A3A3A"/>
+    <path d="M8 24 Q16 14 24 14 Q32 14 40 24" stroke="#E07B5B" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <path d="M8 24 Q16 34 24 34 Q32 34 40 24" stroke="#E07B5B" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/>
+    <path d="M24 8 Q30 16 30 24 Q30 32 24 40" stroke="#FFFFFF" stroke-width="0.8" fill="none" opacity="0.3"/>
+    <path d="M24 8 Q18 16 18 24 Q18 32 24 40" stroke="#FFFFFF" stroke-width="0.8" fill="none" opacity="0.2"/>
+    <circle cx="24" cy="24" r="4" fill="#E07B5B" opacity="0.2"/>
+    <circle cx="24" cy="24" r="2.5" fill="#E07B5B"/>
+    <circle cx="24" cy="24" r="1" fill="#1A3A3A"/>
+    <ellipse cx="24" cy="24" rx="18" ry="8" stroke="#FFFFFF" stroke-width="0.5" fill="none" opacity="0.12" transform="rotate(-20 24 24)"/>
+  </g>
+  <text x="58" y="22" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#1A3A3A" letter-spacing="-0.5">Travel</text>
+  <text x="145" y="22" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#E07B5B" letter-spacing="-0.5">Sense</text>
+  <text x="58" y="38" font-family="'Inter', Arial, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="2.5">YOUR TRUSTED TRAVEL PARTNER</text>
+</svg>

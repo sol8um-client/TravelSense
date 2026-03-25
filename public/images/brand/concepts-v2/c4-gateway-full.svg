@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 48" fill="none">
+  <!-- Concept 4: The Gateway — Full wordmark -->
+  <g>
+    <circle cx="24" cy="24" r="22" fill="#1B4B7A"/>
+    <path d="M15 36 L15 18 A9 9 0 0 1 33 18 L33 36" stroke="#C9A96E" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M18 36 L18 20 A6 6 0 0 1 30 20 L30 36" stroke="#FFFFFF" stroke-width="0.6" fill="none" opacity="0.2"/>
+    <circle cx="24" cy="13.5" r="1.5" fill="#C9A96E"/>
+    <line x1="24" y1="36" x2="24" y2="28" stroke="#C9A96E" stroke-width="0.8" opacity="0.3" stroke-dasharray="1.5 1.5"/>
+    <path d="M24 8 L24.4 9.5 L26 9.5 L24.8 10.4 L25.2 12 L24 11 L22.8 12 L23.2 10.4 L22 9.5 L23.6 9.5 Z" fill="#C9A96E" opacity="0.5"/>
+  </g>
+  <text x="58" y="23" font-family="'Playfair Display', Georgia, serif" font-size="26" font-weight="700" fill="#1B4B7A" letter-spacing="-0.5">Travel</text>
+  <text x="152" y="23" font-family="'Playfair Display', Georgia, serif" font-size="26" font-weight="700" fill="#C9A96E" letter-spacing="-0.5">Sense</text>
+  <text x="58" y="40" font-family="'Inter', Arial, sans-serif" font-size="7" font-weight="300" fill="#94A3B8" letter-spacing="3">CURATED TRAVEL EXPERIENCES</text>
+</svg>

@@ -1,0 +1,240 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Enums ───────────────────────────────────────────────────────────────────
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  UNPAID
+  PAID
+  REFUNDED
+  FAILED
+}
+
+enum InquiryStatus {
+  NEW
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}
+
+enum VehicleType {
+  SEDAN
+  SUV
+  VAN
+  BUS
+  TEMPO_TRAVELLER
+}
+
+enum DestinationCategory {
+  BEACH
+  MOUNTAIN
+  HERITAGE
+  WILDLIFE
+  ADVENTURE
+  SPIRITUAL
+  HONEYMOON
+  FAMILY
+}
+
+enum PackageCategory {
+  BUDGET
+  STANDARD
+  PREMIUM
+  LUXURY
+  CUSTOM
+}
+
+// ─── Models ──────────────────────────────────────────────────────────────────
+
+model Destination {
+  id             String              @id @default(cuid())
+  name           String
+  slug           String              @unique
+  description    String              @db.Text
+  heroImage      String              @map("hero_image")
+  region         String
+  country        String              @default("India")
+  category       DestinationCategory
+  bestTimeToVisit String             @map("best_time_to_visit")
+  weather        String?
+  latitude       Float?
+  longitude      Float?
+  featured       Boolean             @default(false)
+  published      Boolean             @default(false)
+  createdAt      DateTime            @default(now()) @map("created_at")
+  updatedAt      DateTime            @updatedAt @map("updated_at")
+
+  packages Package[]
+
+  @@index([slug])
+  @@index([category])
+  @@index([region])
+  @@index([featured, published])
+  @@map("destinations")
+}
+
+model Package {
+  id              String          @id @default(cuid())
+  title           String
+  slug            String          @unique
+  description     String          @db.Text
+  destinationId   String          @map("destination_id")
+  destination     Destination     @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+  category        PackageCategory @default(STANDARD)
+  duration        String                              // e.g. "5 Days / 4 Nights"
+  price           Float
+  discountedPrice Float?          @map("discounted_price")
+  inclusions      String[]        @default([])
+  exclusions      String[]        @default([])
+  itinerary       Json?                               // structured day-by-day itinerary
+  images          String[]        @default([])
+  featured        Boolean         @default(false)
+  published       Boolean         @default(false)
+  createdAt       DateTime        @default(now()) @map("created_at")
+  updatedAt       DateTime        @updatedAt @map("updated_at")
+
+  @@index([slug])
+  @@index([destinationId])
+  @@index([category])
+  @@index([featured, published])
+  @@index([price])
+  @@map("packages")
+}
+
+model ConsultationBooking {
+  id              String        @id @default(cuid())
+  name            String
+  email           String
+  phone           String
+  preferredDate   DateTime      @map("preferred_date")
+  preferredTime   String        @map("preferred_time")
+  travelInterest  String        @map("travel_interest")
+  message         String?       @db.Text
+  status          BookingStatus @default(PENDING)
+  paymentId       String?       @unique @map("payment_id")
+  paymentStatus   PaymentStatus @default(UNPAID) @map("payment_status")
+  amount          Float         @default(0)
+  createdAt       DateTime      @default(now()) @map("created_at")
+  updatedAt       DateTime      @updatedAt @map("updated_at")
+
+  @@index([email])
+  @@index([status])
+  @@index([paymentStatus])
+  @@index([createdAt])
+  @@map("consultation_bookings")
+}
+
+model VehicleRequest {
+  id          String       @id @default(cuid())
+  name        String
+  email       String
+  phone       String
+  destination String
+  travelDates String       @map("travel_dates")
+  vehicleType VehicleType  @map("vehicle_type")
+  groupSize   Int          @map("group_size")
+  message     String?      @db.Text
+  status      InquiryStatus @default(NEW)
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+  @@map("vehicle_requests")
+}
+
+model VisaInquiry {
+  id                String       @id @default(cuid())
+  name              String
+  email             String
+  phone             String
+  destination       String
+  travelDate        DateTime     @map("travel_date")
+  numberOfTravelers Int          @map("number_of_travelers")
+  message           String?      @db.Text
+  status            InquiryStatus @default(NEW)
+  createdAt         DateTime     @default(now()) @map("created_at")
+  updatedAt         DateTime     @updatedAt @map("updated_at")
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+  @@map("visa_inquiries")
+}
+
+model ContactInquiry {
+  id        String       @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String       @db.Text
+  status    InquiryStatus @default(NEW)
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+  @@map("contact_inquiries")
+}
+
+model NewsletterSubscriber {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  subscribedAt DateTime @default(now()) @map("subscribed_at")
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@index([email])
+  @@index([active])
+  @@map("newsletter_subscribers")
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  location  String
+  rating    Int      @default(5)
+  content   String   @db.Text
+  image     String?
+  featured  Boolean  @default(false)
+  published Boolean  @default(false)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([featured, published])
+  @@index([rating])
+  @@map("testimonials")
+}
+
+model FAQ {
+  id        String   @id @default(cuid())
+  question  String
+  answer    String   @db.Text
+  category  String
+  order     Int      @default(0)
+  published Boolean  @default(false)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([category])
+  @@index([order])
+  @@index([published])
+  @@map("faqs")
+}

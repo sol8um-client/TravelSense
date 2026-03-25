@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Concept F: The Connected Glasses -->
+  <!-- Glasses = AR/VR | Pin-lens = Travel | Heartbeat bridge = Human -->
+
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="96" fill="#0F2B44"/>
+
+  <!-- Left lens - standard rounded rectangle -->
+  <rect x="38" y="78" width="42" height="34" rx="10" ry="10"
+        fill="none" stroke="#C9A96E" stroke-width="3.2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right lens - location pin shape -->
+  <!-- Rounded top that tapers to a point at bottom -->
+  <path d="M120,78 L152,78 C158,78 162,82 162,88 L162,98 C162,104 158,108 152,108 L142,108 L141,112 L136,120 L131,112 L130,108 L120,108 C114,108 110,104 110,98 L110,88 C110,82 114,78 120,78 Z"
+        fill="none" stroke="#C9A96E" stroke-width="3.2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Small dot inside pin lens - destination point -->
+  <circle cx="136" cy="93" r="4" fill="#C9A96E"/>
+
+  <!-- Bridge between lenses - HEARTBEAT/PULSE LINE -->
+  <!-- This is the key differentiator: a small EKG pulse between the lenses -->
+  <path d="M80,95 L88,95 L91,95 L94,84 L97,106 L100,84 L103,95 L110,95"
+        fill="none" stroke="#C9A96E" stroke-width="2.8"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Left temple arm -->
+  <line x1="38" y1="84" x2="26" y2="80"
+        stroke="#C9A96E" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Right temple arm -->
+  <line x1="162" y1="84" x2="174" y2="80"
+        stroke="#C9A96E" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Small signal arcs from right temple - connectivity -->
+  <path d="M170,74 C174,72 176,70 176,66" fill="none" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M168,70 C174,66 178,62 178,56" fill="none" stroke="#C9A96E" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+</svg>

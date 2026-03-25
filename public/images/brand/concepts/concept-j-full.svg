@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 48" fill="none">
+  <!-- Concept J: Infinity Path — Full wordmark, deep purple-navy + amber -->
+  <g>
+    <circle cx="24" cy="24" r="22" fill="#1E1B3A"/>
+    <path d="M10 24 C10 18 16 14 20 18 C24 22 24 22 28 18 C32 14 38 18 38 24 C38 30 32 34 28 30 C24 26 24 26 20 30 C16 34 10 30 10 24 Z"
+          stroke="#E8923E" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="14" cy="24" r="1.5" fill="#E8923E"/>
+    <circle cx="34" cy="24" r="1.5" fill="#E8923E"/>
+    <circle cx="24" cy="20" r="1" fill="#FFFFFF" opacity="0.6"/>
+    <circle cx="24" cy="28" r="1" fill="#FFFFFF" opacity="0.6"/>
+    <path d="M24 22 L24.5 24 L24 26 L23.5 24 Z" fill="#FFFFFF" opacity="0.4"/>
+    <path d="M22 24 L24 23.5 L26 24 L24 24.5 Z" fill="#FFFFFF" opacity="0.4"/>
+  </g>
+  <text x="58" y="22" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#1E1B3A" letter-spacing="-0.5">Travel</text>
+  <text x="145" y="22" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#E8923E" letter-spacing="-0.5">Sense</text>
+  <text x="58" y="38" font-family="'Inter', Arial, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="2.5">YOUR TRUSTED TRAVEL PARTNER</text>
+</svg>

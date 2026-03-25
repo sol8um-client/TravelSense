@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Concept C: The Guided View — Light variant -->
+
+  <rect width="200" height="200" fill="#FAF8F5" rx="16"/>
+
+  <!-- Main lens -->
+  <circle cx="105" cy="108" r="36"
+          fill="none" stroke="#0F2B44" stroke-width="3.5"/>
+
+  <!-- Location pin inside -->
+  <path d="M105,90 C112.5,90 118,95.5 118,103 C118,108 114.5,113 109,117 L105,121 L101,117 C95.5,113 92,108 92,103 C92,95.5 97.5,90 105,90 Z"
+        fill="none" stroke="#0F2B44" stroke-width="2" opacity="0.5"/>
+  <circle cx="105" cy="103" r="4.5" fill="#C9A96E"/>
+
+  <!-- Signal arcs upward -->
+  <path d="M84,78 C90,67 105,61 120,67 L126,78"
+        fill="none" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M78,66 C87,50 105,43 123,50 L132,66"
+        fill="none" stroke="#C9A96E" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <path d="M74,56 C85,36 105,28 125,36 L136,56"
+        fill="none" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- Connection arm to human -->
+  <line x1="69" y1="108" x2="42" y2="100" stroke="#0F2B44" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Human dot -->
+  <circle cx="38" cy="99" r="6" fill="none" stroke="#C9A96E" stroke-width="2.5"/>
+  <circle cx="38" cy="96.5" r="2.5" fill="#C9A96E" opacity="0.6"/>
+  <path d="M33,104 C33,101.5 35,100 38,100 C41,100 43,101.5 43,104"
+        fill="#C9A96E" opacity="0.5"/>
+
+  <!-- Dashed connection line -->
+  <line x1="44" y1="100" x2="69" y2="108" stroke="#0F2B44" stroke-width="1"
+        stroke-dasharray="4,3" opacity="0.3"/>
+</svg>

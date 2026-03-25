@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 48" fill="none">
+  <!-- Concept E: Abstract "TS" Monogram — Full wordmark -->
+  <g>
+    <circle cx="24" cy="24" r="22" fill="#1B4B7A"/>
+    <rect x="11" y="13" width="14" height="2.5" rx="1.25" fill="#FFFFFF" opacity="0.9"/>
+    <rect x="16.5" y="13" width="2.8" height="22" rx="1.4" fill="#FFFFFF" opacity="0.9"/>
+    <path d="M27 16 C27 14 29 12.5 31.5 12.5 C34 12.5 36 14 36 16 C36 18 34 19 31.5 19.5 C29 20 27 21 27 23.5 C27 24.5 27.5 25.5 28.5 26" stroke="#E8923E" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <path d="M19 35 Q24 30 29 26" stroke="#E8923E" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+    <circle cx="36" cy="34" r="2" fill="#E8923E" opacity="0.6"/>
+  </g>
+  <text x="58" y="22" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#1B4B7A" letter-spacing="-0.5">Travel</text>
+  <text x="145" y="22" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#E8923E" letter-spacing="-0.5">Sense</text>
+  <text x="58" y="38" font-family="'Inter', Arial, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="2.5">YOUR TRUSTED TRAVEL PARTNER</text>
+</svg>

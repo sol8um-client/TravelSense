@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 48" fill="none">
+  <!-- Concept H: Geometric Horizon — Full wordmark, charcoal + gold -->
+  <g>
+    <rect x="2" y="2" width="44" height="44" rx="4" fill="#2C2C2C"/>
+    <path d="M6 36 L18 16 L24 24 L30 14 L42 36 Z" fill="#3D3D3D"/>
+    <path d="M6 36 L20 20 L26 28 L34 18 L42 36 Z" fill="#353535" opacity="0.6"/>
+    <line x1="6" y1="32" x2="42" y2="32" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="24" cy="20" r="6" fill="#D4A853"/>
+    <circle cx="24" cy="38" r="3" fill="#D4A853" opacity="0.08"/>
+  </g>
+  <text x="58" y="20" font-family="'Inter', Arial, sans-serif" font-size="20" font-weight="300" fill="#2C2C2C" letter-spacing="4">TRAVEL</text>
+  <text x="160" y="20" font-family="'Inter', Arial, sans-serif" font-size="20" font-weight="600" fill="#D4A853" letter-spacing="4">SENSE</text>
+  <line x1="58" y1="28" x2="260" y2="28" stroke="#D4A853" stroke-width="0.3" opacity="0.5"/>
+  <text x="58" y="40" font-family="'Inter', Arial, sans-serif" font-size="7" font-weight="300" fill="#9CA3AF" letter-spacing="4">JOURNEYS BEYOND ORDINARY</text>
+</svg>

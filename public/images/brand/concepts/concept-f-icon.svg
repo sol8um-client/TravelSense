@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Concept F: Luxury Crest — Inspired by Abercrombie & Kent, Virtuoso -->
+  <!-- Deep navy shield shape -->
+  <path d="M24 3 L42 12 L42 30 Q42 42 24 46 Q6 42 6 30 L6 12 Z" fill="#0F2B44"/>
+  <path d="M24 5 L40 13 L40 29 Q40 40 24 44 Q8 40 8 29 L8 13 Z" stroke="#C9A96E" stroke-width="0.8" fill="none"/>
+
+  <!-- Inner decorative frame -->
+  <path d="M24 9 L36 15 L36 28 Q36 37 24 40 Q12 37 12 28 L12 15 Z" stroke="#C9A96E" stroke-width="0.3" fill="none" opacity="0.4"/>
+
+  <!-- Stylized compass/star at center -->
+  <path d="M24 14 L26 21 L24 23 L22 21 Z" fill="#C9A96E"/>
+  <path d="M24 32 L26 25 L24 23 L22 25 Z" fill="#C9A96E" opacity="0.5"/>
+  <path d="M16 23 L21 21.5 L23 23 L21 24.5 Z" fill="#FFFFFF" opacity="0.6"/>
+  <path d="M32 23 L27 21.5 L25 23 L27 24.5 Z" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="24" cy="23" r="2" fill="#C9A96E"/>
+
+  <!-- Laurel-like curves -->
+  <path d="M14 18 Q18 16 22 18" stroke="#C9A96E" stroke-width="0.4" fill="none" opacity="0.3"/>
+  <path d="M34 18 Q30 16 26 18" stroke="#C9A96E" stroke-width="0.4" fill="none" opacity="0.3"/>
+  <path d="M14 28 Q18 30 22 28" stroke="#C9A96E" stroke-width="0.4" fill="none" opacity="0.3"/>
+  <path d="M34 28 Q30 30 26 28" stroke="#C9A96E" stroke-width="0.4" fill="none" opacity="0.3"/>
+</svg>

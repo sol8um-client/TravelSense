@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 48" fill="none">
+  <!-- Concept A: Refined Compass Rose — Full wordmark -->
+  <g>
+    <circle cx="24" cy="24" r="22" fill="#1B4B7A"/>
+    <circle cx="24" cy="24" r="20.5" stroke="#FFFFFF" stroke-width="0.5" opacity="0.15"/>
+    <circle cx="24" cy="24" r="18" stroke="#FFFFFF" stroke-width="0.3" opacity="0.1"/>
+    <path d="M24 7 L27 19 L24 22 L21 19 Z" fill="#E8923E"/>
+    <path d="M24 41 L27 29 L24 26 L21 29 Z" fill="#E8923E" opacity="0.55"/>
+    <path d="M41 24 L29 21 L26 24 L29 27 Z" fill="#FFFFFF" opacity="0.45"/>
+    <path d="M7 24 L19 21 L22 24 L19 27 Z" fill="#FFFFFF" opacity="0.75"/>
+    <line x1="12" y1="12" x2="19" y2="19" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2"/>
+    <line x1="36" y1="12" x2="29" y2="19" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2"/>
+    <line x1="12" y1="36" x2="19" y2="29" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2"/>
+    <line x1="36" y1="36" x2="29" y2="29" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2"/>
+    <circle cx="24" cy="24" r="3.5" fill="#FFFFFF"/>
+    <circle cx="24" cy="24" r="2" fill="#E8923E"/>
+    <path d="M10 17 Q17 13 24 13 Q31 13 38 17" stroke="#FFFFFF" stroke-width="0.7" fill="none" opacity="0.2"/>
+    <path d="M10 31 Q17 35 24 35 Q31 35 38 31" stroke="#FFFFFF" stroke-width="0.7" fill="none" opacity="0.2"/>
+  </g>
+  <text x="58" y="22" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#1B4B7A" letter-spacing="-0.5">Travel</text>
+  <text x="145" y="22" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#E8923E" letter-spacing="-0.5">Sense</text>
+  <text x="58" y="38" font-family="'Inter', Arial, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="2.5">YOUR TRUSTED TRAVEL PARTNER</text>
+</svg>

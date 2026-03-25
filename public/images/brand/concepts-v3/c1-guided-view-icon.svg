@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Concept C: The Guided View -->
+  <!-- Single AR lens with location pin + signal arcs + human connection -->
+
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="96" fill="#0F2B44"/>
+
+  <!-- Main lens - large circle -->
+  <circle cx="100" cy="105" r="38"
+          fill="none" stroke="#C9A96E" stroke-width="3.5"
+          stroke-linecap="round"/>
+
+  <!-- Location pin inside the lens -->
+  <path d="M100,85 C108.5,85 115,91.5 115,100 C115,106 111,111 105,115.5 L100,120 L95,115.5 C89,111 85,106 85,100 C85,91.5 91.5,85 100,85 Z"
+        fill="none" stroke="#C9A96E" stroke-width="2.2"
+        stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+
+  <!-- Pin center dot -->
+  <circle cx="100" cy="100" r="4.5" fill="#C9A96E" opacity="0.9"/>
+
+  <!-- Signal arcs radiating upward from the lens -->
+  <!-- These double-read as: connectivity/smart AND expanding horizons/sunrise -->
+  <path d="M78,72 C85,60 100,54 115,60 L122,72"
+        fill="none" stroke="#C9A96E" stroke-width="2.2"
+        stroke-linecap="round" opacity="0.7"/>
+
+  <path d="M72,60 C82,44 100,36 118,44 L128,60"
+        fill="none" stroke="#C9A96E" stroke-width="1.8"
+        stroke-linecap="round" opacity="0.45"/>
+
+  <path d="M68,50 C80,30 100,22 120,30 L132,50"
+        fill="none" stroke="#C9A96E" stroke-width="1.4"
+        stroke-linecap="round" opacity="0.25"/>
+
+  <!-- Temple arm / connection to the left -->
+  <line x1="62" y1="105" x2="38" y2="98"
+        stroke="#C9A96E" stroke-width="2.8" stroke-linecap="round"/>
+
+  <!-- Human connection dot at end of temple -->
+  <circle cx="34" cy="97" r="5" fill="#C9A96E" opacity="0.8"/>
+  <!-- Tiny person silhouette suggestion in the dot -->
+  <circle cx="34" cy="95" r="2" fill="#0F2B44" opacity="0.6"/>
+  <path d="M30.5,101 C30.5,99 32,98 34,98 C36,98 37.5,99 37.5,101"
+        fill="#0F2B44" opacity="0.5"/>
+
+  <!-- Small connecting line from person to lens -->
+  <line x1="38" y1="98" x2="62" y2="105"
+        stroke="#C9A96E" stroke-width="1" stroke-linecap="round"
+        stroke-dasharray="3,3" opacity="0.4"/>
+</svg>

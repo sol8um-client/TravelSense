@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Concept 5: Modern Crest — Simplified shield, Ritz-Carlton inspired but modern -->
+  <!-- Shield outline -->
+  <path d="M24 4 L40 12 L40 28 Q40 40 24 44 Q8 40 8 28 L8 12 Z" fill="#0F2B44"/>
+
+  <!-- Inner gold border -->
+  <path d="M24 7 L37 13.5 L37 27 Q37 37 24 41 Q11 37 11 27 L11 13.5 Z" stroke="#C9A96E" stroke-width="0.8" fill="none"/>
+
+  <!-- Abstract 4-point star (NOT a compass — represents excellence/north star) -->
+  <path d="M24 14 L25.5 21 L24 23 L22.5 21 Z" fill="#C9A96E"/>
+  <path d="M24 32 L25.5 25 L24 23 L22.5 25 Z" fill="#C9A96E" opacity="0.4"/>
+  <path d="M16 23 L21 21.8 L23 23 L21 24.2 Z" fill="#FFFFFF" opacity="0.5"/>
+  <path d="M32 23 L27 21.8 L25 23 L27 24.2 Z" fill="#FFFFFF" opacity="0.3"/>
+
+  <!-- Center point -->
+  <circle cx="24" cy="23" r="1.5" fill="#C9A96E"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Stacked/Square version -->
+  <!-- Icon -->
+  <g transform="translate(24, 8)">
+    <circle cx="36" cy="36" r="34" fill="#1B4B7A"/>
+    <!-- Compass rose -->
+    <path d="M36 6 L40 30 L36 36 L32 30 Z" fill="#E8923E"/>
+    <path d="M36 66 L40 42 L36 36 L32 42 Z" fill="#E8923E" opacity="0.6"/>
+    <path d="M6 36 L30 32 L36 36 L30 40 Z" fill="#FFFFFF" opacity="0.8"/>
+    <path d="M66 36 L42 32 L36 36 L42 40 Z" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="36" cy="36" r="4.5" fill="#FFFFFF"/>
+    <!-- Globe arcs -->
+    <path d="M14 22 Q25 16 36 16 Q47 16 58 22" stroke="#FFFFFF" stroke-width="1.2" fill="none" opacity="0.3"/>
+    <path d="M14 50 Q25 56 36 56 Q47 56 58 50" stroke="#FFFFFF" stroke-width="1.2" fill="none" opacity="0.3"/>
+  </g>
+  <!-- Text below icon -->
+  <text x="60" y="98" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="18" font-weight="700" fill="#1B4B7A" letter-spacing="-0.3">Travel<tspan fill="#E8923E">Sense</tspan></text>
+  <text x="60" y="113" text-anchor="middle" font-family="'Inter', Arial, sans-serif" font-size="7" font-weight="400" fill="#6B7280" letter-spacing="2">BY V9 TRAVELS</text>
+</svg>
