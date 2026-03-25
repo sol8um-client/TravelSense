@@ -345,7 +345,7 @@ export default function BrandIdentityPage() {
                         style={{
                           color: palette.colors[0].hex,
                           borderColor: palette.colors[0].hex,
-                          ringColor: palette.colors[0].hex,
+                          outlineColor: palette.colors[0].hex,
                         }}
                       >
                         Outline — Learn More
