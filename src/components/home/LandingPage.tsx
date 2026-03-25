@@ -396,7 +396,7 @@ function HeroSection() {
 
       {/* 6. 3D WebGL Globe — visible on all sizes */}
       {/* Mobile/tablet: centered, subtle bg behind text. Desktop: full left position */}
-      <div className="absolute inset-0 opacity-25 sm:opacity-35 md:opacity-40 lg:opacity-100 lg:left-[-32%] lg:top-0 lg:bottom-0 lg:right-[30%] lg:inset-auto pointer-events-none" style={{ zIndex: 1, maskImage: "linear-gradient(to right, black 60%, transparent 100%)", WebkitMaskImage: "linear-gradient(to right, black 60%, transparent 100%)" }}>
+      <div className="absolute inset-0 opacity-35 sm:opacity-45 md:opacity-55 lg:opacity-100 lg:left-[-32%] lg:top-0 lg:bottom-0 lg:right-[30%] lg:inset-auto pointer-events-none" style={{ zIndex: 1, maskImage: "linear-gradient(to right, black 60%, transparent 100%)", WebkitMaskImage: "linear-gradient(to right, black 60%, transparent 100%)" }}>
         <Globe3D />
       </div>
 
@@ -429,7 +429,7 @@ function HeroSection() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.6 }}
-          className="mt-7 text-[14px] sm:text-[15px] leading-[1.9] text-muted-foreground max-w-lg mx-auto font-light tracking-wide"
+          className="mt-7 text-[14px] sm:text-[15px] leading-[1.9] text-foreground/60 max-w-lg mx-auto font-light tracking-wide"
         >
           Your next adventure is just <span className="text-foreground font-medium">one conversation away</span>
           {" "}— we handle everything from itinerary to boarding pass, while you focus on the excitement.
@@ -480,7 +480,7 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8, duration: 0.7 }}
-          className="mt-14 inline-flex items-center rounded-2xl border border-silver/15 bg-white/80 backdrop-blur-xl shadow-[0_4px_24px_rgba(11,20,38,0.06)] overflow-hidden"
+          className="mt-14 grid grid-cols-2 sm:inline-flex sm:grid-cols-none items-center rounded-2xl border border-silver/15 bg-white/80 backdrop-blur-xl shadow-[0_4px_24px_rgba(11,20,38,0.06)] overflow-hidden"
         >
           {[
             { target: 500, suffix: "+", label: "Happy Travelers", color: "text-secondary" },
@@ -490,15 +490,23 @@ function HeroSection() {
           ].map((s, i) => {
             const counter = s.target ? useCounter(s.target) : null
             return (
-              <div key={s.label} className={cn("px-5 sm:px-7 py-4 text-center", i > 0 && "border-l border-silver/10")}>
-                <p className={cn("text-lg sm:text-xl font-heading tabular-nums tracking-wider", s.color || "text-foreground/80")}>
+              <div key={s.label} className={cn(
+                "px-4 sm:px-7 py-4 text-center",
+                /* Mobile 2x2 grid borders */
+                i % 2 !== 0 && "border-l border-silver/10",
+                i >= 2 && "border-t border-silver/10 sm:border-t-0",
+                /* Desktop: only left border */
+                "sm:border-l sm:border-t-0",
+                i === 0 && "sm:border-l-0",
+              )}>
+                <p className={cn("text-base sm:text-xl font-heading tabular-nums tracking-wider", s.color || "text-foreground/80")}>
                   {s.custom || (
                     <span ref={counter!.ref}>
                       {s.decimal ? `${counter!.count}` : counter!.count.toLocaleString()}{s.suffix}
                     </span>
                   )}
                 </p>
-                <p className="text-[7px] text-silver-dark/50 mt-0.5 tracking-[0.25em] uppercase font-heading">{s.label}</p>
+                <p className="text-[6px] sm:text-[7px] text-silver-dark/50 mt-0.5 tracking-[0.25em] uppercase font-heading">{s.label}</p>
               </div>
             )
           })}

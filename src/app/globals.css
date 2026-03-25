@@ -399,7 +399,19 @@ html {
 .wave-divider svg {
   display: block;
   width: 100%;
-  height: 60px;
+  height: 35px;
+}
+
+@media (min-width: 640px) {
+  .wave-divider svg {
+    height: 50px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wave-divider svg {
+    height: 60px;
+  }
 }
 
 .wave-divider-flip svg {
