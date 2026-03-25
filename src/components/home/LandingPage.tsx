@@ -432,7 +432,7 @@ function HeroSection() {
           className="mt-7 text-[14px] sm:text-[15px] leading-[1.9] text-foreground/60 max-w-lg mx-auto font-light tracking-wide"
         >
           Your next adventure is just <span className="text-foreground font-medium">one conversation away</span>
-          {" "}— we handle everything from itinerary to boarding pass, while you focus on the excitement.
+          {". "}We handle everything from itinerary to boarding pass, while you focus on the excitement.
         </motion.p>
 
         {/* Tagline with animated dots — brand colors */}
@@ -440,14 +440,14 @@ function HeroSection() {
           initial={{ opacity: 0, letterSpacing: "0.1em" }}
           animate={{ opacity: 1, letterSpacing: "0.35em" }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-3 flex items-center justify-center gap-3 text-[9px] font-heading uppercase text-secondary/40"
+          className="mt-3 flex items-center justify-center gap-3 text-[10px] sm:text-[11px] font-heading uppercase text-secondary/60"
         >
           <span>See it</span>
-          <motion.span className="h-1.5 w-1.5 rounded-full bg-secondary/40"
-            animate={{ scale: [1, 1.5, 1], opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, repeat: Infinity, delay: 0 }} />
+          <motion.span className="h-1.5 w-1.5 rounded-full bg-secondary/50"
+            animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }} transition={{ duration: 2, repeat: Infinity, delay: 0 }} />
           <span>Feel it</span>
-          <motion.span className="h-1.5 w-1.5 rounded-full bg-silver/40"
-            animate={{ scale: [1, 1.5, 1], opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, repeat: Infinity, delay: 0.6 }} />
+          <motion.span className="h-1.5 w-1.5 rounded-full bg-silver/50"
+            animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }} transition={{ duration: 2, repeat: Infinity, delay: 0.6 }} />
           <span>Live it</span>
         </motion.div>
 
