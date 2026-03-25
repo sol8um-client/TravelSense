@@ -480,7 +480,7 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8, duration: 0.7 }}
-          className="mt-14 grid grid-cols-2 sm:inline-flex sm:grid-cols-none items-center rounded-2xl border border-silver/15 bg-white/80 backdrop-blur-xl shadow-[0_4px_24px_rgba(11,20,38,0.06)] overflow-hidden"
+          className="mt-10 sm:mt-14 inline-flex items-center rounded-xl sm:rounded-2xl border border-silver/15 bg-white/80 backdrop-blur-xl shadow-[0_4px_24px_rgba(11,20,38,0.06)] overflow-hidden"
         >
           {[
             { target: 500, suffix: "+", label: "Happy Travelers", color: "text-secondary" },
@@ -491,22 +491,17 @@ function HeroSection() {
             const counter = s.target ? useCounter(s.target) : null
             return (
               <div key={s.label} className={cn(
-                "px-4 sm:px-7 py-4 text-center",
-                /* Mobile 2x2 grid borders */
-                i % 2 !== 0 && "border-l border-silver/10",
-                i >= 2 && "border-t border-silver/10 sm:border-t-0",
-                /* Desktop: only left border */
-                "sm:border-l sm:border-t-0",
-                i === 0 && "sm:border-l-0",
+                "px-3 sm:px-7 py-2.5 sm:py-4 text-center",
+                i > 0 && "border-l border-silver/10",
               )}>
-                <p className={cn("text-base sm:text-xl font-heading tabular-nums tracking-wider", s.color || "text-foreground/80")}>
+                <p className={cn("text-sm sm:text-xl font-heading tabular-nums tracking-wider", s.color || "text-foreground/80")}>
                   {s.custom || (
                     <span ref={counter!.ref}>
                       {s.decimal ? `${counter!.count}` : counter!.count.toLocaleString()}{s.suffix}
                     </span>
                   )}
                 </p>
-                <p className="text-[6px] sm:text-[7px] text-silver-dark/50 mt-0.5 tracking-[0.25em] uppercase font-heading">{s.label}</p>
+                <p className="text-[5px] sm:text-[7px] text-silver-dark/50 mt-0.5 tracking-[0.2em] sm:tracking-[0.25em] uppercase font-heading">{s.label}</p>
               </div>
             )
           })}
