@@ -396,12 +396,12 @@ function HeroSection() {
 
       {/* 6. 3D WebGL Globe — visible on all sizes */}
       {/* Mobile/tablet: centered, subtle bg behind text. Desktop: full left position */}
-      <div className="absolute inset-0 opacity-35 sm:opacity-45 md:opacity-55 lg:opacity-100 lg:left-[-32%] lg:top-0 lg:bottom-0 lg:right-[30%] lg:inset-auto pointer-events-none" style={{ zIndex: 1, maskImage: "linear-gradient(to right, black 60%, transparent 100%)", WebkitMaskImage: "linear-gradient(to right, black 60%, transparent 100%)" }}>
+      <div className="absolute inset-0 opacity-40 sm:opacity-50 md:opacity-60 lg:opacity-100 lg:left-[-32%] lg:top-0 lg:bottom-0 lg:right-[30%] lg:inset-auto pointer-events-none" style={{ zIndex: 1, maskImage: "linear-gradient(to right, black 60%, transparent 100%)", WebkitMaskImage: "linear-gradient(to right, black 60%, transparent 100%)" }}>
         <Globe3D />
       </div>
 
-      {/* Content */}
-      <motion.div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center" style={{ y: contentY, opacity: contentOpacity }}>
+      {/* Content — text shadow on mobile ensures readability over globe */}
+      <motion.div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center [text-shadow:0_1px_8px_rgba(255,255,255,0.8)] lg:[text-shadow:none]" style={{ y: contentY, opacity: contentOpacity }}>
         {/* Main headline */}
         <h1 className="font-heading text-[1.8rem] sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-[0.12em] uppercase">
           <span className="metallic-text">
@@ -456,11 +456,11 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4, duration: 0.6 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
           <button
             onClick={() => leadModal.open("hero-start-planning")}
-            className="metallic-cta group inline-flex items-center gap-2.5 px-9 py-4 text-[11px] text-white tracking-[0.15em] uppercase cursor-pointer"
+            className="metallic-cta group inline-flex items-center gap-2.5 px-9 py-4 text-[11px] text-white tracking-[0.15em] uppercase cursor-pointer w-full sm:w-auto justify-center"
           >
             <span className="relative z-10 flex items-center gap-2">
               Start Planning <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2 duration-300" />
@@ -468,7 +468,7 @@ function HeroSection() {
           </button>
           <button
             onClick={() => leadModal.open("hero-explore")}
-            className="outline-cta group inline-flex items-center gap-2 px-8 py-4 text-[11px] font-heading text-foreground/50 tracking-[0.12em] uppercase cursor-pointer"
+            className="outline-cta group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-[10px] sm:text-[11px] font-heading text-foreground/50 tracking-[0.12em] uppercase cursor-pointer w-auto justify-center"
           >
             Explore Destinations
             <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
@@ -1707,9 +1707,9 @@ function NewsletterSection() {
 
 function WaveWhiteToGray() {
   return (
-    <div className="wave-divider -mb-1">
+    <div className="wave-divider -mb-px" style={{ background: "#FFFFFF" }}>
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-        <path d="M0,0 C360,50 720,60 1080,30 C1260,15 1380,40 1440,35 L1440,60 L0,60 Z" fill="#F4F6F9" />
+        <path d="M0,20 Q360,55 720,30 T1440,25 L1440,60 L0,60 Z" fill="#F4F6F9" />
       </svg>
     </div>
   )
@@ -1717,9 +1717,9 @@ function WaveWhiteToGray() {
 
 function WaveGrayToWhite() {
   return (
-    <div className="wave-divider -mb-1">
+    <div className="wave-divider -mb-px" style={{ background: "#F4F6F9" }}>
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-        <path d="M0,30 C180,60 360,0 720,40 C1080,80 1260,10 1440,30 L1440,60 L0,60 Z" fill="#FFFFFF" />
+        <path d="M0,25 Q360,55 720,20 T1440,30 L1440,60 L0,60 Z" fill="#FFFFFF" />
       </svg>
     </div>
   )
@@ -1727,10 +1727,10 @@ function WaveGrayToWhite() {
 
 function WaveWhiteToDark() {
   return (
-    <div className="wave-divider -mb-1">
+    <div className="wave-divider -mb-px" style={{ background: "#FFFFFF" }}>
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <path d="M0,40 C240,80 480,0 720,50 C960,100 1200,20 1440,50 L1440,80 L0,80 Z" fill="#0B1426" />
-        <path d="M0,55 C360,80 720,30 1080,65 C1260,75 1380,50 1440,60 L1440,80 L0,80 Z" fill="#0B1426" opacity="0.7" />
+        <path d="M0,35 Q360,70 720,30 T1440,45 L1440,80 L0,80 Z" fill="#0B1426" opacity="0.4" />
+        <path d="M0,50 Q360,75 720,45 T1440,55 L1440,80 L0,80 Z" fill="#0B1426" />
       </svg>
     </div>
   )
@@ -1738,10 +1738,10 @@ function WaveWhiteToDark() {
 
 function WaveDarkToWhite() {
   return (
-    <div className="wave-divider -mt-1" style={{ background: "#0B1426" }}>
+    <div className="wave-divider -mb-px" style={{ background: "#0B1426" }}>
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <path d="M0,40 C360,0 720,70 1080,20 C1260,5 1380,40 1440,30 L1440,80 L0,80 Z" fill="#FFFFFF" />
-        <path d="M0,55 C240,30 480,70 720,40 C960,10 1200,50 1440,45 L1440,80 L0,80 Z" fill="#FFFFFF" opacity="0.6" />
+        <path d="M0,35 Q360,70 720,25 T1440,40 L1440,80 L0,80 Z" fill="#FFFFFF" opacity="0.5" />
+        <path d="M0,50 Q360,75 720,40 T1440,55 L1440,80 L0,80 Z" fill="#FFFFFF" />
       </svg>
     </div>
   )
@@ -1749,10 +1749,10 @@ function WaveDarkToWhite() {
 
 function WaveGrayToDark() {
   return (
-    <div className="wave-divider -mb-1" style={{ background: "#F4F6F9" }}>
+    <div className="wave-divider -mb-px" style={{ background: "#F4F6F9" }}>
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <path d="M0,50 C360,10 720,70 1080,30 C1260,15 1380,45 1440,40 L1440,80 L0,80 Z" fill="#0B1426" />
-        <path d="M0,60 C240,40 480,75 720,50 C960,25 1200,60 1440,55 L1440,80 L0,80 Z" fill="#0B1426" opacity="0.5" />
+        <path d="M0,40 Q360,70 720,30 T1440,50 L1440,80 L0,80 Z" fill="#0B1426" opacity="0.4" />
+        <path d="M0,55 Q360,75 720,45 T1440,60 L1440,80 L0,80 Z" fill="#0B1426" />
       </svg>
     </div>
   )
@@ -1760,9 +1760,21 @@ function WaveGrayToDark() {
 
 function WaveDarkToGray() {
   return (
-    <div className="wave-divider -mt-1" style={{ background: "#0B1426" }}>
+    <div className="wave-divider -mb-px" style={{ background: "#0B1426" }}>
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <path d="M0,30 C360,70 720,10 1080,50 C1260,65 1380,30 1440,40 L1440,80 L0,80 Z" fill="#F4F6F9" />
+        <path d="M0,30 Q360,65 720,25 T1440,40 L1440,80 L0,80 Z" fill="#F4F6F9" opacity="0.5" />
+        <path d="M0,50 Q360,70 720,40 T1440,55 L1440,80 L0,80 Z" fill="#F4F6F9" />
+      </svg>
+    </div>
+  )
+}
+
+function WaveToFooter() {
+  return (
+    <div className="wave-divider -mb-px" style={{ background: "#FFFFFF" }}>
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,35 Q360,65 720,30 T1440,45 L1440,80 L0,80 Z" fill="#0B1426" opacity="0.4" />
+        <path d="M0,50 Q360,70 720,45 T1440,55 L1440,80 L0,80 Z" fill="#0B1426" />
       </svg>
     </div>
   )
@@ -1795,6 +1807,7 @@ export default function LandingPage() {
       <CTASection />
       <WaveDarkToWhite />
       <NewsletterSection />
+      <WaveToFooter />
     </>
   )
 }
