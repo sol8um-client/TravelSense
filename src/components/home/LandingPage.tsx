@@ -468,7 +468,7 @@ function HeroSection() {
           </button>
           <button
             onClick={() => leadModal.open("hero-explore")}
-            className="outline-cta group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-[10px] sm:text-[11px] font-heading text-foreground/50 tracking-[0.12em] uppercase cursor-pointer w-auto justify-center"
+            className="outline-cta group inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 text-[9px] sm:text-[10px] font-heading text-foreground/50 tracking-[0.12em] uppercase cursor-pointer w-auto justify-center"
           >
             Explore Destinations
             <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
