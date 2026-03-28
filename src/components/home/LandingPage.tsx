@@ -460,7 +460,7 @@ function HeroSection() {
         >
           <button
             onClick={() => leadModal.open("hero-start-planning")}
-            className="metallic-cta group inline-flex items-center gap-2.5 px-9 py-4 text-[11px] text-white tracking-[0.15em] uppercase cursor-pointer w-full sm:w-auto justify-center"
+            className="metallic-cta group inline-flex items-center gap-2.5 px-6 py-3 sm:px-9 sm:py-4 text-[10px] sm:text-[11px] text-white tracking-[0.15em] uppercase cursor-pointer w-auto justify-center"
           >
             <span className="relative z-10 flex items-center gap-2">
               Start Planning <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2 duration-300" />
