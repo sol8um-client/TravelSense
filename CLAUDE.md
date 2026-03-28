@@ -596,9 +596,13 @@ pnpm dev
   - [ ] Remaining pages (About, Contact, Destinations, Packages, etc.)
 - [ ] **M3: Website Development** — IN PROGRESS (Homepage)
   - [x] Homepage landing page — fully functional with animations
-  - [x] 3D WebGL globe — NASA-textured frosted globe with flight arcs (react-three-fiber)
-  - [x] Mobile responsive (flip cards, touch support)
+  - [x] 3D WebGL globe — NASA-textured frosted globe with flight arcs & location pins (react-three-fiber)
+  - [x] Mobile responsive (globe, flip cards, touch support, optimized perf)
   - [x] Header + Footer with logo
+  - [x] Lead capture modal on all CTAs → Supabase leads table
+  - [x] Supabase integration (@supabase/supabase-js)
+  - [x] Deployed to Vercel — https://travelsense.co.in
+  - [x] GitHub repo — https://github.com/sol8um-client/TravelSense
   - [ ] Remaining pages and modules
 - [ ] **M4: Content & SEO** — NOT STARTED
 - [ ] **M5: Launch & QA** — NOT STARTED
@@ -675,4 +679,67 @@ pnpm dev
 - Cherry/pink arcs (brand secondary color, adds warmth and energy)
 - Blue + gold dot markers (brand palette, no random colors)
 - Frosted glass aesthetic (premium, modern, clean)
-- Globe hidden on mobile (lg+ breakpoint, too GPU-heavy for mobile)
+- Globe visible on ALL viewports including mobile — lower DPR + reduced effects for performance
+
+---
+
+## Session Log — March 28, 2026
+
+### Lead Capture + Supabase + Deployment
+
+**Lead capture system:**
+- Created `src/components/shared/LeadCaptureModal.tsx` — modal form with name, email, phone, destination, travel dates, message
+- Wired to ALL CTA buttons: "Start Planning", "Explore Destinations", "Book Consultation", newsletter, CTA section
+- Form submits to Supabase `leads` table via `@supabase/supabase-js`
+- Created `src/lib/supabase.ts` — Supabase client singleton
+- Mobile fix: form now scrollable with visible close button (sticky top-right X)
+
+**Supabase setup:**
+- Project URL: `https://rkalfwndmrhkqctzmgpe.supabase.co`
+- Table: `leads` (id, name, email, phone, destination, travel_dates, message, source, created_at)
+- RLS policy: anon insert only
+
+**Deployment:**
+- GitHub: `sol8um-client/TravelSense` (main branch)
+- Vercel: `sol8um-7719s-projects/travelsense`
+- Domain: `travelsense.co.in` (connected via Vercel)
+- Git identity: Sol8um / sol8um@gmail.com
+- Fixed TypeScript build error in `brand-identity/page.tsx` (ringColor → outline style)
+
+### Globe — Continued Refinements
+
+**Issues fixed:**
+- Vertical white line in hero — globe canvas container right edge was visible; fixed by extending container to `lg:right-[-20%]` with `overflow-hidden`
+- Globe shifted left 10% per user request
+- Location pins replacing plain dots — 3D cone+sphere pin markers oriented outward via quaternion
+- Flight arcs faded — fixed draw-on animation cycle so arcs stay visible 80% of the time (was disappearing too quickly)
+- Mobile globe: now visible on all viewports with performance optimizations (DPR 1, no post-processing, no Float, no Stars, low-power GPU preference)
+
+### Mobile / Responsive Fixes
+
+**Hero section:**
+- All 4 trust stats now visible in 2x2 grid on mobile (was overflowing)
+- "Explore Destinations" button reduced size on desktop
+- Globe visible on mobile with lower quality settings
+
+**Typography:**
+- "See it · Feel it · Live it" — increased visibility: text-secondary/40 → /60, size 9px → 10-11px
+- Subtitle em dash removed: "— we handle" → ". We handle"
+
+**Wave section breaks:**
+- Fixed broken wave SVG effects between sections on mobile
+
+**Lead form mobile:**
+- Modal scrollable with `overflow-y-auto max-h-[90vh]`
+- Close button sticky at top-right, always visible
+- Form fields stack properly on small screens
+
+### Files Changed This Session
+- `src/components/shared/LeadCaptureModal.tsx` — NEW
+- `src/lib/supabase.ts` — NEW
+- `src/components/home/LandingPage.tsx` — lead form integration, CTA wiring, mobile fixes, tagline visibility
+- `src/components/home/Globe3D.tsx` — mobile support, pin markers, arc visibility, positioning
+- `src/app/brand-identity/page.tsx` — TypeScript fix (ringColor)
+- `docs/PROGRESS.md` — NEW tracking file
+- `docs/PHASE1_PLAN.md` — checked off completed tasks
+- `.env.local` — Supabase credentials (gitignored)
