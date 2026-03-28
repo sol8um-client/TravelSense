@@ -52,7 +52,11 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-primary text-white">
+    <footer className="relative overflow-hidden footer-gradient noise-overlay dot-grid-overlay text-white">
+      {/* Decorative accent blobs */}
+      <div className="absolute top-16 right-[5%] h-[300px] w-[300px] rounded-full bg-secondary/[0.03] blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-20 left-[8%] h-[250px] w-[250px] rounded-full bg-primary-light/[0.15] blur-[120px] pointer-events-none" />
+
       {/* Main Footer */}
       <Container>
         <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">

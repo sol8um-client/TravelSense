@@ -719,6 +719,70 @@ html {
     #FFFFFF;
 }
 
+/* ═══ Navbar gradient — subtle depth for fixed header ═══ */
+.navbar-gradient {
+  background: linear-gradient(
+    180deg,
+    #0D1A30 0%,
+    #0A1425 40%,
+    #081020 100%
+  );
+}
+
+.navbar-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(176, 184, 196, 0.08) 20%,
+    rgba(196, 50, 74, 0.06) 50%,
+    rgba(176, 184, 196, 0.08) 80%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.navbar-gradient-scrolled {
+  background: linear-gradient(
+    180deg,
+    #0B1628 0%,
+    #0A1425 30%,
+    #070E1E 100%
+  );
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 1px 0 rgba(176, 184, 196, 0.05);
+}
+
+/* ═══ Footer gradient — rich mesh with depth ═══ */
+.footer-gradient {
+  background:
+    radial-gradient(ellipse at 15% 10%, rgba(27, 45, 78, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 80%, rgba(196, 50, 74, 0.03) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 50%, rgba(18, 32, 64, 0.4) 0%, transparent 60%),
+    linear-gradient(180deg, #0C1829 0%, #0A1425 30%, #081020 70%, #060B15 100%);
+}
+
+/* ═══ Dot grid overlay — reusable subtle pattern ═══ */
+.dot-grid-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(176, 184, 196, 0.6) 1px,
+    transparent 0
+  );
+  background-size: 36px 36px;
+}
+
 /* Morphing gradient blob */
 .morph-blob {
   animation: morphGradient 15s ease-in-out infinite;
