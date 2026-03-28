@@ -831,9 +831,9 @@ function HowItWorksSection() {
         {/* Mini timeline — visual speed indicator */}
         <div className="mt-12 flex items-center justify-center gap-3 flex-wrap" data-reveal style={{ transitionDelay: "0.4s" }}>
           {[
-            { day: "Day 1", text: "You call us", icon: Phone, color: "#C4324A" },
-            { day: "Day 2", text: "Itinerary ready", icon: Map, color: "#B0B8C4" },
-            { day: "Day 3", text: "Everything booked", icon: CheckCircle, color: "#C4324A" },
+            { day: "Step 1", text: "You call us", icon: Phone, color: "#C4324A" },
+            { day: "Step 2", text: "Itinerary ready", icon: Map, color: "#B0B8C4" },
+            { day: "Step 3", text: "Everything booked", icon: CheckCircle, color: "#C4324A" },
           ].map((item, i) => (
             <div key={item.day} className="flex items-center gap-3">
               <motion.div className="flex items-center gap-2.5 rounded-full bg-white border border-silver/15 px-4 py-2.5 shadow-sm group hover:shadow-md hover:border-secondary/15 transition-all duration-300"
