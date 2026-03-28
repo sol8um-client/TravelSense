@@ -676,7 +676,7 @@ function ProblemSection() {
               {problems.map((p, i) => (
                 <motion.div
                   key={p.title}
-                  className="group relative glass-card-dark rounded-xl p-4 cursor-default"
+                  className="group relative glass-card-dark rounded-xl p-4 cursor-default hover:z-20"
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.3 + i * 0.12, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -691,8 +691,8 @@ function ProblemSection() {
                     </div>
                   </div>
                   {/* Hover tooltip — explains the problem */}
-                  <div className="absolute inset-x-4 -bottom-1 translate-y-full opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-10">
-                    <div className="bg-primary/95 border border-silver/10 rounded-lg px-3 py-2 shadow-lg mt-2">
+                  <div className="absolute inset-x-4 -top-1 -translate-y-full opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30">
+                    <div className="bg-primary/95 border border-silver/10 rounded-lg px-3 py-2 shadow-lg mb-2">
                       <p className="text-[10px] text-silver/50 leading-relaxed">{p.visual}</p>
                     </div>
                   </div>
