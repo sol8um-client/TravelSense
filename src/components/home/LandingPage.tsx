@@ -777,67 +777,28 @@ function HowItWorksSection() {
 
         {/* Steps — with scroll-animated path */}
         <div className="relative">
-          {/* Scroll-animated SVG connector path (desktop) — reference-matched */}
-          <div className="hidden md:block absolute top-[20px] left-[6%] right-[6%] h-[120px] z-0">
-            <svg className="w-full h-full" viewBox="0 0 1000 120" fill="none" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#C4324A" />
-                  <stop offset="50%" stopColor="#D63B55" />
-                  <stop offset="100%" stopColor="#C4324A" />
-                </linearGradient>
-              </defs>
-              {/* Faint guide — peaks at steps, troughs between */}
-              <path d="M10 60 Q65 60 120 30 Q175 0 230 30 Q285 60 340 90 Q395 120 450 90 Q505 60 560 30 Q615 0 670 30 Q725 60 780 90 Q835 120 890 90 Q945 60 990 60"
-                stroke="#C4324A" strokeOpacity="0.07" strokeWidth="2" strokeDasharray="5 5" fill="none" />
-              {/* Animated solid path — same shape */}
-              <motion.path d="M10 60 Q65 60 120 30 Q175 0 230 30 Q285 60 340 90 Q395 120 450 90 Q505 60 560 30 Q615 0 670 30 Q725 60 780 90 Q835 120 890 90 Q945 60 990 60"
-                stroke="url(#pathGrad)" strokeWidth="2.5" fill="none"
+          {/* Scroll-animated dashed connector path (desktop) — gentle horizontal wave matching reference */}
+          <div className="hidden md:block absolute top-[48px] left-[10%] right-[10%] h-[28px] z-0 pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 1000 40" fill="none" preserveAspectRatio="none">
+              {/* Faint dashed guide path */}
+              <path d="M20 20 C80 20 100 20 125 20 C175 8 225 32 250 20 C275 8 325 32 375 20 C425 8 475 32 500 20 C525 8 575 32 625 20 C675 8 725 32 750 20 C775 8 825 32 875 20 C900 20 920 20 980 20"
+                stroke="#C4324A" strokeOpacity="0.08" strokeWidth="1.5" strokeDasharray="6 4" fill="none" />
+              {/* Animated dashed path — draws on scroll */}
+              <motion.path d="M20 20 C80 20 100 20 125 20 C175 8 225 32 250 20 C275 8 325 32 375 20 C425 8 475 32 500 20 C525 8 575 32 625 20 C675 8 725 32 750 20 C775 8 825 32 875 20 C900 20 920 20 980 20"
+                stroke="#C4324A" strokeWidth="1.5" strokeDasharray="6 4" fill="none"
                 style={{ pathLength }} />
-              {/* Node dots — large at step positions, small scattered */}
-              {/* Step 1 area (x~120) */}
-              {[[120, 30, true], [60, 48, false], [175, 8, false]].map(([cx, cy, big], idx) => (
-                <motion.circle key={`d1-${idx}`} cx={cx as number} cy={cy as number} r={big ? 5 : 3}
-                  fill="#C4324A" fillOpacity={big ? 1 : 0.5} stroke={big ? "#FFF" : "none"} strokeWidth={big ? 2 : 0}
-                  style={{ opacity: step1Opacity }} />
-              ))}
-              {/* Between 1-2 (trough at x~340) */}
-              {[[230, 30, false], [285, 58, false], [340, 90, true]].map(([cx, cy, big], idx) => (
-                <motion.circle key={`d12-${idx}`} cx={cx as number} cy={cy as number} r={big ? 4 : 2.5}
-                  fill="#C4324A" fillOpacity={big ? 0.8 : 0.4} stroke={big ? "#FFF" : "none"} strokeWidth={big ? 1.5 : 0}
-                  style={{ opacity: step2Opacity }} />
-              ))}
-              {/* Step 2 area (x~450) */}
-              {[[395, 110, false], [450, 90, true], [505, 62, false]].map(([cx, cy, big], idx) => (
-                <motion.circle key={`d2-${idx}`} cx={cx as number} cy={cy as number} r={big ? 5 : 3}
-                  fill="#C4324A" fillOpacity={big ? 1 : 0.5} stroke={big ? "#FFF" : "none"} strokeWidth={big ? 2 : 0}
-                  style={{ opacity: step2Opacity }} />
-              ))}
-              {/* Between 2-3 (peak at x~560) */}
-              {[[560, 30, true], [615, 5, false]].map(([cx, cy, big], idx) => (
-                <motion.circle key={`d23-${idx}`} cx={cx as number} cy={cy as number} r={big ? 4 : 2.5}
-                  fill="#C4324A" fillOpacity={big ? 0.8 : 0.4} stroke={big ? "#FFF" : "none"} strokeWidth={big ? 1.5 : 0}
-                  style={{ opacity: step3Opacity }} />
-              ))}
-              {/* Step 3 area (x~780) */}
-              {[[670, 30, false], [725, 58, false], [780, 90, true]].map(([cx, cy, big], idx) => (
-                <motion.circle key={`d3-${idx}`} cx={cx as number} cy={cy as number} r={big ? 5 : 3}
-                  fill="#C4324A" fillOpacity={big ? 1 : 0.5} stroke={big ? "#FFF" : "none"} strokeWidth={big ? 2 : 0}
-                  style={{ opacity: step3Opacity }} />
-              ))}
-              {/* Step 4 area (x~890) */}
-              {[[835, 112, false], [890, 90, true], [945, 62, false]].map(([cx, cy, big], idx) => (
-                <motion.circle key={`d4-${idx}`} cx={cx as number} cy={cy as number} r={big ? 5 : 3}
-                  fill="#C4324A" fillOpacity={big ? 1 : 0.5} stroke={big ? "#FFF" : "none"} strokeWidth={big ? 2 : 0}
-                  style={{ opacity: step4Opacity }} />
-              ))}
-              {/* Diamond shapes at key intersections */}
-              <motion.rect x={282} y={55} width={7} height={7} fill="#C4324A" fillOpacity="0.5" transform="rotate(45 285 58)" style={{ opacity: step2Opacity }} />
-              <motion.rect x={612} y={2} width={7} height={7} fill="#C4324A" fillOpacity="0.5" transform="rotate(45 615 5)" style={{ opacity: step3Opacity }} />
-              <motion.rect x={832} y={109} width={7} height={7} fill="#C4324A" fillOpacity="0.5" transform="rotate(45 835 112)" style={{ opacity: step4Opacity }} />
+              {/* Node dots at step positions */}
+              <motion.circle cx={125} cy={20} r={4} fill="#C4324A" stroke="#FFF" strokeWidth={2} style={{ opacity: step1Opacity }} />
+              <motion.circle cx={375} cy={20} r={4} fill="#C4324A" stroke="#FFF" strokeWidth={2} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={625} cy={20} r={4} fill="#C4324A" stroke="#FFF" strokeWidth={2} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={875} cy={20} r={4} fill="#C4324A" stroke="#FFF" strokeWidth={2} style={{ opacity: step4Opacity }} />
+              {/* Small intermediate dots */}
+              <motion.circle cx={250} cy={20} r={2} fill="#C4324A" fillOpacity={0.4} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={500} cy={20} r={2} fill="#C4324A" fillOpacity={0.4} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={750} cy={20} r={2} fill="#C4324A" fillOpacity={0.4} style={{ opacity: step4Opacity }} />
             </svg>
             {/* Traveling glow dot */}
-            <motion.div className="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full shadow-[0_0_14px_rgba(196,50,74,0.7)]"
+            <motion.div className="absolute top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full shadow-[0_0_12px_rgba(196,50,74,0.6)]"
               style={{ background: "linear-gradient(135deg, #C4324A, #E8425A)", left: dotLeft }} />
           </div>
 
@@ -863,16 +824,28 @@ function HowItWorksSection() {
                     >
                       <step.Icon className="h-11 w-11" style={{ color: step.color, filter: `drop-shadow(0 2px 6px ${step.color}35)` }} strokeWidth={1.5} />
                     </motion.div>
-                    {/* Number badge */}
-                    <div className="absolute -top-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full text-white text-[12px] font-bold shadow-lg"
+                    {/* Number badge — top-left matching reference */}
+                    <div className="absolute -top-1 -left-1 flex h-7 w-7 items-center justify-center rounded-full text-white text-[11px] font-bold shadow-lg z-10"
                       style={{ background: `linear-gradient(135deg, ${step.color}, ${step.color}CC)` }}>
                       {i + 1}
                     </div>
-                    {/* Pulse ring */}
+                    {/* Concentric pulse rings — more prominent on step 1 (matching reference radar effect) */}
                     <motion.div className="absolute -inset-1 rounded-full border"
-                      style={{ borderColor: `${step.color}15` }}
-                      animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0, 0.5] }}
-                      transition={{ duration: 3, delay: i * 0.5, repeat: Infinity, ease: "easeInOut" }} />
+                      style={{ borderColor: `${step.color}${i === 0 ? '25' : '12'}` }}
+                      animate={{ scale: [1, 1.15, 1], opacity: [0.6, 0, 0.6] }}
+                      transition={{ duration: 2.5, delay: i * 0.5, repeat: Infinity, ease: "easeInOut" }} />
+                    {i === 0 && (
+                      <>
+                        <motion.div className="absolute -inset-3 rounded-full border"
+                          style={{ borderColor: `${step.color}18` }}
+                          animate={{ scale: [1, 1.12, 1], opacity: [0.4, 0, 0.4] }}
+                          transition={{ duration: 3, delay: 0.4, repeat: Infinity, ease: "easeInOut" }} />
+                        <motion.div className="absolute -inset-5 rounded-full border"
+                          style={{ borderColor: `${step.color}10` }}
+                          animate={{ scale: [1, 1.08, 1], opacity: [0.3, 0, 0.3] }}
+                          transition={{ duration: 3.5, delay: 0.8, repeat: Infinity, ease: "easeInOut" }} />
+                      </>
+                    )}
 
                     {/* Floating decorative elements — matching reference animation */}
                     {/* Step 1: Chat bubble outlines */}
