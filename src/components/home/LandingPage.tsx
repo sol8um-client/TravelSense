@@ -734,6 +734,26 @@ function HowItWorksSection() {
   const howInView = useInView(howRef, { once: true, margin: "-100px" })
   const leadModal = useLeadModal()
 
+  /* Scroll-linked progress for the section */
+  const { scrollYProgress } = useScroll({ target: howRef, offset: ["start end", "end center"] })
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 })
+
+  /* Derived values from scroll progress */
+  const pathLength = useTransform(smoothProgress, [0.1, 0.7], [0, 1])
+  const step1Opacity = useTransform(smoothProgress, [0.05, 0.2], [0, 1])
+  const step2Opacity = useTransform(smoothProgress, [0.15, 0.35], [0, 1])
+  const step3Opacity = useTransform(smoothProgress, [0.3, 0.5], [0, 1])
+  const step4Opacity = useTransform(smoothProgress, [0.45, 0.65], [0, 1])
+  const stepOpacities = [step1Opacity, step2Opacity, step3Opacity, step4Opacity]
+
+  /* Floating decorative elements reveal */
+  const deco1 = useTransform(smoothProgress, [0.2, 0.4], [0, 1])
+  const deco3 = useTransform(smoothProgress, [0.45, 0.6], [0, 1])
+  const deco4 = useTransform(smoothProgress, [0.55, 0.7], [0, 1])
+
+  /* Glow dot position along path */
+  const dotPosition = useTransform(smoothProgress, [0.1, 0.75], [0, 100])
+
   return (
     <section ref={howRef} className="py-20 sm:py-28 bg-brand-mesh overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
@@ -745,32 +765,40 @@ function HowItWorksSection() {
           </h2>
         </div>
 
-        {/* Steps — horizontal cards with enhanced visuals */}
+        {/* Steps — with scroll-animated path */}
         <div className="relative">
-          {/* Animated SVG connector path (desktop) */}
-          <div className="hidden md:block absolute top-[70px] left-[10%] right-[10%] h-8 -translate-y-1/2">
-            <svg className="w-full h-full" viewBox="0 0 800 32" preserveAspectRatio="none">
-              <motion.path d="M0 16 C100 4 200 28 400 16 C600 4 700 28 800 16"
-                fill="none" stroke="url(#howGrad2)" strokeWidth="2"
-                initial={{ pathLength: 0 }} animate={howInView ? { pathLength: 1 } : { pathLength: 0 }}
-                transition={{ duration: 2.5, delay: 0.5, ease: "easeInOut" }} />
+          {/* Scroll-animated SVG connector path (desktop) */}
+          <div className="hidden md:block absolute top-[60px] left-[10%] right-[10%] h-12 z-0">
+            <svg className="w-full h-full" viewBox="0 0 800 48" fill="none" preserveAspectRatio="none">
               <defs>
-                <linearGradient id="howGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#C4324A" stopOpacity="0.3" />
-                  <stop offset="50%" stopColor="#B0B8C4" stopOpacity="0.2" />
-                  <stop offset="100%" stopColor="#C4324A" stopOpacity="0.3" />
+                <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#C4324A" />
+                  <stop offset="50%" stopColor="#E8425A" />
+                  <stop offset="100%" stopColor="#C4324A" />
                 </linearGradient>
               </defs>
+              {/* Background dashed path (faint guide) */}
+              <path d="M0 24 C100 8 150 40 200 24 C250 8 350 40 400 24 C450 8 550 40 600 24 C650 8 750 40 800 24"
+                stroke="#C4324A" strokeOpacity="0.08" strokeWidth="2" strokeDasharray="6 6" fill="none" />
+              {/* Animated drawing path */}
+              <motion.path d="M0 24 C100 8 150 40 200 24 C250 8 350 40 400 24 C450 8 550 40 600 24 C650 8 750 40 800 24"
+                stroke="url(#pathGrad)" strokeWidth="2.5" strokeDasharray="8 4" fill="none"
+                style={{ pathLength }} />
+              {/* Node dots along the path */}
+              {[[0, 24], [200, 24], [400, 24], [600, 24], [800, 24]].map(([cx, cy], idx) => (
+                <motion.circle key={`node-${idx}`} cx={cx} cy={cy} r="4"
+                  fill="#C4324A" stroke="#FFFFFF" strokeWidth="2"
+                  style={{ opacity: stepOpacities[Math.min(idx, 3)] }} />
+              ))}
             </svg>
-            <motion.div className="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full shadow-[0_0_12px_rgba(196,50,74,0.5)]"
-              style={{ background: "linear-gradient(135deg, #C4324A, #E8425A)" }}
-              animate={{ left: ["0%", "100%", "0%"] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} />
+            {/* Traveling glow dot */}
+            <motion.div className="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full shadow-[0_0_12px_rgba(196,50,74,0.6)]"
+              style={{ background: "linear-gradient(135deg, #C4324A, #E8425A)", left: useTransform(dotPosition, (v) => `${v}%`) }} />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {steps.map((step, i) => (
-              <div key={step.title} data-reveal-scale style={{ transitionDelay: `${i * 0.12}s` }}>
+              <motion.div key={step.title} style={{ opacity: stepOpacities[i] }}>
                 <div className="group text-center relative magnetic-card">
                   {/* Premium icon circle */}
                   <motion.div
@@ -779,11 +807,9 @@ function HowItWorksSection() {
                       background: `linear-gradient(135deg, ${step.color}08, ${step.color}15)`,
                       border: `2px solid ${step.color}25`,
                       boxShadow: `0 8px 30px ${step.color}12`,
+                      scale: useTransform(stepOpacities[i], [0, 1], [0.7, 1]),
                     }}
                     whileHover={{ scale: 1.05 }}
-                    initial={{ opacity: 0, scale: 0, rotate: -30 }}
-                    animate={howInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-                    transition={{ delay: 0.3 + i * 0.2, duration: 0.7, type: "spring", stiffness: 200, damping: 15 }}
                   >
                     <div className="absolute inset-3 rounded-full border border-dashed" style={{ borderColor: `${step.color}12` }} />
                     <motion.div className="magnetic-icon"
@@ -802,28 +828,68 @@ function HowItWorksSection() {
                       style={{ borderColor: `${step.color}15` }}
                       animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0, 0.5] }}
                       transition={{ duration: 3, delay: i * 0.5, repeat: Infinity, ease: "easeInOut" }} />
+
+                    {/* Floating decorative elements — desktop only */}
+                    {i === 0 && (
+                      <motion.div className="hidden md:block absolute -right-6 -top-2" style={{ opacity: deco1 }}>
+                        <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
+                          <MessageCircle className="h-5 w-5 text-secondary/30" strokeWidth={1.5} />
+                        </motion.div>
+                      </motion.div>
+                    )}
+                    {i === 0 && (
+                      <motion.div className="hidden md:block absolute -left-4 top-8" style={{ opacity: deco1 }}>
+                        <motion.div animate={{ y: [0, 4, 0], rotate: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
+                          <HeartHandshake className="h-4 w-4 text-secondary/20" strokeWidth={1.5} />
+                        </motion.div>
+                      </motion.div>
+                    )}
+                    {i === 2 && (
+                      <motion.div className="hidden md:block absolute -right-8 top-4" style={{ opacity: deco3 }}>
+                        <motion.div animate={{ y: [0, -4, 0], rotate: [0, 8, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}>
+                          <FileText className="h-4 w-4 text-silver/30" strokeWidth={1.5} />
+                        </motion.div>
+                      </motion.div>
+                    )}
+                    {i === 2 && (
+                      <motion.div className="hidden md:block absolute -left-6 bottom-2" style={{ opacity: deco3 }}>
+                        <motion.div animate={{ y: [0, 3, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
+                          <Shield className="h-4 w-4 text-secondary/20" strokeWidth={1.5} />
+                        </motion.div>
+                      </motion.div>
+                    )}
+                    {i === 3 && (
+                      <>
+                        <motion.div className="hidden md:block absolute -right-5 -top-3" style={{ opacity: deco4 }}>
+                          <motion.div animate={{ scale: [1, 1.3, 1], rotate: [0, 15, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
+                            <Sparkles className="h-4 w-4 text-secondary/30" strokeWidth={1.5} />
+                          </motion.div>
+                        </motion.div>
+                        <motion.div className="hidden md:block absolute -left-5 -bottom-1" style={{ opacity: deco4 }}>
+                          <motion.div animate={{ scale: [0.8, 1.2, 0.8] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}>
+                            <Sparkles className="h-3 w-3 text-silver/25" strokeWidth={1.5} />
+                          </motion.div>
+                        </motion.div>
+                      </>
+                    )}
                   </motion.div>
 
                   {/* Arrow connector (desktop) */}
                   {i < 3 && (
-                    <div className="hidden md:block absolute top-[60px] -right-3 z-10">
+                    <motion.div className="hidden md:block absolute top-[60px] -right-3 z-10"
+                      style={{ opacity: stepOpacities[i + 1] }}>
                       <ArrowRight className="h-4 w-4 text-silver/30" />
-                    </div>
+                    </motion.div>
                   )}
 
                   <h3 className="font-heading text-lg font-normal tracking-[0.06em] metallic-text">{step.title}</h3>
                   <p className="mt-1.5 text-[12px] text-muted-foreground font-light leading-relaxed max-w-[180px] mx-auto">{step.desc}</p>
-                  {/* Action label — what happens at this step */}
-                  <motion.p
-                    className="mt-3 text-[9px] font-heading tracking-[0.15em] uppercase text-secondary/50"
-                    initial={{ opacity: 0 }}
-                    animate={howInView ? { opacity: 1 } : {}}
-                    transition={{ delay: 1 + i * 0.2 }}
-                  >
+                  {/* Action label */}
+                  <p className="mt-3 text-[9px] font-heading tracking-[0.15em] uppercase text-secondary/50">
                     {step.action}
-                  </motion.p>
+                  </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
