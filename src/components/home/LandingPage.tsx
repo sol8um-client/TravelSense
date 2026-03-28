@@ -789,27 +789,30 @@ function HowItWorksSection() {
 
         {/* Steps — with scroll-animated path */}
         <div className="relative">
-          {/* Desktop: Scroll-animated dashed connector path */}
-          <div className="hidden md:block absolute top-[60px] left-[12.5%] right-[12.5%] h-[2px] z-0 pointer-events-none">
-            {/* Faint dashed guide */}
-            <div className="absolute inset-0 border-t-[1.5px] border-dashed border-secondary/[0.08]" />
-            {/* Animated dashed path overlay */}
-            <motion.div className="absolute top-0 left-0 h-full border-t-[1.5px] border-dashed border-secondary origin-left"
-              style={{ scaleX: pathLength, width: "100%" }} />
-            {/* Node dots at step positions (0%, 33%, 66%, 100%) */}
-            {[0, 33.3, 66.6, 100].map((pos, idx) => (
-              <motion.div key={`node-${idx}`}
-                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 h-3 w-3 rounded-full bg-secondary border-2 border-white shadow-sm"
-                style={{ left: `${pos}%`, opacity: stepOpacities[idx] }} />
-            ))}
-            {/* Small intermediate dots between steps */}
-            {[16.6, 50, 83.3].map((pos, idx) => (
-              <motion.div key={`mid-${idx}`}
-                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 h-1.5 w-1.5 rounded-full bg-secondary/40"
-                style={{ left: `${pos}%`, opacity: stepOpacities[idx + 1] }} />
-            ))}
+          {/* Desktop: Scroll-animated dashed SVG connector path — gentle wave */}
+          <div className="hidden md:block absolute top-[35px] left-[6%] right-[6%] h-[55px] z-0 pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 1000 50" fill="none" preserveAspectRatio="none">
+              {/* Gentle wave path: passes through step centers at x=125,375,625,875 */}
+              <path
+                d="M30 25 C80 25 100 25 125 25 C190 12 260 38 325 25 C360 18 390 25 375 25 C410 25 440 32 500 25 C560 18 590 25 625 25 C690 38 760 12 825 25 C850 25 860 25 875 25 C900 25 940 25 970 25"
+                stroke="#C4324A" strokeOpacity="0.07" strokeWidth="2" strokeDasharray="8 5" fill="none" />
+              {/* Animated dashed path — draws on scroll */}
+              <motion.path
+                d="M30 25 C80 25 100 25 125 25 C190 12 260 38 325 25 C360 18 390 25 375 25 C410 25 440 32 500 25 C560 18 590 25 625 25 C690 38 760 12 825 25 C850 25 860 25 875 25 C900 25 940 25 970 25"
+                stroke="#C4324A" strokeWidth="2" strokeDasharray="8 5" fill="none"
+                style={{ pathLength }} />
+              {/* Node dots at step positions */}
+              <motion.circle cx={125} cy={25} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step1Opacity }} />
+              <motion.circle cx={375} cy={25} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={625} cy={25} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={875} cy={25} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step4Opacity }} />
+              {/* Small intermediate dots */}
+              <motion.circle cx={250} cy={25} r={2.5} fill="#C4324A" fillOpacity={0.35} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={500} cy={25} r={2.5} fill="#C4324A" fillOpacity={0.35} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={750} cy={25} r={2.5} fill="#C4324A" fillOpacity={0.35} style={{ opacity: step4Opacity }} />
+            </svg>
             {/* Traveling glow dot */}
-            <motion.div className="absolute top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full shadow-[0_0_12px_rgba(196,50,74,0.6)]"
+            <motion.div className="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full shadow-[0_0_14px_rgba(196,50,74,0.7)]"
               style={{ background: "linear-gradient(135deg, #C4324A, #E8425A)", left: dotLeft }} />
           </div>
 
