@@ -56,7 +56,7 @@ export function Header() {
                 alt="TravelSense"
                 width={160}
                 height={90}
-                className="h-11 w-auto sm:h-13 transition-all duration-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)] hover:scale-105"
+                className="h-11 w-auto sm:h-13 logo-embossed"
                 priority
               />
             </Link>

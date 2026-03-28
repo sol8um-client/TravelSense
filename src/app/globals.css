@@ -2,7 +2,7 @@
 
 :root {
   /* ══ Brand Colors — 4 Core: Silver, Cherry Red, Dark Blue, White ══ */
-  --primary: #0B1426;
+  --primary: #0A1425;
   --primary-light: #1B2D4E;
   --primary-dark: #060B15;
   --primary-medium: #122040;
@@ -391,15 +391,22 @@ html {
 /* ═══ Section wave dividers ═══ */
 .wave-divider {
   position: relative;
+  z-index: 2;
   width: 100%;
-  overflow: hidden;
   line-height: 0;
+  border: none !important;
+}
+
+.wave-divider + * {
+  position: relative;
+  z-index: 0;
 }
 
 .wave-divider svg {
   display: block;
   width: 100%;
   height: 35px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
 }
 
 @media (min-width: 640px) {
@@ -470,6 +477,27 @@ html {
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
   animation: borderShine 3s ease-in-out infinite;
+}
+
+/* ═══ Embossed logo — 3D metallic badge effect ═══ */
+.logo-embossed {
+  border-radius: 0.75rem;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.4),
+    0 6px 16px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    inset 0 -1px 0 rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.logo-embossed:hover {
+  box-shadow:
+    0 4px 8px rgba(0,0,0,0.5),
+    0 12px 28px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    inset 0 -1px 0 rgba(0,0,0,0.4);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* ═══ Outline CTA — silver border ═══ */
@@ -676,7 +704,7 @@ html {
 
 /* ═══ Brand gradient backgrounds ═══ */
 .bg-brand-gradient-dark {
-  background: linear-gradient(160deg, #030810 0%, #0B1426 35%, #152240 65%, #0B1426 100%);
+  background: linear-gradient(160deg, #030810 0%, #0A1425 35%, #152240 65%, #0A1425 100%);
 }
 
 .bg-brand-gradient-light {

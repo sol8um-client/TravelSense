@@ -545,7 +545,7 @@ const problems = [
   { Icon: Layers, title: "Too Many Platforms", short: "5+ apps just for 1 trip", stat: "5+", visual: "Juggling between booking, reviews, visa, flights..." },
   { Icon: SearchX, title: "No Personal Guidance", short: "Algorithms don't understand you", stat: "0%", visual: "Cookie-cutter plans that miss what matters to you" },
   { Icon: EyeOff, title: "Hidden Pricing", short: "Surprise fees at checkout", stat: "30%", visual: "The price you see is never the price you pay" },
-  { Icon: BookOpenCheck, title: "No Edu Travel", short: "Zero structured options", stat: "0", visual: "Students deserve travel that teaches, not just entertains" },
+  { Icon: BookOpenCheck, title: "Zero Support On-Trip", short: "You're on your own after booking", stat: "0%", visual: "Once you've paid, good luck reaching anyone if things go wrong" },
 ]
 
 function ProblemSection() {
@@ -739,9 +739,9 @@ function HowItWorksSection() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-14" data-reveal>
-          <p className="text-[10px] font-heading font-normal tracking-[0.3em] uppercase text-secondary/70">Your Journey With Us</p>
+          <p className="text-[10px] font-heading font-normal tracking-[0.3em] uppercase text-secondary/70">Simple By Design</p>
           <h2 className="mt-3 font-heading text-2xl sm:text-3xl md:text-4xl font-normal tracking-[0.08em] leading-tight metallic-text heading-accent">
-            How TravelSense Works
+            Four Steps to Your Perfect Trip
           </h2>
         </div>
 
@@ -939,7 +939,7 @@ const destinations = [
   { name: "Bali", country: "Indonesia", price: 45000, priceLabel: "45,000", rating: "4.8", image: "/images/destinations/bali.jpg", accent: "#C4324A" },
   { name: "Santorini", country: "Greece", price: 85000, priceLabel: "85,000", rating: "4.9", image: "/images/destinations/santorini.jpg", accent: "#B0B8C4" },
   { name: "Jaipur", country: "India", price: 12000, priceLabel: "12,000", rating: "4.7", image: "/images/destinations/jaipur.jpg", accent: "#C4324A" },
-  { name: "Swiss Alps", country: "Switzerland", price: 120000, priceLabel: "1,20,000", rating: "4.9", image: "/images/destinations/swiss-alps.jpg", accent: "#0B1426" },
+  { name: "Swiss Alps", country: "Switzerland", price: 120000, priceLabel: "1,20,000", rating: "4.9", image: "/images/destinations/swiss-alps.jpg", accent: "#0A1425" },
 ]
 
 function DestinationsSection() {
@@ -1032,7 +1032,7 @@ function USPSection() {
 
   return (
     <section ref={ref} className="relative overflow-hidden noise-overlay">
-      <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(160deg, #030810 0%, #0B1426 35%, #152240 65%, #0B1426 100%)", backgroundSize: "400% 400%", animation: "gradientShift 25s ease infinite" }} />
+      <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(160deg, #030810 0%, #0A1425 35%, #152240 65%, #0A1425 100%)", backgroundSize: "400% 400%", animation: "gradientShift 25s ease infinite" }} />
       <div className="absolute top-0 right-[10%] h-[600px] w-[600px] rounded-full bg-secondary/[0.04] blur-[200px] animate-[orbFloat1_30s_ease-in-out_infinite]" />
       <div className="absolute bottom-0 left-[5%] h-[400px] w-[400px] rounded-full bg-silver/[0.02] blur-[150px] animate-[orbFloat2_35s_ease-in-out_infinite]" />
       <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: "linear-gradient(rgba(176,184,196,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(176,184,196,0.1) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
@@ -1050,11 +1050,11 @@ function USPSection() {
 
             <div data-reveal style={{ transitionDelay: "0.1s" }}>
               <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-normal leading-[1.15] tracking-[0.12em]">
-                <span className="metallic-text-dark">Real Humans.</span>
+                <span className="metallic-text-dark">We Pick Up.</span>
                 <br />
-                <span className="metallic-red">Real Help.</span>
+                <span className="metallic-red">Every Call.</span>
                 <br />
-                <span className="metallic-silver">24/7.</span>
+                <span className="metallic-silver">Every Time.</span>
               </h2>
             </div>
 
@@ -1463,7 +1463,7 @@ function CTASection() {
 
   return (
     <section ref={ctaRef} className="relative py-28 sm:py-36 overflow-hidden noise-overlay">
-      <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(160deg, #030810 0%, #0B1426 35%, #152240 65%, #0B1426 100%)", backgroundSize: "400% 400%", animation: "gradientShift 25s ease infinite" }} />
+      <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(160deg, #030810 0%, #0A1425 35%, #152240 65%, #0A1425 100%)", backgroundSize: "400% 400%", animation: "gradientShift 25s ease infinite" }} />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-secondary/[0.05] blur-[200px] animate-[orbFloat1_20s_ease-in-out_infinite]" />
       <div className="absolute top-[20%] left-[10%] h-[300px] w-[300px] rounded-full bg-silver/[0.02] blur-[150px]" />
       <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: "linear-gradient(rgba(176,184,196,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(176,184,196,0.3) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
@@ -1604,7 +1604,7 @@ function NewsletterSection() {
     setTimeout(() => {
       setStatus("success")
       // Confetti burst
-      const colors = ["#C4324A", "#B0B8C4", "#0B1426", "#C4324A", "#B0B8C4", "#FFFFFF", "#C4324A", "#B0B8C4"]
+      const colors = ["#C4324A", "#B0B8C4", "#0A1425", "#C4324A", "#B0B8C4", "#FFFFFF", "#C4324A", "#B0B8C4"]
       const burst = colors.map((color, i) => ({
         id: Date.now() + i,
         x: (Math.random() - 0.5) * 120,
@@ -1705,9 +1705,10 @@ function NewsletterSection() {
 
 function WaveWhiteToGray() {
   return (
-    <div className="wave-divider -mb-px" style={{ background: "#FFFFFF" }}>
+    <div className="wave-divider -mb-3" style={{ background: "#F4F6F9" }}>
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-        <path d="M0,20 Q360,55 720,30 T1440,25 L1440,60 L0,60 Z" fill="#F4F6F9" />
+        <rect x="0" y="0" width="1440" height="8" fill="#FFFFFF" />
+        <path d="M0,0 L0,30 Q360,5 720,35 T1440,20 L1440,0 Z" fill="#FFFFFF" />
       </svg>
     </div>
   )
@@ -1715,9 +1716,10 @@ function WaveWhiteToGray() {
 
 function WaveGrayToWhite() {
   return (
-    <div className="wave-divider -mb-px" style={{ background: "#F4F6F9" }}>
+    <div className="wave-divider -mb-3" style={{ background: "#FFFFFF" }}>
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-        <path d="M0,25 Q360,55 720,20 T1440,30 L1440,60 L0,60 Z" fill="#FFFFFF" />
+        <rect x="0" y="0" width="1440" height="8" fill="#F4F6F9" />
+        <path d="M0,0 L0,30 Q360,5 720,35 T1440,20 L1440,0 Z" fill="#F4F6F9" />
       </svg>
     </div>
   )
@@ -1725,10 +1727,11 @@ function WaveGrayToWhite() {
 
 function WaveWhiteToDark() {
   return (
-    <div className="wave-divider -mb-px" style={{ background: "#FFFFFF" }}>
+    <div className="wave-divider -mb-3" style={{ background: "#0A1425" }}>
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <path d="M0,35 Q360,70 720,30 T1440,45 L1440,80 L0,80 Z" fill="#0B1426" opacity="0.4" />
-        <path d="M0,50 Q360,75 720,45 T1440,55 L1440,80 L0,80 Z" fill="#0B1426" />
+        <rect x="0" y="0" width="1440" height="10" fill="#FFFFFF" />
+        <path d="M0,0 L0,35 Q360,5 720,40 T1440,25 L1440,0 Z" fill="#FFFFFF" />
+        <path d="M0,0 L0,20 Q360,0 720,25 T1440,15 L1440,0 Z" fill="#FFFFFF" opacity="0.5" />
       </svg>
     </div>
   )
@@ -1736,10 +1739,11 @@ function WaveWhiteToDark() {
 
 function WaveDarkToWhite() {
   return (
-    <div className="wave-divider -mb-px" style={{ background: "#0B1426" }}>
+    <div className="wave-divider -mb-3" style={{ background: "#FFFFFF" }}>
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <path d="M0,35 Q360,70 720,25 T1440,40 L1440,80 L0,80 Z" fill="#FFFFFF" opacity="0.5" />
-        <path d="M0,50 Q360,75 720,40 T1440,55 L1440,80 L0,80 Z" fill="#FFFFFF" />
+        <rect x="0" y="0" width="1440" height="10" fill="#0A1425" />
+        <path d="M0,0 L0,35 Q360,5 720,40 T1440,25 L1440,0 Z" fill="#0A1425" />
+        <path d="M0,0 L0,20 Q360,0 720,25 T1440,15 L1440,0 Z" fill="#0A1425" opacity="0.5" />
       </svg>
     </div>
   )
@@ -1747,10 +1751,11 @@ function WaveDarkToWhite() {
 
 function WaveGrayToDark() {
   return (
-    <div className="wave-divider -mb-px" style={{ background: "#F4F6F9" }}>
+    <div className="wave-divider -mb-3" style={{ background: "#0A1425" }}>
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <path d="M0,40 Q360,70 720,30 T1440,50 L1440,80 L0,80 Z" fill="#0B1426" opacity="0.4" />
-        <path d="M0,55 Q360,75 720,45 T1440,60 L1440,80 L0,80 Z" fill="#0B1426" />
+        <rect x="0" y="0" width="1440" height="10" fill="#F4F6F9" />
+        <path d="M0,0 L0,30 Q360,5 720,35 T1440,20 L1440,0 Z" fill="#F4F6F9" />
+        <path d="M0,0 L0,15 Q360,0 720,20 T1440,10 L1440,0 Z" fill="#F4F6F9" opacity="0.5" />
       </svg>
     </div>
   )
@@ -1758,10 +1763,11 @@ function WaveGrayToDark() {
 
 function WaveDarkToGray() {
   return (
-    <div className="wave-divider -mb-px" style={{ background: "#0B1426" }}>
+    <div className="wave-divider -mb-3" style={{ background: "#F4F6F9" }}>
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <path d="M0,30 Q360,65 720,25 T1440,40 L1440,80 L0,80 Z" fill="#F4F6F9" opacity="0.5" />
-        <path d="M0,50 Q360,70 720,40 T1440,55 L1440,80 L0,80 Z" fill="#F4F6F9" />
+        <rect x="0" y="0" width="1440" height="10" fill="#0A1425" />
+        <path d="M0,0 L0,40 Q360,5 720,35 T1440,25 L1440,0 Z" fill="#0A1425" />
+        <path d="M0,0 L0,20 Q360,0 720,25 T1440,10 L1440,0 Z" fill="#0A1425" opacity="0.5" />
       </svg>
     </div>
   )
@@ -1769,10 +1775,11 @@ function WaveDarkToGray() {
 
 function WaveToFooter() {
   return (
-    <div className="wave-divider -mb-px" style={{ background: "#FFFFFF" }}>
+    <div className="wave-divider -mb-3" style={{ background: "#0A1425" }}>
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <path d="M0,35 Q360,65 720,30 T1440,45 L1440,80 L0,80 Z" fill="#0B1426" opacity="0.4" />
-        <path d="M0,50 Q360,70 720,45 T1440,55 L1440,80 L0,80 Z" fill="#0B1426" />
+        <rect x="0" y="0" width="1440" height="10" fill="#FFFFFF" />
+        <path d="M0,0 L0,35 Q360,5 720,30 T1440,25 L1440,0 Z" fill="#FFFFFF" />
+        <path d="M0,0 L0,20 Q360,0 720,20 T1440,15 L1440,0 Z" fill="#FFFFFF" opacity="0.5" />
       </svg>
     </div>
   )
@@ -1791,7 +1798,6 @@ export default function LandingPage() {
       <ProblemSection />
       <WaveDarkToWhite />
       <HowItWorksSection />
-      <CategoriesSection />
       <WaveWhiteToGray />
       <DestinationsSection />
       <WaveGrayToDark />

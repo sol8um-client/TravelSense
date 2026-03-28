@@ -64,7 +64,7 @@ export function Footer() {
                 alt="TravelSense"
                 width={160}
                 height={90}
-                className="h-12 w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)] transition-all duration-300 hover:drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)] hover:scale-105"
+                className="h-12 w-auto logo-embossed"
               />
             </Link>
             <p className="mt-4 max-w-xs text-[13px] leading-[1.8] text-white/50 font-light tracking-wide">
