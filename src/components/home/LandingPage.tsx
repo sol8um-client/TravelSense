@@ -47,6 +47,7 @@ import {
   Heart,
   Cpu,
   Plane,
+  Headphones,
   Train,
   Sailboat,
   Landmark,
@@ -725,10 +726,10 @@ function ProblemSection() {
    ═══════════════════════════════════════════════════════════════ */
 
 const steps: { Icon: LucideIcon; title: string; desc: string; action: string; color: string }[] = [
-  { Icon: MessageSquare, title: "Consult", desc: "Share your dream trip with a real human — no forms, no bots", action: "You talk, we listen", color: "#C4324A" },
-  { Icon: Map, title: "Plan", desc: "We craft your perfect day-by-day itinerary tailored to you", action: "Custom itinerary in 24hrs", color: "#B0B8C4" },
-  { Icon: Ticket, title: "Book", desc: "Flights, stays, visa — all handled end-to-end in one place", action: "Everything sorted", color: "#C4324A" },
-  { Icon: Globe, title: "Travel", desc: "On-tour support, 24/7. We pick up. Always. No exceptions.", action: "We're with you", color: "#B0B8C4" },
+  { Icon: Headphones, title: "Consult", desc: "Co-create your dream. We listen, you talk.", action: "You talk, we listen", color: "#C4324A" },
+  { Icon: FileText, title: "Plan", desc: "Tailored daily itinerary. Crafted for you.", action: "Custom itinerary in 24hrs", color: "#B0B8C4" },
+  { Icon: Plane, title: "Book", desc: "Seamless travel details. Everything handled.", action: "Everything sorted", color: "#C4324A" },
+  { Icon: Globe, title: "Travel", desc: "Joyful exploration. Always-on support.", action: "We're with you", color: "#B0B8C4" },
 ]
 
 function HowItWorksSection() {
@@ -767,167 +768,185 @@ function HowItWorksSection() {
   return (
     <section ref={howRef} className="py-20 sm:py-28 bg-brand-mesh overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-14" data-reveal>
-          <p className="text-[10px] font-heading font-normal tracking-[0.3em] uppercase text-secondary/70">Simple By Design</p>
+        {/* Header — with floating sparkle decorations near top-right matching reference */}
+        <div className="relative text-center mb-14" data-reveal>
+          <p className="text-[10px] font-heading font-normal tracking-[0.3em] uppercase text-secondary/70">Your Journey With Us</p>
           <h2 className="mt-3 font-heading text-2xl sm:text-3xl md:text-4xl font-normal tracking-[0.08em] leading-tight metallic-text heading-accent">
-            Four Steps to Your Perfect Trip
+            How TravelSense Works
           </h2>
+          {/* Floating sparkle decorations near heading — matching reference top-right */}
+          <motion.div className="hidden md:block absolute -right-4 top-0" style={{ opacity: deco4 }}>
+            <motion.div animate={{ scale: [1, 1.3, 1], rotate: [0, 90, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 0v16M0 8h16M2.3 2.3l11.4 11.4M13.7 2.3L2.3 13.7" stroke="#C4324A" strokeWidth="1" strokeOpacity="0.25" strokeLinecap="round" /></svg>
+            </motion.div>
+          </motion.div>
+          <motion.div className="hidden md:block absolute -right-8 top-8" style={{ opacity: deco4 }}>
+            <motion.div animate={{ scale: [0.8, 1.2, 0.8] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 0v10M0 5h10" stroke="#B0B8C4" strokeWidth="1.2" strokeOpacity="0.3" strokeLinecap="round" /></svg>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* Steps — with scroll-animated path */}
         <div className="relative">
-          {/* Scroll-animated dashed connector path (desktop) — gentle horizontal wave matching reference */}
-          <div className="hidden md:block absolute top-[48px] left-[10%] right-[10%] h-[28px] z-0 pointer-events-none">
-            <svg className="w-full h-full" viewBox="0 0 1000 40" fill="none" preserveAspectRatio="none">
-              {/* Faint dashed guide path */}
-              <path d="M20 20 C80 20 100 20 125 20 C175 8 225 32 250 20 C275 8 325 32 375 20 C425 8 475 32 500 20 C525 8 575 32 625 20 C675 8 725 32 750 20 C775 8 825 32 875 20 C900 20 920 20 980 20"
-                stroke="#C4324A" strokeOpacity="0.08" strokeWidth="1.5" strokeDasharray="6 4" fill="none" />
-              {/* Animated dashed path — draws on scroll */}
-              <motion.path d="M20 20 C80 20 100 20 125 20 C175 8 225 32 250 20 C275 8 325 32 375 20 C425 8 475 32 500 20 C525 8 575 32 625 20 C675 8 725 32 750 20 C775 8 825 32 875 20 C900 20 920 20 980 20"
-                stroke="#C4324A" strokeWidth="1.5" strokeDasharray="6 4" fill="none"
-                style={{ pathLength }} />
-              {/* Node dots at step positions */}
-              <motion.circle cx={125} cy={20} r={4} fill="#C4324A" stroke="#FFF" strokeWidth={2} style={{ opacity: step1Opacity }} />
-              <motion.circle cx={375} cy={20} r={4} fill="#C4324A" stroke="#FFF" strokeWidth={2} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={625} cy={20} r={4} fill="#C4324A" stroke="#FFF" strokeWidth={2} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={875} cy={20} r={4} fill="#C4324A" stroke="#FFF" strokeWidth={2} style={{ opacity: step4Opacity }} />
-              {/* Small intermediate dots */}
-              <motion.circle cx={250} cy={20} r={2} fill="#C4324A" fillOpacity={0.4} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={500} cy={20} r={2} fill="#C4324A" fillOpacity={0.4} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={750} cy={20} r={2} fill="#C4324A" fillOpacity={0.4} style={{ opacity: step4Opacity }} />
-            </svg>
+          {/* Desktop: Scroll-animated dashed connector path */}
+          <div className="hidden md:block absolute top-[60px] left-[12.5%] right-[12.5%] h-[2px] z-0 pointer-events-none">
+            {/* Faint dashed guide */}
+            <div className="absolute inset-0 border-t-[1.5px] border-dashed border-secondary/[0.08]" />
+            {/* Animated dashed path overlay */}
+            <motion.div className="absolute top-0 left-0 h-full border-t-[1.5px] border-dashed border-secondary origin-left"
+              style={{ scaleX: pathLength, width: "100%" }} />
+            {/* Node dots at step positions (0%, 33%, 66%, 100%) */}
+            {[0, 33.3, 66.6, 100].map((pos, idx) => (
+              <motion.div key={`node-${idx}`}
+                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 h-3 w-3 rounded-full bg-secondary border-2 border-white shadow-sm"
+                style={{ left: `${pos}%`, opacity: stepOpacities[idx] }} />
+            ))}
+            {/* Small intermediate dots between steps */}
+            {[16.6, 50, 83.3].map((pos, idx) => (
+              <motion.div key={`mid-${idx}`}
+                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 h-1.5 w-1.5 rounded-full bg-secondary/40"
+                style={{ left: `${pos}%`, opacity: stepOpacities[idx + 1] }} />
+            ))}
             {/* Traveling glow dot */}
             <motion.div className="absolute top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full shadow-[0_0_12px_rgba(196,50,74,0.6)]"
               style={{ background: "linear-gradient(135deg, #C4324A, #E8425A)", left: dotLeft }} />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {/* Mobile: Vertical dashed connector path */}
+          <div className="md:hidden absolute top-[70px] bottom-[70px] left-1/2 -translate-x-1/2 w-[2px] z-0 pointer-events-none">
+            <div className="absolute inset-0 border-l-[1.5px] border-dashed border-secondary/[0.08]" />
+            <motion.div className="absolute top-0 left-0 w-full border-l-[1.5px] border-dashed border-secondary origin-top"
+              style={{ scaleY: pathLength, height: "100%" }} />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
             {steps.map((step, i) => (
               <motion.div key={step.title} style={{ opacity: stepOpacities[i] }}>
-                <div className="group text-center relative magnetic-card">
-                  {/* Premium icon circle */}
+                <div className="group text-center relative">
+                  {/* Icon circle — matching reference: cherry for steps 1,3, silver for steps 2,4 */}
                   <motion.div
-                    className="relative mx-auto mb-5 flex h-[120px] w-[120px] items-center justify-center rounded-full transition-all duration-500 group-hover:-translate-y-3"
+                    className="relative mx-auto mb-5 flex h-[120px] w-[120px] items-center justify-center rounded-full transition-all duration-500 group-hover:-translate-y-2"
                     style={{
-                      background: `linear-gradient(135deg, ${step.color}08, ${step.color}15)`,
-                      border: `2px solid ${step.color}25`,
-                      boxShadow: `0 8px 30px ${step.color}12`,
+                      background: `linear-gradient(135deg, ${step.color}06, ${step.color}12)`,
+                      border: `1.5px solid ${step.color}20`,
                       scale: stepScales[i],
                     }}
                     whileHover={{ scale: 1.05 }}
                   >
-                    <div className="absolute inset-3 rounded-full border border-dashed" style={{ borderColor: `${step.color}12` }} />
-                    <motion.div className="magnetic-icon"
+                    {/* Inner dashed ring */}
+                    <div className="absolute inset-3 rounded-full border border-dashed" style={{ borderColor: `${step.color}10` }} />
+                    {/* Icon */}
+                    <motion.div
                       animate={i === 0 ? { y: [0, -3, 0] } : i === 1 ? { rotateY: [0, 10, 0] } : i === 2 ? { rotate: [0, 5, -5, 0] } : { rotateZ: [0, 360] }}
                       transition={i === 3 ? { duration: 20, repeat: Infinity, ease: "linear" } : { duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     >
-                      <step.Icon className="h-11 w-11" style={{ color: step.color, filter: `drop-shadow(0 2px 6px ${step.color}35)` }} strokeWidth={1.5} />
+                      <step.Icon className="h-10 w-10" style={{ color: step.color, filter: `drop-shadow(0 2px 6px ${step.color}30)` }} strokeWidth={1.5} />
                     </motion.div>
-                    {/* Number badge — top-left matching reference */}
+                    {/* Number badge — top-left, matching reference */}
                     <div className="absolute -top-1 -left-1 flex h-7 w-7 items-center justify-center rounded-full text-white text-[11px] font-bold shadow-lg z-10"
-                      style={{ background: `linear-gradient(135deg, ${step.color}, ${step.color}CC)` }}>
+                      style={{ background: step.color }}>
                       {i + 1}
                     </div>
-                    {/* Concentric pulse rings — more prominent on step 1 (matching reference radar effect) */}
+
+                    {/* === Concentric pulse rings — prominent on step 1 (reference radar effect) === */}
                     <motion.div className="absolute -inset-1 rounded-full border"
-                      style={{ borderColor: `${step.color}${i === 0 ? '25' : '12'}` }}
-                      animate={{ scale: [1, 1.15, 1], opacity: [0.6, 0, 0.6] }}
+                      style={{ borderColor: `${step.color}${i === 0 ? '20' : '0A'}` }}
+                      animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0, 0.5] }}
                       transition={{ duration: 2.5, delay: i * 0.5, repeat: Infinity, ease: "easeInOut" }} />
                     {i === 0 && (
                       <>
                         <motion.div className="absolute -inset-3 rounded-full border"
-                          style={{ borderColor: `${step.color}18` }}
+                          style={{ borderColor: `${step.color}15` }}
                           animate={{ scale: [1, 1.12, 1], opacity: [0.4, 0, 0.4] }}
                           transition={{ duration: 3, delay: 0.4, repeat: Infinity, ease: "easeInOut" }} />
                         <motion.div className="absolute -inset-5 rounded-full border"
-                          style={{ borderColor: `${step.color}10` }}
+                          style={{ borderColor: `${step.color}0D` }}
                           animate={{ scale: [1, 1.08, 1], opacity: [0.3, 0, 0.3] }}
                           transition={{ duration: 3.5, delay: 0.8, repeat: Infinity, ease: "easeInOut" }} />
                       </>
                     )}
 
-                    {/* Floating decorative elements — matching reference animation */}
+                    {/* === Floating decorative elements matching reference exactly === */}
+
                     {/* Step 1: Chat bubble outlines */}
                     {i === 0 && (
                       <>
                         <motion.div className="hidden md:block absolute -left-8 -top-2" style={{ opacity: deco1 }}>
                           <motion.div animate={{ y: [0, -4, 0], rotate: [0, -8, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
-                            <MessageSquare className="h-5 w-5 text-secondary/35" strokeWidth={1.5} />
+                            <MessageSquare className="h-5 w-5 text-secondary/30" strokeWidth={1.5} />
                           </motion.div>
                         </motion.div>
-                        <motion.div className="hidden md:block absolute -left-6 top-12" style={{ opacity: deco1 }}>
+                        <motion.div className="hidden md:block absolute -left-6 bottom-4" style={{ opacity: deco1 }}>
                           <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
-                            <MessageCircle className="h-4 w-4 text-secondary/25" strokeWidth={1.5} />
+                            <MessageCircle className="h-4 w-4 text-secondary/20" strokeWidth={1.5} />
                           </motion.div>
                         </motion.div>
                       </>
                     )}
-                    {/* Step 3: VISA card + Key — matching reference */}
+
+                    {/* Step 3: VISA card + Key + Location pin — matching reference */}
                     {i === 2 && (
                       <>
-                        <motion.div className="hidden md:block absolute -right-10 bottom-4" style={{ opacity: deco3 }}>
+                        {/* VISA card label */}
+                        <motion.div className="hidden md:block absolute -right-12 bottom-2" style={{ opacity: deco3 }}>
                           <motion.div animate={{ y: [0, -3, 0], rotate: [0, 5, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                            className="flex items-center gap-0.5 rounded bg-secondary/[0.08] border border-secondary/[0.12] px-1.5 py-0.5">
-                            <CreditCard className="h-3 w-3 text-secondary/50" strokeWidth={1.5} />
-                            <span className="text-[7px] font-bold text-secondary/40 tracking-wide">VISA</span>
+                            className="flex items-center gap-0.5 rounded bg-secondary/[0.06] border border-secondary/[0.10] px-1.5 py-0.5">
+                            <CreditCard className="h-3 w-3 text-secondary/40" strokeWidth={1.5} />
+                            <span className="text-[7px] font-bold text-secondary/35 tracking-wide">VISA</span>
                           </motion.div>
                         </motion.div>
-                        <motion.div className="hidden md:block absolute -right-6 -top-4" style={{ opacity: deco3 }}>
+                        {/* Key */}
+                        <motion.div className="hidden md:block absolute -right-7 -top-5" style={{ opacity: deco3 }}>
                           <motion.div animate={{ y: [0, 4, 0], rotate: [0, -10, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}>
-                            <KeyRound className="h-4 w-4 text-secondary/30" strokeWidth={1.5} />
+                            <KeyRound className="h-4 w-4 text-secondary/25" strokeWidth={1.5} />
+                          </motion.div>
+                        </motion.div>
+                        {/* Location pin — above the circle */}
+                        <motion.div className="hidden md:block absolute -top-6 right-2" style={{ opacity: deco3 }}>
+                          <motion.div animate={{ y: [0, -3, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}>
+                            <MapPin className="h-4 w-4 text-secondary/30" strokeWidth={1.5} />
                           </motion.div>
                         </motion.div>
                       </>
                     )}
+
                     {/* Step 4: Cross sparkle/asterisk decorations — matching reference */}
                     {i === 3 && (
                       <>
                         <motion.div className="hidden md:block absolute -right-6 -top-4" style={{ opacity: deco4 }}>
                           <motion.div animate={{ scale: [1, 1.4, 1], rotate: [0, 90, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 0v14M0 7h14M2 2l10 10M12 2L2 12" stroke="#C4324A" strokeWidth="1.2" strokeOpacity="0.4" strokeLinecap="round" /></svg>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 0v14M0 7h14M2 2l10 10M12 2L2 12" stroke="#C4324A" strokeWidth="1.2" strokeOpacity="0.35" strokeLinecap="round" /></svg>
                           </motion.div>
                         </motion.div>
-                        <motion.div className="hidden md:block absolute -right-3 top-10" style={{ opacity: deco4 }}>
+                        <motion.div className="hidden md:block absolute -right-3 bottom-2" style={{ opacity: deco4 }}>
                           <motion.div animate={{ scale: [0.8, 1.3, 0.8] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
-                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 0v10M0 5h10" stroke="#C4324A" strokeWidth="1.5" strokeOpacity="0.3" strokeLinecap="round" /></svg>
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 0v10M0 5h10" stroke="#C4324A" strokeWidth="1.5" strokeOpacity="0.25" strokeLinecap="round" /></svg>
                           </motion.div>
                         </motion.div>
                         <motion.div className="hidden md:block absolute -left-5 -top-2" style={{ opacity: deco4 }}>
                           <motion.div animate={{ scale: [1, 1.2, 1], rotate: [0, 45, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 0v12M0 6h12M1.7 1.7l8.6 8.6M10.3 1.7l-8.6 8.6" stroke="#B0B8C4" strokeWidth="1" strokeOpacity="0.3" strokeLinecap="round" /></svg>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 0v12M0 6h12M1.7 1.7l8.6 8.6M10.3 1.7l-8.6 8.6" stroke="#B0B8C4" strokeWidth="1" strokeOpacity="0.25" strokeLinecap="round" /></svg>
                           </motion.div>
                         </motion.div>
                       </>
                     )}
                   </motion.div>
 
-                  {/* Arrow connector (desktop) */}
-                  {i < 3 && (
-                    <motion.div className="hidden md:block absolute top-[60px] -right-3 z-10"
-                      style={{ opacity: stepOpacities[i + 1] }}>
-                      <ArrowRight className="h-4 w-4 text-silver/30" />
-                    </motion.div>
-                  )}
-
                   <h3 className="font-heading text-lg font-normal tracking-[0.06em] metallic-text">{step.title}</h3>
                   <p className="mt-1.5 text-[12px] text-muted-foreground font-light leading-relaxed max-w-[180px] mx-auto">{step.desc}</p>
-                  {/* Action label */}
-                  <p className="mt-3 text-[9px] font-heading tracking-[0.15em] uppercase text-secondary/50">
-                    {step.action}
-                  </p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Mini timeline — visual speed indicator */}
+        {/* Mini timeline — matching reference: DAY 1 / DAY 2 / DAY 3 */}
         <div className="mt-12 flex items-center justify-center gap-3 flex-wrap" data-reveal style={{ transitionDelay: "0.4s" }}>
           {[
-            { day: "Step 1", text: "You call us", icon: Phone, color: "#C4324A" },
-            { day: "Step 2", text: "Itinerary ready", icon: Map, color: "#B0B8C4" },
-            { day: "Step 3", text: "Everything booked", icon: CheckCircle, color: "#C4324A" },
+            { day: "Day 1", text: "You call us", icon: Phone, color: "#C4324A" },
+            { day: "Day 2", text: "Itinerary ready", icon: Map, color: "#B0B8C4" },
+            { day: "Day 3", text: "Everything booked", icon: CheckCircle, color: "#C4324A" },
           ].map((item, i) => (
             <div key={item.day} className="flex items-center gap-3">
               <motion.div className="flex items-center gap-2.5 rounded-full bg-white border border-silver/15 px-4 py-2.5 shadow-sm group hover:shadow-md hover:border-secondary/15 transition-all duration-300"
