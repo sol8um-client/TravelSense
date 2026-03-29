@@ -845,17 +845,15 @@ function HowItWorksSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
             {steps.map((step, i) => (
-              <motion.div key={step.title} className={i % 2 === 0 ? "relative z-20" : "relative z-[5]"} style={{ opacity: stepOpacities[i] }}>
+              <motion.div key={step.title} className="relative z-20" style={{ opacity: stepOpacities[i] }}>
                 <div className="group text-center relative">
                   {/* Icon circle — solid bg so path weaves visibly behind/over */}
                   <motion.div
                     className="relative mx-auto mb-5 flex h-[120px] w-[120px] items-center justify-center rounded-full transition-all duration-500 group-hover:-translate-y-2"
                     style={{
-                      background: i % 2 === 0
-                        ? `radial-gradient(circle, #FFFFFF 40%, ${step.color}10 70%, ${step.color}18 100%)`
-                        : `radial-gradient(circle, #FAFBFC 40%, ${step.color}08 70%, ${step.color}10 100%)`,
+                      background: `radial-gradient(circle, #FFFFFF 40%, ${step.color}10 70%, ${step.color}18 100%)`,
                       border: `1.5px solid ${step.color}20`,
-                      boxShadow: i % 2 === 0 ? `0 0 20px ${step.color}08` : 'none',
+                      boxShadow: `0 0 20px ${step.color}08`,
                       scale: stepScales[i],
                     }}
                     whileHover={{ scale: 1.05 }}
