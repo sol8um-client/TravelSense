@@ -727,9 +727,9 @@ function ProblemSection() {
 
 const steps: { Icon: LucideIcon; title: string; desc: string; action: string; color: string }[] = [
   { Icon: Headphones, title: "Consult", desc: "Co-create your dream. We listen, you talk.", action: "You talk, we listen", color: "#C4324A" },
-  { Icon: FileText, title: "Plan", desc: "Tailored daily itinerary. Crafted for you.", action: "Custom itinerary in 24hrs", color: "#D4873A" },
-  { Icon: Plane, title: "Book", desc: "Seamless travel details. Everything handled.", action: "Everything sorted", color: "#2E9E8F" },
-  { Icon: Globe, title: "Travel", desc: "Joyful exploration. Always-on support.", action: "We're with you", color: "#1B8A7A" },
+  { Icon: FileText, title: "Plan", desc: "Tailored daily itinerary. Crafted for you.", action: "Custom itinerary in 24hrs", color: "#A8574E" },
+  { Icon: Plane, title: "Book", desc: "Seamless travel details. Everything handled.", action: "Everything sorted", color: "#4A9E7E" },
+  { Icon: Globe, title: "Travel", desc: "Joyful exploration. Always-on support.", action: "We're with you", color: "#2D8B6A" },
 ]
 
 function HowItWorksSection() {
@@ -797,15 +797,15 @@ function HowItWorksSection() {
                 {/* Gradient from cherry red → amber → teal → deep teal */}
                 <linearGradient id="pathGradGuide" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#C4324A" stopOpacity="0.07" />
-                  <stop offset="33%" stopColor="#D4873A" stopOpacity="0.07" />
-                  <stop offset="66%" stopColor="#2E9E8F" stopOpacity="0.07" />
-                  <stop offset="100%" stopColor="#1B8A7A" stopOpacity="0.07" />
+                  <stop offset="33%" stopColor="#A8574E" stopOpacity="0.07" />
+                  <stop offset="66%" stopColor="#4A9E7E" stopOpacity="0.07" />
+                  <stop offset="100%" stopColor="#2D8B6A" stopOpacity="0.07" />
                 </linearGradient>
                 <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#C4324A" />
-                  <stop offset="33%" stopColor="#D4873A" />
-                  <stop offset="66%" stopColor="#2E9E8F" />
-                  <stop offset="100%" stopColor="#1B8A7A" />
+                  <stop offset="33%" stopColor="#A8574E" />
+                  <stop offset="66%" stopColor="#4A9E7E" />
+                  <stop offset="100%" stopColor="#2D8B6A" />
                 </linearGradient>
               </defs>
               {/* Gentle wave path — faint guide */}
@@ -819,17 +819,17 @@ function HowItWorksSection() {
                 style={{ pathLength }} />
               {/* Node dots at step positions — each step's color */}
               <motion.circle cx={125} cy={25} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step1Opacity }} />
-              <motion.circle cx={375} cy={25} r={5} fill="#D4873A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={625} cy={25} r={5} fill="#2E9E8F" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={875} cy={25} r={5} fill="#1B8A7A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step4Opacity }} />
+              <motion.circle cx={375} cy={25} r={5} fill="#A8574E" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={625} cy={25} r={5} fill="#4A9E7E" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={875} cy={25} r={5} fill="#2D8B6A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step4Opacity }} />
               {/* Small intermediate dots — blended colors */}
-              <motion.circle cx={250} cy={25} r={2.5} fill="#D4873A" fillOpacity={0.35} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={500} cy={25} r={2.5} fill="#2E9E8F" fillOpacity={0.35} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={750} cy={25} r={2.5} fill="#1B8A7A" fillOpacity={0.35} style={{ opacity: step4Opacity }} />
+              <motion.circle cx={250} cy={25} r={2.5} fill="#A8574E" fillOpacity={0.35} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={500} cy={25} r={2.5} fill="#4A9E7E" fillOpacity={0.35} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={750} cy={25} r={2.5} fill="#2D8B6A" fillOpacity={0.35} style={{ opacity: step4Opacity }} />
             </svg>
             {/* Traveling glow dot — shifts color along journey */}
-            <motion.div className="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full shadow-[0_0_14px_rgba(46,158,143,0.5)]"
-              style={{ background: "linear-gradient(135deg, #C4324A, #1B8A7A)", left: dotLeft }} />
+            <motion.div className="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full shadow-[0_0_14px_rgba(74,158,126,0.5)]"
+              style={{ background: "linear-gradient(135deg, #C4324A, #2D8B6A)", left: dotLeft }} />
           </div>
 
           {/* Mobile: Vertical curved dashed SVG connector path — matching desktop design language */}
@@ -838,15 +838,15 @@ function HowItWorksSection() {
               <defs>
                 <linearGradient id="mPathGradGuide" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop offset="0%" stopColor="#C4324A" stopOpacity="0.07" />
-                  <stop offset="33%" stopColor="#D4873A" stopOpacity="0.07" />
-                  <stop offset="66%" stopColor="#2E9E8F" stopOpacity="0.07" />
-                  <stop offset="100%" stopColor="#1B8A7A" stopOpacity="0.07" />
+                  <stop offset="33%" stopColor="#A8574E" stopOpacity="0.07" />
+                  <stop offset="66%" stopColor="#4A9E7E" stopOpacity="0.07" />
+                  <stop offset="100%" stopColor="#2D8B6A" stopOpacity="0.07" />
                 </linearGradient>
                 <linearGradient id="mPathGrad" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop offset="0%" stopColor="#C4324A" />
-                  <stop offset="33%" stopColor="#D4873A" />
-                  <stop offset="66%" stopColor="#2E9E8F" />
-                  <stop offset="100%" stopColor="#1B8A7A" />
+                  <stop offset="33%" stopColor="#A8574E" />
+                  <stop offset="66%" stopColor="#4A9E7E" />
+                  <stop offset="100%" stopColor="#2D8B6A" />
                 </linearGradient>
               </defs>
               {/* Gentle S-curve vertical path — gradient guide */}
@@ -859,17 +859,17 @@ function HowItWorksSection() {
                 style={{ pathLength }} />
               {/* Node dots — each step's color */}
               <motion.circle cx={30} cy={125} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step1Opacity }} />
-              <motion.circle cx={30} cy={415} r={5} fill="#D4873A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={30} cy={675} r={5} fill="#2E9E8F" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={30} cy={920} r={5} fill="#1B8A7A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step4Opacity }} />
+              <motion.circle cx={30} cy={415} r={5} fill="#A8574E" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={30} cy={675} r={5} fill="#4A9E7E" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={30} cy={920} r={5} fill="#2D8B6A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step4Opacity }} />
               {/* Intermediate dots */}
-              <motion.circle cx={30} cy={270} r={2.5} fill="#D4873A" fillOpacity={0.35} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={30} cy={545} r={2.5} fill="#2E9E8F" fillOpacity={0.35} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={30} cy={800} r={2.5} fill="#1B8A7A" fillOpacity={0.35} style={{ opacity: step4Opacity }} />
+              <motion.circle cx={30} cy={270} r={2.5} fill="#A8574E" fillOpacity={0.35} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={30} cy={545} r={2.5} fill="#4A9E7E" fillOpacity={0.35} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={30} cy={800} r={2.5} fill="#2D8B6A" fillOpacity={0.35} style={{ opacity: step4Opacity }} />
             </svg>
             {/* Traveling glow dot */}
-            <motion.div className="absolute left-1/2 -translate-x-1/2 h-3 w-3 rounded-full shadow-[0_0_14px_rgba(46,158,143,0.5)]"
-              style={{ background: "linear-gradient(135deg, #C4324A, #1B8A7A)", top: dotTop }} />
+            <motion.div className="absolute left-1/2 -translate-x-1/2 h-3 w-3 rounded-full shadow-[0_0_14px_rgba(74,158,126,0.5)]"
+              style={{ background: "linear-gradient(135deg, #C4324A, #2D8B6A)", top: dotTop }} />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
@@ -938,45 +938,45 @@ function HowItWorksSection() {
                       </>
                     )}
 
-                    {/* Step 3: VISA card + Key + Location pin */}
+                    {/* Step 3: VISA card + Key + Location pin — teal tones */}
                     {i === 2 && (
                       <>
                         <motion.div className="absolute -right-12 bottom-2" style={{ opacity: deco3 }}>
                           <motion.div animate={{ y: [0, -3, 0], rotate: [0, 5, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                            className="flex items-center gap-0.5 rounded bg-secondary/[0.06] border border-secondary/[0.10] px-1.5 py-0.5">
-                            <CreditCard className="h-3 w-3 text-secondary/40" strokeWidth={1.5} />
-                            <span className="text-[7px] font-bold text-secondary/35 tracking-wide">VISA</span>
+                            className="flex items-center gap-0.5 rounded px-1.5 py-0.5" style={{ background: "rgba(74,158,126,0.08)", border: "1px solid rgba(74,158,126,0.15)" }}>
+                            <CreditCard className="h-3 w-3" style={{ color: "rgba(74,158,126,0.5)" }} strokeWidth={1.5} />
+                            <span className="text-[7px] font-bold tracking-wide" style={{ color: "rgba(74,158,126,0.45)" }}>VISA</span>
                           </motion.div>
                         </motion.div>
                         <motion.div className="absolute -right-7 -top-5" style={{ opacity: deco3 }}>
                           <motion.div animate={{ y: [0, 4, 0], rotate: [0, -10, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}>
-                            <KeyRound className="h-4 w-4 text-secondary/25" strokeWidth={1.5} />
+                            <KeyRound className="h-4 w-4" style={{ color: "rgba(74,158,126,0.35)" }} strokeWidth={1.5} />
                           </motion.div>
                         </motion.div>
                         <motion.div className="absolute -top-6 right-2" style={{ opacity: deco3 }}>
                           <motion.div animate={{ y: [0, -3, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}>
-                            <MapPin className="h-4 w-4 text-secondary/30" strokeWidth={1.5} />
+                            <MapPin className="h-4 w-4" style={{ color: "rgba(74,158,126,0.4)" }} strokeWidth={1.5} />
                           </motion.div>
                         </motion.div>
                       </>
                     )}
 
-                    {/* Step 4: Cross sparkle/asterisk decorations — teal tones for joy */}
+                    {/* Step 4: Cross sparkle/asterisk decorations — royal blue for joy */}
                     {i === 3 && (
                       <>
                         <motion.div className="absolute -right-6 -top-4" style={{ opacity: deco4 }}>
                           <motion.div animate={{ scale: [1, 1.4, 1], rotate: [0, 90, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 0v14M0 7h14M2 2l10 10M12 2L2 12" stroke="#1B8A7A" strokeWidth="1.2" strokeOpacity="0.4" strokeLinecap="round" /></svg>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 0v14M0 7h14M2 2l10 10M12 2L2 12" stroke="#2D8B6A" strokeWidth="1.2" strokeOpacity="0.4" strokeLinecap="round" /></svg>
                           </motion.div>
                         </motion.div>
                         <motion.div className="absolute -right-3 bottom-2" style={{ opacity: deco4 }}>
                           <motion.div animate={{ scale: [0.8, 1.3, 0.8] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
-                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 0v10M0 5h10" stroke="#2E9E8F" strokeWidth="1.5" strokeOpacity="0.3" strokeLinecap="round" /></svg>
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 0v10M0 5h10" stroke="#2D8B6A" strokeWidth="1.5" strokeOpacity="0.3" strokeLinecap="round" /></svg>
                           </motion.div>
                         </motion.div>
                         <motion.div className="absolute -left-5 -top-2" style={{ opacity: deco4 }}>
                           <motion.div animate={{ scale: [1, 1.2, 1], rotate: [0, 45, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 0v12M0 6h12M1.7 1.7l8.6 8.6M10.3 1.7l-8.6 8.6" stroke="#1B8A7A" strokeWidth="1" strokeOpacity="0.3" strokeLinecap="round" /></svg>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 0v12M0 6h12M1.7 1.7l8.6 8.6M10.3 1.7l-8.6 8.6" stroke="#2D8B6A" strokeWidth="1" strokeOpacity="0.3" strokeLinecap="round" /></svg>
                           </motion.div>
                         </motion.div>
                       </>
@@ -995,8 +995,8 @@ function HowItWorksSection() {
         <div className="mt-12 flex items-center justify-center gap-3 flex-wrap" data-reveal style={{ transitionDelay: "0.4s" }}>
           {[
             { day: "Day 1", text: "You call us", icon: Phone, color: "#C4324A" },
-            { day: "Day 2", text: "Itinerary ready", icon: Map, color: "#D4873A" },
-            { day: "Day 3", text: "Everything booked", icon: CheckCircle, color: "#2E9E8F" },
+            { day: "Day 2", text: "Itinerary ready", icon: Map, color: "#A8574E" },
+            { day: "Day 3", text: "Everything booked", icon: CheckCircle, color: "#4A9E7E" },
           ].map((item, i) => (
             <div key={item.day} className="flex items-center gap-3">
               <motion.div className="flex items-center gap-2.5 rounded-full bg-white border border-silver/15 px-4 py-2.5 shadow-sm group hover:shadow-md hover:border-secondary/15 transition-all duration-300"
