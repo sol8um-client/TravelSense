@@ -727,9 +727,9 @@ function ProblemSection() {
 
 const steps: { Icon: LucideIcon; title: string; desc: string; action: string; color: string }[] = [
   { Icon: Headphones, title: "Consult", desc: "Co-create your dream. We listen, you talk.", action: "You talk, we listen", color: "#C4324A" },
-  { Icon: FileText, title: "Plan", desc: "Tailored daily itinerary. Crafted for you.", action: "Custom itinerary in 24hrs", color: "#B0B8C4" },
-  { Icon: Plane, title: "Book", desc: "Seamless travel details. Everything handled.", action: "Everything sorted", color: "#C4324A" },
-  { Icon: Globe, title: "Travel", desc: "Joyful exploration. Always-on support.", action: "We're with you", color: "#B0B8C4" },
+  { Icon: FileText, title: "Plan", desc: "Tailored daily itinerary. Crafted for you.", action: "Custom itinerary in 24hrs", color: "#D4873A" },
+  { Icon: Plane, title: "Book", desc: "Seamless travel details. Everything handled.", action: "Everything sorted", color: "#2E9E8F" },
+  { Icon: Globe, title: "Travel", desc: "Joyful exploration. Always-on support.", action: "We're with you", color: "#1B8A7A" },
 ]
 
 function HowItWorksSection() {
@@ -793,54 +793,83 @@ function HowItWorksSection() {
           {/* Desktop: Scroll-animated dashed SVG connector path — gentle wave */}
           <div className="hidden md:block absolute top-[35px] left-[6%] right-[6%] h-[55px] z-10 pointer-events-none">
             <svg className="w-full h-full" viewBox="0 0 1000 50" fill="none" preserveAspectRatio="none">
-              {/* Gentle wave path: passes through step centers at x=125,375,625,875 */}
+              <defs>
+                {/* Gradient from cherry red → amber → teal → deep teal */}
+                <linearGradient id="pathGradGuide" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#C4324A" stopOpacity="0.07" />
+                  <stop offset="33%" stopColor="#D4873A" stopOpacity="0.07" />
+                  <stop offset="66%" stopColor="#2E9E8F" stopOpacity="0.07" />
+                  <stop offset="100%" stopColor="#1B8A7A" stopOpacity="0.07" />
+                </linearGradient>
+                <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#C4324A" />
+                  <stop offset="33%" stopColor="#D4873A" />
+                  <stop offset="66%" stopColor="#2E9E8F" />
+                  <stop offset="100%" stopColor="#1B8A7A" />
+                </linearGradient>
+              </defs>
+              {/* Gentle wave path — faint guide */}
               <path
                 d="M30 25 C80 25 100 25 125 25 C190 12 260 38 325 25 C360 18 390 25 375 25 C410 25 440 32 500 25 C560 18 590 25 625 25 C690 38 760 12 825 25 C850 25 860 25 875 25 C900 25 940 25 970 25"
-                stroke="#C4324A" strokeOpacity="0.07" strokeWidth="2" strokeDasharray="8 5" fill="none" />
-              {/* Animated dashed path — draws on scroll */}
+                stroke="url(#pathGradGuide)" strokeWidth="2" strokeDasharray="8 5" fill="none" />
+              {/* Animated dashed path — gradient from red to teal */}
               <motion.path
                 d="M30 25 C80 25 100 25 125 25 C190 12 260 38 325 25 C360 18 390 25 375 25 C410 25 440 32 500 25 C560 18 590 25 625 25 C690 38 760 12 825 25 C850 25 860 25 875 25 C900 25 940 25 970 25"
-                stroke="#C4324A" strokeWidth="2" strokeDasharray="8 5" fill="none"
+                stroke="url(#pathGrad)" strokeWidth="2" strokeDasharray="8 5" fill="none"
                 style={{ pathLength }} />
-              {/* Node dots at step positions */}
+              {/* Node dots at step positions — each step's color */}
               <motion.circle cx={125} cy={25} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step1Opacity }} />
-              <motion.circle cx={375} cy={25} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={625} cy={25} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={875} cy={25} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step4Opacity }} />
-              {/* Small intermediate dots */}
-              <motion.circle cx={250} cy={25} r={2.5} fill="#C4324A" fillOpacity={0.35} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={500} cy={25} r={2.5} fill="#C4324A" fillOpacity={0.35} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={750} cy={25} r={2.5} fill="#C4324A" fillOpacity={0.35} style={{ opacity: step4Opacity }} />
+              <motion.circle cx={375} cy={25} r={5} fill="#D4873A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={625} cy={25} r={5} fill="#2E9E8F" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={875} cy={25} r={5} fill="#1B8A7A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step4Opacity }} />
+              {/* Small intermediate dots — blended colors */}
+              <motion.circle cx={250} cy={25} r={2.5} fill="#D4873A" fillOpacity={0.35} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={500} cy={25} r={2.5} fill="#2E9E8F" fillOpacity={0.35} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={750} cy={25} r={2.5} fill="#1B8A7A" fillOpacity={0.35} style={{ opacity: step4Opacity }} />
             </svg>
-            {/* Traveling glow dot */}
-            <motion.div className="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full shadow-[0_0_14px_rgba(196,50,74,0.7)]"
-              style={{ background: "linear-gradient(135deg, #C4324A, #E8425A)", left: dotLeft }} />
+            {/* Traveling glow dot — shifts color along journey */}
+            <motion.div className="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full shadow-[0_0_14px_rgba(46,158,143,0.5)]"
+              style={{ background: "linear-gradient(135deg, #C4324A, #1B8A7A)", left: dotLeft }} />
           </div>
 
           {/* Mobile: Vertical curved dashed SVG connector path — matching desktop design language */}
           <div className="md:hidden absolute top-[60px] bottom-[60px] left-1/2 -translate-x-1/2 w-[60px] z-10 pointer-events-none">
             <svg className="w-full h-full" viewBox="0 0 60 1000" fill="none" preserveAspectRatio="none">
-              {/* Gentle S-curve vertical path */}
+              <defs>
+                <linearGradient id="mPathGradGuide" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#C4324A" stopOpacity="0.07" />
+                  <stop offset="33%" stopColor="#D4873A" stopOpacity="0.07" />
+                  <stop offset="66%" stopColor="#2E9E8F" stopOpacity="0.07" />
+                  <stop offset="100%" stopColor="#1B8A7A" stopOpacity="0.07" />
+                </linearGradient>
+                <linearGradient id="mPathGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#C4324A" />
+                  <stop offset="33%" stopColor="#D4873A" />
+                  <stop offset="66%" stopColor="#2E9E8F" />
+                  <stop offset="100%" stopColor="#1B8A7A" />
+                </linearGradient>
+              </defs>
+              {/* Gentle S-curve vertical path — gradient guide */}
               <path
                 d="M30 20 C30 80 30 100 30 125 C18 190 42 260 30 325 C18 390 42 460 30 500 C18 540 42 610 30 675 C18 740 42 810 30 875 C30 900 30 940 30 980"
-                stroke="#C4324A" strokeOpacity="0.07" strokeWidth="2" strokeDasharray="8 5" fill="none" />
+                stroke="url(#mPathGradGuide)" strokeWidth="2" strokeDasharray="8 5" fill="none" />
               <motion.path
                 d="M30 20 C30 80 30 100 30 125 C18 190 42 260 30 325 C18 390 42 460 30 500 C18 540 42 610 30 675 C18 740 42 810 30 875 C30 900 30 940 30 980"
-                stroke="#C4324A" strokeWidth="2" strokeDasharray="8 5" fill="none"
+                stroke="url(#mPathGrad)" strokeWidth="2" strokeDasharray="8 5" fill="none"
                 style={{ pathLength }} />
-              {/* Node dots at step positions (evenly spaced at 0%, 33%, 66%, 100%) */}
+              {/* Node dots — each step's color */}
               <motion.circle cx={30} cy={125} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step1Opacity }} />
-              <motion.circle cx={30} cy={415} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={30} cy={675} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={30} cy={920} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step4Opacity }} />
-              {/* Intermediate dots between steps */}
-              <motion.circle cx={30} cy={270} r={2.5} fill="#C4324A" fillOpacity={0.35} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={30} cy={545} r={2.5} fill="#C4324A" fillOpacity={0.35} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={30} cy={800} r={2.5} fill="#C4324A" fillOpacity={0.35} style={{ opacity: step4Opacity }} />
+              <motion.circle cx={30} cy={415} r={5} fill="#D4873A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={30} cy={675} r={5} fill="#2E9E8F" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={30} cy={920} r={5} fill="#1B8A7A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step4Opacity }} />
+              {/* Intermediate dots */}
+              <motion.circle cx={30} cy={270} r={2.5} fill="#D4873A" fillOpacity={0.35} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={30} cy={545} r={2.5} fill="#2E9E8F" fillOpacity={0.35} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={30} cy={800} r={2.5} fill="#1B8A7A" fillOpacity={0.35} style={{ opacity: step4Opacity }} />
             </svg>
             {/* Traveling glow dot */}
-            <motion.div className="absolute left-1/2 -translate-x-1/2 h-3 w-3 rounded-full shadow-[0_0_14px_rgba(196,50,74,0.7)]"
-              style={{ background: "linear-gradient(135deg, #C4324A, #E8425A)", top: dotTop }} />
+            <motion.div className="absolute left-1/2 -translate-x-1/2 h-3 w-3 rounded-full shadow-[0_0_14px_rgba(46,158,143,0.5)]"
+              style={{ background: "linear-gradient(135deg, #C4324A, #1B8A7A)", top: dotTop }} />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
@@ -932,22 +961,22 @@ function HowItWorksSection() {
                       </>
                     )}
 
-                    {/* Step 4: Cross sparkle/asterisk decorations */}
+                    {/* Step 4: Cross sparkle/asterisk decorations — teal tones for joy */}
                     {i === 3 && (
                       <>
                         <motion.div className="absolute -right-6 -top-4" style={{ opacity: deco4 }}>
                           <motion.div animate={{ scale: [1, 1.4, 1], rotate: [0, 90, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 0v14M0 7h14M2 2l10 10M12 2L2 12" stroke="#C4324A" strokeWidth="1.2" strokeOpacity="0.35" strokeLinecap="round" /></svg>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 0v14M0 7h14M2 2l10 10M12 2L2 12" stroke="#1B8A7A" strokeWidth="1.2" strokeOpacity="0.4" strokeLinecap="round" /></svg>
                           </motion.div>
                         </motion.div>
                         <motion.div className="absolute -right-3 bottom-2" style={{ opacity: deco4 }}>
                           <motion.div animate={{ scale: [0.8, 1.3, 0.8] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
-                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 0v10M0 5h10" stroke="#C4324A" strokeWidth="1.5" strokeOpacity="0.25" strokeLinecap="round" /></svg>
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 0v10M0 5h10" stroke="#2E9E8F" strokeWidth="1.5" strokeOpacity="0.3" strokeLinecap="round" /></svg>
                           </motion.div>
                         </motion.div>
                         <motion.div className="absolute -left-5 -top-2" style={{ opacity: deco4 }}>
                           <motion.div animate={{ scale: [1, 1.2, 1], rotate: [0, 45, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 0v12M0 6h12M1.7 1.7l8.6 8.6M10.3 1.7l-8.6 8.6" stroke="#B0B8C4" strokeWidth="1" strokeOpacity="0.25" strokeLinecap="round" /></svg>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 0v12M0 6h12M1.7 1.7l8.6 8.6M10.3 1.7l-8.6 8.6" stroke="#1B8A7A" strokeWidth="1" strokeOpacity="0.3" strokeLinecap="round" /></svg>
                           </motion.div>
                         </motion.div>
                       </>
@@ -966,8 +995,8 @@ function HowItWorksSection() {
         <div className="mt-12 flex items-center justify-center gap-3 flex-wrap" data-reveal style={{ transitionDelay: "0.4s" }}>
           {[
             { day: "Day 1", text: "You call us", icon: Phone, color: "#C4324A" },
-            { day: "Day 2", text: "Itinerary ready", icon: Map, color: "#B0B8C4" },
-            { day: "Day 3", text: "Everything booked", icon: CheckCircle, color: "#C4324A" },
+            { day: "Day 2", text: "Itinerary ready", icon: Map, color: "#D4873A" },
+            { day: "Day 3", text: "Everything booked", icon: CheckCircle, color: "#2E9E8F" },
           ].map((item, i) => (
             <div key={item.day} className="flex items-center gap-3">
               <motion.div className="flex items-center gap-2.5 rounded-full bg-white border border-silver/15 px-4 py-2.5 shadow-sm group hover:shadow-md hover:border-secondary/15 transition-all duration-300"
