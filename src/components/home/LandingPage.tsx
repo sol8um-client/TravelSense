@@ -791,7 +791,7 @@ function HowItWorksSection() {
         {/* Steps — with scroll-animated path */}
         <div className="relative">
           {/* Desktop: Scroll-animated dashed SVG connector path — gentle wave */}
-          <div className="hidden md:block absolute top-[35px] left-[6%] right-[6%] h-[55px] z-0 pointer-events-none">
+          <div className="hidden md:block absolute top-[35px] left-[6%] right-[6%] h-[55px] z-10 pointer-events-none">
             <svg className="w-full h-full" viewBox="0 0 1000 50" fill="none" preserveAspectRatio="none">
               {/* Gentle wave path: passes through step centers at x=125,375,625,875 */}
               <path
@@ -818,7 +818,7 @@ function HowItWorksSection() {
           </div>
 
           {/* Mobile: Vertical curved dashed SVG connector path — matching desktop design language */}
-          <div className="md:hidden absolute top-[60px] bottom-[60px] left-1/2 -translate-x-1/2 w-[60px] z-0 pointer-events-none">
+          <div className="md:hidden absolute top-[60px] bottom-[60px] left-1/2 -translate-x-1/2 w-[60px] z-10 pointer-events-none">
             <svg className="w-full h-full" viewBox="0 0 60 1000" fill="none" preserveAspectRatio="none">
               {/* Gentle S-curve vertical path */}
               <path
@@ -845,7 +845,7 @@ function HowItWorksSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
             {steps.map((step, i) => (
-              <motion.div key={step.title} style={{ opacity: stepOpacities[i] }}>
+              <motion.div key={step.title} className={i % 2 === 0 ? "relative z-20" : "relative z-[5]"} style={{ opacity: stepOpacities[i] }}>
                 <div className="group text-center relative">
                   {/* Icon circle — matching reference: cherry for steps 1,3, silver for steps 2,4 */}
                   <motion.div
