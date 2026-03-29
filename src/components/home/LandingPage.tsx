@@ -754,9 +754,10 @@ function HowItWorksSection() {
   const deco3 = useTransform(smoothProgress, [0.45, 0.6], [0, 1])
   const deco4 = useTransform(smoothProgress, [0.55, 0.7], [0, 1])
 
-  /* Glow dot position along path */
+  /* Glow dot position along path (desktop: horizontal, mobile: vertical) */
   const dotPosition = useTransform(smoothProgress, [0.1, 0.75], [0, 100])
   const dotLeft = useTransform(dotPosition, (v) => `${v}%`)
+  const dotTop = useTransform(dotPosition, (v) => `${v}%`)
 
   /* Pre-computed scale transforms for each step circle (avoid hooks in loop) */
   const step1Scale = useTransform(step1Opacity, [0, 1], [0.7, 1])
@@ -816,11 +817,30 @@ function HowItWorksSection() {
               style={{ background: "linear-gradient(135deg, #C4324A, #E8425A)", left: dotLeft }} />
           </div>
 
-          {/* Mobile: Vertical dashed connector path */}
-          <div className="md:hidden absolute top-[70px] bottom-[70px] left-1/2 -translate-x-1/2 w-[2px] z-0 pointer-events-none">
-            <div className="absolute inset-0 border-l-[1.5px] border-dashed border-secondary/[0.08]" />
-            <motion.div className="absolute top-0 left-0 w-full border-l-[1.5px] border-dashed border-secondary origin-top"
-              style={{ scaleY: pathLength, height: "100%" }} />
+          {/* Mobile: Vertical curved dashed SVG connector path — matching desktop design language */}
+          <div className="md:hidden absolute top-[60px] bottom-[60px] left-1/2 -translate-x-1/2 w-[60px] z-0 pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 60 1000" fill="none" preserveAspectRatio="none">
+              {/* Gentle S-curve vertical path */}
+              <path
+                d="M30 20 C30 80 30 100 30 125 C18 190 42 260 30 325 C18 390 42 460 30 500 C18 540 42 610 30 675 C18 740 42 810 30 875 C30 900 30 940 30 980"
+                stroke="#C4324A" strokeOpacity="0.07" strokeWidth="2" strokeDasharray="8 5" fill="none" />
+              <motion.path
+                d="M30 20 C30 80 30 100 30 125 C18 190 42 260 30 325 C18 390 42 460 30 500 C18 540 42 610 30 675 C18 740 42 810 30 875 C30 900 30 940 30 980"
+                stroke="#C4324A" strokeWidth="2" strokeDasharray="8 5" fill="none"
+                style={{ pathLength }} />
+              {/* Node dots at step positions (evenly spaced at 0%, 33%, 66%, 100%) */}
+              <motion.circle cx={30} cy={125} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step1Opacity }} />
+              <motion.circle cx={30} cy={415} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={30} cy={675} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={30} cy={920} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step4Opacity }} />
+              {/* Intermediate dots between steps */}
+              <motion.circle cx={30} cy={270} r={2.5} fill="#C4324A" fillOpacity={0.35} style={{ opacity: step2Opacity }} />
+              <motion.circle cx={30} cy={545} r={2.5} fill="#C4324A" fillOpacity={0.35} style={{ opacity: step3Opacity }} />
+              <motion.circle cx={30} cy={800} r={2.5} fill="#C4324A" fillOpacity={0.35} style={{ opacity: step4Opacity }} />
+            </svg>
+            {/* Traveling glow dot */}
+            <motion.div className="absolute left-1/2 -translate-x-1/2 h-3 w-3 rounded-full shadow-[0_0_14px_rgba(196,50,74,0.7)]"
+              style={{ background: "linear-gradient(135deg, #C4324A, #E8425A)", top: dotTop }} />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
@@ -875,12 +895,12 @@ function HowItWorksSection() {
                     {/* Step 1: Chat bubble outlines */}
                     {i === 0 && (
                       <>
-                        <motion.div className="hidden md:block absolute -left-8 -top-2" style={{ opacity: deco1 }}>
+                        <motion.div className="absolute -left-8 -top-2" style={{ opacity: deco1 }}>
                           <motion.div animate={{ y: [0, -4, 0], rotate: [0, -8, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
                             <MessageSquare className="h-5 w-5 text-secondary/30" strokeWidth={1.5} />
                           </motion.div>
                         </motion.div>
-                        <motion.div className="hidden md:block absolute -left-6 bottom-4" style={{ opacity: deco1 }}>
+                        <motion.div className="absolute -left-6 bottom-4" style={{ opacity: deco1 }}>
                           <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
                             <MessageCircle className="h-4 w-4 text-secondary/20" strokeWidth={1.5} />
                           </motion.div>
@@ -888,25 +908,22 @@ function HowItWorksSection() {
                       </>
                     )}
 
-                    {/* Step 3: VISA card + Key + Location pin — matching reference */}
+                    {/* Step 3: VISA card + Key + Location pin */}
                     {i === 2 && (
                       <>
-                        {/* VISA card label */}
-                        <motion.div className="hidden md:block absolute -right-12 bottom-2" style={{ opacity: deco3 }}>
+                        <motion.div className="absolute -right-12 bottom-2" style={{ opacity: deco3 }}>
                           <motion.div animate={{ y: [0, -3, 0], rotate: [0, 5, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                             className="flex items-center gap-0.5 rounded bg-secondary/[0.06] border border-secondary/[0.10] px-1.5 py-0.5">
                             <CreditCard className="h-3 w-3 text-secondary/40" strokeWidth={1.5} />
                             <span className="text-[7px] font-bold text-secondary/35 tracking-wide">VISA</span>
                           </motion.div>
                         </motion.div>
-                        {/* Key */}
-                        <motion.div className="hidden md:block absolute -right-7 -top-5" style={{ opacity: deco3 }}>
+                        <motion.div className="absolute -right-7 -top-5" style={{ opacity: deco3 }}>
                           <motion.div animate={{ y: [0, 4, 0], rotate: [0, -10, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}>
                             <KeyRound className="h-4 w-4 text-secondary/25" strokeWidth={1.5} />
                           </motion.div>
                         </motion.div>
-                        {/* Location pin — above the circle */}
-                        <motion.div className="hidden md:block absolute -top-6 right-2" style={{ opacity: deco3 }}>
+                        <motion.div className="absolute -top-6 right-2" style={{ opacity: deco3 }}>
                           <motion.div animate={{ y: [0, -3, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}>
                             <MapPin className="h-4 w-4 text-secondary/30" strokeWidth={1.5} />
                           </motion.div>
@@ -914,20 +931,20 @@ function HowItWorksSection() {
                       </>
                     )}
 
-                    {/* Step 4: Cross sparkle/asterisk decorations — matching reference */}
+                    {/* Step 4: Cross sparkle/asterisk decorations */}
                     {i === 3 && (
                       <>
-                        <motion.div className="hidden md:block absolute -right-6 -top-4" style={{ opacity: deco4 }}>
+                        <motion.div className="absolute -right-6 -top-4" style={{ opacity: deco4 }}>
                           <motion.div animate={{ scale: [1, 1.4, 1], rotate: [0, 90, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}>
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 0v14M0 7h14M2 2l10 10M12 2L2 12" stroke="#C4324A" strokeWidth="1.2" strokeOpacity="0.35" strokeLinecap="round" /></svg>
                           </motion.div>
                         </motion.div>
-                        <motion.div className="hidden md:block absolute -right-3 bottom-2" style={{ opacity: deco4 }}>
+                        <motion.div className="absolute -right-3 bottom-2" style={{ opacity: deco4 }}>
                           <motion.div animate={{ scale: [0.8, 1.3, 0.8] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
                             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 0v10M0 5h10" stroke="#C4324A" strokeWidth="1.5" strokeOpacity="0.25" strokeLinecap="round" /></svg>
                           </motion.div>
                         </motion.div>
-                        <motion.div className="hidden md:block absolute -left-5 -top-2" style={{ opacity: deco4 }}>
+                        <motion.div className="absolute -left-5 -top-2" style={{ opacity: deco4 }}>
                           <motion.div animate={{ scale: [1, 1.2, 1], rotate: [0, 45, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 0v12M0 6h12M1.7 1.7l8.6 8.6M10.3 1.7l-8.6 8.6" stroke="#B0B8C4" strokeWidth="1" strokeOpacity="0.25" strokeLinecap="round" /></svg>
                           </motion.div>
