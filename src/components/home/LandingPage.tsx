@@ -847,12 +847,15 @@ function HowItWorksSection() {
             {steps.map((step, i) => (
               <motion.div key={step.title} className={i % 2 === 0 ? "relative z-20" : "relative z-[5]"} style={{ opacity: stepOpacities[i] }}>
                 <div className="group text-center relative">
-                  {/* Icon circle — matching reference: cherry for steps 1,3, silver for steps 2,4 */}
+                  {/* Icon circle — solid bg so path weaves visibly behind/over */}
                   <motion.div
                     className="relative mx-auto mb-5 flex h-[120px] w-[120px] items-center justify-center rounded-full transition-all duration-500 group-hover:-translate-y-2"
                     style={{
-                      background: `linear-gradient(135deg, ${step.color}06, ${step.color}12)`,
+                      background: i % 2 === 0
+                        ? `radial-gradient(circle, #FFFFFF 40%, ${step.color}10 70%, ${step.color}18 100%)`
+                        : `radial-gradient(circle, #FAFBFC 40%, ${step.color}08 70%, ${step.color}10 100%)`,
                       border: `1.5px solid ${step.color}20`,
+                      boxShadow: i % 2 === 0 ? `0 0 20px ${step.color}08` : 'none',
                       scale: stepScales[i],
                     }}
                     whileHover={{ scale: 1.05 }}
