@@ -463,7 +463,7 @@ function HeroSection() {
         >
           <button
             onClick={() => leadModal.open("hero-start-planning")}
-            className="metallic-cta group inline-flex items-center gap-2.5 px-6 py-3 sm:px-9 sm:py-4 text-[10px] sm:text-[11px] text-white tracking-[0.15em] uppercase cursor-pointer w-auto justify-center"
+            className="metallic-cta group inline-flex items-center gap-2.5 px-6 h-[38px] sm:px-9 sm:h-[50px] text-[10px] sm:text-[11px] text-white tracking-[0.15em] uppercase cursor-pointer sm:min-w-[230px] justify-center"
           >
             <span className="relative z-10 flex items-center gap-2">
               Start Planning <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2 duration-300" />
@@ -471,10 +471,10 @@ function HeroSection() {
           </button>
           <button
             onClick={() => leadModal.open("hero-explore")}
-            className="outline-cta group inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 text-[9px] sm:text-[10px] font-heading text-foreground/50 tracking-[0.12em] uppercase cursor-pointer w-auto justify-center"
+            className="outline-cta group inline-flex items-center gap-2.5 px-6 h-[38px] sm:px-9 sm:h-[50px] text-[10px] sm:text-[11px] text-foreground/50 tracking-[0.15em] uppercase cursor-pointer sm:min-w-[230px] justify-center"
           >
             Explore Destinations
-            <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+            <ChevronRight className="absolute right-3 sm:right-4 h-3.5 w-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
           </button>
         </motion.div>
 
