@@ -207,11 +207,19 @@
 - [ ] Accessibility audit (WCAG 2.1 AA check)
 - [ ] Security check (SSL, input validation, API rate limiting)
 
-**Social Media Setup:**
-- [ ] Instagram profile (branded, bio, highlights structure)
-- [ ] Facebook page
-- [ ] LinkedIn company page
+**Social Media Setup:** (Strategy complete — see `docs/SOCIAL_MEDIA_STRATEGY.md`)
+- [x] Social media strategy & research (4 platforms, content calendar, Meta Ads plan)
+- [ ] Register handles: @travelsense.in (IG), @travelsensein (FB, X, LinkedIn)
+- [ ] Set up Instagram profile (branded bio, highlights, profile pic)
+- [ ] Set up Facebook page + "TravelSense Explorers" Group
+- [ ] Set up X profile
+- [ ] Set up LinkedIn company page + optimize Jayshree's personal profile
+- [ ] Set up WhatsApp Business
 - [ ] Google Business Profile
+- [ ] Create branded content templates (Canva)
+- [ ] Prepare Week 1 launch content (7 days across all platforms)
+- [ ] Execute launch plan
+- [ ] Meta Ads setup (Week 3-4 after organic foundation)
 
 **Email Marketing:**
 - [ ] Brevo account setup

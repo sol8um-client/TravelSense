@@ -1052,7 +1052,7 @@ function CategoriesSection() {
             return (
               <div key={cat.title} data-reveal style={{ transitionDelay: `${i * 0.12}s` }}>
                 <TiltCard strength={4} className="cursor-pointer">
-                  <Link href={`/categories/${cat.title.toLowerCase()}`} className="group block">
+                  <Link href={`/categories/${cat.title === "Education" ? "educational" : cat.title.toLowerCase()}`} className="group block">
                     <div className="overflow-hidden rounded-2xl bg-white shadow-[0_2px_20px_rgba(11,20,38,0.04)] border border-silver/10 transition-all duration-500 group-hover:shadow-[0_12px_50px_rgba(11,20,38,0.1)] group-hover:border-secondary/10">
                       <div className={cn("grid grid-cols-1 md:grid-cols-5", flip && "md:[direction:rtl]")}>
                         {/* Photo */}

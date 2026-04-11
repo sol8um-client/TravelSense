@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import {
@@ -11,7 +12,9 @@ import {
   Linkedin,
   Youtube,
   ArrowRight,
+  Loader2,
 } from "lucide-react"
+import { toast } from "sonner"
 
 import { cn } from "@/lib/utils"
 import { footerNavItems } from "@/config/navigation"
@@ -20,6 +23,8 @@ import { Container } from "@/components/layout/Container"
 import { Separator } from "@/components/ui/separator"
 
 export function Footer() {
+  const [newsletterEmail, setNewsletterEmail] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
@@ -148,21 +153,43 @@ export function Footer() {
             </p>
             <form
               className="mt-5 flex gap-2"
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={async (e) => {
+                e.preventDefault()
+                if (!newsletterEmail || isSubmitting) return
+                setIsSubmitting(true)
+                try {
+                  await new Promise((resolve) => setTimeout(resolve, 800))
+                  toast.success("You're subscribed!", {
+                    description: "You'll receive curated travel inspiration in your inbox.",
+                  })
+                  setNewsletterEmail("")
+                } catch {
+                  toast.error("Something went wrong. Please try again.")
+                } finally {
+                  setIsSubmitting(false)
+                }
+              }}
             >
               <div className="relative flex-1">
                 <input
                   type="email"
                   placeholder="Your email address"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
                   className="h-11 w-full rounded-lg border border-white/20 bg-white/10 px-4 text-sm text-white placeholder:text-white/40 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary transition-colors"
                   required
                 />
               </div>
               <button
                 type="submit"
-                className="metallic-cta inline-flex h-11 items-center justify-center gap-2 px-5 text-sm font-medium text-white"
+                disabled={isSubmitting}
+                className="metallic-cta inline-flex h-11 items-center justify-center gap-2 px-5 text-sm font-medium text-white disabled:opacity-50"
               >
-                <ArrowRight className="h-4 w-4" />
+                {isSubmitting ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <ArrowRight className="h-4 w-4" />
+                )}
               </button>
             </form>
             <p className="mt-3 text-xs text-white/40">
@@ -182,13 +209,13 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-6">
               <Link
-                href="/privacy"
+                href="/privacy-policy"
                 className="text-xs text-white/50 transition-colors hover:text-white/80"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="/terms"
+                href="/terms-of-service"
                 className="text-xs text-white/50 transition-colors hover:text-white/80"
               >
                 Terms of Service

@@ -605,7 +605,11 @@ pnpm dev
   - [x] GitHub repo — https://github.com/sol8um-client/TravelSense
   - [ ] Remaining pages and modules
 - [ ] **M4: Content & SEO** — NOT STARTED
-- [ ] **M5: Launch & QA** — NOT STARTED
+- [x] **M5: Launch & QA** — IN PROGRESS
+  - [x] Social media strategy — complete (4-platform strategy, content calendar, Meta Ads plan)
+  - [ ] Social media profile creation (handles, bios, content)
+  - [ ] Email marketing setup (Brevo)
+  - [ ] End-to-end QA testing
 - [ ] **AI Roadmap** — PLANNED (Post Phase 1 Launch)
 
 ---
@@ -743,3 +747,78 @@ pnpm dev
 - `docs/PROGRESS.md` — NEW tracking file
 - `docs/PHASE1_PLAN.md` — checked off completed tasks
 - `.env.local` — Supabase credentials (gitignored)
+
+---
+
+## Session Log — March 29, 2026
+
+### "How It Works" Section — Scroll Animation & Emotional Color Journey
+
+**What was done:**
+- Upgraded "How It Works" section from `useInView` (fires once) to `useScroll` + `useTransform` for scroll-linked progressive animation
+- SVG dashed path draws progressively as user scrolls, connecting all 4 steps
+- Path uses gradient stroke transitioning red → green across the emotional journey
+- Floating decorative elements around steps (chat bubbles, VISA cards, keys, sparkles)
+- Step circles reveal progressively with scroll progress thresholds
+- Implemented for both desktop (horizontal) and mobile (vertical S-curve) layouts
+
+**Emotional color palette across steps:**
+- Step 1 (Consult): Cherry Red `#C4324A` — confused, needs help
+- Step 2 (Plan): Terracotta `#A8574E` — warming up, getting excited
+- Step 3 (Book): Sage Jade `#4A9E7E` — confident, everything's handled
+- Step 4 (Travel): Deep Emerald `#2D8B6A` — joyful, exploring
+
+**Design details:**
+- SVG gradient path with node dots at each step connection point
+- Traveling glow dot animation along the path
+- Path weaves under all step icon circles (z-index layering with opaque backgrounds)
+- Concentric radar rings on Step 1 (Consult)
+- Step decorations colored to match their respective step (not all red)
+- Mobile: vertical S-curve path with same gradient, node dots, and glow dot
+- Icons: Headphones → FileText → Plane → Globe
+- Timeline: Day 1 (red) → Day 2 (terracotta) → Day 3 (green)
+
+### Hero CTA Buttons — Consistent Sizing
+
+**What was done:**
+- Made "Start Planning" and "Explore Destinations" buttons identical in size
+- Removed `font-heading` (Michroma) from outline button — both now use body font
+- Made ChevronRight icon absolute-positioned to not affect button width
+- Set explicit `h-[38px] sm:h-[50px]` on both buttons for exact height matching
+- Set `sm:min-w-[230px]` on both for equal width on desktop
+- Both buttons now exactly 230px × 50px on desktop
+- Verified consistent on mobile
+
+**Files changed:**
+- `src/components/home/LandingPage.tsx` — How It Works overhaul, CTA button sizing
+- `src/app/globals.css` — no net changes (border reverted)
+
+### Social Media Strategy — Complete Research & Plan
+
+**What was created:**
+- `docs/SOCIAL_MEDIA_STRATEGY.md` — comprehensive 12-section strategy document
+
+**Strategy covers:**
+1. Handle names: `@travelsense.in` (IG) / `@travelsensein` (FB, X, LinkedIn)
+2. Bios for all 4 platforms + founder LinkedIn bio
+3. Brand positioning & voice guide
+4. Platform-specific strategies (Instagram primary, Facebook community, LinkedIn founder-led, X brand voice)
+5. 6 content pillars with % allocation
+6. Hashtag strategy (branded: #TravelWithSense, #TravelSenseStories, #CuratedByTravelSense)
+7. Complete Week 1 launch plan (day-by-day for all platforms)
+8. Full 1-month content calendar (April 2026, 4 weeks + wrap)
+9. Engagement growth playbook (zero ad spend tactics)
+10. Meta Ads lead generation strategy (3-stage funnel, Rs 500-1K/day starting budget)
+11. KPIs and success metrics (Month 1, 3, 6 targets)
+12. Tools & setup checklist
+
+**Key research findings:**
+- TravelSense India (TSI) already exists in Delhi — avoid @travelsenseindia handle
+- 60% of Indians find travel ideas on social media; 80% find booking stressful
+- India is Tier 3 on Meta Ads — CPL Rs 200-500, very cost-effective
+- Carousels get highest engagement on IG (1.92%), Reels get highest reach
+- LinkedIn founder personal profile gets 5-10x company page reach
+- WhatsApp click-to-chat is the highest-converting CTA in India
+
+**Deployment:**
+- Committed and deployed all changes to travelsense.co.in via Vercel

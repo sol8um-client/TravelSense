@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 import { Inter, Playfair_Display, Rajdhani, Michroma, Orbitron, Exo_2 } from "next/font/google"
+import { Toaster } from "sonner"
 import { LeadModalProvider } from "@/components/shared/LeadCaptureModal"
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics"
+import { MetaPixel } from "@/components/analytics/MetaPixel"
 import "./globals.css"
 
 const inter = Inter({
@@ -96,9 +99,21 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${rajdhani.variable} ${michroma.variable} ${orbitron.variable} ${exo2.variable} grain`}>
       <body className="min-h-screen bg-background font-body text-foreground antialiased">
+        <GoogleAnalytics />
+        <MetaPixel />
         <LeadModalProvider>
           {children}
         </LeadModalProvider>
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            style: {
+              background: "#0A1425",
+              border: "1px solid rgba(255,255,255,0.1)",
+              color: "#fff",
+            },
+          }}
+        />
       </body>
     </html>
   )
