@@ -26,8 +26,8 @@ const contactDetails = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+91-XXXXXXXXXX",
-    href: "tel:+91XXXXXXXXXX",
+    value: "+91-9876543210",
+    href: "tel:+919876543210",
   },
   {
     icon: Mail,
@@ -127,7 +127,7 @@ export default function ContactInfo() {
       {/* WhatsApp CTA */}
       <motion.div variants={fadeUp} custom={1}>
         <Link
-          href="https://wa.me/91XXXXXXXXXX?text=Hi%20TravelSense%2C%20I%27d%20like%20to%20know%20more%20about%20your%20travel%20services."
+          href="https://wa.me/919876543210?text=Hi%20TravelSense%2C%20I%27d%20like%20to%20know%20more%20about%20your%20travel%20services."
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-4 rounded-2xl border border-[#25D366]/20 bg-[#25D366]/5 p-5 transition-colors hover:border-[#25D366]/40 hover:bg-[#25D366]/10"

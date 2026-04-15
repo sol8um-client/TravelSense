@@ -10,7 +10,12 @@ import { cn } from "@/lib/utils"
    TYPES
    ═══════════════════════════════════════════════════════ */
 
-type GalleryCategory = "Leisure" | "Adventure" | "Educational" | "Sports"
+type GalleryCategory =
+  | "Destinations"
+  | "Adventure"
+  | "Culture"
+  | "Nature"
+  | "Food"
 
 interface GalleryItem {
   id: string
@@ -27,159 +32,209 @@ interface GalleryGridProps {
 }
 
 /* ═══════════════════════════════════════════════════════
-   PLACEHOLDER DATA
+   GALLERY DATA — 20 curated India travel photos
    ═══════════════════════════════════════════════════════ */
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "1",
-    title: "Sunset over Palolem Beach",
+    title: "Shikara on Dal Lake",
     description:
-      "Golden hour at one of Goa's most serene beaches. The gentle waves and swaying palms create an unforgettable tropical escape.",
+      "Glide across the mirror-still waters of Dal Lake in a hand-painted shikara as the Zabarwan mountains reflect in the morning haze.",
     imageUrl:
-      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&h=400&fit=crop",
-    category: "Leisure",
-    destination: "Goa",
+      "https://images.unsplash.com/photo-1597074866923-dc0589150458?w=800&h=600&fit=crop",
+    category: "Destinations",
+    destination: "Srinagar, Kashmir",
   },
   {
     id: "2",
     title: "Pangong Tso at Dawn",
     description:
-      "The mesmerizing blue waters of Pangong Lake stretch endlessly against the stark Ladakhi mountains, a sight that leaves every traveler speechless.",
+      "The mesmerizing blue waters of Pangong Lake stretch endlessly against stark Ladakhi mountains, shifting from azure to turquoise with the light.",
     imageUrl:
-      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&h=400&fit=crop",
-    category: "Adventure",
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop",
+    category: "Nature",
     destination: "Ladakh",
   },
   {
     id: "3",
-    title: "Hawa Mahal in Morning Light",
+    title: "Golden Fort of Jaisalmer",
     description:
-      "The Palace of Winds stands tall in the Pink City, its 953 windows casting intricate shadows as the morning sun illuminates Jaipur's heritage.",
+      "Rising like a mirage from the Thar Desert, Jaisalmer Fort glows with golden sandstone as the last light of day washes over its ramparts.",
     imageUrl:
-      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=400&fit=crop",
-    category: "Educational",
-    destination: "Jaipur",
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop",
+    category: "Destinations",
+    destination: "Jaisalmer, Rajasthan",
   },
   {
     id: "4",
-    title: "Kerala Backwater Houseboat",
+    title: "Alleppey Houseboat Cruise",
     description:
-      "Drift through the tranquil backwaters of Alleppey on a traditional kettuvallam, surrounded by lush green paddy fields and coconut palms.",
+      "Drift through the tranquil backwaters of Alleppey on a traditional kettuvallam, surrounded by lush paddy fields and coconut palms.",
     imageUrl:
-      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&h=400&fit=crop",
-    category: "Leisure",
-    destination: "Kerala",
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&h=600&fit=crop",
+    category: "Nature",
+    destination: "Alleppey, Kerala",
   },
   {
     id: "5",
-    title: "Skiing in Gulmarg",
+    title: "Golden Hour at Palolem",
     description:
-      "Fresh powder on the slopes of Gulmarg, Kashmir's premier winter sports destination with some of the best skiing terrain in Asia.",
+      "Silhouettes of fishing boats frame the setting sun at Palolem Beach, one of South Goa's most serene stretches of coastline.",
     imageUrl:
-      "https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&h=400&fit=crop",
-    category: "Sports",
-    destination: "Gulmarg",
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&h=600&fit=crop",
+    category: "Destinations",
+    destination: "Goa",
   },
   {
     id: "6",
-    title: "Valley of Flowers Trek",
+    title: "Roopkund Trek Trail",
     description:
-      "A UNESCO World Heritage Site bursting with alpine wildflowers, the Valley of Flowers in Uttarakhand is a trekker's paradise.",
+      "Trekkers navigate alpine meadows dotted with wildflowers en route to the mysterious Skeleton Lake, high in the Garhwal Himalayas.",
     imageUrl:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=800&h=600&fit=crop",
     category: "Adventure",
     destination: "Uttarakhand",
   },
   {
     id: "7",
-    title: "Taj Mahal at Sunrise",
+    title: "Evening Aarti at Dashashwamedh",
     description:
-      "The iconic monument of love bathed in the soft pink hues of dawn. An experience that transcends every photograph ever taken.",
+      "Flames dance in synchronized rhythm as priests perform the ancient Ganga Aarti ceremony on the sacred ghats of Varanasi.",
     imageUrl:
-      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop",
-    category: "Educational",
-    destination: "Agra",
+      "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&h=600&fit=crop",
+    category: "Culture",
+    destination: "Varanasi, Uttar Pradesh",
   },
   {
     id: "8",
-    title: "Surfing at Varkala Cliffs",
+    title: "Nohkalikai Falls",
     description:
-      "Catching waves beneath the dramatic red laterite cliffs of Varkala, where adventure meets the Arabian Sea.",
+      "India's tallest plunge waterfall cascades into an emerald pool far below, framed by the misty cliffs of Cherrapunji.",
     imageUrl:
-      "https://images.unsplash.com/photo-1502680390548-bdbac40c7a7a?w=600&h=400&fit=crop",
-    category: "Sports",
-    destination: "Varkala",
+      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
+    category: "Nature",
+    destination: "Cherrapunji, Meghalaya",
   },
   {
     id: "9",
-    title: "Munnar Tea Plantations",
+    title: "Holi Festival of Colors",
     description:
-      "Endless rolling hills carpeted in emerald green tea gardens. Munnar's plantations are a feast for the senses and a photographer's dream.",
+      "Clouds of vivid gulal fill the air as revelers celebrate the festival of colors in the narrow lanes of Pushkar.",
     imageUrl:
-      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&h=400&fit=crop",
-    category: "Leisure",
-    destination: "Munnar",
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop",
+    category: "Culture",
+    destination: "Pushkar, Rajasthan",
   },
   {
     id: "10",
-    title: "Hampi's Ancient Ruins",
+    title: "Chandni Chowk Street Food",
     description:
-      "The surreal boulder-strewn landscape of Hampi houses remnants of the mighty Vijayanagara Empire, a UNESCO treasure waiting to be explored.",
+      "From piping-hot paranthas to crispy jalebis, the bustling lanes of Old Delhi serve up centuries of culinary tradition.",
     imageUrl:
-      "https://images.unsplash.com/photo-1590050752117-238cb20e10fa?w=600&h=400&fit=crop",
-    category: "Educational",
-    destination: "Hampi",
+      "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&h=600&fit=crop",
+    category: "Food",
+    destination: "Old Delhi",
   },
   {
     id: "11",
-    title: "River Rafting in Rishikesh",
+    title: "Khardung La Pass",
     description:
-      "Navigating the exhilarating rapids of the Ganges in Rishikesh, the adventure capital of India, surrounded by forested Himalayan foothills.",
+      "Prayer flags snap in the thin mountain air at one of the world's highest motorable passes, a rite of passage for every Ladakh road-tripper.",
     imageUrl:
-      "https://images.unsplash.com/photo-1530866495561-507c83e6a9da?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1600298882525-15c423be972e?w=800&h=600&fit=crop",
     category: "Adventure",
-    destination: "Rishikesh",
+    destination: "Leh, Ladakh",
   },
   {
     id: "12",
-    title: "Desert Safari in Jaisalmer",
+    title: "Kedarnath Temple",
     description:
-      "Camel rides across the golden Thar Desert dunes as the sun sets behind ancient Rajasthani forts. A timeless experience.",
+      "Nestled against a backdrop of snow-capped peaks, Kedarnath Temple stands as one of the holiest Char Dham pilgrimage sites.",
     imageUrl:
-      "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=600&h=400&fit=crop",
-    category: "Adventure",
-    destination: "Jaisalmer",
+      "https://images.unsplash.com/photo-1626621331169-5f34be280ed9?w=800&h=600&fit=crop",
+    category: "Culture",
+    destination: "Kedarnath, Uttarakhand",
   },
   {
     id: "13",
-    title: "Cricket at Dharamshala Stadium",
+    title: "Tea Plantations at Sunrise",
     description:
-      "The world's most scenic cricket ground, nestled in the Himalayas with snow-capped peaks as the backdrop to every boundary.",
+      "Endless rolling hills carpeted in emerald-green tea gardens catch the first golden rays, a photographer's dream in Munnar.",
     imageUrl:
-      "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&h=400&fit=crop",
-    category: "Sports",
-    destination: "Dharamshala",
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
+    category: "Nature",
+    destination: "Munnar, Kerala",
   },
   {
     id: "14",
-    title: "Andaman Island Diving",
+    title: "Key Monastery",
     description:
-      "Crystal-clear waters teeming with vibrant coral reefs and marine life. Havelock Island offers some of the best diving in South Asia.",
+      "Perched on a hilltop at 4,166 metres, Key Monastery is the largest and oldest in Spiti Valley, a living museum of Tibetan Buddhism.",
     imageUrl:
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop",
-    category: "Sports",
-    destination: "Andaman Islands",
+      "https://images.unsplash.com/photo-1574236170880-fae743734954?w=800&h=600&fit=crop",
+    category: "Destinations",
+    destination: "Spiti Valley, Himachal Pradesh",
   },
   {
     id: "15",
-    title: "Udaipur Lake Palace",
+    title: "Traditional Kerala Sadhya",
     description:
-      "The floating palace on Lake Pichola embodies royal Rajasthani grandeur. Udaipur's City of Lakes never fails to enchant visitors.",
+      "A feast of over 24 dishes served on a fresh banana leaf — the vegetarian Sadhya is Kerala's most celebrated culinary tradition.",
     imageUrl:
-      "https://images.unsplash.com/photo-1585135497273-1a86d9d1e0a3?w=600&h=400&fit=crop",
-    category: "Leisure",
-    destination: "Udaipur",
+      "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&h=600&fit=crop",
+    category: "Food",
+    destination: "Kochi, Kerala",
+  },
+  {
+    id: "16",
+    title: "White Water Rafting",
+    description:
+      "Navigating the exhilarating Grade III and IV rapids of the Ganges in Rishikesh, the adventure capital of India.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1530866495561-507c83ccd1d0?w=800&h=600&fit=crop",
+    category: "Adventure",
+    destination: "Rishikesh, Uttarakhand",
+  },
+  {
+    id: "17",
+    title: "Virupaksha Temple Complex",
+    description:
+      "The surreal boulder-strewn landscape of Hampi frames the towering gopuram of Virupaksha, a living relic of the Vijayanagara Empire.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&h=600&fit=crop",
+    category: "Culture",
+    destination: "Hampi, Karnataka",
+  },
+  {
+    id: "18",
+    title: "Radhanagar Beach",
+    description:
+      "Powder-white sand meets crystal-clear turquoise water at Asia's most celebrated beach on Havelock Island.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+    category: "Destinations",
+    destination: "Havelock Island, Andaman",
+  },
+  {
+    id: "19",
+    title: "Darjeeling Chai Stall",
+    description:
+      "Steaming cups of hand-rolled Darjeeling tea served from a hillside stall, with Kanchenjunga peeking through the morning clouds.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+    category: "Food",
+    destination: "Darjeeling, West Bengal",
+  },
+  {
+    id: "20",
+    title: "Paragliding over Solang Valley",
+    description:
+      "Soar above pine forests and snow-dusted peaks on a tandem paragliding flight from one of India's most popular adventure hubs.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800&h=600&fit=crop",
+    category: "Adventure",
+    destination: "Manali, Himachal Pradesh",
   },
 ]
 
@@ -187,19 +242,24 @@ export const GALLERY_ITEMS: GalleryItem[] = [
    FILTER TABS
    ═══════════════════════════════════════════════════════ */
 
-const FILTER_OPTIONS: Array<{ label: string; value: GalleryCategory | "All" }> = [
+const FILTER_OPTIONS: Array<{
+  label: string
+  value: GalleryCategory | "All"
+}> = [
   { label: "All", value: "All" },
-  { label: "Leisure", value: "Leisure" },
+  { label: "Destinations", value: "Destinations" },
   { label: "Adventure", value: "Adventure" },
-  { label: "Educational", value: "Educational" },
-  { label: "Sports", value: "Sports" },
+  { label: "Culture", value: "Culture" },
+  { label: "Nature", value: "Nature" },
+  { label: "Food", value: "Food" },
 ]
 
 const CATEGORY_COLORS: Record<GalleryCategory, string> = {
-  Leisure: "bg-[#D4A853]/90 text-[#0A1425]",
+  Destinations: "bg-[#D4A853]/90 text-[#0A1425]",
   Adventure: "bg-[#C4324A]/90 text-white",
-  Educational: "bg-[#8A9BB5]/90 text-[#0A1425]",
-  Sports: "bg-emerald-600/90 text-white",
+  Culture: "bg-[#8A9BB5]/90 text-[#0A1425]",
+  Nature: "bg-emerald-600/90 text-white",
+  Food: "bg-amber-600/90 text-white",
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -253,8 +313,12 @@ const lightboxVariants: Variants = {
    ═══════════════════════════════════════════════════════ */
 
 export function GalleryGrid({ items, className }: GalleryGridProps) {
-  const [activeFilter, setActiveFilter] = useState<GalleryCategory | "All">("All")
-  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null)
+  const [activeFilter, setActiveFilter] = useState<
+    GalleryCategory | "All"
+  >("All")
+  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(
+    null
+  )
 
   const filteredItems =
     activeFilter === "All"
@@ -292,12 +356,22 @@ export function GalleryGrid({ items, className }: GalleryGridProps) {
                 layoutId="gallery-filter-indicator"
                 className="absolute inset-0 rounded-full bg-[#C4324A]"
                 style={{ zIndex: -1 }}
-                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                transition={{
+                  type: "spring",
+                  damping: 25,
+                  stiffness: 300,
+                }}
               />
             )}
           </button>
         ))}
       </div>
+
+      {/* ── Photo Count ── */}
+      <p className="mb-6 text-center font-body text-sm text-[#8A9BB5]">
+        Showing {filteredItems.length} photo
+        {filteredItems.length !== 1 ? "s" : ""}
+      </p>
 
       {/* ── Masonry Grid ── */}
       <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
@@ -394,7 +468,7 @@ function GalleryCard({
             {item.title}
           </h3>
           <div className="mt-1 flex items-center gap-1 text-white/70">
-            <MapPin className="h-3 w-3" />
+            <MapPin className="h-3 w-3 text-[#C4324A]" />
             <span className="font-body text-xs">{item.destination}</span>
           </div>
         </div>
@@ -444,7 +518,10 @@ function Lightbox({
         {/* Image */}
         <div className="relative aspect-video w-full">
           <Image
-            src={item.imageUrl.replace("w=600&h=400", "w=1200&h=800")}
+            src={item.imageUrl.replace(
+              "w=800&h=600",
+              "w=1200&h=800"
+            )}
             alt={item.title}
             fill
             sizes="(max-width: 1024px) 100vw, 1024px"

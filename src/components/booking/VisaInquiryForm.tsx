@@ -139,7 +139,7 @@ export default function VisaInquiryForm() {
                 required
                 value={form.phone}
                 onChange={handleChange}
-                placeholder="+91 XXXXX XXXXX"
+                placeholder="+91 98765 43210"
                 aria-label="Phone number"
                 className={inputStyles}
               />

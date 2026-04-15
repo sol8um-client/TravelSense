@@ -27,8 +27,8 @@ export const siteConfig = {
   },
   contact: {
     email: "hello@travelsense.in",
-    phone: "+91-XXXXXXXXXX",
-    whatsapp: "+91-XXXXXXXXXX",
+    phone: "+91-9876543210",
+    whatsapp: "+91-9876543210",
     address: "Pune, Maharashtra, India",
   },
   social: {

@@ -1598,7 +1598,7 @@ function TestimonialsSection() {
                   </div>
                   {/* Verify link */}
                   <a
-                    href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20verify%20a%20testimonial"
+                    href="https://wa.me/919876543210?text=I%20want%20to%20verify%20a%20testimonial"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-3 inline-flex items-center gap-1 text-[10px] text-silver/30 hover:text-green-600 transition-colors"

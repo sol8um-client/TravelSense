@@ -180,7 +180,7 @@ export default function ContactForm() {
                 type="tel"
                 value={form.phone}
                 onChange={handleChange}
-                placeholder="+91 XXXXX XXXXX"
+                placeholder="+91 98765 43210"
                 aria-invalid={!!errors.phone}
                 className={cn(
                   "mt-1.5 border-white/10 bg-white/5 text-white placeholder:text-white/30",

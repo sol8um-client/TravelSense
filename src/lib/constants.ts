@@ -11,7 +11,7 @@ export const ITEMS_PER_PAGE = 12;
 export const CONSULTATION_FEE = 500;
 
 /** WhatsApp number for customer support */
-export const WHATSAPP_NUMBER = "+91-XXXXXXXXXX";
+export const WHATSAPP_NUMBER = "+91-9876543210";
 
 /** Support email address */
 export const SUPPORT_EMAIL = "hello@travelsense.in";
