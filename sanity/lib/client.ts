@@ -1,7 +1,7 @@
 import { createClient, type SanityClient } from "@sanity/client"
 
 const projectId = (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "").trim()
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production"
+const dataset = (process.env.NEXT_PUBLIC_SANITY_DATASET || "production").trim()
 
 // Create a no-op client that returns empty results when Sanity isn't configured
 function createSafeClient(options: Parameters<typeof createClient>[0]): SanityClient {
