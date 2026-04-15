@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, MessageCircle } from "lucide-react"
 import { PageHero } from "@/components/shared/PageHero"
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs"
@@ -28,6 +29,7 @@ export default function FAQPageContent({ faqs }: FAQPageContentProps) {
       <PageHero
         title="Frequently Asked Questions"
         subtitle="Everything you need to know about planning your trip with TravelSense"
+        backgroundImage="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1920&h=1080&fit=crop"
       >
         <Breadcrumbs items={[{ label: "FAQ", href: "/faq" }]} />
       </PageHero>
@@ -42,6 +44,25 @@ export default function FAQPageContent({ faqs }: FAQPageContentProps) {
         >
           <FAQAccordion faqs={faqs} />
         </motion.div>
+      </section>
+
+      {/* ── Decorative Travel Image Banner ────────────────────── */}
+      <section className="relative overflow-hidden bg-[#0A1425]">
+        <div className="relative h-[220px] md:h-[300px]">
+          <Image
+            src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=1920&h=600&fit=crop"
+            alt="Traveler overlooking a scenic landscape"
+            width={1920}
+            height={600}
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1425] via-[#0A1425]/50 to-[#0A1425]" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <p className="mx-auto max-w-lg px-4 text-center font-heading text-xl tracking-wide text-white md:text-2xl">
+              Still curious? We are here to help.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Still Have Questions CTA */}

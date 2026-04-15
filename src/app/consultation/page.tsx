@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { generatePageMetadata } from "@/lib/seo"
 import { JsonLd } from "@/components/shared/JsonLd"
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs"
@@ -69,6 +70,7 @@ export default function ConsultationPage() {
         <PageHero
           title="Free Travel Consultation"
           subtitle="Tell us about your dream trip and our travel experts will craft the perfect plan for you — completely free."
+          backgroundImage="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&h=1080&fit=crop"
         >
           <Breadcrumbs
             items={[{ label: "Consultation", href: "/consultation" }]}
@@ -109,9 +111,9 @@ export default function ConsultationPage() {
           </div>
         </section>
 
-        {/* ── Form Section ────────────────────────────────────── */}
+        {/* ── Form Section with Travel Imagery ────────────────── */}
         <section className="bg-[#0D1A30] py-16 md:py-24">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
                 Schedule Your Consultation
@@ -122,8 +124,38 @@ export default function ConsultationPage() {
               </p>
             </div>
 
-            <div className="mt-10">
-              <ConsultationForm />
+            <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-start">
+              {/* Travel imagery column */}
+              <div className="hidden space-y-6 lg:block">
+                <div className="relative overflow-hidden rounded-2xl">
+                  <Image
+                    src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=800&h=500&fit=crop"
+                    alt="Couple planning a trip with a world map"
+                    width={800}
+                    height={500}
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/80 to-transparent" />
+                  <p className="absolute bottom-4 left-4 font-body text-sm text-white/80">
+                    Your dream trip starts with a conversation
+                  </p>
+                </div>
+                <div className="relative overflow-hidden rounded-2xl">
+                  <Image
+                    src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=400&fit=crop"
+                    alt="Scenic lake surrounded by mountains"
+                    width={800}
+                    height={400}
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/80 to-transparent" />
+                </div>
+              </div>
+
+              {/* Form column */}
+              <div className="mx-auto w-full max-w-xl lg:max-w-none">
+                <ConsultationForm />
+              </div>
             </div>
           </div>
         </section>

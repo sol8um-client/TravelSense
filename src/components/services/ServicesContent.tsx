@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import {
   ArrowRight,
   Check,
@@ -57,6 +58,7 @@ const coreServices = [
       "Speak with our travel experts to plan your dream trip. First session is complimentary.",
     href: "/consultation",
     badge: "Free First Session",
+    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=250&fit=crop",
   },
   {
     icon: Map,
@@ -65,6 +67,7 @@ const coreServices = [
       "Custom day-by-day itineraries tailored to your preferences, budget, and travel style.",
     href: "/itinerary-builder",
     badge: null,
+    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=400&h=250&fit=crop",
   },
   {
     icon: Hotel,
@@ -73,6 +76,7 @@ const coreServices = [
       "Access the best rates across thousands of properties worldwide. Price match guaranteed.",
     href: "/hotels",
     badge: null,
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=250&fit=crop",
   },
   {
     icon: Car,
@@ -81,6 +85,7 @@ const coreServices = [
       "Airport transfers, intercity cabs, and self-drive rentals for seamless road travel.",
     href: "/vehicles",
     badge: null,
+    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&h=250&fit=crop",
   },
   {
     icon: FileCheck,
@@ -89,6 +94,7 @@ const coreServices = [
       "End-to-end visa processing and passport services. No paperwork headaches.",
     href: "/visa-passport",
     badge: null,
+    image: "https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=400&h=250&fit=crop",
   },
   {
     icon: Users,
@@ -97,6 +103,7 @@ const coreServices = [
       "Tailored packages for corporate offsites, team outings, and large group getaways.",
     href: "/contact",
     badge: null,
+    image: "https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=400&h=250&fit=crop",
   },
 ]
 
@@ -154,6 +161,7 @@ export default function ServicesContent() {
       <PageHero
         title="Our Services"
         subtitle="Everything you need for the perfect trip"
+        backgroundImage="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=1920&h=1080&fit=crop"
       >
         <Breadcrumbs items={[{ label: "Services", href: "/services" }]} />
       </PageHero>
@@ -286,36 +294,75 @@ export default function ServicesContent() {
                   key={service.title}
                   variants={scaleIn}
                   custom={i}
-                  className="group relative rounded-xl border border-white/[0.06] bg-white/[0.03] p-6 transition-colors hover:border-[#C4324A]/30 hover:bg-white/[0.05]"
+                  className="group relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.03] transition-colors hover:border-[#C4324A]/30 hover:bg-white/[0.05]"
                 >
-                  {service.badge && (
-                    <span className="absolute right-4 top-4 rounded-full bg-[#C4324A]/15 px-2.5 py-0.5 font-body text-[11px] font-medium text-[#C4324A]">
-                      {service.badge}
-                    </span>
-                  )}
-
-                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-[#C4324A]/10">
-                    <Icon className="h-5 w-5 text-[#C4324A]" />
+                  {/* Service image */}
+                  <div className="relative h-36 overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={400}
+                      height={250}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A30] via-[#0D1A30]/40 to-transparent" />
                   </div>
 
-                  <h3 className="font-heading text-base tracking-wide text-white">
-                    {service.title}
-                  </h3>
-                  <p className="mt-2 font-body text-sm leading-relaxed text-white/45">
-                    {service.description}
-                  </p>
+                  <div className="p-6">
+                    {service.badge && (
+                      <span className="absolute right-4 top-4 rounded-full bg-[#C4324A]/15 px-2.5 py-0.5 font-body text-[11px] font-medium text-[#C4324A] backdrop-blur-sm">
+                        {service.badge}
+                      </span>
+                    )}
 
-                  <Link
-                    href={service.href}
-                    className="mt-4 inline-flex items-center gap-1 font-body text-sm font-medium text-[#D4A853] transition-colors hover:text-[#D4A853]/80"
-                  >
-                    Learn more
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                  </Link>
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-[#C4324A]/10">
+                      <Icon className="h-5 w-5 text-[#C4324A]" />
+                    </div>
+
+                    <h3 className="font-heading text-base tracking-wide text-white">
+                      {service.title}
+                    </h3>
+                    <p className="mt-2 font-body text-sm leading-relaxed text-white/45">
+                      {service.description}
+                    </p>
+
+                    <Link
+                      href={service.href}
+                      className="mt-4 inline-flex items-center gap-1 font-body text-sm font-medium text-[#D4A853] transition-colors hover:text-[#D4A853]/80"
+                    >
+                      Learn more
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </div>
                 </motion.div>
               )
             })}
           </motion.div>
+        </div>
+      </section>
+
+      {/* ── Travel Experience Banner ─────────────────────────────── */}
+      <section className="relative overflow-hidden">
+        <div className="relative h-[280px] md:h-[360px]">
+          <Image
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&h=600&fit=crop"
+            alt="Beautiful tropical beach with crystal clear water"
+            width={1920}
+            height={600}
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1425]/90 via-[#0A1425]/60 to-[#0A1425]/90" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="mx-auto max-w-3xl px-4 text-center">
+              <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+                Travel With Confidence
+              </h2>
+              <p className="mx-auto mt-3 max-w-xl font-body text-sm text-white/70 md:text-base">
+                From the first consultation to the last sunset of your trip, every detail is thoughtfully handled.
+                Your only job is to enjoy the journey.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

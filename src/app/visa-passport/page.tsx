@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { generatePageMetadata } from "@/lib/seo"
 import { JsonLd } from "@/components/shared/JsonLd"
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs"
@@ -87,6 +88,7 @@ export default function VisaPassportPage() {
         <PageHero
           title="Visa & Passport Services"
           subtitle="Stress-free documentation assistance so you can focus on planning your trip, not the paperwork."
+          backgroundImage="https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=1920&h=1080&fit=crop"
         >
           <Breadcrumbs
             items={[{ label: "Visa & Passport", href: "/visa-passport" }]}
@@ -159,6 +161,66 @@ export default function VisaPassportPage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Travel Destinations Collage ─────────────────────── */}
+        <section className="bg-[#0A1425] py-16 md:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+                Your World Awaits
+              </h2>
+              <p className="mx-auto mt-3 max-w-2xl font-body text-sm text-white/50 md:text-base">
+                From iconic landmarks to hidden gems, we help you get the paperwork sorted so you can explore freely.
+              </p>
+            </div>
+            <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&h=500&fit=crop"
+                  alt="Eiffel Tower, Paris"
+                  width={400}
+                  height={500}
+                  className="h-60 w-full object-cover transition-transform duration-500 hover:scale-105 md:h-72"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/80 to-transparent" />
+                <p className="absolute bottom-3 left-3 font-body text-sm font-medium text-white">Paris, France</p>
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=400&h=500&fit=crop"
+                  alt="Sydney Opera House"
+                  width={400}
+                  height={500}
+                  className="h-60 w-full object-cover transition-transform duration-500 hover:scale-105 md:h-72"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/80 to-transparent" />
+                <p className="absolute bottom-3 left-3 font-body text-sm font-medium text-white">Sydney, Australia</p>
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=400&h=500&fit=crop"
+                  alt="Tokyo cityscape"
+                  width={400}
+                  height={500}
+                  className="h-60 w-full object-cover transition-transform duration-500 hover:scale-105 md:h-72"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/80 to-transparent" />
+                <p className="absolute bottom-3 left-3 font-body text-sm font-medium text-white">Tokyo, Japan</p>
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=400&h=500&fit=crop"
+                  alt="Dubai skyline"
+                  width={400}
+                  height={500}
+                  className="h-60 w-full object-cover transition-transform duration-500 hover:scale-105 md:h-72"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/80 to-transparent" />
+                <p className="absolute bottom-3 left-3 font-body text-sm font-medium text-white">Dubai, UAE</p>
+              </div>
             </div>
           </div>
         </section>

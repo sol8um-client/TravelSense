@@ -9,13 +9,10 @@ import { cn } from "@/lib/utils"
 
 const BLOG_CATEGORIES = [
   "All",
-  "Travel Tips",
   "Destination Guides",
-  "Adventure",
-  "Culture",
-  "Food & Cuisine",
-  "Travel Planning",
-  "Budget Travel",
+  "Travel Tips",
+  "Food & Culture",
+  "Adventure Stories",
 ] as const
 
 const POSTS_PER_PAGE = 9

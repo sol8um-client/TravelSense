@@ -21,6 +21,7 @@ export default function ContactPage() {
       <PageHero
         title="Get In Touch"
         subtitle="Questions, ideas, or ready to plan? We'd love to hear from you."
+        backgroundImage="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop"
       >
         <Breadcrumbs items={[{ label: "Contact", href: "/contact" }]} />
       </PageHero>

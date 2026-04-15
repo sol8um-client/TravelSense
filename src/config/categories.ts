@@ -43,7 +43,7 @@ export const travelCategories: TravelCategory[] = [
       gradient: "from-[#1B4B7A] to-[#2BA5A5]",
       light: "#E8F0FE",
     },
-    image: "/images/categories/leisure.jpg",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
     highlights: [
       "Beach resorts and island escapes",
       "Hill station retreats",
@@ -77,7 +77,7 @@ export const travelCategories: TravelCategory[] = [
       gradient: "from-[#E8923E] to-[#F0B56A]",
       light: "#FFF3E0",
     },
-    image: "/images/categories/adventure.jpg",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
     highlights: [
       "Himalayan trekking expeditions",
       "White-water rafting trips",
@@ -111,7 +111,7 @@ export const travelCategories: TravelCategory[] = [
       gradient: "from-[#2BA5A5] to-[#4DC9C9]",
       light: "#E0F7F7",
     },
-    image: "/images/categories/educational.jpg",
+    image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=600&fit=crop",
     highlights: [
       "Heritage and cultural tours",
       "Student exchange programs",
@@ -145,7 +145,7 @@ export const travelCategories: TravelCategory[] = [
       gradient: "from-indigo-600 to-purple-500",
       light: "#EDE7F6",
     },
-    image: "/images/categories/sports.jpg",
+    image: "https://images.unsplash.com/photo-1461896836934-bd45ba24e62c?w=800&h=600&fit=crop",
     highlights: [
       "Cricket World Cup packages",
       "Football league experiences",

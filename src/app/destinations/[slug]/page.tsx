@@ -8,63 +8,21 @@ import {
   Cloud,
   Sparkles,
   ArrowRight,
+  Info,
 } from "lucide-react"
-import { sanityClient, destinationBySlugQuery, destinationSlugsQuery, urlFor } from "@/lib/sanity"
 import { generatePageMetadata, breadcrumbSchema } from "@/lib/seo"
 import { formatCurrency } from "@/lib/utils"
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs"
 import { JsonLd } from "@/components/shared/JsonLd"
 import { PageHero } from "@/components/shared/PageHero"
+import { destinations, getDestinationBySlug } from "@/data/destinations"
 
-export const revalidate = 3600
-
-/* ─── Types ───────────────────────────────────────────────────────────────── */
-
-interface DestinationDetail {
-  _id: string
-  name: string
-  slug: string
-  description: string
-  longDescription?: string
-  heroImage?: unknown
-  gallery?: unknown[]
-  region: string
-  country?: string
-  category?: string
-  bestTimeToVisit?: string
-  weather?: {
-    summer?: string
-    winter?: string
-    monsoon?: string
-  }
-  highlights?: string[]
-  startingPrice?: number
-  coordinates?: { lat: number; lng: number }
-  featured?: boolean
-  packages?: {
-    _id: string
-    title: string
-    slug: string
-    description: string
-    category?: string
-    duration?: { days: number; nights: number }
-    price?: number
-    discountedPrice?: number
-    heroImage?: unknown
-    difficulty?: string
-    featured?: boolean
-  }[]
-}
+export const dynamic = "force-static"
 
 /* ─── Static params ───────────────────────────────────────────────────────── */
 
-export async function generateStaticParams() {
-  try {
-    const slugs: string[] = await sanityClient.fetch(destinationSlugsQuery)
-    return slugs.map((slug) => ({ slug }))
-  } catch {
-    return []
-  }
+export function generateStaticParams() {
+  return destinations.map((d) => ({ slug: d.slug }))
 }
 
 /* ─── Dynamic metadata ────────────────────────────────────────────────────── */
@@ -75,56 +33,22 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  try {
-    const dest: DestinationDetail | null = await sanityClient.fetch(
-      destinationBySlugQuery,
-      { slug }
-    )
-    if (!dest) {
-      return generatePageMetadata({
-        title: "Destination Not Found | TravelSense",
-        description: "The requested destination could not be found.",
-        path: `/destinations/${slug}`,
-      })
-    }
-    const ogImage = dest.heroImage
-      ? urlFor(dest.heroImage).width(1200).height(630).url()
-      : undefined
+  const dest = getDestinationBySlug(slug)
+
+  if (!dest) {
     return generatePageMetadata({
-      title: `${dest.name} — Travel Guide | TravelSense`,
-      description: dest.description,
-      path: `/destinations/${slug}`,
-      image: ogImage,
-    })
-  } catch {
-    return generatePageMetadata({
-      title: "Destination | TravelSense",
-      description: "Explore amazing travel destinations with TravelSense.",
+      title: "Destination Not Found | TravelSense",
+      description: "The requested destination could not be found.",
       path: `/destinations/${slug}`,
     })
   }
-}
 
-/* ─── Data fetching ───────────────────────────────────────────────────────── */
-
-async function getDestination(slug: string): Promise<DestinationDetail | null> {
-  try {
-    const dest = await sanityClient.fetch(destinationBySlugQuery, { slug })
-    return dest || null
-  } catch {
-    return null
-  }
-}
-
-/* ─── Helper: build image URL ─────────────────────────────────────────────── */
-
-function getImageUrl(source: unknown, w: number, h: number): string | null {
-  if (!source) return null
-  try {
-    return urlFor(source).width(w).height(h).url()
-  } catch {
-    return null
-  }
+  return generatePageMetadata({
+    title: `${dest.name} — Travel Guide | TravelSense`,
+    description: dest.description,
+    path: `/destinations/${slug}`,
+    image: dest.heroImage,
+  })
 }
 
 /* ─── Page ────────────────────────────────────────────────────────────────── */
@@ -135,11 +59,9 @@ export default async function DestinationDetailPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const destination = await getDestination(slug)
+  const destination = getDestinationBySlug(slug)
 
   if (!destination) notFound()
-
-  const heroUrl = getImageUrl(destination.heroImage, 1600, 900)
 
   return (
     <>
@@ -157,15 +79,15 @@ export default async function DestinationDetailPage({
           "@type": "TouristDestination",
           name: destination.name,
           description: destination.description,
-          ...(heroUrl && { image: heroUrl }),
+          image: destination.heroImage,
         }}
       />
 
       {/* Hero */}
       <PageHero
         title={destination.name}
-        subtitle={destination.description}
-        backgroundImage={heroUrl || undefined}
+        subtitle={destination.tagline}
+        backgroundImage={destination.heroImage}
       >
         <Breadcrumbs
           items={[
@@ -183,237 +105,165 @@ export default async function DestinationDetailPage({
             {destination.region}
             {destination.country && `, ${destination.country}`}
           </div>
-          {destination.bestTimeToVisit && (
-            <div className="flex items-center gap-2">
-              <Calendar className="h-4 w-4 text-[#D4A853]" />
-              Best time: {destination.bestTimeToVisit}
-            </div>
-          )}
-          {destination.startingPrice && (
-            <div className="flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-[#D4A853]" />
-              Starting from{" "}
-              <span className="font-medium text-[#C4324A]">
-                {formatCurrency(destination.startingPrice)}
-              </span>
-            </div>
-          )}
+          <div className="flex items-center gap-2">
+            <Calendar className="h-4 w-4 text-[#D4A853]" />
+            Best time: {destination.bestTimeToVisit}
+          </div>
+          <div className="flex items-center gap-2">
+            <Sparkles className="h-4 w-4 text-[#D4A853]" />
+            Starting from{" "}
+            <span className="font-medium text-[#C4324A]">
+              {formatCurrency(destination.startingPrice)}
+            </span>
+          </div>
         </div>
       </section>
 
       {/* Overview */}
-      {destination.longDescription && (
-        <section className="bg-[#0A1425] px-4 py-16">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
-              Overview
-            </h2>
-            <div className="mt-6 whitespace-pre-line text-white/60 leading-relaxed">
-              {destination.longDescription}
-            </div>
+      <section className="bg-[#0A1425] px-4 py-16">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+            Overview
+          </h2>
+          <p className="mt-4 text-white/70 leading-relaxed">
+            {destination.description}
+          </p>
+          <div className="mt-6 whitespace-pre-line text-white/60 leading-relaxed">
+            {destination.longDescription}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* Highlights */}
-      {destination.highlights && destination.highlights.length > 0 && (
-        <section className="bg-[#0D1A30] px-4 py-16">
-          <div className="mx-auto max-w-5xl">
-            <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
-              Highlights
-            </h2>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {destination.highlights.map((highlight, i) => (
-                <span
-                  key={i}
-                  className="rounded-full border border-[#C4324A]/20 bg-[#C4324A]/10 px-4 py-2 text-sm text-white/80"
-                >
-                  {highlight}
-                </span>
-              ))}
-            </div>
+      <section className="bg-[#0D1A30] px-4 py-16">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+            Highlights
+          </h2>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {destination.highlights.map((highlight, i) => (
+              <span
+                key={i}
+                className="rounded-full border border-[#C4324A]/20 bg-[#C4324A]/10 px-4 py-2 text-sm text-white/80"
+              >
+                {highlight}
+              </span>
+            ))}
           </div>
-        </section>
-      )}
-
-      {/* Weather */}
-      {destination.weather && (
-        <section className="bg-[#0A1425] px-4 py-16">
-          <div className="mx-auto max-w-5xl">
-            <h2 className="mb-8 font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
-              Weather & Climate
-            </h2>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {destination.weather.summer && (
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                  <div className="flex items-center gap-2 text-[#D4A853]">
-                    <Cloud className="h-5 w-5" />
-                    <h3 className="font-heading text-sm font-normal tracking-wide">
-                      Summer
-                    </h3>
-                  </div>
-                  <p className="mt-3 text-sm text-white/60">
-                    {destination.weather.summer}
-                  </p>
-                </div>
-              )}
-              {destination.weather.monsoon && (
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                  <div className="flex items-center gap-2 text-[#D4A853]">
-                    <Cloud className="h-5 w-5" />
-                    <h3 className="font-heading text-sm font-normal tracking-wide">
-                      Monsoon
-                    </h3>
-                  </div>
-                  <p className="mt-3 text-sm text-white/60">
-                    {destination.weather.monsoon}
-                  </p>
-                </div>
-              )}
-              {destination.weather.winter && (
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                  <div className="flex items-center gap-2 text-[#D4A853]">
-                    <Cloud className="h-5 w-5" />
-                    <h3 className="font-heading text-sm font-normal tracking-wide">
-                      Winter
-                    </h3>
-                  </div>
-                  <p className="mt-3 text-sm text-white/60">
-                    {destination.weather.winter}
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* Gallery */}
-      {destination.gallery && destination.gallery.length > 0 && (
-        <section className="bg-[#0D1A30] px-4 py-16">
-          <div className="mx-auto max-w-6xl">
-            <h2 className="mb-8 font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
-              Gallery
-            </h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {destination.gallery.map((img, i) => {
-                const url = getImageUrl(img, 600, 400)
-                if (!url) return null
-                return (
-                  <div
-                    key={i}
-                    className="group relative aspect-[3/2] overflow-hidden rounded-xl border border-white/10"
-                  >
-                    <Image
-                      src={url}
-                      alt={`${destination.name} gallery ${i + 1}`}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
+      <section className="bg-[#0A1425] px-4 py-16">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-8 font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+            Gallery
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {destination.galleryImages.map((img, i) => (
+              <div
+                key={i}
+                className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-white/10"
+              >
+                <Image
+                  src={img}
+                  alt={`${destination.name} gallery ${i + 1}`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Experiences */}
+      <section className="bg-[#0D1A30] px-4 py-16">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="mb-8 font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+            Popular Experiences
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {destination.popularExperiences.map((exp, i) => (
+              <div
+                key={i}
+                className="rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-[#C4324A]/30"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl" role="img" aria-label={exp.title}>
+                    {exp.icon}
+                  </span>
+                  <div>
+                    <h3 className="font-heading text-base font-normal tracking-wide text-white">
+                      {exp.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-white/60 leading-relaxed">
+                      {exp.description}
+                    </p>
                   </div>
-                )
-              })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Best Time to Visit & Weather */}
+      <section className="bg-[#0A1425] px-4 py-16">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="mb-8 font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+            Best Time to Visit
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="flex items-center gap-2 text-[#D4A853]">
+                <Calendar className="h-5 w-5" />
+                <h3 className="font-heading text-sm font-normal tracking-wide">
+                  Ideal Season
+                </h3>
+              </div>
+              <p className="mt-3 text-lg text-white/80">
+                {destination.bestTimeToVisit}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="flex items-center gap-2 text-[#D4A853]">
+                <Cloud className="h-5 w-5" />
+                <h3 className="font-heading text-sm font-normal tracking-wide">
+                  Weather & Climate
+                </h3>
+              </div>
+              <p className="mt-3 text-sm text-white/60 leading-relaxed">
+                {destination.weather}
+              </p>
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
-      {/* Related Packages */}
-      {destination.packages && destination.packages.length > 0 && (
-        <section className="bg-[#0A1425] px-4 py-16">
-          <div className="mx-auto max-w-6xl">
-            <div className="flex items-center justify-between">
-              <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
-                Packages for {destination.name}
-              </h2>
-              <Link
-                href={`/destinations/${slug}/packages`}
-                className="hidden items-center gap-1 text-sm text-[#C4324A] transition-colors hover:text-[#C4324A]/80 md:flex"
+      {/* Things to Know */}
+      <section className="bg-[#0D1A30] px-4 py-16">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="mb-8 font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+            Things to Know
+          </h2>
+          <div className="space-y-4">
+            {destination.thingsToKnow.map((tip, i) => (
+              <div
+                key={i}
+                className="flex gap-3 rounded-xl border border-white/5 bg-white/5 p-4"
               >
-                View all
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {destination.packages.slice(0, 6).map((pkg) => {
-                const pkgImage = getImageUrl(pkg.heroImage, 600, 400)
-                return (
-                  <Link
-                    key={pkg._id}
-                    href={`/packages/${pkg.slug}`}
-                    className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-[#C4324A]/30"
-                  >
-                    <div className="relative aspect-[4/3] overflow-hidden">
-                      {pkgImage ? (
-                        <Image
-                          src={pkgImage}
-                          alt={pkg.title}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        />
-                      ) : (
-                        <div className="flex h-full w-full items-center justify-center bg-[#0D1A30]">
-                          <Sparkles className="h-8 w-8 text-white/20" />
-                        </div>
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/80 via-transparent to-transparent" />
-
-                      {pkg.difficulty && (
-                        <span className="absolute top-3 right-3 rounded-full bg-white/10 px-2.5 py-1 text-xs text-white/80 backdrop-blur">
-                          {pkg.difficulty}
-                        </span>
-                      )}
-                    </div>
-
-                    <div className="p-4">
-                      <h3 className="font-heading text-base font-normal tracking-wide text-white">
-                        {pkg.title}
-                      </h3>
-                      {pkg.duration && (
-                        <p className="mt-1 text-xs text-white/50">
-                          {pkg.duration.days} Days / {pkg.duration.nights} Nights
-                        </p>
-                      )}
-                      <div className="mt-3 flex items-center gap-2">
-                        {pkg.discountedPrice ? (
-                          <>
-                            <span className="text-sm font-medium text-[#C4324A]">
-                              {formatCurrency(pkg.discountedPrice)}
-                            </span>
-                            <span className="text-xs text-white/40 line-through">
-                              {formatCurrency(pkg.price || 0)}
-                            </span>
-                          </>
-                        ) : pkg.price ? (
-                          <span className="text-sm font-medium text-[#C4324A]">
-                            {formatCurrency(pkg.price)}
-                          </span>
-                        ) : null}
-                      </div>
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
-
-            <div className="mt-8 text-center md:hidden">
-              <Link
-                href={`/destinations/${slug}/packages`}
-                className="inline-flex items-center gap-1 text-sm text-[#C4324A]"
-              >
-                View all packages
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
+                <Info className="mt-0.5 h-5 w-5 shrink-0 text-[#D4A853]" />
+                <p className="text-sm text-white/70 leading-relaxed">{tip}</p>
+              </div>
+            ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* CTA */}
-      <section className="bg-[#0D1A30] px-4 py-16">
+      <section className="bg-[#0A1425] px-4 py-16">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
             Ready to explore {destination.name}?
@@ -421,6 +271,13 @@ export default async function DestinationDetailPage({
           <p className="mt-4 text-white/50">
             Let our travel experts craft the perfect itinerary for your trip.
           </p>
+          <div className="mt-2 text-sm text-white/40">
+            Starting from{" "}
+            <span className="font-medium text-[#C4324A]">
+              {formatCurrency(destination.startingPrice)}
+            </span>{" "}
+            per person
+          </div>
           <Link
             href="/consultation"
             className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#C4324A] px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-[#C4324A]/90"

@@ -19,6 +19,7 @@ export default function AboutPage() {
       <PageHero
         title="About TravelSense"
         subtitle="Founded by Jayshree Lakhotiya — 15+ years of crafting unforgettable journeys"
+        backgroundImage="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1920&h=1080&fit=crop"
       >
         <Breadcrumbs items={[{ label: "About", href: "/about" }]} />
       </PageHero>
