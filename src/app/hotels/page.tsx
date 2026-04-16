@@ -40,7 +40,7 @@ export default function HotelsPage() {
             <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
               {[
                 { src: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=500&h=600&fit=crop", label: "Luxury Resort", alt: "Luxury pool resort" },
-                { src: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=500&h=600&fit=crop", label: "Heritage Haveli", alt: "Heritage haveli courtyard" },
+                { src: "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=500&h=600&fit=crop", label: "Heritage Haveli", alt: "Heritage haveli courtyard" },
                 { src: "https://images.unsplash.com/photo-1470770841497-7b3200f18585?w=500&h=600&fit=crop", label: "Mountain Lodge", alt: "Mountain lodge with scenic view" },
                 { src: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=500&h=600&fit=crop", label: "Beach Villa", alt: "Beach villa with ocean view" },
               ].map((hotel) => (

@@ -88,7 +88,7 @@ export default function VisaPassportPage() {
         <PageHero
           title="Visa & Passport Services"
           subtitle="Stress-free documentation assistance so you can focus on planning your trip, not the paperwork."
-          backgroundImage="https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=1920&h=1080&fit=crop"
+          backgroundImage="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=1920&h=1080&fit=crop"
         >
           <Breadcrumbs
             items={[{ label: "Visa & Passport", href: "/visa-passport" }]}

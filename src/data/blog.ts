@@ -33,7 +33,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt:
       "Kashmir is far more than Srinagar and Gulmarg. Discover offbeat valleys, secret meadows, and remote villages that most tourists never see. These hidden gems will redefine your idea of paradise.",
     coverImage:
-      "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=1200&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1597074866923-dc0589150458?w=1200&h=600&fit=crop",
     author: defaultAuthor,
     publishedAt: "2026-03-20T10:00:00Z",
     readTime: 8,
@@ -167,7 +167,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt:
       "Living root bridges, crystal-clear rivers, vibrant tribal festivals, and landscapes that rival anywhere on earth. Here is why Northeast India deserves a spot on every traveller's bucket list.",
     coverImage:
-      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=1200&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200&h=600&fit=crop",
     author: defaultAuthor,
     publishedAt: "2026-03-10T10:00:00Z",
     readTime: 7,
@@ -216,7 +216,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt:
       "Rajasthan does not have to break the bank. From budget stays in heritage havelis to free temple visits and cheap local eats, here is how to experience the land of kings on a shoestring budget.",
     coverImage:
-      "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1200&h=600&fit=crop",
     author: defaultAuthor,
     publishedAt: "2026-03-05T10:00:00Z",
     readTime: 9,
@@ -342,7 +342,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt:
       "A step-by-step guide for first-time international travellers from India. Passports, visas, forex, travel insurance, packing, and everything else you need to know before your first flight abroad.",
     coverImage:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=1200&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=1200&h=600&fit=crop",
     author: defaultAuthor,
     publishedAt: "2026-02-20T10:00:00Z",
     readTime: 8,
@@ -414,7 +414,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt:
       "From the paranthas of Chandni Chowk to the kachoris of Varanasi and the lassi of Jaipur, this street food tour covers the best eats across three of India's most flavourful cities.",
     coverImage:
-      "https://images.unsplash.com/photo-1567337710282-00832b415979?w=1200&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200&h=600&fit=crop",
     author: defaultAuthor,
     publishedAt: "2026-02-15T10:00:00Z",
     readTime: 7,
@@ -487,7 +487,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt:
       "Everything you need to plan your Char Dham Yatra in 2026: registration, best time to visit, route options, helicopter vs road, accommodation, and essential tips for a safe pilgrimage.",
     coverImage:
-      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1626621331169-5f34be280ed9?w=1200&h=600&fit=crop",
     author: defaultAuthor,
     publishedAt: "2026-02-10T10:00:00Z",
     readTime: 12,

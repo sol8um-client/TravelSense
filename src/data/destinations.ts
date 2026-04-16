@@ -52,9 +52,9 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1609837644286-48fa3e6cd3bf?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1624466440418-ba5c78826a9b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1590677880200-f563bdb25e1b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1566837945700-30057527ade0?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1587922546307-776227941871?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567600700712-470c1e4e3849?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "March to October (Summer & Autumn)",
     weather:
@@ -121,12 +121,12 @@ export const destinations: Destination[] = [
     heroImage:
       "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&h=900&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1589793907316-f94025b46850?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600071907662-57460e6b1320?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1574416239408-a0a1b1eddd91?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1617824654019-900adea4e457?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1573053985939-81bc1a37a4cb?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1589824783845-94f6f1dd8e23?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600176183920-ff3e18e45321?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1614604689579-1a41395e5009?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1590674668498-9c1e68326e01?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1570543999-74aebc83ca7c?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "June to September",
     weather:
@@ -191,12 +191,12 @@ export const destinations: Destination[] = [
     longDescription:
       "Himachal Pradesh is the quintessential Himalayan getaway for Indians and international visitors alike. The state unfurls across a stunning range of altitudes — from the subtropical foothills near Chandigarh to the trans-Himalayan moonscapes of Spiti Valley above 12,000 ft. Each town has its own personality: Shimla charms with its Ridge promenade and mock-Tudor architecture, Manali pulses with backpacker energy and roaring rivers, and McLeodganj offers Tibetan momos and meditation retreats in the shadow of the Dhauladhar range.\n\nNature lovers will find no shortage of wonders — the Great Himalayan National Park (a UNESCO World Heritage Site) shelters snow leopards and over 375 bird species, while Kasol and Kheerganga draw trekkers with pine-forest trails ending at natural hot springs. The Kullu Valley erupts in colour during the October Dussehra festival, a week-long celebration unique to the region. And for the truly intrepid, the Spiti circuit delivers jaw-dropping vistas of barren peaks, hanging monasteries, and fossil-laden ridges.\n\nHimachal is also an epicure's delight — think fresh trout from Tirthan Valley, Sidu bread from Kullu, and piping-hot Siddu with ghee on a cold mountain morning. Whether you seek adrenaline or tranquillity, this state wraps you in mountain air and sends you home renewed.",
     heroImage:
-      "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1585136917457-30a55e67ef49?w=1600&h=900&fit=crop",
     galleryImages: [
+      "https://images.unsplash.com/photo-1544735716-ea9ef790fcfd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1609920658906-8223bd289001?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1626621341522-e1a5a4a5b086?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1573217977675-57c1b7f09c45?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1596627116790-af6f46ddddbc?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1580289234369-3bd2e6d3b546?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1581791538302-03537b9c97bf?w=800&h=600&fit=crop",
     ],
@@ -263,11 +263,11 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1600&h=900&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1524309307259-7c7d4bf28a1e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1587135941948-670b381f08ce?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1609947017136-9dab4ab0dbc0?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1524309307259-7c7d4bf28a1e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1609947017136-9dab4ab0dbc0?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "October to March",
     weather:
@@ -334,12 +334,12 @@ export const destinations: Destination[] = [
     heroImage:
       "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1600&h=900&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1570804485046-1d51e3edcbe9?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1585135497273-1a86d9d55580?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1602339752474-f77aa7bcdeaa?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "October to March",
     weather:
@@ -406,10 +406,10 @@ export const destinations: Destination[] = [
     galleryImages: [
       "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1515091943-9d5c0ad475af?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1585135497273-1a86d9d55580?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1524309307259-7c7d4bf28a1e?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "October to March",
     weather:
@@ -472,14 +472,14 @@ export const destinations: Destination[] = [
     longDescription:
       "Uttarakhand — the Land of the Gods — sits at the threshold where the Indo-Gangetic plains surrender to the mighty Himalayas. The state is the source of India's two holiest rivers, the Ganga and the Yamuna, and its ancient temples have drawn pilgrims for millennia. Rishikesh, the Yoga Capital of the World, combines spiritual energy with adrenaline: meditate at dawn in an ashram, then raft Class IV rapids on the Ganga by afternoon. Haridwar, just downstream, hosts the nightly Ganga Aarti at Har Ki Pauri with a fervour that rivals Varanasi.\n\nFor nature lovers, the state is a treasure chest. Jim Corbett National Park — India's oldest — shelters Bengal tigers, elephants, and over 600 bird species. The Valley of Flowers, a UNESCO World Heritage Site, blooms in a kaleidoscope of alpine wildflowers every monsoon. Nainital and Mussoorie offer colonial-era lakeside charm, while Auli provides some of the best skiing in India with panoramic views of Nanda Devi.\n\nThe spiritual heart of Uttarakhand beats strongest at the Char Dham — the four sacred shrines of Yamunotri, Gangotri, Kedarnath, and Badrinath — a pilgrimage that traverses some of the most spectacular mountain scenery on earth. Whether your journey is inward or outward, Uttarakhand has a path for you.",
     heroImage:
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1590766940554-634f4e033fd0?w=1600&h=900&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "March to June & September to November",
     weather:
@@ -546,11 +546,11 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=1600&h=900&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1625735765267-7c2bae3f5b9d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1609340667519-3f314bd23c3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1586325194227-7625ed95172b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506038634487-60a69ae4b7b1?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1558862107-d49ef2a04d72?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "October to May",
     weather:
@@ -615,12 +615,12 @@ export const destinations: Destination[] = [
     heroImage:
       "https://images.unsplash.com/photo-1622308644420-b20142dc993c?w=1600&h=900&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1506038634487-60a69ae4b7b1?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1558862107-d49ef2a04d72?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1575550959580-76e19e2a5e3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1567600700712-470c1e4e3849?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "March to May & October to December",
     weather:
@@ -683,14 +683,14 @@ export const destinations: Destination[] = [
     longDescription:
       "Arunachal Pradesh — the Land of the Dawn-Lit Mountains — is India's wildest and least-visited state, and therein lies its magic. Spanning from the snow-clad eastern Himalayas to the subtropical forests of the Brahmaputra basin, it harbours a biodiversity rivalled only by the Amazon and a cultural richness that has no parallel elsewhere in India. The 26 major tribal groups — including the Monpa, Adi, Apatani, and Nyishi — each maintain distinct languages, festivals, costumes, and architectural styles.\n\nTawang is the jewel of the state: a 400-year-old Buddhist monastery perched at 10,000 ft that is the second-largest in the world after Lhasa's Potala Palace. The drive to Tawang via Sela Pass (13,700 ft) is among the most dramatic in India, passing frozen lakes and prayer-flag-draped ridges. Ziro Valley, a UNESCO World Heritage tentative site, is home to the Apatani tribe and their unique rice-fish farming system, and the annual Ziro Music Festival draws indie bands and travellers from around the globe.\n\nFor adventure seekers, Mechuka offers riverside camping in a valley so remote it feels like Shangri-La, while Namdapha National Park — one of the largest protected areas in Asia — shelters snow leopards, red pandas, and all four big cat species of India. Visiting Arunachal requires patience (permits, rough roads, limited infrastructure), but those who make the effort are rewarded with experiences that feel genuinely untouched by mass tourism.",
     heroImage:
-      "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1574416239408-a0a1b1eddd91?w=1600&h=900&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1506038634487-60a69ae4b7b1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1596627116790-af6f46ddddbc?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1513415564515-763d91423bdd?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "March to October",
     weather:
@@ -756,11 +756,11 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1600&h=900&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1506038634487-60a69ae4b7b1?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1596627116790-af6f46ddddbc?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600071907662-57460e6b1320?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1589793907316-f94025b46850?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1617824654019-900adea4e457?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "November to April",
     weather:
@@ -826,11 +826,11 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1600&h=900&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1609340667519-3f314bd23c3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1590766940554-634f4e033fd0?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1584723333016-ee4747be3b29?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1590677880200-f563bdb25e1b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1580281657527-47f249e8f4df?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1609340667519-3f314bd23c3e?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "September to March",
     weather:
@@ -901,8 +901,8 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582972236019-ea4af5ffe587?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1580281657527-47f249e8f4df?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1587922546307-776227941871?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "November to February",
     weather:
@@ -967,14 +967,14 @@ export const destinations: Destination[] = [
     longDescription:
       "Karnataka is one of India's most underrated travel destinations, offering a staggering range of experiences within a single state. The crown jewel is Hampi — the ruined capital of the Vijayanagara Empire, where over 1,600 stone monuments and temple complexes are scattered across a surreal boulder-strewn landscape that looks like it was designed by giants. The Vittala Temple's stone chariot and musical pillars are marvels of medieval engineering that leave visitors speechless.\n\nCoorg (Kodagu) provides a complete change of scenery: mist-covered coffee plantations, pepper vines, waterfalls, and the distinct Kodava culture with its martial traditions and pork-heavy cuisine. Mysore — the City of Palaces — is Karnataka's cultural capital, where the illuminated Mysore Palace during Dussehra (Dasara) is one of India's most spectacular sights. The Brindavan Gardens, the Chamundi Hill temple, and the Devaraja Market complete the royal experience.\n\nThe Karnataka coast is an undiscovered gem: Gokarna offers Goa-like beaches without the crowds, the ancient temple town of Udupi serves the best dosa you will ever eat, and Murudeshwar's 123-ft Shiva statue looms over the Arabian Sea. Inland, the Deccan Plateau reveals Badami's cave temples, Aihole's experimental early temples, and Pattadakal's UNESCO-listed Chalukyan masterpieces. Karnataka is a state where every region tells a different chapter of Indian civilisation.",
     heroImage:
-      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=1600&h=900&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1586325194227-7625ed95172b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1602339752474-f77aa7bcdeaa?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1580289234369-3bd2e6d3b546?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "October to February",
     weather:
@@ -1039,12 +1039,12 @@ export const destinations: Destination[] = [
     heroImage:
       "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1600&h=900&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600176183920-ff3e18e45321?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1573053985939-81bc1a37a4cb?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1570543999-74aebc83ca7c?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "May to June & September to October",
     weather:
@@ -1107,14 +1107,14 @@ export const destinations: Destination[] = [
     longDescription:
       "The Andaman Islands are India's answer to the Maldives — only wilder, more remote, and rich with history. This archipelago of over 570 islands lies 1,200 km off the Indian mainland in the Bay of Bengal, and only a handful are open to visitors, ensuring that the experience remains pristine and uncrowded. Havelock Island (Swaraj Dweep) is the star attraction: Radhanagar Beach has been ranked among Asia's best, and the underwater world around Elephant Beach and the Lighthouse reef rivals the Great Barrier Reef in colour and diversity.\n\nPort Blair, the capital, offers a sobering history lesson at the Cellular Jail — a colonial-era prison where Indian freedom fighters were held in solitary confinement. The nightly Sound & Light Show at the jail is a powerful reminder of the independence struggle. Ross Island and Viper Island add more layers to the colonial narrative with their crumbling ruins overtaken by jungle.\n\nFor adventure seekers, Andaman is a playground: scuba diving and snorkelling at sites like The Wall, Dixon's Pinnacle, and North Reef reveal manta rays, turtles, and technicolor coral gardens. Sea-walking at North Bay lets even non-swimmers walk the ocean floor. Neil Island (Shaheed Dweep) is quieter and perfect for cycling between secluded beaches. The bioluminescent plankton at Havelock, visible on dark nights, turn the lapping waves into liquid starlight — a sight that stays with you forever.",
     heroImage:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1600&h=900&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520454974749-611b7248ffdb?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1540202404-a2f29016b523?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1584723333016-ee4747be3b29?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1590766940554-634f4e033fd0?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "October to May",
     weather:

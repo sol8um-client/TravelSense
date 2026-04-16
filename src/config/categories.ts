@@ -145,7 +145,7 @@ export const travelCategories: TravelCategory[] = [
       gradient: "from-indigo-600 to-purple-500",
       light: "#EDE7F6",
     },
-    image: "https://images.unsplash.com/photo-1461896836934-bd45ba24e62c?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&h=600&fit=crop",
     highlights: [
       "Cricket World Cup packages",
       "Football league experiences",

@@ -45,12 +45,12 @@ export const packages: Package[] = [
     description:
       "Experience the paradise of India with visits to Srinagar, Gulmarg, Pahalgam, and a stay on a traditional Dal Lake houseboat. This classic Kashmir itinerary covers the best of the valley — from Mughal gardens and gondola rides to alpine meadows and pristine rivers.",
     heroImage:
-      "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1600&h=900&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1566837945700-30057527ade0?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1609766934819-2085df5e3160?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1596786377830-1966f6d4c2e3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582393728964-0a1f00aabc47?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1625057843138-bdcfea5a1482?w=800&h=600&fit=crop",
     ],
     duration: { days: 7, nights: 6 },
     price: 28000,
@@ -108,7 +108,7 @@ export const packages: Package[] = [
         accommodation: "Hotel in Srinagar",
         highlight: "Walk through Nishat Bagh's 12 terraces",
         image:
-          "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1609766934819-2085df5e3160?w=600&h=400&fit=crop",
       },
       {
         day: 3,
@@ -133,7 +133,7 @@ export const packages: Package[] = [
         accommodation: "Hotel in Pahalgam",
         highlight: "Betaab Valley panorama",
         image:
-          "https://images.unsplash.com/photo-1596786232345-2f8b10ec26fb?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1620983550487-f06d0e3aee3e?w=600&h=400&fit=crop",
       },
       {
         day: 5,
@@ -147,7 +147,7 @@ export const packages: Package[] = [
         distance: "140 km from Pahalgam",
         highlight: "Gulmarg Gondola ride",
         image:
-          "https://images.unsplash.com/photo-1582393728964-0a1f00aabc47?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1575986767340-5d17ae767ab0?w=600&h=400&fit=crop",
       },
       {
         day: 6,
@@ -173,7 +173,7 @@ export const packages: Package[] = [
         distance: "85 km to Srinagar Airport",
         highlight: "Pashmina shawl shopping",
         image:
-          "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=600&h=400&fit=crop",
       },
     ],
   },
@@ -188,12 +188,12 @@ export const packages: Package[] = [
     description:
       "An extended Kashmir experience including the remote and stunning Gurez Valley — one of the most beautiful and least-visited valleys in the Himalayas. This itinerary combines the classic Kashmir circuit with the raw, untouched beauty of Gurez, Doodhpathri, and the dramatic Sinthan Top pass.",
     heroImage:
-      "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1566837945700-30057527ade0?w=1600&h=900&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1566837945700-30057527ade0?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1609766934819-2085df5e3160?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1596786377830-1966f6d4c2e3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1575986767340-5d17ae767ab0?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1625057843138-bdcfea5a1482?w=800&h=600&fit=crop",
     ],
     duration: { days: 10, nights: 9 },
     price: 38000,
@@ -251,7 +251,7 @@ export const packages: Package[] = [
         elevation: "2,730m",
         distance: "42 km from Srinagar",
         highlight: "Wildflower meadows of Doodhpathri",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=600&h=400&fit=crop",
       },
       {
         day: 3,
@@ -264,7 +264,7 @@ export const packages: Package[] = [
         elevation: "3,300m at Razdan Pass",
         distance: "123 km from Srinagar",
         highlight: "Razdan Pass crossing into Gurez",
-        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1566837945700-30057527ade0?w=600&h=400&fit=crop",
       },
       {
         day: 4,
@@ -275,7 +275,7 @@ export const packages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Guesthouse in Dawar, Gurez",
         highlight: "Habba Khatoon peak at sunrise",
-        image: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?w=600&h=400&fit=crop",
       },
       {
         day: 5,
@@ -287,7 +287,7 @@ export const packages: Package[] = [
         accommodation: "Houseboat on Dal Lake",
         distance: "123 km return",
         highlight: "Night on Dal Lake houseboat",
-        image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=400&fit=crop",
       },
       {
         day: 6,
@@ -349,7 +349,7 @@ export const packages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "80 km to Srinagar",
         highlight: "Kashmiri saffron and Pashmina shopping",
-        image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=600&h=400&fit=crop",
       },
     ],
   },
@@ -366,10 +366,10 @@ export const packages: Package[] = [
     heroImage:
       "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&h=900&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1583309219338-a582f1f9ca6b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1494587416117-f102a2ac0a8d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
     ],
     duration: { days: 9, nights: 8 },
     price: 35000,
@@ -440,7 +440,7 @@ export const packages: Package[] = [
         distance: "205 km drive",
         elevation: "2,676m in Kargil",
         highlight: "Indus-Zanskar river confluence",
-        image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600&h=400&fit=crop",
       },
       {
         day: 4,
@@ -465,7 +465,7 @@ export const packages: Package[] = [
         elevation: "5,359m at Khardung La",
         distance: "120 km from Leh",
         highlight: "Crossing Khardung La at 5,359m",
-        image: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1614087435057-d25c18e6dd2f?w=600&h=400&fit=crop",
       },
       {
         day: 6,
@@ -490,7 +490,7 @@ export const packages: Package[] = [
         elevation: "4,350m",
         distance: "150 km from Hunder",
         highlight: "First sight of Pangong Lake",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1619837374214-f9b30e8ac54e?w=600&h=400&fit=crop",
       },
       {
         day: 8,
@@ -503,7 +503,7 @@ export const packages: Package[] = [
         elevation: "5,360m at Chang La",
         distance: "160 km to Leh",
         highlight: "Sunrise over Pangong Lake",
-        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1619837374214-f9b30e8ac54e?w=600&h=400&fit=crop",
       },
       {
         day: 9,
@@ -514,7 +514,7 @@ export const packages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Ladakhi souvenir shopping",
-        image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&h=400&fit=crop",
       },
     ],
   },
@@ -529,12 +529,12 @@ export const packages: Package[] = [
     description:
       "Explore Shimla's colonial charm, Manali's adventure scene, and Dharamshala's Tibetan culture on this classic Himachal circuit. From toy train rides through pine forests to snow-capped peaks and Buddhist monasteries, this itinerary captures the diverse magic of India's most beloved hill state.",
     heroImage:
-      "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1583309219338-a582f1f9ca6b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
     ],
     duration: { days: 8, nights: 7 },
     price: 22000,
@@ -591,7 +591,7 @@ export const packages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Shimla",
         highlight: "Viceregal Lodge heritage tour",
-        image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=600&h=400&fit=crop",
       },
       {
         day: 3,
@@ -603,7 +603,7 @@ export const packages: Package[] = [
         accommodation: "Hotel in Manali",
         distance: "260 km drive",
         highlight: "Beas River valley drive",
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=600&h=400&fit=crop",
       },
       {
         day: 4,
@@ -614,7 +614,7 @@ export const packages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Manali",
         highlight: "Hadimba Temple in the cedars",
-        image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=600&h=400&fit=crop",
       },
       {
         day: 5,
@@ -639,7 +639,7 @@ export const packages: Package[] = [
         accommodation: "Hotel in Dharamshala",
         distance: "235 km drive",
         highlight: "Kangra Valley tea gardens",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1590050752117-238cb4583905?w=600&h=400&fit=crop",
       },
       {
         day: 7,
@@ -662,7 +662,7 @@ export const packages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "90 km to Pathankot",
         highlight: "Tibetan thukpa farewell breakfast",
-        image: "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1583309219338-a582f1f9ca6b?w=600&h=400&fit=crop",
       },
     ],
   },
@@ -680,9 +680,9 @@ export const packages: Package[] = [
       "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&h=600&fit=crop",
     ],
     duration: { days: 8, nights: 7 },
     price: 32000,
@@ -773,7 +773,7 @@ export const packages: Package[] = [
         accommodation: "Heritage Haveli in Jaisalmer",
         distance: "285 km drive",
         highlight: "Golden Jaisalmer Fort at dusk",
-        image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1621427643498-eff55925e187?w=600&h=400&fit=crop",
       },
       {
         day: 6,
@@ -784,7 +784,7 @@ export const packages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Desert Camp / Heritage Haveli",
         highlight: "Camel ride into the sunset",
-        image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1549194400-c4e92b907239?w=600&h=400&fit=crop",
       },
       {
         day: 7,
@@ -807,7 +807,7 @@ export const packages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "City Palace courtyards",
-        image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&h=400&fit=crop",
       },
     ],
   },
@@ -822,12 +822,12 @@ export const packages: Package[] = [
     description:
       "India's most iconic circuit — experience the Taj Mahal, Amber Fort, and Qutub Minar on this perfect introduction to India. The Golden Triangle connects Delhi, Agra, and Jaipur in a journey through Mughal splendor, Rajput grandeur, and modern India's vibrant capital.",
     heroImage:
-      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&h=900&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&h=600&fit=crop",
     ],
     duration: { days: 5, nights: 4 },
     price: 18000,
@@ -881,7 +881,7 @@ export const packages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Delhi",
         highlight: "Humayun's Tomb gardens",
-        image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=400&fit=crop",
       },
       {
         day: 3,
@@ -916,7 +916,7 @@ export const packages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Shopping at Bapu Bazaar",
-        image: "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=600&h=400&fit=crop",
       },
     ],
   },
@@ -931,9 +931,9 @@ export const packages: Package[] = [
     description:
       "From the yoga capital Rishikesh to Jim Corbett's tigers and Mussoorie's colonial hill station charm. Uttarakhand offers a unique blend of spiritual heritage, British-era nostalgia, and some of India's finest wildlife and mountain scenery.",
     heroImage:
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1591018653367-4e9f71e9bc82?w=1600&h=900&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1591018653367-4e9f71e9bc82?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
@@ -980,7 +980,7 @@ export const packages: Package[] = [
         meals: "Dinner",
         accommodation: "Hotel in Haridwar",
         highlight: "Ganga Aarti ceremony",
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1591018653367-4e9f71e9bc82?w=600&h=400&fit=crop",
       },
       {
         day: 2,
@@ -992,7 +992,7 @@ export const packages: Package[] = [
         accommodation: "Riverside Resort in Rishikesh",
         distance: "25 km from Haridwar",
         highlight: "Walking across Laxman Jhula",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1600240644455-3edc55c375fe?w=600&h=400&fit=crop",
       },
       {
         day: 3,
@@ -1018,7 +1018,7 @@ export const packages: Package[] = [
         distance: "290 km drive",
         elevation: "1,938m",
         highlight: "Boating on Naini Lake",
-        image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1609766934819-2085df5e3160?w=600&h=400&fit=crop",
       },
       {
         day: 5,
@@ -1029,7 +1029,7 @@ export const packages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Nainital",
         highlight: "Nanda Devi views from Snow View",
-        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop",
       },
       {
         day: 6,
@@ -1041,7 +1041,7 @@ export const packages: Package[] = [
         accommodation: "Wildlife Resort near Corbett",
         distance: "65 km from Nainital",
         highlight: "Jeep safari in tiger territory",
-        image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1561731216-c3a4d514f65c?w=600&h=400&fit=crop",
       },
       {
         day: 7,
@@ -1068,12 +1068,12 @@ export const packages: Package[] = [
     description:
       "Explore the untouched beauty of India's northeast — living root bridges, one-horned rhinos, the cleanest village in Asia, and landscapes that redefine green. From Assam's wildlife to Meghalaya's waterfalls and Darjeeling's tea gardens, this is India's best-kept secret.",
     heroImage:
-      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1592385391802-a586e23ec98e?w=1600&h=900&fit=crop",
     images: [
+      "https://images.unsplash.com/photo-1592385391802-a586e23ec98e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1596786232345-2f8b10ec26fb?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1596786232345-2f8b10ec26fb?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
     ],
     duration: { days: 10, nights: 9 },
     price: 35000,
@@ -1118,7 +1118,7 @@ export const packages: Package[] = [
         meals: "Dinner",
         accommodation: "Hotel in Guwahati",
         highlight: "Brahmaputra River sunset",
-        image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1592385391802-a586e23ec98e?w=600&h=400&fit=crop",
       },
       {
         day: 2,
@@ -1130,7 +1130,7 @@ export const packages: Package[] = [
         accommodation: "Wildlife Lodge near Kaziranga",
         distance: "220 km from Guwahati",
         highlight: "Assam tea country drive",
-        image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1574781330855-d0db8cc6a79c?w=600&h=400&fit=crop",
       },
       {
         day: 3,
@@ -1141,7 +1141,7 @@ export const packages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Wildlife Lodge near Kaziranga",
         highlight: "One-horned rhinoceros sighting",
-        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1591824438708-ce405f36ba3d?w=600&h=400&fit=crop",
       },
       {
         day: 4,
@@ -1154,7 +1154,7 @@ export const packages: Package[] = [
         distance: "280 km from Kaziranga",
         elevation: "1,496m",
         highlight: "Umiam Lake viewpoint",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1584810359583-96fc3448beaa?w=600&h=400&fit=crop",
       },
       {
         day: 5,
@@ -1177,7 +1177,7 @@ export const packages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Guesthouse in Cherrapunji",
         highlight: "Double-decker Living Root Bridge",
-        image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1600198617645-f0228ec3c0f8?w=600&h=400&fit=crop",
       },
       {
         day: 7,
@@ -1189,7 +1189,7 @@ export const packages: Package[] = [
         accommodation: "Hotel in Shillong",
         distance: "95 km from Cherrapunji",
         highlight: "Floating boat on crystal-clear Dawki",
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1612438214708-f428a707dd4e?w=600&h=400&fit=crop",
       },
       {
         day: 8,
@@ -1202,7 +1202,7 @@ export const packages: Package[] = [
         distance: "390 km drive",
         elevation: "2,042m",
         highlight: "First whiff of Darjeeling tea",
-        image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1622308644420-4a4bba834b2f?w=600&h=400&fit=crop",
       },
       {
         day: 9,
@@ -1213,7 +1213,7 @@ export const packages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Darjeeling",
         highlight: "Kanchenjunga sunrise from Tiger Hill",
-        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=400&fit=crop",
       },
       {
         day: 10,
@@ -1225,7 +1225,7 @@ export const packages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "70 km to Bagdogra Airport",
         highlight: "First-flush Darjeeling tea shopping",
-        image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1622308644420-4a4bba834b2f?w=600&h=400&fit=crop",
       },
     ],
   },
@@ -1242,10 +1242,10 @@ export const packages: Package[] = [
     heroImage:
       "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1600&h=900&fit=crop",
     images: [
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1596786232345-2f8b10ec26fb?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&h=600&fit=crop",
     ],
     duration: { days: 7, nights: 6 },
     price: 25000,
@@ -1326,7 +1326,7 @@ export const packages: Package[] = [
         accommodation: "Resort in Munnar",
         elevation: "2,100m at Top Station",
         highlight: "Walking through emerald tea estates",
-        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1564758564468-1bc3381add07?w=600&h=400&fit=crop",
       },
       {
         day: 5,
@@ -1338,7 +1338,7 @@ export const packages: Package[] = [
         accommodation: "Resort in Thekkady",
         distance: "110 km from Munnar",
         highlight: "Walking through a spice plantation",
-        image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=600&h=400&fit=crop",
       },
       {
         day: 6,
@@ -1377,12 +1377,12 @@ export const packages: Package[] = [
     description:
       "Relax on pristine beaches, explore Portuguese churches, and savour coastal cuisine in India's favourite beach destination. Goa is more than just beaches — it is a fusion of Latin and Indian cultures, with 500-year-old churches, spice farms, and a nightlife that never sleeps.",
     heroImage:
-      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1596786232345-2f8b10ec26fb?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1587922546307-776227941871?w=800&h=600&fit=crop",
     ],
     duration: { days: 5, nights: 4 },
     price: 15000,
@@ -1426,7 +1426,7 @@ export const packages: Package[] = [
         meals: "Dinner",
         accommodation: "Beach Resort in North Goa",
         highlight: "Sunset at Calangute Beach",
-        image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop",
       },
       {
         day: 2,
@@ -1448,7 +1448,7 @@ export const packages: Package[] = [
         meals: "Breakfast, Lunch",
         accommodation: "Beach Resort in North Goa",
         highlight: "UNESCO Old Goa churches",
-        image: "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1587922546307-776227941871?w=600&h=400&fit=crop",
       },
       {
         day: 4,
@@ -1460,7 +1460,7 @@ export const packages: Package[] = [
         accommodation: "Beach Resort in North Goa",
         distance: "70 km to South Goa",
         highlight: "Palolem Beach crescent bay",
-        image: "https://images.unsplash.com/photo-1596786232345-2f8b10ec26fb?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&h=400&fit=crop",
       },
       {
         day: 5,
@@ -1471,7 +1471,7 @@ export const packages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Goan cashew and feni shopping",
-        image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop",
       },
     ],
   },
@@ -1594,7 +1594,7 @@ export const packages: Package[] = [
         meals: "Breakfast",
         accommodation: "Resort in Seminyak",
         highlight: "Your perfect Bali day",
-        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600&h=400&fit=crop",
       },
       {
         day: 7,
@@ -1620,12 +1620,12 @@ export const packages: Package[] = [
     description:
       "Complete the sacred Char Dham pilgrimage in comfort — visit Yamunotri, Gangotri, Kedarnath, and Badrinath by helicopter. This premium yatra eliminates the arduous trekking while preserving the spiritual essence of visiting Hinduism's four holiest mountain shrines in the Garhwal Himalayas.",
     heroImage:
-      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1614087435057-d25c18e6dd2f?w=1600&h=900&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1614087435057-d25c18e6dd2f?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
     ],
     duration: { days: 6, nights: 5 },
     price: 200000,
@@ -1670,7 +1670,7 @@ export const packages: Package[] = [
         meals: "Dinner",
         accommodation: "Premium Hotel in Dehradun",
         highlight: "Char Dham Yatra orientation",
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=600&h=400&fit=crop",
       },
       {
         day: 2,
@@ -1694,7 +1694,7 @@ export const packages: Package[] = [
         accommodation: "Premium Hotel in Dehradun",
         elevation: "3,100m",
         highlight: "Ganga puja at the source",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=600&h=400&fit=crop",
       },
       {
         day: 4,
@@ -1706,7 +1706,7 @@ export const packages: Package[] = [
         accommodation: "Premium Hotel near Badrinath/Joshimath",
         elevation: "3,583m",
         highlight: "Kedarnath Temple — the indestructible shrine",
-        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1614087435057-d25c18e6dd2f?w=600&h=400&fit=crop",
       },
       {
         day: 5,
@@ -1729,7 +1729,7 @@ export const packages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Char Dham Yatra completion",
-        image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=600&h=400&fit=crop",
       },
     ],
   },
@@ -1853,7 +1853,7 @@ export const packages: Package[] = [
         meals: "Breakfast",
         accommodation: "Beach Bungalow on Nusa Lembongan",
         highlight: "Mangrove forest kayaking",
-        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600&h=400&fit=crop",
       },
       {
         day: 7,
@@ -1875,7 +1875,7 @@ export const packages: Package[] = [
         meals: "Breakfast",
         accommodation: "Resort in Seminyak",
         highlight: "Tanah Lot temple at golden hour",
-        image: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600&h=400&fit=crop",
       },
       {
         day: 9,
@@ -1886,7 +1886,7 @@ export const packages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Balinese farewell blessings",
-        image: "https://images.unsplash.com/photo-1573790387438-4da905039392?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop",
       },
     ],
   },

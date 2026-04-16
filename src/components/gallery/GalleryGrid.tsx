@@ -92,7 +92,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     description:
       "Trekkers navigate alpine meadows dotted with wildflowers en route to the mysterious Skeleton Lake, high in the Garhwal Himalayas.",
     imageUrl:
-      "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
     category: "Adventure",
     destination: "Uttarakhand",
   },
@@ -122,7 +122,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     description:
       "Clouds of vivid gulal fill the air as revelers celebrate the festival of colors in the narrow lanes of Pushkar.",
     imageUrl:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1603228254119-e6a4d095dc59?w=800&h=600&fit=crop",
     category: "Culture",
     destination: "Pushkar, Rajasthan",
   },
@@ -162,7 +162,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     description:
       "Endless rolling hills carpeted in emerald-green tea gardens catch the first golden rays, a photographer's dream in Munnar.",
     imageUrl:
-      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&h=600&fit=crop",
     category: "Nature",
     destination: "Munnar, Kerala",
   },
@@ -222,7 +222,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     description:
       "Steaming cups of hand-rolled Darjeeling tea served from a hillside stall, with Kanchenjunga peeking through the morning clouds.",
     imageUrl:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=800&h=600&fit=crop",
     category: "Food",
     destination: "Darjeeling, West Bengal",
   },
@@ -232,7 +232,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     description:
       "Soar above pine forests and snow-dusted peaks on a tandem paragliding flight from one of India's most popular adventure hubs.",
     imageUrl:
-      "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1503389152951-9f343605e0be?w=800&h=600&fit=crop",
     category: "Adventure",
     destination: "Manali, Himachal Pradesh",
   },

@@ -26,7 +26,7 @@ const vehicleTypes = [
     description:
       "Comfortable sedans perfect for couples and small families. Ideal for airport transfers and city tours.",
     highlight: false,
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0afa?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1590362891991-f776e747a588?w=600&h=400&fit=crop",
   },
   {
     icon: Truck,
@@ -35,7 +35,7 @@ const vehicleTypes = [
     description:
       "Spacious SUVs for families and small groups. Great for hill stations and off-road adventures.",
     highlight: false,
-    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1533473359331-2f218f26bfbb?w=600&h=400&fit=crop",
   },
   {
     icon: Users,
@@ -62,7 +62,7 @@ const vehicleTypes = [
     description:
       "Premium coaches for large-scale travel. Recliner seats, Wi-Fi, and onboard washrooms for long-distance comfort.",
     highlight: false,
-    image: "https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1557223562-6c77ef16210f?w=600&h=400&fit=crop",
   },
 ]
 
