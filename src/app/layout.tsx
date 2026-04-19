@@ -1,34 +1,30 @@
 import type { Metadata } from "next"
-import { Inter, Playfair_Display, Rajdhani, Michroma, Orbitron, Exo_2 } from "next/font/google"
+import { Fraunces, Outfit, Caveat, Michroma, Exo_2 } from "next/font/google"
 import { Toaster } from "sonner"
 import { LeadModalProvider } from "@/components/shared/LeadCaptureModal"
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics"
 import { MetaPixel } from "@/components/analytics/MetaPixel"
 import "./globals.css"
 
-const inter = Inter({
-  variable: "--font-inter",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
   display: "swap",
 })
 
-const exo2 = Exo_2({
-  variable: "--font-exo2",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 })
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const caveat = Caveat({
+  variable: "--font-caveat",
   subsets: ["latin"],
-  display: "swap",
-})
-
-const rajdhani = Rajdhani({
-  variable: "--font-rajdhani",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["500", "600"],
   display: "swap",
 })
 
@@ -39,10 +35,10 @@ const michroma = Michroma({
   display: "swap",
 })
 
-const orbitron = Orbitron({
-  variable: "--font-orbitron",
+const exo2 = Exo_2({
+  variable: "--font-exo2",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 })
 
@@ -97,7 +93,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${rajdhani.variable} ${michroma.variable} ${orbitron.variable} ${exo2.variable} grain`}>
+    <html lang="en" className={`${fraunces.variable} ${outfit.variable} ${caveat.variable} ${michroma.variable} ${exo2.variable} grain`}>
       <body className="min-h-screen bg-background font-body text-foreground antialiased">
         <GoogleAnalytics />
         <MetaPixel />

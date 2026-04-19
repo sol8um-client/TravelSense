@@ -66,19 +66,21 @@
   --color-warning: var(--warning);
   --color-error: var(--error);
   --color-info: var(--info);
-  --font-heading: var(--font-michroma);
-  --font-body: var(--font-exo2);
-  --font-display: var(--font-michroma);
+  --font-heading: var(--font-fraunces);
+  --font-body: var(--font-outfit);
+  --font-display: var(--font-fraunces);
+  --font-script: var(--font-caveat);
+  --font-mono-tech: var(--font-michroma);
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-  --color-background-alt: #F4F6F9;
+  --color-background-alt: #FAF8F4;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body, "Exo 2", system-ui, sans-serif);
+  font-family: var(--font-body, "Outfit", system-ui, sans-serif);
   font-weight: 400;
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
@@ -87,9 +89,55 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading, "Michroma", sans-serif);
+  font-family: var(--font-heading, "Fraunces", Georgia, serif);
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 144;
+  line-height: 1.08;
+}
+
+/* Editorial italic-red emphasis — swap an em for a key word in any headline */
+h1 em, h2 em, h3 em, h4 em, .hx em {
+  font-family: var(--font-heading, "Fraunces", Georgia, serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--secondary);
+}
+
+/* Script accent — handwritten "from here to there" moments */
+.script,
+.font-script {
+  font-family: var(--font-script, "Caveat", cursive);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* Outfit eyebrow — tiny tracked uppercase label that still reads crisp in the new system */
+.eyebrow-mk {
+  font-family: var(--font-body, "Outfit", system-ui, sans-serif);
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  color: var(--secondary);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow-mk::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+/* Tech/Michroma escape hatch — kept for stats, timestamps, legacy micro-labels */
+.font-tech,
+.caps-michroma {
+  font-family: var(--font-mono-tech, "Michroma", sans-serif);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 /* Smooth scrolling */

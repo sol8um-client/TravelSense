@@ -405,56 +405,57 @@ function HeroSection() {
 
       {/* Content — text shadow on mobile ensures readability over globe */}
       <motion.div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center [text-shadow:0_1px_8px_rgba(255,255,255,0.8)] lg:[text-shadow:none]" style={{ y: contentY, opacity: contentOpacity }}>
-        {/* Main headline */}
-        <h1 className="font-heading text-[1.8rem] sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-[0.12em] uppercase">
+        {/* Main headline — Fraunces display, sentence case with italic-red cycling emphasis */}
+        <h1 className="hx font-heading text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] font-medium leading-[1.02] tracking-[-0.02em]">
           <span className="metallic-text">
-            <RevealText text="Discover the World," delay={0.4} />
+            <RevealText text="Discover the world," delay={0.4} />
           </span>
           <br />
           <span className="block mt-2">
             <AnimatePresence mode="wait">
-              <motion.span
+              <motion.em
                 key={wordIdx}
                 initial={{ opacity: 0, y: 40, filter: "blur(8px)", scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
                 exit={{ opacity: 0, y: -40, filter: "blur(8px)", scale: 0.95 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block metallic-red pr-[0.15em]"
+                className="inline-block italic font-normal text-secondary pr-[0.15em]"
+                style={{ fontVariationSettings: "'opsz' 144" }}
               >
-                {heroWords[wordIdx]}
-              </motion.span>
+                {heroWords[wordIdx].toLowerCase()}.
+              </motion.em>
             </AnimatePresence>
           </span>
         </h1>
 
-        {/* Subtitle */}
+        {/* Subtitle — Outfit body with Caveat script lift */}
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.6 }}
-          className="mt-7 text-[14px] sm:text-[15px] leading-[1.9] text-foreground/60 max-w-lg mx-auto font-light tracking-wide"
+          className="mt-7 text-[15px] sm:text-[17px] leading-[1.7] text-foreground/70 max-w-xl mx-auto font-normal"
         >
-          Your next adventure is just <span className="text-foreground font-medium">one conversation away</span>
-          {". "}We handle everything from itinerary to boarding pass, while you focus on the excitement.
+          <span className="script text-[22px] sm:text-[26px] text-secondary/90 align-middle mr-1">One conversation</span>
+          &mdash; zero bots, zero IVR. A real travel expert plans, books, and stays with you the whole trip.
         </motion.p>
 
-        {/* Tagline with animated dots — brand colors */}
+        {/* Tagline — Outfit tracked caps, still reads as a triplet */}
         <motion.div
           initial={{ opacity: 0, letterSpacing: "0.1em" }}
-          animate={{ opacity: 1, letterSpacing: "0.35em" }}
+          animate={{ opacity: 1, letterSpacing: "0.28em" }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-3 flex items-center justify-center gap-3 text-[10px] sm:text-[11px] font-heading uppercase text-secondary/60"
+          className="mt-4 flex items-center justify-center gap-3 text-[10px] sm:text-[11px] font-body font-semibold uppercase text-secondary/70"
         >
           <span>See it</span>
-          <motion.span className="h-1.5 w-1.5 rounded-full bg-secondary/50"
+          <motion.span className="h-1.5 w-1.5 rounded-full bg-secondary/60"
             animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }} transition={{ duration: 2, repeat: Infinity, delay: 0 }} />
           <span>Feel it</span>
-          <motion.span className="h-1.5 w-1.5 rounded-full bg-silver/50"
+          <motion.span className="h-1.5 w-1.5 rounded-full bg-silver/60"
             animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }} transition={{ duration: 2, repeat: Infinity, delay: 0.6 }} />
           <span>Live it</span>
         </motion.div>
 
-        {/* CTAs — brand styled */}
+        {/* CTAs — Outfit sentence case, keeps metallic-cta & outline-cta visuals */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -463,22 +464,22 @@ function HeroSection() {
         >
           <button
             onClick={() => leadModal.open("hero-start-planning")}
-            className="metallic-cta group inline-flex items-center gap-2.5 px-6 h-[38px] sm:px-9 sm:h-[50px] text-[10px] sm:text-[11px] text-white tracking-[0.15em] uppercase cursor-pointer sm:min-w-[230px] justify-center"
+            className="metallic-cta group inline-flex items-center gap-2.5 px-6 h-[42px] sm:px-9 sm:h-[52px] text-[13px] sm:text-[14px] text-white font-body font-semibold tracking-[0.01em] cursor-pointer sm:min-w-[230px] justify-center"
           >
             <span className="relative z-10 flex items-center gap-2">
-              Start Planning <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2 duration-300" />
+              Plan my trip <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2 duration-300" />
             </span>
           </button>
           <button
             onClick={() => leadModal.open("hero-explore")}
-            className="outline-cta group inline-flex items-center gap-2.5 px-6 h-[38px] sm:px-9 sm:h-[50px] text-[10px] sm:text-[11px] text-foreground/50 tracking-[0.15em] uppercase cursor-pointer sm:min-w-[230px] justify-center"
+            className="outline-cta group inline-flex items-center gap-2.5 px-6 h-[42px] sm:px-9 sm:h-[52px] text-[13px] sm:text-[14px] text-foreground/80 font-body font-medium tracking-[0.01em] cursor-pointer sm:min-w-[230px] justify-center"
           >
-            Explore Destinations
+            Explore destinations
             <ChevronRight className="absolute right-3 sm:right-4 h-3.5 w-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
           </button>
         </motion.div>
 
-        {/* Trust stats — glass card with brand accents */}
+        {/* Trust stats — Fraunces tabular numerals with Outfit labels */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -486,9 +487,9 @@ function HeroSection() {
           className="mt-10 sm:mt-14 inline-flex items-center rounded-xl sm:rounded-2xl border border-silver/15 bg-white/80 backdrop-blur-xl shadow-[0_4px_24px_rgba(11,20,38,0.06)] overflow-hidden"
         >
           {[
-            { target: 500, suffix: "+", label: "Happy Travelers", color: "text-secondary" },
+            { target: 500, suffix: "+", label: "Happy travellers", color: "text-secondary" },
             { target: 50, suffix: "+", label: "Destinations", color: "text-primary" },
-            { label: "Human Support", custom: "24/7", color: "text-secondary" },
+            { label: "Human support", custom: "24/7", color: "text-secondary" },
             { target: 4, suffix: ".9/5", label: "Rating", decimal: true, color: "text-primary" },
           ].map((s, i) => {
             const counter = s.target ? useCounter(s.target) : null
@@ -497,14 +498,14 @@ function HeroSection() {
                 "px-3 sm:px-7 py-2.5 sm:py-4 text-center",
                 i > 0 && "border-l border-silver/10",
               )}>
-                <p className={cn("text-sm sm:text-xl font-heading tabular-nums tracking-wider", s.color || "text-foreground/80")}>
+                <p className={cn("text-base sm:text-2xl font-display font-medium tabular-nums tracking-[-0.02em] leading-none", s.color || "text-foreground/80")} style={{ fontVariationSettings: "'opsz' 144" }}>
                   {s.custom || (
                     <span ref={counter!.ref}>
                       {s.decimal ? `${counter!.count}` : counter!.count.toLocaleString()}{s.suffix}
                     </span>
                   )}
                 </p>
-                <p className="text-[5px] sm:text-[7px] text-silver-dark/50 mt-0.5 tracking-[0.2em] sm:tracking-[0.25em] uppercase font-heading">{s.label}</p>
+                <p className="text-[6px] sm:text-[9px] text-silver-dark/70 mt-1 tracking-[0.22em] sm:tracking-[0.26em] uppercase font-body font-semibold">{s.label}</p>
               </div>
             )
           })}
@@ -668,9 +669,9 @@ function ProblemSection() {
               </div>
             </div>
             <div data-reveal style={{ transitionDelay: "0.1s" }}>
-              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-normal tracking-[0.08em] leading-tight">
-                <span className="metallic-text-dark">Travel Planning Is</span>{" "}
-                <span className="metallic-red">Broken</span>
+              <h2 className="hx font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.02]">
+                <span className="metallic-text-dark">Travel planning is</span>{" "}
+                <em className="italic font-normal text-secondary">broken.</em>
               </h2>
             </div>
 
@@ -771,9 +772,9 @@ function HowItWorksSection() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header — with floating sparkle decorations near top-right matching reference */}
         <div className="relative text-center mb-14" data-reveal>
-          <p className="text-[10px] font-heading font-normal tracking-[0.3em] uppercase text-secondary/70">Your Journey With Us</p>
-          <h2 className="mt-3 font-heading text-2xl sm:text-3xl md:text-4xl font-normal tracking-[0.08em] leading-tight metallic-text heading-accent">
-            How TravelSense Works
+          <p className="text-[10.5px] font-body font-semibold tracking-[0.28em] uppercase text-secondary">Your journey with us</p>
+          <h2 className="hx mt-3 font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.04] metallic-text heading-accent">
+            How TravelSense <em className="italic font-normal text-secondary">works.</em>
           </h2>
           {/* Floating sparkle decorations near heading — matching reference top-right */}
           <motion.div className="hidden md:block absolute -right-4 top-0" style={{ opacity: deco4 }}>
@@ -1040,9 +1041,9 @@ function CategoriesSection() {
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16" data-reveal>
-          <p className="text-[10px] font-heading font-normal tracking-[0.3em] uppercase text-secondary/70">How Do You Travel?</p>
-          <h2 className="mt-4 font-heading text-2xl sm:text-3xl md:text-4xl font-normal tracking-[0.12em] leading-tight metallic-text heading-accent">
-            Three Ways to Explore
+          <p className="text-[10.5px] font-body font-semibold tracking-[0.28em] uppercase text-secondary">How do you travel?</p>
+          <h2 className="hx mt-4 font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.04] metallic-text heading-accent">
+            Three ways to <em className="italic font-normal text-secondary">explore.</em>
           </h2>
         </div>
 
@@ -1111,9 +1112,9 @@ function DestinationsSection() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-14">
           <div data-reveal>
-            <p className="text-[10px] font-heading font-normal tracking-[0.3em] uppercase text-secondary/70">Trending Now</p>
-            <h2 className="mt-3 font-heading text-2xl sm:text-3xl md:text-4xl font-normal tracking-[0.12em] metallic-text">
-              Popular Destinations
+            <p className="text-[10.5px] font-body font-semibold tracking-[0.28em] uppercase text-secondary">Trending now</p>
+            <h2 className="hx mt-3 font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.04] metallic-text">
+              Popular <em className="italic font-normal text-secondary">destinations.</em>
             </h2>
           </div>
           <div data-reveal style={{ transitionDelay: "0.1s" }}>
@@ -1212,12 +1213,12 @@ function USPSection() {
             </div>
 
             <div data-reveal style={{ transitionDelay: "0.1s" }}>
-              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-normal leading-[1.15] tracking-[0.12em]">
-                <span className="metallic-text-dark">We Pick Up.</span>
+              <h2 className="hx font-heading text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.02] tracking-[-0.025em]">
+                <span className="metallic-text-dark">We pick up.</span>
                 <br />
-                <span className="metallic-red">Every Call.</span>
+                <em className="italic font-normal text-secondary">Every call.</em>
                 <br />
-                <span className="metallic-silver">Every Time.</span>
+                <span className="metallic-silver">Every time.</span>
               </h2>
             </div>
 
@@ -1371,9 +1372,9 @@ function WhatSetsUsApartSection() {
     <section className="py-20 bg-brand-mesh">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14" data-reveal>
-          <p className="text-[10px] font-heading font-normal tracking-[0.3em] uppercase text-secondary/70">Why TravelSense</p>
-          <h2 className="mt-3 font-heading text-2xl sm:text-3xl md:text-4xl font-normal tracking-[0.08em] leading-tight metallic-text heading-accent">
-            What Sets Us Apart
+          <p className="text-[10.5px] font-body font-semibold tracking-[0.28em] uppercase text-secondary">Why TravelSense</p>
+          <h2 className="hx mt-3 font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.04] metallic-text heading-accent">
+            What sets us <em className="italic font-normal text-secondary">apart.</em>
           </h2>
         </div>
 
@@ -1435,8 +1436,8 @@ function ComingSoonSection() {
           <span className="brand-badge brand-badge-red mb-5">
             <Sparkles className="h-3 w-3" /> Coming Soon
           </span>
-          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-normal tracking-[0.12em] metallic-text heading-accent">The Future of Travel</h2>
-          <p className="mt-3 text-muted-foreground text-sm">Two game-changing features that will transform how you experience travel.</p>
+          <h2 className="hx font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.04] metallic-text heading-accent">The future of <em className="italic font-normal text-secondary">travel.</em></h2>
+          <p className="mt-4 text-muted-foreground text-[15px] leading-relaxed">Two game-changing features that will transform how you experience travel.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
