@@ -32,8 +32,7 @@ export const blogPosts: BlogPostData[] = [
     category: "destination_guides",
     excerpt:
       "Kashmir is far more than Srinagar and Gulmarg. Discover offbeat valleys, secret meadows, and remote villages that most tourists never see. These hidden gems will redefine your idea of paradise.",
-    coverImage:
-      "https://images.unsplash.com/photo-1597074866923-dc0589150458?w=1200&h=600&fit=crop",
+    coverImage: "/images/generated/hidden-gems-in-kashmir.webp",
     author: defaultAuthor,
     publishedAt: "2026-03-20T10:00:00Z",
     readTime: 8,
@@ -90,8 +89,7 @@ export const blogPosts: BlogPostData[] = [
     category: "travel_tips",
     excerpt:
       "Planning a road trip to Ladakh? From permits and packing to altitude sickness and accommodation, this comprehensive checklist covers everything you need for a safe and unforgettable journey.",
-    coverImage:
-      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&h=600&fit=crop",
+    coverImage: "/images/generated/ultimate-ladakh-road-trip.webp",
     author: defaultAuthor,
     publishedAt: "2026-03-15T10:00:00Z",
     readTime: 10,
@@ -166,8 +164,7 @@ export const blogPosts: BlogPostData[] = [
     category: "destination_guides",
     excerpt:
       "Living root bridges, crystal-clear rivers, vibrant tribal festivals, and landscapes that rival anywhere on earth. Here is why Northeast India deserves a spot on every traveller's bucket list.",
-    coverImage:
-      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200&h=600&fit=crop",
+    coverImage: "/images/generated/why-northeast-india.webp",
     author: defaultAuthor,
     publishedAt: "2026-03-10T10:00:00Z",
     readTime: 7,
@@ -215,8 +212,7 @@ export const blogPosts: BlogPostData[] = [
     category: "travel_tips",
     excerpt:
       "Rajasthan does not have to break the bank. From budget stays in heritage havelis to free temple visits and cheap local eats, here is how to experience the land of kings on a shoestring budget.",
-    coverImage:
-      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1200&h=600&fit=crop",
+    coverImage: "/images/generated/budget-backpacking-rajasthan.webp",
     author: defaultAuthor,
     publishedAt: "2026-03-05T10:00:00Z",
     readTime: 9,
@@ -279,8 +275,7 @@ export const blogPosts: BlogPostData[] = [
     category: "destination_guides",
     excerpt:
       "A Kerala houseboat stay is a bucket-list experience. Learn how to pick the right houseboat, the best routes through the backwaters, what to expect on board, and how to avoid common tourist traps.",
-    coverImage:
-      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&h=600&fit=crop",
+    coverImage: "/images/generated/kerala-houseboat-guide.webp",
     author: defaultAuthor,
     publishedAt: "2026-02-28T10:00:00Z",
     readTime: 6,
@@ -341,8 +336,7 @@ export const blogPosts: BlogPostData[] = [
     category: "travel_tips",
     excerpt:
       "A step-by-step guide for first-time international travellers from India. Passports, visas, forex, travel insurance, packing, and everything else you need to know before your first flight abroad.",
-    coverImage:
-      "https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=1200&h=600&fit=crop",
+    coverImage: "/images/generated/first-international-trip.webp",
     author: defaultAuthor,
     publishedAt: "2026-02-20T10:00:00Z",
     readTime: 8,
@@ -413,8 +407,7 @@ export const blogPosts: BlogPostData[] = [
     category: "food_and_culture",
     excerpt:
       "From the paranthas of Chandni Chowk to the kachoris of Varanasi and the lassi of Jaipur, this street food tour covers the best eats across three of India's most flavourful cities.",
-    coverImage:
-      "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200&h=600&fit=crop",
+    coverImage: "/images/generated/street-food-delhi-varanasi-jaipur.webp",
     author: defaultAuthor,
     publishedAt: "2026-02-15T10:00:00Z",
     readTime: 7,
@@ -486,8 +479,7 @@ export const blogPosts: BlogPostData[] = [
     category: "destination_guides",
     excerpt:
       "Everything you need to plan your Char Dham Yatra in 2026: registration, best time to visit, route options, helicopter vs road, accommodation, and essential tips for a safe pilgrimage.",
-    coverImage:
-      "https://images.unsplash.com/photo-1626621331169-5f34be280ed9?w=1200&h=600&fit=crop",
+    coverImage: "/images/generated/char-dham-yatra-2026-guide.webp",
     author: defaultAuthor,
     publishedAt: "2026-02-10T10:00:00Z",
     readTime: 12,

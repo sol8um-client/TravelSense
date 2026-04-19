@@ -95,8 +95,7 @@ export const packages: Package[] = [
         meals: "Dinner",
         accommodation: "Houseboat on Dal Lake",
         highlight: "Shikara sunset on Dal Lake",
-        image:
-          "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=400&fit=crop",
+        image: "/images/generated/kashmir-day-1-arrive-srinagar.webp",
       },
       {
         day: 2,
@@ -146,8 +145,7 @@ export const packages: Package[] = [
         elevation: "3,080m at Kongdoori",
         distance: "140 km from Pahalgam",
         highlight: "Gulmarg Gondola ride",
-        image:
-          "https://images.unsplash.com/photo-1575986767340-5d17ae767ab0?w=600&h=400&fit=crop",
+        image: "/images/generated/kashmir-day-5-gulmarg-gondola.webp",
       },
       {
         day: 6,
@@ -465,7 +463,7 @@ export const packages: Package[] = [
         elevation: "5,359m at Khardung La",
         distance: "120 km from Leh",
         highlight: "Crossing Khardung La at 5,359m",
-        image: "https://images.unsplash.com/photo-1614087435057-d25c18e6dd2f?w=600&h=400&fit=crop",
+        image: "/images/generated/ladakh-day-5-khardung-la.webp",
       },
       {
         day: 6,
@@ -477,7 +475,7 @@ export const packages: Package[] = [
         accommodation: "Camp in Hunder, Nubra Valley",
         distance: "90 km from Hunder",
         highlight: "Turtuk — India's last village",
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=400&fit=crop",
+        image: "/images/generated/ladakh-day-6-turtuk-village.webp",
       },
       {
         day: 7,
@@ -773,7 +771,7 @@ export const packages: Package[] = [
         accommodation: "Heritage Haveli in Jaisalmer",
         distance: "285 km drive",
         highlight: "Golden Jaisalmer Fort at dusk",
-        image: "https://images.unsplash.com/photo-1621427643498-eff55925e187?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=400&fit=crop",
       },
       {
         day: 6,
@@ -784,7 +782,7 @@ export const packages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Desert Camp / Heritage Haveli",
         highlight: "Camel ride into the sunset",
-        image: "https://images.unsplash.com/photo-1549194400-c4e92b907239?w=600&h=400&fit=crop",
+        image: "/images/generated/rajasthan-day-5-jaisalmer-camel-safari.webp",
       },
       {
         day: 7,
@@ -796,7 +794,7 @@ export const packages: Package[] = [
         accommodation: "Heritage Hotel in Udaipur",
         distance: "540 km drive",
         highlight: "Boat ride on Lake Pichola",
-        image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&h=400&fit=crop",
+        image: "/images/generated/rajasthan-day-7-udaipur-lake-palace.webp",
       },
       {
         day: 8,
@@ -893,7 +891,7 @@ export const packages: Package[] = [
         accommodation: "Hotel in Agra",
         distance: "230 km from Delhi",
         highlight: "First sight of the Taj Mahal",
-        image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop",
+        image: "/images/generated/golden-triangle-day-3-taj-mahal.webp",
       },
       {
         day: 4,
@@ -992,7 +990,7 @@ export const packages: Package[] = [
         accommodation: "Riverside Resort in Rishikesh",
         distance: "25 km from Haridwar",
         highlight: "Walking across Laxman Jhula",
-        image: "https://images.unsplash.com/photo-1600240644455-3edc55c375fe?w=600&h=400&fit=crop",
+        image: "/images/generated/uttarakhand-day-2-rishikesh.webp",
       },
       {
         day: 3,
@@ -1189,7 +1187,7 @@ export const packages: Package[] = [
         accommodation: "Hotel in Shillong",
         distance: "95 km from Cherrapunji",
         highlight: "Floating boat on crystal-clear Dawki",
-        image: "https://images.unsplash.com/photo-1612438214708-f428a707dd4e?w=600&h=400&fit=crop",
+        image: "/images/generated/northeast-day-7-dawki-river.webp",
       },
       {
         day: 8,
@@ -1350,7 +1348,7 @@ export const packages: Package[] = [
         accommodation: "Houseboat on Alleppey Backwaters",
         distance: "140 km from Thekkady",
         highlight: "Overnight houseboat on the backwaters",
-        image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-day-6-alleppey-houseboat.webp",
       },
       {
         day: 7,
@@ -1561,7 +1559,7 @@ export const packages: Package[] = [
         accommodation: "Resort in Ubud",
         elevation: "1,717m summit",
         highlight: "Sunrise from Mt Batur volcano",
-        image: "https://images.unsplash.com/photo-1573790387438-4da905039392?w=600&h=400&fit=crop",
+        image: "/images/generated/bali-day-3-mt-batur-sunrise.webp",
       },
       {
         day: 4,
@@ -1706,7 +1704,7 @@ export const packages: Package[] = [
         accommodation: "Premium Hotel near Badrinath/Joshimath",
         elevation: "3,583m",
         highlight: "Kedarnath Temple — the indestructible shrine",
-        image: "https://images.unsplash.com/photo-1614087435057-d25c18e6dd2f?w=600&h=400&fit=crop",
+        image: "/images/generated/char-dham-day-4-kedarnath.webp",
       },
       {
         day: 5,
