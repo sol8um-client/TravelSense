@@ -40,7 +40,7 @@ export const SectionHeading: FC<SectionHeadingProps> = ({
         <span className="inline-block h-1 w-12 rounded-full bg-secondary" />
       </div>
 
-      <Tag className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
+      <Tag className="hx font-heading text-3xl font-medium tracking-[-0.02em] leading-[1.04] text-foreground sm:text-4xl lg:text-[2.75rem]">
         {title}
       </Tag>
 

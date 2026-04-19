@@ -84,7 +84,7 @@ export default function ContactInfo() {
         custom={0}
         className="overflow-hidden rounded-2xl border border-white/10 bg-[#0A1425]/80 backdrop-blur-sm p-6 sm:p-8"
       >
-        <h2 className="font-heading text-xl font-normal tracking-wide text-white">
+        <h2 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
           Contact Information
         </h2>
         <p className="mt-2 font-body text-sm text-white/50">
@@ -136,7 +136,7 @@ export default function ContactInfo() {
             <MessageCircle className="h-5 w-5 text-[#25D366]" />
           </div>
           <div>
-            <p className="font-heading text-sm font-normal tracking-wider text-white">
+            <p className="font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15] text-white">
               Chat on WhatsApp
             </p>
             <p className="mt-0.5 font-body text-xs text-white/50">
@@ -152,7 +152,7 @@ export default function ContactInfo() {
         custom={2}
         className="overflow-hidden rounded-2xl border border-white/10 bg-[#0A1425]/80 backdrop-blur-sm p-6 sm:p-8"
       >
-        <h3 className="font-heading text-sm font-normal tracking-wider text-white">
+        <h3 className="font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15] text-white">
           Follow Us
         </h3>
         <div className="mt-4 flex gap-3">

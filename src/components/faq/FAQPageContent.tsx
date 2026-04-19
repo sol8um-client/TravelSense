@@ -58,7 +58,7 @@ export default function FAQPageContent({ faqs }: FAQPageContentProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A1425] via-[#0A1425]/50 to-[#0A1425]" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <p className="mx-auto max-w-lg px-4 text-center font-heading text-xl tracking-wide text-white md:text-2xl">
+            <p className="mx-auto max-w-lg px-4 text-center font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-2xl">
               Still curious? We are here to help.
             </p>
           </div>
@@ -78,7 +78,7 @@ export default function FAQPageContent({ faqs }: FAQPageContentProps) {
             <MessageCircle className="h-6 w-6 text-[#C4324A]" />
           </div>
 
-          <h2 className="font-heading text-2xl tracking-wide text-white md:text-3xl">
+          <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
             Still Have Questions?
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-body text-sm text-white/50 md:text-base">

@@ -101,7 +101,7 @@ export function PackageCard({ pkg }: PackageCardProps) {
 
         {/* Content */}
         <div className="flex flex-1 flex-col p-4">
-          <h3 className="font-heading text-base font-normal tracking-wide text-white md:text-lg">
+          <h3 className="font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-xl">
             {title}
           </h3>
 

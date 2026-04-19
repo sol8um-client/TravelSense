@@ -99,7 +99,7 @@ export default function VisaPassportPage() {
         <section className="bg-[#0A1425] py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
                 Our Services
               </h2>
               <p className="mx-auto mt-3 max-w-2xl font-body text-sm text-white/50 md:text-base">
@@ -117,7 +117,7 @@ export default function VisaPassportPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#C4324A]/10 text-[#C4324A] transition-colors group-hover:bg-[#C4324A]/20">
                     <service.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mt-4 font-heading text-sm font-normal tracking-wide text-white">
+                  <h3 className="mt-4 font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15] text-white">
                     {service.title}
                   </h3>
                   <p className="mt-2 font-body text-sm leading-relaxed text-white/50">
@@ -133,7 +133,7 @@ export default function VisaPassportPage() {
         <section className="bg-[#0D1A30] py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
                 Popular Visa Destinations
               </h2>
               <p className="mx-auto mt-3 max-w-2xl font-body text-sm text-white/50 md:text-base">
@@ -169,7 +169,7 @@ export default function VisaPassportPage() {
         <section className="bg-[#0A1425] py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
                 Your World Awaits
               </h2>
               <p className="mx-auto mt-3 max-w-2xl font-body text-sm text-white/50 md:text-base">
@@ -229,7 +229,7 @@ export default function VisaPassportPage() {
         <section className="bg-[#0A1425] py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
                 Submit a Visa Inquiry
               </h2>
               <p className="mx-auto mt-3 max-w-xl font-body text-sm text-white/50 md:text-base">
@@ -247,7 +247,7 @@ export default function VisaPassportPage() {
         {/* ── CTA Section ────────────────────────────────────── */}
         <section className="bg-[#0D1A30] py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+            <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
               Have Questions About Visa Requirements?
             </h2>
             <p className="mx-auto mt-3 max-w-xl font-body text-sm text-white/50 md:text-base">

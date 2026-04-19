@@ -69,8 +69,8 @@ export function BlogCard({ post, featured = false, className }: BlogCardProps) {
       <div className={cn("flex flex-col justify-between p-5", featured && "md:p-8")}>
         <div>
           <h3 className={cn(
-            "font-heading font-normal tracking-wide text-white transition-colors group-hover:text-[#C4324A]",
-            featured ? "text-xl md:text-2xl" : "text-base md:text-lg"
+            "font-heading font-medium tracking-[-0.015em] leading-[1.15] text-white transition-colors group-hover:text-[#C4324A]",
+            featured ? "text-2xl md:text-3xl" : "text-lg md:text-xl"
           )}>
             {post.title}
           </h3>

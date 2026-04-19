@@ -320,7 +320,7 @@ export default async function CategoryPage({
           <section className="mb-16">
             <div className="mb-8 flex items-center gap-3">
               <Star className="h-5 w-5 text-[#D4A853]" />
-              <h2 className="font-heading text-2xl font-normal tracking-wide text-white">
+              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
                 What to Expect
               </h2>
             </div>
@@ -343,7 +343,7 @@ export default async function CategoryPage({
           <section className="mb-16">
             <div className="mb-8 flex items-center gap-3">
               <MapPin className="h-5 w-5 text-[#C4324A]" />
-              <h2 className="font-heading text-2xl font-normal tracking-wide text-white">
+              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
                 Popular Destinations
               </h2>
             </div>
@@ -364,7 +364,7 @@ export default async function CategoryPage({
           <section className="mb-8">
             <div className="mb-8 flex items-center gap-3">
               <Package className="h-5 w-5 text-[#8A9BB5]" />
-              <h2 className="font-heading text-2xl font-normal tracking-wide text-white">
+              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
                 {category.title} Packages
               </h2>
             </div>
@@ -414,7 +414,7 @@ export default async function CategoryPage({
 
                       {/* Content */}
                       <div className="p-5">
-                        <h3 className="font-heading text-base font-normal tracking-wide text-white transition-colors group-hover:text-[#C4324A]">
+                        <h3 className="font-heading text-base font-medium tracking-[-0.015em] leading-[1.15] text-white transition-colors group-hover:text-[#C4324A]">
                           {pkg.title}
                         </h3>
                         <p className="mt-1.5 line-clamp-2 text-sm text-white/50">
@@ -455,7 +455,7 @@ export default async function CategoryPage({
 
           {/* CTA */}
           <div className="mt-12 rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 to-white/[0.02] p-8 text-center backdrop-blur md:p-12">
-            <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+            <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
               Ready to Start Your {category.title} Journey?
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-sm text-white/50 md:text-base">

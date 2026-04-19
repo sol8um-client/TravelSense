@@ -177,7 +177,7 @@ export default function ServicesContent() {
             custom={0}
             className="mb-14 text-center"
           >
-            <h2 className="font-heading text-2xl tracking-wide text-white md:text-3xl lg:text-4xl">
+            <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl lg:text-4xl">
               Travel Categories
             </h2>
             <p className="mx-auto mt-4 max-w-2xl font-body text-sm text-white/50 md:text-base">
@@ -220,7 +220,7 @@ export default function ServicesContent() {
                       <Icon className={cn("h-6 w-6", cat.color.text)} />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-heading text-lg tracking-wide text-white">
+                      <h3 className="font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white">
                         {cat.title}
                       </h3>
                       <p className="mt-1.5 font-body text-sm leading-relaxed text-white/50">
@@ -272,7 +272,7 @@ export default function ServicesContent() {
             custom={0}
             className="mb-14 text-center"
           >
-            <h2 className="font-heading text-2xl tracking-wide text-white md:text-3xl lg:text-4xl">
+            <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl lg:text-4xl">
               Core Services
             </h2>
             <p className="mx-auto mt-4 max-w-2xl font-body text-sm text-white/50 md:text-base">
@@ -319,7 +319,7 @@ export default function ServicesContent() {
                       <Icon className="h-5 w-5 text-[#C4324A]" />
                     </div>
 
-                    <h3 className="font-heading text-base tracking-wide text-white">
+                    <h3 className="font-heading text-base font-medium tracking-[-0.015em] leading-[1.15] text-white">
                       {service.title}
                     </h3>
                     <p className="mt-2 font-body text-sm leading-relaxed text-white/45">
@@ -354,7 +354,7 @@ export default function ServicesContent() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A1425]/90 via-[#0A1425]/60 to-[#0A1425]/90" />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="mx-auto max-w-3xl px-4 text-center">
-              <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
                 Travel With Confidence
               </h2>
               <p className="mx-auto mt-3 max-w-xl font-body text-sm text-white/70 md:text-base">
@@ -377,7 +377,7 @@ export default function ServicesContent() {
             custom={0}
             className="mb-14 text-center"
           >
-            <h2 className="font-heading text-2xl tracking-wide text-white md:text-3xl lg:text-4xl">
+            <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl lg:text-4xl">
               How It Works
             </h2>
             <p className="mx-auto mt-4 max-w-2xl font-body text-sm text-white/50 md:text-base">
@@ -435,7 +435,7 @@ export default function ServicesContent() {
                     </span>
                   </div>
 
-                  <h3 className="font-heading text-base tracking-wide text-white">
+                  <h3 className="font-heading text-base font-medium tracking-[-0.015em] leading-[1.15] text-white">
                     {step.title}
                   </h3>
                   <p className="mx-auto mt-2 max-w-[240px] font-body text-sm leading-relaxed text-white/45">
@@ -458,7 +458,7 @@ export default function ServicesContent() {
             variants={fadeUp}
             custom={0}
           >
-            <h2 className="font-heading text-2xl tracking-wide text-white md:text-3xl lg:text-4xl">
+            <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl lg:text-4xl">
               Ready to Start Planning?
             </h2>
             <p className="mx-auto mt-4 max-w-xl font-body text-sm text-white/50 md:text-base">

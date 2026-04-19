@@ -30,7 +30,7 @@ export default function HotelsPage() {
         <section className="bg-[#0D1A30] py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
                 Stays for Every Style
               </h2>
               <p className="mx-auto mt-3 max-w-2xl font-body text-sm text-white/50 md:text-base">
@@ -54,7 +54,7 @@ export default function HotelsPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/90 via-[#0A1425]/30 to-transparent" />
                   <div className="absolute bottom-4 left-4">
-                    <p className="font-heading text-sm tracking-wide text-white">{hotel.label}</p>
+                    <p className="font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15] text-white">{hotel.label}</p>
                     <p className="mt-0.5 font-body text-xs text-[#D4A853]">Coming Soon</p>
                   </div>
                 </div>

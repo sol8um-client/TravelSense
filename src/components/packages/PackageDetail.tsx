@@ -106,7 +106,7 @@ function ProgressTracker({
 }) {
   return (
     <div className="mb-10 flex flex-col items-center gap-3">
-      <p className="font-heading text-sm font-normal tracking-widest uppercase text-[#D4A853]">
+      <p className="font-body text-[10.5px] font-semibold tracking-[0.28em] uppercase text-[#D4A853]">
         Day {activeDay} of {totalDays}
       </p>
       <div className="flex items-center gap-1.5">
@@ -229,7 +229,7 @@ function ItineraryDayCard({
 
           {/* Text content */}
           <div className="p-5">
-            <h3 className="font-heading text-lg font-normal tracking-wide text-white">
+            <h3 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
               {item.title}
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-white/55">
@@ -303,8 +303,8 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
       <div className="lg:col-span-2 space-y-16">
         {/* Overview */}
         <section>
-          <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
-            Overview
+          <h2 className="hx font-heading text-3xl font-medium tracking-[-0.02em] leading-[1.1] text-white md:text-4xl">
+            <em className="italic font-normal text-[#FFB3A3]">Overview.</em>
           </h2>
           <p className="mt-4 text-white/60 leading-relaxed">{pkg.description}</p>
 
@@ -378,8 +378,8 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
         {/* Highlights */}
         {pkg.highlights && pkg.highlights.length > 0 && (
           <section>
-            <h2 className="font-heading text-2xl font-normal tracking-wide text-white">
-              Highlights
+            <h2 className="hx font-heading text-3xl font-medium tracking-[-0.02em] leading-[1.1] text-white md:text-4xl">
+              <em className="italic font-normal text-[#FFB3A3]">Highlights.</em>
             </h2>
             <div className="mt-6 flex flex-wrap gap-3">
               {pkg.highlights.map((h, i) => (
@@ -397,8 +397,8 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
         {/* ─── GAMIFIED ITINERARY ─────────────────────────────────────── */}
         {pkg.itinerary && pkg.itinerary.length > 0 && (
           <section>
-            <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
-              Your Journey, Day by Day
+            <h2 className="hx font-heading text-3xl font-medium tracking-[-0.02em] leading-[1.08] text-white md:text-4xl">
+              Your journey, <em className="italic font-normal text-[#FFB3A3]">day by day.</em>
             </h2>
             <p className="mt-2 text-sm text-white/40">
               {pkg.itinerary.length} days of carefully crafted experiences
@@ -444,7 +444,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
           <section className="grid gap-6 sm:grid-cols-2">
             {pkg.inclusions && pkg.inclusions.length > 0 && (
               <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                <h3 className="font-heading text-lg font-normal tracking-wide text-white">
+                <h3 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
                   Inclusions
                 </h3>
                 <ul className="mt-4 space-y-2.5">
@@ -459,7 +459,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
             )}
             {pkg.exclusions && pkg.exclusions.length > 0 && (
               <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                <h3 className="font-heading text-lg font-normal tracking-wide text-white">
+                <h3 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
                   Exclusions
                 </h3>
                 <ul className="mt-4 space-y-2.5">
@@ -478,8 +478,8 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
         {/* Gallery */}
         {pkg.images && pkg.images.length > 0 && (
           <section>
-            <h2 className="font-heading text-2xl font-normal tracking-wide text-white">
-              Gallery
+            <h2 className="hx font-heading text-3xl font-medium tracking-[-0.02em] leading-[1.1] text-white md:text-4xl">
+              <em className="italic font-normal text-[#FFB3A3]">Gallery.</em>
             </h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {pkg.images.map((img, i) => (

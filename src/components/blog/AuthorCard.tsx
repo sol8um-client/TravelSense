@@ -24,8 +24,8 @@ export function AuthorCard({ name, image, bio }: AuthorCardProps) {
         )}
       </div>
       <div>
-        <p className="text-xs uppercase tracking-wider text-white/40">Written by</p>
-        <p className="font-heading text-base font-normal tracking-wide text-white">{name}</p>
+        <p className="text-[10px] font-body font-semibold uppercase tracking-[0.24em] text-white/50">Written by</p>
+        <p className="font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white mt-0.5">{name}</p>
         {bio && (
           <p className="mt-1 text-sm leading-relaxed text-white/50">{bio}</p>
         )}

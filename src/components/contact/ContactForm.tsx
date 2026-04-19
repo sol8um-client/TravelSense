@@ -114,7 +114,7 @@ export default function ContactForm() {
         className="overflow-hidden rounded-2xl border border-white/10 bg-[#0A1425]/80 backdrop-blur-sm"
       >
         <div className="p-6 sm:p-8">
-          <h2 className="font-heading text-xl font-normal tracking-wide text-white">
+          <h2 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
             Send Us a Message
           </h2>
           <p className="mt-2 font-body text-sm text-white/50">

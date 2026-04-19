@@ -122,7 +122,7 @@ export default async function DestinationDetailPage({
       {/* Overview */}
       <section className="bg-[#0A1425] px-4 py-16">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+          <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
             Overview
           </h2>
           <p className="mt-4 text-white/70 leading-relaxed">
@@ -137,7 +137,7 @@ export default async function DestinationDetailPage({
       {/* Highlights */}
       <section className="bg-[#0D1A30] px-4 py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+          <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
             Highlights
           </h2>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -156,7 +156,7 @@ export default async function DestinationDetailPage({
       {/* Gallery */}
       <section className="bg-[#0A1425] px-4 py-16">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-8 font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+          <h2 className="mb-8 font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
             Gallery
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -181,7 +181,7 @@ export default async function DestinationDetailPage({
       {/* Popular Experiences */}
       <section className="bg-[#0D1A30] px-4 py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-8 font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+          <h2 className="mb-8 font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
             Popular Experiences
           </h2>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -195,7 +195,7 @@ export default async function DestinationDetailPage({
                     {exp.icon}
                   </span>
                   <div>
-                    <h3 className="font-heading text-base font-normal tracking-wide text-white">
+                    <h3 className="font-heading text-base font-medium tracking-[-0.015em] leading-[1.15] text-white">
                       {exp.title}
                     </h3>
                     <p className="mt-2 text-sm text-white/60 leading-relaxed">
@@ -212,14 +212,14 @@ export default async function DestinationDetailPage({
       {/* Best Time to Visit & Weather */}
       <section className="bg-[#0A1425] px-4 py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-8 font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+          <h2 className="mb-8 font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
             Best Time to Visit
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <div className="flex items-center gap-2 text-[#D4A853]">
                 <Calendar className="h-5 w-5" />
-                <h3 className="font-heading text-sm font-normal tracking-wide">
+                <h3 className="font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15]">
                   Ideal Season
                 </h3>
               </div>
@@ -230,7 +230,7 @@ export default async function DestinationDetailPage({
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <div className="flex items-center gap-2 text-[#D4A853]">
                 <Cloud className="h-5 w-5" />
-                <h3 className="font-heading text-sm font-normal tracking-wide">
+                <h3 className="font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15]">
                   Weather & Climate
                 </h3>
               </div>
@@ -245,7 +245,7 @@ export default async function DestinationDetailPage({
       {/* Things to Know */}
       <section className="bg-[#0D1A30] px-4 py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-8 font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+          <h2 className="mb-8 font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
             Things to Know
           </h2>
           <div className="space-y-4">
@@ -265,7 +265,7 @@ export default async function DestinationDetailPage({
       {/* CTA */}
       <section className="bg-[#0A1425] px-4 py-16">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+          <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
             Ready to explore {destination.name}?
           </h2>
           <p className="mt-4 text-white/50">

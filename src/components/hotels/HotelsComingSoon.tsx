@@ -87,7 +87,7 @@ export default function HotelsComingSoon() {
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#D4A853]/10">
                   <Building2 className="h-8 w-8 text-[#D4A853]" />
                 </div>
-                <h2 className="mt-4 font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+                <h2 className="mt-4 font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
                   Coming Soon
                 </h2>
                 <p className="mx-auto mt-2 max-w-md font-body text-sm text-white/50 md:text-base">
@@ -99,7 +99,7 @@ export default function HotelsComingSoon() {
 
             {/* Non-functional search UI */}
             <div className="opacity-40">
-              <h3 className="font-heading text-lg font-normal tracking-wide text-white">
+              <h3 className="font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white">
                 Search Hotels
               </h3>
               <div className="mt-6 grid gap-4 md:grid-cols-4">
@@ -168,7 +168,7 @@ export default function HotelsComingSoon() {
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#C4324A]/10">
               <Bell className="h-6 w-6 text-[#C4324A]" />
             </div>
-            <h3 className="mt-4 font-heading text-lg font-normal tracking-wide text-white">
+            <h3 className="mt-4 font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white">
               Get Notified When We Launch
             </h3>
             <p className="mx-auto mt-2 max-w-md font-body text-sm text-white/50">
@@ -243,7 +243,7 @@ export default function HotelsComingSoon() {
                   key={name}
                   className="flex h-12 items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] px-5"
                 >
-                  <span className="font-heading text-xs tracking-wider text-white/20">
+                  <span className="font-heading text-xs font-medium tracking-[-0.015em] leading-[1.15] text-white/20">
                     {name}
                   </span>
                 </div>

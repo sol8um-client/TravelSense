@@ -70,7 +70,7 @@ export default function ConsultationConfirmationPage() {
             </div>
 
             <div className="mt-6 text-center">
-              <h2 className="font-heading text-xl font-normal tracking-wide text-white md:text-2xl">
+              <h2 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-2xl">
                 Your consultation is booked
               </h2>
               <p className="mx-auto mt-3 max-w-lg font-body text-sm leading-relaxed text-white/50 md:text-base">
@@ -95,7 +95,7 @@ export default function ConsultationConfirmationPage() {
                         Step {index + 1}
                       </span>
                     </div>
-                    <h3 className="mt-1 font-heading text-sm font-normal tracking-wide text-white">
+                    <h3 className="mt-1 font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15] text-white">
                       {step.title}
                     </h3>
                     <p className="mt-1 font-body text-sm leading-relaxed text-white/50">

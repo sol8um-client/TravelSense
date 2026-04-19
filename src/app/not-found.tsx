@@ -9,7 +9,7 @@ export default function NotFound() {
       <main className="flex min-h-screen items-center justify-center bg-[#0A1425] px-4">
         <div className="text-center">
           <p className="font-heading text-8xl font-normal text-[#C4324A]">404</p>
-          <h1 className="mt-4 font-heading text-2xl font-normal tracking-wide text-white">
+          <h1 className="mt-4 font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
             Page not found
           </h1>
           <p className="mt-3 text-white/50">

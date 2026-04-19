@@ -65,7 +65,7 @@ export default function CategoriesPage() {
                         <div className="mx-auto rounded-2xl bg-white/10 p-5 backdrop-blur-sm">
                           <Icon className="h-12 w-12 text-white" />
                         </div>
-                        <h2 className="mt-5 font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+                        <h2 className="mt-5 font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
                           {category.title}
                         </h2>
                         <p className="mt-2 text-center text-sm text-white/70">
@@ -143,7 +143,7 @@ export default function CategoriesPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#0A1425]/90 via-[#0A1425]/60 to-[#0A1425]/90" />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center px-4">
-                <h2 className="font-heading text-xl tracking-wide text-white md:text-2xl">
+                <h2 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-2xl">
                   Not Sure Which Category Fits You?
                 </h2>
                 <p className="mx-auto mt-3 max-w-lg font-body text-sm text-white/60 md:text-base">

@@ -30,7 +30,7 @@ export function GalleryCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl"
+          className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl"
         >
           Want to Be in Our Next Gallery?
         </motion.h2>

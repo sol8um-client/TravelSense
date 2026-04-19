@@ -49,8 +49,8 @@ export default function ContactPage() {
           <div className="mb-8 text-center">
             <div className="mb-3 flex items-center justify-center gap-2">
               <MapPin className="h-5 w-5 text-[#C4324A]" />
-              <h2 className="font-heading text-lg tracking-wider text-white/90 uppercase">
-                Our Location
+              <h2 className="hx font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
+                Our <em className="italic font-normal text-[#FFB3A3]">location.</em>
               </h2>
             </div>
             <p className="font-body text-sm text-white/50">

@@ -71,7 +71,7 @@ export function DestinationCard({ destination }: DestinationCardProps) {
 
           {/* Bottom overlay text */}
           <div className="absolute bottom-0 left-0 right-0 p-4">
-            <h3 className="font-heading text-lg font-normal tracking-wide text-white md:text-xl">
+            <h3 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-2xl">
               {name}
             </h3>
             <div className="mt-1 flex items-center gap-1.5 text-sm text-white/60">

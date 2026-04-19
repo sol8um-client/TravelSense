@@ -28,7 +28,7 @@ export default function TermsOfServicePage() {
 
         <section className="bg-[#0A1425] py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <div className="prose prose-invert prose-sm max-w-none space-y-8 font-body text-white/60 [&_h2]:font-heading [&_h2]:text-lg [&_h2]:font-normal [&_h2]:tracking-wide [&_h2]:text-white [&_h2]:mt-10 [&_h2]:mb-4 [&_strong]:text-white/80">
+            <div className="prose prose-invert prose-sm max-w-none space-y-8 font-body text-white/60 [&_h2]:font-heading [&_h2]:text-lg [&_h2]:font-normal [&_h2]:font-medium tracking-[-0.015em] leading-[1.15] [&_h2]:text-white [&_h2]:mt-10 [&_h2]:mb-4 [&_strong]:text-white/80">
               <p className="text-sm text-white/40">
                 Last updated: April 2026
               </p>

@@ -141,7 +141,7 @@ export default async function BlogPostPage({
               {categoryLabel}
             </Link>
 
-            <h1 className="mt-4 font-heading text-3xl font-normal tracking-wide text-white md:text-4xl lg:text-5xl">
+            <h1 className="mt-4 font-heading text-3xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-4xl lg:text-5xl">
               {post.title}
             </h1>
 

@@ -198,7 +198,7 @@ export default function ItineraryForm() {
                 className="space-y-5"
               >
                 <div>
-                  <h3 className="font-heading text-lg font-normal tracking-wide text-white">
+                  <h3 className="font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white">
                     Where do you want to go?
                   </h3>
                   <p className="mt-1 font-body text-sm text-white/50">
@@ -260,7 +260,7 @@ export default function ItineraryForm() {
                 className="space-y-5"
               >
                 <div>
-                  <h3 className="font-heading text-lg font-normal tracking-wide text-white">
+                  <h3 className="font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white">
                     What is your budget?
                   </h3>
                   <p className="mt-1 font-body text-sm text-white/50">
@@ -348,7 +348,7 @@ export default function ItineraryForm() {
                 className="space-y-5"
               >
                 <div>
-                  <h3 className="font-heading text-lg font-normal tracking-wide text-white">
+                  <h3 className="font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white">
                     What are you interested in?
                   </h3>
                   <p className="mt-1 font-body text-sm text-white/50">

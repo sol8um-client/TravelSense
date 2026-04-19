@@ -1005,7 +1005,7 @@ function HowItWorksSection() {
                 animate={howInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 1.5 + i * 0.3, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
                 <item.icon className="h-3.5 w-3.5" style={{ color: item.color }} strokeWidth={1.5} />
-                <span className="text-[9px] font-heading font-medium tracking-[0.15em] uppercase" style={{ color: item.color }}>{item.day}</span>
+                <span className="text-[9.5px] font-body font-semibold tracking-[0.22em] uppercase" style={{ color: item.color }}>{item.day}</span>
                 <span className="text-[11px] text-muted-foreground/60">{item.text}</span>
               </motion.div>
               {i < 2 && <ArrowRight className="h-3 w-3 text-silver/30 hidden sm:block" />}
@@ -1015,9 +1015,9 @@ function HowItWorksSection() {
 
         {/* Bottom CTA */}
         <div className="mt-10 text-center" data-reveal style={{ transitionDelay: "0.5s" }}>
-          <button onClick={() => leadModal.open("how-it-works")} className="metallic-cta group inline-flex items-center gap-2.5 px-9 py-4 text-[11px] text-white tracking-[0.15em] uppercase cursor-pointer">
+          <button onClick={() => leadModal.open("how-it-works")} className="metallic-cta group inline-flex items-center gap-2.5 px-9 py-4 text-[14px] font-body font-semibold text-white tracking-[0.01em] cursor-pointer">
             <span className="relative z-10 flex items-center gap-2">
-              Start Your Journey <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2 duration-300" />
+              Start your journey <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2 duration-300" />
             </span>
           </button>
         </div>
@@ -1157,7 +1157,7 @@ function DestinationsSection() {
                         </div>
                         <div className="mt-3 flex items-baseline gap-1">
                           <span className="text-[10px] text-silver/40 uppercase tracking-wider font-body">From</span>
-                          <span className="text-xl font-bold text-white font-heading tracking-wide">₹{dest.priceLabel}</span>
+                          <span className="text-xl font-bold text-white font-heading font-medium tracking-[-0.015em] leading-[1.15]">₹{dest.priceLabel}</span>
                         </div>
                       </div>
                     </div>
@@ -1246,13 +1246,13 @@ function USPSection() {
 
             {/* CTA */}
             <div data-reveal className="mt-8 flex items-center gap-5" style={{ transitionDelay: "0.4s" }}>
-              <Link href="/consultation" className="metallic-cta group inline-flex items-center gap-2 px-7 py-3.5 text-[13px] font-bold text-white tracking-[0.1em] uppercase">
+              <Link href="/consultation" className="metallic-cta group inline-flex items-center gap-2 px-7 py-3.5 text-[14px] font-body font-semibold text-white tracking-[0.01em]">
                 <span className="relative z-10 flex items-center gap-2">
                   <motion.span animate={{ rotate: [0, -15, 15, -10, 10, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 3, ease: "easeInOut" }}>
                     <Phone className="h-4 w-4" />
                   </motion.span>
-                  Talk to a Human
+                  Talk to a human
                 </span>
               </Link>
               <div className="flex items-center gap-2">
@@ -1547,8 +1547,8 @@ function TestimonialsSection() {
     <section ref={testRef} className="py-24 bg-brand-gradient-light">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14" data-reveal>
-          <p className="text-[10px] font-heading font-normal tracking-[0.3em] uppercase text-secondary/70">Real Stories</p>
-          <h2 className="mt-3 font-heading text-2xl sm:text-3xl md:text-4xl font-normal tracking-[0.12em] metallic-text heading-accent">
+          <p className="text-[10px] font-body font-normal font-semibold tracking-[0.28em] uppercase text-secondary/70">Real Stories</p>
+          <h2 className="mt-3 font-heading text-2xl sm:text-3xl md:text-4xl font-medium tracking-[-0.02em] leading-[1.06] metallic-text heading-accent">
             Verified by Travelers
           </h2>
           <p className="mt-3 text-sm text-muted-foreground max-w-md mx-auto">
@@ -1697,7 +1697,7 @@ function CTASection() {
 
       <div className="relative max-w-2xl mx-auto px-6 text-center">
         <div data-reveal>
-          <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-normal tracking-[0.12em] leading-[1.15]">
+          <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-medium tracking-[-0.02em] leading-[1.06] leading-[1.15]">
             <span className="metallic-text-dark">Ready to Plan Your</span>
             <br />
             <span className="metallic-red relative inline-block">Dream Trip
@@ -1716,17 +1716,17 @@ function CTASection() {
           <p className="mt-3 text-[9px] tracking-[0.3em] uppercase text-silver/20 font-semibold">Seen · Planned · Sorted</p>
         </div>
         <div data-reveal className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4" style={{ transitionDelay: "0.15s" }}>
-          <button onClick={() => leadModal.open("cta-book-consultation")} className="metallic-cta group inline-flex items-center gap-2 px-9 py-4 text-[13px] font-bold text-white tracking-[0.1em] uppercase cursor-pointer">
+          <button onClick={() => leadModal.open("cta-book-consultation")} className="metallic-cta group inline-flex items-center gap-2 px-9 py-4 text-[14px] font-body font-semibold text-white tracking-[0.01em] cursor-pointer">
             <span className="relative z-10 flex items-center gap-2">
               <motion.span animate={{ rotate: [0, -10, 10, -5, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 4 }}>
                 <Phone className="h-4 w-4" />
               </motion.span>
-              Book Free Consultation
+              Book free consultation
             </span>
           </button>
-          <button onClick={() => leadModal.open("cta-browse")} className="inline-flex items-center gap-2 rounded-full border border-silver/[0.1] bg-white/[0.03] px-8 py-4 text-[13px] font-semibold text-silver/30 tracking-[0.08em] uppercase backdrop-blur-xl hover:bg-white/[0.08] hover:text-silver/50 hover:border-silver/20 transition-all duration-500 cursor-pointer">
-            Browse Destinations
+          <button onClick={() => leadModal.open("cta-browse")} className="inline-flex items-center gap-2 rounded-full border border-silver/[0.1] bg-white/[0.03] px-8 py-4 text-[14px] font-body font-medium text-silver/40 tracking-[0.01em] backdrop-blur-xl hover:bg-white/[0.08] hover:text-silver/60 hover:border-silver/20 transition-all duration-500 cursor-pointer">
+            Browse destinations
           </button>
         </div>
 

@@ -11,7 +11,7 @@ export default function Error({
     <div className="flex min-h-screen items-center justify-center bg-[#0A1425] px-4">
       <div className="text-center">
         <p className="font-heading text-6xl font-normal text-[#C4324A]">Oops</p>
-        <h2 className="mt-4 font-heading text-xl font-normal tracking-wide text-white">
+        <h2 className="mt-4 font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
           Something went wrong
         </h2>
         <p className="mt-3 max-w-md text-sm text-white/50">

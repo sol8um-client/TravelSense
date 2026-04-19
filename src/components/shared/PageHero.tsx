@@ -44,7 +44,7 @@ export function PageHero({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-heading text-3xl font-normal tracking-wide text-white md:text-4xl lg:text-5xl"
+          className="hx font-heading text-4xl font-medium tracking-[-0.02em] leading-[1.04] text-white md:text-5xl lg:text-6xl"
         >
           {title}
         </motion.h1>

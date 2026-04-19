@@ -98,7 +98,7 @@ export default function VehiclesPage() {
         <section className="bg-[#0A1425] py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
                 Choose Your Vehicle
               </h2>
               <p className="mx-auto mt-3 max-w-2xl font-body text-sm text-white/50 md:text-base">
@@ -140,7 +140,7 @@ export default function VehiclesPage() {
                     >
                       <vehicle.icon className="h-6 w-6" />
                     </div>
-                    <h3 className="mt-4 font-heading text-base font-normal tracking-wide text-white">
+                    <h3 className="mt-4 font-heading text-base font-medium tracking-[-0.015em] leading-[1.15] text-white">
                       {vehicle.name}
                     </h3>
                     <p className="mt-1 font-body text-xs font-semibold text-[#D4A853]">
@@ -169,7 +169,7 @@ export default function VehiclesPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#0A1425] via-[#0A1425]/60 to-[#0A1425]" />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="mx-auto max-w-3xl px-4 text-center">
-                <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+                <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
                   Every Journey Deserves the Right Ride
                 </h2>
                 <p className="mx-auto mt-3 max-w-xl font-body text-sm text-white/60 md:text-base">
@@ -185,7 +185,7 @@ export default function VehiclesPage() {
         <section className="bg-[#0D1A30] py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
                 Request a Vehicle
               </h2>
               <p className="mx-auto mt-3 max-w-xl font-body text-sm text-white/50 md:text-base">
@@ -203,7 +203,7 @@ export default function VehiclesPage() {
         {/* ── CTA Section ────────────────────────────────────── */}
         <section className="bg-[#0A1425] py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+            <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
               Need Help Planning Your Trip?
             </h2>
             <p className="mx-auto mt-3 max-w-xl font-body text-sm text-white/50 md:text-base">

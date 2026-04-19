@@ -176,7 +176,7 @@ export default function AboutContent() {
               <motion.h2
                 variants={fadeUp}
                 custom={0}
-                className="font-heading text-3xl font-normal tracking-wide text-white sm:text-4xl"
+                className="font-heading text-3xl font-medium tracking-[-0.015em] leading-[1.15] text-white sm:text-4xl"
               >
                 The Story Behind TravelSense
               </motion.h2>
@@ -245,7 +245,7 @@ export default function AboutContent() {
                       </div>
 
                       {/* Name */}
-                      <h3 className="mt-6 font-heading text-lg font-normal tracking-wider text-white">
+                      <h3 className="mt-6 font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white">
                         Jayshree Lakhotiya
                       </h3>
 
@@ -295,7 +295,7 @@ export default function AboutContent() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#C4324A]/5 to-transparent" />
                 <div className="relative">
                   <stat.icon className="mx-auto mb-3 h-6 w-6 text-[#D4A853]/60" />
-                  <p className="font-heading text-2xl font-normal tracking-wide text-white sm:text-3xl">
+                  <p className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white sm:text-3xl">
                     {stat.number}
                   </p>
                   <p className="mt-1 font-body text-sm text-white/50">
@@ -331,7 +331,7 @@ export default function AboutContent() {
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10">
                   <Heart className="h-6 w-6 text-secondary" />
                 </div>
-                <h3 className="font-heading text-xl font-normal tracking-wide text-white">
+                <h3 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
                   Our Mission
                 </h3>
                 <p className="mt-4 font-body text-lg leading-relaxed text-[#D4A853]/80">
@@ -358,7 +358,7 @@ export default function AboutContent() {
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
                   <Eye className="h-6 w-6 text-accent" />
                 </div>
-                <h3 className="font-heading text-xl font-normal tracking-wide text-white">
+                <h3 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
                   Our Vision
                 </h3>
                 <p className="mt-4 font-body text-lg leading-relaxed text-[#D4A853]/80">
@@ -391,7 +391,7 @@ export default function AboutContent() {
               <div className="mb-4 flex justify-center">
                 <span className="inline-block h-1 w-12 rounded-full bg-secondary" />
               </div>
-              <h2 className="font-heading text-3xl font-normal tracking-wide text-white sm:text-4xl">
+              <h2 className="font-heading text-3xl font-medium tracking-[-0.015em] leading-[1.15] text-white sm:text-4xl">
                 What We Stand For
               </h2>
               <p className="mx-auto mt-4 max-w-2xl font-body text-base text-white/60">
@@ -416,7 +416,7 @@ export default function AboutContent() {
                   />
                   <div className="relative">
                     <value.icon className="mb-5 h-8 w-8 text-white/40" />
-                    <h3 className="font-heading text-base font-normal tracking-wider text-white">
+                    <h3 className="font-heading text-base font-medium tracking-[-0.015em] leading-[1.15] text-white">
                       {value.title}
                     </h3>
                     <p className="mt-3 font-body text-sm leading-relaxed text-white/50">
@@ -445,7 +445,7 @@ export default function AboutContent() {
               <div className="mb-4 flex justify-center">
                 <span className="inline-block h-1 w-12 rounded-full bg-secondary" />
               </div>
-              <h2 className="font-heading text-3xl font-normal tracking-wide text-white sm:text-4xl">
+              <h2 className="font-heading text-3xl font-medium tracking-[-0.015em] leading-[1.15] text-white sm:text-4xl">
                 Our Journey
               </h2>
               <p className="mx-auto mt-4 max-w-2xl font-body text-base text-white/60">
@@ -482,10 +482,10 @@ export default function AboutContent() {
                         >
                           {isLeft ? (
                             <div className="ml-auto max-w-md">
-                              <span className="font-heading text-sm tracking-widest text-[#D4A853]/70">
+                              <span className="font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15] text-[#D4A853]/70">
                                 {milestone.year}
                               </span>
-                              <h3 className="mt-2 font-heading text-lg font-normal tracking-wide text-white">
+                              <h3 className="mt-2 font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white">
                                 {milestone.title}
                               </h3>
                               <p className="mt-3 font-body text-sm leading-relaxed text-white/50">
@@ -513,10 +513,10 @@ export default function AboutContent() {
                         >
                           {!isLeft ? (
                             <div className="mr-auto max-w-md">
-                              <span className="font-heading text-sm tracking-widest text-[#D4A853]/70">
+                              <span className="font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15] text-[#D4A853]/70">
                                 {milestone.year}
                               </span>
-                              <h3 className="mt-2 font-heading text-lg font-normal tracking-wide text-white">
+                              <h3 className="mt-2 font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white">
                                 {milestone.title}
                               </h3>
                               <p className="mt-3 font-body text-sm leading-relaxed text-white/50">
@@ -537,10 +537,10 @@ export default function AboutContent() {
                         </div>
                         {/* Content */}
                         <div className="pb-2">
-                          <span className="font-heading text-sm tracking-widest text-[#D4A853]/70">
+                          <span className="font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15] text-[#D4A853]/70">
                             {milestone.year}
                           </span>
-                          <h3 className="mt-1 font-heading text-base font-normal tracking-wide text-white">
+                          <h3 className="mt-1 font-heading text-base font-medium tracking-[-0.015em] leading-[1.15] text-white">
                             {milestone.title}
                           </h3>
                           <p className="mt-2 font-body text-sm leading-relaxed text-white/50">
@@ -572,7 +572,7 @@ export default function AboutContent() {
               <div className="mb-4 flex justify-center">
                 <span className="inline-block h-1 w-12 rounded-full bg-secondary" />
               </div>
-              <h2 className="font-heading text-3xl font-normal tracking-wide text-white sm:text-4xl">
+              <h2 className="font-heading text-3xl font-medium tracking-[-0.015em] leading-[1.15] text-white sm:text-4xl">
                 Why Choose TravelSense
               </h2>
               <p className="mx-auto mt-4 max-w-2xl font-body text-base text-white/60">
@@ -592,7 +592,7 @@ export default function AboutContent() {
                   <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-white/5">
                     <feature.icon className="h-5 w-5 text-secondary" />
                   </div>
-                  <h3 className="font-heading text-sm font-normal tracking-wider text-white">
+                  <h3 className="font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15] text-white">
                     {feature.title}
                   </h3>
                   <p className="mt-2.5 font-body text-sm leading-relaxed text-white/50">
@@ -622,7 +622,7 @@ export default function AboutContent() {
             <motion.h2
               variants={fadeUp}
               custom={0}
-              className="font-heading text-3xl font-normal tracking-wide text-white sm:text-4xl"
+              className="font-heading text-3xl font-medium tracking-[-0.015em] leading-[1.15] text-white sm:text-4xl"
             >
               Ready to Plan Your Next Adventure?
             </motion.h2>

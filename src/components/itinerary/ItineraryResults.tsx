@@ -36,7 +36,7 @@ export default function ItineraryResults({
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/5">
           <MapPin className="h-7 w-7 text-white/30" />
         </div>
-        <h3 className="mt-4 font-heading text-lg font-normal tracking-wide text-white">
+        <h3 className="mt-4 font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white">
           No Matches Found
         </h3>
         <p className="mx-auto mt-2 max-w-md font-body text-sm text-white/50">
@@ -63,7 +63,7 @@ export default function ItineraryResults({
       transition={{ duration: 0.4 }}
     >
       <div className="mb-6 text-center">
-        <h3 className="font-heading text-xl font-normal tracking-wide text-white md:text-2xl">
+        <h3 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-2xl">
           Recommended Packages
         </h3>
         {message && (
@@ -83,7 +83,7 @@ export default function ItineraryResults({
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <h4 className="font-heading text-base font-normal tracking-wide text-white">
+                  <h4 className="font-heading text-base font-medium tracking-[-0.015em] leading-[1.15] text-white">
                     {pkg.title}
                   </h4>
                   {pkg.matchScore >= 80 && (

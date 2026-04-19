@@ -36,17 +36,17 @@ const portableTextComponents: PortableTextComponents = {
   },
   block: {
     h2: ({ children }) => (
-      <h2 className="mb-4 mt-10 font-heading text-2xl font-normal tracking-wide text-white md:text-3xl">
+      <h2 className="mb-4 mt-10 font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.2] text-white md:text-3xl">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="mb-3 mt-8 font-heading text-xl font-normal tracking-wide text-white md:text-2xl">
+      <h3 className="mb-3 mt-8 font-heading text-xl font-medium tracking-[-0.015em] leading-[1.2] text-white md:text-2xl">
         {children}
       </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="mb-2 mt-6 font-heading text-lg font-normal tracking-wide text-white">
+      <h4 className="mb-2 mt-6 font-heading text-lg font-medium tracking-[-0.015em] leading-[1.2] text-white">
         {children}
       </h4>
     ),

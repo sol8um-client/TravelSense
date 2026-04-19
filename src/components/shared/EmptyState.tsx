@@ -21,7 +21,7 @@ export function EmptyState({
       <div className="mb-4 rounded-full bg-white/5 p-4">
         {icon || <SearchX className="h-8 w-8 text-white/30" />}
       </div>
-      <h3 className="font-heading text-lg font-normal tracking-wide text-white/80">
+      <h3 className="font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white/80">
         {title}
       </h3>
       <p className="mt-2 max-w-sm text-sm text-white/40">{description}</p>

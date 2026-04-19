@@ -124,7 +124,7 @@ export function Footer() {
           {/* Navigation Columns */}
           {footerColumns.map(([key, items]) => (
             <div key={key} className="lg:col-span-2">
-              <h3 className="text-[11px] font-heading font-normal uppercase tracking-[0.2em] text-white/60">
+              <h3 className="text-[10.5px] font-body font-semibold uppercase tracking-[0.24em] text-white/70">
                 {columnLabels[key] ?? key}
               </h3>
               <ul className="mt-4 space-y-3">
@@ -144,8 +144,8 @@ export function Footer() {
 
           {/* Newsletter Column */}
           <div className="md:col-span-2 lg:col-span-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90">
-              Travel Inspiration
+            <h3 className="hx font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.1] text-white">
+              Travel <em className="italic font-normal text-[#FFB3A3]">inspiration.</em>
             </h3>
             <p className="mt-4 text-[13px] text-white/40 font-light tracking-wide leading-[1.7]">
               Get curated travel ideas, exclusive deals, and expert tips

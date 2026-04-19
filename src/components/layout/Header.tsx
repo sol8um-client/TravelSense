@@ -130,9 +130,9 @@ export function Header() {
               {/* CTA Button */}
               <button
                 onClick={() => leadModal.open("header")}
-                className="metallic-cta hidden sm:inline-flex items-center px-6 py-2.5 text-[11px] font-normal text-white tracking-[0.15em] uppercase cursor-pointer"
+                className="metallic-cta hidden sm:inline-flex items-center px-6 py-2.5 text-[13px] font-body font-semibold text-white tracking-[0.01em] cursor-pointer"
               >
-                <span className="relative z-10">Book Consultation</span>
+                <span className="relative z-10">Plan my trip</span>
               </button>
 
               {/* Mobile menu trigger */}

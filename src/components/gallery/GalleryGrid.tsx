@@ -464,7 +464,7 @@ function GalleryCard({
 
         {/* Title + Destination overlay on hover */}
         <div className="absolute right-0 bottom-0 left-0 translate-y-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-          <h3 className="font-heading text-sm font-normal tracking-wide text-white md:text-base">
+          <h3 className="font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-base">
             {item.title}
           </h3>
           <div className="mt-1 flex items-center gap-1 text-white/70">
@@ -543,7 +543,7 @@ function Lightbox({
 
         {/* Info panel */}
         <div className="p-6 md:p-8">
-          <h2 className="font-heading text-lg font-normal tracking-wide text-white md:text-xl">
+          <h2 className="font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-xl">
             {item.title}
           </h2>
           <div className="mt-2 flex items-center gap-1.5 text-[#D4A853]">

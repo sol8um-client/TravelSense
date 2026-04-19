@@ -146,8 +146,8 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
           >
             <X className="h-5 w-5" />
           </button>
-          <h2 className="text-white text-lg font-heading tracking-wider">
-            Start Your Journey
+          <h2 className="hx text-white text-2xl font-heading font-medium tracking-[-0.015em] leading-[1.1]">
+            Start your <em className="italic font-normal text-[#FFB3A3]">journey.</em>
           </h2>
           <p className="text-white/60 text-sm mt-1">
             Tell us about your dream trip — we&apos;ll handle the rest.
@@ -168,8 +168,8 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
             >
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto" />
             </motion.div>
-            <h3 className="text-xl font-heading text-[#0B1426] mt-4 tracking-wider">
-              Thank You!
+            <h3 className="hx text-2xl font-heading font-medium text-[#0B1426] mt-4 tracking-[-0.015em]">
+              Thank <em className="italic font-normal text-[#C4324A]">you.</em>
             </h3>
             <p className="text-gray-500 mt-2 text-sm">
               Our travel expert will reach out to you within 30 minutes.
@@ -283,14 +283,14 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
             <button
               type="submit"
               disabled={submitting}
-              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#C4324A] to-[#a82940] text-white py-3.5 rounded-lg text-sm font-medium tracking-wider uppercase hover:from-[#a82940] hover:to-[#8f2236] transition-all duration-300 disabled:opacity-60"
+              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#C4324A] to-[#a82940] text-white py-3.5 rounded-lg text-sm font-body font-semibold tracking-[0.01em] hover:from-[#a82940] hover:to-[#8f2236] transition-all duration-300 disabled:opacity-60"
             >
               {submitting ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
               ) : (
                 <>
                   <Send className="h-4 w-4" />
-                  Get Free Consultation
+                  Get free consultation
                 </>
               )}
             </button>
