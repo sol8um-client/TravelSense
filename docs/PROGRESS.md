@@ -1,170 +1,124 @@
-# TravelSense — Development Progress
+# TravelSense — Progress Tracker
 
-**Last Updated:** March 29, 2026
-
----
-
-## Overall Status
-
-| Milestone | Status | Completion |
-|-----------|--------|------------|
-| M1: Brand Identity | COMPLETE | 100% |
-| M2: UI/UX Design | IN PROGRESS | ~30% (Homepage done) |
-| M3: Website Development | IN PROGRESS | ~25% (Homepage + Globe + Lead Capture + Deployed) |
-| M4: Content & SEO | NOT STARTED | 0% |
-| M5: Launch & QA | IN PROGRESS | ~20% (Social media strategy complete) |
+**Last Updated:** April 19, 2026
+**Status:** Phase 1 ~95% Complete
+**Live URL:** https://travelsense.co.in
 
 ---
 
-## Deployment Info
+## Milestone Overview
 
-| Service | Details |
-|---------|---------|
-| Live URL | https://travelsense.co.in |
-| Vercel Project | sol8um-7719s-projects/travelsense |
-| GitHub Repo | https://github.com/sol8um-client/TravelSense |
-| Supabase | https://rkalfwndmrhkqctzmgpe.supabase.co |
-| Git Identity | Sol8um / sol8um@gmail.com |
-
----
-
-## Completed Work
-
-### March 24, 2026 — Homepage Landing Page
-- 12-section landing page in `LandingPage.tsx` (~1600 lines)
-- Premium metallic text effects, scroll animations, Framer Motion
-- Sections: Hero → Trust Marquee → Problem → How It Works → Categories → Destinations → USP → What Sets Us Apart → Coming Soon → Testimonials → CTA → Newsletter
-- Header + Footer with TravelSense logo
-- Mobile responsive (flip cards, touch support)
-- Dependencies: three, @react-three/fiber, @react-three/drei, framer-motion
-
-### March 25, 2026 — 3D Globe Redesign
-- Complete rewrite of `Globe3D.tsx` (8+ iterations)
-- Final design: NASA-textured frosted glass sphere
-- 4 clean layers: textured sphere, atmosphere glow, destination pins, flight arcs
-- 20 destination markers as 3D location pins (cone+sphere, quaternion-oriented)
-- 9 animated flight route arcs (cherry pink + 1 blue)
-- Custom GLSL shaders for frosted glass + atmosphere
-- Removed all clutter: grid, clouds, particles, sparkles, complex icons
-- Added `public/textures/earth-light.jpg` (NASA Blue Marble, public domain)
-
-### March 29, 2026 — How It Works Animation + CTA Sizing + Social Media Strategy
-
-**How It Works section overhaul:**
-- Scroll-linked animation using `useScroll` + `useTransform` (replaced `useInView`)
-- SVG gradient dashed path (red → green emotional journey) draws progressively on scroll
-- Floating decorative elements around steps, progressive reveal
-- Desktop horizontal path + mobile vertical S-curve path with same gradient
-- Emotional color palette: Cherry Red → Terracotta → Sage Jade → Deep Emerald
-- Path weaves under all step circles via z-index layering
-
-**Hero CTA buttons:**
-- Made Start Planning and Explore Destinations buttons identical size (230px × 50px desktop)
-- Removed `font-heading` from outline button, absolute-positioned ChevronRight icon
-- Explicit height classes + min-width for pixel-perfect matching
-
-**Social media strategy:**
-- Created `docs/SOCIAL_MEDIA_STRATEGY.md` — comprehensive 12-section plan
-- Handle: `@travelsense.in` / `@travelsensein` across platforms
-- 4-platform strategy, 1-month content calendar, Meta Ads funnel
-- Research: competitor analysis, audience insights, growth tactics
-
-**Files changed:**
-- `src/components/home/LandingPage.tsx` — How It Works overhaul, CTA sizing
-- `docs/SOCIAL_MEDIA_STRATEGY.md` — NEW (social media strategy)
+| Milestone | Status | Notes |
+|-----------|--------|-------|
+| M1: Brand Identity | ✅ Complete | Logo, palette, typography, guidelines |
+| M2: UI/UX Design | ✅ Complete | All 29 pages designed and built |
+| M3: Website Development | ✅ Complete | 29 pages, 8 APIs, 6 DB tables, deployed |
+| M4: Content & SEO | ✅ Complete | Rich content, 40 custom images, SEO |
+| M5: Launch & QA | 🟡 Mostly Complete | Awaiting client credentials + assets |
 
 ---
 
-### March 28, 2026 — Lead Capture + Deployment
-- **Lead capture modal** (`LeadCaptureModal.tsx`) — name, email, phone, destination, dates, message
-- Wired to ALL CTA buttons across all sections
-- **Supabase integration** — leads table with RLS (anon insert only)
-- **Deployed to Vercel** — live at https://travelsense.co.in
-- **GitHub push** — sol8um-client/TravelSense, main branch
-- Fixed TypeScript build error in brand-identity page
-- Globe mobile support — visible on all viewports with perf optimizations
-- Mobile lead form fix — scrollable with sticky close button
-- Typography fixes — tagline visibility, em dash removal
-- Hero section — 4 stats visible in 2x2 grid on mobile, button sizing
+## What's Live on travelsense.co.in
+
+### Pages (29 total)
+- **Homepage** — 12 sections, 3D globe, animations
+- **Destinations** — listing + 20 detail pages (Kashmir, Leh-Ladakh, Himachal, Rajasthan, Varanasi, Golden Triangle, Uttarakhand, Meghalaya, Sikkim, Arunachal, Assam, Kerala, Goa, Karnataka, Char Dham, Andaman, Bali, Thailand, Dubai, Vietnam)
+- **Packages** — listing + 13 detail pages with gamified visual itinerary
+- **Blog** — listing + 8 detail pages (full articles, 400-600 words each)
+- **Categories** — 4 category pages (Leisure, Adventure, Educational, Sports)
+- **Marketing** — About, Contact, Services, Gallery, FAQ, Privacy Policy, Terms of Service
+- **Booking** — Consultation, Vehicles, Visa-Passport, Itinerary Builder, Hotels
+- **Admin** — Dashboard, Inquiries, Bookings, Analytics (password-protected)
+- **Utilities** — 404, loading, error pages
+
+### Backend
+- 8 API routes (contact, consultation, vehicle-request, visa-inquiry, newsletter, itinerary, hotels, razorpay webhook)
+- All Zod-validated, Supabase-connected
+- 6 Supabase tables with RLS: leads, contact_inquiries, consultation_bookings, vehicle_requests, visa_inquiries, newsletter_subscribers
+
+### Content (all in `src/data/` — NO Sanity CMS)
+- 20 destinations with: tagline, description, longDescription (2-3 paragraphs), hero + 6 gallery images, weather, best time, starting price, 6-8 highlights, 4-5 practical tips, 4 popular experiences
+- 13 packages with: detail, hero + 4 gallery images, pricing with discounts, difficulty, group size, rating, inclusions/exclusions, 5-10 day itinerary (each day has title, description, activities, meals, accommodation, elevation, distance, highlight badge, image)
+- 8 blog articles with: cover image, author card, HTML content, tags, related posts
+
+### Imagery
+- **40 custom AI-generated images** (Nano Banana 2) for location accuracy
+- 20 destination heroes + 8 blog covers + 12 package day images
+- Optimized to WebP (140MB → 7MB, 95% compression)
+- Stored in `/public/images/generated/*.webp`
+- Unsplash still used for galleries and secondary images
+
+### SEO
+- Auto-generated sitemap.xml + robots.txt
+- Meta tags + Open Graph tags on every page
+- JSON-LD schemas: Organization, Service, Breadcrumbs
+- GA4 + Meta Pixel components ready (awaiting client IDs)
+
+### Infrastructure
+- GitHub: `sol8um-client/TravelSense` (main branch, auto-deploy)
+- Vercel: `sol8um-7719s-projects/travelsense`
+- Domain: travelsense.co.in (SSL active)
+- Env vars: Supabase credentials configured
 
 ---
 
-## Pending Work
+## Awaiting Client Inputs (only Phase 1 blockers)
 
-### Homepage Refinements
-- [x] Globe edge visibility
-- [x] Globe mobile support
-- [x] Lead capture on CTAs
-- [x] How It Works scroll animation + emotional color journey
-- [x] Hero CTA buttons consistent sizing
-- [ ] Real destination photos (replacing placeholder paths)
-- [ ] Performance optimization (lazy loading, image compression)
-- [ ] Problem section animation lag on mobile
-
-### Remaining Pages (M2/M3)
-- [ ] About page
-- [ ] Contact page
-- [ ] Destinations listing + detail pages
-- [ ] Packages listing + detail pages
-- [ ] Itinerary Builder
-- [ ] Consultation booking (calendar + payment)
-- [ ] Hotel search (API integration)
-- [ ] Vehicle booking request form
-- [ ] Visa/passport assistance page
-- [ ] Blog (Sanity CMS powered)
-- [ ] FAQ page
-- [ ] Admin panel
-
-### Backend (M3)
-- [x] Supabase leads table
-- [ ] Sanity CMS schemas
-- [ ] API routes (contact, consultation, itinerary, etc.)
-- [ ] Razorpay payment integration
-
-### Social Media & Marketing (M5)
-- [x] Social media strategy document (`docs/SOCIAL_MEDIA_STRATEGY.md`)
-- [ ] Register handles on all 4 platforms + YouTube + WhatsApp Business
-- [ ] Set up profiles (bios, profile pics, covers, highlights)
-- [ ] Install Meta Pixel on travelsense.co.in
-- [ ] Create branded templates (Canva)
-- [ ] Prepare Week 1 launch content
-- [ ] Execute launch plan
-- [ ] Start Meta Ads (Week 3-4)
-
-### Content & SEO (M4)
-- [ ] Page copy for all sections
-- [ ] Destination content
-- [ ] Blog seed articles (5-10)
-- [ ] Schema markup (Organization, LocalBusiness, etc.)
-- [ ] GA4 + GSC + Meta Pixel
+| # | Item | Status |
+|---|------|--------|
+| 1 | Business phone/WhatsApp number | Placeholder `+91-9876543210` in 7 files |
+| 2 | GA4 Measurement ID (G-XXXXXXXXXX) | Component ready |
+| 3 | Meta Pixel ID | Component ready |
+| 4 | Razorpay Key ID + Secret | Payment code ready |
+| 5 | Brevo API key | For newsletter/email |
+| 6 | Jayshree's founder photo | Fallback globe icon in place |
+| 7 | Social media profile URLs | Currently `#` placeholders in footer |
+| 8 | Brand OG image (1200×630) | For social sharing previews |
 
 ---
 
-## Tech Stack Active
+## Key Technical Decisions This Phase
 
-| Technology | Version | Usage |
-|-----------|---------|-------|
-| Next.js | 16.1.6 | App Router, SSR |
-| React | 19.2.3 | UI framework |
-| TypeScript | 5.x | Strict mode |
-| Tailwind CSS | 4.x | Styling |
-| three.js | 0.183.2 | 3D globe |
-| @react-three/fiber | 9.5.0 | React Three.js wrapper |
-| @react-three/drei | 10.7.7 | Three.js utilities |
-| @react-three/postprocessing | 3.0.4 | Bloom, Vignette effects |
-| framer-motion | 12.38.0 | Animations |
-| lucide-react | 0.577.0 | Icons |
-| @supabase/supabase-js | 2.100.0 | Lead capture backend |
+1. **Removed Sanity CMS** — moved to static TS files in `src/data/`. Simpler, faster, sufficient for non-technical founder.
+2. **Custom AI-generated images** — Nano Banana 2 (Flow Labs) for exact location accuracy, not generic Unsplash.
+3. **Image pipeline** — PNG → WebP via `scripts/optimize-images.py`.
+4. **Gamified itinerary UI** — zigzag timeline with progress tracker instead of boring accordion list.
+5. **Cookie-based admin auth** — simple middleware, no third-party auth dependency.
+6. **Static data + generateStaticParams** — all content pages pre-rendered at build time.
 
 ---
 
-## File Size Reference
+## Files & Scripts Added This Phase
 
-| File | Lines | Purpose |
-|------|-------|---------|
-| `LandingPage.tsx` | ~1600 | Homepage 12 sections |
-| `Globe3D.tsx` | ~450 | 3D globe component |
-| `LeadCaptureModal.tsx` | ~200 | Lead capture form modal |
-| `globals.css` | ~867 | Custom animations & effects |
-| `useScrollAnimations.ts` | ~200 | Scroll/parallax hooks |
-| `supabase.ts` | ~10 | Supabase client singleton |
+| Path | Purpose |
+|------|---------|
+| `src/data/destinations.ts` | 20 destinations (1460 lines) |
+| `src/data/packages.ts` | 13 packages with full itineraries (1893 lines) |
+| `src/data/blog.ts` | 8 full blog articles (623 lines) |
+| `src/middleware.ts` | Admin password auth |
+| `src/app/robots.ts`, `sitemap.ts` | Auto-generated SEO |
+| `src/components/analytics/` | GA4 + Meta Pixel |
+| `public/images/generated/` | 40 custom AI images (WebP) |
+| `scripts/optimize-images.py` | PNG → WebP pipeline |
+| `scripts/generate-phase1-pdf.py` | Client delivery PDF |
+| `scripts/image-mapping.json` | Image slug mapping |
+| `docs/TravelSense_Phase1_Status.pdf` | 1-page client summary |
+
+---
+
+## Next Steps
+
+1. **Client sends credentials/assets** (phone, GA4, Meta Pixel, Razorpay, Brevo, photo, socials, OG image)
+2. **Plug them in** across env vars and placeholder files (≤30 min work)
+3. **Final QA pass** — test all forms end-to-end with real credentials
+4. **Phase 2 planning kickoff** — marketplace, AI chatbot, itinerary generator, budget calculator
+
+---
+
+## Session History
+
+- **March 24-29, 2026:** Homepage, 3D globe, lead capture, deploy
+- **April 11-15, 2026:** All Phase 1 pages built, Sanity schemas + seeded content
+- **April 15-16, 2026:** Sanity removed, static data files, travel imagery, gamified itinerary
+- **April 17, 2026:** Image mismatch audit, Nano Banana 2 shot-list
+- **April 19, 2026:** 40 custom images wired in, client delivery PDF, session wrap
