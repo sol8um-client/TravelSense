@@ -59,7 +59,7 @@ export default function ContactPage() {
           </div>
 
           {/* Map embed */}
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0A1425]">
+          <div className="overflow-hidden rounded-2xl glass-card-dark">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242117.68092556046!2d73.72287834081918!3d18.524600199498765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890"
               title="TravelSense office location — Pune, Maharashtra, India"

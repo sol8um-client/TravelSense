@@ -78,28 +78,40 @@ const values = [
     title: "Personalization",
     description:
       "Two travelers are never the same. We listen first, plan second, and deliver experiences that feel uniquely yours. Every itinerary is a reflection of your interests, pace, and travel style.",
-    accent: "from-[#C4324A]/20 to-transparent",
+    iconBox: "icon-box-red",
+    iconColor: "text-secondary",
+    glow: "from-[#C4324A]/[0.08] to-transparent",
+    numeral: "01",
   },
   {
     icon: ShieldCheck,
     title: "Trust",
     description:
       "No hidden fees, no surprise charges. What we quote is what you pay. We believe trust is built through transparency, honest communication, and delivering on every promise we make.",
-    accent: "from-[#D4A853]/20 to-transparent",
+    iconBox: "icon-box-silver",
+    iconColor: "text-silver",
+    glow: "from-[#B0B8C4]/[0.08] to-transparent",
+    numeral: "02",
   },
   {
     icon: Star,
     title: "Quality",
     description:
       "Every hotel, every route, every detail is vetted by our team. We personally inspect accommodations and experiences to ensure they meet our standards before recommending them to you.",
-    accent: "from-[#8A9BB5]/20 to-transparent",
+    iconBox: "icon-box-silver",
+    iconColor: "text-[#D4A853]",
+    glow: "from-[#D4A853]/[0.08] to-transparent",
+    numeral: "03",
   },
   {
     icon: Lightbulb,
     title: "Innovation",
     description:
       "We combine decades of on-ground travel expertise with modern technology to create a smarter, faster, and more enjoyable way to plan your trips. The future of travel is here.",
-    accent: "from-[#C4324A]/15 to-[#D4A853]/10",
+    iconBox: "icon-box-red",
+    iconColor: "text-secondary",
+    glow: "from-[#C4324A]/[0.08] via-transparent to-[#D4A853]/[0.05]",
+    numeral: "04",
   },
 ]
 
@@ -320,25 +332,31 @@ export default function AboutContent() {
             variants={staggerContainer}
             className="grid gap-8 md:grid-cols-2"
           >
-            {/* Mission */}
+            {/* Mission — glass-card-dark with red accent + metallic plaque feel */}
             <motion.div
               variants={fadeUp}
               custom={0}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#060B15] p-8 md:p-10"
+              className="group relative overflow-hidden rounded-2xl glass-card-dark magnetic-card p-8 md:p-10"
+              style={{ boxShadow: "0 12px 40px rgba(11,20,38,0.35), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(0,0,0,0.35)" }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#C4324A]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              {/* Watermark numeral */}
+              <span aria-hidden className="pointer-events-none absolute -right-2 -top-6 font-heading italic font-normal text-[9rem] leading-none text-white/[0.035] select-none transition-transform duration-700 group-hover:translate-x-1 group-hover:-translate-y-1">01</span>
+              {/* Hover red glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#C4324A]/[0.08] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              {/* Top silver shine */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-silver/30 to-transparent" />
               <div className="relative">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10">
-                  <Heart className="h-6 w-6 text-secondary" />
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl icon-box-red magnetic-icon">
+                  <Heart className="h-6 w-6 text-secondary" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
-                  Our Mission
+                <h3 className="hx font-heading text-3xl font-medium tracking-[-0.02em] leading-[1.08] text-white">
+                  Our <em className="italic font-normal text-[#FFB3A3]">mission.</em>
                 </h3>
-                <p className="mt-4 font-body text-lg leading-relaxed text-[#D4A853]/80">
+                <p className="mt-5 font-body text-lg leading-[1.55] text-[#D4A853]/90 font-medium">
                   Making extraordinary travel experiences accessible to every
                   Indian family.
                 </p>
-                <p className="mt-4 font-body text-base leading-relaxed text-white/60">
+                <p className="mt-4 font-body text-[15px] leading-relaxed text-white/55">
                   We believe every working professional, every family, and every
                   group of friends deserves a vacation that feels effortless from
                   the first inquiry to the last sunset. Travel should be a joy to
@@ -347,24 +365,30 @@ export default function AboutContent() {
               </div>
             </motion.div>
 
-            {/* Vision */}
+            {/* Vision — glass-card-dark with silver/gold accent + brushed metal shine */}
             <motion.div
               variants={fadeUp}
               custom={1}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#060B15] p-8 md:p-10"
+              className="group relative overflow-hidden rounded-2xl glass-card-dark magnetic-card p-8 md:p-10"
+              style={{ boxShadow: "0 12px 40px rgba(11,20,38,0.35), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.35)" }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D4A853]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              {/* Watermark numeral */}
+              <span aria-hidden className="pointer-events-none absolute -right-2 -top-6 font-heading italic font-normal text-[9rem] leading-none text-white/[0.035] select-none transition-transform duration-700 group-hover:translate-x-1 group-hover:-translate-y-1">02</span>
+              {/* Hover silver/gold glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#D4A853]/[0.07] via-transparent to-[#B0B8C4]/[0.04] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              {/* Top silver shine */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-silver/40 to-transparent" />
               <div className="relative">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
-                  <Eye className="h-6 w-6 text-accent" />
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl icon-box-silver magnetic-icon">
+                  <Eye className="h-6 w-6 text-silver" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
-                  Our Vision
+                <h3 className="hx font-heading text-3xl font-medium tracking-[-0.02em] leading-[1.08] text-white">
+                  Our <em className="italic font-normal text-[#FFB3A3]">vision.</em>
                 </h3>
-                <p className="mt-4 font-body text-lg leading-relaxed text-[#D4A853]/80">
+                <p className="mt-5 font-body text-lg leading-[1.55] text-[#D4A853]/90 font-medium">
                   India&apos;s most trusted personalized travel platform.
                 </p>
-                <p className="mt-4 font-body text-base leading-relaxed text-white/60">
+                <p className="mt-4 font-body text-[15px] leading-relaxed text-white/55">
                   A place where technology amplifies human expertise, where AI
                   helps you discover possibilities and a real travel curator
                   ensures every detail is perfect. Every journey as unique as the
@@ -406,20 +430,38 @@ export default function AboutContent() {
                   key={value.title}
                   variants={fadeUp}
                   custom={i + 1}
-                  className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0A1425] p-7"
+                  className="group relative overflow-hidden rounded-2xl glass-card-dark magnetic-card p-7"
+                  style={{ boxShadow: "0 8px 30px rgba(11,20,38,0.3), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(0,0,0,0.25)" }}
                 >
-                  <div
+                  {/* Watermark numeral — Fraunces italic ghost */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -right-2 -top-4 font-heading italic font-normal text-[7rem] leading-none text-white/[0.04] select-none transition-transform duration-700 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  >
+                    {value.numeral}
+                  </span>
+                  {/* Hover glow — brand-colored */}
+                  <div className={cn("absolute inset-0 bg-gradient-to-br opacity-0 transition-opacity duration-500 group-hover:opacity-100", value.glow)} />
+                  {/* Top silver shine line */}
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-silver/25 to-transparent" />
+                  {/* Side accent bar */}
+                  <span
+                    aria-hidden
                     className={cn(
-                      "absolute inset-0 bg-gradient-to-br opacity-40",
-                      value.accent
+                      "absolute left-0 top-6 h-8 w-[3px] rounded-r-full bg-gradient-to-b transition-all duration-500 group-hover:h-16 group-hover:w-[4px]",
+                      value.iconBox === "icon-box-red"
+                        ? "from-secondary via-secondary/50 to-transparent"
+                        : "from-silver via-silver/50 to-transparent"
                     )}
                   />
                   <div className="relative">
-                    <value.icon className="mb-5 h-8 w-8 text-white/40" />
-                    <h3 className="font-heading text-base font-medium tracking-[-0.015em] leading-[1.15] text-white">
+                    <div className={cn("mb-5 flex h-12 w-12 items-center justify-center rounded-xl magnetic-icon", value.iconBox)}>
+                      <value.icon className={cn("h-5 w-5", value.iconColor)} strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white">
                       {value.title}
                     </h3>
-                    <p className="mt-3 font-body text-sm leading-relaxed text-white/50">
+                    <p className="mt-3 font-body text-[13.5px] leading-[1.65] text-white/55">
                       {value.description}
                     </p>
                   </div>

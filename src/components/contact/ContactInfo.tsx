@@ -82,7 +82,7 @@ export default function ContactInfo() {
       <motion.div
         variants={fadeUp}
         custom={0}
-        className="overflow-hidden rounded-2xl border border-white/10 bg-[#0A1425]/80 backdrop-blur-sm p-6 sm:p-8"
+        className="overflow-hidden rounded-2xl glass-card-dark/80 backdrop-blur-sm p-6 sm:p-8"
       >
         <h2 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
           Contact Information
@@ -150,7 +150,7 @@ export default function ContactInfo() {
       <motion.div
         variants={fadeUp}
         custom={2}
-        className="overflow-hidden rounded-2xl border border-white/10 bg-[#0A1425]/80 backdrop-blur-sm p-6 sm:p-8"
+        className="overflow-hidden rounded-2xl glass-card-dark/80 backdrop-blur-sm p-6 sm:p-8"
       >
         <h3 className="font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15] text-white">
           Follow Us

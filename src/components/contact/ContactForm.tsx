@@ -111,7 +111,7 @@ export default function ContactForm() {
       <motion.div
         variants={fadeUp}
         custom={0}
-        className="overflow-hidden rounded-2xl border border-white/10 bg-[#0A1425]/80 backdrop-blur-sm"
+        className="overflow-hidden rounded-2xl glass-card-dark/80 backdrop-blur-sm"
       >
         <div className="p-6 sm:p-8">
           <h2 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
