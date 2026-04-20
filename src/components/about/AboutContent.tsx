@@ -332,12 +332,11 @@ export default function AboutContent() {
             variants={staggerContainer}
             className="grid gap-8 md:grid-cols-2"
           >
-            {/* Mission — glass-card-dark with red accent + metallic plaque feel */}
+            {/* Mission — brushed red metal plaque */}
             <motion.div
               variants={fadeUp}
               custom={0}
-              className="group relative overflow-hidden rounded-2xl glass-card-dark magnetic-card p-8 md:p-10"
-              style={{ boxShadow: "0 12px 40px rgba(11,20,38,0.35), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(0,0,0,0.35)" }}
+              className="group relative rounded-2xl metal-card metal-card-red p-8 md:p-10"
             >
               {/* Watermark numeral */}
               <span aria-hidden className="pointer-events-none absolute -right-2 -top-6 font-heading italic font-normal text-[9rem] leading-none text-white/[0.035] select-none transition-transform duration-700 group-hover:translate-x-1 group-hover:-translate-y-1">01</span>
@@ -365,12 +364,11 @@ export default function AboutContent() {
               </div>
             </motion.div>
 
-            {/* Vision — glass-card-dark with silver/gold accent + brushed metal shine */}
+            {/* Vision — brushed silver metal plaque */}
             <motion.div
               variants={fadeUp}
               custom={1}
-              className="group relative overflow-hidden rounded-2xl glass-card-dark magnetic-card p-8 md:p-10"
-              style={{ boxShadow: "0 12px 40px rgba(11,20,38,0.35), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.35)" }}
+              className="group relative rounded-2xl metal-card p-8 md:p-10"
             >
               {/* Watermark numeral */}
               <span aria-hidden className="pointer-events-none absolute -right-2 -top-6 font-heading italic font-normal text-[9rem] leading-none text-white/[0.035] select-none transition-transform duration-700 group-hover:translate-x-1 group-hover:-translate-y-1">02</span>
@@ -430,8 +428,13 @@ export default function AboutContent() {
                   key={value.title}
                   variants={fadeUp}
                   custom={i + 1}
-                  className="group relative overflow-hidden rounded-2xl glass-card-dark magnetic-card p-7"
-                  style={{ boxShadow: "0 8px 30px rgba(11,20,38,0.3), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(0,0,0,0.25)" }}
+                  className={cn(
+                    "group relative rounded-2xl p-7 metal-card",
+                    value.iconBox === "icon-box-red" && value.title === "Personalization" && "metal-card-red",
+                    value.title === "Innovation" && "metal-card-red",
+                    value.title === "Quality" && "metal-card-gold",
+                    // Trust stays default metal-card (brushed silver)
+                  )}
                 >
                   {/* Watermark numeral — Fraunces italic ghost */}
                   <span

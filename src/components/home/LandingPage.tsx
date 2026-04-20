@@ -545,172 +545,426 @@ function TrustMarquee() {
    3a. PROBLEM — The fragmented travel story
    ═══════════════════════════════════════════════════════════════ */
 
+/* ─── Chaos Collage Problem Section data ─── */
 const problems = [
-  { Icon: Layers, title: "Too Many Platforms", short: "5+ apps just for 1 trip", stat: "5+", visual: "Juggling between booking, reviews, visa, flights..." },
-  { Icon: SearchX, title: "No Personal Guidance", short: "Algorithms don't understand you", stat: "0%", visual: "Cookie-cutter plans that miss what matters to you" },
-  { Icon: EyeOff, title: "Hidden Pricing", short: "Surprise fees at checkout", stat: "30%", visual: "The price you see is never the price you pay" },
-  { Icon: BookOpenCheck, title: "Zero Support On-Trip", short: "You're on your own after booking", stat: "0%", visual: "Once you've paid, good luck reaching anyone if things go wrong" },
+  {
+    Icon: SearchX,
+    tag: "AA 1247",
+    stamp: "OVERBOOKED",
+    title: "Five apps. One trip.",
+    body: "Flights here, hotels there, activities on a third screen. You're not travelling — you're project-managing.",
+    fix: "One thread. One human. Done.",
+  },
+  {
+    Icon: EyeOff,
+    tag: "6E 204",
+    stamp: "UPSOLD",
+    title: "Algorithms don't listen.",
+    body: "\u201CBest for you\u201D means best for their margin. Nobody asks what kind of traveller you actually are.",
+    fix: "Your own expert. Who actually asks.",
+  },
+  {
+    Icon: DollarSign,
+    tag: "UK 945",
+    stamp: "SURPRISE",
+    title: "Hidden fees. Every time.",
+    body: "The price you see is never the price you pay. By checkout, you've already compromised twice.",
+    fix: "One clean quote. No asterisks.",
+  },
+  {
+    Icon: Clock,
+    tag: "QR 538",
+    stamp: "LOST",
+    title: "Support vanishes post-booking.",
+    body: "The moment you need a human most — delayed flight, cancelled hotel — you get a chatbot and a sorry.",
+    fix: "24/7 humans. Every timezone.",
+  },
 ]
+
+/* ─── Draggable chaos canvas pieces ─── */
+
+function DraggablePiece({
+  initial,
+  rotation = 0,
+  zBase = 5,
+  children,
+}: {
+  initial: { x: number; y: number }
+  rotation?: number
+  zBase?: number
+  children: React.ReactNode
+}) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [pos, setPos] = useState(initial)
+  const [dragging, setDragging] = useState(false)
+  const offset = useRef({ x: 0, y: 0 })
+
+  const onDown = (e: React.MouseEvent | React.TouchEvent) => {
+    const ev = "touches" in e ? e.touches[0] : (e as React.MouseEvent)
+    const rect = ref.current?.getBoundingClientRect()
+    if (!rect) return
+    offset.current = { x: ev.clientX - rect.left, y: ev.clientY - rect.top }
+    setDragging(true)
+    e.preventDefault()
+  }
+
+  useEffect(() => {
+    if (!dragging) return
+    const parent = ref.current?.parentElement?.getBoundingClientRect()
+    if (!parent) return
+    const onMove = (e: MouseEvent | TouchEvent) => {
+      const ev = "touches" in e ? (e as TouchEvent).touches[0] : (e as MouseEvent)
+      setPos({
+        x: ev.clientX - parent.left - offset.current.x,
+        y: ev.clientY - parent.top - offset.current.y,
+      })
+    }
+    const onUp = () => setDragging(false)
+    window.addEventListener("mousemove", onMove)
+    window.addEventListener("mouseup", onUp)
+    window.addEventListener("touchmove", onMove, { passive: false })
+    window.addEventListener("touchend", onUp)
+    return () => {
+      window.removeEventListener("mousemove", onMove)
+      window.removeEventListener("mouseup", onUp)
+      window.removeEventListener("touchmove", onMove)
+      window.removeEventListener("touchend", onUp)
+    }
+  }, [dragging])
+
+  return (
+    <div
+      ref={ref}
+      onMouseDown={onDown}
+      onTouchStart={onDown}
+      style={{
+        position: "absolute",
+        left: pos.x,
+        top: pos.y,
+        transform: `rotate(${rotation}deg)${dragging ? " scale(1.04)" : ""}`,
+        transition: dragging ? "none" : "transform 0.4s cubic-bezier(0.22,1,0.36,1)",
+        cursor: dragging ? "grabbing" : "grab",
+        zIndex: dragging ? 40 : zBase,
+        touchAction: "none",
+        userSelect: "none",
+        filter: dragging
+          ? "drop-shadow(0 24px 40px rgba(0,0,0,0.5))"
+          : "drop-shadow(0 8px 20px rgba(0,0,0,0.35))",
+      }}
+    >
+      {children}
+    </div>
+  )
+}
+
+function BoardingPass({
+  tag,
+  route,
+  date,
+  seat,
+}: {
+  tag: string
+  route: [string, string]
+  date: string
+  seat: string
+}) {
+  return (
+    <div
+      className="relative overflow-hidden rounded-[10px] px-[14px] py-3 font-body"
+      style={{
+        width: 210,
+        background: "linear-gradient(135deg, #FAF8F4, #E8ECF0)",
+        color: "#0A1425",
+      }}
+    >
+      <div
+        className="absolute left-0 top-0 bottom-0 w-1"
+        style={{ background: "linear-gradient(180deg, #C4324A, #A12A3D)" }}
+      />
+      <div className="flex items-start justify-between mb-2 pl-2">
+        <div className="font-heading italic text-[11px] uppercase tracking-[0.15em] text-silver-dark">
+          Boarding Pass
+        </div>
+        <div className="text-[9.5px] font-bold tracking-[0.12em] text-silver-dark">{tag}</div>
+      </div>
+      <div className="flex items-center gap-2 mb-1.5 pl-2">
+        <div className="font-heading text-[20px] font-normal tracking-[-0.02em] leading-none">{route[0]}</div>
+        <div className="flex-1 relative h-[10px]">
+          <div className="absolute inset-x-0 top-1/2 border-t border-dashed border-primary/25" />
+          <Plane
+            className="absolute left-1/2 -translate-x-1/2 rotate-45 text-secondary"
+            style={{ top: -1 }}
+            size={12}
+            strokeWidth={1.8}
+          />
+        </div>
+        <div className="font-heading text-[20px] font-normal tracking-[-0.02em] leading-none">{route[1]}</div>
+      </div>
+      <div className="flex justify-between text-[9.5px] uppercase tracking-[0.08em] text-muted-foreground pl-2">
+        <span>{date}</span>
+        <span>Seat {seat}</span>
+      </div>
+    </div>
+  )
+}
+
+function LuggageTag({ destination, image }: { destination: string; image: string }) {
+  return (
+    <div
+      className="relative rounded-lg p-1.5"
+      style={{ width: 140, background: "#FAF8F4", color: "#0A1425" }}
+    >
+      <div
+        className="absolute left-1/2 -translate-x-1/2 h-3 w-3 rounded-full border-2"
+        style={{
+          top: 8,
+          background: "#0A1425",
+          borderColor: "#FAF8F4",
+          boxShadow: "0 0 0 1px #0A1425",
+        }}
+      />
+      <div
+        className="h-[70px] rounded overflow-hidden mt-[18px]"
+        style={{ background: `url(${image}) center/cover` }}
+      />
+      <div className="pt-2 pb-1 px-1 text-center">
+        <div className="font-heading italic text-[14px] leading-none">{destination}</div>
+        <div className="text-[8.5px] font-semibold tracking-[0.2em] text-silver-dark mt-[3px]">
+          V9 TRAVELS
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function ChaosCanvas() {
+  return (
+    <div className="relative w-full h-[520px] overflow-visible">
+      {/* Drag hint */}
+      <div className="pointer-events-none absolute top-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 text-silver/60 font-script text-[20px]">
+        <span aria-hidden>↓</span> drag the pieces
+      </div>
+
+      {/* Boarding passes */}
+      <DraggablePiece initial={{ x: 40, y: 60 }} rotation={-8}>
+        <BoardingPass tag="AA 1247" route={["BOM", "GOI"]} date="12 Dec" seat="14A" />
+      </DraggablePiece>
+      <DraggablePiece initial={{ x: 280, y: 30 }} rotation={6}>
+        <BoardingPass tag="6E 204" route={["DEL", "SXR"]} date="02 Jan" seat="7C" />
+      </DraggablePiece>
+      <DraggablePiece initial={{ x: 200, y: 240 }} rotation={-4}>
+        <BoardingPass tag="QR 538" route={["BOM", "DOH"]} date="18 Feb" seat="22F" />
+      </DraggablePiece>
+
+      {/* Luggage tags with real destination imagery */}
+      <DraggablePiece initial={{ x: 30, y: 310 }} rotation={12}>
+        <LuggageTag destination="Goa" image="/images/generated/goa-hero.webp" />
+      </DraggablePiece>
+      <DraggablePiece initial={{ x: 300, y: 290 }} rotation={-10}>
+        <LuggageTag destination="Jaipur" image="/images/generated/rajasthan-hero.webp" />
+      </DraggablePiece>
+      <DraggablePiece initial={{ x: 170, y: 100 }} rotation={18}>
+        <LuggageTag destination="Kashmir" image="/images/generated/kashmir-hero.webp" />
+      </DraggablePiece>
+
+      {/* Handwritten sticky note — Caveat script on a red post-it */}
+      <DraggablePiece initial={{ x: 80, y: 190 }} rotation={-3} zBase={6}>
+        <div
+          className="rounded font-script"
+          style={{
+            width: 130,
+            height: 130,
+            background: "linear-gradient(135deg, #C4324A, #A12A3D)",
+            color: "#fff",
+            padding: 14,
+            fontSize: 17,
+            lineHeight: 1.25,
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.18)",
+          }}
+        >
+          <div className="font-body font-bold text-[10.5px] tracking-[0.2em] uppercase opacity-80 mb-1.5">
+            Note to self
+          </div>
+          &quot;cancel hotel, find new flight, call airline… again&quot;
+        </div>
+      </DraggablePiece>
+    </div>
+  )
+}
+
+function TicketCard({ p, i, inView }: { p: typeof problems[number]; i: number; inView: boolean }) {
+  const [flipped, setFlipped] = useState(false)
+  const Icon = p.Icon
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      animate={inView ? { opacity: 1, x: 0 } : {}}
+      transition={{ delay: 0.2 + i * 0.1, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      onMouseEnter={() => setFlipped(true)}
+      onMouseLeave={() => setFlipped(false)}
+      onClick={() => setFlipped((f) => !f)}
+      className="group relative min-h-[180px] overflow-hidden rounded-[14px] cursor-default"
+      style={{
+        background: "linear-gradient(135deg, rgba(250,248,244,0.04), rgba(250,248,244,0.015))",
+        border: "1px solid rgba(176,184,196,0.15)",
+        transition: "all .5s cubic-bezier(0.22,1,0.36,1)",
+      }}
+    >
+      {/* Perforation line */}
+      <div
+        className="pointer-events-none absolute top-0 bottom-0 border-l border-dashed border-silver/20"
+        style={{ left: 70 }}
+      />
+      {/* Left stub — icon + vertical "01 / PROBLEM" label */}
+      <div
+        className="absolute left-0 top-0 bottom-0 w-[70px] flex flex-col items-center justify-center gap-2"
+        style={{ background: "rgba(196,50,74,0.06)" }}
+      >
+        <div
+          className="h-10 w-10 rounded-[10px] flex items-center justify-center text-secondary-light"
+          style={{
+            background: "linear-gradient(135deg, rgba(196,50,74,0.2), rgba(196,50,74,0.05))",
+            border: "1px solid rgba(196,50,74,0.3)",
+          }}
+        >
+          <Icon className="h-[18px] w-[18px]" strokeWidth={1.5} />
+        </div>
+        <div
+          className="text-[8.5px] font-body font-bold uppercase tracking-[0.2em] text-secondary/55"
+          style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+        >
+          0{i + 1} / problem
+        </div>
+      </div>
+
+      {/* Main content */}
+      <div className="relative min-h-[180px] p-[22px] pl-[90px]">
+        {/* Stamp label — rotated */}
+        <div
+          className="absolute text-[9.5px] font-body font-bold uppercase tracking-[0.2em]"
+          style={{
+            top: 16,
+            right: 18,
+            color: "rgba(232,72,94,0.75)",
+            border: "1.5px solid rgba(232,72,94,0.35)",
+            borderRadius: 4,
+            padding: "3px 7px",
+            transform: "rotate(6deg)",
+            opacity: 0.85,
+          }}
+        >
+          {p.stamp}
+        </div>
+
+        {/* FRONT */}
+        <div
+          className="transition-[opacity,transform] duration-[400ms] ease-out"
+          style={{
+            opacity: flipped ? 0 : 1,
+            transform: flipped ? "translateY(-6px)" : "translateY(0)",
+          }}
+        >
+          <h3 className="font-heading text-[22px] font-medium tracking-[-0.02em] leading-[1.1] text-white pr-[90px] m-0 mb-2">
+            {p.title}
+          </h3>
+          <p className="m-0 font-body text-[13.5px] leading-[1.6] text-white/65">{p.body}</p>
+        </div>
+
+        {/* BACK — the TravelSense fix */}
+        <div
+          className="absolute flex flex-col justify-center transition-[opacity,transform] duration-[400ms] ease-out"
+          style={{
+            inset: "22px 22px 22px 90px",
+            opacity: flipped ? 1 : 0,
+            transform: flipped ? "translateY(0)" : "translateY(6px)",
+            transitionDelay: flipped ? "100ms" : "0ms",
+            pointerEvents: flipped ? "auto" : "none",
+          }}
+        >
+          <div className="mb-2.5 flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.25em] text-secondary-light">
+            <Sparkles className="h-3 w-3" strokeWidth={1.8} />
+            The TravelSense fix
+          </div>
+          <div className="font-script text-[30px] leading-[1.15] text-white">{p.fix}</div>
+        </div>
+
+        {/* Hover hint */}
+        <div
+          className="absolute bottom-3.5 right-[18px] text-[9.5px] font-semibold uppercase tracking-[0.18em] text-white/35 transition-opacity duration-300"
+          style={{ opacity: flipped ? 0 : 1 }}
+        >
+          hover →
+        </div>
+      </div>
+    </motion.div>
+  )
+}
 
 function ProblemSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const inView = useInView(sectionRef, { once: true, margin: "-100px" })
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden noise-overlay">
-      <div className="absolute inset-0 bg-brand-gradient-dark" />
-      {/* Gradient accent blobs — hidden on mobile for perf */}
-      <div className="hidden sm:block absolute top-[20%] left-[10%] h-[500px] w-[500px] rounded-full bg-secondary/[0.04] blur-[200px] morph-blob" />
-      <div className="hidden sm:block absolute bottom-[10%] right-[10%] h-[400px] w-[400px] rounded-full bg-silver/[0.02] blur-[180px]" />
-      {/* Grid pattern */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "radial-gradient(circle, rgba(176,184,196,0.3) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-
+    <section ref={sectionRef} className="relative overflow-hidden bg-brand-topo">
       <div className="relative max-w-6xl mx-auto px-6 py-20 sm:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          {/* Left — Animated chaos visual */}
-          <div className="relative flex items-center justify-center" data-reveal>
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto">
-              {/* Central chaos icon — static on mobile, animated on desktop */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  animate={inView ? { rotate: [0, 3, -3, 0] } : {}}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <div className="flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-full shadow-[0_0_50px_rgba(196,50,74,0.15)]"
-                    style={{ background: "linear-gradient(135deg, rgba(196,50,74,0.06), rgba(196,50,74,0.2))", border: "2px solid rgba(196,50,74,0.15)" }}>
-                    <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-white/[0.04] border border-white/[0.06]">
-                      <Layers className="h-7 w-7 sm:h-8 sm:w-8 text-secondary/70" strokeWidth={1.5} style={{ filter: "drop-shadow(0 2px 8px rgba(196,50,74,0.5))" }} />
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-[72px] items-center">
 
-              {/* Orbiting problem tabs — CSS animation on mobile (GPU-accelerated), Framer on desktop */}
-              {([
-                { label: "Flights", Icon: Plane, angle: 0, radius: 100, radiusSm: 85, dur: 15 },
-                { label: "Hotels", Icon: Hotel, angle: 72, radius: 120, radiusSm: 95, dur: 18 },
-                { label: "Visa", Icon: FileText, angle: 144, radius: 105, radiusSm: 88, dur: 14 },
-                { label: "Reviews", Icon: Star, angle: 216, radius: 125, radiusSm: 98, dur: 20 },
-                { label: "Budget", Icon: DollarSign, angle: 288, radius: 115, radiusSm: 92, dur: 16 },
-              ] as { label: string; Icon: LucideIcon; angle: number; radius: number; radiusSm: number; dur: number }[]).map((tab) => (
-                <motion.div
-                  key={tab.label}
-                  className="absolute top-1/2 left-1/2"
-                  animate={inView ? { rotate: 360 } : {}}
-                  transition={{ duration: tab.dur, repeat: Infinity, ease: "linear" }}
-                  style={{ transformOrigin: "0 0", willChange: "transform" }}
-                >
-                  <motion.div
-                    className="glass-card-dark flex items-center gap-1.5 sm:gap-2 rounded-full px-2.5 sm:px-3.5 py-1.5 sm:py-2 shadow-[0_4px_15px_rgba(0,0,0,0.2)]"
-                    style={{ transform: `rotate(${tab.angle}deg) translateX(var(--orbit-r)) rotate(-${tab.angle}deg)`, ["--orbit-r" as string]: `${tab.radiusSm}px` }}
-                    animate={inView ? { rotate: -360 } : {}}
-                    transition={{ duration: tab.dur, repeat: Infinity, ease: "linear" }}
-                  >
-                    <style>{`@media(min-width:640px){[style*="--orbit-r"]{--orbit-r:${tab.radius}px !important}}`}</style>
-                    <div className="flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full bg-secondary/10">
-                      <tab.Icon className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-secondary/60" strokeWidth={2} />
-                    </div>
-                    <span className="text-[8px] sm:text-[10px] text-white/50 font-semibold tracking-wide">{tab.label}</span>
-                  </motion.div>
-                </motion.div>
-              ))}
-
-              {/* Broken connection lines — desktop only */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none hidden sm:block" viewBox="0 0 320 320">
-                {[
-                  { x1: 120, y1: 80, x2: 200, y2: 60, d: 3 },
-                  { x1: 220, y1: 130, x2: 250, y2: 200, d: 4.5 },
-                  { x1: 180, y1: 240, x2: 100, y2: 250, d: 3.5 },
-                  { x1: 70, y1: 190, x2: 60, y2: 120, d: 5 },
-                ].map((line, i) => (
-                  <motion.line key={`broken-${i}`} x1={line.x1} y1={line.y1} x2={line.x2} y2={line.y2}
-                    stroke="rgba(196,50,74,0.15)" strokeWidth="1" strokeDasharray="4 8"
-                    animate={inView ? { opacity: [0, 0.4, 0], strokeDashoffset: [0, -20] } : {}}
-                    transition={{ duration: line.d, repeat: Infinity, ease: "linear" }} />
-                ))}
-              </svg>
-
-              {/* Pulsing chaos rings — simplified on mobile */}
-              <div className="absolute inset-8 rounded-full border border-dashed border-secondary/10 sm:animate-none"
-                style={{ animation: "spin 20s linear infinite" }} />
-              <motion.div className="hidden sm:block absolute inset-2 rounded-full border border-dashed border-silver/5"
-                animate={inView ? { scale: [1, 0.96, 1], rotate: [0, -180] } : {}}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }} />
-
-              {/* Floating error toasts */}
-              {[
-                { text: "Price changed!", x: "-10%", y: "18%", delay: 0, dur: 8 },
-                { text: "Hotel sold out", x: "72%", y: "62%", delay: 4, dur: 8 },
-              ].map((toast, i) => (
-                <motion.div key={`toast-${i}`}
-                  className="absolute rounded-lg bg-secondary/[0.08] border border-secondary/[0.12] px-2 sm:px-3 py-1 sm:py-1.5 backdrop-blur-sm pointer-events-none"
-                  style={{ left: toast.x, top: toast.y }}
-                  animate={inView ? { opacity: [0, 0.8, 0.8, 0], y: [10, 0, 0, -10] } : {}}
-                  transition={{ duration: toast.dur, delay: toast.delay, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <span className="text-[8px] sm:text-[9px] text-secondary/70 font-mono font-bold tracking-wide whitespace-nowrap">{toast.text}</span>
-                </motion.div>
-              ))}
-
-              {/* Warning pulse — desktop only */}
-              <motion.div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
-                animate={inView ? { width: [40, 200, 40], height: [40, 200, 40], opacity: [0.1, 0, 0.1] } : {}}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeOut" }}
-                style={{ background: "radial-gradient(circle, rgba(196,50,74,0.15) 0%, transparent 70%)" }} />
-            </div>
+          {/* LEFT — draggable chaos canvas */}
+          <div data-reveal className="order-2 lg:order-1">
+            <ChaosCanvas />
           </div>
 
-          {/* Right — Content */}
-          <div>
+          {/* RIGHT — editorial copy + ticket stack */}
+          <div className="order-1 lg:order-2">
             <div data-reveal>
-              <div className="brand-badge brand-badge-red mb-6">
-                <SearchX className="h-3.5 w-3.5" strokeWidth={1.5} />
-                <span>The Problem</span>
-              </div>
+              <span
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[11px] font-body font-semibold uppercase tracking-[0.22em] text-secondary-light"
+                style={{
+                  background: "rgba(196,50,74,0.12)",
+                  border: "1px solid rgba(196,50,74,0.28)",
+                }}
+              >
+                <span
+                  className="h-[5px] w-[5px] rounded-full bg-secondary-light"
+                  style={{ boxShadow: "0 0 8px var(--secondary-light)" }}
+                />
+                The Problem
+              </span>
             </div>
-            <div data-reveal style={{ transitionDelay: "0.1s" }}>
-              <h2 className="hx font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.02]">
-                <span className="metallic-text-dark">Travel planning is</span>{" "}
-                <em className="italic font-normal text-secondary">broken.</em>
+            <div data-reveal style={{ transitionDelay: "0.08s" }}>
+              <h2
+                className="hx font-heading font-medium tracking-[-0.02em] leading-[1.02] mt-5 mb-3.5"
+                style={{ fontSize: "clamp(2.4rem, 5vw, 3.75rem)" }}
+              >
+                <span className="text-white">Travel planning is</span>{" "}
+                <em className="italic font-normal text-secondary-light">broken.</em>
               </h2>
             </div>
+            <div data-reveal style={{ transitionDelay: "0.16s" }}>
+              <p className="font-script text-[22px] sm:text-[24px] text-white/60 mt-2 mb-9 max-w-[460px]">
+                you know the drill. so do we — that&apos;s why we built this.
+              </p>
+            </div>
 
-            {/* Problem chips — with explanatory tooltips */}
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid gap-3.5">
               {problems.map((p, i) => (
-                <motion.div
-                  key={p.title}
-                  className="group relative glass-card-dark rounded-xl p-4 cursor-default hover:z-20"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.3 + i * 0.12, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="icon-box-red flex h-11 w-11 shrink-0 items-center justify-center rounded-xl">
-                      <p.Icon className="h-5 w-5 text-secondary/80" strokeWidth={1.5} />
-                    </div>
-                    <div>
-                      <p className="text-[12px] font-semibold text-white/65 tracking-wide">{p.title}</p>
-                      <p className="text-[10px] text-silver/30 mt-0.5">{p.short}</p>
-                    </div>
-                  </div>
-                  {/* Hover tooltip — explains the problem */}
-                  <div className="absolute inset-x-4 -top-1 -translate-y-full opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30">
-                    <div className="bg-primary/95 border border-silver/10 rounded-lg px-3 py-2 shadow-lg mb-2">
-                      <p className="text-[10px] text-silver/50 leading-relaxed">{p.visual}</p>
-                    </div>
-                  </div>
-                </motion.div>
+                <TicketCard key={p.tag} p={p} i={i} inView={inView} />
               ))}
             </div>
 
-            {/* Transition arrow */}
-            <motion.div className="mt-10 flex items-center gap-4" data-reveal style={{ transitionDelay: "0.5s" }}>
+            {/* Transition to "How TravelSense works" */}
+            <motion.div
+              className="mt-10 flex items-center gap-4"
+              data-reveal
+              style={{ transitionDelay: "0.5s" }}
+            >
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-silver/15 to-transparent" />
-              <p className="text-[12px] tracking-[0.15em] font-heading text-silver/50 flex items-center gap-2 relative">
-                <motion.span animate={{ rotate: [0, 15, -15, 0], scale: [1, 1.2, 1] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
-                  <Sparkles className="h-4 w-4 text-secondary/50" strokeWidth={1.5} />
+              <p className="text-[12px] font-body font-medium tracking-[0.15em] uppercase text-silver/60 flex items-center gap-2">
+                <motion.span
+                  animate={{ rotate: [0, 15, -15, 0], scale: [1, 1.2, 1] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <Sparkles className="h-4 w-4 text-secondary/70" strokeWidth={1.5} />
                 </motion.span>
                 What if one platform could do it all?
               </p>
