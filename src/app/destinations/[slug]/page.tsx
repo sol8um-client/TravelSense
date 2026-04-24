@@ -131,97 +131,7 @@ export default async function DestinationDetailPage({
         </div>
       </section>
 
-      {/* Overview */}
-      <section className="bg-[#0A1425] px-4 py-16">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
-            Overview
-          </h2>
-          <p className="mt-4 text-white/70 leading-relaxed">
-            {destination.description}
-          </p>
-          <div className="mt-6 whitespace-pre-line text-white/60 leading-relaxed">
-            {destination.longDescription}
-          </div>
-        </div>
-      </section>
-
-      {/* Highlights */}
-      <section className="bg-[#0D1A30] px-4 py-16">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
-            Highlights
-          </h2>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {destination.highlights.map((highlight, i) => (
-              <span
-                key={i}
-                className="rounded-full border border-[#C4324A]/20 bg-[#C4324A]/10 px-4 py-2 text-sm text-white/80"
-              >
-                {highlight}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery */}
-      <section className="bg-[#0A1425] px-4 py-16">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="mb-8 font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
-            Gallery
-          </h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {destination.galleryImages.map((img, i) => (
-              <div
-                key={i}
-                className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-white/10"
-              >
-                <Image
-                  src={img}
-                  alt={`${destination.name} gallery ${i + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Experiences */}
-      <section className="bg-[#0D1A30] px-4 py-16">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="mb-8 font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
-            Popular Experiences
-          </h2>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {destination.popularExperiences.map((exp, i) => (
-              <div
-                key={i}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-[#C4324A]/30"
-              >
-                <div className="flex items-start gap-4">
-                  <span className="text-3xl" role="img" aria-label={exp.title}>
-                    {exp.icon}
-                  </span>
-                  <div>
-                    <h3 className="font-heading text-base font-medium tracking-[-0.015em] leading-[1.15] text-white">
-                      {exp.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-white/60 leading-relaxed">
-                      {exp.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Packages for this destination */}
+      {/* Packages for this destination — prominent, top-of-page conversion driver */}
       {destinationPackages.length > 0 && (
         <section className="bg-[#0A1425] px-4 py-16">
           <div className="mx-auto max-w-6xl">
@@ -276,6 +186,96 @@ export default async function DestinationDetailPage({
           </div>
         </section>
       )}
+
+      {/* Overview — bg alternates based on whether Packages section rendered above */}
+      <section className={destinationPackages.length > 0 ? "bg-[#0D1A30] px-4 py-16" : "bg-[#0A1425] px-4 py-16"}>
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
+            Overview
+          </h2>
+          <p className="mt-4 text-white/70 leading-relaxed">
+            {destination.description}
+          </p>
+          <div className="mt-6 whitespace-pre-line text-white/60 leading-relaxed">
+            {destination.longDescription}
+          </div>
+        </div>
+      </section>
+
+      {/* Highlights */}
+      <section className={destinationPackages.length > 0 ? "bg-[#0A1425] px-4 py-16" : "bg-[#0D1A30] px-4 py-16"}>
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
+            Highlights
+          </h2>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {destination.highlights.map((highlight, i) => (
+              <span
+                key={i}
+                className="rounded-full border border-[#C4324A]/20 bg-[#C4324A]/10 px-4 py-2 text-sm text-white/80"
+              >
+                {highlight}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className={destinationPackages.length > 0 ? "bg-[#0D1A30] px-4 py-16" : "bg-[#0A1425] px-4 py-16"}>
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-8 font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
+            Gallery
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {destination.galleryImages.map((img, i) => (
+              <div
+                key={i}
+                className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-white/10"
+              >
+                <Image
+                  src={img}
+                  alt={`${destination.name} gallery ${i + 1}`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Experiences */}
+      <section className={destinationPackages.length > 0 ? "bg-[#0A1425] px-4 py-16" : "bg-[#0D1A30] px-4 py-16"}>
+        <div className="mx-auto max-w-5xl">
+          <h2 className="mb-8 font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
+            Popular Experiences
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {destination.popularExperiences.map((exp, i) => (
+              <div
+                key={i}
+                className="rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-[#C4324A]/30"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl" role="img" aria-label={exp.title}>
+                    {exp.icon}
+                  </span>
+                  <div>
+                    <h3 className="font-heading text-base font-medium tracking-[-0.015em] leading-[1.15] text-white">
+                      {exp.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-white/60 leading-relaxed">
+                      {exp.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Best Time to Visit & Weather */}
       <section className="bg-[#0D1A30] px-4 py-16">
