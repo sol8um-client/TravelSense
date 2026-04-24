@@ -1427,6 +1427,952 @@ export const destinations: Destination[] = [
     ],
     featured: false,
   },
+  // ─── V9 Travels catalogue migration — new destinations ───
+  {
+    name: "Gujarat",
+    slug: "gujarat",
+    region: "West India",
+    country: "India",
+    category: "leisure",
+    tagline: "The Vibrant Jewel of Western India",
+    description:
+      "From the white salt flats of the Rann of Kutch to the towering Statue of Unity and the lion sanctuaries of Gir, Gujarat offers a tapestry of wildlife, architecture, and culture unmatched in western India.",
+    longDescription:
+      "Gujarat is a state of staggering variety — the endless white desert of Kutch during the Rann Utsav, the world's tallest statue at Kevadia, the lions of Gir National Park (the last remaining wild population outside Africa), and the rich trading heritage of Ahmedabad's walled city.\n\nTravellers come for the vibrant folk culture and textile crafts — Patola silk from Patan, Bandhani tie-dye, and the embroidery of Kutchi artisans. The coastal belt offers Diu's Portuguese forts and pristine beaches. Spiritual seekers visit Somnath (one of the 12 Jyotirlingas), Dwarka (birthplace of Lord Krishna), and the Jain temples at Palitana.\n\nGujarati food is legendary — the thali spreads, farsan snacks, and dhoklas represent centuries of plant-based culinary tradition.",
+    heroImage:
+      "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "November to February (Winter) — ideal for the Rann Utsav",
+    weather:
+      "Summers (Mar-Jun) are hot at 35-45°C. Winters (Nov-Feb) pleasant at 10-30°C. Monsoon (Jul-Sep) moderate.",
+    startingPrice: 15000,
+    highlights: [
+      "White Rann of Kutch",
+      "Statue of Unity",
+      "Gir National Park Lions",
+      "Somnath Jyotirlinga",
+      "Dwarka Temple",
+      "Ahmedabad Heritage Walk",
+      "Rann Utsav",
+    ],
+    thingsToKnow: [
+      "Best visited during November to February for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "White Rann of Kutch",
+        description:
+          "One of the signature experiences in Gujarat.",
+        icon: "✨",
+      },
+      {
+        title: "Statue of Unity",
+        description:
+          "Explore the living heritage of Gujarat with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Gir National Park Lions",
+        description:
+          "Taste the flavours of Gujarat — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Somnath Jyotirlinga",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Karnataka",
+    slug: "karnataka",
+    region: "South India",
+    country: "India",
+    category: "leisure",
+    tagline: "Where Palaces Meet Coffee Plantations",
+    description:
+      "From Mysore's royal Dasara splendour to the UNESCO ruins of Hampi, the misty coffee hills of Coorg, and the pristine beaches of Karwar — Karnataka is South India's most diverse state.",
+    longDescription:
+      "Karnataka blends centuries of royal history with wild natural beauty. Hampi's 14th-century Vijayanagara ruins — temples, elephant stables, and boulder-strewn landscapes — are a UNESCO World Heritage Site. Mysore's Amba Vilas Palace lights up during Dasara in October with a procession that rivals any in India.\n\nThe Western Ghats along the state's western edge give rise to Coorg (Kodagu) and Chikmagalur — India's coffee-growing belt where you can stay on family-run plantations. Wildlife enthusiasts head to Bandipur and Nagarahole national parks for tiger and elephant sightings.\n\nThe coastal strip offers Karwar, Gokarna, and Udupi — each with their own identity. Bengaluru, the state capital, is both India's tech hub and home to leafy parks and vibrant nightlife.",
+    heroImage:
+      "/images/generated/karnataka-hero.webp",
+    galleryImages: [
+      "/images/generated/karnataka-hero.webp",
+    ],
+    bestTimeToVisit: "October to March",
+    weather:
+      "Coastal areas warm year-round (24-32°C). Western Ghats cooler (15-28°C). Summers (Mar-May) hot inland; monsoon (Jun-Sep) heavy on the coast.",
+    startingPrice: 14000,
+    highlights: [
+      "Hampi UNESCO Ruins",
+      "Mysore Palace & Dasara",
+      "Coorg Coffee Estates",
+      "Gokarna Beaches",
+      "Bandipur Tiger Reserve",
+      "Badami Cave Temples",
+      "Jog Falls",
+    ],
+    thingsToKnow: [
+      "Best visited during October to March for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Hampi UNESCO Ruins",
+        description:
+          "One of the signature experiences in Karnataka.",
+        icon: "✨",
+      },
+      {
+        title: "Mysore Palace & Dasara",
+        description:
+          "Explore the living heritage of Karnataka with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Coorg Coffee Estates",
+        description:
+          "Taste the flavours of Karnataka — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Gokarna Beaches",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Maharashtra",
+    slug: "maharashtra",
+    region: "West India",
+    country: "India",
+    category: "leisure",
+    tagline: "Forts, Beaches, Jyotirlingas, and Wildlife",
+    description:
+      "From the Ashtavinayak Ganesh pilgrimage to the Jyotirlingas of Trimbakeshwar, Bhimashankar, and Grishneshwar — Maharashtra is India's spiritual and historical heartland with Konkan beaches and Tadoba tigers.",
+    longDescription:
+      "Maharashtra is deeply religious and naturally varied. The Ashtavinayak circuit covers eight ancient Ganesh temples around Pune, considered obligatory for devout Maharashtrians. Three of the twelve Jyotirlingas — Bhimashankar, Trimbakeshwar (near Nashik), and Grishneshwar (at Ellora) — make the state a pilgrim's essential.\n\nFor wildlife, Tadoba-Andhari Tiger Reserve offers some of India's most reliable tiger sightings. The hill stations of Mahabaleshwar, Panchgani, and Matheran provide cool weekend retreats. The Konkan coast's Ganapatipule and Tarkarli beaches rival Goa without the crowds.\n\nShivaji's forts — Raigad, Sinhagad, Rajgad, and Pratapgad — crown hilltops across the state. Ajanta and Ellora caves near Aurangabad hold 2,000-year-old Buddhist, Hindu, and Jain rock-cut masterpieces recognised by UNESCO.",
+    heroImage:
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "October to March",
+    weather:
+      "Mumbai/coast humid and warm year-round (25-33°C). Deccan plateau (Pune, Aurangabad) cooler (15-35°C). Monsoon (Jun-Sep) heavy, especially on the coast.",
+    startingPrice: 12000,
+    highlights: [
+      "Ashtavinayak Darshan",
+      "Ajanta & Ellora Caves",
+      "Tadoba Tigers",
+      "Ganapatipule Beach",
+      "Tarkarli Water Sports",
+      "Shivaji Forts",
+      "Mahabaleshwar Hills",
+    ],
+    thingsToKnow: [
+      "Best visited during October to March for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Ashtavinayak Darshan",
+        description:
+          "One of the signature experiences in Maharashtra.",
+        icon: "✨",
+      },
+      {
+        title: "Ajanta & Ellora Caves",
+        description:
+          "Explore the living heritage of Maharashtra with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Tadoba Tigers",
+        description:
+          "Taste the flavours of Maharashtra — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Ganapatipule Beach",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Madhya Pradesh",
+    slug: "madhya-pradesh",
+    region: "West India",
+    country: "India",
+    category: "leisure",
+    tagline: "The Heart of Incredible India",
+    description:
+      "Tigers of Kanha and Bandhavgarh, the erotic temples of Khajuraho, the spiritual city of Ujjain with its Jyotirlinga, and marble rocks of Bhedaghat — Madhya Pradesh is India's most underrated treasure.",
+    longDescription:
+      "Madhya Pradesh sits at the geographic heart of India and packs in more diversity than most entire countries. Kanha and Bandhavgarh National Parks offer India's best tiger sightings. Khajuraho's UNESCO-listed 10th-century temples are masterworks of sandstone erotic sculpture.\n\nUjjain is one of the seven holiest cities of Hinduism and home to the Mahakaleshwar Jyotirlinga — one of only 12 in the world. Omkareshwar (also a Jyotirlinga) sits on an island in the Narmada river shaped like the sacred syllable Om. Orchha's Mughal-era palaces perch dramatically over the Betwa river.\n\nOther gems include the marble cliffs of Bhedaghat, the Buddhist stupas of Sanchi (another UNESCO site), the colonial-era hill station of Pachmarhi, and Indore's famous street food scene centred around Sarafa Bazaar.",
+    heroImage:
+      "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "October to March",
+    weather:
+      "Summers (Apr-Jun) very hot at 35-45°C. Winters (Nov-Feb) cool at 5-25°C. Monsoon (Jul-Sep) moderate.",
+    startingPrice: 13000,
+    highlights: [
+      "Kanha Tiger Reserve",
+      "Khajuraho Temples",
+      "Ujjain Mahakaleshwar",
+      "Omkareshwar Jyotirlinga",
+      "Sanchi Stupa",
+      "Bhedaghat Marble Rocks",
+      "Orchha Palaces",
+    ],
+    thingsToKnow: [
+      "Best visited during October to March for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Kanha Tiger Reserve",
+        description:
+          "One of the signature experiences in Madhya Pradesh.",
+        icon: "✨",
+      },
+      {
+        title: "Khajuraho Temples",
+        description:
+          "Explore the living heritage of Madhya Pradesh with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Ujjain Mahakaleshwar",
+        description:
+          "Taste the flavours of Madhya Pradesh — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Omkareshwar Jyotirlinga",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Hyderabad",
+    slug: "hyderabad",
+    region: "South India",
+    country: "India",
+    category: "leisure",
+    tagline: "City of Pearls and Nizami Heritage",
+    description:
+      "The legendary city of Charminar, Golconda Fort's whispering walls, Chowmahalla Palace's royal opulence, and Hyderabadi biryani — a 400-year-old capital with IT-age energy.",
+    longDescription:
+      "Hyderabad's twin city Secunderabad forms one of India's largest metropolitan areas, yet its old quarters preserve 400 years of Nizami heritage. The Charminar — built in 1591 — anchors the old city's bazaars where you'll find pearls (the city's historic trade), lacquer bangles, and authentic Hyderabadi biryani cooked over slow dum.\n\nGolconda Fort was the Qutb Shahi capital and is famous for its acoustics — a clap at the entrance is heard at the summit a kilometre away. The Chowmahalla Palace, Falaknuma Palace (now a Taj hotel), and Salar Jung Museum showcase the wealth of the Asaf Jahi dynasty, rumoured to have produced the richest man in the world in his time.\n\nModern Hyderabad is also India's pharma and IT capital. Ramoji Film City on the outskirts is the world's largest film complex.",
+    heroImage:
+      "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "October to February",
+    weather:
+      "Summers (Mar-May) hot at 30-40°C. Winters (Nov-Feb) pleasant at 15-28°C. Short monsoon (Jun-Sep).",
+    startingPrice: 12000,
+    highlights: [
+      "Charminar & Old City Bazaars",
+      "Golconda Fort",
+      "Chowmahalla Palace",
+      "Salar Jung Museum",
+      "Falaknuma Palace",
+      "Ramoji Film City",
+      "Biryani Trail",
+    ],
+    thingsToKnow: [
+      "Best visited during October to February for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Charminar & Old City Bazaars",
+        description:
+          "One of the signature experiences in Hyderabad.",
+        icon: "✨",
+      },
+      {
+        title: "Golconda Fort",
+        description:
+          "Explore the living heritage of Hyderabad with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Chowmahalla Palace",
+        description:
+          "Taste the flavours of Hyderabad — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Salar Jung Museum",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Vietnam",
+    slug: "vietnam",
+    region: "International",
+    country: "Vietnam",
+    category: "leisure",
+    tagline: "Limestone Karsts, Ancient Towns & Street Food Paradise",
+    description:
+      "From the emerald waters of Ha Long Bay to the lantern-lit streets of Hoi An, the Mekong Delta, Saigon's chaos, and the mountain terraces of Sapa — Vietnam is Southeast Asia's most captivating country.",
+    longDescription:
+      "Vietnam stretches 1,650 km from the Chinese border to the Gulf of Thailand, packing in more variety than most countries twice its size. Hanoi, the capital, balances French colonial grace with a frenetic Old Quarter of 36 streets named after the guilds that once worked them.\n\nHa Long Bay's 1,600 limestone karsts rising from emerald water is a UNESCO World Heritage Site and best experienced on an overnight cruise. Central Vietnam offers Hoi An (a perfectly preserved 15th-century trading port lit by silk lanterns every evening), Hue (the former imperial capital), and the pristine beaches of Da Nang and China Beach.\n\nHo Chi Minh City (Saigon) is Vietnam's commercial engine — a motorbike-choked sprawl with world-class street food, rooftop bars, and the sobering Cu Chi Tunnels and War Remnants Museum. The Mekong Delta offers floating markets and homestays. In the far north, Sapa's terraced rice fields and ethnic minority villages are a trekker's paradise.",
+    heroImage:
+      "https://images.unsplash.com/photo-1528127269322-539801943592?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1528127269322-539801943592?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "November to April",
+    weather:
+      "Tropical, varies by region. North: cool winters (15-22°C), hot summers. Central: beach-ideal Jan-Aug. South: warm year-round (26-32°C).",
+    startingPrice: 45000,
+    highlights: [
+      "Ha Long Bay Cruise",
+      "Hoi An Lantern Town",
+      "Ho Chi Minh City Street Food",
+      "Mekong Delta",
+      "Sapa Rice Terraces",
+      "Hue Imperial City",
+      "Cu Chi Tunnels",
+    ],
+    thingsToKnow: [
+      "Best visited during November to April for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Ha Long Bay Cruise",
+        description:
+          "One of the signature experiences in Vietnam.",
+        icon: "✨",
+      },
+      {
+        title: "Hoi An Lantern Town",
+        description:
+          "Explore the living heritage of Vietnam with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Ho Chi Minh City Street Food",
+        description:
+          "Taste the flavours of Vietnam — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Mekong Delta",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Thailand",
+    slug: "thailand",
+    region: "International",
+    country: "Thailand",
+    category: "leisure",
+    tagline: "Beaches, Temples, and Street-Food Capital",
+    description:
+      "From Bangkok's buzz to Phuket's beaches, Chiang Mai's temples and elephant sanctuaries, the limestone bays of Krabi, and the full-moon parties of Koh Phangan — Thailand is endlessly rewarding.",
+    longDescription:
+      "Thailand remains Southeast Asia's most visited country for good reason — it packs world-class beaches, ornate Buddhist temples, elephants, street food, and friendly locals into an accessible, affordable destination.\n\nBangkok is a sensory overload — the Grand Palace, Wat Pho's reclining Buddha, floating markets, rooftop bars, and khao soi noodles at midnight. Head south for the beaches: Phuket for nightlife, Koh Samui for resorts, Koh Phi Phi for snorkelling, Krabi for limestone karsts, and Koh Lanta or Koh Yao for quiet.\n\nChiang Mai in the north is the cultural heart — 300+ Buddhist temples, cooking schools, ethical elephant sanctuaries, and the starting point for treks to hill-tribe villages. Pai and Chiang Rai extend the northern loop with bohemian towns and the surreal White Temple.",
+    heroImage:
+      "https://images.unsplash.com/photo-1528181304800-259b08848526?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1528181304800-259b08848526?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "November to March",
+    weather:
+      "Tropical year-round. Cool-dry (Nov-Feb) is ideal. Hot (Mar-May) reaches 35-40°C. Rainy (Jun-Oct) — short afternoon showers.",
+    startingPrice: 40000,
+    highlights: [
+      "Bangkok Grand Palace",
+      "Phuket Beaches",
+      "Chiang Mai Elephant Sanctuaries",
+      "Krabi Island Hopping",
+      "Floating Markets",
+      "Muay Thai Boxing",
+      "Thai Cooking Class",
+    ],
+    thingsToKnow: [
+      "Best visited during November to March for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Bangkok Grand Palace",
+        description:
+          "One of the signature experiences in Thailand.",
+        icon: "✨",
+      },
+      {
+        title: "Phuket Beaches",
+        description:
+          "Explore the living heritage of Thailand with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Chiang Mai Elephant Sanctuaries",
+        description:
+          "Taste the flavours of Thailand — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Krabi Island Hopping",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Singapore",
+    slug: "singapore",
+    region: "International",
+    country: "Singapore",
+    category: "leisure",
+    tagline: "Garden City of the Future",
+    description:
+      "Gardens by the Bay's Supertrees, Marina Bay Sands' infinity pool, Sentosa's Universal Studios, hawker-centre food, and the world's most efficient city — Singapore packs a holiday into 728 km².",
+    longDescription:
+      "Singapore is a city-state that runs like a Swiss watch — clean, safe, multicultural, and relentlessly forward-looking. Yet underneath its future-facing skyline lies centuries of trading history in Chinatown, Little India, and Kampong Glam.\n\nMarina Bay's trinity — Gardens by the Bay's Supertree Grove, the ArtScience Museum, and Marina Bay Sands with its iconic rooftop infinity pool — defines the modern skyline. Sentosa island offers Universal Studios, the S.E.A. Aquarium, and beaches. The Singapore Zoo and Night Safari are consistently ranked among the world's best.\n\nFood is a national obsession — hawker centres (Maxwell, Lau Pa Sat, Newton) serve Michelin-recognised chicken rice, laksa, satay, and char kway teow for a few dollars. Orchard Road is Asia's premier shopping strip.",
+    heroImage:
+      "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "February to April",
+    weather:
+      "Tropical and humid year-round (25-31°C). Short afternoon rain common. No seasons in the Indian sense.",
+    startingPrice: 55000,
+    highlights: [
+      "Gardens by the Bay",
+      "Marina Bay Sands Infinity Pool",
+      "Sentosa & Universal Studios",
+      "Hawker Centre Food",
+      "Singapore Zoo & Night Safari",
+      "Orchard Road Shopping",
+      "Chinatown & Little India",
+    ],
+    thingsToKnow: [
+      "Best visited during February to April for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Gardens by the Bay",
+        description:
+          "One of the signature experiences in Singapore.",
+        icon: "✨",
+      },
+      {
+        title: "Marina Bay Sands Infinity Pool",
+        description:
+          "Explore the living heritage of Singapore with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Sentosa & Universal Studios",
+        description:
+          "Taste the flavours of Singapore — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Hawker Centre Food",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Sri Lanka",
+    slug: "sri-lanka",
+    region: "International",
+    country: "Sri Lanka",
+    category: "leisure",
+    tagline: "Pearl of the Indian Ocean",
+    description:
+      "Ancient rock fortresses like Sigiriya, tea-clad hills of Nuwara Eliya, wild leopards at Yala, surf breaks at Arugam Bay, and warm beaches at Bentota — Sri Lanka is a full-spectrum tropical gem.",
+    longDescription:
+      "Sri Lanka packs eight UNESCO World Heritage sites, 26 national parks, and a thousand beaches into a teardrop-shaped island you can drive across in a day. The cultural triangle — Sigiriya's 5th-century rock fortress, Dambulla's cave temples, Polonnaruwa and Anuradhapura's ancient ruins, and Kandy's Temple of the Tooth — covers 2,500 years of Buddhist and royal history.\n\nThe hill country around Nuwara Eliya and Ella is Sri Lanka's tea heartland — ride the famous train between Kandy and Ella for some of the world's most scenic rail views. The south coast offers beaches for every mood: Unawatuna and Mirissa for swimming, Weligama and Hikkaduwa for surfing, Bentota for resorts.\n\nWildlife is exceptional — Yala National Park has the highest leopard density in the world, Udawalawe is excellent for elephants, and whales are spotted off Mirissa from November to April.",
+    heroImage:
+      "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "December to March (west/south), April to September (east)",
+    weather:
+      "Tropical. Coast warm year-round (27-32°C). Hill country cooler (15-25°C). Two monsoons: southwest May-Sep, northeast Oct-Jan.",
+    startingPrice: 38000,
+    highlights: [
+      "Sigiriya Rock Fortress",
+      "Kandy Temple of the Tooth",
+      "Nuwara Eliya Tea Country",
+      "Ella Rock Hike",
+      "Yala Leopards",
+      "Galle Dutch Fort",
+      "Bentota Beach",
+    ],
+    thingsToKnow: [
+      "Best visited during December to March for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Sigiriya Rock Fortress",
+        description:
+          "One of the signature experiences in Sri Lanka.",
+        icon: "✨",
+      },
+      {
+        title: "Kandy Temple of the Tooth",
+        description:
+          "Explore the living heritage of Sri Lanka with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Nuwara Eliya Tea Country",
+        description:
+          "Taste the flavours of Sri Lanka — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Ella Rock Hike",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "South Africa",
+    slug: "south-africa",
+    region: "International",
+    country: "South Africa",
+    category: "adventure",
+    tagline: "Safari, Cape Coast, and the Rainbow Nation",
+    description:
+      "Kruger's Big Five, the Cape Peninsula's Table Mountain, the Garden Route's coastal drive, Stellenbosch wine country, and Robben Island — South Africa is a continent-in-one.",
+    longDescription:
+      "South Africa is Africa's most complete travel experience. Cape Town is regularly voted the world's most beautiful city — Table Mountain looming over Camps Bay's beaches, the cable car to the summit, Cape Point where two oceans meet, and the Winelands of Stellenbosch and Franschhoek producing world-class Pinotage and Chenin Blanc.\n\nThe Garden Route connects Cape Town to Port Elizabeth along 300 km of spectacular coastline — stops at Knysna, Plettenberg Bay, and Storms River National Park are essential. Adventure seekers bungee jump from Bloukrans Bridge (216m) and dive with great whites at Gansbaai.\n\nKruger National Park and adjacent private reserves (Sabi Sands, Timbavati) offer world-class Big Five safaris — lion, leopard, elephant, buffalo, rhino. Johannesburg's Apartheid Museum and nearby Soweto townships tell the country's difficult modern history.",
+    heroImage:
+      "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "May to September (for safaris), November to April (for Cape Town)",
+    weather:
+      "Seasons opposite to India. Cape Town Mediterranean. Kruger subtropical — dry winter (May-Sep) best for wildlife.",
+    startingPrice: 100000,
+    highlights: [
+      "Cape Town & Table Mountain",
+      "Kruger Big Five Safari",
+      "Garden Route Drive",
+      "Stellenbosch Wine Country",
+      "Cape Point",
+      "Cape Peninsula Penguins",
+      "Johannesburg History Tour",
+    ],
+    thingsToKnow: [
+      "Best visited during May to September for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Cape Town & Table Mountain",
+        description:
+          "One of the signature experiences in South Africa.",
+        icon: "✨",
+      },
+      {
+        title: "Kruger Big Five Safari",
+        description:
+          "Explore the living heritage of South Africa with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Garden Route Drive",
+        description:
+          "Taste the flavours of South Africa — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Stellenbosch Wine Country",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Kenya",
+    slug: "kenya",
+    region: "International",
+    country: "Kenya",
+    category: "adventure",
+    tagline: "Where the Great Migration Thunders",
+    description:
+      "The Maasai Mara's big cats, the Great Wildebeest Migration, Amboseli's elephants framed by Kilimanjaro, the flamingos of Lake Nakuru, and Diani's Indian Ocean beaches — classic African safari.",
+    longDescription:
+      "Kenya is the archetype of the African safari. The Maasai Mara National Reserve is the northern extension of Tanzania's Serengeti and hosts the Great Migration of 1.5 million wildebeest and 300,000 zebra from July to October — one of the greatest wildlife spectacles on Earth.\n\nAmboseli National Park, set against the backdrop of snow-capped Mount Kilimanjaro across the border in Tanzania, is famous for enormous elephant herds. Lake Nakuru hosts millions of flamingos and is one of the best places to see white rhino. Lake Naivasha and Hell's Gate offer boat safaris and cycling among giraffes.\n\nNairobi serves as the hub — visit the Giraffe Centre, the David Sheldrick Elephant Orphanage, and Karen Blixen's home. For a beach extension, the Indian Ocean coast at Diani and Watamu offers coral reefs and Swahili culture.",
+    heroImage:
+      "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "July to October (migration), January to March (green season)",
+    weather:
+      "Equatorial. Highlands (Nairobi, Mara) pleasantly cool (10-25°C). Coast tropical (24-32°C). Long rains Apr-May, short rains Nov-Dec.",
+    startingPrice: 90000,
+    highlights: [
+      "Great Wildebeest Migration",
+      "Maasai Mara Big Cats",
+      "Amboseli Elephants & Kilimanjaro",
+      "Lake Nakuru Flamingos",
+      "Maasai Village Visit",
+      "Diani Beach",
+      "Nairobi Elephant Orphanage",
+    ],
+    thingsToKnow: [
+      "Best visited during July to October for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Great Wildebeest Migration",
+        description:
+          "One of the signature experiences in Kenya.",
+        icon: "✨",
+      },
+      {
+        title: "Maasai Mara Big Cats",
+        description:
+          "Explore the living heritage of Kenya with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Amboseli Elephants & Kilimanjaro",
+        description:
+          "Taste the flavours of Kenya — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Lake Nakuru Flamingos",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Hong Kong",
+    slug: "hong-kong",
+    region: "International",
+    country: "Hong Kong SAR",
+    category: "leisure",
+    tagline: "Skyscrapers, Dim Sum, and Disneyland",
+    description:
+      "Victoria Peak's skyline views, Star Ferry rides across the harbour, Hong Kong Disneyland, Ocean Park's panda reserve, and dim sum breakfast in Sham Shui Po — a compact, electric city.",
+    longDescription:
+      "Hong Kong is a special administrative region of China with a personality all its own — ex-British colonial architecture meeting Cantonese tradition meeting vertical modernity. Victoria Peak's tram delivers the most photographed skyline in Asia. The Star Ferry between Central and Tsim Sha Tsui remains one of the world's most affordable great city experiences.\n\nHong Kong Disneyland on Lantau Island — smaller than its American cousins but uniquely charming — is often combined with a trip to Macau (the Las Vegas of Asia) and Ngong Ping's Big Buddha statue. Ocean Park offers pandas and thrill rides. Shoppers love Central's luxury boutiques and Temple Street Night Market.\n\nFood is an obsession — Michelin-starred dim sum at Tim Ho Wan, egg tarts at Tai Cheong Bakery, roast goose, cha chaan teng diners, and milk tea by the bucket. The outlying islands (Cheung Chau, Lamma) offer car-free beach days.",
+    heroImage:
+      "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "October to December",
+    weather:
+      "Subtropical. Cool-dry Nov-Mar (15-25°C). Hot-humid May-Sep (28-33°C), typhoon season Jul-Sep.",
+    startingPrice: 65000,
+    highlights: [
+      "Victoria Peak Skyline",
+      "Hong Kong Disneyland",
+      "Star Ferry Harbour Ride",
+      "Ngong Ping Big Buddha",
+      "Ocean Park",
+      "Dim Sum Food Trail",
+      "Macau Day Trip",
+    ],
+    thingsToKnow: [
+      "Best visited during October to December for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Victoria Peak Skyline",
+        description:
+          "One of the signature experiences in Hong Kong.",
+        icon: "✨",
+      },
+      {
+        title: "Hong Kong Disneyland",
+        description:
+          "Explore the living heritage of Hong Kong with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Star Ferry Harbour Ride",
+        description:
+          "Taste the flavours of Hong Kong — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Ngong Ping Big Buddha",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Azerbaijan",
+    slug: "azerbaijan",
+    region: "International",
+    country: "Azerbaijan",
+    category: "leisure",
+    tagline: "Fire Temples, Caspian Coast & Ultra-Modern Baku",
+    description:
+      "Baku's flame towers, Gobustan's ancient petroglyphs, Absheron's fire temples, the mountain village of Lahij, and the Caspian Sea — Azerbaijan is a surprising East-meets-West gem.",
+    longDescription:
+      "Azerbaijan sits at the crossroads of Europe and Asia on the western shore of the Caspian Sea. Its capital Baku is a city of contrasts — the UNESCO-listed medieval Old City (Icheri Sheher) sits just blocks from the ultra-modern Flame Towers and Heydar Aliyev Center (designed by Zaha Hadid).\n\nDay trips from Baku go to Gobustan — a UNESCO site with 6,000-year-old petroglyphs and nearby mud volcanoes (Azerbaijan has more than half the world's total). Yanar Dag, a hillside that has been on fire for over 60 years thanks to natural gas seeps, is a short drive north. The Ateshgah Fire Temple reminds of the country's pre-Islamic Zoroastrian heritage.\n\nThe mountain region around Sheki and Lahij offers Caucasus scenery, coppersmith villages, and traditional baklava. Azerbaijani cuisine — plov, dolma, and qutabs — is a highlight.",
+    heroImage:
+      "https://images.unsplash.com/photo-1601130884591-c7dd5a45c3c0?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1601130884591-c7dd5a45c3c0?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "April to June, September to October",
+    weather:
+      "Continental. Baku mild winters (5-10°C), warm summers (25-32°C). Mountains cooler.",
+    startingPrice: 70000,
+    highlights: [
+      "Baku Old City (Icheri Sheher)",
+      "Flame Towers & Heydar Aliyev Center",
+      "Gobustan Petroglyphs",
+      "Yanar Dag Burning Hillside",
+      "Ateshgah Fire Temple",
+      "Sheki Khan Palace",
+      "Caspian Sea Boulevard",
+    ],
+    thingsToKnow: [
+      "Best visited during April to June, September to October for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Baku Old City (Icheri Sheher)",
+        description:
+          "One of the signature experiences in Azerbaijan.",
+        icon: "✨",
+      },
+      {
+        title: "Flame Towers & Heydar Aliyev Center",
+        description:
+          "Explore the living heritage of Azerbaijan with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Gobustan Petroglyphs",
+        description:
+          "Taste the flavours of Azerbaijan — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Yanar Dag Burning Hillside",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Kazakhstan",
+    slug: "kazakhstan",
+    region: "International",
+    country: "Kazakhstan",
+    category: "leisure",
+    tagline: "Silk Road Heritage & Steppe Grandeur",
+    description:
+      "Almaty's Tien Shan peaks, the ancient Silk Road mausoleums of Turkestan, the Charyn Canyon, and Astana's space-age architecture — Kazakhstan is the world's 9th-largest country and Central Asia's most accessible.",
+    longDescription:
+      "Kazakhstan stretches from the Caspian Sea to the Altai Mountains, spanning a territory bigger than Western Europe. Almaty — the former capital — nestles against the snow-capped Zailiyskiy Alatau range of the Tien Shan. The Kok Tobe gondola offers city panoramas, and the Medeo high-altitude ice rink is a short drive up the mountain.\n\nThe country's most dramatic natural sight is Charyn Canyon — a 150 km gorge often called Kazakhstan's Grand Canyon — located 3 hours from Almaty. Kolsai Lakes and Kaindy (with its underwater forest) are equally spectacular.\n\nIn the south, Turkestan's Mausoleum of Khoja Ahmed Yasawi is a UNESCO site and a key Silk Road pilgrimage centre. Astana (officially renamed Nur-Sultan) is the purpose-built modern capital with the Bayterek Tower and Khan Shatyr tent.",
+    heroImage:
+      "https://images.unsplash.com/photo-1599772515036-5d00d5c1be48?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1599772515036-5d00d5c1be48?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "May to September",
+    weather:
+      "Continental. Almaty cold winters (-5 to 5°C), warm summers (20-30°C). Steppe very cold in winter.",
+    startingPrice: 75000,
+    highlights: [
+      "Almaty & Tien Shan",
+      "Charyn Canyon",
+      "Kolsai & Kaindy Lakes",
+      "Medeo Ice Rink",
+      "Kok Tobe Gondola",
+      "Turkestan Silk Road Mausoleum",
+      "Big Almaty Lake",
+    ],
+    thingsToKnow: [
+      "Best visited during May to September for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Almaty & Tien Shan",
+        description:
+          "One of the signature experiences in Kazakhstan.",
+        icon: "✨",
+      },
+      {
+        title: "Charyn Canyon",
+        description:
+          "Explore the living heritage of Kazakhstan with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Kolsai & Kaindy Lakes",
+        description:
+          "Taste the flavours of Kazakhstan — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Medeo Ice Rink",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Uzbekistan",
+    slug: "uzbekistan",
+    region: "International",
+    country: "Uzbekistan",
+    category: "educational",
+    tagline: "The Heart of the Silk Road",
+    description:
+      "Samarkand's Registan Square, Bukhara's 10th-century minarets, Khiva's walled old city, and the tiled Timurid architecture of the Great Silk Road — Uzbekistan is a living museum.",
+    longDescription:
+      "Uzbekistan is the cultural heart of Central Asia and one of the world's most rewarding destinations for architecture lovers. The Silk Road triangle of Samarkand, Bukhara, and Khiva contains some of the finest surviving Timurid and Uzbek monuments.\n\nSamarkand's Registan Square — three 15th to 17th-century madrasas facing each other across a public square — is one of the most visually stunning sights in the Islamic world. The Gur-e-Amir Mausoleum holds Timur's (Tamerlane's) tomb. Bukhara's historic centre is UNESCO-listed with the 10th-century Ismail Samani Mausoleum, the Kalyan Minaret, and the Ark citadel.\n\nKhiva's Itchan Kala is a perfectly preserved walled old town of mosques, madrasas, and caravanserais. Tashkent, the modern capital, balances Soviet-era planning with Uzbek craft markets like Chorsu Bazaar.",
+    heroImage:
+      "https://images.unsplash.com/photo-1578674473215-9e07a0a1dffc?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1578674473215-9e07a0a1dffc?w=1600&h=900&fit=crop",
+    ],
+    bestTimeToVisit: "March to May, September to November",
+    weather:
+      "Continental. Summers (Jun-Aug) very hot at 35-45°C. Winters (Dec-Feb) cold at -5 to 5°C. Spring/autumn ideal.",
+    startingPrice: 70000,
+    highlights: [
+      "Samarkand Registan Square",
+      "Bukhara Kalyan Minaret",
+      "Khiva's Walled Old City",
+      "Gur-e-Amir Mausoleum",
+      "Shahi-Zinda Necropolis",
+      "Tashkent Chorsu Bazaar",
+      "Silk Road Caravanserai",
+    ],
+    thingsToKnow: [
+      "Best visited during March to May, September to November for the most reliable weather.",
+      "Currency, visa, and SIM card guidance available from your TravelSense consultant before you fly.",
+      "All itineraries are customisable — tell us your pace, interests, and we rebuild around you.",
+      "Small-group departures available; private bookings also supported for families and couples.",
+    ],
+    popularExperiences: [
+      {
+        title: "Samarkand Registan Square",
+        description:
+          "One of the signature experiences in Uzbekistan.",
+        icon: "✨",
+      },
+      {
+        title: "Bukhara Kalyan Minaret",
+        description:
+          "Explore the living heritage of Uzbekistan with a local expert.",
+        icon: "🏛️",
+      },
+      {
+        title: "Khiva's Walled Old City",
+        description:
+          "Taste the flavours of Uzbekistan — curated meals at trusted local spots.",
+        icon: "🍽️",
+      },
+      {
+        title: "Gur-e-Amir Mausoleum",
+        description:
+          "A day-trip to the region's most memorable landscape.",
+        icon: "🌄",
+      },
+    ],
+    featured: false,
+  },
 ]
 
 /* ─── Helper: get a destination by slug ─────────────────────────────────── */
