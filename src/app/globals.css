@@ -1708,6 +1708,8 @@ html {
     background: #fff !important;
     margin: 0 !important;
     padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
   .doc-chrome,
   .doc-no-print,
@@ -1722,18 +1724,52 @@ html {
     background: #fff !important;
     padding: 0 !important;
     min-height: auto !important;
+    margin: 0 !important;
   }
+  /* Lock page to exactly A4. Anything that would overflow is clipped
+     so we never spill onto a second sheet. */
   .doc-page {
     width: 210mm !important;
-    min-height: 297mm !important;
+    height: 297mm !important;
+    min-height: 0 !important;
+    max-height: 297mm !important;
     margin: 0 !important;
+    padding: 0 !important;
     box-shadow: none !important;
-    page-break-after: always;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-after: avoid-page !important;
+    break-inside: avoid-page !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  /* Tighten footer padding on print so it always fits inside A4 */
+  .lh-footer {
+    padding: 14px 36px 16px !important;
+  }
+  .lh-band {
+    padding: 22px 36px !important;
+  }
+  .lh-body {
+    padding: 28px 48px !important;
+    min-height: 0 !important;
   }
   [contenteditable="true"]:hover,
   [contenteditable="true"]:focus {
     background: transparent !important;
     box-shadow: none !important;
+    outline: none !important;
+  }
+  /* Hide editable input borders/focus rings on print */
+  input[type="number"],
+  input[type="text"] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
   }
   /* Don't break inside table rows */
   .inv-table tr,
