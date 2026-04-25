@@ -93,7 +93,7 @@ export default function LetterheadPage() {
                 height={70}
                 priority
                 unoptimized
-                style={{ height: 64, width: "auto", objectFit: "contain" }}
+                style={{ height: 44, width: "auto", objectFit: "contain" }}
               />
               <div>
                 <div
