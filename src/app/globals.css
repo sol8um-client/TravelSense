@@ -1821,36 +1821,51 @@ html {
     min-height: auto !important;
     margin: 0 !important;
   }
-  /* Lock page to exactly A4. Anything that would overflow is clipped
-     so we never spill onto a second sheet. */
+  /* Page sizing in print:
+     - min-height: 297mm so a SHORT letter fills exactly one A4 sheet
+       with the footer pinned to the bottom.
+     - No fixed height / no overflow: hidden, so a LONG invoice can grow
+       past A4 and flow cleanly to a second page (footer lands at end of
+       the last page, body never overlaps footer).
+     This is the balance: short docs = single sheet, long docs = clean
+     multi-page with no content overlap. */
   .doc-page {
     width: 210mm !important;
-    height: 297mm !important;
-    min-height: 0 !important;
-    max-height: 297mm !important;
+    min-height: 297mm !important;
+    height: auto !important;
+    max-height: none !important;
     margin: 0 !important;
     padding: 0 !important;
     box-shadow: none !important;
     border-radius: 0 !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     box-sizing: border-box !important;
-    page-break-after: avoid !important;
-    page-break-inside: avoid !important;
-    break-after: avoid-page !important;
-    break-inside: avoid-page !important;
     display: flex !important;
     flex-direction: column !important;
   }
   /* Tighten footer padding on print so it always fits inside A4 */
   .lh-footer {
     padding: 14px 36px 16px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid-page !important;
   }
   .lh-band {
     padding: 22px 36px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid-page !important;
   }
   .lh-body {
-    padding: 28px 48px !important;
+    padding: 24px 44px !important;
     min-height: 0 !important;
+    flex: 1 1 auto !important;
+  }
+  /* Keep totals + bank + payment + signature blocks together — never
+     break a tax row or signature stamp across two pages. */
+  .inv-totals,
+  .inv-totals-row,
+  .doc-section {
+    page-break-inside: avoid !important;
+    break-inside: avoid-page !important;
   }
   [contenteditable="true"]:hover,
   [contenteditable="true"]:focus {
