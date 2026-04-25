@@ -88,13 +88,25 @@ export default function LetterheadPage() {
               <div className="text-[9.5px] font-body font-semibold tracking-[0.22em] uppercase text-[#FFB3A3]">
                 Date
               </div>
-              <div className="mt-1" suppressHydrationWarning>
+              <div
+                key={`date-${today}`}
+                className="mt-1"
+                contentEditable
+                suppressContentEditableWarning
+                suppressHydrationWarning
+              >
                 {today || "—"}
               </div>
               <div className="mt-3 text-[9.5px] font-body font-semibold tracking-[0.22em] uppercase text-[#FFB3A3]">
                 Reference
               </div>
-              <div className="mt-1 font-mono" suppressHydrationWarning>
+              <div
+                key={`ref-${refNo}`}
+                className="mt-1 font-mono"
+                contentEditable
+                suppressContentEditableWarning
+                suppressHydrationWarning
+              >
                 {refNo || "—"}
               </div>
             </div>
@@ -202,40 +214,37 @@ export default function LetterheadPage() {
           </div>
         </div>
 
-        {/* Footer band — single registered office, contact, CIN/PAN */}
+        {/* Footer band — anchored to bottom of A4. All fields editable. */}
         <footer className="lh-footer">
           <div className="lh-footer-grid">
             <div>
               <div className="lh-footer-label">Registered Office</div>
-              <div className="lh-footer-value">
-                {company.legalName}
-                <br />
-                {company.office.block.map((line, i) => (
-                  <span key={i}>
-                    {line}
-                    <br />
-                  </span>
-                ))}
+              <div
+                className="lh-footer-value whitespace-pre-line"
+                contentEditable
+                suppressContentEditableWarning
+              >
+                {[company.legalName, ...company.office.block].join("\n")}
               </div>
             </div>
             <div>
               <div className="lh-footer-label">Reach Us</div>
-              <div className="lh-footer-value">
-                {company.contact.phone}
-                <br />
-                {company.contact.email}
-                <br />
-                {company.contact.website}
+              <div
+                className="lh-footer-value whitespace-pre-line"
+                contentEditable
+                suppressContentEditableWarning
+              >
+                {[company.contact.phone, company.contact.email, company.contact.website].join("\n")}
               </div>
             </div>
             <div>
               <div className="lh-footer-label">Statutory</div>
-              <div className="lh-footer-value">
-                CIN: {company.cin}
-                <br />
-                PAN: {company.pan}
-                <br />
-                TAN: {company.tan}
+              <div
+                className="lh-footer-value whitespace-pre-line"
+                contentEditable
+                suppressContentEditableWarning
+              >
+                {[`CIN: ${company.cin}`, `PAN: ${company.pan}`, `TAN: ${company.tan}`].join("\n")}
               </div>
             </div>
           </div>

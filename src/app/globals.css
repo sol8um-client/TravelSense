@@ -1329,7 +1329,8 @@ html {
    A4 page layout, on-screen preview + print-to-PDF
    ═══════════════════════════════════════════════════════════════ */
 
-/* A4 page size — 210mm x 297mm */
+/* A4 page size — 210mm x 297mm. Flex column so the footer always
+   sits at the bottom regardless of body content length. */
 .doc-page {
   width: 210mm;
   min-height: 297mm;
@@ -1344,6 +1345,13 @@ html {
   letter-spacing: 0.01em;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Body section grows to push footer to the bottom of the A4 page */
+.lh-body {
+  flex: 1 1 auto;
 }
 
 /* Editable cells — outlined while editing, invisible on print */

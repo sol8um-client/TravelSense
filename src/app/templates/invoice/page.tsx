@@ -9,8 +9,7 @@ import { company } from "@/config/company"
 interface LineItem {
   id: number
   description: string
-  hsn: string
-  pax: number
+  qty: number
   rate: number
 }
 
@@ -46,10 +45,9 @@ export default function InvoicePage() {
     {
       id: 1,
       description:
-        "Kashmir Classic Family — 7D/6N\nSrinagar (3N) · Pahalgam (2N) · Sonmarg (1N)\nTravel: 12 Mar 2026 — 18 Mar 2026",
-      hsn: company.sacCode,
-      pax: 4,
-      rate: 27500,
+        "[Item or service description]\nAdd any sub-details, dates, or notes on subsequent lines.",
+      qty: 1,
+      rate: 0,
     },
   ])
 
@@ -65,7 +63,7 @@ export default function InvoicePage() {
   }, [])
 
   const totals = useMemo(() => {
-    const subtotal = items.reduce((s, it) => s + it.pax * it.rate, 0)
+    const subtotal = items.reduce((s, it) => s + it.qty * it.rate, 0)
     const cgst = interState ? 0 : subtotal * STATE_GST_RATE
     const sgst = interState ? 0 : subtotal * STATE_GST_RATE
     const igst = interState ? subtotal * INTER_GST_RATE : 0
@@ -82,7 +80,7 @@ export default function InvoicePage() {
   const addItem = () => {
     setItems((prev) => [
       ...prev,
-      { id: Date.now(), description: "[Package name + dates + route]", hsn: company.sacCode, pax: 1, rate: 0 },
+      { id: Date.now(), description: "[Item or service description]", qty: 1, rate: 0 },
     ])
   }
   const removeItem = (id: number) => {
@@ -166,15 +164,33 @@ export default function InvoicePage() {
               </div>
               <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1 text-right text-[10.5px] leading-[1.5]">
                 <span className="font-body font-semibold tracking-[0.18em] uppercase text-white/55">Invoice #</span>
-                <span className="font-mono text-white" suppressHydrationWarning>
+                <span
+                  key={`inv-${invoiceNo}`}
+                  className="font-mono text-white"
+                  contentEditable
+                  suppressContentEditableWarning
+                  suppressHydrationWarning
+                >
                   {invoiceNo || "—"}
                 </span>
                 <span className="font-body font-semibold tracking-[0.18em] uppercase text-white/55">Date</span>
-                <span className="text-white" suppressHydrationWarning>
+                <span
+                  key={`date-${today}`}
+                  className="text-white"
+                  contentEditable
+                  suppressContentEditableWarning
+                  suppressHydrationWarning
+                >
                   {today || "—"}
                 </span>
                 <span className="font-body font-semibold tracking-[0.18em] uppercase text-white/55">Due</span>
-                <span className="text-white" suppressHydrationWarning>
+                <span
+                  key={`due-${dueDate}`}
+                  className="text-white"
+                  contentEditable
+                  suppressContentEditableWarning
+                  suppressHydrationWarning
+                >
                   {dueDate || "—"}
                 </span>
               </div>
@@ -194,27 +210,41 @@ export default function InvoicePage() {
                 Bill From
               </div>
               <div className="text-[11.5px] leading-[1.6]">
-                <div className="font-heading font-medium" style={{ fontSize: 14 }}>
+                <div
+                  className="font-heading font-medium"
+                  style={{ fontSize: 14 }}
+                  contentEditable
+                  suppressContentEditableWarning
+                >
                   {company.legalName}
                 </div>
-                <div className="text-[#5A6478]">
-                  {company.office.block.map((line, i) => (
-                    <span key={i}>
-                      {line}
-                      <br />
-                    </span>
-                  ))}
+                <div
+                  className="text-[#5A6478] whitespace-pre-line"
+                  contentEditable
+                  suppressContentEditableWarning
+                >
+                  {company.office.block.join("\n")}
                 </div>
                 <div className="mt-2 text-[10.5px]">
                   <span className="font-semibold tracking-[0.12em] uppercase text-[#5A6478]">CIN: </span>
-                  <span>{company.cin}</span>
+                  <span contentEditable suppressContentEditableWarning>
+                    {company.cin}
+                  </span>
                 </div>
                 <div className="text-[10.5px]">
                   <span className="font-semibold tracking-[0.12em] uppercase text-[#5A6478]">PAN: </span>
-                  <span>{company.pan}</span>
+                  <span contentEditable suppressContentEditableWarning>
+                    {company.pan}
+                  </span>
                 </div>
                 <div className="mt-1.5 text-[10.5px] text-[#5A6478]">
-                  {company.contact.email} · {company.contact.phone}
+                  <span contentEditable suppressContentEditableWarning>
+                    {company.contact.email}
+                  </span>
+                  <span> · </span>
+                  <span contentEditable suppressContentEditableWarning>
+                    {company.contact.phone}
+                  </span>
                 </div>
               </div>
             </div>
@@ -264,18 +294,18 @@ export default function InvoicePage() {
           <table className="inv-table">
             <thead>
               <tr>
-                <th style={{ width: "44%" }}>Description</th>
-                <th style={{ width: "12%" }}>HSN/SAC</th>
-                <th style={{ width: "10%" }}>Pax</th>
-                <th style={{ width: "16%" }}>Rate / Pax</th>
-                <th style={{ width: "18%" }}>Amount</th>
+                <th style={{ width: "8%" }}>#</th>
+                <th style={{ width: "52%" }}>Description</th>
+                <th style={{ width: "10%" }}>Qty</th>
+                <th style={{ width: "14%" }}>Unit Price</th>
+                <th style={{ width: "16%" }}>Amount</th>
               </tr>
             </thead>
             <tbody>
               {items.map((it, idx) => (
                 <tr key={it.id}>
+                  <td className="text-center text-[11.5px] text-[#8A929E] font-semibold">{idx + 1}</td>
                   <td>
-                    <div className="text-[11px] text-[#8A929E] font-semibold mb-0.5">{idx + 1}</div>
                     <div
                       className="text-[12px] whitespace-pre-line leading-[1.5]"
                       contentEditable
@@ -287,31 +317,26 @@ export default function InvoicePage() {
                   </td>
                   <td>
                     <input
-                      className="w-full bg-transparent text-center text-[11.5px] outline-none focus:bg-[#C4324A]/10 rounded px-1 py-0.5"
-                      value={it.hsn}
-                      onChange={(e) => updateItem(it.id, "hsn", e.target.value)}
-                    />
-                  </td>
-                  <td>
-                    <input
                       type="number"
                       min={1}
+                      step={1}
                       className="w-16 bg-transparent text-center text-[11.5px] outline-none focus:bg-[#C4324A]/10 rounded px-1 py-0.5"
-                      value={it.pax}
-                      onChange={(e) => updateItem(it.id, "pax", Number(e.target.value) || 0)}
+                      value={it.qty}
+                      onChange={(e) => updateItem(it.id, "qty", Number(e.target.value) || 0)}
                     />
                   </td>
                   <td>
                     <input
                       type="number"
                       min={0}
+                      step={0.01}
                       className="w-full bg-transparent text-center text-[11.5px] tabular-nums outline-none focus:bg-[#C4324A]/10 rounded px-1 py-0.5"
                       value={it.rate}
                       onChange={(e) => updateItem(it.id, "rate", Number(e.target.value) || 0)}
                     />
                   </td>
                   <td className="font-medium tabular-nums">
-                    {fmt(it.pax * it.rate)}
+                    {fmt(it.qty * it.rate)}
                     {items.length > 1 && (
                       <button
                         onClick={() => removeItem(it.id)}
@@ -379,7 +404,7 @@ export default function InvoicePage() {
             </div>
           </div>
 
-          {/* Payment + Bank details */}
+          {/* Payment + Bank details — every value is editable inline */}
           <div className="mt-7 grid grid-cols-2 gap-6">
             <div>
               <div className="text-[9.5px] font-body font-semibold tracking-[0.22em] uppercase text-[#C4324A] mb-2">
@@ -388,23 +413,33 @@ export default function InvoicePage() {
               <div className="text-[11px] leading-[1.6]">
                 <div>
                   <span className="font-semibold text-[#5A6478]">Account Name: </span>
-                  <span>{company.bank.accountName}</span>
+                  <span contentEditable suppressContentEditableWarning>
+                    {company.bank.accountName}
+                  </span>
                 </div>
                 <div>
                   <span className="font-semibold text-[#5A6478]">Bank: </span>
-                  <span>{company.bank.bankName}</span>
+                  <span contentEditable suppressContentEditableWarning>
+                    {company.bank.bankName}
+                  </span>
                 </div>
                 <div>
                   <span className="font-semibold text-[#5A6478]">A/C No: </span>
-                  <span>{company.bank.accountNumber}</span>
+                  <span contentEditable suppressContentEditableWarning>
+                    {company.bank.accountNumber}
+                  </span>
                 </div>
                 <div>
                   <span className="font-semibold text-[#5A6478]">IFSC: </span>
-                  <span>{company.bank.ifsc}</span>
+                  <span contentEditable suppressContentEditableWarning>
+                    {company.bank.ifsc}
+                  </span>
                 </div>
                 <div className="mt-1">
                   <span className="font-semibold text-[#5A6478]">UPI: </span>
-                  <span>{company.bank.upi}</span>
+                  <span contentEditable suppressContentEditableWarning>
+                    {company.bank.upi}
+                  </span>
                 </div>
               </div>
             </div>
@@ -439,10 +474,10 @@ export default function InvoicePage() {
           </div>
         </div>
 
-        {/* Footer */}
+        {/* Footer — anchored to bottom of A4 */}
         <footer className="lh-footer" style={{ padding: "16px 36px 18px" }}>
           <div className="flex items-center justify-between gap-4 text-[9.5px] tracking-[0.18em] uppercase text-white/60">
-            <span>HSN / SAC: {company.sacCode} — {company.sacDescription}</span>
+            <span>{company.legalName}</span>
             <span style={{ color: "#FFB3A3" }}>{company.contact.website}</span>
             <span>This is a computer-generated invoice</span>
           </div>
