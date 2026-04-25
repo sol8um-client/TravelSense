@@ -1566,6 +1566,138 @@ html {
   display: inline-block;
 }
 
+/* ═══ DOCUMENT EDITOR CONTROLS ═══════════════════════════════════
+   Inline delete buttons + add buttons + tap-friendly on mobile
+   Always visible (subtle), brighter on hover/focus, hidden on print
+*/
+
+/* Subtle "×" delete chip that hovers next to a section.
+   Always semi-visible so mobile users see they can delete (no hover). */
+.doc-del {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  width: 22px;
+  border-radius: 9999px;
+  background: rgba(196, 50, 74, 0.08);
+  color: rgba(196, 50, 74, 0.55);
+  border: 1px solid rgba(196, 50, 74, 0.18);
+  font-family: var(--font-body, "Outfit", sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out-quart, cubic-bezier(0.22,1,0.36,1));
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 5;
+}
+.doc-del:hover,
+.doc-del:focus {
+  background: rgba(196, 50, 74, 0.18);
+  color: #fff;
+  border-color: rgba(196, 50, 74, 0.4);
+  outline: none;
+  transform: scale(1.05);
+}
+.doc-del:active {
+  transform: scale(0.95);
+}
+
+/* Section wrapper that holds a delete chip in its top-right */
+.doc-section {
+  position: relative;
+}
+.doc-section > .doc-del {
+  top: 0;
+  right: -28px;
+}
+
+/* "+ Add ..." link-style button */
+.doc-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body, "Outfit", sans-serif);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgba(196, 50, 74, 0.72);
+  background: rgba(196, 50, 74, 0.06);
+  border: 1px dashed rgba(196, 50, 74, 0.3);
+  border-radius: 9999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.doc-add:hover {
+  background: rgba(196, 50, 74, 0.12);
+  color: #C4324A;
+  border-color: rgba(196, 50, 74, 0.5);
+}
+
+/* Inline controls — small tap-target row below editable elements (mobile-friendly) */
+.doc-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+/* Mobile responsive — A4 page scales to viewport */
+@media (max-width: 900px) {
+  .doc-page {
+    width: 100% !important;
+    max-width: 210mm;
+    min-height: auto !important;
+    margin: 12px auto !important;
+    border-radius: 8px;
+  }
+  .lh-body {
+    padding: 24px 18px !important;
+  }
+  .lh-band {
+    padding: 18px 18px !important;
+  }
+  .lh-footer {
+    padding: 16px 18px 18px !important;
+  }
+  .lh-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .inv-table {
+    font-size: 10.5px !important;
+  }
+  .inv-table th,
+  .inv-table td {
+    padding: 6px 5px !important;
+  }
+  .inv-totals {
+    width: 100% !important;
+  }
+  .doc-section > .doc-del {
+    right: -4px !important;
+    top: -4px !important;
+  }
+  .doc-chrome {
+    padding: 10px 12px !important;
+    flex-wrap: wrap;
+    gap: 8px !important;
+  }
+  .doc-chrome-hint {
+    display: none !important;
+  }
+  .doc-print-btn {
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+  }
+}
+
 /* Print rules — print only the .doc-page, hide chrome, A4 size */
 @media print {
   @page {
@@ -1579,6 +1711,9 @@ html {
   }
   .doc-chrome,
   .doc-no-print,
+  .doc-del,
+  .doc-add,
+  .doc-controls,
   nav,
   footer:not(.lh-footer) {
     display: none !important;
