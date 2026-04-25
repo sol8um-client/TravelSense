@@ -127,7 +127,7 @@ const milestones = [
     year: "2010",
     title: "The Journey Begins",
     description:
-      "Jayshree Lakhotiya founded V9 Travels in Pune, driven by a passion for creating unforgettable travel experiences for families and working professionals.",
+      "Jayshree Lakhotiya started a boutique travel practice in Maharashtra, driven by a passion for creating unforgettable travel experiences for families and working professionals.",
     icon: Rocket,
   },
   {
@@ -148,14 +148,14 @@ const milestones = [
     year: "2022",
     title: "500 Trips Milestone",
     description:
-      "Surpassed 500 curated trips and 2,000 happy travelers. Built a loyal community of repeat clients who trust V9 Travels with every family vacation and group expedition.",
+      "Surpassed 500 curated trips and 2,000 happy travellers. Built a loyal community of repeat clients who trust the team with every family vacation and group expedition.",
     icon: Plane,
   },
   {
     year: "2026",
     title: "TravelSense Goes Digital",
     description:
-      "Launched TravelSense as the tech-enabled evolution of V9 Travels. A modern digital platform combining 15+ years of expertise with AI-powered personalization.",
+      "Incorporated TravelSense Private Limited and launched the digital platform — combining 15+ years of curation expertise with AI-powered personalisation and 24/7 human support.",
     icon: Monitor,
   },
 ]
@@ -205,13 +205,13 @@ export default function AboutContent() {
                   memories that last a lifetime.
                 </p>
                 <p>
-                  In 2010, she turned that passion into V9 Travels — a boutique
-                  travel company built on a simple promise: every trip should
-                  feel personal. While the industry pushed cookie-cutter
-                  packages, Jayshree spent hours understanding what each
-                  traveler truly wanted. A honeymooning couple looking for
-                  seclusion in Bali. A school group eager to explore European
-                  history. A family of cricket fans chasing the World Cup across
+                  In 2010, she turned that passion into a boutique travel
+                  practice built on a simple promise: every trip should feel
+                  personal. While the industry pushed cookie-cutter packages,
+                  Jayshree spent hours understanding what each traveller truly
+                  wanted. A honeymooning couple looking for seclusion in Bali.
+                  A school group eager to explore European history. A family of
+                  cricket fans chasing the World Cup across
                   continents. Each trip was different, and that was the point.
                 </p>
                 <p>

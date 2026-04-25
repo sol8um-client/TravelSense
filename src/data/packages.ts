@@ -2486,7 +2486,7 @@ export const packages: Package[] = [
     destinationSlug: "kashmir",
     category: "leisure",
     description:
-      "A complete North India experience for families — 9 nights combining the sacred Vaishno Devi pilgrimage at Katra, the classic Srinagar-Gulmarg-Pahalgam circuit, a Dal Lake houseboat stay, and two nights in the remote and stunning Gurez Valley with Tulail. Designed for multi-generational families and devout travellers who want the blessing of Mata Vaishno Devi alongside Kashmir's grandeur. Based on an actual V9 Travels family itinerary.",
+      "A complete North India experience for families — 9 nights combining the sacred Vaishno Devi pilgrimage at Katra, the classic Srinagar-Gulmarg-Pahalgam circuit, a Dal Lake houseboat stay, and two nights in the remote and stunning Gurez Valley with Tulail. Designed for multi-generational families and devout travellers who want the blessing of Mata Vaishno Devi alongside Kashmir's grandeur. Based on an actual TravelSense family itinerary.",
     heroImage: "/images/generated/kashmir-hero.webp",
     images: [
       "/images/generated/kashmir-hero.webp",
@@ -2554,7 +2554,7 @@ export const packages: Package[] = [
     destinationSlug: "kashmir",
     category: "leisure",
     description:
-      "The perfect 7-day family Kashmir — curated for couples, families with children, and first-time Kashmir travellers. Three nights in Srinagar with Mughal Gardens and Shikara rides, plus Dhoodpathri's hidden valley, Sonmarg's meadows, and two relaxed nights in Pahalgam's alpine setting. Premium 3-star properties with all transfers and meals included. Based on an actual V9 Travels family itinerary.",
+      "The perfect 7-day family Kashmir — curated for couples, families with children, and first-time Kashmir travellers. Three nights in Srinagar with Mughal Gardens and Shikara rides, plus Dhoodpathri's hidden valley, Sonmarg's meadows, and two relaxed nights in Pahalgam's alpine setting. Premium 3-star properties with all transfers and meals included. Based on an actual TravelSense family itinerary.",
     heroImage: "/images/generated/kashmir-day-5-gulmarg-gondola.webp",
     images: [
       "/images/generated/kashmir-hero.webp",

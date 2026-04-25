@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { Printer, ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import { company } from "@/config/company"
 
 export default function LetterheadPage() {
   const [today, setToday] = useState("")
@@ -54,25 +55,19 @@ export default function LetterheadPage() {
         <div className="lh-band">
           <div className="flex items-start justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div
-                className="logo-embossed flex h-16 w-16 items-center justify-center rounded-xl"
-                style={{
-                  background: "linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                }}
-              >
-                <Image
-                  src="/images/brand/logo-blue-bg.png"
-                  alt="TravelSense"
-                  width={56}
-                  height={56}
-                  className="h-12 w-auto"
-                  unoptimized
-                />
-              </div>
+              {/* Logo — clean container with proper aspect ratio (no embossed crop) */}
+              <Image
+                src="/images/brand/logo-final-nobg.png"
+                alt="TravelSense"
+                width={220}
+                height={70}
+                priority
+                unoptimized
+                style={{ height: 64, width: "auto", objectFit: "contain" }}
+              />
               <div>
                 <div
-                  className="font-heading text-[28px] font-medium tracking-[-0.015em] leading-none"
+                  className="font-heading text-[26px] font-medium tracking-[-0.015em] leading-none"
                   style={{ fontVariationSettings: "'opsz' 144" }}
                 >
                   Travel
@@ -81,16 +76,10 @@ export default function LetterheadPage() {
                   </em>
                 </div>
                 <div
-                  className="mt-1 font-script"
-                  style={{ fontSize: 17, color: "#FFB3A3", lineHeight: 1 }}
-                >
-                  sense the world.
-                </div>
-                <div
                   className="mt-2 text-[9px] font-body font-semibold tracking-[0.22em] uppercase"
                   style={{ color: "rgba(255,255,255,0.55)" }}
                 >
-                  By V9 Travel Solutions
+                  Private Limited
                 </div>
               </div>
             </div>
@@ -199,7 +188,7 @@ export default function LetterheadPage() {
                 contentEditable
                 suppressContentEditableWarning
               >
-                Jayshree Lakhotiya
+                {company.founder.name}
               </div>
               <div
                 className="text-[10.5px] font-body font-semibold tracking-[0.18em] uppercase mt-1"
@@ -207,51 +196,48 @@ export default function LetterheadPage() {
                 contentEditable
                 suppressContentEditableWarning
               >
-                Founder · TravelSense (V9 Travel Solutions)
+                {company.founder.title} · {company.legalName}
               </div>
             </div>
           </div>
         </div>
 
-        {/* Footer band */}
+        {/* Footer band — single registered office, contact, CIN/PAN */}
         <footer className="lh-footer">
           <div className="lh-footer-grid">
             <div>
-              <div className="lh-footer-label">Head Office</div>
+              <div className="lh-footer-label">Registered Office</div>
               <div className="lh-footer-value">
-                V9 Travel Solutions<br />
-                Rangar Lane, Sangamner<br />
-                Maharashtra 422605, India
-              </div>
-            </div>
-            <div>
-              <div className="lh-footer-label">Pune Branch</div>
-              <div className="lh-footer-value">
-                Rajgruhi Business Hub, 1st floor<br />
-                Above Hotel Gokul, Gangadham — ISKCON Road<br />
-                Pune, Maharashtra
+                {company.legalName}
+                <br />
+                {company.office.block.map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
               </div>
             </div>
             <div>
               <div className="lh-footer-label">Reach Us</div>
               <div className="lh-footer-value">
-                +91 80874 53658<br />
-                +91 72493 19150<br />
-                hello@travelsense.in<br />
-                travelsense.co.in
+                {company.contact.phone}
+                <br />
+                {company.contact.email}
+                <br />
+                {company.contact.website}
               </div>
             </div>
-          </div>
-          <div
-            className="mt-5 pt-4 flex items-center justify-between gap-4 text-[9.5px] tracking-[0.18em] uppercase"
-            style={{
-              borderTop: "1px solid rgba(255,255,255,0.08)",
-              color: "rgba(255,255,255,0.5)",
-            }}
-          >
-            <span>GSTIN: [27XXXXXXXXXXXZ5]</span>
-            <span style={{ color: "#FFB3A3" }}>Sense the world.</span>
-            <span>PAN: [AAACVXXXXXX]</span>
+            <div>
+              <div className="lh-footer-label">Statutory</div>
+              <div className="lh-footer-value">
+                CIN: {company.cin}
+                <br />
+                PAN: {company.pan}
+                <br />
+                TAN: {company.tan}
+              </div>
+            </div>
           </div>
         </footer>
       </div>

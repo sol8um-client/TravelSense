@@ -9,7 +9,7 @@ const faqs = [
   {
     question: "What is TravelSense?",
     answer:
-      "TravelSense is a curated travel platform by V9 Travels, based in Pune. We specialize in crafting personalized leisure, adventure, educational, and sports travel experiences for individuals, families, and corporate groups across India and internationally.",
+      "TravelSense is a curated travel platform based in Sangamner, Maharashtra. We specialize in crafting personalized leisure, adventure, educational, and sports travel experiences for individuals, families, and corporate groups across India and internationally.",
     category: "General",
   },
   {

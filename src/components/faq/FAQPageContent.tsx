@@ -95,7 +95,7 @@ export default function FAQPageContent({ faqs }: FAQPageContentProps) {
             </Button>
             <Button asChild variant="outline" size="lg">
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/918087453658"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -145,7 +145,7 @@ function TestimonialCard({
       {/* WhatsApp verify link */}
       {t.verified && (
         <a
-          href="https://wa.me/919876543210?text=I%20want%20to%20verify%20a%20testimonial"
+          href="https://wa.me/918087453658?text=I%20want%20to%20verify%20a%20testimonial"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-3 inline-flex items-center gap-1.5 text-xs text-muted-foreground/70 transition-colors hover:text-green-600"

@@ -22,14 +22,14 @@ export const siteConfig = {
   authors: [{ name: "TravelSense" }],
   founder: {
     name: "Jayshree Lakhotiya",
-    company: "TravelSense",
-    location: "Pune, India",
+    company: "TravelSense Private Limited",
+    location: "Sangamner, Maharashtra, India",
   },
   contact: {
-    email: "hello@travelsense.in",
-    phone: "+91-9876543210",
-    whatsapp: "+91-9876543210",
-    address: "Pune, Maharashtra, India",
+    email: "travelsensepvtltd@gmail.com",
+    phone: "+91 80874 53658",
+    whatsapp: "+918087453658",
+    address: "Sangamner, Ahmednagar, Maharashtra 422605, India",
   },
   social: {
     instagram: "https://instagram.com/travelsense.in",

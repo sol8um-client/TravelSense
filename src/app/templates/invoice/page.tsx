@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Printer, ArrowLeft, Plus, Trash2 } from "lucide-react"
+import { company } from "@/config/company"
 
 interface LineItem {
   id: number
@@ -46,7 +47,7 @@ export default function InvoicePage() {
       id: 1,
       description:
         "Kashmir Classic Family — 7D/6N\nSrinagar (3N) · Pahalgam (2N) · Sonmarg (1N)\nTravel: 12 Mar 2026 — 18 Mar 2026",
-      hsn: "998552",
+      hsn: company.sacCode,
       pax: 4,
       rate: 27500,
     },
@@ -81,7 +82,7 @@ export default function InvoicePage() {
   const addItem = () => {
     setItems((prev) => [
       ...prev,
-      { id: Date.now(), description: "[Package name + dates + route]", hsn: "998552", pax: 1, rate: 0 },
+      { id: Date.now(), description: "[Package name + dates + route]", hsn: company.sacCode, pax: 1, rate: 0 },
     ])
   }
   const removeItem = (id: number) => {
@@ -128,25 +129,18 @@ export default function InvoicePage() {
         <div className="lh-band">
           <div className="flex items-start justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div
-                className="logo-embossed flex h-16 w-16 items-center justify-center rounded-xl"
-                style={{
-                  background: "linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                }}
-              >
-                <Image
-                  src="/images/brand/logo-blue-bg.png"
-                  alt="TravelSense"
-                  width={56}
-                  height={56}
-                  className="h-12 w-auto"
-                  unoptimized
-                />
-              </div>
+              <Image
+                src="/images/brand/logo-final-nobg.png"
+                alt="TravelSense"
+                width={220}
+                height={70}
+                priority
+                unoptimized
+                style={{ height: 64, width: "auto", objectFit: "contain" }}
+              />
               <div>
                 <div
-                  className="font-heading text-[26px] font-medium tracking-[-0.015em] leading-none"
+                  className="font-heading text-[24px] font-medium tracking-[-0.015em] leading-none"
                   style={{ fontVariationSettings: "'opsz' 144" }}
                 >
                   Travel
@@ -155,16 +149,10 @@ export default function InvoicePage() {
                   </em>
                 </div>
                 <div
-                  className="mt-1 font-script"
-                  style={{ fontSize: 16, color: "#FFB3A3", lineHeight: 1 }}
-                >
-                  sense the world.
-                </div>
-                <div
                   className="mt-2 text-[8.5px] font-body font-semibold tracking-[0.22em] uppercase"
                   style={{ color: "rgba(255,255,255,0.55)" }}
                 >
-                  By V9 Travel Solutions
+                  Private Limited
                 </div>
               </div>
             </div>
@@ -207,22 +195,26 @@ export default function InvoicePage() {
               </div>
               <div className="text-[11.5px] leading-[1.6]">
                 <div className="font-heading font-medium" style={{ fontSize: 14 }}>
-                  V9 Travel Solutions
+                  {company.legalName}
                 </div>
                 <div className="text-[#5A6478]">
-                  Rangar Lane, Sangamner<br />
-                  Maharashtra 422605, India
+                  {company.office.block.map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
                 </div>
                 <div className="mt-2 text-[10.5px]">
-                  <span className="font-semibold tracking-[0.12em] uppercase text-[#5A6478]">GSTIN: </span>
-                  <span contentEditable suppressContentEditableWarning>27XXXXXXXXXXXZ5</span>
+                  <span className="font-semibold tracking-[0.12em] uppercase text-[#5A6478]">CIN: </span>
+                  <span>{company.cin}</span>
                 </div>
                 <div className="text-[10.5px]">
                   <span className="font-semibold tracking-[0.12em] uppercase text-[#5A6478]">PAN: </span>
-                  <span contentEditable suppressContentEditableWarning>AAACVXXXXXX</span>
+                  <span>{company.pan}</span>
                 </div>
                 <div className="mt-1.5 text-[10.5px] text-[#5A6478]">
-                  hello@travelsense.in · +91 80874 53658
+                  {company.contact.email} · {company.contact.phone}
                 </div>
               </div>
             </div>
@@ -256,12 +248,6 @@ export default function InvoicePage() {
                   <span className="font-semibold tracking-[0.12em] uppercase text-[#5A6478] text-[10.5px]">Email: </span>
                   <span className="text-[10.5px]" contentEditable suppressContentEditableWarning>
                     [client@email.com]
-                  </span>
-                </div>
-                <div>
-                  <span className="font-semibold tracking-[0.12em] uppercase text-[#5A6478] text-[10.5px]">GSTIN: </span>
-                  <span className="text-[10.5px]" contentEditable suppressContentEditableWarning>
-                    [if applicable]
                   </span>
                 </div>
                 <div className="mt-1">
@@ -402,23 +388,23 @@ export default function InvoicePage() {
               <div className="text-[11px] leading-[1.6]">
                 <div>
                   <span className="font-semibold text-[#5A6478]">Account Name: </span>
-                  <span contentEditable suppressContentEditableWarning>V9 Travel Solutions</span>
+                  <span>{company.bank.accountName}</span>
                 </div>
                 <div>
                   <span className="font-semibold text-[#5A6478]">Bank: </span>
-                  <span contentEditable suppressContentEditableWarning>HDFC Bank</span>
+                  <span>{company.bank.bankName}</span>
                 </div>
                 <div>
                   <span className="font-semibold text-[#5A6478]">A/C No: </span>
-                  <span contentEditable suppressContentEditableWarning>50200059511992</span>
+                  <span>{company.bank.accountNumber}</span>
                 </div>
                 <div>
                   <span className="font-semibold text-[#5A6478]">IFSC: </span>
-                  <span contentEditable suppressContentEditableWarning>HDFC0001771</span>
+                  <span>{company.bank.ifsc}</span>
                 </div>
                 <div className="mt-1">
                   <span className="font-semibold text-[#5A6478]">UPI: </span>
-                  <span contentEditable suppressContentEditableWarning>v9travels@hdfcbank</span>
+                  <span>{company.bank.upi}</span>
                 </div>
               </div>
             </div>
@@ -442,12 +428,12 @@ export default function InvoicePage() {
           <div className="mt-9 flex items-end justify-between">
             <div className="text-[10.5px] text-[#5A6478] italic max-w-[55%]">
               We sincerely thank you for choosing TravelSense. For any questions about this invoice,
-              please reply to hello@travelsense.in within 7 days.
+              please reply to {company.contact.email} within 7 days.
             </div>
             <div className="text-right">
               <div className="inv-stamp">authorised.</div>
               <div className="border-t border-[#0A1425]/30 mt-1 pt-1.5 text-[10.5px] tracking-[0.18em] uppercase font-semibold text-[#0A1425]">
-                For V9 Travel Solutions
+                For {company.signOffName}
               </div>
             </div>
           </div>
@@ -456,8 +442,8 @@ export default function InvoicePage() {
         {/* Footer */}
         <footer className="lh-footer" style={{ padding: "16px 36px 18px" }}>
           <div className="flex items-center justify-between gap-4 text-[9.5px] tracking-[0.18em] uppercase text-white/60">
-            <span>HSN / SAC: 998552 — Travel Agency Services</span>
-            <span style={{ color: "#FFB3A3" }}>travelsense.co.in</span>
+            <span>HSN / SAC: {company.sacCode} — {company.sacDescription}</span>
+            <span style={{ color: "#FFB3A3" }}>{company.contact.website}</span>
             <span>This is a computer-generated invoice</span>
           </div>
         </footer>
