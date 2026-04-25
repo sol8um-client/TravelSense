@@ -246,9 +246,14 @@ export default function LetterheadPage() {
             </div>
           )}
 
-          {/* Closing */}
+          {/* Closing — pushed to bottom of body via marginTop: auto so the
+              signature naturally sits just above the footer (like a real
+              signed letter), not floating mid-page after the paragraphs. */}
           {sections.closing && (
-            <div className="doc-section mt-10 text-[12.5px] leading-[1.7]">
+            <div
+              className="doc-section text-[12.5px] leading-[1.7]"
+              style={{ marginTop: "auto", paddingTop: 24 }}
+            >
               <button
                 onClick={() => hide("closing")}
                 className="doc-del"
@@ -258,7 +263,7 @@ export default function LetterheadPage() {
                 ×
               </button>
               <p {...ed}>Warm regards,</p>
-              <div className="mt-12">
+              <div className="mt-10">
                 <div
                   className="font-heading font-medium tracking-[-0.01em]"
                   style={{ fontSize: 16 }}
