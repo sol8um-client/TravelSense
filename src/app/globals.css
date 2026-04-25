@@ -1821,46 +1821,92 @@ html {
     min-height: auto !important;
     margin: 0 !important;
   }
-  /* Page sizing in print:
-     - min-height: 297mm so a SHORT letter fills exactly one A4 sheet
-       with the footer pinned to the bottom.
-     - No fixed height / no overflow: hidden, so a LONG invoice can grow
-       past A4 and flow cleanly to a second page (footer lands at end of
-       the last page, body never overlaps footer).
-     This is the balance: short docs = single sheet, long docs = clean
-     multi-page with no content overlap. */
+  /* Page sizing in print: lock to A4 with overflow hidden + aggressive
+     compression so all common letterheads and invoices fit on one page.
+     If content still wouldn't fit, the bottom is clipped (rare — would
+     require both bank+payment+signature+12+ line items). */
   .doc-page {
     width: 210mm !important;
+    height: 297mm !important;
     min-height: 297mm !important;
-    height: auto !important;
-    max-height: none !important;
+    max-height: 297mm !important;
     margin: 0 !important;
     padding: 0 !important;
     box-shadow: none !important;
     border-radius: 0 !important;
-    overflow: visible !important;
+    overflow: hidden !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
-  }
-  /* Tighten footer padding on print so it always fits inside A4 */
-  .lh-footer {
-    padding: 14px 36px 16px !important;
+    page-break-after: avoid !important;
     page-break-inside: avoid !important;
+    break-after: avoid-page !important;
     break-inside: avoid-page !important;
+    font-size: 11px !important;
   }
+  /* COMPRESSED PADDING FOR PRINT — squeezes ~25mm of vertical room
+     compared to the comfortable on-screen spacing, so a typical invoice
+     with 1-3 line items + bank + terms + signature fits in A4. */
   .lh-band {
-    padding: 22px 36px !important;
+    padding: 16px 32px !important;
     page-break-inside: avoid !important;
     break-inside: avoid-page !important;
   }
   .lh-body {
-    padding: 24px 44px !important;
+    padding: 18px 32px !important;
     min-height: 0 !important;
     flex: 1 1 auto !important;
+    overflow: hidden !important;
   }
-  /* Keep totals + bank + payment + signature blocks together — never
-     break a tax row or signature stamp across two pages. */
+  .lh-footer {
+    padding: 10px 32px 12px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid-page !important;
+  }
+
+  /* CRITICAL: force responsive grids to be 2-col on print.
+     Browsers sometimes render print at the screen viewport width, so
+     md:grid-cols-2 may not activate. Force it explicitly. */
+  .lh-body .grid.md\:grid-cols-2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 18px !important;
+  }
+  /* And the bank/payment block which uses md:grid-cols-2 too */
+  .lh-body .md\:grid-cols-2 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Tighter spacing on the invoice table */
+  .inv-table {
+    font-size: 10.5px !important;
+    margin-top: 12px !important;
+  }
+  .inv-table th {
+    padding: 7px 8px !important;
+    font-size: 9.5px !important;
+  }
+  .inv-table td {
+    padding: 7px 8px !important;
+  }
+  .inv-totals {
+    margin-top: 10px !important;
+    font-size: 11px !important;
+  }
+  .inv-totals-row {
+    padding: 5px 10px !important;
+  }
+  .inv-totals-row.grand {
+    padding: 9px 12px !important;
+    font-size: 14px !important;
+  }
+
+  /* Reduce gaps between major body sections */
+  .lh-body > .mt-7 { margin-top: 16px !important; }
+  .lh-body > .mt-9 { margin-top: 20px !important; }
+  .lh-body > .mt-10 { margin-top: 22px !important; }
+
+  /* Page break safety — never split a totals row, tax row, or section */
   .inv-totals,
   .inv-totals-row,
   .doc-section {
