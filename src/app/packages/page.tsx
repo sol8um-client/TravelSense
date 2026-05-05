@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/shared/JsonLd"
 import { PackageFilters } from "@/components/packages/PackageFilters"
 import type { PackageCardData } from "@/components/packages/PackageCard"
 import { packages } from "@/data/packages"
+import { destinations } from "@/data/destinations"
 
 export const metadata = generatePageMetadata({
   title: "Travel Packages | TravelSense",
@@ -16,6 +17,11 @@ export const metadata = generatePageMetadata({
 /* ─── Map static data to PackageCardData ─────────────────────────────────── */
 
 function getPackageCards(): PackageCardData[] {
+  // Build a slug -> region lookup for fast region resolution
+  const regionBySlug = new Map<string, string>(
+    destinations.map((d) => [d.slug, d.region])
+  )
+
   return packages.map((p, i) => ({
     _id: `pkg-${i + 1}`,
     title: p.title,
@@ -32,7 +38,7 @@ function getPackageCards(): PackageCardData[] {
     destination: {
       name: p.destinationName,
       slug: p.destinationSlug,
-      region: undefined,
+      region: regionBySlug.get(p.destinationSlug) ?? undefined,
     },
   }))
 }

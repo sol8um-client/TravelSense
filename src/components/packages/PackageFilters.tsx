@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useCallback } from "react"
 import { motion } from "framer-motion"
-import { Search, SlidersHorizontal, X, ChevronDown } from "lucide-react"
+import { Search, SlidersHorizontal, X, ChevronDown, Plane, MapPin } from "lucide-react"
 import { cn, formatCurrency } from "@/lib/utils"
 import {
   SORT_OPTIONS,
@@ -19,7 +19,13 @@ interface PackageFiltersProps {
   packages: PackageCardData[]
 }
 
+type RegionScope = "all" | "domestic" | "international"
+
+const isInternational = (region?: string) =>
+  region?.toLowerCase() === "international"
+
 export function PackageFilters({ packages }: PackageFiltersProps) {
+  const [regionScope, setRegionScope] = useState<RegionScope>("all")
   const [searchQuery, setSearchQuery] = useState("")
   const [activeCategory, setActiveCategory] = useState("")
   const [activeDuration, setActiveDuration] = useState("")
@@ -28,8 +34,26 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
   const [currentPage, setCurrentPage] = useState(1)
   const [showFilters, setShowFilters] = useState(false)
 
+  // Pre-compute counts for the toggle pills
+  const counts = useMemo(() => {
+    let domestic = 0
+    let international = 0
+    for (const p of packages) {
+      if (isInternational(p.destination?.region)) international++
+      else domestic++
+    }
+    return { all: packages.length, domestic, international }
+  }, [packages])
+
   const filtered = useMemo(() => {
     let result = packages
+
+    // Region scope (Domestic / International)
+    if (regionScope === "domestic") {
+      result = result.filter((p) => !isInternational(p.destination?.region))
+    } else if (regionScope === "international") {
+      result = result.filter((p) => isInternational(p.destination?.region))
+    }
 
     // Search
     if (searchQuery.trim()) {
@@ -89,7 +113,7 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
     })
 
     return result
-  }, [packages, searchQuery, activeCategory, activeDuration, activeDifficulty, sortBy])
+  }, [packages, regionScope, searchQuery, activeCategory, activeDuration, activeDifficulty, sortBy])
 
   // Pagination
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE)
@@ -104,6 +128,7 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
   }, [])
 
   const clearFilters = () => {
+    setRegionScope("all")
     setSearchQuery("")
     setActiveCategory("")
     setActiveDuration("")
@@ -113,10 +138,78 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
   }
 
   const hasActiveFilters =
-    searchQuery || activeCategory || activeDuration || activeDifficulty || sortBy !== "recommended"
+    regionScope !== "all" ||
+    searchQuery ||
+    activeCategory ||
+    activeDuration ||
+    activeDifficulty ||
+    sortBy !== "recommended"
 
   return (
     <div>
+      {/* Domestic / International toggle */}
+      <div className="mb-6 flex justify-center">
+        <div
+          role="tablist"
+          aria-label="Filter packages by region"
+          className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur"
+        >
+          <button
+            role="tab"
+            aria-selected={regionScope === "all"}
+            onClick={() => {
+              setRegionScope("all")
+              setCurrentPage(1)
+            }}
+            className={cn(
+              "rounded-full px-5 py-2.5 text-sm font-medium transition-all",
+              regionScope === "all"
+                ? "bg-[#C4324A] text-white shadow-[0_4px_14px_rgba(196,50,74,0.4)]"
+                : "text-white/60 hover:text-white/80"
+            )}
+          >
+            All
+            <span className="ml-1.5 text-xs opacity-70">({counts.all})</span>
+          </button>
+          <button
+            role="tab"
+            aria-selected={regionScope === "domestic"}
+            onClick={() => {
+              setRegionScope("domestic")
+              setCurrentPage(1)
+            }}
+            className={cn(
+              "flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all",
+              regionScope === "domestic"
+                ? "bg-[#C4324A] text-white shadow-[0_4px_14px_rgba(196,50,74,0.4)]"
+                : "text-white/60 hover:text-white/80"
+            )}
+          >
+            <MapPin className="h-3.5 w-3.5" />
+            Domestic
+            <span className="text-xs opacity-70">({counts.domestic})</span>
+          </button>
+          <button
+            role="tab"
+            aria-selected={regionScope === "international"}
+            onClick={() => {
+              setRegionScope("international")
+              setCurrentPage(1)
+            }}
+            className={cn(
+              "flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all",
+              regionScope === "international"
+                ? "bg-[#C4324A] text-white shadow-[0_4px_14px_rgba(196,50,74,0.4)]"
+                : "text-white/60 hover:text-white/80"
+            )}
+          >
+            <Plane className="h-3.5 w-3.5" />
+            International
+            <span className="text-xs opacity-70">({counts.international})</span>
+          </button>
+        </div>
+      </div>
+
       {/* Search + toggle */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
         <div className="relative flex-1">
