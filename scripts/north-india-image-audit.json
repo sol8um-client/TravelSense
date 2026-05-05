@@ -1,0 +1,953 @@
+{
+  "destinations": {
+    "kashmir": {
+      "name": "Kashmir",
+      "hero": "/images/generated/kashmir-hero.webp",
+      "gallery": [
+        "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1609837644286-48fa3e6cd3bf?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1624466440418-ba5c78826a9b?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1566837945700-30057527ade0?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1587922546307-776227941871?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=800&h=600&fit=crop"
+      ]
+    },
+    "himachal-pradesh": {
+      "name": "Himachal Pradesh",
+      "hero": "/images/generated/himachal-pradesh-hero.webp",
+      "gallery": [
+        "https://images.unsplash.com/photo-1544735716-ea9ef790fcfd?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1609920658906-8223bd289001?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1626621341522-e1a5a4a5b086?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1580289234369-3bd2e6d3b546?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1581791538302-03537b9c97bf?w=800&h=600&fit=crop"
+      ]
+    },
+    "rajasthan": {
+      "name": "Rajasthan",
+      "hero": "/images/generated/rajasthan-hero.webp",
+      "gallery": [
+        "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1587135941948-670b381f08ce?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1524309307259-7c7d4bf28a1e?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1609947017136-9dab4ab0dbc0?w=800&h=600&fit=crop"
+      ]
+    },
+    "uttarakhand": {
+      "name": "Uttarakhand",
+      "hero": "/images/generated/uttarakhand-hero.webp",
+      "gallery": [
+        "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&h=600&fit=crop"
+      ]
+    }
+  },
+  "packages": [
+    {
+      "slug": "kashmir-essence-srinagar-pahalgam",
+      "title": "Kashmir Essence \u2014 Srinagar, Gulmarg, Sonmarg & Pahalgam",
+      "destinationSlug": "kashmir",
+      "hero": "/images/generated/kashmir-hero.webp",
+      "images": [
+        "/images/generated/kashmir-hero.webp",
+        "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1596786377830-1966f6d4c2e3?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1625057843138-bdcfea5a1482?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Arrival Srinagar \u2014 Houseboat & Shikara",
+          "image": "/images/generated/kashmir-day-1-arrive-srinagar.webp"
+        },
+        {
+          "day": 2,
+          "title": "Day Trip to Gulmarg \u2014 Gondola Phase 1",
+          "image": "/images/generated/kashmir-day-5-gulmarg-gondola.webp"
+        },
+        {
+          "day": 3,
+          "title": "Day Trip to Sonmarg \u2014 Thajiwas Glacier",
+          "image": "https://images.unsplash.com/photo-1596786377830-1966f6d4c2e3?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Srinagar Local \u2014 Mughal Gardens & Shankaracharya",
+          "image": "https://images.unsplash.com/photo-1609766934819-2085df5e3160?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 5,
+          "title": "Drive Srinagar to Pahalgam \u2014 Saffron & Lidder",
+          "image": "https://images.unsplash.com/photo-1625057843138-bdcfea5a1482?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 6,
+          "title": "Pahalgam Valleys \u2014 Betaab, Aru & Chandanwari",
+          "image": "https://images.unsplash.com/photo-1620983550487-f06d0e3aee3e?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 7,
+          "title": "Pahalgam to Srinagar Airport \u2014 Departure",
+          "image": "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=600&h=400&fit=crop"
+        }
+      ]
+    },
+    {
+      "slug": "kashmir-grand-jammu-srinagar",
+      "title": "Kashmir Grand \u2014 Jammu, Katra, Pahalgam, Gulmarg, Sonmarg & Srinagar",
+      "destinationSlug": "kashmir",
+      "hero": "/images/generated/kashmir-hero.webp",
+      "images": [
+        "/images/generated/kashmir-hero.webp",
+        "https://images.unsplash.com/photo-1582393728964-0a1f00aabc47?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1625057843138-bdcfea5a1482?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Arrival Jammu \u2014 Drive to Katra",
+          "image": "https://images.unsplash.com/photo-1582393728964-0a1f00aabc47?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 2,
+          "title": "Vaishno Devi Yatra",
+          "image": "https://images.unsplash.com/photo-1582393728964-0a1f00aabc47?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 3,
+          "title": "Katra to Pahalgam via Jawahar Tunnel",
+          "image": "https://images.unsplash.com/photo-1625057843138-bdcfea5a1482?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Pahalgam Valleys \u2014 Betaab, Aru, Chandanwari",
+          "image": "https://images.unsplash.com/photo-1620983550487-f06d0e3aee3e?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 5,
+          "title": "Pahalgam to Gulmarg via Srinagar",
+          "image": "/images/generated/kashmir-day-5-gulmarg-gondola.webp"
+        },
+        {
+          "day": 6,
+          "title": "Gulmarg Gondola \u2014 Phase 1 & 2 \u2014 Drive to Sonmarg",
+          "image": "/images/generated/kashmir-day-5-gulmarg-gondola.webp"
+        },
+        {
+          "day": 7,
+          "title": "Sonmarg Local \u2014 Thajiwas Glacier \u2014 Drive to Srinagar",
+          "image": "https://images.unsplash.com/photo-1596786377830-1966f6d4c2e3?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 8,
+          "title": "Srinagar Local \u2014 Mughal Gardens & Old City",
+          "image": "https://images.unsplash.com/photo-1609766934819-2085df5e3160?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 9,
+          "title": "Departure from Srinagar",
+          "image": "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=600&h=400&fit=crop"
+        }
+      ]
+    },
+    {
+      "slug": "kashmir-offbeat-gurez-sinthan",
+      "title": "Kashmir Offbeat with Gurez Valley & Sinthan Top",
+      "destinationSlug": "kashmir",
+      "hero": "/images/generated/kashmir-hero.webp",
+      "images": [
+        "/images/generated/kashmir-hero.webp",
+        "https://images.unsplash.com/photo-1566837945700-30057527ade0?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1575986767340-5d17ae767ab0?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Arrival Srinagar \u2014 Houseboat",
+          "image": "/images/generated/kashmir-day-1-arrive-srinagar.webp"
+        },
+        {
+          "day": 2,
+          "title": "Day Trip Gulmarg \u2014 Return Srinagar",
+          "image": "/images/generated/kashmir-day-5-gulmarg-gondola.webp"
+        },
+        {
+          "day": 3,
+          "title": "Day Trip Sonmarg \u2014 Return Srinagar",
+          "image": "https://images.unsplash.com/photo-1596786377830-1966f6d4c2e3?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Doodhpathri Day Trip + Local Srinagar",
+          "image": "https://images.unsplash.com/photo-1575986767340-5d17ae767ab0?w=600&h=600&fit=crop"
+        },
+        {
+          "day": 5,
+          "title": "Drive to Gurez Valley via Razdan Pass",
+          "image": "https://images.unsplash.com/photo-1566837945700-30057527ade0?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 6,
+          "title": "Gurez Full Day \u2014 Habba Khatoon, Kishanganga, Dawar",
+          "image": "https://images.unsplash.com/photo-1566837945700-30057527ade0?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 7,
+          "title": "Gurez to Srinagar",
+          "image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 8,
+          "title": "Srinagar to Pahalgam",
+          "image": "https://images.unsplash.com/photo-1625057843138-bdcfea5a1482?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 9,
+          "title": "Pahalgam \u2014 Aru, Betaab, Chandanwari",
+          "image": "https://images.unsplash.com/photo-1620983550487-f06d0e3aee3e?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 10,
+          "title": "Sinthan Top Excursion + Pahalgam Local",
+          "image": "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 11,
+          "title": "Drive Pahalgam to Srinagar \u2014 Departure",
+          "image": "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=600&h=400&fit=crop"
+        }
+      ]
+    },
+    {
+      "slug": "himachal-classic-shimla-manali",
+      "title": "Himachal Classic \u2014 Shimla & Manali",
+      "destinationSlug": "himachal-pradesh",
+      "hero": "/images/generated/himachal-pradesh-hero.webp",
+      "images": [
+        "/images/generated/himachal-pradesh-hero.webp",
+        "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Chandigarh Arrival \u2014 Drive to Shimla",
+          "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 2,
+          "title": "Shimla Local \u2014 Mall, Ridge, Jakhu Temple",
+          "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 3,
+          "title": "Drive Shimla to Manali via Kullu Valley",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Manali Local \u2014 Hadimba, Manu, Vashisht",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 5,
+          "title": "Solang Valley & Atal Tunnel / Rohtang Area",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 6,
+          "title": "Manali to Chandigarh \u2014 Long Drive",
+          "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 7,
+          "title": "Chandigarh Departure",
+          "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop"
+        }
+      ]
+    },
+    {
+      "slug": "himachal-grand-circuit",
+      "title": "Himachal Grand Circuit \u2014 Shimla, Manali, Bir Billing, Dharamshala, Dalhousie & Amritsar",
+      "destinationSlug": "himachal-pradesh",
+      "hero": "/images/generated/himachal-pradesh-hero.webp",
+      "images": [
+        "/images/generated/himachal-pradesh-hero.webp",
+        "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Chandigarh Arrival",
+          "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 2,
+          "title": "Drive Chandigarh to Shimla",
+          "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 3,
+          "title": "Shimla Local + Kufri Excursion",
+          "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Drive Shimla to Manali via Kullu",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 5,
+          "title": "Manali Local \u2014 Solang, Hadimba, Mall Road",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 6,
+          "title": "Manali Sightseeing \u2014 Atal Tunnel & Rohtang Area",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 7,
+          "title": "Drive Manali to Bir Billing \u2014 On to Dharamshala",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 8,
+          "title": "Dharamshala \u2014 McLeodganj, Dalai Lama Temple, Bhagsu",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 9,
+          "title": "Drive Dharamshala to Dalhousie \u2014 Khajjiar Excursion",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 10,
+          "title": "Dalhousie to Amritsar \u2014 Golden Temple, Wagah, Departure",
+          "image": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop"
+        }
+      ]
+    },
+    {
+      "slug": "punjab-himachal-heritage",
+      "title": "Punjab + Himachal Heritage \u2014 Amritsar, Dalhousie & Dharamshala",
+      "destinationSlug": "himachal-pradesh",
+      "hero": "/images/generated/himachal-pradesh-hero.webp",
+      "images": [
+        "/images/generated/himachal-pradesh-hero.webp",
+        "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Amritsar Arrival \u2014 Golden Temple, Jallianwala Bagh, Wagah",
+          "image": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 2,
+          "title": "Drive Amritsar to Dalhousie",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 3,
+          "title": "Dalhousie Local \u2014 Khajjiar, Panchpula, Subhash Baoli",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Drive Dalhousie to Dharamshala \u2014 McLeodganj",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 5,
+          "title": "Dharamshala \u2014 Bhagsu Falls, Optional Triund Hike",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 6,
+          "title": "Drive Dharamshala to Amritsar \u2014 Departure",
+          "image": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop"
+        }
+      ]
+    },
+    {
+      "slug": "spiti-valley-adventure",
+      "title": "Spiti Valley Adventure \u2014 The Lost Buddhist Kingdom",
+      "destinationSlug": "himachal-pradesh",
+      "hero": "/images/generated/himachal-pradesh-hero.webp",
+      "images": [
+        "/images/generated/himachal-pradesh-hero.webp",
+        "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Chandigarh Arrival",
+          "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 2,
+          "title": "Drive Chandigarh to Shimla",
+          "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 3,
+          "title": "Drive Shimla to Sangla \u2014 Kinnaur Valley",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Drive Sangla to Kalpa to Tabo",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 5,
+          "title": "Tabo to Dhankar Monastery to Kaza",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 6,
+          "title": "Kaza Local \u2014 Key, Kibber, Langza, Hikkim",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 7,
+          "title": "Drive Kaza to Chandratal \u2014 Camp at the Moon Lake",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 8,
+          "title": "Drive Battal to Manali via Kunzum & Rohtang",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 9,
+          "title": "Drive Manali to Chandigarh \u2014 Departure",
+          "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop"
+        }
+      ]
+    },
+    {
+      "slug": "up-spiritual-triangle",
+      "title": "UP Spiritual Triangle \u2014 Prayagraj, Varanasi & Ayodhya",
+      "destinationSlug": "varanasi-and-uttar-pradesh",
+      "hero": "/images/generated/varanasi-hero.webp",
+      "images": [
+        "/images/generated/varanasi-hero.webp",
+        "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1561361398-a8d2bc8a85f6?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Prayagraj Arrival \u2014 Triveni Sangam, Akshayavat",
+          "image": "https://images.unsplash.com/photo-1561361398-a8d2bc8a85f6?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 2,
+          "title": "Drive Prayagraj to Varanasi",
+          "image": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 3,
+          "title": "Varanasi \u2014 Sunrise Boat, Kashi Vishwanath, Sarnath",
+          "image": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Varanasi \u2014 BHU, Ramnagar Fort, Ganga Aarti",
+          "image": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 5,
+          "title": "Drive Varanasi to Ayodhya \u2014 Ram Mandir Darshan",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 6,
+          "title": "Ayodhya \u2014 Hanuman Garhi, Kanak Bhawan, Saryu",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 7,
+          "title": "Ayodhya Departure",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        }
+      ]
+    },
+    {
+      "slug": "brij-bhoomi-yatra",
+      "title": "Brij Bhoomi Yatra \u2014 Delhi, Mathura, Vrindavan & Agra",
+      "destinationSlug": "varanasi-and-uttar-pradesh",
+      "hero": "/images/generated/varanasi-hero.webp",
+      "images": [
+        "/images/generated/varanasi-hero.webp",
+        "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Delhi Arrival \u2014 Drive Agra \u2014 Taj Mahal Sunset",
+          "image": "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 2,
+          "title": "Agra to Mathura to Vrindavan",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 3,
+          "title": "Vrindavan \u2014 Prem Mandir, Nidhivan, Govardhan Parikrama",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Drive Vrindavan to Delhi \u2014 Departure",
+          "image": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop"
+        }
+      ]
+    },
+    {
+      "slug": "complete-up-heritage-circuit",
+      "title": "Complete UP Heritage Circuit \u2014 Delhi, Agra, Mathura, Jhansi, Prayagraj, Varanasi & Ayodhya",
+      "destinationSlug": "varanasi-and-uttar-pradesh",
+      "hero": "/images/generated/varanasi-hero.webp",
+      "images": [
+        "/images/generated/varanasi-hero.webp",
+        "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Delhi Arrival \u2014 Red Fort & Qutub Minar",
+          "image": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 2,
+          "title": "Drive Delhi to Mathura to Vrindavan",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 3,
+          "title": "Mathura-Vrindavan Local \u2014 Janmabhoomi, Banke Bihari, Prem Mandir",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Drive Vrindavan to Agra \u2014 Taj Mahal Sunset",
+          "image": "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 5,
+          "title": "Agra Fort & Fatehpur Sikri",
+          "image": "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 6,
+          "title": "Drive Agra to Jhansi",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 7,
+          "title": "Jhansi Local + Orchha Excursion",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 8,
+          "title": "Drive Jhansi to Prayagraj",
+          "image": "https://images.unsplash.com/photo-1561361398-a8d2bc8a85f6?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 9,
+          "title": "Prayagraj \u2014 Triveni Sangam, Anand Bhavan, Hanuman Mandir",
+          "image": "https://images.unsplash.com/photo-1561361398-a8d2bc8a85f6?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 10,
+          "title": "Drive Prayagraj to Varanasi",
+          "image": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 11,
+          "title": "Varanasi \u2014 Sunrise Boat, Kashi Vishwanath, Sarnath, Ganga Aarti",
+          "image": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 12,
+          "title": "Drive Varanasi to Ayodhya \u2014 Ram Mandir Darshan & Departure",
+          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop"
+        }
+      ]
+    },
+    {
+      "slug": "rajasthan-royal-heritage",
+      "title": "Rajasthan Royal Heritage \u2014 Jaipur, Ranthambore, Pushkar, Jodhpur & Jaisalmer",
+      "destinationSlug": "rajasthan",
+      "hero": "/images/generated/rajasthan-hero.webp",
+      "images": [
+        "/images/generated/rajasthan-hero.webp",
+        "/images/generated/rajasthan-day-5-jaisalmer-camel-safari.webp",
+        "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Jaipur Arrival \u2014 Hawa Mahal, City Palace, Jantar Mantar",
+          "image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 2,
+          "title": "Jaipur \u2014 Amber Fort, Jaigarh, Nahargarh Sunset",
+          "image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 3,
+          "title": "Drive Jaipur to Ranthambore",
+          "image": "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Ranthambore \u2014 Morning & Evening Safaris",
+          "image": "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 5,
+          "title": "Drive Ranthambore to Pushkar \u2014 Brahma Temple",
+          "image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 6,
+          "title": "Drive Pushkar to Jodhpur \u2014 Mehrangarh Fort",
+          "image": "/images/generated/rajasthan-day-7-udaipur-lake-palace.webp"
+        },
+        {
+          "day": 7,
+          "title": "Drive Jodhpur to Jaisalmer \u2014 Sonar Quila & Patwon ki Haveli",
+          "image": "/images/generated/rajasthan-day-5-jaisalmer-camel-safari.webp"
+        },
+        {
+          "day": 8,
+          "title": "Jaisalmer \u2014 Sam Sand Dunes & Camel Safari",
+          "image": "/images/generated/rajasthan-day-5-jaisalmer-camel-safari.webp"
+        },
+        {
+          "day": 9,
+          "title": "Jaisalmer Departure",
+          "image": "/images/generated/rajasthan-day-5-jaisalmer-camel-safari.webp"
+        }
+      ]
+    },
+    {
+      "slug": "rajasthan-lakes-and-hills",
+      "title": "Rajasthan Lakes & Hills \u2014 Mount Abu, Udaipur, Jawai & Kumbhalgarh",
+      "destinationSlug": "rajasthan",
+      "hero": "/images/generated/rajasthan-hero.webp",
+      "images": [
+        "/images/generated/rajasthan-hero.webp",
+        "/images/generated/rajasthan-day-7-udaipur-lake-palace.webp",
+        "https://images.unsplash.com/photo-1565552645632-d725f8bfc019?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Mount Abu Arrival \u2014 Nakki Lake & Sunset Point",
+          "image": "https://images.unsplash.com/photo-1565552645632-d725f8bfc019?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 2,
+          "title": "Mount Abu \u2014 Dilwara, Achalgarh, Guru Shikhar",
+          "image": "https://images.unsplash.com/photo-1565552645632-d725f8bfc019?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 3,
+          "title": "Drive Mount Abu to Udaipur \u2014 City Palace, Lake Pichola",
+          "image": "/images/generated/rajasthan-day-7-udaipur-lake-palace.webp"
+        },
+        {
+          "day": 4,
+          "title": "Udaipur \u2014 Saheliyon ki Bari, Jagdish Temple, Jag Mandir",
+          "image": "/images/generated/rajasthan-day-7-udaipur-lake-palace.webp"
+        },
+        {
+          "day": 5,
+          "title": "Drive Udaipur to Jawai \u2014 Evening Leopard Safari",
+          "image": "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 6,
+          "title": "Drive Jawai to Kumbhalgarh \u2014 Drive Back Udaipur",
+          "image": "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 7,
+          "title": "Udaipur Departure",
+          "image": "/images/generated/rajasthan-day-7-udaipur-lake-palace.webp"
+        }
+      ]
+    },
+    {
+      "slug": "rajasthan-complete-circuit",
+      "title": "Rajasthan Complete Circuit \u2014 Jaipur, Jodhpur, Jaisalmer, Udaipur & Mount Abu",
+      "destinationSlug": "rajasthan",
+      "hero": "/images/generated/rajasthan-hero.webp",
+      "images": [
+        "/images/generated/rajasthan-hero.webp",
+        "/images/generated/rajasthan-day-5-jaisalmer-camel-safari.webp",
+        "/images/generated/rajasthan-day-7-udaipur-lake-palace.webp",
+        "https://images.unsplash.com/photo-1565552645632-d725f8bfc019?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Jaipur Arrival \u2014 City Palace, Jantar Mantar, Hawa Mahal",
+          "image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 2,
+          "title": "Jaipur \u2014 Amber Fort, Jaigarh, Nahargarh",
+          "image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 3,
+          "title": "Drive Jaipur to Jodhpur",
+          "image": "https://images.unsplash.com/photo-1597074866923-dc0589150bd6?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Jodhpur \u2014 Mehrangarh Fort & Blue City Walk",
+          "image": "/images/generated/rajasthan-day-7-udaipur-lake-palace.webp"
+        },
+        {
+          "day": 5,
+          "title": "Drive Jodhpur to Jaisalmer \u2014 Sonar Quila",
+          "image": "/images/generated/rajasthan-day-5-jaisalmer-camel-safari.webp"
+        },
+        {
+          "day": 6,
+          "title": "Jaisalmer \u2014 Sam Sand Dunes Camel Safari",
+          "image": "/images/generated/rajasthan-day-5-jaisalmer-camel-safari.webp"
+        },
+        {
+          "day": 7,
+          "title": "Drive Jaisalmer to Udaipur",
+          "image": "/images/generated/rajasthan-day-7-udaipur-lake-palace.webp"
+        },
+        {
+          "day": 8,
+          "title": "Udaipur \u2014 City Palace, Lake Pichola, Jag Mandir",
+          "image": "/images/generated/rajasthan-day-7-udaipur-lake-palace.webp"
+        },
+        {
+          "day": 9,
+          "title": "Drive Udaipur to Mount Abu",
+          "image": "https://images.unsplash.com/photo-1565552645632-d725f8bfc019?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 10,
+          "title": "Mount Abu \u2014 Dilwara, Achalgarh, Guru Shikhar",
+          "image": "https://images.unsplash.com/photo-1565552645632-d725f8bfc019?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 11,
+          "title": "Mount Abu Departure",
+          "image": "https://images.unsplash.com/photo-1565552645632-d725f8bfc019?w=600&h=400&fit=crop"
+        }
+      ]
+    },
+    {
+      "slug": "char-dham-by-road",
+      "title": "Char Dham Yatra by Road \u2014 Yamunotri, Gangotri, Kedarnath & Badrinath",
+      "destinationSlug": "uttarakhand",
+      "hero": "/images/generated/uttarakhand-hero.webp",
+      "images": [
+        "/images/generated/uttarakhand-hero.webp",
+        "/images/generated/char-dham-day-4-kedarnath.webp",
+        "/images/generated/uttarakhand-day-2-rishikesh.webp",
+        "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Haridwar / Dehradun Arrival \u2014 Briefing",
+          "image": "/images/generated/uttarakhand-day-2-rishikesh.webp"
+        },
+        {
+          "day": 2,
+          "title": "Drive Haridwar to Barkot",
+          "image": "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 3,
+          "title": "Barkot \u2014 Yamunotri Trek \u2014 Return",
+          "image": "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Drive Barkot to Uttarkashi",
+          "image": "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 5,
+          "title": "Uttarkashi \u2014 Gangotri Darshan \u2014 Return",
+          "image": "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 6,
+          "title": "Drive Uttarkashi to Guptkashi",
+          "image": "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 7,
+          "title": "Guptkashi to Sonprayag \u2014 Kedarnath Trek (or Helicopter)",
+          "image": "/images/generated/char-dham-day-4-kedarnath.webp"
+        },
+        {
+          "day": 8,
+          "title": "Kedarnath \u2014 Trek Down \u2014 Drive Joshimath",
+          "image": "/images/generated/char-dham-day-4-kedarnath.webp"
+        },
+        {
+          "day": 9,
+          "title": "Joshimath \u2014 Badrinath Darshan & Mana Village",
+          "image": "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 10,
+          "title": "Drive Joshimath to Haridwar via Rudraprayag",
+          "image": "/images/generated/uttarakhand-day-2-rishikesh.webp"
+        },
+        {
+          "day": 11,
+          "title": "Haridwar Departure",
+          "image": "/images/generated/uttarakhand-day-2-rishikesh.webp"
+        }
+      ]
+    },
+    {
+      "slug": "uttarakhand-hills-and-pilgrimage",
+      "title": "Uttarakhand Hills & Pilgrimage \u2014 Haridwar, Rishikesh, Kainchi Dham, Nainital, Ranikhet & Corbett",
+      "destinationSlug": "uttarakhand",
+      "hero": "/images/generated/uttarakhand-hero.webp",
+      "images": [
+        "/images/generated/uttarakhand-hero.webp",
+        "/images/generated/uttarakhand-day-2-rishikesh.webp",
+        "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Haridwar Arrival \u2014 Har ki Pauri Ganga Aarti",
+          "image": "/images/generated/uttarakhand-day-2-rishikesh.webp"
+        },
+        {
+          "day": 2,
+          "title": "Drive Haridwar to Rishikesh",
+          "image": "/images/generated/uttarakhand-day-2-rishikesh.webp"
+        },
+        {
+          "day": 3,
+          "title": "Drive Rishikesh to Kainchi Dham",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Drive to Nainital \u2014 Naini Lake & Mall Road",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 5,
+          "title": "Nainital Local \u2014 Snow View, Tiffin Top, Pangot",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 6,
+          "title": "Drive Nainital to Ranikhet",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 7,
+          "title": "Drive Ranikhet to Jim Corbett \u2014 Evening Safari",
+          "image": "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 8,
+          "title": "Drive Corbett to Haridwar \u2014 Departure",
+          "image": "/images/generated/uttarakhand-day-2-rishikesh.webp"
+        }
+      ]
+    },
+    {
+      "slug": "mussoorie-and-garhwal-hills",
+      "title": "Mussoorie & Garhwal Hills \u2014 Dehradun, Mussoorie, Dhanaulti, Kanatal, Tehri & Haridwar",
+      "destinationSlug": "uttarakhand",
+      "hero": "/images/generated/uttarakhand-hero.webp",
+      "images": [
+        "/images/generated/uttarakhand-hero.webp",
+        "/images/generated/uttarakhand-day-2-rishikesh.webp",
+        "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=800&h=600&fit=crop"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Dehradun Arrival \u2014 Drive to Mussoorie",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 2,
+          "title": "Mussoorie \u2014 Gun Hill, Kempty Falls, Lal Tibba",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 3,
+          "title": "Drive Mussoorie to Dhanaulti & Kanatal",
+          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 4,
+          "title": "Kanatal \u2014 Tehri Lake Boating & Watersports",
+          "image": "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=600&h=400&fit=crop"
+        },
+        {
+          "day": 5,
+          "title": "Drive Kanatal to Haridwar",
+          "image": "/images/generated/uttarakhand-day-2-rishikesh.webp"
+        },
+        {
+          "day": 6,
+          "title": "Haridwar \u2014 Mansa Devi, Chandi Devi & Ganga Aarti",
+          "image": "/images/generated/uttarakhand-day-2-rishikesh.webp"
+        },
+        {
+          "day": 7,
+          "title": "Drive Haridwar to Dehradun \u2014 Departure",
+          "image": "/images/generated/uttarakhand-hero.webp"
+        }
+      ]
+    }
+  ]
+}
