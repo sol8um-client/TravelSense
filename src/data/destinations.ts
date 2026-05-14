@@ -2373,6 +2373,351 @@ export const destinations: Destination[] = [
     ],
     featured: false,
   },
+
+  /* ──────────────────────── Bihar ──────────────────────── */
+  {
+    name: "Bihar",
+    slug: "bihar",
+    region: "North India",
+    country: "India",
+    category: "educational",
+    tagline: "The Cradle of Indian Civilisation",
+    description:
+      "Bodh Gaya, where Buddha attained enlightenment under the Bodhi tree; Nalanda, the world's earliest residential university; Rajgir's hot springs and Jain temples — Bihar is where Indian history, philosophy and spirituality all begin.",
+    longDescription:
+      "Bihar may be one of India's quietest tourist circuits, but it is one of the most consequential in world history. Bodh Gaya is the most sacred site in Buddhism — the Mahabodhi Temple complex, a UNESCO World Heritage Site, marks the exact spot where Prince Siddhartha became the Buddha. The descendant Bodhi tree still stands in the temple courtyard, and pilgrims from Sri Lanka, Thailand, Japan, Bhutan, and Myanmar fill the small town year-round.\n\nNalanda, just 90 km away, was the world's first great residential university (5th–12th century CE), with 10,000 students and 2,000 teachers at its peak. The vast brick ruins, now a UNESCO site, stretch over 23 hectares. Nearby Rajgir was the capital of the Magadha kingdom — both the Buddha and Mahavira lived and taught here, and its surrounding hills are dotted with Buddhist stupas, Jain temples, and hot springs.\n\nVaishali — believed to be the world's first republic — and Patna (ancient Pataliputra, capital of the Mauryan empire under Ashoka) complete the picture. For Sikh pilgrims, Takht Sri Patna Sahib marks the birthplace of Guru Gobind Singh. A Buddhist Circuit tour through Bihar is one of the most spiritually rewarding journeys in India.",
+    heroImage: "https://images.unsplash.com/photo-1614366833937-30b3a4a5f97c?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1614366833937-30b3a4a5f97c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1576487248805-cf45f6bcc67f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518398046578-8cca57782e17?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1547222530-c01a0d4ef0bd?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "October to March",
+    weather:
+      "Winters (Oct–Feb) are cool and dry with 10–25 °C — the ideal time. Summers (Mar–Jun) are very hot, often crossing 40 °C. Monsoon (Jul–Sep) brings heavy rain and humidity.",
+    startingPrice: 15000,
+    highlights: [
+      "Mahabodhi Temple at Bodh Gaya (UNESCO)",
+      "Nalanda University Ruins (UNESCO)",
+      "Rajgir Hot Springs & Vishwa Shanti Stupa",
+      "Vaishali — World's First Republic",
+      "Patna Sahib Gurudwara",
+      "Vikramshila Buddhist Monastery",
+    ],
+    thingsToKnow: [
+      "The Buddhist Circuit pilgrimage flows naturally over 5–7 days; allow at least 2 nights at Bodh Gaya.",
+      "Bihar is largely a dry state — alcohol is prohibited and enforcement is strict.",
+      "Patna airport has good connectivity to Delhi, Mumbai, Kolkata; Gaya airport receives international Buddhist pilgrim flights.",
+      "Modest dress is expected at all temple complexes; remove footwear before entry.",
+      "Litti chokha — the traditional roasted wheat-ball dish — is a Bihar must-try.",
+    ],
+    popularExperiences: [
+      {
+        title: "Meditation Under the Bodhi Tree",
+        description:
+          "Sit in silent meditation at the exact spot where the Buddha attained enlightenment, surrounded by pilgrims chanting in dozens of languages.",
+        icon: "🙏",
+      },
+      {
+        title: "Nalanda University Walk",
+        description:
+          "Walk the brick avenues of the world's earliest university, where Xuanzang studied for 7 years in the 7th century.",
+        icon: "🏛️",
+      },
+      {
+        title: "Rajgir Ropeway to Vishwa Shanti Stupa",
+        description:
+          "Single-seat chairlift up Ratnagiri Hill to the white Peace Pagoda — sweeping views across the Magadha hills.",
+        icon: "🚠",
+      },
+      {
+        title: "Evening Aarti at the Mahabodhi Temple",
+        description:
+          "Witness the gilded inner sanctum lit by hundreds of butter lamps as monks chant the Heart Sutra.",
+        icon: "🕯️",
+      },
+    ],
+    featured: false,
+  },
+
+  /* ──────────────────────── Chhattisgarh ──────────────────────── */
+  {
+    name: "Chhattisgarh",
+    slug: "chhattisgarh",
+    region: "West India",
+    country: "India",
+    category: "adventure",
+    tagline: "Tribal Heartland of Central India",
+    description:
+      "Dense sal forests, India's broadest waterfall at Chitrakote, the limestone caves of Kutumsar, and 32 indigenous tribes preserving ancient ways of life — Chhattisgarh is India's most under-discovered nature and culture destination.",
+    longDescription:
+      "Chhattisgarh — carved out of Madhya Pradesh in 2000 — remains one of India's most pristine wildernesses. The state is 44% forest cover, supports tigers in Indravati and Achanakmar reserves, and is home to 32 tribal groups whose haats (weekly markets), masks, and dances are still entirely living traditions.\n\nChitrakote Falls — often called the 'Niagara of India' — is the country's widest waterfall, particularly spectacular during monsoon when the Indravati river thunders over a 300-metre horseshoe drop. Nearby, the limestone Kutumsar Caves descend 35 metres underground into chambers filled with stalactites and blind cave fish. Tirathgarh Falls cascades down five tiers through deep sal forest. Bastar's tribal villages — Jagdalpur, Kanger, Kondagaon — produce extraordinary metal-cast Dhokra art (a 4,000-year-old technique).\n\nRaipur, the modern capital, gives access to the wildlife reserves and to Sirpur — a 5th-century Buddhist site with rock-cut temples. For those seeking authentic, uncrowded tribal India and waterfalls outside the tourist machine, Chhattisgarh is unmatched.",
+    heroImage: "https://images.unsplash.com/photo-1591105575633-922c8897af9e?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1591105575633-922c8897af9e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518972559570-7cc1309f3229?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1604608672516-f1b9b1d1f3b8?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "October to March (waterfalls best Aug-Oct)",
+    weather:
+      "Winters (Oct-Feb) are pleasant at 15-28 °C. Summers (Mar-Jun) very hot 35-45 °C. Monsoon (Jul-Sep) brings the waterfalls to peak flow.",
+    startingPrice: 18000,
+    highlights: [
+      "Chitrakote Falls (India's widest)",
+      "Kutumsar Limestone Caves",
+      "Tirathgarh Five-Tiered Falls",
+      "Bastar Tribal Villages",
+      "Sirpur Buddhist Ruins",
+      "Kanger Valley National Park",
+    ],
+    thingsToKnow: [
+      "Inner regions of Bastar are politically sensitive — travel with a registered operator and avoid unscheduled stops.",
+      "Mobile network coverage is limited inside Kanger Valley and tribal interiors.",
+      "Hire a local Gondi-speaking guide for tribal village visits — it transforms the experience.",
+      "Photography of tribal communities requires consent; many haats charge a nominal camera fee.",
+      "Try the traditional bamboo chicken, Bhajia rice, and mahua-based drinks during village stays.",
+    ],
+    popularExperiences: [
+      {
+        title: "Chitrakote Falls Boat Ride",
+        description:
+          "Take a small motorboat to the base of the 300-metre horseshoe falls — close enough to feel the spray.",
+        icon: "💦",
+      },
+      {
+        title: "Bastar Haat Market Walk",
+        description:
+          "Visit a weekly tribal market where Muria, Maria and Halba communities trade rice beer, terracotta, and forest produce.",
+        icon: "🛍️",
+      },
+      {
+        title: "Kutumsar Cave Exploration",
+        description:
+          "Descend 35 metres into limestone chambers carved over millions of years by an underground stream.",
+        icon: "🦇",
+      },
+      {
+        title: "Dhokra Metalwork Workshop",
+        description:
+          "Watch artisans in Kondagaon cast bronze figures using the 4,000-year-old lost-wax technique.",
+        icon: "⚒️",
+      },
+    ],
+    featured: false,
+  },
+
+  /* ──────────────────────── West Bengal ──────────────────────── */
+  {
+    name: "West Bengal",
+    slug: "west-bengal",
+    region: "Northeast India",
+    country: "India",
+    category: "leisure",
+    tagline: "From Tea Gardens to Tiger Mangroves",
+    description:
+      "Darjeeling's misty tea slopes, Kalimpong's old-world bungalows, the Dooars' wildlife reserves, Sundarbans' Royal Bengal tigers, and Kolkata's literary lanes — West Bengal packs Himalayas, forests, deltas and high culture into one state.",
+    longDescription:
+      "West Bengal is India's most culturally dense state — home of Tagore, Ray, the Bengali Renaissance, and the country's intellectual heart. Kolkata, the City of Joy, juxtaposes British-era grandeur (Victoria Memorial, Howrah Bridge) with the chaotic colour of its bazaars, the spiritual intensity of Kalighat Kali Temple, and the literary cafés of College Street.\n\nNorth Bengal is a different world entirely — the toy-train towns of Darjeeling and Kalimpong perch on the lower Himalayas with stunning Kanchenjunga views, working tea estates, and old planters' bungalows now run as homestays. The lesser-visited Dooars region (Buxa, Jaldapara, Gorumara national parks) shelters one-horned rhinos, elephants, and over 240 bird species. Tinchuley, Lamahatta, and Chatakpur are offbeat tea-garden villages where you can stay with farming families and walk through cloud forests at dawn.\n\nSouth, the Sundarbans — a UNESCO-listed mangrove delta — is home to the elusive Royal Bengal Tiger, saltwater crocodiles, and the world's most extensive mangrove ecosystem. Cruises through the narrow tidal creeks are a haunting reminder of how forest, river, and sea can blur into one. From Himalayas to the Bay of Bengal, no Indian state covers as much ground as West Bengal.",
+    heroImage: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1623709486403-2a4ce5fe2fa1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "October to April (Sundarbans Nov-Mar)",
+    weather:
+      "North Bengal: pleasant year-round in the hills, 5–20 °C; monsoon (Jun-Sep) brings landslides. Kolkata & Sundarbans: hot summers (35-40 °C), cool winters (12-25 °C), humid monsoon.",
+    startingPrice: 18000,
+    highlights: [
+      "Darjeeling Toy Train (UNESCO)",
+      "Tiger Hill Sunrise",
+      "Sundarbans Mangrove Cruise",
+      "Buxa, Jaldapara, Gorumara Dooars Safaris",
+      "Victoria Memorial, Kolkata",
+      "Tinchuley & Lamahatta Tea Villages",
+    ],
+    thingsToKnow: [
+      "Sundarbans requires forest department permits — easiest via a registered tour operator out of Kolkata.",
+      "October to early November in Kolkata is Durga Puja — the city's biggest festival, immersive and unforgettable.",
+      "North Bengal hills can have political bandhs (strikes) in summer; check before travel.",
+      "Try authentic Bengali cuisine — shorshe ilish (mustard hilsa), kosha mangsho (mutton curry), mishti doi.",
+      "The Dooars wildlife reserves close monsoon (mid-Jun to mid-Sep) — plan visits Oct-May.",
+    ],
+    popularExperiences: [
+      {
+        title: "Sundarbans Boat Safari",
+        description:
+          "Three days on a motor launch through tidal mangrove creeks, watching for tigers swimming between islands.",
+        icon: "🐅",
+      },
+      {
+        title: "Darjeeling Toy Train Joy Ride",
+        description:
+          "Steam-powered 1881-built train loops through Batasia and Ghum on the UNESCO-listed Himalayan Railway.",
+        icon: "🚂",
+      },
+      {
+        title: "Tea Garden Stay at Tinchuley",
+        description:
+          "Wake up to cloud-wrapped tea slopes and Kanchenjunga in the distance from a planter's bungalow homestay.",
+        icon: "🍵",
+      },
+      {
+        title: "Durga Puja Pandal Hopping",
+        description:
+          "Walk through Kolkata's most elaborate neighbourhood pandals during the city's biggest festival in October.",
+        icon: "🎭",
+      },
+    ],
+    featured: false,
+  },
+
+  /* ──────────────────────── Telangana ──────────────────────── */
+  {
+    name: "Telangana",
+    slug: "telangana",
+    region: "South India",
+    country: "India",
+    category: "leisure",
+    tagline: "From Nizami Palaces to Cave Temples",
+    description:
+      "Hyderabad's Charminar and biryani, Srisailam's Mallikarjuna Jyotirlinga, the Somasila pilgrim cruise, Warangal's Kakatiya temples, and the rugged Nallamala forest — Telangana blends Nizami heritage with deep South Indian temple traditions.",
+    longDescription:
+      "Telangana, India's youngest state (formed in 2014), is anchored by Hyderabad's Nizami grandeur but extends far beyond the capital. The state is dotted with rock-cut temples, Kakatiya-era stepwells, and the Nallamala forest range — one of the oldest in India.\n\nSrisailam, perched above the Krishna river in the Nallamala hills, is home to the Mallikarjuna Jyotirlinga — one of Hinduism's 12 holiest Shiva shrines — and the Bhramaramba Shakti Peetha temple right beside it, a rare combined Shiva-Shakti pilgrimage. The Krishna river here is dammed into the vast Srisailam reservoir, making the site uniquely scenic. Just downstream, Somasila reservoir offers cruise pilgrimages along its quiet waters past forested banks.\n\nWarangal preserves the 12th-century Kakatiya dynasty's masterpieces — the Thousand Pillar Temple, the Warangal Fort gateways, and the Ramappa Temple (a UNESCO World Heritage Site for its 'floating brick' construction). Bhongir's monolithic rock fort, the Bhadrachalam Sita Ramachandraswamy Temple, and Kuntala Falls in Adilabad complete a state with deep historical, spiritual and natural diversity that goes far past the Charminar.",
+    heroImage: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1583309219338-a582f1f9ca6b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567261334392-04abf6c2c4ff?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1572805156329-b9b81e64aab9?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "October to February",
+    weather:
+      "Winters (Oct-Feb) pleasant at 15-28 °C. Summers (Mar-Jun) hot, often above 40 °C. Short monsoon (Jul-Sep) cools things down with intermittent rain.",
+    startingPrice: 15000,
+    highlights: [
+      "Charminar & Hyderabad Old City",
+      "Golconda Fort & Qutb Shahi Tombs",
+      "Srisailam Mallikarjuna Jyotirlinga",
+      "Somasila Pilgrim Cruise",
+      "Warangal Kakatiya Temples (UNESCO Ramappa)",
+      "Bhongir Rock Fort",
+    ],
+    thingsToKnow: [
+      "Srisailam temple is busy during Maha Shivaratri (Feb-Mar) and Kartik Purnima; book well in advance.",
+      "Somasila cruises run select days only — check schedule with operators in Hyderabad.",
+      "The Nallamala forest road between Hyderabad and Srisailam is closed after sunset due to wildlife.",
+      "Hyderabad biryani is the state's signature dish — Paradise, Bawarchi, Shadab are local institutions.",
+      "Many Telangana temples require traditional dress — dhoti for men, sari for women; lungis available on rent.",
+    ],
+    popularExperiences: [
+      {
+        title: "Charminar Old City Food Walk",
+        description:
+          "Eat your way through Hyderabad's old quarter — Irani chai at Nimrah, haleem at Pista House, biryani at Shadab.",
+        icon: "🍛",
+      },
+      {
+        title: "Mallikarjuna Jyotirlinga Darshan",
+        description:
+          "Pray at one of Hinduism's 12 holiest Shiva shrines, set above the Krishna river in the Nallamala hills.",
+        icon: "🕉️",
+      },
+      {
+        title: "Somasila Cruise",
+        description:
+          "Quiet motorboat journey along the Krishna river through forested banks of the Nallamala reserve.",
+        icon: "⛵",
+      },
+      {
+        title: "Ramappa Temple Visit",
+        description:
+          "UNESCO World Heritage Kakatiya temple famed for sandstone carvings and floating-brick roof construction.",
+        icon: "🛕",
+      },
+    ],
+    featured: false,
+  },
+
+  /* ──────────────────────── Odisha ──────────────────────── */
+  {
+    name: "Odisha",
+    slug: "odisha",
+    region: "Northeast India",
+    country: "India",
+    category: "leisure",
+    tagline: "Temple Architecture & Beach Coastline",
+    description:
+      "The 13th-century Sun Temple at Konark, Puri's Jagannath Dham, Bhubaneswar's 600 ancient temples, Chilika's flamingo lagoon, and tribal Koraput — Odisha is India's most underrated coastal temple state.",
+    longDescription:
+      "Odisha quietly holds some of India's most extraordinary architectural and natural treasures. Bhubaneswar, the capital, has been called the 'Temple City of India' — over 600 ancient temples spanning a thousand years, with the 11th-century Lingaraj Temple as its anchor. The Mukteshwar, Rajarani and Brahmeshwar temples nearby are masterpieces of Kalinga-style sandstone carving.\n\nKonark's 13th-century Sun Temple — a UNESCO World Heritage Site — is conceived as a colossal chariot of the sun god Surya, with 24 intricately carved wheels and seven horses pulling it across the sky. Puri, just down the coast, houses one of Hinduism's four char dhams — the Jagannath Dham — and hosts the annual Rath Yatra, where massive wooden chariots are pulled through the streets by hundreds of thousands of devotees.\n\nChilika Lake — Asia's largest brackish water lagoon — hosts over a million migratory birds in winter, including flamingos. Gopalpur's quiet beaches contrast with the bustle of Puri. Inland, the tribal Koraput and Kotpad regions are home to over 60 indigenous groups producing some of India's finest natural-dye textiles. With Buddhist Lalitgiri and Ratnagiri ruins and the rugged Eastern Ghats hill stations of Daringbadi (the 'Kashmir of Odisha'), the state delivers history, wildlife, beaches and culture in equal measure.",
+    heroImage: "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1565017228812-9f4b65fb0c54?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1563492065-1a5e4a4e8b30?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1591608971362-f08b2a75731a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "October to March",
+    weather:
+      "Winters (Oct-Feb) pleasant and dry, 15-28 °C — ideal. Summers (Mar-Jun) hot and humid 30-40 °C. Monsoon (Jun-Sep) brings cyclones and heavy rain — most of inland Odisha is closed to tourism.",
+    startingPrice: 22000,
+    highlights: [
+      "Konark Sun Temple (UNESCO)",
+      "Jagannath Dham Puri",
+      "Lingaraj & Mukteshwar Temples Bhubaneswar",
+      "Chilika Lake Bird Sanctuary",
+      "Gopalpur-on-Sea Beach",
+      "Daringbadi Hill Station",
+    ],
+    thingsToKnow: [
+      "Non-Hindus cannot enter the inner Jagannath Temple at Puri — viewing is possible from the rooftop of the Raghunandan Library.",
+      "Rath Yatra (June-July) is Puri's biggest festival — crowds are enormous; book hotels 6+ months ahead.",
+      "Tropical cyclones occasionally hit the Odisha coast in October-November; track weather before coastal travel.",
+      "Pattachitra paintings from Raghurajpur make exceptional souvenirs — meet the artists at the heritage village.",
+      "Try Odia thali — dahi pakhal (curd rice), chhena poda (caramelised cottage cheese cake), and Macha besara (mustard fish curry).",
+    ],
+    popularExperiences: [
+      {
+        title: "Sunrise at Konark Sun Temple",
+        description:
+          "Walk through the 13th-century stone chariot of the sun god as the first rays light up the carved wheels.",
+        icon: "🌅",
+      },
+      {
+        title: "Chilika Lake Dolphin Cruise",
+        description:
+          "Boat ride to spot the resident Irrawaddy dolphins and over a million migratory birds in winter.",
+        icon: "🦩",
+      },
+      {
+        title: "Raghurajpur Pattachitra Village",
+        description:
+          "Visit the heritage crafts village where every household practises the traditional palm-leaf and silk painting.",
+        icon: "🎨",
+      },
+      {
+        title: "Bhubaneswar Temple Trail",
+        description:
+          "Walking tour through 600 sandstone temples spanning a thousand years of Kalinga architecture.",
+        icon: "🛕",
+      },
+    ],
+    featured: false,
+  },
 ]
 
 /* ─── Helper: get a destination by slug ─────────────────────────────────── */
