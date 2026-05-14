@@ -1,21 +1,11 @@
 import type { MetadataRoute } from "next"
+import { destinations } from "@/data/destinations"
+import { packages } from "@/data/packages"
+import { blogPosts } from "@/data/blog"
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://travelsense.co.in"
 
-async function fetchSanitySlugs(type: string): Promise<string[]> {
-  try {
-    const { sanityClient } = await import("@/lib/sanity")
-    const slugs: string[] = await sanityClient.fetch(
-      `*[_type == "${type}" && published == true].slug.current`
-    )
-    return slugs || []
-  } catch {
-    return []
-  }
-}
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Static pages
+export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: SITE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
     { url: `${SITE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
@@ -38,29 +28,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/hotels`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
   ]
 
-  // Dynamic routes from Sanity
-  const [destinationSlugs, packageSlugs, blogSlugs] = await Promise.all([
-    fetchSanitySlugs("destination"),
-    fetchSanitySlugs("package"),
-    fetchSanitySlugs("blog"),
-  ])
-
-  const destinationRoutes: MetadataRoute.Sitemap = destinationSlugs.map((slug) => ({
-    url: `${SITE_URL}/destinations/${slug}`,
+  const destinationRoutes: MetadataRoute.Sitemap = destinations.map((d) => ({
+    url: `${SITE_URL}/destinations/${d.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }))
 
-  const packageRoutes: MetadataRoute.Sitemap = packageSlugs.map((slug) => ({
-    url: `${SITE_URL}/packages/${slug}`,
+  const packageRoutes: MetadataRoute.Sitemap = packages.map((p) => ({
+    url: `${SITE_URL}/packages/${p.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }))
 
-  const blogRoutes: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
-    url: `${SITE_URL}/blog/${slug}`,
+  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((b) => ({
+    url: `${SITE_URL}/blog/${b.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.7,
