@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import {
   MapPin,
@@ -65,21 +65,95 @@ interface Recommendation {
   slug?: string
 }
 
+interface ItineraryFormState {
+  destination: string
+  duration: string
+  budget: string
+  travelStyle: string
+  interests: string[]
+}
+
 export default function ItineraryForm() {
   const [step, setStep] = useState(0)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [shareUrl, setShareUrl] = useState("")
   const [results, setResults] = useState<{
     recommendations: Recommendation[]
     message: string
   } | null>(null)
 
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<ItineraryFormState>({
     destination: "",
     duration: "",
     budget: "",
     travelStyle: "standard",
     interests: [] as string[],
   })
+
+  // ── Build the recommendation request (shared by submit + URL hydration) ──
+  const runBuild = useCallback(async (data: ItineraryFormState) => {
+    setIsSubmitting(true)
+    try {
+      const res = await fetch("/api/itinerary", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          destination: data.destination,
+          duration: Number(data.duration),
+          budget: Number(data.budget),
+          travelStyle: data.travelStyle,
+          interests: data.interests,
+          startDate: new Date().toISOString().split("T")[0],
+          travelers: 1,
+        }),
+      })
+      if (!res.ok) throw new Error("Failed")
+      const json = await res.json()
+      setResults(json.data)
+
+      // Sync inputs into the URL so the result is shareable / bookmarkable
+      const params = new URLSearchParams({
+        destination: data.destination,
+        duration: data.duration,
+        budget: data.budget,
+        style: data.travelStyle,
+        interests: data.interests.join(","),
+      })
+      const url = `${window.location.origin}${window.location.pathname}?${params.toString()}`
+      window.history.replaceState(null, "", `?${params.toString()}`)
+      setShareUrl(url)
+      return true
+    } catch {
+      toast.error("Something went wrong. Please try again.")
+      return false
+    } finally {
+      setIsSubmitting(false)
+    }
+  }, [])
+
+  // ── Hydrate from a shared URL on first load, then auto-build ──
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const destination = params.get("destination")
+    const duration = params.get("duration")
+    const budget = params.get("budget")
+    const interestsParam = params.get("interests")
+    if (!destination || !duration || !budget || !interestsParam) return
+
+    const hydrated: ItineraryFormState = {
+      destination,
+      duration,
+      budget,
+      travelStyle: params.get("style") || "standard",
+      interests: interestsParam.split(",").filter(Boolean),
+    }
+    setForm(hydrated)
+    setStep(STEPS.length - 1)
+    void runBuild(hydrated).then((ok) => {
+      if (ok) toast.success("Loaded a shared itinerary.")
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -115,30 +189,8 @@ export default function ItineraryForm() {
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!canProceed()) return
-    setIsSubmitting(true)
-    try {
-      const res = await fetch("/api/itinerary", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          destination: form.destination,
-          duration: Number(form.duration),
-          budget: Number(form.budget),
-          travelStyle: form.travelStyle,
-          interests: form.interests,
-          startDate: new Date().toISOString().split("T")[0],
-          travelers: 1,
-        }),
-      })
-      if (!res.ok) throw new Error("Failed")
-      const data = await res.json()
-      setResults(data.data)
-      toast.success("Itinerary recommendations ready!")
-    } catch {
-      toast.error("Something went wrong. Please try again.")
-    } finally {
-      setIsSubmitting(false)
-    }
+    const ok = await runBuild(form)
+    if (ok) toast.success("Itinerary recommendations ready!")
   }
 
   return (
@@ -448,6 +500,7 @@ export default function ItineraryForm() {
           <ItineraryResults
             recommendations={results.recommendations}
             message={results.message}
+            shareUrl={shareUrl}
           />
         </div>
       )}

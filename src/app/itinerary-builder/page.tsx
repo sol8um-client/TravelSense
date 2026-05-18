@@ -26,7 +26,7 @@ export default function ItineraryBuilderPage() {
             name: "TravelSense Itinerary Builder",
             applicationCategory: "TravelApplication",
             description:
-              "AI-powered itinerary builder that creates personalized travel plans based on your preferences.",
+              "Personalized itinerary builder that recommends curated travel packages based on your destination, budget, and interests.",
             offers: {
               "@type": "Offer",
               price: "0",

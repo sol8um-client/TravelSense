@@ -7,6 +7,7 @@ import { PageHero } from "@/components/shared/PageHero"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import VisaInquiryForm from "@/components/booking/VisaInquiryForm"
+import VisaChecklist from "@/components/booking/VisaChecklist"
 import { Button } from "@/components/ui/button"
 import {
   FileCheck2,
@@ -48,21 +49,6 @@ const services = [
     description:
       "Mock interview sessions and preparation guides for countries that require visa interviews. Boost your confidence and approval odds.",
   },
-]
-
-const popularDestinations = [
-  { name: "Thailand", flag: "\u{1F1F9}\u{1F1ED}", type: "Visa on Arrival" },
-  { name: "Dubai (UAE)", flag: "\u{1F1E6}\u{1F1EA}", type: "e-Visa" },
-  { name: "Singapore", flag: "\u{1F1F8}\u{1F1EC}", type: "e-Visa" },
-  { name: "Malaysia", flag: "\u{1F1F2}\u{1F1FE}", type: "e-Visa / eNTRI" },
-  { name: "Sri Lanka", flag: "\u{1F1F1}\u{1F1F0}", type: "ETA" },
-  { name: "Indonesia (Bali)", flag: "\u{1F1EE}\u{1F1E9}", type: "Visa on Arrival" },
-  { name: "Vietnam", flag: "\u{1F1FB}\u{1F1F3}", type: "e-Visa" },
-  { name: "United Kingdom", flag: "\u{1F1EC}\u{1F1E7}", type: "Standard Visa" },
-  { name: "United States", flag: "\u{1F1FA}\u{1F1F8}", type: "B1/B2 Visa" },
-  { name: "Schengen (Europe)", flag: "\u{1F1EA}\u{1F1FA}", type: "Schengen Visa" },
-  { name: "Japan", flag: "\u{1F1EF}\u{1F1F5}", type: "Tourist Visa" },
-  { name: "Australia", flag: "\u{1F1E6}\u{1F1FA}", type: "eVisitor / ETA" },
 ]
 
 export default function VisaPassportPage() {
@@ -129,38 +115,21 @@ export default function VisaPassportPage() {
           </div>
         </section>
 
-        {/* ── Popular Destinations ─────────────────────────────── */}
+        {/* ── Document Checklist by Destination ───────────────── */}
         <section className="bg-[#0D1A30] py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
-                Popular Visa Destinations
+                Document Checklist by Destination
               </h2>
               <p className="mx-auto mt-3 max-w-2xl font-body text-sm text-white/50 md:text-base">
-                We assist with visa applications for these popular destinations
-                and many more.
+                Select a destination to see the visa type, processing time, and
+                the exact documents you will need to prepare.
               </p>
             </div>
 
-            <div className="mt-12 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
-              {popularDestinations.map((dest) => (
-                <div
-                  key={dest.name}
-                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur transition-colors hover:border-white/20"
-                >
-                  <span className="text-2xl" role="img" aria-label={`${dest.name} flag`}>
-                    {dest.flag}
-                  </span>
-                  <div>
-                    <p className="font-body text-sm font-medium text-white">
-                      {dest.name}
-                    </p>
-                    <p className="font-body text-xs text-[#D4A853]">
-                      {dest.type}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div className="mt-12">
+              <VisaChecklist />
             </div>
           </div>
         </section>

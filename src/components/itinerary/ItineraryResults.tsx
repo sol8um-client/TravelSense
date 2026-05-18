@@ -1,8 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { MapPin, Clock, ArrowRight, MessageCircle } from "lucide-react"
+import { toast } from "sonner"
+import { MapPin, Clock, ArrowRight, MessageCircle, Share2, Check, Bookmark } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
@@ -20,12 +22,57 @@ interface Recommendation {
 interface ItineraryResultsProps {
   recommendations: Recommendation[]
   message: string
+  shareUrl?: string
 }
+
+const SAVED_KEY = "travelsense_saved_itineraries"
 
 export default function ItineraryResults({
   recommendations,
   message,
+  shareUrl,
 }: ItineraryResultsProps) {
+  const [copied, setCopied] = useState(false)
+  const [saved, setSaved] = useState(false)
+
+  async function handleShare() {
+    const url = shareUrl || (typeof window !== "undefined" ? window.location.href : "")
+    if (!url) return
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: "My TravelSense Itinerary",
+          text: "Check out the travel packages TravelSense recommended for me.",
+          url,
+        })
+        return
+      }
+      await navigator.clipboard.writeText(url)
+      setCopied(true)
+      toast.success("Shareable link copied to clipboard.")
+      setTimeout(() => setCopied(false), 2500)
+    } catch {
+      toast.error("Could not share the link.")
+    }
+  }
+
+  function handleSave() {
+    if (typeof window === "undefined") return
+    try {
+      const url = shareUrl || window.location.href
+      const existing: string[] = JSON.parse(
+        localStorage.getItem(SAVED_KEY) || "[]"
+      )
+      if (!existing.includes(url)) {
+        existing.push(url)
+        localStorage.setItem(SAVED_KEY, JSON.stringify(existing))
+      }
+      setSaved(true)
+      toast.success("Itinerary saved to this device.")
+    } catch {
+      toast.error("Could not save the itinerary.")
+    }
+  }
   if (!recommendations || recommendations.length === 0) {
     return (
       <motion.div
@@ -69,6 +116,37 @@ export default function ItineraryResults({
         {message && (
           <p className="mt-2 font-body text-sm text-white/50">{message}</p>
         )}
+        <div className="mt-4 flex items-center justify-center gap-3">
+          <Button
+            type="button"
+            size="sm"
+            variant="outline"
+            onClick={handleShare}
+            className="border-white/15 bg-white/5 font-body text-white/80 hover:bg-white/10 hover:text-white"
+          >
+            {copied ? (
+              <Check className="mr-1.5 h-3.5 w-3.5 text-emerald-400" />
+            ) : (
+              <Share2 className="mr-1.5 h-3.5 w-3.5" />
+            )}
+            {copied ? "Link Copied" : "Share"}
+          </Button>
+          <Button
+            type="button"
+            size="sm"
+            variant="outline"
+            onClick={handleSave}
+            disabled={saved}
+            className="border-white/15 bg-white/5 font-body text-white/80 hover:bg-white/10 hover:text-white disabled:opacity-60"
+          >
+            {saved ? (
+              <Check className="mr-1.5 h-3.5 w-3.5 text-emerald-400" />
+            ) : (
+              <Bookmark className="mr-1.5 h-3.5 w-3.5" />
+            )}
+            {saved ? "Saved" : "Save Itinerary"}
+          </Button>
+        </div>
       </div>
 
       <div className="space-y-4">
