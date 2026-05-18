@@ -1010,76 +1010,7 @@ export const destinations: Destination[] = [
     featured: false,
   },
 
-  /* ──────────────────────── 15. Char Dham ──────────────────────── */
-  {
-    name: "Char Dham",
-    slug: "char-dham",
-    region: "North India",
-    country: "India",
-    category: "leisure",
-    tagline: "Sacred Pilgrimage in the Himalayas",
-    description:
-      "The sacred pilgrimage to Yamunotri, Gangotri, Kedarnath, and Badrinath is India's holiest spiritual circuit. Set amidst the grandeur of the Garhwal Himalayas, the Char Dham Yatra is a journey of faith, endurance, and overwhelming natural beauty.",
-    longDescription:
-      "The Char Dham Yatra is Hinduism's most revered pilgrimage circuit, connecting four sacred shrines in the Garhwal Himalayas of Uttarakhand. Each shrine sits at the source of a holy river: Yamunotri at the origin of the Yamuna, Gangotri where the Ganga begins, Kedarnath dedicated to Lord Shiva beside the Mandakini, and Badrinath devoted to Lord Vishnu on the banks of the Alaknanda. Completing the full circuit is believed to wash away all sins and pave the path to moksha.\n\nThe journey itself is as transformative as the destination. The route winds through some of the most spectacular mountain scenery on earth — deep gorges, thundering waterfalls, alpine meadows carpeted in wildflowers, and snow-capped peaks that pierce an impossibly blue sky. Kedarnath, at 11,755 ft, was devastated by floods in 2013 but has been rebuilt with a massive protective wall, and the trek to its ancient temple through a valley of rhododendron forests remains deeply moving. Badrinath, flanked by the Nar and Narayan peaks, contains a temple believed to have been established by Adi Shankaracharya in the 8th century.\n\nModern infrastructure has made the yatra more accessible than ever — helicopter services connect the shrines, the Char Dham Highway project is widening roads, and accommodation ranges from basic dharamshalas to comfortable hotels. Yet the essence remains unchanged: a deeply personal journey through some of the most sacred and spectacular terrain on the planet.",
-    heroImage: "/images/generated/char-dham-hero.webp",
-    galleryImages: [
-      "https://images.unsplash.com/photo-1600176183920-ff3e18e45321?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1573053985939-81bc1a37a4cb?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1570543999-74aebc83ca7c?w=800&h=600&fit=crop",
-    ],
-    bestTimeToVisit: "May to June & September to October",
-    weather:
-      "The shrines are open only May to November. Summer (May–Jun) has mild days at 10–20 °C. Monsoon (Jul–Aug) brings landslide risk. Autumn (Sep–Oct) offers clear skies and fewer crowds.",
-    startingPrice: 20000,
-    highlights: [
-      "Kedarnath Temple Trek",
-      "Badrinath Temple Darshan",
-      "Gangotri Glacier View",
-      "Yamunotri Hot Springs",
-      "Mana Village — Last Indian Village",
-      "Helicopter Darshan Option",
-    ],
-    thingsToKnow: [
-      "Register on the official Char Dham Yatra portal — biometric registration is mandatory.",
-      "Carry a medical fitness certificate; altitude sickness is a real risk above 10,000 ft.",
-      "Helicopter bookings for Kedarnath sell out months in advance during peak season.",
-      "Pack layered clothing, rain gear, a sturdy walking stick, and high-energy snacks.",
-      "The full circuit takes 10–12 days by road; plan for rest days at Guptkashi and Joshimath.",
-    ],
-    popularExperiences: [
-      {
-        title: "Kedarnath Temple Trek",
-        description:
-          "Walk 18 km through a rhododendron valley to the ancient Shiva temple at 11,755 ft.",
-        icon: "🛕",
-      },
-      {
-        title: "Badrinath Hot Springs Dip",
-        description:
-          "Bathe in the naturally heated Tapt Kund before entering the shrine of Lord Vishnu at dawn.",
-        icon: "♨️",
-      },
-      {
-        title: "Gangotri Glacier Viewpoint",
-        description:
-          "Trek beyond Gangotri town to Gaumukh, the snout of the glacier where the Ganga is born.",
-        icon: "🏔️",
-      },
-      {
-        title: "Mana Village Heritage Walk",
-        description:
-          "Visit India's last inhabited village before Tibet, featuring Vyas Cave and Bhim Pul bridge.",
-        icon: "🏘️",
-      },
-    ],
-    featured: false,
-  },
-
-  /* ──────────────────────── 16. Andaman Islands ──────────────────────── */
+  /* ──────────────────────── 15. Andaman Islands ──────────────────────── */
   {
     name: "Andaman Islands",
     slug: "andaman-islands",
@@ -2714,6 +2645,75 @@ export const destinations: Destination[] = [
         description:
           "Walking tour through 600 sandstone temples spanning a thousand years of Kalinga architecture.",
         icon: "🛕",
+      },
+    ],
+    featured: false,
+  },
+
+  /* ──────────────────────── Tamil Nadu ──────────────────────── */
+  {
+    name: "Tamil Nadu",
+    slug: "tamil-nadu",
+    region: "South India",
+    country: "India",
+    category: "educational",
+    tagline: "Temple Towns, Hill Stations & a Three-Sea Cape",
+    description:
+      "Madurai's towering Meenakshi temple, Rameswaram's island shrine, the sunrise-and-sunset cape at Kanyakumari, the misty hill stations of Ooty and Kodaikanal, French-quarter Pondicherry and Chennai's Marina Beach — Tamil Nadu is the deepest, most living temple culture in India.",
+    longDescription:
+      "Tamil Nadu holds India's oldest continuous civilisation and its grandest temple architecture. Madurai — over 2,500 years old — is anchored by the Meenakshi Amman Temple, a riot of 14 gopuram towers covered in thousands of painted sculptures, with a nightly ceremony carrying the god to the goddess's chamber. South-east, the holy island of Rameswaram holds the Ramanathaswamy Temple (one of the 12 Jyotirlingas) with the longest temple corridor in India, and the haunting ghost town of Dhanushkodi at the very tip of Pamban Island.\n\nAt Kanyakumari, the subcontinent ends — three seas meet, and you can watch the sun rise and set over the ocean from the same spot, with the Vivekananda Rock Memorial and the 133-foot Thiruvalluvar statue offshore. Inland, the Western Ghats lift into the cool hill stations of Ooty — the 'Queen of Hill Stations' with its botanical gardens and toy train — and Kodaikanal, the 'Princess of Hill Stations', set around a star-shaped lake.\n\nThe coast tells a different story. Pondicherry preserves a French Quarter of mustard-yellow villas, boulevards and seaside cafés, alongside the experimental township of Auroville. Chennai, the state capital, balances the colonial Fort St. George, the 12th-century Kapaleeshwarar Temple and the long sweep of Marina Beach. Tamil Nadu rewards the traveller who wants culture with depth — temples that have never stopped functioning, and hills and coastline that frame them.",
+    heroImage: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "October to March",
+    weather:
+      "Winters (Oct-Mar) are pleasant on the plains at 20-30 °C — the ideal time. Summers (Apr-Jun) are hot and humid. The hill stations of Ooty and Kodaikanal stay cool (10-20 °C) year-round.",
+    startingPrice: 16000,
+    highlights: [
+      "Meenakshi Amman Temple, Madurai",
+      "Ramanathaswamy Temple & Dhanushkodi, Rameswaram",
+      "Kanyakumari — confluence of three seas",
+      "Ooty — Queen of Hill Stations",
+      "Kodaikanal — Princess of Hill Stations",
+      "Pondicherry French Quarter & Auroville",
+    ],
+    thingsToKnow: [
+      "Temple dress codes are strict — men often need a dhoti and women a sari or salwar; carry modest clothing.",
+      "Non-Hindus may have restricted access to the inner sanctum of some temples.",
+      "The Ooty and Kodaikanal hill stations need warm layers even in summer evenings.",
+      "Tamil filter coffee, dosa, Chettinad cuisine and Madurai's jigarthanda are essential tastes.",
+      "Carry the Pamban bridge in your plan — the rail and road bridge to Rameswaram island is a sight in itself.",
+    ],
+    popularExperiences: [
+      {
+        title: "Meenakshi Temple Night Ceremony",
+        description:
+          "Witness the nightly palki ceremony carrying Lord Sundareswarar to Goddess Meenakshi's chamber.",
+        icon: "🛕",
+      },
+      {
+        title: "Kanyakumari Sunrise & Sunset",
+        description:
+          "Watch both the sunrise and sunset over the ocean from the southern tip of the Indian peninsula.",
+        icon: "🌅",
+      },
+      {
+        title: "Ooty Toy Train Ride",
+        description:
+          "Ride the UNESCO-listed Nilgiri Mountain Railway through tea slopes and eucalyptus forest.",
+        icon: "🚂",
+      },
+      {
+        title: "Pondicherry French Quarter Walk",
+        description:
+          "Stroll the mustard-yellow colonial villas, seaside promenade and French cafés of White Town.",
+        icon: "🏘️",
       },
     ],
     featured: false,
