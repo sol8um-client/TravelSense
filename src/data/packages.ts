@@ -11,6 +11,22 @@ export interface PackageItineraryDay {
   image: string
 }
 
+/**
+ * Per-vehicle pricing grid (whole-group package price by vehicle and hotel
+ * category). Used for the South India packages where the client supplies a
+ * per-car rate card rather than a single per-person price.
+ */
+export interface VehiclePricingRow {
+  vehicle: string
+  prices: number[]
+}
+
+export interface VehiclePricing {
+  categories: string[]
+  rows: VehiclePricingRow[]
+  note?: string
+}
+
 export interface Package {
   title: string
   slug: string
@@ -32,6 +48,8 @@ export interface Package {
   highlights: string[]
   featured: boolean
   itinerary: PackageItineraryDay[]
+  /** Optional per-vehicle rate card (South India packages). */
+  vehiclePricing?: VehiclePricing
 }
 
 export const packages: Package[] = [
@@ -1782,7 +1800,7 @@ export const packages: Package[] = [
         day: 10,
         title: "Depart Sanur Looking down at Bali from the plane The trip comes to an end today",
         description:
-          "Transfer to the airport to catch a flight out. Safe travels! Trek up Mount Batur volcano at sunrise Snorkel with manta rays on Nusa Penida Experience Balinese culture on guided walks Raft through the rainforest on the Telaga Waja River Cycle to a volcano and walk around ancient lava fields I'm Interested",
+          "Transfer to the airport to catch a flight out. Safe travels! Trek up Mount Batur volcano at sunrise Snorkel with manta rays on Nusa Penida Experience Balinese culture on guided walks Raft through the rainforest on the Telaga Waja River Cycle to a volcano and walk around ancient lava fields",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -2157,7 +2175,7 @@ export const packages: Package[] = [
         day: 6,
         title: "Port Blair: Departure Bid adieu to amazing Andaman and Nicobar Islands Collect a",
         description:
-          "ll your memories to cherish for a lifetime from the trip to Andaman and Nicobar Islands! Visit the Cellular Jail and know the Independence Struggle Go to the famous beaches and see blissful sights Indulge in thrilling and exciting water sports Enjoy a breathtaking sunset views from Laxmanpur Beach See the gorgeous underwater life while snorkeling Start Point: Meeting point in Port Blair End Point: Meeting point in Port Blair Accommodation: Hotel Things To Do: Sightseeing, swimming, scuba diving, walking tours I'm Interested",
+          "ll your memories to cherish for a lifetime from the trip to Andaman and Nicobar Islands! Visit the Cellular Jail and know the Independence Struggle Go to the famous beaches and see blissful sights Indulge in thrilling and exciting water sports Enjoy a breathtaking sunset views from Laxmanpur Beach See the gorgeous underwater life while snorkeling Start Point: Meeting point in Port Blair End Point: Meeting point in Port Blair Accommodation: Hotel Things To Do: Sightseeing, swimming, scuba diving, walking tours",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -2353,7 +2371,7 @@ export const packages: Package[] = [
         day: 3,
         title: "Go to Pimpri Early in the morning, get up, and travel to Pimpri to see Prati Vaishno Devi",
         description:
-          "After receiving darshan, stop for breakfast before continuing to Ozar at the Vighneshwar Temple and then touring the Lenyadri-Grijatmaj Temple. After finishing the Ashtavinyak Yatra's holy tour, we had a lovely lunch, and now we are on our way back to our hometown. homecoming with a wealth of blessings and memories. Visit Morgaon (Mayureshwar Ganpati) Visit Ganapati in Ashtavinayak Visit Siddhivinayak Ganapati Visit Chintamani Ganapati Visit Vighneshwar Ganapati Visit Ranjangaon Visit Maha Ganapati Visit Girijatmaj Ganapati Visit Varadvinayak Ganapati Visit Ballaleshwar Ganapati I'm Interested",
+          "After receiving darshan, stop for breakfast before continuing to Ozar at the Vighneshwar Temple and then touring the Lenyadri-Grijatmaj Temple. After finishing the Ashtavinyak Yatra's holy tour, we had a lovely lunch, and now we are on our way back to our hometown. homecoming with a wealth of blessings and memories. Visit Morgaon (Mayureshwar Ganpati) Visit Ganapati in Ashtavinayak Visit Siddhivinayak Ganapati Visit Chintamani Ganapati Visit Vighneshwar Ganapati Visit Ranjangaon Visit Maha Ganapati Visit Girijatmaj Ganapati Visit Varadvinayak Ganapati Visit Ballaleshwar Ganapati",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -2599,7 +2617,7 @@ export const packages: Package[] = [
         day: 8,
         title: "Bengaluru - Departure Today we visit HAL Aerospace Museum - a museum cum heritag",
         description:
-          "e centre exclusively meant for preserving the heritage of the aviation industry. It's time now to say goodbye to our travel companions. Let's stay in touch with each other through email, phone, WhatsApp, Facebook, Instagram and meet again on yet another memorable tour. See you all!! Tour Guests will proceed to Bengaluru airport as per their schedule flight and start their return journey back home. Trip Location: South India Destinations Covered: Bengaluru(1N) , Hassan(1N) , Hampi/Hospete(4N) Chikmagalur(2N) Start Point: Bangalore airport/ Railway Station End Point: Bangalore or Coimbatore airport/Railway Station Accommodation: Hotel Things to do: Sightseeing I'm Interested",
+          "e centre exclusively meant for preserving the heritage of the aviation industry. It's time now to say goodbye to our travel companions. Let's stay in touch with each other through email, phone, WhatsApp, Facebook, Instagram and meet again on yet another memorable tour. See you all!! Tour Guests will proceed to Bengaluru airport as per their schedule flight and start their return journey back home. Trip Location: South India Destinations Covered: Bengaluru(1N) , Hassan(1N) , Hampi/Hospete(4N) Chikmagalur(2N) Start Point: Bangalore airport/ Railway Station End Point: Bangalore or Coimbatore airport/Railway Station Accommodation: Hotel Things to do: Sightseeing",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -2955,7 +2973,7 @@ export const packages: Package[] = [
         day: 5,
         title: "Dubai: Depart with sweet memories And here comes an end to the joyous vacation a",
         description:
-          "s the last day of your Dubai holiday package arrives! Have a scrumptious breakfast at the hotel and spend the early part of the day at leisure. Shop for some sweet Emirati souvenirs before getting transferred to the airport for boarding your flight back home with beautiful memories of your Dubai trip. Relish the Barbecue dinner at the ravishing desert safari Explore the modern contemporary life of the Abu Dhabi city Enjoy to the fullest at the Ferrari World Get enchanted by the posh side of Dubai I'm Interested",
+          "s the last day of your Dubai holiday package arrives! Have a scrumptious breakfast at the hotel and spend the early part of the day at leisure. Shop for some sweet Emirati souvenirs before getting transferred to the airport for boarding your flight back home with beautiful memories of your Dubai trip. Relish the Barbecue dinner at the ravishing desert safari Explore the modern contemporary life of the Abu Dhabi city Enjoy to the fullest at the Ferrari World Get enchanted by the posh side of Dubai",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -3058,7 +3076,7 @@ export const packages: Package[] = [
         day: 6,
         title: "Depart Dubai This morning have a hearty breakfast",
         description:
-          "After this, pack your bags and check-out. You will be transferred to Dubai International Airport for your flight back home. Return home with cherished memories of the breathtaking Dubai. Exciting adventures in Wild Wadi Water Park Magical hours discovering the Aquaventure Water Park Visit to Lost Chambers Aquarium Visit Yas Water Park Experience the pure thrill in the Ferrari World Amusement Park View and tour the incredible Burj Khalifa Fairy-tale like Desert Safari Tour I'm Interested",
+          "After this, pack your bags and check-out. You will be transferred to Dubai International Airport for your flight back home. Return home with cherished memories of the breathtaking Dubai. Exciting adventures in Wild Wadi Water Park Magical hours discovering the Aquaventure Water Park Visit to Lost Chambers Aquarium Visit Yas Water Park Experience the pure thrill in the Ferrari World Amusement Park View and tour the incredible Burj Khalifa Fairy-tale like Desert Safari Tour",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -3244,7 +3262,7 @@ export const packages: Package[] = [
         day: 3,
         title: "Reach Pune/Mumbai 04:00 AM - Pune participants reach Pune 06:30 AM - Mumbai part",
         description:
-          "icipant reach Mumbai Explore the thrilling Castle Rock trek to reach behind the Dudhsagar Waterfall . Capture the fauna of the Bhagwan Mahaveer Sanctuary nestled in the Western Ghats. Surrender yourself before the jaw-dropping 4-tier Dudhsagar Waterfall. Pass through different tunnels and railway crossings whilst trekking to the Dudhsagar Waterfall of Western Ghats. Witness the natural water pools of the sea of milk (Dudhsagar). I'm Interested",
+          "icipant reach Mumbai Explore the thrilling Castle Rock trek to reach behind the Dudhsagar Waterfall . Capture the fauna of the Bhagwan Mahaveer Sanctuary nestled in the Western Ghats. Surrender yourself before the jaw-dropping 4-tier Dudhsagar Waterfall. Pass through different tunnels and railway crossings whilst trekking to the Dudhsagar Waterfall of Western Ghats. Witness the natural water pools of the sea of milk (Dudhsagar).",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -3357,7 +3375,7 @@ export const packages: Package[] = [
         day: 7,
         title: "Goodbye Gujarat BreakfastDeparture Your Gujarat tour with family wraps up today Post breakfast, get",
         description:
-          "Check out prominent attractions in Junagadh such as Uparkot Fort, Navlakha Palace, and Gondal. Hit the road again to return to Ahmedabad where you will be dropped at the airport/railway station as per the departure schedule. Your family holidays in Gujarat end here. Gandhi Ashram and Kankaria Lake in Ahmedabad Evening Aarti at Dwarkadhish Temple in Dwarka Gopi Talav and boat tour to Bet Dwarka Porbandar sightseeing and Somnath Temple visit Sightseeing tour of Diu Fort and Naida Caves Jungle safari at Gir National Park I'm Interested",
+          "Check out prominent attractions in Junagadh such as Uparkot Fort, Navlakha Palace, and Gondal. Hit the road again to return to Ahmedabad where you will be dropped at the airport/railway station as per the departure schedule. Your family holidays in Gujarat end here. Gandhi Ashram and Kankaria Lake in Ahmedabad Evening Aarti at Dwarkadhish Temple in Dwarka Gopi Talav and boat tour to Bet Dwarka Porbandar sightseeing and Somnath Temple visit Sightseeing tour of Diu Fort and Naida Caves Jungle safari at Gir National Park",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -3460,7 +3478,7 @@ export const packages: Package[] = [
         day: 6,
         title: "Departure After having breakfast, check-out from the hotel and get dropped off a",
         description:
-          "t the airport for your flight back home as your Hong Kong Macau tour comes to a happy end. I'm Interested",
+          "t the airport for your flight back home as your Hong Kong Macau tour comes to a happy end.",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -3639,7 +3657,7 @@ export const packages: Package[] = [
         day: 5,
         title: "Almaty: Departure It's time to bid goodbye to Almaty Post breakfast, pack your b",
         description:
-          "ags and get ready to check-out from the hotel as its the departure day of your Kazakhstan 4 nights 5 days package. After the check-out procedures, we will escort you to the airport from where you can board your flight to India. We hope you enjoyed this trip to Kazakhstan with us. Get into the history of Kazakhstan at various historical places Enjoy the recreational activities at the Kok Tobe Get the thrilling experience of skiing at the Chimbulak Enjoy shopping at Adam and Green Bazaar Have fun at the Gorky Central Park I'm Interested",
+          "ags and get ready to check-out from the hotel as its the departure day of your Kazakhstan 4 nights 5 days package. After the check-out procedures, we will escort you to the airport from where you can board your flight to India. We hope you enjoyed this trip to Kazakhstan with us. Get into the history of Kazakhstan at various historical places Enjoy the recreational activities at the Kok Tobe Get the thrilling experience of skiing at the Chimbulak Enjoy shopping at Adam and Green Bazaar Have fun at the Gorky Central Park",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -3865,7 +3883,7 @@ export const packages: Package[] = [
         day: 4,
         title: "Birdwatching and Departure The early birdwatching continues today as well After",
         description:
-          "breakfast, the tour will come to an end Jungle Safari Trekking Bird watching I'm Interested",
+          "breakfast, the tour will come to an end Jungle Safari Trekking Bird watching",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -4114,7 +4132,7 @@ export const packages: Package[] = [
         day: 6,
         title: "Pachmarhi: Departure Time to bid goodbye to this happy tour Have breakfast in the morning, check-out",
         description:
-          "Head back to Jabalpur and on the way back visit Ambai Mata temple. Leave for the railway station and head for departure. Enjoy pleasant views from Rajendra Giri Get mesmerized by the beauty of Bee fall Enjoy caving at Gupt Mahadev Meet wildlife at Kanha National Park Trip Location: Madhya Pradesh Destinations Covered: 1N Jabalpur , 1N Kanha National Park , 3N Panchmari , Start Point: Jabalpur Airport / Railway Station End Point: Nagpur Airport / Pipriya Railway Station Accommodation: Hotel, Wildlife Things to do: Sightseeing, Jeep Safari Best Time to Visit : October to March I'm Interested",
+          "Head back to Jabalpur and on the way back visit Ambai Mata temple. Leave for the railway station and head for departure. Enjoy pleasant views from Rajendra Giri Get mesmerized by the beauty of Bee fall Enjoy caving at Gupt Mahadev Meet wildlife at Kanha National Park Trip Location: Madhya Pradesh Destinations Covered: 1N Jabalpur , 1N Kanha National Park , 3N Panchmari , Start Point: Jabalpur Airport / Railway Station End Point: Nagpur Airport / Pipriya Railway Station Accommodation: Hotel, Wildlife Things to do: Sightseeing, Jeep Safari Best Time to Visit : October to March",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -4333,7 +4351,7 @@ export const packages: Package[] = [
         day: 5,
         title: "Drive from Nasik to Trimbakeshwar Jyotilinga - Mumbai - Drive towards Trimbakeshwar (Jyotilinga) in",
         description:
-          "The Trimbakeshwar Temple, dedicated to Lord Shiva, is an extremely famous attractions and visited by a large number of devotees every year. Later, return back to the hotel for breakfast. After breakfast, leave for Mumbai and get dropped at the Mumbai airport for your onward journey. Visit the Shree Siddhivinayak Temple in Mumbai Seek blessings at Bhimashankar Jyotirlinga Visit the Shirdi Sai Baba Temple at Shirdi Enjoy sightseeing in Mumbai Pay homage at Grishneshwar Temple Jyotilinga Bow down at Trimbakeshwar Temple (Jyotilinga) I'm Interested",
+          "The Trimbakeshwar Temple, dedicated to Lord Shiva, is an extremely famous attractions and visited by a large number of devotees every year. Later, return back to the hotel for breakfast. After breakfast, leave for Mumbai and get dropped at the Mumbai airport for your onward journey. Visit the Shree Siddhivinayak Temple in Mumbai Seek blessings at Bhimashankar Jyotirlinga Visit the Shirdi Sai Baba Temple at Shirdi Enjoy sightseeing in Mumbai Pay homage at Grishneshwar Temple Jyotilinga Bow down at Trimbakeshwar Temple (Jyotilinga)",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -4426,7 +4444,7 @@ export const packages: Package[] = [
         day: 5,
         title: "Enjoy a hearty breakfast in the resort, post which you'll be transferred to the Bhuj Airport",
         description:
-          "Board your flight back home and bid adieu to the beautiful city which gave you countless romantic memories to cherish for life. Visit Prag Mahal, Kutch Museum, etc Visit Bhujodi & Ajrakhpur Village Stroll through Hamirsar Lake Visit the Rann of Kutch Visit Indian Bridge Visit Kalo Dungar I'm Interested",
+          "Board your flight back home and bid adieu to the beautiful city which gave you countless romantic memories to cherish for life. Visit Prag Mahal, Kutch Museum, etc Visit Bhujodi & Ajrakhpur Village Stroll through Hamirsar Lake Visit the Rann of Kutch Visit Indian Bridge Visit Kalo Dungar",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -5160,7 +5178,7 @@ export const packages: Package[] = [
         day: 5,
         title: "Singapore: Departure Say goodbye to the Singapore City Have breakfast, pack your luggage, and check-",
         description:
-          "Get transferred to the airport to board the flight to your home. You will leave Singapore with plenty of fun memories to share with your loved ones. Magnificent sandy resort at Sentosa Shopping in China Town of Singapore City Sky line luge in Sentosa Fun at Universal Studio Trip Location: Singapore Destinations Covered: Singapore Start Point: Singapore airport End Point: Singapore Airport Accommodation: Hotel & resort Things to do: Sightseeing , Adventure Best Season : Oct to Feb I'm Interested",
+          "Get transferred to the airport to board the flight to your home. You will leave Singapore with plenty of fun memories to share with your loved ones. Magnificent sandy resort at Sentosa Shopping in China Town of Singapore City Sky line luge in Sentosa Fun at Universal Studio Trip Location: Singapore Destinations Covered: Singapore Start Point: Singapore airport End Point: Singapore Airport Accommodation: Hotel & resort Things to do: Sightseeing , Adventure Best Season : Oct to Feb",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -5266,7 +5284,7 @@ export const packages: Package[] = [
         day: 6,
         title: "Singapore: Departure The Final Goodbye After having a tasty breakfast, check out from the hotel",
         description:
-          "Set off for a journey back home with a treasure chest of fond memories of your trip. Visit Night Safari to enjoy a rendezvous with wild animals Have a magical experience at Universal Studios- Hollywood theme park Enjoy adventure activities, live entertainment & more Aboard a cruise ship & sail through splendid landscapes Trip Location: Singapore Destinations Covered: Singapore Start Point: Singapore airport End Point: Singapore Airport Accommodation: Hotel & resort Things to do: Sightseeing , Adventure I'm Interested",
+          "Set off for a journey back home with a treasure chest of fond memories of your trip. Visit Night Safari to enjoy a rendezvous with wild animals Have a magical experience at Universal Studios- Hollywood theme park Enjoy adventure activities, live entertainment & more Aboard a cruise ship & sail through splendid landscapes Trip Location: Singapore Destinations Covered: Singapore Start Point: Singapore airport End Point: Singapore Airport Accommodation: Hotel & resort Things to do: Sightseeing , Adventure",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -5369,7 +5387,7 @@ export const packages: Package[] = [
         day: 6,
         title: "Bintan Island - Airport Fly Back Home After having your breakfast in the morning, check out from the",
         description:
-          "Board your ferry from the ferry terminal. On reaching Singapore, take transfer to the airport. Board your flight and carry on with your onward journey. Excursion to Night Safari Tour to Sentosa Twilight - one-way cable car ride, visit to the S.E.A Aquarium, Merlion Tower, Butterfly Park & Insect Kingdom. Pay homage at Fukien or Hoklo temple and Thian Hock Keng Temple. Thrilling rides and shows at the famous Universal Studios Sightseeing around Bintan Island Trip Location: Singapore and Malaysia Destinations Covered: Singapore and Malaysia Start Point: Singapore airport End Point: Malaysia Airport Accommodation: Hotel & resort Things to do: Sightseeing , Adventure I'm Interested",
+          "Board your ferry from the ferry terminal. On reaching Singapore, take transfer to the airport. Board your flight and carry on with your onward journey. Excursion to Night Safari Tour to Sentosa Twilight - one-way cable car ride, visit to the S.E.A Aquarium, Merlion Tower, Butterfly Park & Insect Kingdom. Pay homage at Fukien or Hoklo temple and Thian Hock Keng Temple. Thrilling rides and shows at the famous Universal Studios Sightseeing around Bintan Island Trip Location: Singapore and Malaysia Destinations Covered: Singapore and Malaysia Start Point: Singapore airport End Point: Malaysia Airport Accommodation: Hotel & resort Things to do: Sightseeing , Adventure",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -5485,7 +5503,7 @@ export const packages: Package[] = [
         day: 7,
         title: "Kuala Lumpur: Time to move back home Other Benefits (On Arrival) BreakfastAirport Transfer Have brea",
         description:
-          "You will be transferred to airport where you will board a flight back to India. Gear up for a tour to Night Safari as the dusk falls Meander through the Orchard Road, & capture beautiful memories Take delight in 4D adventure at Universal Studios Visit Petronas Twin Towers, KL Tower & more in Kuala Lumpur Have a thrilling day at Sunway Lagoon Enjoy a cable car ride to Genting Highlands for panoramic views Trip Location: Singapore and Malaysia Destinations Covered: Singapore and Malaysia Start Point: Singapore airport End Point: Malesiya Airport Accommodation: Hotel & resort Things to do: Sightseeing , Adventure I'm Interested",
+          "You will be transferred to airport where you will board a flight back to India. Gear up for a tour to Night Safari as the dusk falls Meander through the Orchard Road, & capture beautiful memories Take delight in 4D adventure at Universal Studios Visit Petronas Twin Towers, KL Tower & more in Kuala Lumpur Have a thrilling day at Sunway Lagoon Enjoy a cable car ride to Genting Highlands for panoramic views Trip Location: Singapore and Malaysia Destinations Covered: Singapore and Malaysia Start Point: Singapore airport End Point: Malesiya Airport Accommodation: Hotel & resort Things to do: Sightseeing , Adventure",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -5703,7 +5721,7 @@ export const packages: Package[] = [
         day: 5,
         title: "Colombo - Airport Breakfast at the hotel",
         description:
-          "Proceed to the Airport for your departure flight back home with all the memories you had on this beautiful island. [Travelling Time: 1 Hour Approx.] End of Tour…. I'm Interested",
+          "Proceed to the Airport for your departure flight back home with all the memories you had on this beautiful island. [Travelling Time: 1 Hour Approx.] End of Tour….",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -5984,7 +6002,7 @@ export const packages: Package[] = [
         day: 5,
         title: "Indore Currently, you have free time to shop at Chappan Bhog market",
         description:
-          "Then, we go to Indore's Lal Bagh Palace. With mixed emotions, our tour comes to end! Glad to have met so many new people and seen so many incredible places, but sad that it signifies the end of such a great adventure. Visit Omkareshwar Visit Central Museum, Khajrana, Gomatgiri, Kanch Temple Visit Mahakaleshwar Temple, Bade Ganeshji Ka Mandir, Bhartrihari Caves Visit Chintaman Ganesh, PirMatsyendranath I'm Interested",
+          "Then, we go to Indore's Lal Bagh Palace. With mixed emotions, our tour comes to end! Glad to have met so many new people and seen so many incredible places, but sad that it signifies the end of such a great adventure. Visit Omkareshwar Visit Central Museum, Khajrana, Gomatgiri, Kanch Temple Visit Mahakaleshwar Temple, Bade Ganeshji Ka Mandir, Bhartrihari Caves Visit Chintaman Ganesh, PirMatsyendranath",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -6147,7 +6165,7 @@ export const packages: Package[] = [
         day: 12,
         title: "Return to Nairobi & Depart Maasai Mara After one last, early-morning game drive, fly back to Nairobi",
         description:
-          "Go on wildlife-spotting safaris in the Maasai Mara National Reserve Climb the second-highest mountain in Africa, Mt. Kenya Enjoy a Maasai warrior experience in an authentic tribal community I'm Interested",
+          "Go on wildlife-spotting safaris in the Maasai Mara National Reserve Climb the second-highest mountain in Africa, Mt. Kenya Enjoy a Maasai warrior experience in an authentic tribal community",
         activities: [],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
@@ -12881,6 +12899,17 @@ export const packages: Package[] = [
         image: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=600&h=400&fit=crop",
       },
     ],
+    vehiclePricing: {
+      categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
+      rows: [
+        { vehicle: "2 Pax — Sedan", prices: [32000, 37200, 39800, 40700, 41500] },
+        { vehicle: "4 Pax — Ertiga / Innova", prices: [40600, 54400, 61200, 62600, 64300] },
+        { vehicle: "6 Pax — Ertiga / Innova", prices: [53200, 67400, 77700, 79400, 82300] },
+        { vehicle: "8 Pax — Tempo Traveller", prices: [84000, 102900, 116600, 119000, 122800] },
+        { vehicle: "10 Pax — Tempo Traveller", prices: [92200, 115900, 133000, 136000, 140800] },
+      ],
+      note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
+    },
   },
   {
     title: "Karnataka Royal & Rustic — Mysore & Coorg",
@@ -12980,6 +13009,17 @@ export const packages: Package[] = [
         image: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=600&h=400&fit=crop",
       },
     ],
+    vehiclePricing: {
+      categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
+      rows: [
+        { vehicle: "2 Pax — Sedan", prices: [28600, 31900, 35200, 39300, 48900] },
+        { vehicle: "4 Pax — Ertiga / Innova", prices: [44100, 50600, 57400, 65400, 85000] },
+        { vehicle: "6 Pax — Ertiga / Innova", prices: [54500, 64300, 74400, 86500, 115900] },
+        { vehicle: "8 Pax — Tempo Traveller", prices: [74200, 87300, 100800, 116900, 156000] },
+        { vehicle: "10 Pax — Tempo Traveller", prices: [84600, 100900, 117800, 137900, 187000] },
+      ],
+      note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
+    },
   },
   {
     title: "Serene Kerala — Munnar, Thekkady & Alleppey",
@@ -13079,6 +13119,17 @@ export const packages: Package[] = [
         image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
       },
     ],
+    vehiclePricing: {
+      categories: ["Deluxe", "Super Deluxe", "Sup. Deluxe Premium Combo", "Premium", "Super Premium", "Sup. Premium Luxury Combo", "Luxury"],
+      rows: [
+        { vehicle: "2 Pax — Sedan", prices: [22200, 24800, 27200, 28300, 30100, 33000, 36100] },
+        { vehicle: "4 Pax — Innova / Ertiga", prices: [33500, 38800, 43500, 45800, 49300, 55200, 61500] },
+        { vehicle: "6 Pax — Innova / Ertiga", prices: [42300, 50400, 57400, 60900, 66100, 74900, 84300] },
+        { vehicle: "8 Pax — Tempo Traveller", prices: [57200, 67900, 77200, 81900, 88900, 100600, 113000] },
+        { vehicle: "10 Pax — Tempo Traveller", prices: [66000, 79400, 91100, 96900, 105700, 120300, 136000] },
+      ],
+      note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
+    },
   },
   {
     title: "Tamil Nadu Coastal & Spiritual Trail — Madurai, Rameswaram & Kanyakumari",
@@ -13178,6 +13229,17 @@ export const packages: Package[] = [
         image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&h=400&fit=crop",
       },
     ],
+    vehiclePricing: {
+      categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
+      rows: [
+        { vehicle: "2 Pax — Sedan", prices: [32300, 34300, 37900, 49000, 53600] },
+        { vehicle: "4 Pax — Ertiga / Innova", prices: [48900, 52800, 60000, 82400, 91700] },
+        { vehicle: "6 Pax — Ertiga / Innova", prices: [60200, 66100, 77000, 110500, 124800] },
+        { vehicle: "8 Pax — Tempo Traveller", prices: [78500, 86400, 100900, 142500, 164700] },
+        { vehicle: "10 Pax — Tempo Traveller", prices: [89800, 99700, 117800, 169900, 197700] },
+      ],
+      note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
+    },
   },
   {
     title: "Sacred & Serene — Chennai, Tirupati & Pondicherry",
@@ -13277,6 +13339,17 @@ export const packages: Package[] = [
         image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&h=400&fit=crop",
       },
     ],
+    vehiclePricing: {
+      categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
+      rows: [
+        { vehicle: "2 Pax — Sedan", prices: [39400, 44400, 45400, 45800, 66600] },
+        { vehicle: "4 Pax — Ertiga / Innova", prices: [62000, 72000, 73800, 74700, 117000] },
+        { vehicle: "6 Pax — Ertiga / Innova", prices: [75700, 90700, 93500, 94700, 159000] },
+        { vehicle: "8 Pax — Tempo Traveller", prices: [99300, 119000, 123000, 124800, 211000] },
+        { vehicle: "10 Pax — Tempo Traveller", prices: [110700, 135000, 139800, 141800, 253400] },
+      ],
+      note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
+    },
   },
   {
     title: "The Soul of Kerala — Cochin, Munnar, Thekkady & Alleppey",
@@ -13386,6 +13459,17 @@ export const packages: Package[] = [
         image: "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=600&h=400&fit=crop",
       },
     ],
+    vehiclePricing: {
+      categories: ["Deluxe", "Super Deluxe", "Sup. Deluxe Premium Combo", "Premium", "Super Premium", "Sup. Premium Luxury Combo", "Luxury"],
+      rows: [
+        { vehicle: "2 Pax — Sedan", prices: [25800, 28700, 31600, 32600, 35300, 38900, 42200] },
+        { vehicle: "4 Pax — Innova / Ertiga", prices: [39800, 45600, 51300, 53300, 58900, 65900, 72700] },
+        { vehicle: "6 Pax — Innova / Ertiga", prices: [51100, 59900, 68400, 71400, 79800, 90300, 100400] },
+        { vehicle: "8 Pax — Tempo Traveller", prices: [69200, 80900, 92300, 96200, 107400, 121400, 135000] },
+        { vehicle: "10 Pax — Tempo Traveller", prices: [95400, 110000, 124300, 129200, 143200, 160700, 177700] },
+      ],
+      note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
+    },
   },
   {
     title: "Royal & Wild Sojourn — Mysore, Coorg & Wayanad",
@@ -13505,6 +13589,17 @@ export const packages: Package[] = [
         image: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=600&h=400&fit=crop",
       },
     ],
+    vehiclePricing: {
+      categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
+      rows: [
+        { vehicle: "2 Pax — Sedan", prices: [40100, 46600, 51200, 56800, 69900] },
+        { vehicle: "4 Pax — Ertiga / Innova", prices: [62500, 75300, 84600, 95900, 122400] },
+        { vehicle: "6 Pax — Ertiga / Innova", prices: [76800, 96100, 110000, 127000, 167000] },
+        { vehicle: "8 Pax — Tempo Traveller", prices: [109000, 135200, 153800, 176400, 229800] },
+        { vehicle: "10 Pax — Tempo Traveller", prices: [123800, 156000, 179000, 207000, 274500] },
+      ],
+      note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
+    },
   },
   {
     title: "Royal & Hilly Sojourn — Mysore, Coorg & Ooty",
@@ -13624,6 +13719,17 @@ export const packages: Package[] = [
         image: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=600&h=400&fit=crop",
       },
     ],
+    vehiclePricing: {
+      categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
+      rows: [
+        { vehicle: "2 Pax — Sedan", prices: [43800, 46400, 53300, 59000, 70700] },
+        { vehicle: "4 Pax — Ertiga / Innova", prices: [69900, 75100, 88800, 100000, 124000] },
+        { vehicle: "6 Pax — Ertiga / Innova", prices: [88000, 95700, 116000, 133600, 169600] },
+        { vehicle: "8 Pax — Tempo Traveller", prices: [119000, 129400, 157000, 180000, 227900] },
+        { vehicle: "10 Pax — Tempo Traveller", prices: [137200, 150000, 184500, 213300, 273400] },
+      ],
+      note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
+    },
   },
   {
     title: "The Hilly Duo — Mysore, Ooty & Kodaikanal",
@@ -13743,6 +13849,17 @@ export const packages: Package[] = [
         image: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=600&h=400&fit=crop",
       },
     ],
+    vehiclePricing: {
+      categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
+      rows: [
+        { vehicle: "2 Pax — Sedan", prices: [44100, 44800, 53000, 59000, 69600] },
+        { vehicle: "4 Pax — Ertiga / Innova", prices: [70400, 71800, 88300, 100000, 121800] },
+        { vehicle: "6 Pax — Ertiga / Innova", prices: [88700, 90800, 115600, 133700, 166000] },
+        { vehicle: "8 Pax — Tempo Traveller", prices: [120000, 122900, 156000, 180000, 223000] },
+        { vehicle: "10 Pax — Tempo Traveller", prices: [138400, 141900, 183300, 213000, 267500] },
+      ],
+      note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
+    },
   },
   {
     title: "A Kerala Sojourn — Munnar, Thekkady, Alleppey & Kovalam",
@@ -13862,6 +13979,17 @@ export const packages: Package[] = [
         image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
       },
     ],
+    vehiclePricing: {
+      categories: ["Deluxe", "Super Deluxe", "Sup. Deluxe Premium Combo", "Premium", "Super Premium", "Sup. Premium Luxury Combo", "Luxury"],
+      rows: [
+        { vehicle: "2 Pax — Sedan", prices: [33500, 38000, 41600, 42800, 47200, 52200, 55400] },
+        { vehicle: "4 Pax — Innova", prices: [51000, 60000, 67300, 69600, 78500, 88500, 94800] },
+        { vehicle: "6 Pax — Innova", prices: [64500, 78100, 89000, 92500, 105800, 120800, 130300] },
+        { vehicle: "8 Pax — Tempo Traveller", prices: [86800, 105000, 119400, 124000, 141800, 161900, 174500] },
+        { vehicle: "10 Pax — Tempo Traveller", prices: [100000, 123000, 141100, 147000, 169000, 194000, 210000] },
+      ],
+      note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
+    },
   },
   {
     title: "Grand Southern Sojourn — Madurai, Kodaikanal, Rameswaram, Kanyakumari & Kovalam",
@@ -13981,6 +14109,17 @@ export const packages: Package[] = [
         image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
       },
     ],
+    vehiclePricing: {
+      categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
+      rows: [
+        { vehicle: "2 Pax — Sedan", prices: [45200, 47900, 55400, 65700, 70500] },
+        { vehicle: "4 Pax — Ertiga / Innova", prices: [70400, 75900, 90800, 111300, 121200] },
+        { vehicle: "6 Pax — Ertiga / Innova", prices: [88800, 97000, 119400, 150200, 164900] },
+        { vehicle: "8 Pax — Tempo Traveller", prices: [116200, 127200, 157100, 198200, 215500] },
+        { vehicle: "10 Pax — Tempo Traveller", prices: [134600, 148300, 185700, 237000, 258800] },
+      ],
+      note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
+    },
   },
   {
     title: "The Ultimate Kerala Escape — Cochin, Munnar, Thekkady, Alleppey & Kovalam",
@@ -14110,5 +14249,16 @@ export const packages: Package[] = [
         image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
       },
     ],
+    vehiclePricing: {
+      categories: ["Deluxe", "Super Deluxe", "Sup. Deluxe Premium Combo", "Premium", "Super Premium", "Sup. Premium Luxury Combo", "Luxury"],
+      rows: [
+        { vehicle: "2 Pax — Sedan", prices: [37200, 42000, 45600, 47100, 52600, 57600, 61600] },
+        { vehicle: "4 Pax — Innova", prices: [57100, 66700, 73900, 77000, 87900, 98000, 105900] },
+        { vehicle: "6 Pax — Innova", prices: [73100, 87500, 98300, 102900, 119300, 134400, 146300] },
+        { vehicle: "8 Pax — Tempo Traveller", prices: [98800, 117900, 132400, 138500, 160400, 180500, 196300] },
+        { vehicle: "10 Pax — Tempo Traveller", prices: [114800, 138700, 156800, 164400, 191800, 216900, 236700] },
+      ],
+      note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
+    },
   },
 ]

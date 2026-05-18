@@ -64,6 +64,7 @@ function toDetailData(
     featured: pkg.featured,
     rating: pkg.rating,
     reviewCount: pkg.reviewCount,
+    vehiclePricing: pkg.vehiclePricing,
     destination: {
       _id: pkg.destinationSlug,
       name: pkg.destinationName,

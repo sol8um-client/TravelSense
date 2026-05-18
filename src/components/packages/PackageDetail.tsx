@@ -54,6 +54,11 @@ export interface PackageDetailData {
   featured?: boolean
   rating?: number
   reviewCount?: number
+  vehiclePricing?: {
+    categories: string[]
+    rows: { vehicle: string; prices: number[] }[]
+    note?: string
+  }
   destination?: {
     _id: string
     name: string
@@ -471,6 +476,63 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
                   ))}
                 </ul>
               </div>
+            )}
+          </section>
+        )}
+
+        {/* Per-Vehicle Pricing (South India rate cards) */}
+        {pkg.vehiclePricing && pkg.vehiclePricing.rows.length > 0 && (
+          <section>
+            <h2 className="hx font-heading text-3xl font-medium tracking-[-0.02em] leading-[1.1] text-white md:text-4xl">
+              <em className="italic font-normal text-[#FFB3A3]">Package Pricing.</em>
+            </h2>
+            <p className="mt-2 text-sm text-white/50">
+              Whole-group package price by vehicle and hotel category — choose
+              the group size and comfort level that suits you.
+            </p>
+            <div className="mt-6 overflow-x-auto rounded-2xl border border-white/10 bg-white/5">
+              <table className="w-full min-w-[640px] border-collapse text-sm">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="px-4 py-3 text-left font-heading text-xs font-medium uppercase tracking-wide text-white/50">
+                      Vehicle / Group
+                    </th>
+                    {pkg.vehiclePricing.categories.map((c) => (
+                      <th
+                        key={c}
+                        className="px-4 py-3 text-right font-heading text-xs font-medium uppercase tracking-wide text-white/50"
+                      >
+                        {c}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {pkg.vehiclePricing.rows.map((row, ri) => (
+                    <tr
+                      key={ri}
+                      className="border-b border-white/5 last:border-0 transition-colors hover:bg-white/[0.03]"
+                    >
+                      <td className="px-4 py-3 font-medium text-white/80">
+                        {row.vehicle}
+                      </td>
+                      {row.prices.map((p, pi) => (
+                        <td
+                          key={pi}
+                          className="px-4 py-3 text-right text-white/70"
+                        >
+                          {formatCurrency(p)}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {pkg.vehiclePricing.note && (
+              <p className="mt-3 text-xs text-white/40">
+                {pkg.vehiclePricing.note}
+              </p>
             )}
           </section>
         )}
