@@ -1,11 +1,14 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Check, FileText, Clock, BadgeInfo } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+type VisaRegion = "Asia" | "Europe" | "Australia & NZ" | "Americas"
+
 interface VisaChecklistEntry {
+  region: VisaRegion
   destination: string
   flag: string
   visaType: string
@@ -17,11 +20,14 @@ interface VisaChecklistEntry {
 
 /**
  * Document checklist by destination (Phase 1 — Passport & Visa Assistance).
+ * Grouped by region: Asia / Europe / Australia & NZ / Americas.
  * Indicative document lists; exact requirements are confirmed by the
  * TravelSense visa team per applicant and embassy update.
  */
 const VISA_CHECKLISTS: VisaChecklistEntry[] = [
+  // ────────────── ASIA ──────────────
   {
+    region: "Asia",
     destination: "Thailand",
     flag: "\u{1F1F9}\u{1F1ED}",
     visaType: "Visa on Arrival / e-Visa",
@@ -38,6 +44,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     ],
   },
   {
+    region: "Asia",
     destination: "Dubai (UAE)",
     flag: "\u{1F1E6}\u{1F1EA}",
     visaType: "e-Visa (Tourist)",
@@ -54,6 +61,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     note: "UAE visas are usually processed by the airline or a registered agent — TravelSense handles the full application for you.",
   },
   {
+    region: "Asia",
     destination: "Singapore",
     flag: "\u{1F1F8}\u{1F1EC}",
     visaType: "e-Visa (Tourist)",
@@ -70,6 +78,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     ],
   },
   {
+    region: "Asia",
     destination: "Malaysia",
     flag: "\u{1F1F2}\u{1F1FE}",
     visaType: "e-Visa / eNTRI",
@@ -84,6 +93,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     ],
   },
   {
+    region: "Asia",
     destination: "Sri Lanka",
     flag: "\u{1F1F1}\u{1F1F0}",
     visaType: "ETA (Electronic Travel Authorisation)",
@@ -97,6 +107,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     ],
   },
   {
+    region: "Asia",
     destination: "Indonesia (Bali)",
     flag: "\u{1F1EE}\u{1F1E9}",
     visaType: "Visa on Arrival / e-VoA",
@@ -110,6 +121,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     ],
   },
   {
+    region: "Asia",
     destination: "Vietnam",
     flag: "\u{1F1FB}\u{1F1F3}",
     visaType: "e-Visa",
@@ -123,44 +135,75 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     ],
   },
   {
-    destination: "United Kingdom",
-    flag: "\u{1F1EC}\u{1F1E7}",
-    visaType: "Standard Visitor Visa",
-    processingTime: "3 weeks (standard)",
-    validity: "6 months / 2 / 5 / 10 years",
+    region: "Asia",
+    destination: "Japan",
+    flag: "\u{1F1EF}\u{1F1F5}",
+    visaType: "Tourist Visa (single / multiple entry)",
+    processingTime: "5–7 working days",
+    validity: "15–90 days per visit",
     documents: [
-      "Passport valid for the duration of stay with a blank page",
-      "Recent digital photo meeting UK specifications",
-      "Completed online application + biometric appointment",
+      "Passport valid for the duration of stay",
+      "Completed visa application form",
+      "Recent photo (45×45 mm, white background)",
+      "Day-wise itinerary in Japan",
+      "Confirmed flight bookings",
+      "Hotel bookings for the entire stay",
       "Bank statements of the last 6 months",
-      "Income tax returns (last 2 years) / Form 16",
-      "Employment proof — letter, salary slips, or business registration",
+      "Income tax returns (last 2 years)",
+    ],
+  },
+  {
+    region: "Asia",
+    destination: "South Korea",
+    flag: "\u{1F1F0}\u{1F1F7}",
+    visaType: "K-ETA / Short-stay Tourist (C-3-9)",
+    processingTime: "5–10 working days",
+    validity: "90 days per visit",
+    documents: [
+      "Passport valid for at least 6 months",
+      "Completed visa application form",
+      "Recent photo (35×45 mm, white background)",
       "Confirmed flight and hotel bookings",
-      "Detailed day-wise travel itinerary",
-      "Cover letter explaining the purpose of the visit",
-    ],
-    note: "Biometric enrolment at a VFS centre is mandatory. TravelSense books your appointment and reviews the full file before submission.",
-  },
-  {
-    destination: "United States",
-    flag: "\u{1F1FA}\u{1F1F8}",
-    visaType: "B1/B2 Tourist Visa",
-    processingTime: "Varies — interview wait + 1 week processing",
-    validity: "Up to 10 years, multiple entry",
-    documents: [
-      "Passport valid for at least 6 months beyond stay",
-      "DS-160 confirmation page",
-      "Visa appointment confirmation (OFC + consulate)",
-      "Recent 2×2 inch photo (white background)",
-      "Bank statements of the last 6 months",
-      "Income tax returns (last 3 years)",
+      "Bank statements of the last 3-6 months",
+      "Income tax returns (last 2 years)",
       "Employment / business proof",
-      "Property and asset documents (supporting ties to India)",
-      "Travel itinerary and invitation letter (if applicable)",
+      "Day-wise itinerary",
     ],
-    note: "A personal interview at the US Consulate is mandatory. We provide mock-interview preparation as part of our service.",
   },
   {
+    region: "Asia",
+    destination: "Hong Kong",
+    flag: "\u{1F1ED}\u{1F1F0}",
+    visaType: "Pre-arrival Registration (PAR) for Indian passport holders",
+    processingTime: "1-2 working days (online)",
+    validity: "14 days per visit, 6-month PAR validity",
+    documents: [
+      "Passport valid for at least 6 months",
+      "Online PAR application via Hong Kong Immigration",
+      "Confirmed return tickets",
+      "Hotel booking",
+    ],
+    note: "Indian passport holders need a free Pre-arrival Registration — no embassy visit required.",
+  },
+  {
+    region: "Asia",
+    destination: "Maldives",
+    flag: "\u{1F1F2}\u{1F1FB}",
+    visaType: "Free Visa on Arrival",
+    processingTime: "On arrival",
+    validity: "30 days",
+    documents: [
+      "Passport valid for at least 6 months",
+      "Confirmed return ticket",
+      "Resort booking confirmation",
+      "Proof of sufficient funds (~USD 100/day)",
+      "Imuga online travel declaration (within 96 hours of arrival)",
+    ],
+  },
+
+  // ────────────── EUROPE ──────────────
+  {
+    region: "Europe",
     destination: "Schengen (Europe)",
     flag: "\u{1F1EA}\u{1F1FA}",
     visaType: "Schengen Short-Stay Visa (Type C)",
@@ -181,23 +224,48 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     note: "Apply through the consulate of the country where you spend the most nights. Biometric enrolment is required.",
   },
   {
-    destination: "Japan",
-    flag: "\u{1F1EF}\u{1F1F5}",
-    visaType: "Tourist Visa (single / multiple entry)",
-    processingTime: "5–7 working days",
-    validity: "15–90 days per visit",
+    region: "Europe",
+    destination: "United Kingdom",
+    flag: "\u{1F1EC}\u{1F1E7}",
+    visaType: "Standard Visitor Visa",
+    processingTime: "3 weeks (standard)",
+    validity: "6 months / 2 / 5 / 10 years",
     documents: [
-      "Passport valid for the duration of stay",
-      "Completed visa application form",
-      "Recent photo (45×45 mm, white background)",
-      "Day-wise itinerary in Japan",
-      "Confirmed flight bookings",
-      "Hotel bookings for the entire stay",
+      "Passport valid for the duration of stay with a blank page",
+      "Recent digital photo meeting UK specifications",
+      "Completed online application + biometric appointment",
       "Bank statements of the last 6 months",
-      "Income tax returns (last 2 years)",
+      "Income tax returns (last 2 years) / Form 16",
+      "Employment proof — letter, salary slips, or business registration",
+      "Confirmed flight and hotel bookings",
+      "Detailed day-wise travel itinerary",
+      "Cover letter explaining the purpose of the visit",
     ],
+    note: "Biometric enrolment at a VFS centre is mandatory. TravelSense books your appointment and reviews the full file before submission.",
   },
   {
+    region: "Europe",
+    destination: "Switzerland (non-Schengen variant)",
+    flag: "\u{1F1E8}\u{1F1ED}",
+    visaType: "Schengen Type C via Switzerland",
+    processingTime: "15 working days",
+    validity: "Up to 90 days within 180 days",
+    documents: [
+      "Passport valid 3+ months beyond departure",
+      "2 Schengen-spec photos (35×45 mm)",
+      "Travel medical insurance — min. €30,000",
+      "Confirmed flights and hotels",
+      "Bank statements (6 months)",
+      "Income tax returns (3 years)",
+      "Employment / business proof",
+      "Detailed itinerary",
+    ],
+    note: "Switzerland is in the Schengen Area — same visa, but apply at the Swiss consulate if Switzerland is your primary destination.",
+  },
+
+  // ────────────── AUSTRALIA & NZ ──────────────
+  {
+    region: "Australia & NZ",
     destination: "Australia",
     flag: "\u{1F1E6}\u{1F1FA}",
     visaType: "Visitor Visa (Subclass 600)",
@@ -214,25 +282,122 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
       "Travel itinerary and cover letter",
     ],
   },
+  {
+    region: "Australia & NZ",
+    destination: "New Zealand",
+    flag: "\u{1F1F3}\u{1F1FF}",
+    visaType: "Visitor Visa",
+    processingTime: "20-30 working days",
+    validity: "Up to 9 months per visit",
+    documents: [
+      "Passport valid for at least 3 months beyond departure",
+      "Recent digital photo (35×45 mm)",
+      "Completed online application (Immigration NZ)",
+      "Bank statements (last 6 months)",
+      "Income tax returns (last 2 years)",
+      "Employment / business proof",
+      "Confirmed flight bookings",
+      "Accommodation and itinerary details",
+      "Travel insurance",
+    ],
+  },
+
+  // ────────────── AMERICAS ──────────────
+  {
+    region: "Americas",
+    destination: "United States",
+    flag: "\u{1F1FA}\u{1F1F8}",
+    visaType: "B1/B2 Tourist Visa",
+    processingTime: "Varies — interview wait + 1 week processing",
+    validity: "Up to 10 years, multiple entry",
+    documents: [
+      "Passport valid for at least 6 months beyond stay",
+      "DS-160 confirmation page",
+      "Visa appointment confirmation (OFC + consulate)",
+      "Recent 2×2 inch photo (white background)",
+      "Bank statements of the last 6 months",
+      "Income tax returns (last 3 years)",
+      "Employment / business proof",
+      "Property and asset documents (supporting ties to India)",
+      "Travel itinerary and invitation letter (if applicable)",
+    ],
+    note: "A personal interview at the US Consulate is mandatory. We provide mock-interview preparation as part of our service.",
+  },
+  {
+    region: "Americas",
+    destination: "Canada",
+    flag: "\u{1F1E8}\u{1F1E6}",
+    visaType: "Visitor Visa (TRV)",
+    processingTime: "6-10 weeks (varies)",
+    validity: "Up to 10 years (passport-bound), 6 months per visit",
+    documents: [
+      "Passport valid for the duration of stay",
+      "Completed online application (IRCC)",
+      "Recent photo per IRCC specifications",
+      "Biometric enrolment at VFS",
+      "Bank statements of the last 6 months",
+      "Income tax returns (last 2-3 years)",
+      "Employment / business proof",
+      "Confirmed flight and hotel bookings",
+      "Travel itinerary and purpose-of-visit cover letter",
+      "Strong ties to India (property, family, employment)",
+    ],
+    note: "Biometric enrolment is mandatory and valid for 10 years.",
+  },
 ]
 
+const REGIONS: VisaRegion[] = ["Asia", "Europe", "Australia & NZ", "Americas"]
+
 export default function VisaChecklist() {
-  const [selected, setSelected] = useState(0)
-  const active = VISA_CHECKLISTS[selected]
+  const [activeRegion, setActiveRegion] = useState<VisaRegion>("Asia")
+  const [selectedSlug, setSelectedSlug] = useState<string>("Thailand")
+
+  const regionEntries = useMemo(
+    () => VISA_CHECKLISTS.filter((e) => e.region === activeRegion),
+    [activeRegion]
+  )
+
+  const active =
+    regionEntries.find((e) => e.destination === selectedSlug) || regionEntries[0]
+
+  function pickRegion(r: VisaRegion) {
+    setActiveRegion(r)
+    const first = VISA_CHECKLISTS.find((e) => e.region === r)
+    if (first) setSelectedSlug(first.destination)
+  }
 
   return (
     <div className="mx-auto max-w-4xl">
-      {/* Destination selector */}
-      <div className="flex flex-wrap justify-center gap-2">
-        {VISA_CHECKLISTS.map((entry, i) => (
+      {/* Region tabs */}
+      <div className="flex flex-wrap justify-center gap-2 border-b border-white/10 pb-4">
+        {REGIONS.map((r) => (
+          <button
+            key={r}
+            type="button"
+            onClick={() => pickRegion(r)}
+            className={cn(
+              "rounded-full border px-4 py-1.5 font-body text-xs font-medium transition-colors sm:text-sm",
+              r === activeRegion
+                ? "border-[#C4324A] bg-[#C4324A]/15 text-white"
+                : "border-white/10 bg-white/5 text-white/55 hover:border-white/20 hover:text-white/80"
+            )}
+          >
+            {r}
+          </button>
+        ))}
+      </div>
+
+      {/* Destination chips within active region */}
+      <div className="mt-5 flex flex-wrap justify-center gap-2">
+        {regionEntries.map((entry) => (
           <button
             key={entry.destination}
             type="button"
-            onClick={() => setSelected(i)}
+            onClick={() => setSelectedSlug(entry.destination)}
             className={cn(
               "flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-body text-xs transition-colors sm:text-sm",
-              i === selected
-                ? "border-[#C4324A] bg-[#C4324A]/15 text-white"
+              entry.destination === active.destination
+                ? "border-[#D4A853] bg-[#D4A853]/10 text-white"
                 : "border-white/10 bg-white/5 text-white/60 hover:border-white/20 hover:text-white/80"
             )}
           >
