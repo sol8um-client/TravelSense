@@ -2718,6 +2718,75 @@ export const destinations: Destination[] = [
     ],
     featured: false,
   },
+
+  /* ──────────────────────── Lakshadweep ──────────────────────── */
+  {
+    name: "Lakshadweep",
+    slug: "lakshadweep",
+    region: "South India",
+    country: "India",
+    category: "leisure",
+    tagline: "India's Coral Island Paradise",
+    description:
+      "36 coral islands scattered across the Arabian Sea — turquoise lagoons, white-sand atolls, world-class scuba diving, and a slower pace of life than anywhere else in India. Permit-controlled, blissfully uncrowded.",
+    longDescription:
+      "Lakshadweep is India's smallest Union Territory and its quietest beach destination — 36 coral islands, only 10 inhabited, all of them ringed by translucent lagoons and protected coral reefs. The gateway is Agatti, the only island with an airstrip; from there, ships and speedboats fan out to Bangaram (the luxury resort island), Kadmat (the diving hub), Kavaratti (the administrative capital), and Minicoy (the southernmost, with a distinct Maldivian-Mahl culture).\n\nWhat makes Lakshadweep unlike Maldives or Andaman: permits are mandatory and tightly controlled, the reefs are still in pristine condition, alcohol is restricted (it is a dry territory outside Bangaram), and the experience is genuinely off-grid. There are no rooftop bars, no malls, no busy harbours — just lagoons that grade from turquoise to deep blue, dhonis returning at sunset, and PADI dive instructors who have spent decades on the same reef wall.\n\nMost visitors come for the watersports — scuba diving over 5,000-year-old coral, snorkeling with reef sharks and turtles, glass-bottom boat rides through the lagoon, kayaking at dawn — and stay for the silence. A typical 6-night trip combines an arrival/departure stop at Agatti with extended stays at Bangaram and/or Kadmat. With both Vembanad and Kerala backwaters as the natural pre/post-trip pairing, Lakshadweep is the quiet bookend to an Indian beach holiday.",
+    heroImage: "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1540202404-1b927e27fa8b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "October to March",
+    weather:
+      "Tropical, 25-32 °C year-round. Winter (Oct-Mar) is dry, calm seas and best for diving. Monsoon (May-Sep) closes most island operations and inter-island ships.",
+    startingPrice: 48000,
+    highlights: [
+      "Bangaram Atoll",
+      "Kadmat Diving",
+      "Agatti Lagoon",
+      "Kavaratti Marine Aquarium",
+      "Minicoy Lighthouse",
+      "Scuba & PADI Certification",
+    ],
+    thingsToKnow: [
+      "Entry permits are mandatory for all visitors (Indian and foreign) — TravelSense arranges these as part of the package.",
+      "Foreign nationals can currently visit only Bangaram, Agatti and Kadmat.",
+      "Lakshadweep is a dry territory; alcohol is permitted only at the licensed Bangaram resort.",
+      "Inter-island travel is by ship or speedboat — sea conditions can shift schedules; build flexibility into your dates.",
+      "Cash and offline maps are essential — connectivity is patchy, ATMs are limited to Kavaratti, Agatti and Minicoy.",
+    ],
+    popularExperiences: [
+      {
+        title: "Scuba Diving at Kadmat",
+        description:
+          "PADI Discover Scuba or full Open Water certification at one of India's best dive sites, over coral that pre-dates the pyramids.",
+        icon: "🤿",
+      },
+      {
+        title: "Bangaram Sunset Sailing",
+        description:
+          "Sail a traditional dhoni across the Bangaram lagoon at golden hour, with the chance to spot reef sharks below the keel.",
+        icon: "⛵",
+      },
+      {
+        title: "Glass-Bottom Boat over Coral",
+        description:
+          "Drift over the reef in a glass-bottom boat — watch parrotfish, octopus and the occasional sea turtle without getting wet.",
+        icon: "🐢",
+      },
+      {
+        title: "Kayaking at Dawn in Agatti Lagoon",
+        description:
+          "Paddle the still, translucent lagoon as the sun comes up and the islanders set out their fishing dhonis.",
+        icon: "🛶",
+      },
+    ],
+    featured: false,
+  },
 ]
 
 /* ─── Helper: get a destination by slug ─────────────────────────────────── */
