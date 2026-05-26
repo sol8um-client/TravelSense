@@ -2,10 +2,15 @@
 
 import { useState, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Check, FileText, Clock, BadgeInfo } from "lucide-react"
+import { Check, FileText, Clock, BadgeInfo, IndianRupee } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-type VisaRegion = "Asia" | "Europe" | "Australia & NZ" | "Americas"
+type VisaRegion =
+  | "Asia & Middle East"
+  | "Europe"
+  | "Americas"
+  | "Australia"
+  | "Other"
 
 interface VisaChecklistEntry {
   region: VisaRegion
@@ -14,292 +19,387 @@ interface VisaChecklistEntry {
   visaType: string
   processingTime: string
   validity: string
+  visaFee?: string
+  serviceCharge?: string
   documents: string[]
   note?: string
 }
 
 /**
- * Document checklist by destination (Phase 1 — Passport & Visa Assistance).
- * Grouped by region: Asia / Europe / Australia & NZ / Americas.
- * Indicative document lists; exact requirements are confirmed by the
- * TravelSense visa team per applicant and embassy update.
+ * Visa document & charges checklist by destination.
+ * Data sourced from btwvisas.com country pages.
+ * All figures are indicative and confirmed at the time of inquiry.
  */
 const VISA_CHECKLISTS: VisaChecklistEntry[] = [
-  // ────────────── ASIA ──────────────
+  // ────────────── ASIA & MIDDLE EAST ──────────────
   {
-    region: "Asia",
-    destination: "Thailand",
-    flag: "\u{1F1F9}\u{1F1ED}",
-    visaType: "Visa on Arrival / e-Visa",
-    processingTime: "3–5 working days (e-Visa)",
-    validity: "60 days, single entry",
-    documents: [
-      "Passport valid for at least 6 months with 2 blank pages",
-      "2 recent passport-size photos (white background, 35×45 mm)",
-      "Confirmed return flight tickets",
-      "Hotel booking confirmation for the entire stay",
-      "Bank statement of the last 6 months (min. balance ₹50,000+)",
-      "Completed visa application form",
-      "Proof of sufficient funds (cash / forex card)",
-    ],
-  },
-  {
-    region: "Asia",
-    destination: "Dubai (UAE)",
-    flag: "\u{1F1E6}\u{1F1EA}",
-    visaType: "e-Visa (Tourist)",
-    processingTime: "3–4 working days",
-    validity: "30 / 60 days, single or multiple entry",
-    documents: [
-      "Passport valid for at least 6 months with 2 blank pages",
-      "Coloured passport scan (first and last page)",
-      "Recent passport-size photo (white background)",
-      "Confirmed return flight tickets",
-      "Hotel booking confirmation",
-      "Travel insurance covering the UAE",
-    ],
-    note: "UAE visas are usually processed by the airline or a registered agent — TravelSense handles the full application for you.",
-  },
-  {
-    region: "Asia",
+    region: "Asia & Middle East",
     destination: "Singapore",
     flag: "\u{1F1F8}\u{1F1EC}",
-    visaType: "e-Visa (Tourist)",
+    visaType: "Tourist Visit Pass (TVP)",
     processingTime: "3–5 working days",
-    validity: "Up to 30 days per visit",
+    validity: "30 days single entry / up to 2 years multiple entry",
+    visaFee: "SGD 30 (~₹2,200)",
+    serviceCharge: "₹1,900 + service ₹650–1,000",
     documents: [
-      "Passport valid for at least 6 months",
-      "Recent passport-size photo (white background, 35×45 mm)",
+      "Valid passport (6+ months validity, 2 blank pages)",
       "Completed Form 14A",
-      "Confirmed return flight tickets",
-      "Hotel booking / host's address in Singapore",
-      "Bank statement of the last 3 months",
-      "Covering letter with travel itinerary",
+      "2 photographs (35×45 mm, white background)",
+      "Travel insurance (min SGD 30,000)",
+      "Hotel booking / accommodation proof",
+      "Round-trip flight itinerary",
+      "Day-by-day travel itinerary",
+      "Bank statements (last 6 months)",
+      "Salary slips + ITR (last 2-3 years)",
+      "Employment letter / NOC on company letterhead",
+      "Cover letter explaining purpose of visit",
     ],
+    note: "E-Visa format (printed approval). Apply within 30 days before travel.",
   },
   {
-    region: "Asia",
+    region: "Asia & Middle East",
+    destination: "Thailand",
+    flag: "\u{1F1F9}\u{1F1ED}",
+    visaType: "Tourist / Business / Visa-on-Arrival",
+    processingTime: "Fast-track e-Visa",
+    validity: "15–90 days, single or multiple entry",
+    visaFee: "₹300 (VoA) – ₹24,260 (multiple-entry)",
+    serviceCharge: "Included in service package",
+    documents: [
+      "Valid passport (6+ months validity)",
+      "Recent photograph (white background)",
+      "Confirmed return air ticket",
+      "Hotel voucher / accommodation proof",
+      "Bank statements (last 6 months)",
+    ],
+    note: "Visa on Arrival pre-approval available at ₹300 — fastest route.",
+  },
+  {
+    region: "Asia & Middle East",
     destination: "Malaysia",
     flag: "\u{1F1F2}\u{1F1FE}",
-    visaType: "e-Visa / eNTRI",
-    processingTime: "2–4 working days",
-    validity: "eNTRI 15 days / e-Visa 30 days",
+    visaType: "e-Visa / eNTRI (Tourist, Business, Work)",
+    processingTime: "Fast-track",
+    validity: "15–30 days (tourist), up to 12 months (work)",
+    visaFee: "₹1,700 – ₹6,550 (inclusive)",
+    serviceCharge: "Included in service package",
     documents: [
-      "Passport valid for at least 6 months",
-      "Recent digital passport-size photo (white background)",
-      "Confirmed return / onward flight tickets",
-      "Hotel booking confirmation",
-      "Proof of sufficient funds (bank statement)",
+      "Valid passport (6+ months validity)",
+      "Recent passport-size photograph",
+      "Confirmed return flight ticket",
+      "Hotel voucher / accommodation proof",
     ],
+    note: "Non-English documents require certified English translation.",
   },
   {
-    region: "Asia",
+    region: "Asia & Middle East",
+    destination: "Vietnam",
+    flag: "\u{1F1FB}\u{1F1F3}",
+    visaType: "e-Visa (Tourist / Business)",
+    processingTime: "Fast-track",
+    validity: "30 days maximum stay",
+    visaFee: "₹1,500 – ₹33,500 (inclusive)",
+    serviceCharge: "Included in service package",
+    documents: [
+      "Valid passport (6+ months validity)",
+      "Scanned passport bio-data page",
+      "Recent digital photograph (no glasses)",
+      "Confirmed return air ticket",
+    ],
+    note: "No refunds; date changes require fresh e-visa application.",
+  },
+  {
+    region: "Asia & Middle East",
     destination: "Sri Lanka",
     flag: "\u{1F1F1}\u{1F1F0}",
-    visaType: "ETA (Electronic Travel Authorisation)",
+    visaType: "ETA (Tourist / Business / Transit)",
     processingTime: "1–3 working days",
-    validity: "30 days, double entry",
+    validity: "2 days (transit) to 30 days",
+    visaFee: "₹0 – ₹2,520 (inclusive)",
+    serviceCharge: "Included in service package",
     documents: [
-      "Passport valid for at least 6 months",
-      "Confirmed return flight tickets",
+      "Valid passport (6+ months validity)",
+      "Confirmed return flight ticket",
       "Proof of accommodation",
       "Completed ETA application",
     ],
+    note: "All documents must be in English or certified translated.",
   },
   {
-    region: "Asia",
-    destination: "Indonesia (Bali)",
-    flag: "\u{1F1EE}\u{1F1E9}",
-    visaType: "Visa on Arrival / e-VoA",
-    processingTime: "On arrival or 2–3 days (e-VoA)",
-    validity: "30 days, extendable once",
-    documents: [
-      "Passport valid for at least 6 months with 2 blank pages",
-      "Confirmed return / onward flight tickets",
-      "Hotel booking confirmation",
-      "Proof of sufficient funds",
-    ],
-  },
-  {
-    region: "Asia",
-    destination: "Vietnam",
-    flag: "\u{1F1FB}\u{1F1F3}",
-    visaType: "e-Visa",
-    processingTime: "3–5 working days",
-    validity: "90 days, single or multiple entry",
-    documents: [
-      "Passport valid for at least 6 months",
-      "Scanned passport data page",
-      "Recent digital passport-size photo (white background, no glasses)",
-      "Confirmed travel dates and entry/exit points",
-    ],
-  },
-  {
-    region: "Asia",
+    region: "Asia & Middle East",
     destination: "Japan",
     flag: "\u{1F1EF}\u{1F1F5}",
-    visaType: "Tourist Visa (single / multiple entry)",
-    processingTime: "5–7 working days",
-    validity: "15–90 days per visit",
+    visaType: "Tourist Visa (Single / Multiple Entry up to 5 years)",
+    processingTime: "~5 working days",
+    validity: "3 months from issue; 90 days per visit",
+    visaFee: "₹450 (single) / ₹500 (multi) embassy; ₹50 transit",
+    serviceCharge: "VFS ₹800 + optional courier ₹550",
     documents: [
-      "Passport valid for the duration of stay",
+      "Valid passport (2 blank pages, valid beyond stay)",
       "Completed visa application form",
-      "Recent photo (45×45 mm, white background)",
-      "Day-wise itinerary in Japan",
-      "Confirmed flight bookings",
-      "Hotel bookings for the entire stay",
-      "Bank statements of the last 6 months",
-      "Income tax returns (last 2 years)",
+      "Photograph 45×35 mm (white background, 70-80% face visible)",
+      "Passport bio-data page photocopy",
+      "Flight itinerary (proof of bookings)",
+      "Detailed daily itinerary with hotel addresses",
+      "ITR or bank statements (last 6 months)",
+      "Travel insurance (strongly recommended)",
+      "Cover letter (optional but recommended)",
     ],
+    note: "Fee refunded only if visa refused. No VoA for Indian passport holders.",
   },
   {
-    region: "Asia",
-    destination: "South Korea",
-    flag: "\u{1F1F0}\u{1F1F7}",
-    visaType: "K-ETA / Short-stay Tourist (C-3-9)",
-    processingTime: "5–10 working days",
-    validity: "90 days per visit",
-    documents: [
-      "Passport valid for at least 6 months",
-      "Completed visa application form",
-      "Recent photo (35×45 mm, white background)",
-      "Confirmed flight and hotel bookings",
-      "Bank statements of the last 3-6 months",
-      "Income tax returns (last 2 years)",
-      "Employment / business proof",
-      "Day-wise itinerary",
-    ],
-  },
-  {
-    region: "Asia",
+    region: "Asia & Middle East",
     destination: "Hong Kong",
     flag: "\u{1F1ED}\u{1F1F0}",
     visaType: "Pre-arrival Registration (PAR) for Indian passport holders",
-    processingTime: "1-2 working days (online)",
+    processingTime: "1–2 working days (online)",
     validity: "14 days per visit, 6-month PAR validity",
+    visaFee: "Free – ₹500",
+    serviceCharge: "Included in service package",
     documents: [
-      "Passport valid for at least 6 months",
-      "Online PAR application via Hong Kong Immigration",
-      "Confirmed return tickets",
-      "Hotel booking",
+      "Valid passport (6+ months validity)",
+      "Online PAR application via HK Immigration",
+      "Hotel voucher",
+      "Confirmed return flight ticket",
     ],
-    note: "Indian passport holders need a free Pre-arrival Registration — no embassy visit required.",
+    note: "Indian passport holders need a free Pre-arrival Registration online — no embassy visit required.",
   },
   {
-    region: "Asia",
-    destination: "Maldives",
-    flag: "\u{1F1F2}\u{1F1FB}",
-    visaType: "Free Visa on Arrival",
-    processingTime: "On arrival",
-    validity: "30 days",
+    region: "Asia & Middle East",
+    destination: "Taiwan",
+    flag: "\u{1F1F9}\u{1F1FC}",
+    visaType: "Online Travel Authorization (Tourist / Business / Study)",
+    processingTime: "Normal or Express track",
+    validity: "30 or 90 days",
+    visaFee: "₹2,400 – ₹9,900 (inclusive)",
+    serviceCharge: "Included in service package",
     documents: [
-      "Passport valid for at least 6 months",
-      "Confirmed return ticket",
-      "Resort booking confirmation",
-      "Proof of sufficient funds (~USD 100/day)",
-      "Imuga online travel declaration (within 96 hours of arrival)",
+      "Valid passport (6+ months validity)",
+      "Copy of any valid existing visa (US/Schengen/UK/Japan/Canada)",
+      "Recent photograph",
+      "Confirmed return flight ticket",
+    ],
+    note: "Status trackable online; visa digitally linked to passport.",
+  },
+  {
+    region: "Asia & Middle East",
+    destination: "UAE (Dubai)",
+    flag: "\u{1F1E6}\u{1F1EA}",
+    visaType: "Transit / Tourist Visa (Single Entry)",
+    processingTime: "3–4 working days (normal); express available",
+    validity: "48-hour / 96-hour transit, or 30/60-day tourist",
+    visaFee: "₹5,026 (normal) – ₹5,904 (express)",
+    serviceCharge: "Varies by application mode (airline / hotel / agency)",
+    documents: [
+      "Valid passport (6+ months validity)",
+      "Coloured passport scan (first and last pages)",
+      "2 identical photos (35×45 mm, white background)",
+      "Confirmed flight tickets with onward journey details",
+      "Hotel booking confirmation (if transit >24 hrs)",
+      "Travel insurance covering the UAE",
+    ],
+    note: "Transit permit is non-extendable and non-renewable. Overstay attracts heavy fines.",
+  },
+  {
+    region: "Asia & Middle East",
+    destination: "Oman",
+    flag: "\u{1F1F4}\u{1F1F2}",
+    visaType: "e-Visa (Tourist / Business, Single Entry)",
+    processingTime: "Fast-track",
+    validity: "10 or 30 days",
+    visaFee: "₹4,553 – ₹7,500 (inclusive)",
+    serviceCharge: "Included in service package",
+    documents: [
+      "Valid passport (6+ months validity)",
+      "Recent passport-size photograph",
+      "Confirmed return flight ticket",
+      "PAN card copy",
+    ],
+    note: "e-Visa digitally linked to passport; emailed after approval.",
+  },
+  {
+    region: "Asia & Middle East",
+    destination: "Bahrain",
+    flag: "\u{1F1E7}\u{1F1ED}",
+    visaType: "e-Visa (Tourist / Business, Single or Multiple Entry)",
+    processingTime: "Standard / fast-track",
+    validity: "7 / 14 / 30 / 90 days",
+    visaFee: "₹6,200 – ₹18,000 (inclusive)",
+    serviceCharge: "Included in service package",
+    documents: [
+      "Valid passport (6+ months validity)",
+      "Recent passport-size photograph",
+      "Confirmed return flight ticket",
+      "Hotel booking confirmation",
     ],
   },
 
   // ────────────── EUROPE ──────────────
   {
     region: "Europe",
-    destination: "Schengen (Europe)",
-    flag: "\u{1F1EA}\u{1F1FA}",
-    visaType: "Schengen Short-Stay Visa (Type C)",
-    processingTime: "15 working days (can extend to 30–45)",
-    validity: "Up to 90 days within 180 days",
+    destination: "Germany",
+    flag: "\u{1F1E9}\u{1F1EA}",
+    visaType: "Schengen Short-Stay Visa (Type C) — Tourist",
+    processingTime: "15–20 working days (up to 30 peak)",
+    validity: "Up to 90 days within any 180-day period",
+    visaFee: "€90 (~₹8,280); €45 children 6-12; free under 6",
+    serviceCharge: "VFS ₹1,722 (incl. GST) + courier ₹800",
     documents: [
-      "Passport valid 3+ months beyond departure, with 2 blank pages",
-      "2 recent photos (35×45 mm, Schengen specification)",
-      "Completed Schengen application form",
-      "Travel medical insurance — min. €30,000 coverage",
-      "Confirmed flight reservations (round trip)",
-      "Hotel bookings for the entire stay",
-      "Bank statements of the last 6 months",
-      "Income tax returns (last 2–3 years)",
-      "Employment proof / leave letter / business registration",
-      "Day-wise travel itinerary and cover letter",
+      "Valid passport (3+ months validity, 2 blank pages)",
+      "Completed VIDEX application form",
+      "2 photographs (35×45 mm, biometric spec)",
+      "Travel insurance (min €30,000 Schengen-wide)",
+      "Hotel / accommodation proof for full stay",
+      "Round-trip flight itinerary",
+      "Day-by-day travel itinerary",
+      "Bank statements + salary slips + ITR (3 years)",
+      "Employment letter / student ID / retirement docs",
+      "Cover letter explaining purpose and intent to return",
     ],
-    note: "Apply through the consulate of the country where you spend the most nights. Biometric enrolment is required.",
+    note: "Germany must be the primary destination or first point of entry in your Schengen circuit.",
+  },
+  {
+    region: "Europe",
+    destination: "France",
+    flag: "\u{1F1EB}\u{1F1F7}",
+    visaType: "Schengen Short-Stay Visa (Type C) — Tourist",
+    processingTime: "15 calendar days (up to 45 in complex cases)",
+    validity: "Up to 90 days within any 180-day period",
+    visaFee: "€90 (~₹7,800–8,100)",
+    serviceCharge: "VFS €22 (~₹1,900–2,000); total ~₹9,800–10,200",
+    documents: [
+      "Valid passport (3+ months validity, 2 blank pages)",
+      "2 photographs (35×45 mm, white background)",
+      "Scanned passport bio-data page",
+      "Completed CERFA application form",
+      "Round-trip flight bookings",
+      "Hotel reservation confirmation",
+      "Travel medical insurance (€30,000+)",
+      "Bank statements (last 6 months)",
+      "Salary slips (last 3 months)",
+      "Income tax returns (last 3 years)",
+      "Cover letter + employment verification",
+      "Proof of ties to India (property/employment/family)",
+    ],
+    note: "Apply via official france-visas.gouv.fr portal. Fee revised from €80 to €90 in June 2024.",
+  },
+  {
+    region: "Europe",
+    destination: "Italy",
+    flag: "\u{1F1EE}\u{1F1F9}",
+    visaType: "Schengen Visit Visa (Type C)",
+    processingTime: "10–15 working days",
+    validity: "6 months from issue; 90 days stay in any 180-day period",
+    visaFee: "~₹6,355 (embassy)",
+    serviceCharge: "VAC + biometric charges additional",
+    documents: [
+      "Valid passport (6+ months validity, 2 blank pages, ≤10 years old)",
+      "Old passports",
+      "Cover letter (purpose, duration, source of funds)",
+      "Invitation letter from Italian host (if applicable)",
+      "Round-trip flight booking + accommodation proof",
+      "Medical travel insurance (min €30,000)",
+      "Proof of occupation (employment letter / student ID / business docs)",
+      "Bank statements (last 3 months) and ITR",
+      "Biometric data submission at VAC",
+      "Passport-size photographs",
+    ],
+    note: "Visit visa cannot be extended under normal circumstances; no paid work permitted.",
+  },
+  {
+    region: "Europe",
+    destination: "Spain",
+    flag: "\u{1F1EA}\u{1F1F8}",
+    visaType: "Schengen Short-Stay Visa (Type C) — Tourist",
+    processingTime: "10–15 working days (up to 25 peak)",
+    validity: "Up to 180 days from issue; 90 days in 180-day period",
+    visaFee: "€90 (~₹8,300–8,920); €45 children 6-12",
+    serviceCharge: "BLS International ₹1,675 (incl. GST)",
+    documents: [
+      "Valid passport (3+ months validity beyond travel)",
+      "Completed Schengen visa application form",
+      "2 photographs (35×45 mm, white background)",
+      "Travel insurance (min €30,000 Schengen-wide)",
+      "Hotel / accommodation proof",
+      "Round-trip flight itinerary",
+      "Day-by-day travel itinerary",
+      "Bank statements + salary slips + ITR (2-3 years)",
+      "Employment letter with NOC / business registration",
+      "Cover letter explaining purpose and ties to India",
+    ],
+    note: "Processed through BLS International (not VFS).",
+  },
+  {
+    region: "Europe",
+    destination: "Switzerland",
+    flag: "\u{1F1E8}\u{1F1ED}",
+    visaType: "Schengen Type C Visitor Visa",
+    processingTime: "~15 working days",
+    validity: "3 months from issue; 90 days stay in any 180-day period",
+    visaFee: "~₹6,690 (multiple-entry standard)",
+    serviceCharge: "VAC service fee applies",
+    documents: [
+      "Valid passport (6+ months validity, 2+ blank pages)",
+      "Cover letter with purpose, duration, source of funds",
+      "Round-trip flight + accommodation booking",
+      "Medical travel insurance (min €30,000)",
+      "Invitation letter from Swiss host (if applicable)",
+      "Proof of occupation (employment letter / business license)",
+      "Financial documents (3-month bank statements, ITR)",
+      "2 photographs (35×45 mm, white/grey background)",
+      "Biometric submission at VAC (unless given in last 5 years)",
+    ],
+    note: "Permit cannot be extended under normal conditions; no paid work permitted.",
+  },
+  {
+    region: "Europe",
+    destination: "Netherlands",
+    flag: "\u{1F1F3}\u{1F1F1}",
+    visaType: "Schengen Short-Stay Visa (Type C)",
+    processingTime: "15 days standard; 8 working days off-peak (Delhi)",
+    validity: "Up to 90 days in 180-day period",
+    visaFee: "€90 (~₹9,360); €45 children 6-12; free under 6",
+    serviceCharge: "VFS ₹1,700–2,174 + courier ₹700 + SMS ₹150",
+    documents: [
+      "Valid passport (≤10 years old, 3+ months validity, 2 blank pages)",
+      "Completed application form with unique code",
+      "2 photographs (35×45 mm, white background)",
+      "Travel insurance (min €30,000 Schengen-wide)",
+      "Round-trip flight itinerary",
+      "Accommodation proof for entire stay",
+      "Bank statements (3-6 months, stamped)",
+      "Salary slips (last 3 months) + Form 16",
+      "Income tax returns",
+      "Cover letter (1-2 pages, detailed)",
+      "Employment letter with NOC / business registration / GST certificate",
+      "Proof of legal residence (Aadhaar / Voter ID)",
+    ],
+    note: "Stricter documentation checks in 2026 — minor inconsistencies trigger system flags.",
   },
   {
     region: "Europe",
     destination: "United Kingdom",
     flag: "\u{1F1EC}\u{1F1E7}",
-    visaType: "Standard Visitor Visa",
-    processingTime: "3 weeks (standard)",
+    visaType: "Standard Visitor Visa (6 months; 2/5/10-year variants)",
+    processingTime: "3-4 weeks standard; 5-7 days priority; 1 day super priority",
     validity: "6 months / 2 / 5 / 10 years",
+    visaFee: "£127 (~₹15,435) 6-month; £475 (₹57,728) 2-yr; £848 (₹1,03,059) 5-yr; £1,059 (₹1,28,703) 10-yr",
+    serviceCharge: "VFS service fee additional",
     documents: [
-      "Passport valid for the duration of stay with a blank page",
-      "Recent digital photo meeting UK specifications",
-      "Completed online application + biometric appointment",
-      "Bank statements of the last 6 months",
-      "Income tax returns (last 2 years) / Form 16",
-      "Employment proof — letter, salary slips, or business registration",
-      "Confirmed flight and hotel bookings",
-      "Detailed day-wise travel itinerary",
-      "Cover letter explaining the purpose of the visit",
-    ],
-    note: "Biometric enrolment at a VFS centre is mandatory. TravelSense books your appointment and reviews the full file before submission.",
-  },
-  {
-    region: "Europe",
-    destination: "Switzerland (non-Schengen variant)",
-    flag: "\u{1F1E8}\u{1F1ED}",
-    visaType: "Schengen Type C via Switzerland",
-    processingTime: "15 working days",
-    validity: "Up to 90 days within 180 days",
-    documents: [
-      "Passport valid 3+ months beyond departure",
-      "2 Schengen-spec photos (35×45 mm)",
-      "Travel medical insurance — min. €30,000",
-      "Confirmed flights and hotels",
-      "Bank statements (6 months)",
-      "Income tax returns (3 years)",
-      "Employment / business proof",
-      "Detailed itinerary",
-    ],
-    note: "Switzerland is in the Schengen Area — same visa, but apply at the Swiss consulate if Switzerland is your primary destination.",
-  },
-
-  // ────────────── AUSTRALIA & NZ ──────────────
-  {
-    region: "Australia & NZ",
-    destination: "Australia",
-    flag: "\u{1F1E6}\u{1F1FA}",
-    visaType: "Visitor Visa (Subclass 600)",
-    processingTime: "2–4 weeks",
-    validity: "3 / 6 / 12 months",
-    documents: [
-      "Passport valid for the duration of stay",
-      "Recent digital passport-size photo",
-      "Completed online application (ImmiAccount)",
-      "Bank statements of the last 6 months",
-      "Income tax returns (last 2 years)",
-      "Employment / business proof",
-      "Confirmed flight and hotel bookings",
-      "Travel itinerary and cover letter",
-    ],
-  },
-  {
-    region: "Australia & NZ",
-    destination: "New Zealand",
-    flag: "\u{1F1F3}\u{1F1FF}",
-    visaType: "Visitor Visa",
-    processingTime: "20-30 working days",
-    validity: "Up to 9 months per visit",
-    documents: [
-      "Passport valid for at least 3 months beyond departure",
-      "Recent digital photo (35×45 mm)",
-      "Completed online application (Immigration NZ)",
+      "Valid passport (6+ months validity)",
+      "2 photographs (35×45 mm)",
       "Bank statements (last 6 months)",
-      "Income tax returns (last 2 years)",
-      "Employment / business proof",
-      "Confirmed flight bookings",
-      "Accommodation and itinerary details",
-      "Travel insurance",
+      "Proof of income (salary slips, ITR, employment letter)",
+      "Travel bookings (flights and hotels)",
+      "Proof of ties to India (property, family, employment)",
+      "Detailed travel itinerary",
+      "Cover letter explaining purpose of visit",
+      "TB test certificate (for visas longer than 6 months)",
+      "Invitation letter (if visiting family/friends)",
+      "Sponsor's financial documents (if sponsored)",
+      "Previous travel history / old passports",
     ],
+    note: "From Jan 2026, English language requirement raised to CEFR B2 for some visa categories. Biometrics mandatory at VFS.",
   },
 
   // ────────────── AMERICAS ──────────────
@@ -307,50 +407,158 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     region: "Americas",
     destination: "United States",
     flag: "\u{1F1FA}\u{1F1F8}",
-    visaType: "B1/B2 Tourist Visa",
-    processingTime: "Varies — interview wait + 1 week processing",
-    validity: "Up to 10 years, multiple entry",
+    visaType: "B-1/B-2 Tourist/Business Visa (non-immigrant)",
+    processingTime: "3.5 months (New Delhi); 9.5 months (Mumbai)",
+    validity: "10 years multiple entry; up to 6 months per visit",
+    visaFee: "USD 185 base + USD 250 integrity fee + USD 24 I-94 (~₹42,228)",
+    serviceCharge: "VAC charges separate; total package ~₹42,000-45,000",
     documents: [
-      "Passport valid for at least 6 months beyond stay",
-      "DS-160 confirmation page",
-      "Visa appointment confirmation (OFC + consulate)",
-      "Recent 2×2 inch photo (white background)",
-      "Bank statements of the last 6 months",
-      "Income tax returns (last 3 years)",
-      "Employment / business proof",
-      "Property and asset documents (supporting ties to India)",
-      "Travel itinerary and invitation letter (if applicable)",
+      "Valid passport (6+ months validity)",
+      "DS-160 confirmation page with barcode",
+      "Appointment confirmations (VAC + interview)",
+      "Visa fee payment receipt",
+      "Passport photo (51×51 mm, white background)",
+      "Bank statements (6 months) and ITR (3 years)",
+      "Employment letter on letterhead + salary slips (6 months)",
+      "Property documents / investment statements (ties to India)",
+      "Flight itinerary and hotel reservations",
+      "Travel insurance",
+      "Previous US visas / travel history",
+      "Cover letter explaining purpose of visit",
     ],
-    note: "A personal interview at the US Consulate is mandatory. We provide mock-interview preparation as part of our service.",
+    note: "New USD 250 Visa Integrity Fee effective Oct 2025. Interview Waiver now restricted to renewals only.",
   },
   {
     region: "Americas",
     destination: "Canada",
     flag: "\u{1F1E8}\u{1F1E6}",
-    visaType: "Visitor Visa (TRV)",
-    processingTime: "6-10 weeks (varies)",
-    validity: "Up to 10 years (passport-bound), 6 months per visit",
+    visaType: "Temporary Resident Visa (Visitor)",
+    processingTime: "28 days (visitor) / 9 weeks (study) / 16 weeks (work)",
+    validity: "Up to 10 years multiple entry; 6 months per visit",
+    visaFee: "CAD 100 (~₹6,120) + biometrics CAD 85 (~₹5,200)",
+    serviceCharge: "VFS service ~₹600-1,200; total ~₹12,000-12,500",
     documents: [
-      "Passport valid for the duration of stay",
-      "Completed online application (IRCC)",
-      "Recent photo per IRCC specifications",
-      "Biometric enrolment at VFS",
-      "Bank statements of the last 6 months",
-      "Income tax returns (last 2-3 years)",
-      "Employment / business proof",
-      "Confirmed flight and hotel bookings",
-      "Travel itinerary and purpose-of-visit cover letter",
-      "Strong ties to India (property, family, employment)",
+      "Valid passport (6+ months validity with blank page)",
+      "Completed IMM 5257 application form",
+      "2 recent passport-size photographs",
+      "Bank statements (6 months)",
+      "Income tax returns (last 3 years)",
+      "Employment / business proof (NOC, business registration)",
+      "Travel itinerary and accommodation bookings",
+      "Biometrics submission at VFS",
+      "Purpose-of-visit documentation",
+      "Previous travel history / old passports",
+      "Cover letter",
     ],
-    note: "Biometric enrolment is mandatory and valid for 10 years.",
+    note: "Biometric enrolment mandatory and valid for 10 years.",
+  },
+
+  // ────────────── AUSTRALIA ──────────────
+  {
+    region: "Australia",
+    destination: "Australia",
+    flag: "\u{1F1E6}\u{1F1FA}",
+    visaType: "Visitor Visa (Subclass 600) — Tourist Stream",
+    processingTime: "11 days (50% of apps); 23 days (90%); max 30 days",
+    validity: "Up to 12 months multiple entry; 3 months stay per visit",
+    visaFee: "AUD 190 (~₹13,200) offshore; AUD 475 (~₹32,900) onshore",
+    serviceCharge: "Not separately itemized",
+    documents: [
+      "Valid Indian passport (12+ months validity)",
+      "Completed online application via ImmiAccount",
+      "2 photographs (35×45 mm)",
+      "Bank statements (3-6 months) + salary slips + ITR",
+      "Day-by-day travel itinerary",
+      "Round-trip flight reservations",
+      "Accommodation proof",
+      "Employment NOC letter / company registration",
+      "Cover letter explaining travel plans and ties to India",
+      "Travel insurance (min AUD 5,000 recommended)",
+    ],
+    note: "Requirements vary by location and profession — consult a visa expert before applying.",
+  },
+
+  // ────────────── OTHER (Eurasia / Africa) ──────────────
+  {
+    region: "Other",
+    destination: "Turkey",
+    flag: "\u{1F1F9}\u{1F1F7}",
+    visaType: "e-Visa (Tourist / Business / Study / Transit)",
+    processingTime: "Online — usually instant to a few days",
+    validity: "30 days maximum stay",
+    visaFee: "₹8,471 – ₹24,100 (inclusive)",
+    serviceCharge: "Included in service package",
+    documents: [
+      "Valid passport (6+ months validity)",
+      "Confirmed return flight ticket",
+      "Hotel booking / accommodation proof",
+    ],
+    note: "Additional documents may be required based on travel purpose.",
+  },
+  {
+    region: "Other",
+    destination: "Armenia",
+    flag: "\u{1F1E6}\u{1F1F2}",
+    visaType: "e-Visa (Tourist / Business, Single or Multiple Entry)",
+    processingTime: "Standard online processing",
+    validity: "21 to 120 days stay",
+    visaFee: "₹1,500 – ₹2,650 (inclusive)",
+    serviceCharge: "Included in service package",
+    documents: [
+      "Valid passport (6+ months validity)",
+      "Confirmed air ticket",
+      "Passport-size photograph",
+      "Scanned application form copy",
+    ],
+    note: "Each traveller needs a separate e-visa; no amendments allowed after issue.",
+  },
+  {
+    region: "Other",
+    destination: "Azerbaijan",
+    flag: "\u{1F1E6}\u{1F1FF}",
+    visaType: "e-Visa / ASAN (Tourist / Business)",
+    processingTime: "Normal or Urgent track",
+    validity: "30 days maximum stay",
+    visaFee: "₹1,932 (normal) – ₹5,040 (urgent)",
+    serviceCharge: "Included in service package",
+    documents: [
+      "Valid passport (6+ months validity)",
+      "Confirmed air ticket",
+      "Passport-size photograph",
+      "Hotel booking",
+    ],
+  },
+  {
+    region: "Other",
+    destination: "Kenya",
+    flag: "\u{1F1F0}\u{1F1EA}",
+    visaType: "e-Visa (Tourist / Business, Single Entry)",
+    processingTime: "Standard online processing",
+    validity: "Up to 90 days stay",
+    visaFee: "₹4,284 (inclusive)",
+    serviceCharge: "Included in service package",
+    documents: [
+      "Valid passport (6+ months validity)",
+      "Recent photograph",
+      "Confirmed air ticket",
+      "Yellow fever vaccination certificate",
+      "Hotel voucher",
+    ],
+    note: "Yellow fever vaccination mandatory. e-Visa digitally linked to passport.",
   },
 ]
 
-const REGIONS: VisaRegion[] = ["Asia", "Europe", "Australia & NZ", "Americas"]
+const REGIONS: VisaRegion[] = [
+  "Asia & Middle East",
+  "Europe",
+  "Americas",
+  "Australia",
+  "Other",
+]
 
 export default function VisaChecklist() {
-  const [activeRegion, setActiveRegion] = useState<VisaRegion>("Asia")
-  const [selectedSlug, setSelectedSlug] = useState<string>("Thailand")
+  const [activeRegion, setActiveRegion] = useState<VisaRegion>("Asia & Middle East")
+  const [selectedSlug, setSelectedSlug] = useState<string>("Singapore")
 
   const regionEntries = useMemo(
     () => VISA_CHECKLISTS.filter((e) => e.region === activeRegion),
@@ -419,6 +627,7 @@ export default function VisaChecklist() {
           transition={{ duration: 0.25 }}
           className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur md:p-8"
         >
+          {/* Header — destination + visa type + meta */}
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
               <h3 className="font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-xl">
@@ -443,6 +652,43 @@ export default function VisaChecklist() {
             </div>
           </div>
 
+          {/* Fees section */}
+          {(active.visaFee || active.serviceCharge) && (
+            <div className="mt-5 grid gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4 sm:grid-cols-2">
+              {active.visaFee && (
+                <div className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#D4A853]/15">
+                    <IndianRupee className="h-3.5 w-3.5 text-[#D4A853]" />
+                  </span>
+                  <div>
+                    <p className="font-heading text-xs font-medium uppercase tracking-wide text-white/50">
+                      Visa Fee
+                    </p>
+                    <p className="mt-0.5 font-body text-sm text-white/85">
+                      {active.visaFee}
+                    </p>
+                  </div>
+                </div>
+              )}
+              {active.serviceCharge && (
+                <div className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#C4324A]/15">
+                    <IndianRupee className="h-3.5 w-3.5 text-[#C4324A]" />
+                  </span>
+                  <div>
+                    <p className="font-heading text-xs font-medium uppercase tracking-wide text-white/50">
+                      Service Charge
+                    </p>
+                    <p className="mt-0.5 font-body text-sm text-white/85">
+                      {active.serviceCharge}
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Documents list */}
           <div className="mt-6">
             <p className="flex items-center gap-2 font-heading text-sm font-medium text-white">
               <FileText className="h-4 w-4 text-[#C4324A]" />
@@ -472,9 +718,10 @@ export default function VisaChecklist() {
           )}
 
           <p className="mt-5 font-body text-xs leading-relaxed text-white/35">
-            Document lists are indicative. Exact requirements vary by applicant
-            profile and the latest embassy guidelines — our visa team confirms
-            your personal checklist once you submit an inquiry.
+            Document lists and charges are indicative and based on the latest
+            embassy / consulate guidelines. Final document checklist and fees
+            are confirmed by our visa team once you submit an inquiry. All form
+            filling is handled by TravelSense.
           </p>
         </motion.div>
       </AnimatePresence>
