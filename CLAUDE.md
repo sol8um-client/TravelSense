@@ -582,61 +582,41 @@ pnpm dev
 
 ---
 
-## Current Status — Phase 1 ~95% Complete (as of April 19, 2026)
+## Current Status — Phase 1 ~99% Complete (as of May 26, 2026)
+
+**Content scale:** **117 packages across 38 destinations**, **25 visa destinations** with fees + documents, **8 blog articles**, all live on travelsense.co.in.
 
 - [x] **M1: Brand Identity** — COMPLETE
-  - [x] Logo design (logo-blue-bg.png, logo-final-nobg.png, SVG variants)
-  - [x] Color palette (Midnight Voyager: #0A1425, #C4324A, #D4A853, #8A9BB5)
-  - [x] Typography (Michroma headings weight 400, Exo 2 body 300-700)
-  - [x] Brand guidelines
-  - [x] Competitor research
-  - [x] Project scaffolding
 - [x] **M2: UI/UX Design** — COMPLETE
-  - [x] Homepage — 12 sections with 3D globe, animations
-  - [x] All destination pages (listing + 20 detail pages)
-  - [x] All package pages (listing + 13 detail pages with gamified visual itinerary)
-  - [x] All blog pages (listing + 8 detail pages)
-  - [x] All category pages (4 categories)
-  - [x] All marketing pages (About, Contact, Services, Gallery, FAQ, Privacy, Terms)
-  - [x] All booking/form pages (Consultation, Vehicles, Visa, Itinerary Builder, Hotels)
-  - [x] Admin panel (Dashboard, Inquiries, Bookings, Analytics)
 - [x] **M3: Website Development** — COMPLETE
-  - [x] Homepage with animations + 3D globe (NASA texture, pins, arcs)
-  - [x] All 29 pages built and responsive
+  - [x] All 29 pages built, responsive, deployed
   - [x] 8 API routes with Zod validation → Supabase
   - [x] 6 Supabase tables with RLS policies
-  - [x] Lead capture modal on all CTAs
+  - [x] **Itinerary Builder** — rule-based engine on static data, save & share, URL-hydration (fixed from broken Sanity dependency)
+  - [x] **Visa & Passport** — region-tabbed checklist with BTW Visas data (25 countries, visa fees, service charges, full document lists)
+  - [x] **Per-vehicle pricing tables** for 12 South India packages (whole-group rates × 5-7 hotel categories)
   - [x] Admin middleware with cookie-based auth
-  - [x] Custom error.tsx, loading.tsx, not-found.tsx
-  - [x] Framer Motion animations sitewide
-  - [x] Deployed to Vercel — https://travelsense.co.in
-  - [x] GitHub repo — https://github.com/sol8um-client/TravelSense
 - [x] **M4: Content & SEO** — COMPLETE
-  - [x] All destination pages with rich content (descriptions, highlights, tips, experiences)
-  - [x] 13 packages with day-by-day itineraries (incl. Char Dham Helicopter 6D)
-  - [x] 8 full blog articles (400-600 words each with HTML content)
-  - [x] 40 custom AI-generated images (Nano Banana 2) for location accuracy
-  - [x] Image optimization pipeline (PNG → WebP, 140MB → 7MB)
-  - [x] Auto-generated sitemap.xml, robots.txt
-  - [x] JSON-LD schemas (Organization, Service, Breadcrumbs)
-  - [x] Open Graph tags, meta tags sitewide
+  - [x] **117 packages** with day-by-day itineraries (up from 13)
+  - [x] **38 destinations** (up from 20) — added Bihar, Chhattisgarh, West Bengal, Telangana, Odisha, Lakshadweep, Tamil Nadu
+  - [x] **40 custom AI images** + Unsplash for newer packages
+  - [x] Auto-generated sitemap.xml from static data (165 URLs)
+  - [x] JSON-LD schemas, OG tags sitewide
+  - [x] **Sanity CMS dependency REMOVED** — all content in `src/data/`
   - [x] GA4 + Meta Pixel components ready (awaiting client IDs)
-  - [x] **Sanity CMS dependency REMOVED** — content moved to `src/data/` static files
 - [x] **M5: Launch & QA** — MOSTLY COMPLETE
-  - [x] Social media strategy document (4-platform, content calendar, Meta Ads plan)
-  - [x] End-to-end build verification (all pages return 200, forms tested to Supabase)
-  - [x] Client delivery status PDF (`docs/TravelSense_Phase1_Status.pdf`)
+  - [x] All pages return 200, forms tested
+  - [x] 5 production deploys this month after 6 rounds of client feedback
   - [ ] Social media profile creation (needs client-provided handles)
   - [ ] Email marketing setup via Brevo (needs client API key)
-- [ ] **Awaiting Client Inputs** — ONLY remaining Phase 1 blockers
-  - [ ] Business phone/WhatsApp number (placeholder in 7 files)
-  - [ ] GA4 Measurement ID (G-XXXXXXXXXX)
-  - [ ] Meta Pixel ID
-  - [ ] Razorpay Key ID + Secret
-  - [ ] Brevo API key
-  - [ ] Jayshree's founder photo (fallback globe icon in place)
+- [ ] **Awaiting Client Inputs** — remaining Phase 1 blockers
+  - [ ] Business phone/WhatsApp number
+  - [ ] GA4 Measurement ID + Meta Pixel ID
+  - [ ] Razorpay Key ID + Secret + Brevo API key
+  - [ ] Founder photo + Brand OG image (1200×630)
   - [ ] Social media profile URLs
-  - [ ] Brand OG image (1200×630)
+  - [ ] **Hotel API choice** — Booking.com Affiliate (free) / TBOHolidays (₹15-20k/mo) / RateHawk ($200) — client subscription per contract §12.2
+  - [ ] International itineraries (client to share next docx)
 - [ ] **AI Roadmap** — PLANNED (Post Phase 1 Launch)
 
 ---
@@ -920,3 +900,67 @@ pnpm dev
 **Next session priorities:**
 - Plug in client credentials as they arrive
 - Phase 2 planning (marketplace, AI features)
+
+---
+
+## Session Log — May 13 – 26, 2026
+
+### Six rounds of client feedback + major scale-up — Phase 1 effectively complete
+
+**Scale shift this fortnight:** 13 packages → 117 packages, 20 destinations → 38 destinations, 12 visa destinations → 25 visa destinations.
+
+#### Feedback rounds processed (rolling)
+
+**Round 1 (14 items)** — Leh pricing, Atal/Rohtang inclusions, Grand Circuit days, Spiti days, Ranthambore safari count, Rajasthan Jodhpur 2N, Kumbhalgarh stay, Varanasi slug mismatch, Golden Triangle dedupe, Uttarakhand image diversification, coordination removed, Char Dham itinerary, Tehri itinerary, NE packages.
+
+**Round 2 (docx-driven)** — Added 5 new destinations (Bihar, Chhattisgarh, West Bengal, Telangana, Odisha) + 17 new packages from client's "Itinerary routes" docx. Fixed Andaman/Dubai slug mismatches. Char Dham Helicopter price → ₹2,15,000.
+
+**Round 3 (NE-focused)** — Rebuilt Seven Sisters (19D), Kaziranga Assam (8D), and Coorg & Wayanad packages with proper itineraries (removed Thrillophilia refs and scraped junk). Added Meghalaya Essence, North Sikkim, Sikkim Family Circuit, Tawang Express, Arunachal Hidden Valleys. Fixed Kerala 5 Days (Thekkady morning boat).
+
+**Round 4 (Phase 1 audit + South India per-car pricing)** —
+- Fixed broken Itinerary Builder (was still querying removed Sanity, returning zero results). Rebuilt with rule-based engine over static data + save/share + URL hydration.
+- Added Visa Document Checklist by Destination (initially 12 countries, region-grouped).
+- Removed "Dedicated TravelSense consultant on WhatsApp" line from 46 scraped packages.
+- Added 12 South India packages with full **per-vehicle rate cards** (whole-group price × 5-7 hotel categories) — new `VehiclePricing` field on Package interface, table rendered on PackageDetail.
+- Added Lakshadweep destination + 6N package.
+
+**Round 5 (May 19-21)** —
+- Coastal Karnataka new package (Udupi, Murudeshwar, Gokarna).
+- Andaman 6D + 8D fully rewritten (clean sentence case, no scraped Title-Case dumps).
+- Rann of Kutch repositioned — standard Bhuj-stay at ₹25k, Dhordo tent-stay flagged as ₹50k+ premium tier.
+- Ashtavinayak rewritten Pune → 8 temples in traditional order → Pune.
+- Tadoba: Pench removed entirely, Tadoba-only 3D.
+- Split 3-Jyotirlinga (clean Maharashtra-only, ₹12k) and 5-Jyotirlinga (3 MH + Mallikarjuna + Omkareshwar, ₹15k).
+- Narmada Parikrama rewritten to the full traditional **15D/14N** circuit (Indore → Omkareshwar → south bank → Vimleshwar sea crossing → north bank → Amarkantak source → Sankalp Purti at Omkareshwar) — sourced from Vihar Travels reference.
+- Visa restructured into 5 region tabs.
+
+**Round 6 (May 23-26)** —
+- Hotel/Vehicle/Visa API question answered with WhatsApp-style reply: 3 hotel API options (Booking.com / TBOHolidays / RateHawk), vehicles are contract-specified request-based (no API needed), visa has no industry-standard API.
+- **Visa checklist refreshed with BTW Visas data** — 25 countries, visa fees + service charges + full document lists per country. Region tabs: Asia & Middle East / Europe / Americas / Australia / Other.
+- Client confirmed "we do the form filling" — visa stays as inquiry-form + checklist + manual fulfilment.
+
+#### Technical fixes shipped
+
+- **Sitemap broken** — was still pulling from Sanity. Rewrote to read from static `src/data/` files. Grew from 51 URLs → 165 URLs.
+- **Vercel auto-deploy was disconnected** — pushes weren't building. Switched to manual `vercel deploy --prod` per push since round 2.
+- **Itinerary Builder shape mismatch** — recommendations engine was returning Sanity object shape but UI expected flat shape (`matchScore`, `destination` as string, `duration` as number). Fixed.
+- **Per-Vehicle pricing component** added to PackageDetail with horizontal-scroll table on mobile.
+- **47 legacy scraped packages flagged** — pre-existing run-on titles in international packages (Dubai, Vietnam, Sri Lanka, Singapore, etc.). Listed for client to mark keep/drop. Not a regression.
+
+#### Files most actively changed
+- `src/data/packages.ts` — grew from ~10k to ~14k lines (117 packages)
+- `src/data/destinations.ts` — added 6 destinations (Bihar, Chhattisgarh, WB, Telangana, Odisha, Lakshadweep, Tamil Nadu)
+- `src/components/booking/VisaChecklist.tsx` — twice rewritten (region tabs, then BTW data + fees)
+- `src/components/packages/PackageDetail.tsx` — added per-vehicle pricing section
+- `src/components/itinerary/ItineraryForm.tsx` + `ItineraryResults.tsx` — save/share, URL hydration
+- `src/app/api/itinerary/route.ts` — rule-based scoring engine on static data
+- `src/app/sitemap.ts` — read from `src/data/` instead of Sanity
+
+#### Outstanding from client (per WhatsApp 23 May)
+- Hotel API decision (Booking.com / TBOHolidays / RateHawk)
+- International itineraries (next docx)
+- 47 legacy international packages — keep & rewrite, or drop?
+
+#### Outstanding from Sol8um side
+- Once hotel API picked → KYC + integration (~1 week)
+- Once international docx arrives → bulk-add same way as the South India round
