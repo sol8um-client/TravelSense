@@ -2535,6 +2535,213 @@ export const destinations: Destination[] = [
     ],
     featured: false,
   },
+
+  /* ──────────────────────── Malaysia ──────────────────────── */
+  {
+    name: "Malaysia",
+    slug: "malaysia",
+    region: "International",
+    country: "Malaysia",
+    category: "leisure",
+    tagline: "Twin Towers, Tropical Islands & Penang Street Food",
+    description:
+      "From the gleaming Petronas Twin Towers of Kuala Lumpur to the UNESCO heritage streets of Georgetown Penang and the white-sand cable-car beaches of Langkawi — Malaysia is Southeast Asia's most balanced multi-culture, multi-island destination.",
+    longDescription:
+      "Malaysia packs three distinct holidays into one trip. Kuala Lumpur is a cosmopolitan capital where the 452-metre Petronas Twin Towers (the world's tallest twin buildings until 2004) anchor a skyline of glass and steel — Sky Bridge views, Suria KLCC shopping, and Jalan Alor street-food nights are the must-do trio. Batu Caves and the Genting Highlands cable car make for great day trips from KL.\n\nPenang's Georgetown — a UNESCO World Heritage city — is the cultural and culinary heart. Trishaw rides past Chinese clan jetties, century-old Peranakan mansions, Cheong Fatt Tze (the Blue Mansion), Khoo Kongsi temple, and a street-art trail that turned Penang into Asia's coolest art city. Penang's hawker food — char kway teow, asam laksa, hokkien mee — is widely regarded as the best in Southeast Asia.\n\nLangkawi is the beach finale: 99 jewel-green islands off Malaysia's northwest coast, dominated by Pulau Langkawi where Cenang Beach's water sports and the SkyCab — the world's steepest cable-car at 42 degrees — to the Sky Bridge are headline attractions. Mangrove tours, Eagle Square, the night market, and a duty-free shopping scene round out the experience.",
+    heroImage: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1601762603339-fd61e28b698a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1555217851-6141535bd771?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1597000571127-e4e3e3686e88?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "December to April",
+    weather:
+      "Tropical year-round (24-33 °C). West coast (KL, Penang, Langkawi) is driest Dec-Apr. Brief afternoon showers possible in monsoon (May-Oct).",
+    startingPrice: 75000,
+    highlights: [
+      "Petronas Twin Towers Sky Bridge",
+      "Georgetown Penang UNESCO heritage",
+      "Penang street-food trail",
+      "Langkawi SkyCab & Sky Bridge",
+      "Batu Caves & Genting Highlands",
+      "Cenang Beach water sports",
+    ],
+    thingsToKnow: [
+      "Visa on arrival or e-visa for Indian passport holders — process before travel via Malaysia eNTRI portal.",
+      "KL Sentral is the central transit hub for trains, KLIA Express to airport, and onward to Penang/Langkawi.",
+      "Penang's George Town is best explored on foot or by trishaw — most heritage attractions within 1 km radius.",
+      "Langkawi ferry from Penang takes 2.5 hrs; direct flights are faster (45 min).",
+      "Malaysian Ringgit (MYR) — keep small notes for hawker food and trishaw rides.",
+    ],
+    popularExperiences: [
+      {
+        title: "Petronas Twin Towers Sky Bridge",
+        description:
+          "Ride to the 41st-floor Sky Bridge and 86th-floor observation deck for panoramic views over the KL skyline.",
+        icon: "🌆",
+      },
+      {
+        title: "Penang Street-Food Trail",
+        description:
+          "Hawker hopping at Gurney Drive, New Lane, and Chulia Street — Penang is the undisputed street-food capital of Southeast Asia.",
+        icon: "🍜",
+      },
+      {
+        title: "Langkawi SkyCab Cable Car",
+        description:
+          "Ride the world's steepest cable car up Mount Mat Cincang and walk the Sky Bridge — a 125-m curved pedestrian bridge suspended at 700 m.",
+        icon: "🚠",
+      },
+      {
+        title: "Georgetown Street Art Walk",
+        description:
+          "Follow the famous trail of murals and wrought-iron sculptures that turned Penang's heritage zone into an open-air museum.",
+        icon: "🎨",
+      },
+    ],
+    featured: false,
+  },
+
+  /* ──────────────────────── Philippines ──────────────────────── */
+  {
+    name: "Philippines",
+    slug: "philippines",
+    region: "International",
+    country: "Philippines",
+    category: "leisure",
+    tagline: "7,641 Islands of Beaches, Reefs & Underground Rivers",
+    description:
+      "From the historic streets of Manila and the Spanish-era charm of Cebu to the powdery white sand of Boracay and the UNESCO underground river of Puerto Princesa — the Philippines is the world's most island-rich beach destination.",
+    longDescription:
+      "The Philippines is an archipelago of 7,641 islands — beaches, reefs, jungles, volcanoes and three centuries of Spanish colonial heritage that make it Southeast Asia's most culturally distinct destination. Manila, the capital on Luzon island, is anchored by Intramuros — the walled colonial city with Fort Santiago, San Agustin Church (the country's oldest, 1607), and Casa Manila — alongside Rizal Park and the modern Bonifacio Global City skyline.\n\nCebu, the 'Queen City of the South', is where Magellan landed in 1521 and where the country's Christianisation began. Magellan's Cross, Basilica del Santo Niño, Fort San Pedro and the lively Mactan Island resorts mix history with beach access. Cebu is also the launchpad for the Kawasan Falls canyoneering adventure and Oslob whale-shark snorkelling.\n\nBoracay, a tiny 7-km-long island, has been ranked Asia's best beach again and again — White Beach's flour-fine sand stretches 4 km, lined with stations 1-2-3 for kitesurfing, parasailing and island hopping to Crystal Cove and Magic Island. Sunset cocktails at D'Mall and Bulabog Beach kiteboarding round out a perfect three days.\n\nPuerto Princesa on Palawan island is home to the Puerto Princesa Underground River — a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. The 8.2-km cave river runs through limestone karst beneath a mountain. Honda Bay island-hopping, Sabang Beach and the Iwahig Firefly Watching tour are the supporting acts.",
+    heroImage: "https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1565073624497-7e91b5cc3843?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1583338917496-7b46b5d8a08c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1551866442-65523e29b6ee?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "December to May",
+    weather:
+      "Tropical year-round (25-33 °C). Dry season Dec-May ideal for beaches. Avoid Jun-Nov typhoon season, especially Sep-Oct.",
+    startingPrice: 92000,
+    highlights: [
+      "Boracay White Beach (Asia's best beach)",
+      "Puerto Princesa Underground River (UNESCO)",
+      "Cebu Magellan's Cross & Basilica del Santo Niño",
+      "Manila Intramuros walled city",
+      "Honda Bay island hopping",
+      "Oslob whale-shark snorkelling",
+    ],
+    thingsToKnow: [
+      "Indian passport holders require a visa — apply at the Philippines embassy in advance.",
+      "Inter-island flights are usually faster and cheaper than ferries — Cebu Pacific and Philippine Airlines.",
+      "Puerto Princesa Underground River permits are limited daily — book through your operator at least 3 days ahead.",
+      "Boracay was closed for environmental rehabilitation in 2018; current rules ban smoking, drinking and littering on the beach.",
+      "Philippine Peso (PHP) — ATMs widely available, USD also accepted at most resorts.",
+    ],
+    popularExperiences: [
+      {
+        title: "Boracay White Beach Sunset",
+        description:
+          "Walk barefoot along the 4-km flour-fine sand at sunset with a Mango Daiquiri from D'Mall — the iconic Boracay moment.",
+        icon: "🏖️",
+      },
+      {
+        title: "Underground River Cave Cruise",
+        description:
+          "Paddle through 8.2 km of cathedral-like caves on the Puerto Princesa Underground River — UNESCO and one of the New 7 Wonders.",
+        icon: "🚣",
+      },
+      {
+        title: "Intramuros Walking Tour",
+        description:
+          "Step into 17th-century Spanish Manila — Fort Santiago, San Agustin Church (1607) and cobblestone streets within the walled city.",
+        icon: "🏛️",
+      },
+      {
+        title: "Honda Bay Island Hopping",
+        description:
+          "Bangka boat to Cowrie, Starfish and Luli islands for snorkelling over reefs and a beach barbecue lunch.",
+        icon: "🐠",
+      },
+    ],
+    featured: false,
+  },
+
+  /* ──────────────────────── Bhutan ──────────────────────── */
+  {
+    name: "Bhutan",
+    slug: "bhutan",
+    region: "International",
+    country: "Bhutan",
+    category: "leisure",
+    tagline: "The Last Himalayan Kingdom — Gross National Happiness",
+    description:
+      "Tiger's Nest Monastery clinging to a cliff at 3,120 m, the dzongs of Paro and Punakha, the prayer-flag passes of central Bhutan — the world's only Vajrayana Buddhist kingdom where Gross National Happiness is government policy.",
+    longDescription:
+      "Bhutan is the world's most carefully managed travel destination — every foreign visitor pays a Sustainable Development Fee that funds free healthcare and education for Bhutanese citizens, and tourism is deliberately kept small-scale. The result: a Himalayan kingdom that has chosen to preserve its Vajrayana Buddhist culture, its 70%-forest cover (constitutionally mandated), and an unhurried pace that disappeared from the rest of Asia decades ago.\n\nParo, where the international airport is, is anchored by the Paro Dzong (Rinpung Dzong) — a 17th-century fortress-monastery — and the National Museum housed in the Ta Dzong watchtower. The signature experience is the hike to Taktsang (Tiger's Nest) Monastery, perched on a cliff 900 m above the Paro valley floor. The 4-5 hour round-trip climb to 3,120 m delivers one of the most photographed sights in the Himalayas.\n\nThimphu, the capital, is the world's only national capital without a single traffic light — police officers in white gloves direct traffic at the main junction. The 51-m bronze Buddha Dordenma overlooking the city, the Memorial Chorten where locals walk meditative circuits, the Tashichho Dzong (seat of government and the King), and the Folk Heritage Museum are essential stops.\n\nPunakha, the former winter capital, has the most beautiful dzong in Bhutan — Punakha Dzong at the confluence of the Pho Chhu and Mo Chhu rivers, with white-water rafting on the Mo Chhu river. The drive to Punakha crosses the Dochu La pass at 3,100 m where 108 chortens (memorial stupas) face the Eastern Himalayas. Longer trips continue to central Bhutan — Trongsa, Bumthang (the spiritual heartland) and the black-necked crane valley of Phobjikha.",
+    heroImage: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1531219432768-9f540ce91934?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1543874746-b7e36e8a2b3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1583309219338-a582f1f9ca6b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "March to May, September to November",
+    weather:
+      "Spring (Mar-May) and autumn (Sep-Nov) are ideal — clear skies, pleasant 15-25 °C in Paro/Thimphu. Winters cold (Dec-Feb) but rhododendron-free clarity. Monsoon (Jun-Aug) lush but cloudy.",
+    startingPrice: 130000,
+    highlights: [
+      "Tiger's Nest (Taktsang) Monastery hike",
+      "Punakha Dzong — Bhutan's most beautiful fortress",
+      "Buddha Dordenma 51-m bronze statue, Thimphu",
+      "Dochu La Pass — 108 chortens",
+      "Bumthang spiritual valley & burning lake",
+      "Phobjikha black-necked crane valley (Oct-Mar)",
+    ],
+    thingsToKnow: [
+      "Bhutan operates a Sustainable Development Fee (SDF) of USD 100/person/day for foreign tourists — Indian nationals pay INR 1,200/day from 2022 onwards.",
+      "Indian passport holders need a permit (no visa) — arranged by the licensed Bhutanese operator before travel.",
+      "All trips must be booked through a registered Bhutanese tour operator — no independent travel.",
+      "Tiger's Nest hike requires 4-5 hrs round trip; horses available till halfway tea-house then on foot.",
+      "Bhutanese Ngultrum (BTN) is pegged 1:1 to Indian Rupee — INR is widely accepted (except INR 2000 notes).",
+    ],
+    popularExperiences: [
+      {
+        title: "Tiger's Nest (Taktsang) Hike",
+        description:
+          "The signature Bhutan experience — a 4-5 hour climb to the 17th-century monastery perched on a cliff 900 m above the Paro valley floor.",
+        icon: "🛕",
+      },
+      {
+        title: "Dochu La Pass Sunrise",
+        description:
+          "108 chortens face the Eastern Himalayas across the 3,100 m pass — at sunrise on clear days you can see Gangkar Puensum, Bhutan's tallest mountain.",
+        icon: "🏔️",
+      },
+      {
+        title: "Punakha Dzong Visit",
+        description:
+          "Bhutan's most photographed fortress, set at the confluence of the 'father' (Pho Chhu) and 'mother' (Mo Chhu) rivers — wooden bridges, white walls, jacaranda blossoms in spring.",
+        icon: "🏯",
+      },
+      {
+        title: "Mo Chhu River Rafting",
+        description:
+          "Gentle Class II-III white-water rafting on the Mo Chhu river past Punakha Dzong — Bhutan's most popular soft-adventure activity.",
+        icon: "🚣",
+      },
+    ],
+    featured: false,
+  },
 ]
 
 /* ─── Helper: get a destination by slug ─────────────────────────────────── */
