@@ -2,7 +2,6 @@ import {
   Palmtree,
   Mountain,
   GraduationCap,
-  Trophy,
   type LucideIcon,
 } from "lucide-react";
 
@@ -127,40 +126,6 @@ export const travelCategories: TravelCategory[] = [
       "Hampi",
       "Kolkata",
       "Mysore",
-    ],
-  },
-  {
-    id: "sports",
-    title: "Sports Travel",
-    slug: "sports",
-    description: "Sports events and active holidays",
-    longDescription:
-      "Experience the thrill of world-class sporting events and active holidays. From cricket matches to marathon runs, our sports travel packages put you in the heart of the action with premium arrangements.",
-    icon: Trophy,
-    href: "/categories/sports",
-    color: {
-      bg: "bg-indigo-50",
-      text: "text-indigo-700",
-      border: "border-indigo-500",
-      gradient: "from-indigo-600 to-purple-500",
-      light: "#EDE7F6",
-    },
-    image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&h=600&fit=crop",
-    highlights: [
-      "Cricket World Cup packages",
-      "Football league experiences",
-      "Marathon and running events",
-      "Golf tour packages",
-      "Olympic Games trips",
-      "Formula 1 Grand Prix tours",
-    ],
-    popularDestinations: [
-      "Mumbai",
-      "London",
-      "Dubai",
-      "Melbourne",
-      "Singapore",
-      "Barcelona",
     ],
   },
 ];

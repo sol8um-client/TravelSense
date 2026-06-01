@@ -76,7 +76,7 @@ export function localBusinessSchema() {
     logo: `${SITE_URL}/images/brand/logo-final-nobg.png`,
     image: `${SITE_URL}/images/brand/logo-final.png`,
     description:
-      "Curated leisure, adventure, educational, and sports travel experiences for India's working professionals.",
+      "Curated leisure, adventure, and educational travel experiences for India's working professionals.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Pune",

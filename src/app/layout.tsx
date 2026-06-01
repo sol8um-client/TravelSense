@@ -48,13 +48,12 @@ export const metadata: Metadata = {
     template: "%s | TravelSense",
   },
   description:
-    "Curated leisure, adventure, educational, and sports travel experiences. Expert consultation, personalized itineraries, and seamless booking by TravelSense, Pune.",
+    "Curated leisure, adventure, and educational travel experiences. Expert consultation, personalized itineraries, and seamless booking by TravelSense, Pune.",
   keywords: [
     "travel",
     "travel packages",
     "adventure travel",
     "educational travel",
-    "sports travel",
     "leisure travel",
     "travel consultation",
     "personalized itinerary",
@@ -73,7 +72,7 @@ export const metadata: Metadata = {
     siteName: "TravelSense",
     title: "TravelSense — Your Trusted Travel Partner",
     description:
-      "Curated leisure, adventure, educational, and sports travel experiences. Expert consultation, personalized itineraries, and seamless booking.",
+      "Curated leisure, adventure, and educational travel experiences. Expert consultation, personalized itineraries, and seamless booking.",
   },
   twitter: {
     card: "summary_large_image",

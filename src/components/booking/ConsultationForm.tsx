@@ -23,7 +23,6 @@ const INTERESTS = [
   { id: "leisure", label: "Leisure" },
   { id: "adventure", label: "Adventure" },
   { id: "educational", label: "Educational" },
-  { id: "sports", label: "Sports" },
 ]
 
 const fadeUp = {

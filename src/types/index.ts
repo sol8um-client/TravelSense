@@ -99,8 +99,7 @@ export interface Package extends BaseEntity {
 export type TravelCategoryType =
   | "leisure"
   | "adventure"
-  | "educational"
-  | "sports";
+  | "educational";
 
 export type DifficultyLevel = "Easy" | "Moderate" | "Challenging" | "Extreme";
 

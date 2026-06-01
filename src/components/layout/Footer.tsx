@@ -78,8 +78,8 @@ export function Footer() {
             </Link>
             <p className="mt-4 max-w-xs text-[13px] leading-[1.8] text-white/50 font-light tracking-wide">
               Your journey, thoughtfully crafted. We specialize in curated
-              travel experiences across leisure, adventure, educational, and
-              sports categories.
+              travel experiences across leisure, adventure, and educational
+              categories.
             </p>
 
             {/* Contact Details */}

@@ -11,7 +11,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs"
 export const metadata: Metadata = generatePageMetadata({
   title: "Travel Categories | TravelSense",
   description:
-    "Explore curated travel experiences across leisure, adventure, educational, and sports categories. Find the perfect trip style for you.",
+    "Explore curated travel experiences across leisure, adventure, and educational categories. Find the perfect trip style for you.",
   path: "/categories",
 })
 

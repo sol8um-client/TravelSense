@@ -141,7 +141,7 @@ const milestones = [
     year: "2018",
     title: "New Categories Launch",
     description:
-      "Introduced educational tours for schools and colleges, and sports travel for cricket and football fans. Four distinct travel categories now under one roof.",
+      "Introduced educational tours for schools and colleges, broadening beyond leisure into specialised group travel. Distinct travel categories now under one roof.",
     icon: Star,
   },
   {

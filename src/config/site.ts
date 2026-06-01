@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "TravelSense",
   description:
-    "Your trusted travel partner for curated leisure, adventure, educational, and sports travel experiences. Expert consultation, personalized itineraries, and seamless booking.",
+    "Your trusted travel partner for curated leisure, adventure, and educational travel experiences. Expert consultation, personalized itineraries, and seamless booking.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   ogImage: "/og/default.jpg",
   creator: "Sol8um",
@@ -11,7 +11,6 @@ export const siteConfig = {
     "travel packages",
     "adventure travel",
     "educational travel",
-    "sports travel",
     "leisure travel",
     "travel consultation",
     "personalized itinerary",

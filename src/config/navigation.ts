@@ -32,11 +32,6 @@ export const mainNavItems: NavItem[] = [
         href: "/categories/educational",
         description: "Learning-focused travel experiences",
       },
-      {
-        title: "Sports",
-        href: "/categories/sports",
-        description: "Sports events and active holidays",
-      },
     ],
   },
   { title: "Packages", href: "/packages" },
@@ -76,7 +71,6 @@ export const footerNavItems: FooterNavSection = {
     { title: "Leisure Travel", href: "/categories/leisure" },
     { title: "Adventure Travel", href: "/categories/adventure" },
     { title: "Educational Travel", href: "/categories/educational" },
-    { title: "Sports Travel", href: "/categories/sports" },
   ],
   services: [
     { title: "Travel Packages", href: "/packages" },

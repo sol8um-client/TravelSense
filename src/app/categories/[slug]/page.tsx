@@ -213,31 +213,6 @@ function getPlaceholderPackages(categorySlug: string): PackageItem[] {
         destination: { name: "Rajasthan", slug: "rajasthan", region: "North India" },
       },
     ],
-    sports: [
-      {
-        _id: "sp1",
-        title: "Ladakh Complete Circuit — Leh, Nubra, Pangong & Kargil",
-        slug: "ladakh-complete-circuit-leh-nubra-pangong-kargil",
-        description: "The ultimate Ladakh adventure with biking, trekking, and high-altitude challenges across Leh, Nubra Valley, Pangong Lake, and Kargil.",
-        category: "sports",
-        duration: "9 Days / 8 Nights",
-        price: 35000,
-        heroImage: "https://images.unsplash.com/photo-1506038634487-60a69ae4b7b1?w=600&h=400&fit=crop",
-        featured: true,
-        destination: { name: "Leh-Ladakh", slug: "leh-ladakh", region: "North India" },
-      },
-      {
-        _id: "sp2",
-        title: "Northeast Discovery — Assam, Meghalaya & Darjeeling",
-        slug: "northeast-discovery-assam-meghalaya-darjeeling",
-        description: "Trekking-focused exploration through the Northeast with challenging trails in Meghalaya, tea garden walks, and Darjeeling hill treks.",
-        category: "sports",
-        duration: "10 Days / 9 Nights",
-        price: 35000,
-        heroImage: "https://images.unsplash.com/photo-1600075009920-c85a3a3f29c8?w=600&h=400&fit=crop",
-        destination: { name: "Assam", slug: "assam", region: "Northeast India" },
-      },
-    ],
   }
   return pkgMap[categorySlug] || []
 }
