@@ -527,20 +527,16 @@ function HeroSection() {
         {/* Main headline — "Discover <flipping city>, your way." (city flips, rest static) */}
         <h1 className="hx font-heading text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] font-medium leading-[1.08] tracking-[-0.02em]">
           <span className="metallic-text">Discover </span>
-          <span className="inline-block" style={{ perspective: "700px" }}>
+          <span className="relative inline-block overflow-hidden align-baseline">
             <AnimatePresence mode="wait">
               <motion.em
                 key={wordIdx}
-                initial={{ rotateX: -90, opacity: 0 }}
-                animate={{ rotateX: 0, opacity: 1 }}
-                exit={{ rotateX: 90, opacity: 0 }}
-                transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block italic font-normal text-secondary"
-                style={{
-                  fontVariationSettings: "'opsz' 144",
-                  transformStyle: "preserve-3d",
-                  transformOrigin: "center",
-                }}
+                initial={{ y: "0.42em", opacity: 0, filter: "blur(6px)" }}
+                animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                exit={{ y: "-0.42em", opacity: 0, filter: "blur(6px)" }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                className="inline-block whitespace-nowrap italic font-normal text-secondary"
+                style={{ fontVariationSettings: "'opsz' 144" }}
               >
                 {heroCities[wordIdx % heroCities.length]},
               </motion.em>

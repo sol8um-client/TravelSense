@@ -309,8 +309,9 @@ export default function VisorCascade({
     <div
       aria-hidden
       className={
-        // decorative; hidden until there's room, pinned to the right margin
-        "pointer-events-none absolute right-[2%] top-1/2 z-10 hidden -translate-y-1/2 xl:block " +
+        // decorative; hidden until there's room, pinned to the right margin.
+        // Anchored a little below centre so the compass + caption sit clear above it.
+        "pointer-events-none absolute right-[2%] top-[57%] z-10 hidden -translate-y-1/2 xl:block " +
         className
       }
       style={{ width: 340, height: 560 }}
