@@ -134,8 +134,27 @@ export default function VisaPassportPage() {
           </div>
         </section>
 
-        {/* ── Travel Destinations Collage ─────────────────────── */}
+        {/* ── Inquiry Form ────────────────────────────────────── */}
         <section className="bg-[#0A1425] py-16 md:py-24">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
+                Submit a Visa Inquiry
+              </h2>
+              <p className="mx-auto mt-3 max-w-xl font-body text-sm text-white/50 md:text-base">
+                Share your travel details and our visa experts will guide you
+                through the process.
+              </p>
+            </div>
+
+            <div className="mt-10">
+              <VisaInquiryForm />
+            </div>
+          </div>
+        </section>
+
+        {/* ── Travel Destinations Collage ─────────────────────── */}
+        <section className="bg-[#0D1A30] py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
@@ -194,27 +213,8 @@ export default function VisaPassportPage() {
           </div>
         </section>
 
-        {/* ── Inquiry Form ────────────────────────────────────── */}
-        <section className="bg-[#0A1425] py-16 md:py-24">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
-                Submit a Visa Inquiry
-              </h2>
-              <p className="mx-auto mt-3 max-w-xl font-body text-sm text-white/50 md:text-base">
-                Share your travel details and our visa experts will guide you
-                through the process.
-              </p>
-            </div>
-
-            <div className="mt-10">
-              <VisaInquiryForm />
-            </div>
-          </div>
-        </section>
-
         {/* ── CTA Section ────────────────────────────────────── */}
-        <section className="bg-[#0D1A30] py-16 md:py-24">
+        <section className="bg-[#0A1425] py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
             <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
               Have Questions About Visa Requirements?
