@@ -11,10 +11,9 @@ export interface FooterNavSection {
 }
 
 export const mainNavItems: NavItem[] = [
-  { title: "Home", href: "/" },
   { title: "Destinations", href: "/destinations" },
   {
-    title: "Categories",
+    title: "Experiences",
     href: "/categories",
     children: [
       {
@@ -30,11 +29,16 @@ export const mainNavItems: NavItem[] = [
       {
         title: "Educational",
         href: "/categories/educational",
-        description: "Learning-focused travel experiences",
+        description: "Learning-focused trips & student tours",
+      },
+      {
+        title: "All Packages",
+        href: "/packages",
+        description: "Browse every curated itinerary",
       },
     ],
   },
-  { title: "Packages", href: "/packages" },
+  { title: "How it works", href: "/#how-it-works" },
   {
     title: "Services",
     href: "/services",
@@ -62,7 +66,6 @@ export const mainNavItems: NavItem[] = [
     ],
   },
   { title: "Blog", href: "/blog" },
-  { title: "About", href: "/about" },
   { title: "Contact", href: "/contact" },
 ];
 

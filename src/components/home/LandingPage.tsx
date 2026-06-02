@@ -525,24 +525,24 @@ function HeroSection() {
         <LivePresence />
 
         {/* Main headline — "Discover <flipping city>, your way." (city flips, rest static) */}
-        <h1 className="hx font-heading text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] font-medium leading-[1.08] tracking-[-0.02em]">
-          <span className="metallic-text">Discover </span>
-          <span className="relative inline-block overflow-hidden align-baseline">
+        <h1 className="hx font-heading text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] font-medium leading-[1.16] tracking-[-0.02em]">
+          <span className="metallic-text">Discover</span>{" "}
+          <span className="relative inline-block align-baseline">
             <AnimatePresence mode="wait">
               <motion.em
                 key={wordIdx}
-                initial={{ y: "0.4em", opacity: 0 }}
+                initial={{ y: "0.3em", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                exit={{ y: "-0.4em", opacity: 0 }}
-                transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block whitespace-nowrap italic font-normal text-secondary"
+                exit={{ y: "-0.3em", opacity: 0 }}
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                className="inline-block whitespace-nowrap italic font-normal text-secondary pl-[0.04em] pr-[0.2em]"
                 style={{ fontVariationSettings: "'opsz' 144" }}
               >
                 {heroCities[wordIdx % heroCities.length]},
               </motion.em>
             </AnimatePresence>
-          </span>
-          <span className="metallic-text"> your way.</span>
+          </span>{" "}
+          <span className="metallic-text">your way.</span>
         </h1>
 
         {/* Subtitle — Outfit body with Caveat script lift */}
@@ -1102,7 +1102,7 @@ function HowItWorksSection() {
   const stepScales = [step1Scale, step2Scale, step3Scale, step4Scale]
 
   return (
-    <section ref={howRef} className="py-20 sm:py-28 bg-brand-mesh overflow-hidden">
+    <section id="how-it-works" ref={howRef} className="scroll-mt-24 py-20 sm:py-28 bg-brand-mesh overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header — with floating sparkle decorations near top-right matching reference */}
         <div className="relative text-center mb-14" data-reveal>
