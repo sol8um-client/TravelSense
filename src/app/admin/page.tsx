@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/table"
 
 export const metadata = generatePageMetadata({
-  title: "Admin Dashboard | TravelSense",
+  title: "Admin Dashboard",
   description: "TravelSense admin dashboard",
   path: "/admin",
   noIndex: true,

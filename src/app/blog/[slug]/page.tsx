@@ -39,7 +39,7 @@ export async function generateMetadata({
   const post = getBlogPostBySlug(slug)
   if (!post) {
     return generatePageMetadata({
-      title: "Post Not Found | TravelSense",
+      title: "Post Not Found",
       description: "The blog post you are looking for does not exist.",
       path: `/blog/${slug}`,
     })

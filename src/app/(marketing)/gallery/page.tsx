@@ -10,7 +10,7 @@ import { GalleryCTA } from "@/components/gallery/GalleryCTA"
    ═══════════════════════════════════════════════════════ */
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Gallery | TravelSense",
+  title: "Gallery",
   description:
     "Explore stunning travel photography from across India and beyond. From Goa beaches to Ladakh mountains, see the world through the TravelSense lens.",
   path: "/gallery",

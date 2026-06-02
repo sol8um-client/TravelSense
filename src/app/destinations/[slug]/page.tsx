@@ -39,14 +39,14 @@ export async function generateMetadata({
 
   if (!dest) {
     return generatePageMetadata({
-      title: "Destination Not Found | TravelSense",
+      title: "Destination Not Found",
       description: "The requested destination could not be found.",
       path: `/destinations/${slug}`,
     })
   }
 
   return generatePageMetadata({
-    title: `${dest.name} — Travel Guide | TravelSense`,
+    title: `${dest.name} — Travel Guide`,
     description: dest.description,
     path: `/destinations/${slug}`,
     image: dest.heroImage,

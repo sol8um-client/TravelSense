@@ -9,7 +9,7 @@ import { PageHero } from "@/components/shared/PageHero"
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs"
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Travel Categories | TravelSense",
+  title: "Travel Categories",
   description:
     "Explore curated travel experiences across leisure, adventure, and educational categories. Find the perfect trip style for you.",
   path: "/categories",

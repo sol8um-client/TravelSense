@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { FileText, Receipt, Printer, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Document Templates | TravelSense",
+  title: "Document Templates",
   description: "TravelSense letterhead and invoice templates — fill in, print, save as PDF.",
   robots: { index: false, follow: false },
 }

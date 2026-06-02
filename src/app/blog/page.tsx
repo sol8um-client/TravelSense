@@ -8,7 +8,7 @@ import { blogPosts, categoryDisplayNames } from "@/data/blog"
 import type { BlogPost } from "@/components/blog/BlogCard"
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Travel Blog | TravelSense",
+  title: "Travel Blog",
   description:
     "Discover travel tips, destination guides, adventure stories, and insider knowledge from TravelSense. Plan your next trip with expert insights.",
   path: "/blog",

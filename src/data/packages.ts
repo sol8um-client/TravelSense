@@ -12463,7 +12463,7 @@ export const packages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Bangkok — Free Evening",
+        title: "Arrive Bangkok — Evening at Leisure",
         description:
           "Arrive at Bangkok Suvarnabhumi airport and transfer to your hotel. Evening at leisure — explore Khao San Road or the rooftop bars at Asiatique.",
         activities: ["Airport pickup", "Hotel check-in", "Evening at leisure"],
@@ -12947,7 +12947,7 @@ export const packages: Package[] = [
       },
       {
         day: 2,
-        title: "HK Half-Day City Tour + Free Afternoon",
+        title: "HK Half-Day City Tour + Ladies Market",
         description: "Peak Tram, Sky Terrace 428, Aberdeen sampan, Stanley Market morning. Free afternoon for shopping at Ladies Market or Mong Kok.",
         activities: ["Peak Tram", "Aberdeen sampan", "Stanley Market", "Ladies Market"],
         meals: "Breakfast",
@@ -13965,7 +13965,7 @@ export const packages: Package[] = [
       },
       {
         day: 2,
-        title: "Manila City Tour — Free Afternoon",
+        title: "Manila City Tour — Greenbelt Shopping",
         description: "Morning city tour — Bonifacio Global City, SM Mall of Asia, the Manila Cathedral. Afternoon free for shopping at Greenbelt or Ayala Centre.",
         activities: ["Bonifacio Global City", "SM Mall of Asia", "Manila Cathedral", "Greenbelt shopping"],
         meals: "Breakfast",

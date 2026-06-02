@@ -37,13 +37,13 @@ export async function generateMetadata({
   const category = getCategoryBySlug(slug)
   if (!category) {
     return generatePageMetadata({
-      title: "Category Not Found | TravelSense",
+      title: "Category Not Found",
       description: "The category you are looking for does not exist.",
       path: `/categories/${slug}`,
     })
   }
   return generatePageMetadata({
-    title: `${category.title} | TravelSense`,
+    title: `${category.title}`,
     description: category.longDescription,
     path: `/categories/${category.slug}`,
   })

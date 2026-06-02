@@ -10,7 +10,7 @@ import { packages } from "@/data/packages"
 export const dynamic = "force-static"
 
 export const metadata = generatePageMetadata({
-  title: "Destinations | TravelSense",
+  title: "Destinations",
   description:
     "Explore handpicked travel destinations across India and beyond. From serene beaches to majestic mountains, find your perfect getaway with TravelSense.",
   path: "/destinations",

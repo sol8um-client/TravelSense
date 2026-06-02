@@ -26,14 +26,14 @@ export async function generateMetadata({
 
   if (!pkg) {
     return generatePageMetadata({
-      title: "Package Not Found | TravelSense",
+      title: "Package Not Found",
       description: "The requested travel package could not be found.",
       path: `/packages/${slug}`,
     })
   }
 
   return generatePageMetadata({
-    title: `${pkg.title} | TravelSense`,
+    title: `${pkg.title}`,
     description: pkg.description,
     path: `/packages/${slug}`,
     image: pkg.heroImage,
