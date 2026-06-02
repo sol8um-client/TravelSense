@@ -2490,6 +2490,476 @@ export const destinations: Destination[] = [
     ],
     featured: false,
   },
+  {
+    name: "South Africa",
+    slug: "south-africa",
+    region: "International",
+    country: "South Africa",
+    category: "leisure",
+    tagline: "Cape Town, Garden Route & the Big Five",
+    description:
+      "From the flat top of Table Mountain and the penguins of Boulders Beach to Big Five game drives in Kruger and the wine estates of Stellenbosch \u2014 South Africa is the world's most complete safari-and-city destination.",
+    longDescription:
+      "South Africa packs a continent into one country. Cape Town sits beneath the cable-car-topped Table Mountain, with Cape Point, the Cape of Good Hope, the penguin colony at Boulders Beach and the colourful Bo-Kaap quarter all within reach, plus the winelands of Stellenbosch and Franschhoek an hour away. The Garden Route then unfurls east along the Indian Ocean through Knysna, Plettenberg Bay and Tsitsikamma's forests and gorges.\n\nInland, the Greater Kruger ecosystem delivers world-class Big Five safaris \u2014 lion, leopard, elephant, rhino and buffalo \u2014 from open 4x4 game vehicles at dawn and dusk. Johannesburg, the Apartheid Museum and Soweto add the historical layer, and Sun City offers a resort finale. It is a destination that works for first-time safari-goers and repeat travellers alike.",
+    heroImage: "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1521651201144-634f700b36ef?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1484318571209-661cf29a69c3?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "April to October (dry season for safari)",
+    weather:
+      "Cape Town is Mediterranean \u2014 warm dry summers (Nov-Mar) and cool wet winters. Kruger safari is best in the dry winter (May-Sep) when animals gather at waterholes.",
+    startingPrice: 136000,
+    highlights: [
+      "Table Mountain cable car",
+      "Cape Point & Cape of Good Hope",
+      "Boulders Beach penguins",
+      "Greater Kruger Big Five safari",
+      "Garden Route coastal drive",
+      "Stellenbosch wine estates",
+    ],
+    thingsToKnow: [
+      "Indian passport holders need a South Africa visa \u2014 apply in advance with the standard document set.",
+      "Domestic flights link Cape Town, the Garden Route and the Kruger/Johannesburg side \u2014 self-drive is also popular.",
+      "Malaria precaution is advised for the low-veld Kruger area (consult your doctor).",
+      "South African Rand (ZAR) \u2014 cards are widely accepted; carry some cash for tips and curio markets.",
+      "Tipping ~10-15% in restaurants and for safari guides/trackers is customary.",
+    ],
+    popularExperiences: [
+      {
+        title: "Big Five Game Drive",
+        description:
+          "Dawn and dusk 4x4 safaris in the Greater Kruger in search of lion, leopard, elephant, rhino and buffalo.",
+        icon: "\ud83e\udd81",
+      },
+      {
+        title: "Table Mountain Cablecar",
+        description:
+          "Ride the rotating cable car to the flat summit for a 360-degree view over Cape Town and the Atlantic.",
+        icon: "\ud83c\udf04",
+      },
+      {
+        title: "Cape Winelands Tasting",
+        description:
+          "Cellar tours and tastings among the Cape Dutch estates of Stellenbosch and Franschhoek.",
+        icon: "\ud83c\udf77",
+      },
+      {
+        title: "Boulders Beach Penguins",
+        description:
+          "Walk the boardwalks beside a colony of African penguins on a Simon's Town beach.",
+        icon: "\ud83d\udc27",
+      },
+    ],
+    featured: true,
+  },
+  {
+    name: "Kenya",
+    slug: "kenya",
+    region: "International",
+    country: "Kenya",
+    category: "leisure",
+    tagline: "The Masai Mara & the Great Migration",
+    description:
+      "Big-cat country \u2014 the rolling savannah of the Masai Mara, the flamingo lakes of the Rift Valley and the elephants of Amboseli beneath Kilimanjaro, the original African safari.",
+    longDescription:
+      "Kenya is where the safari was born. The Masai Mara \u2014 the northern extension of the Serengeti \u2014 is the stage for the Great Migration (roughly July to October), when over a million wildebeest and zebra cross the Mara River past waiting crocodiles, with lion, cheetah and leopard never far behind. Amboseli, in the south, frames its big elephant herds against the snows of Mount Kilimanjaro across the Tanzanian border.\n\nThe Great Rift Valley adds Lake Nakuru's flamingo flocks and rhino sanctuary, while Lake Naivasha offers boat safaris and walking at Crescent Island. Encounters with the Maasai people, hot-air balloon flights over the Mara at dawn and a finish in Nairobi (with its elephant orphanage and giraffe centre) complete a classic Kenyan circuit.",
+    heroImage: "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1549366021-9f761d450615?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1503777119540-ec1f0e9c2a52?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "July to October (Great Migration) & January-February",
+    weather:
+      "Warm year-round at safari altitude (20-30 \u00b0C). Dry seasons (Jun-Oct and Jan-Feb) are best for game viewing; long rains fall Mar-May.",
+    startingPrice: 142500,
+    highlights: [
+      "Masai Mara big cats",
+      "Great Migration river crossings",
+      "Amboseli elephants under Kilimanjaro",
+      "Lake Nakuru flamingos & rhino",
+      "Hot-air balloon safari",
+      "Maasai village visit",
+    ],
+    thingsToKnow: [
+      "Indian passport holders need a Kenya eTA (electronic travel authorisation) \u2014 applied online before travel.",
+      "A yellow-fever vaccination certificate may be required; malaria prophylaxis is advised.",
+      "Game drives are in 4x4 vehicles with pop-up roofs; pack neutral-coloured clothing and a zoom lens.",
+      "Kenyan Shilling (KES) \u2014 USD is widely accepted at lodges; carry small notes for tips.",
+      "Domestic light-aircraft hops (e.g. Nairobi-Mara) save long road transfers.",
+    ],
+    popularExperiences: [
+      {
+        title: "Great Migration Crossing",
+        description:
+          "Witness wildebeest and zebra brave the crocodile-filled Mara River \u2014 one of nature's greatest spectacles.",
+        icon: "\ud83e\udd93",
+      },
+      {
+        title: "Balloon Safari at Dawn",
+        description:
+          "Drift silently over the Mara at sunrise, then a champagne bush breakfast on the plains.",
+        icon: "\ud83c\udf88",
+      },
+      {
+        title: "Amboseli & Kilimanjaro",
+        description:
+          "Photograph big elephant herds against Africa's highest peak.",
+        icon: "\ud83d\udc18",
+      },
+      {
+        title: "Maasai Village Visit",
+        description:
+          "Meet a Maasai community for their songs, dances and way of life on the savannah.",
+        icon: "\ud83d\udd31",
+      },
+    ],
+    featured: true,
+  },
+  {
+    name: "Japan",
+    slug: "japan",
+    region: "International",
+    country: "Japan",
+    category: "leisure",
+    tagline: "Tokyo Neon, Kyoto Temples & Mount Fuji",
+    description:
+      "Bullet trains and bamboo groves, neon Tokyo and the thousand torii of Kyoto, cherry blossom in spring and snow monkeys in winter \u2014 Japan blends the hyper-modern with the deeply traditional.",
+    longDescription:
+      "Japan is a study in contrasts. Tokyo dazzles with Shibuya's scramble crossing, the temples of Asakusa, the electronics of Akihabara and the views from the Skytree, while a day trip reaches Mount Fuji and the lakes of Hakone. The shinkansen bullet train then whisks you west to Kyoto, the old imperial capital \u2014 the golden Kinkaku-ji, the thousand vermilion torii of Fushimi Inari, the bamboo grove of Arashiyama and the geisha lanes of Gion.\n\nNearby Nara adds its bowing deer and giant bronze Buddha, and Osaka brings the street food of Dotonbori and Osaka Castle. Spring (cherry blossom) and autumn (maple colours) are the headline seasons, but Japan rewards in every season \u2014 from summer festivals to winter snow and onsen hot springs.",
+    heroImage: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "March-April (cherry blossom) & October-November (autumn)",
+    weather:
+      "Four distinct seasons. Spring (Mar-May) and autumn (Oct-Nov) are mild and the most beautiful; summers are hot and humid; winters are cold with snow in the north.",
+    startingPrice: 185000,
+    highlights: [
+      "Tokyo \u2014 Shibuya, Asakusa & Skytree",
+      "Mount Fuji & Hakone",
+      "Kyoto Fushimi Inari & Kinkaku-ji",
+      "Arashiyama bamboo grove",
+      "Nara deer & Great Buddha",
+      "Shinkansen bullet train",
+    ],
+    thingsToKnow: [
+      "Indian passport holders need a Japan visa \u2014 apply in advance through the authorised agency with the standard set.",
+      "A Japan Rail Pass (bought before arrival) is excellent value for the Tokyo-Kyoto-Osaka route.",
+      "Japan is largely cash-friendly \u2014 carry yen; IC cards (Suica/Pasmo) ease city transport.",
+      "Pocket Wi-Fi or an eSIM is recommended for navigation; English signage is good on main routes.",
+      "Etiquette matters \u2014 no tipping, quiet on trains, and shoes off where indicated.",
+    ],
+    popularExperiences: [
+      {
+        title: "Fushimi Inari Torii Walk",
+        description:
+          "Climb the tunnel of thousands of vermilion torii gates winding up the Kyoto hillside.",
+        icon: "\u26e9\ufe0f",
+      },
+      {
+        title: "Shinkansen Bullet Train",
+        description:
+          "Ride the 300 km/h bullet train between Tokyo, Kyoto and Osaka.",
+        icon: "\ud83d\ude85",
+      },
+      {
+        title: "Mount Fuji & Hakone",
+        description:
+          "Lake cruise, ropeway and hot springs with views of Japan's sacred peak.",
+        icon: "\ud83d\uddfb",
+      },
+      {
+        title: "Arashiyama Bamboo Grove",
+        description:
+          "Walk the towering green bamboo corridor and the Tenryu-ji temple gardens.",
+        icon: "\ud83c\udf8b",
+      },
+    ],
+    featured: true,
+  },
+  {
+    name: "Jordan",
+    slug: "jordan",
+    region: "International",
+    country: "Jordan",
+    category: "leisure",
+    tagline: "Petra, Wadi Rum & the Dead Sea",
+    description:
+      "The rose-red rock city of Petra, the Martian desert of Wadi Rum, a float in the Dead Sea and the Roman ruins of Jerash \u2014 Jordan is a compact, safe and spectacular Middle-East journey.",
+    longDescription:
+      "Jordan is one of the Middle East's most rewarding and welcoming destinations. Its crown jewel is Petra \u2014 the Nabataean city carved into rose-red sandstone, entered through the narrow Siq to the famous Treasury (Al-Khazneh), with the Monastery a climb beyond. South lies Wadi Rum, the Valley of the Moon, where 4x4 jeeps and Bedouin camps sit beneath towering sandstone massifs (the backdrop to many Mars films).\n\nThe Dead Sea, the lowest point on Earth, lets you float effortlessly and coat yourself in mineral mud, while the capital Amman, the vast Roman ruins of Jerash and the mosaics of Madaba and Mount Nebo add history and culture. Distances are short, the country is safe and friendly, and a week covers the highlights comfortably.",
+    heroImage: "https://images.unsplash.com/photo-1563177978-4c5ddccc10da?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1563177978-4c5ddccc10da?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518630257714-3a3f9bb9c5a3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1580834341580-8c17a3a630ca?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1605908502724-9093a79a1b39?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1547234935-80c7145ec969?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "March to May & September to November",
+    weather:
+      "Desert climate \u2014 hot dry summers, cool winters. Spring and autumn are ideal; desert nights are cold year-round.",
+    startingPrice: 128000,
+    highlights: [
+      "Petra & the Treasury through the Siq",
+      "Wadi Rum jeep safari & Bedouin camp",
+      "Float in the Dead Sea",
+      "Jerash Roman ruins",
+      "Amman citadel & city",
+      "Mount Nebo & Madaba mosaics",
+    ],
+    thingsToKnow: [
+      "Indian passport holders need a Jordan visa \u2014 the Jordan Pass (bought online) bundles the visa with Petra and 40+ sites.",
+      "Petra involves a lot of walking on uneven ground \u2014 wear good shoes and carry water and sun protection.",
+      "Wadi Rum camps range from basic Bedouin tents to luxury bubble domes \u2014 nights are cold.",
+      "Jordanian Dinar (JOD) \u2014 cards work in cities; carry cash for desert camps and tips.",
+      "Jordan is very safe for tourists, including solo and women travellers.",
+    ],
+    popularExperiences: [
+      {
+        title: "Petra Through the Siq",
+        description:
+          "Walk the narrow 1.2 km canyon that opens onto the Treasury \u2014 travel's great reveal.",
+        icon: "\ud83c\udfdb\ufe0f",
+      },
+      {
+        title: "Wadi Rum Jeep Safari",
+        description:
+          "4x4 across red dunes to rock arches and a night under desert stars at a Bedouin camp.",
+        icon: "\ud83c\udfdc\ufe0f",
+      },
+      {
+        title: "Float in the Dead Sea",
+        description:
+          "Bob effortlessly in the mineral-rich water and slather on the famous black mud.",
+        icon: "\ud83c\udf0a",
+      },
+      {
+        title: "Jerash Roman City",
+        description:
+          "Wander one of the best-preserved Roman provincial cities, colonnaded streets and all.",
+        icon: "\ud83c\udff0",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Iceland",
+    slug: "iceland",
+    region: "International",
+    country: "Iceland",
+    category: "leisure",
+    tagline: "Northern Lights, Waterfalls & the Golden Circle",
+    description:
+      "Waterfalls and geysers, black-sand beaches and glacier lagoons, the Blue Lagoon and \u2014 in winter \u2014 the aurora dancing overhead. Iceland is raw nature at its most dramatic.",
+    longDescription:
+      "Iceland is a land of fire and ice. The Golden Circle loops from Reykjavik to the erupting Strokkur geyser, the thundering Gullfoss waterfall and Thingvellir, where you can walk between the North American and Eurasian tectonic plates. The south coast strings together the Seljalandsfoss and Skogafoss waterfalls, the black-sand beach of Reynisfjara and the surreal Jokulsarlon glacier lagoon with its drifting icebergs and Diamond Beach.\n\nIn winter (roughly September to March), the long dark nights bring the chance to chase the Northern Lights across the countryside, while the geothermal Blue Lagoon offers a warm soak any time of year. Summer brings the midnight sun, puffins and highland access. Compact and safe, Iceland delivers a new wonder around almost every bend.",
+    heroImage: "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1531168556467-80aace4d0144?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1476610182048-b716b8518aae?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1490650034439-fd184c3c86a5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520769669658-f07657f5a307?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "September to March (Northern Lights) & June-August (midnight sun)",
+    weather:
+      "Cool maritime climate. Winters (Nov-Mar) are dark and cold \u2014 best for aurora; summers are mild with near-24-hour daylight. Weather changes fast year-round.",
+    startingPrice: 175000,
+    highlights: [
+      "Northern Lights hunting (winter)",
+      "Golden Circle \u2014 Geysir & Gullfoss",
+      "Jokulsarlon glacier lagoon",
+      "Reynisfjara black-sand beach",
+      "Blue Lagoon geothermal spa",
+      "Thingvellir tectonic rift",
+    ],
+    thingsToKnow: [
+      "Indian passport holders need a Schengen visa for Iceland \u2014 apply with full documents and travel insurance.",
+      "The Northern Lights need dark, clear, winter skies \u2014 they are natural and never guaranteed; we plan multiple chances.",
+      "A self-drive or small-group tour is the usual way to circle the island; winter roads need care.",
+      "Icelandic Krona (ISK) \u2014 Iceland is almost cashless; cards work everywhere.",
+      "Pack proper waterproof and warm layers \u2014 the weather is famously changeable.",
+    ],
+    popularExperiences: [
+      {
+        title: "Northern Lights Hunt",
+        description:
+          "Head out under dark winter skies with a guide to chase the green-and-violet aurora.",
+        icon: "\ud83c\udf0c",
+      },
+      {
+        title: "Golden Circle",
+        description:
+          "Erupting Strokkur geyser, the Gullfoss falls and the Thingvellir rift in one loop.",
+        icon: "\u2668\ufe0f",
+      },
+      {
+        title: "Glacier Lagoon Cruise",
+        description:
+          "Sail among floating icebergs at Jokulsarlon and walk the Diamond Beach.",
+        icon: "\ud83e\uddca",
+      },
+      {
+        title: "Blue Lagoon Soak",
+        description:
+          "Bathe in the milky-blue geothermal waters set in a black-lava field.",
+        icon: "\ud83d\udd35",
+      },
+    ],
+    featured: true,
+  },
+  {
+    name: "Kazakhstan",
+    slug: "kazakhstan",
+    region: "International",
+    country: "Kazakhstan",
+    category: "leisure",
+    tagline: "Almaty, Big Almaty Lake & the Tien Shan",
+    description:
+      "Snow peaks above a green city, the turquoise Big Almaty Lake, Charyn Canyon's red cliffs and the futuristic capital Astana \u2014 Central Asia's most accessible adventure.",
+    longDescription:
+      "Kazakhstan, the world's largest landlocked country, has become a favourite short-haul escape from India. Almaty, the leafy former capital, sits at the foot of the Tien Shan mountains \u2014 the Shymbulak ski resort and Kok-Tobe hill are a cable-car ride away, and the glacial Big Almaty Lake glows turquoise in an alpine bowl just outside the city. A day trip reaches Charyn Canyon, a miniature Grand Canyon of red rock often called the Valley of Castles.\n\nThe modern capital Astana (Nur-Sultan) showcases futuristic architecture \u2014 the Bayterek Tower, the Khan Shatyr tent and gleaming ministries. With visa-free or easy e-visa access, short flight times and a mix of mountains, lakes and cities, Kazakhstan offers a fresh, uncrowded destination.",
+    heroImage: "https://images.unsplash.com/photo-1596306499317-8490232098fa?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1596306499317-8490232098fa?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1490650034439-fd184c3c86a5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "April to October",
+    weather:
+      "Continental \u2014 warm summers and cold snowy winters. Spring-autumn suit the lakes and canyons; winter is for skiing at Shymbulak.",
+    startingPrice: 46500,
+    highlights: [
+      "Big Almaty Lake",
+      "Shymbulak & Kok-Tobe cable cars",
+      "Charyn Canyon day trip",
+      "Almaty city & Green Bazaar",
+      "Medeu skating rink",
+      "Astana futuristic architecture",
+    ],
+    thingsToKnow: [
+      "Indian passport holders get visa-free entry for short stays (up to 14 days) \u2014 confirm current rules before travel.",
+      "Almaty is a short, convenient flight from India \u2014 great for a 4-5 night trip.",
+      "Kazakhstani Tenge (KZT) \u2014 carry some cash; cards work in the cities.",
+      "Mountain weather changes fast \u2014 Big Almaty Lake can be cold even in summer.",
+      "Russian and Kazakh are the main languages; a translation app helps.",
+    ],
+    popularExperiences: [
+      {
+        title: "Big Almaty Lake",
+        description:
+          "Drive up to the glacier-fed turquoise lake ringed by Tien Shan peaks.",
+        icon: "\ud83c\udfd4\ufe0f",
+      },
+      {
+        title: "Charyn Canyon",
+        description:
+          "Hike the red-rock Valley of Castles, a miniature Grand Canyon.",
+        icon: "\ud83e\udea8",
+      },
+      {
+        title: "Shymbulak Cable Car",
+        description:
+          "Ride above Almaty to the ski slopes and Medeu skating rink.",
+        icon: "\ud83d\udf01",
+      },
+      {
+        title: "Astana Skyline",
+        description:
+          "Tour the futuristic Bayterek Tower and Khan Shatyr in the capital.",
+        icon: "\ud83c\udfd9\ufe0f",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "Uzbekistan",
+    slug: "uzbekistan",
+    region: "International",
+    country: "Uzbekistan",
+    category: "leisure",
+    tagline: "Samarkand, Bukhara & the Silk Road",
+    description:
+      "The blue-tiled madrasas of Samarkand's Registan, the ancient lanes of Bukhara and walled Khiva \u2014 Uzbekistan is the living heart of the Silk Road.",
+    longDescription:
+      "Uzbekistan is the jewel of the Silk Road. Samarkand dazzles with the Registan \u2014 three towering madrasas clad in turquoise and gold mosaic \u2014 plus the Gur-e-Amir tomb of Timur and the Shah-i-Zinda avenue of mausoleums. Bukhara, a vast open-air museum, layers minarets, trading domes and the Ark fortress across a walkable old city, while Khiva's walled Itchan Kala feels like stepping into a frozen medieval caravan town.\n\nThe capital Tashkent adds a modern, metro-served contrast and a moving history. A high-speed train links Tashkent, Samarkand and Bukhara, making the classic Silk Road trio easy and comfortable. With warm hospitality, fine cuisine (the plov, the bread) and easy e-visa access, Uzbekistan is one of Asia's most rewarding cultural journeys.",
+    heroImage: "https://images.unsplash.com/photo-1602523961757-3c4f9d2f6a8c?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1602523961757-3c4f9d2f6a8c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1601921004897-c6e16a3a1c63?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "April to June & September to October",
+    weather:
+      "Continental desert \u2014 hot summers and cold winters. Spring and autumn are the comfortable seasons for sightseeing.",
+    startingPrice: 62000,
+    highlights: [
+      "Samarkand Registan Square",
+      "Shah-i-Zinda & Gur-e-Amir",
+      "Bukhara old city & the Ark",
+      "Khiva walled Itchan Kala",
+      "Tashkent metro & bazaars",
+      "High-speed Silk Road train",
+    ],
+    thingsToKnow: [
+      "Indian passport holders get an easy Uzbekistan e-visa \u2014 applied online before travel.",
+      "The Afrosiyob high-speed train links Tashkent-Samarkand-Bukhara \u2014 book seats ahead.",
+      "Uzbekistani Som (UZS) \u2014 carry cash; cards are growing but not universal.",
+      "Summers are very hot \u2014 spring and autumn are far more comfortable for the old cities.",
+      "Modest dress is appreciated when visiting mosques and mausoleums.",
+    ],
+    popularExperiences: [
+      {
+        title: "Registan Square",
+        description:
+          "Stand before the three mosaic-clad madrasas of Samarkand, the Silk Road's grandest sight.",
+        icon: "\ud83d\udd4c",
+      },
+      {
+        title: "Bukhara Old City",
+        description:
+          "Wander minarets, trading domes and the Ark fortress of a 2,000-year-old city.",
+        icon: "\ud83d\udd4b",
+      },
+      {
+        title: "Khiva Itchan Kala",
+        description:
+          "Walk the walled medieval town at golden hour, a frozen caravan city.",
+        icon: "\ud83c\udff0",
+      },
+      {
+        title: "Silk Road Cuisine",
+        description:
+          "Taste Uzbek plov, samsa and fresh tandoor bread with local families.",
+        icon: "\ud83c\udf72",
+      },
+    ],
+    featured: false,
+  },
+
 ]
 
 /* ─── Helper: get a destination by slug ─────────────────────────────────── */
@@ -2548,22 +3018,6 @@ export const comingSoonDestinations: ComingSoonDestination[] = [
     country: "Europe",
     tagline: "Multi-country grand tours across the continent",
     heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&h=600&fit=crop",
-  },
-  {
-    name: "Switzerland",
-    slug: "switzerland",
-    region: "International",
-    country: "Switzerland",
-    tagline: "Alpine peaks, glacier trains & lakeside towns",
-    heroImage: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800&h=600&fit=crop",
-  },
-  {
-    name: "Italy",
-    slug: "italy",
-    region: "International",
-    country: "Italy",
-    tagline: "Rome, Venice, Florence & the Amalfi coast",
-    heroImage: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&h=600&fit=crop",
   },
   {
     name: "Australia",
