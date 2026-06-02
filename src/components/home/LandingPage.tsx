@@ -71,6 +71,7 @@ import {
 import { cn } from "@/lib/utils"
 import { use3DTilt } from "@/hooks/use3DTilt"
 import { useLeadModal } from "@/components/shared/LeadCaptureModal"
+import VisorCascade from "./VisorCascade"
 
 /* Lazy-load 3D globe — no SSR (WebGL) */
 const Globe3D = dynamic(() => import("./Globe3D"), {
@@ -226,6 +227,116 @@ function Marquee({ items, speed = 30 }: { items: string[]; speed?: number }) {
 
 const heroWords = ["Your Way", "Your Story", "Your Pace"]
 
+// Cities that flip in the hero headline ("Discover <city>, your way.")
+const heroCities = ["Bali", "Kashmir", "Kerala", "Ladakh", "Goa", "Dubai", "Vietnam", "Rajasthan"]
+
+// Quick-pick favourites under the planner — all resolve to real destination pages
+const heroFavourites: { name: string; slug: string }[] = [
+  { name: "Goa", slug: "goa" },
+  { name: "Bali", slug: "bali" },
+  { name: "Kashmir", slug: "kashmir" },
+  { name: "Kerala", slug: "kerala" },
+  { name: "Ladakh", slug: "leh-ladakh" },
+  { name: "Dubai", slug: "dubai-uae" },
+]
+
+// Rotating "live presence" social-proof pill above the headline
+const heroPresence: { name: string; place: string }[] = [
+  { name: "Aanya", place: "Bali" },
+  { name: "Rohan", place: "Kashmir" },
+  { name: "Meera", place: "Kerala" },
+  { name: "Arjun", place: "Ladakh" },
+  { name: "Priya", place: "Dubai" },
+  { name: "Kabir", place: "Vietnam" },
+]
+
+function LivePresence() {
+  const [i, setI] = useState(0)
+  useEffect(() => {
+    const t = setInterval(() => setI((x) => (x + 1) % heroPresence.length), 3000)
+    return () => clearInterval(t)
+  }, [])
+  const cur = heroPresence[i]
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2, duration: 0.6 }}
+      className="mx-auto mb-6 inline-flex items-center gap-2.5 rounded-full border border-silver/15 bg-white/80 px-3 py-1.5 text-[12px] sm:text-[13px] shadow-[0_4px_20px_rgba(11,20,38,0.06)] backdrop-blur-xl"
+    >
+      <span className="relative flex h-2 w-2">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500/70" />
+        <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+      </span>
+      <span className="text-foreground/55 font-body">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={i}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.35 }}
+            className="inline-block"
+          >
+            <span className="font-semibold text-primary">{cur.name}</span> is planning{" "}
+            <span className="italic text-secondary">{cur.place}</span>
+          </motion.span>
+        </AnimatePresence>
+      </span>
+      <span className="rounded-full bg-secondary px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.12em] text-white">
+        Live
+      </span>
+    </motion.div>
+  )
+}
+
+function HeroPlanner() {
+  const [dest, setDest] = useState("")
+  const leadModal = useLeadModal()
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    leadModal.open(dest ? `hero-planner-${dest}` : "hero-planner")
+  }
+  return (
+    <div className="mt-9">
+      <form
+        onSubmit={onSubmit}
+        className="mx-auto flex max-w-2xl items-center gap-2 rounded-full border border-silver/15 bg-white p-1.5 pl-4 shadow-[0_8px_30px_rgba(11,20,38,0.10)]"
+      >
+        <MapPin className="h-4 w-4 shrink-0 text-secondary" />
+        <input
+          value={dest}
+          onChange={(e) => setDest(e.target.value)}
+          placeholder="Where to? Bali, Kashmir, Goa…"
+          aria-label="Where do you want to travel?"
+          className="min-w-0 flex-1 bg-transparent py-2 text-[14px] text-foreground placeholder:text-foreground/35 focus:outline-none"
+        />
+        <button
+          type="submit"
+          className="metallic-cta group inline-flex shrink-0 items-center gap-2 px-5 h-[42px] text-[13px] font-body font-semibold text-white tracking-[0.01em] cursor-pointer"
+        >
+          <span className="relative z-10 flex items-center gap-2">
+            Plan my trip
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5 duration-300" />
+          </span>
+        </button>
+      </form>
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+        <span className="script text-[15px] text-foreground/40">or pick a favourite —</span>
+        {heroFavourites.map((f) => (
+          <Link
+            key={f.slug}
+            href={`/destinations/${f.slug}`}
+            className="rounded-full border border-silver/15 bg-white/70 px-3.5 py-1.5 text-[12.5px] font-body text-foreground/70 backdrop-blur-sm transition-all hover:border-secondary/30 hover:text-secondary hover:shadow-sm"
+          >
+            {f.name}
+          </Link>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 /* Floating travel icon particles — brand-colored */
 const floatingIconData: { Icon: LucideIcon; x: number; y: number; dur: number; delay: number; color: string }[] = [
   { Icon: Plane, x: 10, y: 82, dur: 16, delay: 0, color: "text-secondary/20" },
@@ -284,7 +395,7 @@ function RealCompass() {
 
   return (
     <motion.div
-      className="absolute top-[12%] right-[4%] hidden xl:block"
+      className="absolute top-[10%] right-[4%] hidden flex-col items-center xl:flex"
       initial={{ opacity: 0, scale: 0, rotate: -180 }}
       animate={{ opacity: 1, scale: 1, rotate: 0 }}
       transition={{ delay: 1.5, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
@@ -325,6 +436,9 @@ function RealCompass() {
           </div>
         </motion.div>
       </div>
+      <span className="script mt-2 whitespace-nowrap text-[13px] text-foreground/40">
+        true north for travellers
+      </span>
     </motion.div>
   )
 }
@@ -358,13 +472,12 @@ function ConstellationField() {
 function HeroSection() {
   const [wordIdx, setWordIdx] = useState(0)
   const ref = useRef<HTMLElement>(null)
-  const leadModal = useLeadModal()
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
   const contentY = useTransform(scrollYProgress, [0, 0.5], [0, -80])
   const contentOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0])
 
   useEffect(() => {
-    const t = setInterval(() => setWordIdx((i) => (i + 1) % heroWords.length), 3200)
+    const t = setInterval(() => setWordIdx((i) => (i + 1) % heroCities.length), 2600)
     return () => clearInterval(t)
   }, [])
 
@@ -403,29 +516,37 @@ function HeroSection() {
         <Globe3D />
       </div>
 
+      {/* 7. Logo-visor cascade — decorative destination goggles in the right margin (xl+) */}
+      <VisorCascade />
+
       {/* Content — text shadow on mobile ensures readability over globe */}
       <motion.div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center [text-shadow:0_1px_8px_rgba(255,255,255,0.8)] lg:[text-shadow:none]" style={{ y: contentY, opacity: contentOpacity }}>
-        {/* Main headline — Fraunces display, sentence case with italic-red cycling emphasis */}
-        <h1 className="hx font-heading text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] font-medium leading-[1.02] tracking-[-0.02em]">
-          <span className="metallic-text">
-            <RevealText text="Discover the world," delay={0.4} />
-          </span>
-          <br />
-          <span className="block mt-2">
+        {/* Live presence pill — rotating social proof */}
+        <LivePresence />
+
+        {/* Main headline — "Discover <flipping city>, your way." (city flips, rest static) */}
+        <h1 className="hx font-heading text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] font-medium leading-[1.08] tracking-[-0.02em]">
+          <span className="metallic-text">Discover </span>
+          <span className="inline-block" style={{ perspective: "700px" }}>
             <AnimatePresence mode="wait">
               <motion.em
                 key={wordIdx}
-                initial={{ opacity: 0, y: 40, filter: "blur(8px)", scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
-                exit={{ opacity: 0, y: -40, filter: "blur(8px)", scale: 0.95 }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block italic font-normal text-secondary pr-[0.15em]"
-                style={{ fontVariationSettings: "'opsz' 144" }}
+                initial={{ rotateX: -90, opacity: 0 }}
+                animate={{ rotateX: 0, opacity: 1 }}
+                exit={{ rotateX: 90, opacity: 0 }}
+                transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+                className="inline-block italic font-normal text-secondary"
+                style={{
+                  fontVariationSettings: "'opsz' 144",
+                  transformStyle: "preserve-3d",
+                  transformOrigin: "center",
+                }}
               >
-                {heroWords[wordIdx].toLowerCase()}.
+                {heroCities[wordIdx % heroCities.length]},
               </motion.em>
             </AnimatePresence>
           </span>
+          <span className="metallic-text"> your way.</span>
         </h1>
 
         {/* Subtitle — Outfit body with Caveat script lift */}
@@ -439,45 +560,8 @@ function HeroSection() {
           &mdash; zero bots, zero IVR. A real travel expert plans, books, and stays with you the whole trip.
         </motion.p>
 
-        {/* Tagline — Outfit tracked caps, still reads as a triplet */}
-        <motion.div
-          initial={{ opacity: 0, letterSpacing: "0.1em" }}
-          animate={{ opacity: 1, letterSpacing: "0.28em" }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-4 flex items-center justify-center gap-3 text-[10px] sm:text-[11px] font-body font-semibold uppercase text-secondary/70"
-        >
-          <span>See it</span>
-          <motion.span className="h-1.5 w-1.5 rounded-full bg-secondary/60"
-            animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }} transition={{ duration: 2, repeat: Infinity, delay: 0 }} />
-          <span>Feel it</span>
-          <motion.span className="h-1.5 w-1.5 rounded-full bg-silver/60"
-            animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }} transition={{ duration: 2, repeat: Infinity, delay: 0.6 }} />
-          <span>Live it</span>
-        </motion.div>
-
-        {/* CTAs — Outfit sentence case, keeps metallic-cta & outline-cta visuals */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.4, duration: 0.6 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
-        >
-          <button
-            onClick={() => leadModal.open("hero-start-planning")}
-            className="metallic-cta group inline-flex items-center gap-2.5 px-6 h-[42px] sm:px-9 sm:h-[52px] text-[13px] sm:text-[14px] text-white font-body font-semibold tracking-[0.01em] cursor-pointer sm:min-w-[230px] justify-center"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              Plan my trip <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2 duration-300" />
-            </span>
-          </button>
-          <Link
-            href="/destinations"
-            className="outline-cta group relative inline-flex items-center gap-2.5 px-6 h-[42px] sm:px-9 sm:h-[52px] text-[13px] sm:text-[14px] text-foreground/80 font-body font-medium tracking-[0.01em] cursor-pointer sm:min-w-[230px] justify-center"
-          >
-            Explore destinations
-            <ChevronRight className="absolute right-3 sm:right-4 h-3.5 w-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-          </Link>
-        </motion.div>
+        {/* Planner — search + quick-pick favourites (replaces the old tagline + CTA buttons) */}
+        <HeroPlanner />
 
         {/* Trust stats — Fraunces tabular numerals with Outfit labels */}
         <motion.div

@@ -1,0 +1,25 @@
+/* Keyframes for VisorCascade. Imported by VisorCascade.tsx.
+   (You may instead paste these into globals.css — they're self-contained.) */
+
+@keyframes visorFloat {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(0, -11px); }
+}
+
+@keyframes visorSweep {
+  0%   { transform: translateX(0);    opacity: 0; }
+  8%   { opacity: 1; }
+  26%  { transform: translateX(520%); opacity: 0; }
+  100% { transform: translateX(520%); opacity: 0; }
+}
+
+@keyframes visorCompassSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="visorFloat"], [style*="visorSweep"], [style*="visorCompassSpin"] {
+    animation: none !important;
+  }
+}
