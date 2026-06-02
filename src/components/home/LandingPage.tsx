@@ -1285,9 +1285,9 @@ function HowItWorksSection() {
    ═══════════════════════════════════════════════════════════════ */
 
 const categories = [
-  { icon: Palmtree, title: "Leisure", tagline: "Unwind & Recharge", desc: "Pristine beaches, luxury resorts, and serene hill stations — for those who travel to breathe.", image: "/images/categories/leisure.jpg", num: "01", stat: "200+ packages", accent: "#C4324A" },
-  { icon: GraduationCap, title: "Education", tagline: "Learn & Grow", desc: "Heritage walks, cultural immersions, and field trips that turn the world into your classroom.", image: "/images/categories/education.jpg", num: "02", stat: "15+ programs", accent: "#B0B8C4" },
-  { icon: Mountain, title: "Adventure", tagline: "Thrill & Conquer", desc: "Scale peaks, raft rapids, trek ancient trails. For those who travel to feel truly alive.", image: "/images/categories/adventure.jpg", num: "03", stat: "30+ experiences", accent: "#C4324A" },
+  { icon: Palmtree, title: "Leisure", tagline: "Unwind & Recharge", desc: "Pristine beaches, luxury resorts, and serene hill stations — for those who travel to breathe.", image: "/images/categories/leisure.jpg", num: "01", stat: "70+ packages", accent: "#C4324A" },
+  { icon: GraduationCap, title: "Education", tagline: "Learn & Grow", desc: "Heritage walks, cultural immersions, and field trips that turn the world into your classroom.", image: "/images/categories/education.jpg", num: "02", stat: "20+ programs", accent: "#B0B8C4" },
+  { icon: Mountain, title: "Adventure", tagline: "Thrill & Conquer", desc: "Scale peaks, raft rapids, trek ancient trails. For those who travel to feel truly alive.", image: "/images/categories/adventure.jpg", num: "03", stat: "25+ experiences", accent: "#C4324A" },
 ]
 
 function CategoriesSection() {
@@ -1354,10 +1354,10 @@ function CategoriesSection() {
    ═══════════════════════════════════════════════════════════════ */
 
 const destinations = [
-  { name: "Bali", country: "Indonesia", price: 45000, priceLabel: "45,000", rating: "4.8", image: "/images/destinations/bali.jpg", accent: "#C4324A" },
-  { name: "Santorini", country: "Greece", price: 85000, priceLabel: "85,000", rating: "4.9", image: "/images/destinations/santorini.jpg", accent: "#B0B8C4" },
-  { name: "Jaipur", country: "India", price: 12000, priceLabel: "12,000", rating: "4.7", image: "/images/destinations/jaipur.jpg", accent: "#C4324A" },
-  { name: "Swiss Alps", country: "Switzerland", price: 120000, priceLabel: "1,20,000", rating: "4.9", image: "/images/destinations/swiss-alps.jpg", accent: "#0A1425" },
+  { name: "Kashmir", country: "India", slug: "kashmir", price: 24000, priceLabel: "24,000", rating: "4.9", image: "/images/generated/kashmir-hero.webp", accent: "#C4324A" },
+  { name: "Kerala", country: "India", slug: "kerala", price: 25000, priceLabel: "25,000", rating: "4.8", image: "/images/generated/kerala-hero.webp", accent: "#2BA5A5" },
+  { name: "Rajasthan", country: "India", slug: "rajasthan", price: 25000, priceLabel: "25,000", rating: "4.8", image: "/images/generated/rajasthan-hero.webp", accent: "#D4A853" },
+  { name: "Bali", country: "Indonesia", slug: "bali", price: 58000, priceLabel: "58,000", rating: "4.8", image: "/images/generated/bali-hero.webp", accent: "#C4324A" },
 ]
 
 function DestinationsSection() {
@@ -1382,7 +1382,7 @@ function DestinationsSection() {
           {destinations.map((dest, i) => (
             <div key={dest.name} data-reveal-scale style={{ transitionDelay: `${i * 0.1}s` }}>
               <TiltCard strength={8}>
-                <Link href={`/destinations/${dest.name.toLowerCase().replace(/\s+/g, "-")}`} className="group block">
+                <Link href={`/destinations/${dest.slug}`} className="group block">
                   <div className="relative overflow-hidden rounded-2xl shadow-[0_2px_20px_rgba(11,20,38,0.06)] transition-all duration-500 group-hover:shadow-[0_16px_60px_rgba(11,20,38,0.15)]">
                     <div className="relative h-80 sm:h-[22rem]">
                       <Image src={dest.image} alt={dest.name} fill className="object-cover transition-transform duration-[1.2s] group-hover:scale-110" />
@@ -2011,15 +2011,21 @@ function CTASection() {
 
 function NewsletterSection() {
   const [email, setEmail] = useState("")
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle")
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [confetti, setConfetti] = useState<{ id: number; x: number; y: number; color: string }[]>([])
   const buttonRef = useRef<HTMLButtonElement>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email) return
     setStatus("loading")
-    setTimeout(() => {
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      })
+      if (!res.ok) throw new Error("subscribe failed")
       setStatus("success")
       // Confetti burst
       const colors = ["#C4324A", "#B0B8C4", "#0A1425", "#C4324A", "#B0B8C4", "#FFFFFF", "#C4324A", "#B0B8C4"]
@@ -2032,7 +2038,10 @@ function NewsletterSection() {
       setConfetti(burst)
       setTimeout(() => setConfetti([]), 1200)
       setTimeout(() => { setStatus("idle"); setEmail("") }, 3000)
-    }, 1000)
+    } catch {
+      setStatus("error")
+      setTimeout(() => setStatus("idle"), 3000)
+    }
   }
 
   return (

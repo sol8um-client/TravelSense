@@ -2960,6 +2960,275 @@ export const destinations: Destination[] = [
     featured: false,
   },
 
+  {
+    name: "Finland",
+    slug: "finland",
+    region: "International",
+    country: "Finland",
+    category: "leisure",
+    tagline: "Lapland, the Aurora & Santa's Arctic",
+    description:
+      "Glass igloos under the Northern Lights, husky and reindeer sleds across the snow, and Santa Claus Village on the Arctic Circle \u2014 Finnish Lapland is the ultimate winter-wonderland.",
+    longDescription:
+      "Finland's far north, Lapland, is the storybook Arctic. Rovaniemi, on the Arctic Circle, is the official home of Santa Claus, where you can cross the magic line, meet Santa and post a letter from his post office. Beyond the town, the snow-blanketed wilderness is the stage for husky-sled and reindeer-sleigh rides, snowmobile safaris and nights spent watching the Northern Lights from glass igloos and aurora cabins.\n\nHelsinki, the design-led seaside capital, makes a cultured start or finish with its cathedral, market square and island fortress of Suomenlinna. From late September to March the aurora is the headline act, while the deep winter adds frozen lakes, ice-fishing and the genuine Finnish sauna culture \u2014 making Lapland one of the world's most magical cold-weather escapes.",
+    heroImage: "https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518562180175-34a163b1a9a6?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1517783999520-f068d7431a60?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1491466424936-e304919aada7?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "December to March (snow & aurora)",
+    weather:
+      "Sub-arctic \u2014 deep cold winters (-10 to -25 \u00b0C in Lapland) with snow and aurora Dec-Mar; mild bright summers with the midnight sun.",
+    startingPrice: 195000,
+    highlights: [
+      "Northern Lights from a glass igloo",
+      "Husky sled safari",
+      "Reindeer sleigh ride",
+      "Santa Claus Village, Rovaniemi",
+      "Snowmobile through the taiga",
+      "Helsinki & Suomenlinna",
+    ],
+    thingsToKnow: [
+      "Indian passport holders need a Schengen visa \u2014 apply with full documents and travel insurance.",
+      "Lapland winters are extremely cold \u2014 thermal base layers, proper boots and gloves are essential (gear rental available).",
+      "The aurora is natural and weather-dependent; multiple nights in Lapland improve the odds.",
+      "Euro (EUR) \u2014 cards accepted everywhere.",
+      "Glass-igloo and aurora-cabin stays are limited \u2014 book the peak Dec-Feb window early.",
+    ],
+    popularExperiences: [
+      {
+        title: "Glass Igloo Aurora Night",
+        description:
+          "Lie back in a heated glass igloo and watch the Northern Lights from your bed.",
+        icon: "\ud83d\udecf\ufe0f",
+      },
+      {
+        title: "Husky Sled Safari",
+        description:
+          "Mush your own team of huskies across the frozen Lapland wilderness.",
+        icon: "\ud83d\udc15",
+      },
+      {
+        title: "Santa Claus Village",
+        description:
+          "Cross the Arctic Circle line, meet Santa and post a card from Rovaniemi.",
+        icon: "\ud83c\udf85",
+      },
+      {
+        title: "Reindeer Sleigh & Sami Culture",
+        description:
+          "A reindeer-drawn sleigh ride and a taste of indigenous Sami life.",
+        icon: "\ud83e\udd8c",
+      },
+    ],
+    featured: true,
+  },
+  {
+    name: "Europe",
+    slug: "europe",
+    region: "International",
+    country: "Europe",
+    category: "leisure",
+    tagline: "Grand Multi-Country Tours, West & East",
+    description:
+      "London to Paris to the Swiss Alps and Italy, or the imperial trio of Prague, Vienna and Budapest \u2014 our Europe tours string the continent's icons into one seamless journey.",
+    longDescription:
+      "Europe rewards the multi-country traveller. Our Western Europe circuit links the headline capitals \u2014 London's Tower Bridge and Buckingham Palace, Paris's Eiffel Tower and Louvre, the Swiss Alps with cogwheel trains up Jungfrau or Mt Titlis, and Italy's Rome, Venice and Florence \u2014 connected by fast trains and scenic coaches. It is the classic first-timer's grand tour of the continent.\n\nOur Eastern Europe circuit takes a more atmospheric route through the old Habsburg heart \u2014 fairy-tale Prague with its astronomical clock and castle, imperial Vienna of Schonbrunn and the coffee houses, and Budapest straddling the Danube with its thermal baths and parliament. Both can be tailored from 7 to 16 nights, and combined for the ultimate cross-continent journey.",
+    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1551867633-194f125695e9?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "April to October",
+    weather:
+      "Mild spring and autumn, warm summers; the Alps stay cool. Winter brings Christmas markets and snow in the mountains.",
+    startingPrice: 235000,
+    highlights: [
+      "London \u2014 Tower Bridge & Westminster",
+      "Paris \u2014 Eiffel Tower & Louvre",
+      "Swiss Alps cogwheel trains",
+      "Italy \u2014 Rome, Venice & Florence",
+      "Prague, Vienna & Budapest (East)",
+      "Fast inter-city trains & scenic coaches",
+    ],
+    thingsToKnow: [
+      "Indian passport holders need a Schengen visa (plus a separate UK visa if London is included) \u2014 apply early with full documents.",
+      "Multi-country tours involve train and coach transfers \u2014 pack light with a single check-in bag.",
+      "Euro (EUR) across most of the Eurozone; the UK uses Pounds and Switzerland uses Swiss Francs.",
+      "City taxes and some attraction reservations (Eiffel, Vatican) are pre-booked by us.",
+      "Distances are short by rail \u2014 but allow buffer time for border and station transfers.",
+    ],
+    popularExperiences: [
+      {
+        title: "Swiss Alps Cogwheel Train",
+        description:
+          "Ride up to a glacier summit (Jungfraujoch or Mt Titlis) for snow and Alpine views in any season.",
+        icon: "\ud83d\udf04",
+      },
+      {
+        title: "Eiffel Tower & Seine",
+        description:
+          "Summit the Eiffel Tower and cruise the Seine past Paris's illuminated landmarks.",
+        icon: "\ud83d\uddfc",
+      },
+      {
+        title: "Venice Gondola & Canals",
+        description:
+          "Glide the canals of Venice and wander St Mark's Square.",
+        icon: "\ud83d\udef6",
+      },
+      {
+        title: "Prague Old Town",
+        description:
+          "The astronomical clock, Charles Bridge and the hilltop castle of fairy-tale Prague.",
+        icon: "\ud83c\udff0",
+      },
+    ],
+    featured: true,
+  },
+  {
+    name: "Australia",
+    slug: "australia",
+    region: "International",
+    country: "Australia",
+    category: "leisure",
+    tagline: "Sydney, the Great Barrier Reef & Beyond",
+    description:
+      "The Sydney Opera House, snorkelling the Great Barrier Reef, the Great Ocean Road and koalas in the bush \u2014 Australia is a sun-drenched mix of cities, reef and outback.",
+    longDescription:
+      "Australia is a country-sized adventure. Sydney opens with its iconic Opera House and Harbour Bridge, Bondi Beach and a harbour cruise, with the Blue Mountains a day trip away. North, in tropical Queensland, Cairns is the gateway to the Great Barrier Reef \u2014 the world's largest living structure \u2014 for snorkelling and diving over coral gardens, plus the ancient Daintree Rainforest.\n\nMelbourne adds laneway coffee culture, the Great Ocean Road and the Twelve Apostles sea stacks, while wildlife parks bring koalas, kangaroos and wombats up close. Whether it's three cities or a reef-and-rainforest focus, Australia delivers big landscapes, easy English-speaking travel and some of the friendliest people anywhere.",
+    heroImage: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1524293581917-878a6d017c71?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1529108190281-9a4f620bc2d8?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1494233892892-84542a694e72?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "September to November & March to May",
+    weather:
+      "Southern-hemisphere seasons (reversed). Sydney/Melbourne are mild in spring/autumn; tropical Cairns is best in the dry May-Oct. December-February is hot summer.",
+    startingPrice: 215000,
+    highlights: [
+      "Sydney Opera House & Harbour",
+      "Great Barrier Reef snorkelling",
+      "Blue Mountains day trip",
+      "Great Ocean Road & Twelve Apostles",
+      "Koalas & kangaroos",
+      "Melbourne laneways",
+    ],
+    thingsToKnow: [
+      "Indian passport holders need an Australian visa (Visitor visa, subclass 600) \u2014 applied online with documents.",
+      "Domestic flights connect Sydney, Cairns and Melbourne \u2014 distances are large.",
+      "Australian Dollar (AUD) \u2014 fully card-friendly; tap payments everywhere.",
+      "Sun is strong \u2014 high-SPF, hat and reef-safe sunscreen are essential on the reef.",
+      "Reef trips run from Cairns/Port Douglas; sea conditions vary \u2014 we pick reputable operators.",
+    ],
+    popularExperiences: [
+      {
+        title: "Great Barrier Reef Snorkel",
+        description:
+          "Snorkel or dive over coral gardens and tropical fish on the world's largest reef.",
+        icon: "\ud83d\udc20",
+      },
+      {
+        title: "Sydney Opera House",
+        description:
+          "Tour the sails of the Opera House and cruise the harbour past the bridge.",
+        icon: "\ud83c\udfad",
+      },
+      {
+        title: "Great Ocean Road",
+        description:
+          "Drive the cliff-top road to the Twelve Apostles sea stacks at sunset.",
+        icon: "\ud83d\ude97",
+      },
+      {
+        title: "Wildlife Encounter",
+        description:
+          "Cuddle a koala and hand-feed kangaroos at a wildlife sanctuary.",
+        icon: "\ud83d\udc28",
+      },
+    ],
+    featured: false,
+  },
+  {
+    name: "New Zealand",
+    slug: "new-zealand",
+    region: "International",
+    country: "New Zealand",
+    category: "leisure",
+    tagline: "Fiords, Glaciers & the Adventure Capital",
+    description:
+      "Milford Sound's fiords, Queenstown's bungy and jetboats, glow-worm caves and Hobbiton \u2014 New Zealand packs the planet's scenery into two spectacular islands.",
+    longDescription:
+      "New Zealand is scenery turned up to eleven. The North Island offers Auckland's harbour, the Waitomo glow-worm caves, the geothermal geysers and Maori culture of Rotorua, and the green hills of Hobbiton from the Lord of the Rings films. The South Island raises the drama \u2014 Christchurch and the Canterbury plains, the turquoise lakes of Tekapo and Pukaki beneath Aoraki/Mount Cook, the glaciers of the West Coast, and the fiords of Milford Sound.\n\nAt the heart of the South Island is Queenstown, the adventure capital of the world \u2014 bungy jumping, jetboating, skydiving and gondola luge, ringed by the Remarkables and Lake Wakatipu. Easy English-speaking travel, superb road-tripping and warm Kiwi hospitality make it a bucket-list journey.",
+    heroImage: "https://images.unsplash.com/photo-1469521669194-babb45599def?w=1600&h=900&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1469521669194-babb45599def?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507097634215-8d5e4b77c5e9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1578645510447-e20b4311e3ce?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "October to April",
+    weather:
+      "Temperate, southern-hemisphere seasons. Summer (Dec-Feb) is warm and busy; spring/autumn are quieter; the South Island can be cold and snowy in winter.",
+    startingPrice: 235000,
+    highlights: [
+      "Milford Sound fiord cruise",
+      "Queenstown adventure capital",
+      "Aoraki/Mount Cook & Lake Tekapo",
+      "Waitomo glow-worm caves",
+      "Rotorua geysers & Maori culture",
+      "Hobbiton movie set",
+    ],
+    thingsToKnow: [
+      "Indian passport holders need a New Zealand visa (Visitor visa) \u2014 applied online with documents.",
+      "Distances and drive times are long but roads are superb \u2014 self-drive is the classic way.",
+      "New Zealand Dollar (NZD) \u2014 fully card-friendly.",
+      "Strict biosecurity \u2014 declare all food, plant and outdoor gear on arrival.",
+      "Weather in the mountains and fiords changes fast \u2014 layers and a rain shell are a must.",
+    ],
+    popularExperiences: [
+      {
+        title: "Milford Sound Cruise",
+        description:
+          "Cruise the sheer cliffs and waterfalls of New Zealand's most famous fiord.",
+        icon: "\u26f0\ufe0f",
+      },
+      {
+        title: "Queenstown Adrenaline",
+        description:
+          "Bungy, jetboat or skydive in the world's self-styled adventure capital.",
+        icon: "\ud83e\ude82",
+      },
+      {
+        title: "Glow-Worm Caves",
+        description:
+          "Glide a boat through the Waitomo caves lit by thousands of glow-worms.",
+        icon: "\u2728",
+      },
+      {
+        title: "Hobbiton Movie Set",
+        description:
+          "Walk the Shire's hobbit holes on the green Waikato farmland.",
+        icon: "\ud83c\udfe1",
+      },
+    ],
+    featured: false,
+  },
+
 ]
 
 /* ─── Helper: get a destination by slug ─────────────────────────────────── */
@@ -3010,38 +3279,6 @@ export const comingSoonDestinations: ComingSoonDestination[] = [
     country: "Saudi Arabia",
     tagline: "AlUla, the Red Sea & desert heritage",
     heroImage: "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=800&h=600&fit=crop",
-  },
-  {
-    name: "Europe",
-    slug: "europe",
-    region: "International",
-    country: "Europe",
-    tagline: "Multi-country grand tours across the continent",
-    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&h=600&fit=crop",
-  },
-  {
-    name: "Australia",
-    slug: "australia",
-    region: "International",
-    country: "Australia",
-    tagline: "Reefs, rainforest & three iconic cities",
-    heroImage: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&h=600&fit=crop",
-  },
-  {
-    name: "New Zealand",
-    slug: "new-zealand",
-    region: "International",
-    country: "New Zealand",
-    tagline: "Fiords, glaciers & the adventure capital",
-    heroImage: "https://images.unsplash.com/photo-1469521669194-babb45599def?w=800&h=600&fit=crop",
-  },
-  {
-    name: "Finland",
-    slug: "finland",
-    region: "International",
-    country: "Finland",
-    tagline: "Northern Lights & Lapland in winter",
-    heroImage: "https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=800&h=600&fit=crop",
   },
   {
     name: "Ireland",

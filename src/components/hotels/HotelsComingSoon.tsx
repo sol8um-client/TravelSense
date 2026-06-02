@@ -50,7 +50,12 @@ export default function HotelsComingSoon() {
     if (!email) return
     setIsSubmitting(true)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 800))
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      })
+      if (!res.ok) throw new Error("subscribe failed")
       toast.success("You're on the list!", {
         description:
           "We'll notify you as soon as hotel booking goes live.",

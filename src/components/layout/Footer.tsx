@@ -158,7 +158,12 @@ export function Footer() {
                 if (!newsletterEmail || isSubmitting) return
                 setIsSubmitting(true)
                 try {
-                  await new Promise((resolve) => setTimeout(resolve, 800))
+                  const res = await fetch("/api/newsletter", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email: newsletterEmail }),
+                  })
+                  if (!res.ok) throw new Error("subscribe failed")
                   toast.success("You're subscribed!", {
                     description: "You'll receive curated travel inspiration in your inbox.",
                   })
@@ -204,8 +209,8 @@ export function Footer() {
         <Container>
           <div className="flex flex-col items-center justify-between gap-4 py-6 text-center sm:flex-row sm:text-left">
             <p className="text-xs text-white/50">
-              &copy; {currentYear} {siteConfig.name} by{" "}
-              {siteConfig.name}. All rights reserved.
+              &copy; {currentYear} {siteConfig.name} by V9 Travels. All rights
+              reserved.
             </p>
             <div className="flex items-center gap-6">
               <Link
