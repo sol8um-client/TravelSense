@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/shared/JsonLd"
 import { PageHero } from "@/components/shared/PageHero"
 import { PackageDetail, type PackageDetailData } from "@/components/packages/PackageDetail"
 import { packages } from "@/data/packages"
+import { getDestinationBySlug } from "@/data/destinations"
 
 /* ─── Static params ───────────────────────────────────────────────────────── */
 
@@ -44,6 +45,7 @@ export async function generateMetadata({
 function toDetailData(
   pkg: (typeof packages)[number]
 ): PackageDetailData {
+  const dest = getDestinationBySlug(pkg.destinationSlug)
   return {
     _id: pkg.slug,
     title: pkg.title,
@@ -65,10 +67,15 @@ function toDetailData(
     rating: pkg.rating,
     reviewCount: pkg.reviewCount,
     vehiclePricing: pkg.vehiclePricing,
+    transparencyNote: pkg.transparencyNote,
+    experienceStory: pkg.experienceStory,
+    seasonalAdvisories: pkg.seasonalAdvisories,
     destination: {
       _id: pkg.destinationSlug,
       name: pkg.destinationName,
       slug: pkg.destinationSlug,
+      region: dest?.region,
+      country: dest?.country,
     },
   }
 }

@@ -15,6 +15,12 @@ import {
   ArrowRight,
   Star,
   Sparkles,
+  Info,
+  CalendarClock,
+  FileText,
+  Download,
+  Route as RouteIcon,
+  ChevronRight,
 } from "lucide-react"
 import { formatCurrency } from "@/lib/utils"
 import { useLeadModal } from "@/components/shared/LeadCaptureModal"
@@ -59,6 +65,9 @@ export interface PackageDetailData {
     rows: { vehicle: string; prices: number[] }[]
     note?: string
   }
+  transparencyNote?: string
+  experienceStory?: string
+  seasonalAdvisories?: string[]
   destination?: {
     _id: string
     name: string
@@ -275,6 +284,57 @@ function ItineraryDayCard({
   )
 }
 
+/* ─── Route-at-a-glance (whole route on one screen) ──────────────────────── */
+
+// Derive a short stop label from a day title (text before the first separator).
+function shortStop(title: string): string {
+  const cut = title.split(/\s+[—·–-]\s+| with | via | to | & /i)[0].trim()
+  const cleaned = cut
+    .replace(/^(Arrive|Arrival in|Depart|Departure from|Drive to|Fly to|Transfer to|Explore|Discover)\s+/i, "")
+    .trim()
+  return (cleaned || cut).length > 22 ? `${(cleaned || cut).slice(0, 22)}…` : cleaned || cut
+}
+
+function RouteMap({
+  itinerary,
+  onSelect,
+}: {
+  itinerary: ItineraryDay[]
+  onSelect: (day: number) => void
+}) {
+  return (
+    <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+      <div className="mb-4 flex items-center gap-2">
+        <RouteIcon className="h-4 w-4 text-[#D4A853]" />
+        <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.24em] text-[#D4A853]">
+          Route at a glance
+        </p>
+      </div>
+      <div className="flex flex-wrap items-center gap-y-3">
+        {itinerary.map((d, i) => (
+          <div key={d.day} className="flex items-center">
+            <button
+              onClick={() => onSelect(d.day)}
+              className="group flex items-center gap-2 rounded-full border border-white/10 bg-white/5 py-1.5 pl-1.5 pr-3 transition-colors hover:border-[#D4A853]/40 hover:bg-white/[0.08]"
+              title={d.title}
+            >
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C4324A] to-[#D4A853] text-[11px] font-bold text-white">
+                {d.day}
+              </span>
+              <span className="whitespace-nowrap text-xs text-white/70 group-hover:text-white">
+                {shortStop(d.title)}
+              </span>
+            </button>
+            {i < itinerary.length - 1 && (
+              <ChevronRight className="mx-0.5 h-3.5 w-3.5 shrink-0 text-white/25" />
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 /* ─── Main Component ──────────────────────────────────────────────────────── */
 
 export function PackageDetail({ pkg }: PackageDetailProps) {
@@ -287,6 +347,12 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
   const discountPercent = hasDiscount
     ? Math.round(((pkg.price! - pkg.discountedPrice!) / pkg.price!) * 100)
     : 0
+
+  // International packages get a Visa & Passport section + forms.
+  const isInternational =
+    pkg.destination?.region === "International" ||
+    (!!pkg.destination?.country && pkg.destination.country !== "India")
+  const visaCountry = pkg.destination?.country || pkg.destination?.name
 
   const handleDotClick = (day: number) => {
     setActiveDay(day)
@@ -312,6 +378,59 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
             <em className="italic font-normal text-[#FFB3A3]">Overview.</em>
           </h2>
           <p className="mt-4 text-white/60 leading-relaxed">{pkg.description}</p>
+
+          {/* Experience story — evocative branded narrative */}
+          {pkg.experienceStory && (
+            <div className="mt-6 rounded-2xl border border-[#D4A853]/20 bg-gradient-to-br from-[#D4A853]/[0.07] to-transparent p-5">
+              <div className="mb-2 flex items-center gap-2">
+                <Sparkles className="h-4 w-4 text-[#D4A853]" />
+                <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.24em] text-[#D4A853]">
+                  The Experience
+                </p>
+              </div>
+              <p className="text-[15px] leading-relaxed text-white/75">
+                {pkg.experienceStory}
+              </p>
+            </div>
+          )}
+
+          {/* Transparency note — honest disclosure (pricing basis, taxi, group vs private) */}
+          {pkg.transparencyNote && (
+            <div className="mt-5 flex gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+              <Info className="mt-0.5 h-5 w-5 shrink-0 text-[#2BA5A5]" />
+              <div>
+                <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.24em] text-[#2BA5A5]">
+                  Good to know — full transparency
+                </p>
+                <p className="mt-1.5 text-sm leading-relaxed text-white/60">
+                  {pkg.transparencyNote}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Seasonal advisories */}
+          {pkg.seasonalAdvisories && pkg.seasonalAdvisories.length > 0 && (
+            <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+              <div className="mb-3 flex items-center gap-2">
+                <CalendarClock className="h-4 w-4 text-[#E8923E]" />
+                <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.24em] text-[#E8923E]">
+                  Seasonal advisory
+                </p>
+              </div>
+              <ul className="space-y-2">
+                {pkg.seasonalAdvisories.map((a, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-2 text-sm leading-relaxed text-white/60"
+                  >
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#E8923E]/70" />
+                    {a}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Quick stats */}
           <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -409,6 +528,9 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
               {pkg.itinerary.length} days of carefully crafted experiences
             </p>
 
+            {/* Route at a glance — the whole route on one screen (MoM: route map on 1 page) */}
+            <RouteMap itinerary={pkg.itinerary} onSelect={handleDotClick} />
+
             {/* Progress tracker */}
             <div className="mt-8">
               <ProgressTracker
@@ -477,6 +599,58 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
                 </ul>
               </div>
             )}
+          </section>
+        )}
+
+        {/* Visa & Passport (international packages) — MoM: attach forms along details */}
+        {isInternational && (
+          <section>
+            <h2 className="hx font-heading text-3xl font-medium tracking-[-0.02em] leading-[1.1] text-white md:text-4xl">
+              <em className="italic font-normal text-[#FFB3A3]">Visa &amp; Passport.</em>
+            </h2>
+            <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <p className="text-sm leading-relaxed text-white/65">
+                This is an international trip{visaCountry ? ` to ${visaCountry}` : ""}. Our team
+                handles your visa documentation and passport guidance end-to-end — we share the
+                country-specific document checklist, fill in the application forms for you, and
+                track the file until your visa is stamped.
+              </p>
+              <ul className="mt-4 space-y-2.5">
+                <li className="flex items-start gap-2 text-sm text-white/60">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-400" />
+                  Passport must be valid for at least 6 months beyond your return date, with 2+
+                  blank pages.
+                </li>
+                <li className="flex items-start gap-2 text-sm text-white/60">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-400" />
+                  Country-specific visa fee, processing time and the full document list are on
+                  our Visa &amp; Passport page.
+                </li>
+                <li className="flex items-start gap-2 text-sm text-white/60">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-400" />
+                  We complete the visa application form on your behalf — you only provide the
+                  documents.
+                </li>
+              </ul>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/visa-passport"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-[#2BA5A5] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[#2BA5A5]/90"
+                >
+                  <FileText className="h-4 w-4" />
+                  View visa checklist &amp; fees
+                </Link>
+                <a
+                  href="/forms/TravelSense-Visa-Passport-Forms.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-white/15 px-5 py-3 text-sm text-white/75 transition-colors hover:border-white/30 hover:text-white"
+                >
+                  <Download className="h-4 w-4" />
+                  Download visa &amp; passport forms
+                </a>
+              </div>
+            </div>
           </section>
         )}
 
