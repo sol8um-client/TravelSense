@@ -67,7 +67,7 @@ export type Visor = {
 export const DEFAULT_VISORS: Visor[] = [
   { img: "/images/generated/bali-hero.webp",   name: "Bali",    coord: "8.51°S · 115.26°E", width: 312, top: 30,  right: 8,   rot: -2, z: 6, floatDur: 9,    floatDelay: 0 },
   { img: "/images/generated/kerala-hero.webp", name: "Kerala",  coord: "9.93°N · 76.26°E",  width: 210, top: 272, right: 0,   rot: -4, flip: true, z: 5, floatDur: 10.4, floatDelay: 0.4 },
-  { img: "/images/destinations/swiss-alps.jpg", name: "Zermatt", coord: "45.97°N · 7.66°E", width: 122, top: 444, right: 110, rot: 5,  z: 4, floatDur: 11.8, floatDelay: 0.8 },
+  { img: "/images/destinations/swiss-alps.jpg", name: "Iceland", coord: "64.13°N · 21.94°W", width: 122, top: 444, right: 110, rot: 5,  z: 4, floatDur: 11.8, floatDelay: 0.8 },
 ]
 
 function LogoVisor({

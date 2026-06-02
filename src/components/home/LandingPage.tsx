@@ -531,10 +531,10 @@ function HeroSection() {
             <AnimatePresence mode="wait">
               <motion.em
                 key={wordIdx}
-                initial={{ y: "0.42em", opacity: 0, filter: "blur(6px)" }}
-                animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                exit={{ y: "-0.42em", opacity: 0, filter: "blur(6px)" }}
-                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                initial={{ y: "0.4em", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: "-0.4em", opacity: 0 }}
+                transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
                 className="inline-block whitespace-nowrap italic font-normal text-secondary"
                 style={{ fontVariationSettings: "'opsz' 144" }}
               >
