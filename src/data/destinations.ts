@@ -2501,3 +2501,108 @@ export function getDestinationBySlug(slug: string): Destination | undefined {
 export function getFeaturedDestinations(): Destination[] {
   return destinations.filter((d) => d.featured)
 }
+
+/* ──────────────────────────────────────────────────────────────────────────
+ * Coming-soon destinations — provided by the client (docx) but without
+ * itineraries yet. Shown as enquire-only cards on the destinations page; NOT
+ * included in detail-page generation, packages, or the sitemap until live.
+ * ────────────────────────────────────────────────────────────────────────── */
+export interface ComingSoonDestination {
+  name: string
+  slug: string
+  region: Region
+  country: string
+  tagline: string
+  heroImage: string
+}
+
+export const comingSoonDestinations: ComingSoonDestination[] = [
+  {
+    name: "Cambodia & Laos",
+    slug: "cambodia-laos",
+    region: "International",
+    country: "Cambodia & Laos",
+    tagline: "Angkor temples & the Mekong's gentle heart",
+    heroImage: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=800&h=600&fit=crop",
+  },
+  {
+    name: "Oman",
+    slug: "oman",
+    region: "International",
+    country: "Oman",
+    tagline: "Wadis, dunes & the forts of Arabia",
+    heroImage: "https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=800&h=600&fit=crop",
+  },
+  {
+    name: "Saudi Arabia",
+    slug: "saudi-arabia",
+    region: "International",
+    country: "Saudi Arabia",
+    tagline: "AlUla, the Red Sea & desert heritage",
+    heroImage: "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=800&h=600&fit=crop",
+  },
+  {
+    name: "Europe",
+    slug: "europe",
+    region: "International",
+    country: "Europe",
+    tagline: "Multi-country grand tours across the continent",
+    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&h=600&fit=crop",
+  },
+  {
+    name: "Switzerland",
+    slug: "switzerland",
+    region: "International",
+    country: "Switzerland",
+    tagline: "Alpine peaks, glacier trains & lakeside towns",
+    heroImage: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800&h=600&fit=crop",
+  },
+  {
+    name: "Italy",
+    slug: "italy",
+    region: "International",
+    country: "Italy",
+    tagline: "Rome, Venice, Florence & the Amalfi coast",
+    heroImage: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&h=600&fit=crop",
+  },
+  {
+    name: "Australia",
+    slug: "australia",
+    region: "International",
+    country: "Australia",
+    tagline: "Reefs, rainforest & three iconic cities",
+    heroImage: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&h=600&fit=crop",
+  },
+  {
+    name: "New Zealand",
+    slug: "new-zealand",
+    region: "International",
+    country: "New Zealand",
+    tagline: "Fiords, glaciers & the adventure capital",
+    heroImage: "https://images.unsplash.com/photo-1469521669194-babb45599def?w=800&h=600&fit=crop",
+  },
+  {
+    name: "Finland",
+    slug: "finland",
+    region: "International",
+    country: "Finland",
+    tagline: "Northern Lights & Lapland in winter",
+    heroImage: "https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=800&h=600&fit=crop",
+  },
+  {
+    name: "Ireland",
+    slug: "ireland",
+    region: "International",
+    country: "Ireland",
+    tagline: "Emerald cliffs, castles & the Wild Atlantic Way",
+    heroImage: "https://images.unsplash.com/photo-1590759668628-05b0fc34bb70?w=800&h=600&fit=crop",
+  },
+  {
+    name: "Russia",
+    slug: "russia",
+    region: "International",
+    country: "Russia",
+    tagline: "Moscow's Red Square & imperial St Petersburg",
+    heroImage: "https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=800&h=600&fit=crop",
+  },
+]

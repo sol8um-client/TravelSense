@@ -14,6 +14,7 @@ export interface DestinationCardData {
   startingPrice?: number
   highlights?: string[]
   featured?: boolean
+  comingSoon?: boolean
 }
 
 interface DestinationCardProps {
@@ -30,10 +31,16 @@ export function DestinationCard({ destination }: DestinationCardProps) {
     startingPrice,
     highlights,
     featured,
+    comingSoon,
   } = destination
 
+  // Coming-soon destinations have no detail page yet — the card invites an enquiry instead.
+  const href = comingSoon
+    ? `/contact?enquiry=${encodeURIComponent(name)}`
+    : `/destinations/${slug}`
+
   return (
-    <Link href={`/destinations/${slug}`} className="group block">
+    <Link href={href} className="group block">
       <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur transition-all duration-300 hover:border-[#C4324A]/30 hover:shadow-lg hover:shadow-[#C4324A]/5">
         {/* Image */}
         <div className="relative aspect-[4/3] overflow-hidden">
@@ -54,8 +61,15 @@ export function DestinationCard({ destination }: DestinationCardProps) {
           {/* Overlay gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425] via-transparent to-transparent opacity-80" />
 
+          {/* Coming Soon badge */}
+          {comingSoon && (
+            <div className="absolute top-3 left-3 flex items-center gap-1 rounded-full bg-[#2BA5A5]/90 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
+              Coming Soon
+            </div>
+          )}
+
           {/* Featured badge */}
-          {featured && (
+          {!comingSoon && featured && (
             <div className="absolute top-3 left-3 flex items-center gap-1 rounded-full bg-[#D4A853]/90 px-2.5 py-1 text-xs font-medium text-[#0A1425]">
               <Star className="h-3 w-3" />
               Featured
@@ -63,7 +77,7 @@ export function DestinationCard({ destination }: DestinationCardProps) {
           )}
 
           {/* Price badge */}
-          {startingPrice && (
+          {!comingSoon && startingPrice && (
             <div className="absolute top-3 right-3 rounded-full bg-[#0A1425]/80 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
               From {formatCurrency(startingPrice)}
             </div>
@@ -106,7 +120,7 @@ export function DestinationCard({ destination }: DestinationCardProps) {
           )}
 
           <div className="mt-4 flex items-center text-sm font-medium text-[#C4324A] transition-colors group-hover:text-[#C4324A]/80">
-            Explore
+            {comingSoon ? "Enquire now" : "Explore"}
             <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </div>
         </div>
