@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/shared/JsonLd"
 import { DestinationGrid } from "@/components/destinations/DestinationGrid"
 import type { DestinationCardData } from "@/components/destinations/DestinationCard"
 import { destinations, comingSoonDestinations } from "@/data/destinations"
+import { packages } from "@/data/packages"
 
 export const dynamic = "force-static"
 
@@ -17,18 +18,23 @@ export const metadata = generatePageMetadata({
 
 /* ─── Map static data to card format ─────────────────────────────────────── */
 
-const destinationCards: DestinationCardData[] = destinations.map((d, i) => ({
-  _id: `dest-${i + 1}`,
-  name: d.name,
-  slug: d.slug,
-  description: d.tagline + " — " + d.description,
-  heroImage: d.heroImage,
-  region: d.region,
-  country: d.country,
-  startingPrice: d.startingPrice,
-  highlights: d.highlights,
-  featured: d.featured,
-}))
+const destinationCards: DestinationCardData[] = destinations.map((d, i) => {
+  const pkgs = packages.filter((p) => p.destinationSlug === d.slug)
+  return {
+    _id: `dest-${i + 1}`,
+    name: d.name,
+    slug: d.slug,
+    description: d.tagline + " — " + d.description,
+    heroImage: d.heroImage,
+    region: d.region,
+    country: d.country,
+    startingPrice: d.startingPrice,
+    highlights: d.highlights,
+    featured: d.featured,
+    // If the destination has exactly one package, deep-link straight to it.
+    directPackageSlug: pkgs.length === 1 ? pkgs[0].slug : undefined,
+  }
+})
 
 const comingSoonCards: DestinationCardData[] = comingSoonDestinations.map(
   (d, i) => ({

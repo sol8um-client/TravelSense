@@ -15,6 +15,8 @@ export interface DestinationCardData {
   highlights?: string[]
   featured?: boolean
   comingSoon?: boolean
+  /** If the destination has exactly one package, deep-link straight to it. */
+  directPackageSlug?: string
 }
 
 interface DestinationCardProps {
@@ -32,12 +34,16 @@ export function DestinationCard({ destination }: DestinationCardProps) {
     highlights,
     featured,
     comingSoon,
+    directPackageSlug,
   } = destination
 
   // Coming-soon destinations have no detail page yet — the card invites an enquiry instead.
+  // Single-package destinations deep-link straight to that package (no extra hop).
   const href = comingSoon
     ? `/contact?enquiry=${encodeURIComponent(name)}`
-    : `/destinations/${slug}`
+    : directPackageSlug
+      ? `/packages/${directPackageSlug}`
+      : `/destinations/${slug}`
 
   return (
     <Link href={href} className="group block">

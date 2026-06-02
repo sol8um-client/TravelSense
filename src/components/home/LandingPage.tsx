@@ -470,13 +470,13 @@ function HeroSection() {
               Plan my trip <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2 duration-300" />
             </span>
           </button>
-          <button
-            onClick={() => leadModal.open("hero-explore")}
-            className="outline-cta group inline-flex items-center gap-2.5 px-6 h-[42px] sm:px-9 sm:h-[52px] text-[13px] sm:text-[14px] text-foreground/80 font-body font-medium tracking-[0.01em] cursor-pointer sm:min-w-[230px] justify-center"
+          <Link
+            href="/destinations"
+            className="outline-cta group relative inline-flex items-center gap-2.5 px-6 h-[42px] sm:px-9 sm:h-[52px] text-[13px] sm:text-[14px] text-foreground/80 font-body font-medium tracking-[0.01em] cursor-pointer sm:min-w-[230px] justify-center"
           >
             Explore destinations
             <ChevronRight className="absolute right-3 sm:right-4 h-3.5 w-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-          </button>
+          </Link>
         </motion.div>
 
         {/* Trust stats — Fraunces tabular numerals with Outfit labels */}
@@ -1979,9 +1979,9 @@ function CTASection() {
               Book free consultation
             </span>
           </button>
-          <button onClick={() => leadModal.open("cta-browse")} className="inline-flex items-center gap-2 rounded-full border border-silver/[0.1] bg-white/[0.03] px-8 py-4 text-[14px] font-body font-medium text-silver/40 tracking-[0.01em] backdrop-blur-xl hover:bg-white/[0.08] hover:text-silver/60 hover:border-silver/20 transition-all duration-500 cursor-pointer">
+          <Link href="/destinations" className="inline-flex items-center gap-2 rounded-full border border-silver/[0.1] bg-white/[0.03] px-8 py-4 text-[14px] font-body font-medium text-silver/40 tracking-[0.01em] backdrop-blur-xl hover:bg-white/[0.08] hover:text-silver/60 hover:border-silver/20 transition-all duration-500 cursor-pointer">
             Browse destinations
-          </button>
+          </Link>
         </div>
 
         {/* Floating testimonial snippets */}

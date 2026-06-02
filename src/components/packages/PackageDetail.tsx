@@ -3,7 +3,7 @@
 import { useState, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion, useInView } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import {
   Check,
   X as XIcon,
@@ -21,6 +21,7 @@ import {
   Download,
   Route as RouteIcon,
   ChevronRight,
+  ChevronDown,
 } from "lucide-react"
 import { formatCurrency } from "@/lib/utils"
 import { useLeadModal } from "@/components/shared/LeadCaptureModal"
@@ -107,183 +108,6 @@ function MealIcons({ meals }: { meals: string }) {
   )
 }
 
-/* ─── Progress Tracker ───────────────────────────────────────────────────── */
-
-function ProgressTracker({
-  totalDays,
-  activeDay,
-  onDotClick,
-}: {
-  totalDays: number
-  activeDay: number
-  onDotClick: (day: number) => void
-}) {
-  return (
-    <div className="mb-10 flex flex-col items-center gap-3">
-      <p className="font-body text-[10.5px] font-semibold tracking-[0.28em] uppercase text-[#D4A853]">
-        Day {activeDay} of {totalDays}
-      </p>
-      <div className="flex items-center gap-1.5">
-        {Array.from({ length: totalDays }, (_, i) => {
-          const day = i + 1
-          const isActive = day === activeDay
-          const isPast = day < activeDay
-          return (
-            <button
-              key={day}
-              onClick={() => onDotClick(day)}
-              className={`group relative h-3 w-3 rounded-full border-2 transition-all duration-300 ${
-                isActive
-                  ? "scale-125 border-[#C4324A] bg-[#C4324A] shadow-[0_0_12px_rgba(196,50,74,0.5)]"
-                  : isPast
-                    ? "border-[#D4A853] bg-[#D4A853]/60"
-                    : "border-white/20 bg-transparent hover:border-white/40"
-              }`}
-              aria-label={`Go to day ${day}`}
-            >
-              {isActive && (
-                <motion.span
-                  className="absolute inset-0 rounded-full bg-[#C4324A]"
-                  animate={{ scale: [1, 1.8, 1], opacity: [0.6, 0, 0.6] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-              )}
-            </button>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
-
-/* ─── Single Itinerary Day Card ──────────────────────────────────────────── */
-
-function ItineraryDayCard({
-  item,
-  index,
-  total,
-}: {
-  item: ItineraryDay
-  index: number
-  total: number
-}) {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "-80px" })
-  const isEven = index % 2 === 0
-
-  return (
-    <div ref={ref} className="relative">
-      {/* Timeline connector */}
-      <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#C4324A]/40 via-[#D4A853]/30 to-[#C4324A]/40 md:left-1/2 md:-translate-x-px" />
-
-      {/* Day number badge on the timeline */}
-      <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={isInView ? { scale: 1, opacity: 1 } : {}}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="absolute left-6 top-6 z-10 -translate-x-1/2 md:left-1/2"
-      >
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#C4324A] to-[#D4A853] text-sm font-bold text-white shadow-lg shadow-[#C4324A]/30">
-          {item.day}
-        </div>
-      </motion.div>
-
-      {/* Card content — alternating layout */}
-      <motion.div
-        initial={{ opacity: 0, x: isEven ? -60 : 60, y: 20 }}
-        animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-        className={`relative ml-14 md:ml-0 md:w-[calc(50%-40px)] ${
-          isEven ? "md:mr-auto md:pr-4" : "md:ml-auto md:pl-4"
-        }`}
-      >
-        <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur transition-all duration-500 hover:border-[#D4A853]/30 hover:bg-white/[0.06] hover:shadow-xl hover:shadow-[#C4324A]/5">
-          {/* Day image */}
-          {item.image && (
-            <div className="relative aspect-[3/2] overflow-hidden">
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/90 via-[#0A1425]/20 to-transparent" />
-
-              {/* Highlight badge */}
-              {item.highlight && (
-                <div className="absolute bottom-3 left-3 right-3">
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ delay: 0.5 }}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#D4A853] to-[#C4324A] px-3 py-1.5 text-xs font-medium text-white shadow-lg shadow-[#D4A853]/30"
-                  >
-                    <Sparkles className="h-3.5 w-3.5" />
-                    {item.highlight}
-                  </motion.div>
-                </div>
-              )}
-
-              {/* Elevation & distance badges on image */}
-              <div className="absolute top-3 right-3 flex flex-col gap-1.5">
-                {item.elevation && (
-                  <span className="flex items-center gap-1 rounded-full bg-[#0A1425]/70 px-2.5 py-1 text-xs text-white/90 backdrop-blur-sm">
-                    <span role="img" aria-label="elevation">⛰️</span> {item.elevation}
-                  </span>
-                )}
-                {item.distance && (
-                  <span className="flex items-center gap-1 rounded-full bg-[#0A1425]/70 px-2.5 py-1 text-xs text-white/90 backdrop-blur-sm">
-                    <span role="img" aria-label="distance">🚗</span> {item.distance}
-                  </span>
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Text content */}
-          <div className="p-5">
-            <h3 className="font-heading text-xl font-medium tracking-[-0.015em] leading-[1.15] text-white">
-              {item.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-white/55">
-              {item.description}
-            </p>
-
-            {/* Activities as tags */}
-            {item.activities && item.activities.length > 0 && (
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {item.activities.map((act, i) => (
-                  <span
-                    key={i}
-                    className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-white/60 transition-colors hover:border-[#C4324A]/20 hover:bg-[#C4324A]/10 hover:text-white/80"
-                  >
-                    {act}
-                  </span>
-                ))}
-              </div>
-            )}
-
-            {/* Meals + Accommodation row */}
-            <div className="mt-4 flex flex-col gap-2.5">
-              {item.meals && <MealIcons meals={item.meals} />}
-              {item.accommodation && (
-                <div className="flex items-center gap-1.5 text-xs text-white/50">
-                  <span role="img" aria-label="accommodation">🏨</span>
-                  <span>{item.accommodation}</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Spacing between cards */}
-      {index < total - 1 && <div className="h-8 md:h-12" />}
-    </div>
-  )
-}
-
 /* ─── Route-at-a-glance (whole route on one screen) ──────────────────────── */
 
 // Derive a short stop label from a day title (text before the first separator).
@@ -335,12 +159,167 @@ function RouteMap({
   )
 }
 
+/* ─── Compact day-by-day accordion (whole itinerary fits one screen) ─────── */
+
+function ItineraryAccordion({ itinerary }: { itinerary: ItineraryDay[] }) {
+  const [openDays, setOpenDays] = useState<Set<number>>(
+    () => new Set(itinerary.length ? [itinerary[0].day] : [])
+  )
+  const rowRefs = useRef<Record<number, HTMLDivElement | null>>({})
+
+  const toggle = (day: number) =>
+    setOpenDays((prev) => {
+      const next = new Set(prev)
+      if (next.has(day)) next.delete(day)
+      else next.add(day)
+      return next
+    })
+
+  const openAndScroll = (day: number) => {
+    setOpenDays((prev) => new Set(prev).add(day))
+    setTimeout(
+      () =>
+        rowRefs.current[day]?.scrollIntoView({ behavior: "smooth", block: "center" }),
+      60
+    )
+  }
+
+  const allOpen = openDays.size === itinerary.length
+  const toggleAll = () =>
+    setOpenDays(allOpen ? new Set() : new Set(itinerary.map((d) => d.day)))
+
+  return (
+    <div className="mt-6">
+      {/* Route at a glance — the whole route on one screen */}
+      <RouteMap itinerary={itinerary} onSelect={openAndScroll} />
+
+      {/* Expand / collapse control */}
+      <div className="mt-6 flex items-center justify-between">
+        <p className="text-xs text-white/40">Tap a day to see the details</p>
+        <button
+          onClick={toggleAll}
+          className="rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs text-white/70 transition-colors hover:border-[#D4A853]/30 hover:text-white"
+        >
+          {allOpen ? "Collapse all" : "Expand all"}
+        </button>
+      </div>
+
+      {/* Accordion rows */}
+      <div className="mt-3 space-y-2">
+        {itinerary.map((item) => {
+          const open = openDays.has(item.day)
+          return (
+            <div
+              key={item.day}
+              ref={(el) => {
+                rowRefs.current[item.day] = el
+              }}
+              className={`overflow-hidden rounded-2xl border transition-colors ${
+                open
+                  ? "border-[#D4A853]/30 bg-white/[0.05]"
+                  : "border-white/10 bg-white/[0.03] hover:border-white/20"
+              }`}
+            >
+              {/* Header row */}
+              <button
+                onClick={() => toggle(item.day)}
+                className="flex w-full items-center gap-3 p-4 text-left"
+                aria-expanded={open}
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C4324A] to-[#D4A853] text-xs font-bold text-white">
+                  {item.day}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <h3 className="truncate font-heading text-base font-medium tracking-[-0.01em] text-white">
+                    {item.title}
+                  </h3>
+                  {item.highlight && !open && (
+                    <p className="mt-0.5 flex items-center gap-1 truncate text-xs text-[#D4A853]/80">
+                      <Sparkles className="h-3 w-3 shrink-0" />
+                      {item.highlight}
+                    </p>
+                  )}
+                </div>
+                {item.distance && (
+                  <span className="hidden shrink-0 items-center gap-1 rounded-full bg-white/5 px-2.5 py-1 text-xs text-white/50 sm:flex">
+                    <span role="img" aria-label="distance">🚗</span> {item.distance}
+                  </span>
+                )}
+                <ChevronDown
+                  className={`h-4 w-4 shrink-0 text-white/40 transition-transform duration-300 ${
+                    open ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {/* Expanded body */}
+              <AnimatePresence initial={false}>
+                {open && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-4 pb-4 sm:pl-16">
+                      {item.image && (
+                        <div className="relative mb-3 aspect-[16/9] max-h-44 overflow-hidden rounded-xl">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 640px"
+                          />
+                        </div>
+                      )}
+                      <p className="text-sm leading-relaxed text-white/60">
+                        {item.description}
+                      </p>
+                      {item.activities && item.activities.length > 0 && (
+                        <div className="mt-3 flex flex-wrap gap-1.5">
+                          {item.activities.map((act, i) => (
+                            <span
+                              key={i}
+                              className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-white/60"
+                            >
+                              {act}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+                        {item.meals && <MealIcons meals={item.meals} />}
+                        {item.accommodation && (
+                          <div className="flex items-center gap-1.5 text-xs text-white/50">
+                            <span role="img" aria-label="accommodation">🏨</span>
+                            <span>{item.accommodation}</span>
+                          </div>
+                        )}
+                        {item.elevation && (
+                          <div className="flex items-center gap-1.5 text-xs text-white/50">
+                            <span role="img" aria-label="elevation">⛰️</span>
+                            <span>{item.elevation}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
 /* ─── Main Component ──────────────────────────────────────────────────────── */
 
 export function PackageDetail({ pkg }: PackageDetailProps) {
-  const [activeDay, setActiveDay] = useState(1)
   const leadModal = useLeadModal()
-  const itineraryRef = useRef<HTMLDivElement>(null)
 
   const hasDiscount =
     pkg.discountedPrice && pkg.price && pkg.discountedPrice < pkg.price
@@ -354,19 +333,6 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
     (!!pkg.destination?.country && pkg.destination.country !== "India")
   const visaCountry = pkg.destination?.country || pkg.destination?.name
 
-  const handleDotClick = (day: number) => {
-    setActiveDay(day)
-    // Scroll to the day's card
-    if (itineraryRef.current) {
-      const cards = itineraryRef.current.querySelectorAll("[data-day]")
-      const target = Array.from(cards).find(
-        (el) => (el as HTMLElement).dataset.day === String(day)
-      )
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "center" })
-      }
-    }
-  }
 
   return (
     <div className="lg:grid lg:grid-cols-3 lg:gap-10">
@@ -528,41 +494,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
               {pkg.itinerary.length} days of carefully crafted experiences
             </p>
 
-            {/* Route at a glance — the whole route on one screen (MoM: route map on 1 page) */}
-            <RouteMap itinerary={pkg.itinerary} onSelect={handleDotClick} />
-
-            {/* Progress tracker */}
-            <div className="mt-8">
-              <ProgressTracker
-                totalDays={pkg.itinerary.length}
-                activeDay={activeDay}
-                onDotClick={handleDotClick}
-              />
-            </div>
-
-            {/* Timeline */}
-            <div ref={itineraryRef} className="relative">
-              {pkg.itinerary.map((item, index) => (
-                <div
-                  key={item.day}
-                  data-day={item.day}
-                  onMouseEnter={() => setActiveDay(item.day)}
-                >
-                  <ItineraryDayCard
-                    item={item}
-                    index={index}
-                    total={pkg.itinerary!.length}
-                  />
-                </div>
-              ))}
-
-              {/* Timeline end dot */}
-              <div className="absolute left-6 bottom-0 z-10 -translate-x-1/2 md:left-1/2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#D4A853] to-[#C4324A]">
-                  <Check className="h-4 w-4 text-white" />
-                </div>
-              </div>
-            </div>
+            <ItineraryAccordion itinerary={pkg.itinerary} />
           </section>
         )}
 
