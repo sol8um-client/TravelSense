@@ -1,6 +1,8 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
-import { Clock, MapPin, Mountain, ArrowRight, Star } from "lucide-react"
+import { ArrowRight, Star, Mountain } from "lucide-react"
 import { formatCurrency } from "@/lib/utils"
 
 export interface PackageCardData {
@@ -16,6 +18,8 @@ export interface PackageCardData {
   difficulty?: string
   featured?: boolean
   highlights?: string[]
+  rating?: number
+  reviewCount?: number
   destination?: {
     name: string
     slug: string
@@ -25,13 +29,40 @@ export interface PackageCardData {
 
 interface PackageCardProps {
   pkg: PackageCardData
+  /**
+   * Render the wide/hero variant (taller image, larger title). When omitted the
+   * card falls back to the package's own `featured` flag. The Packages grid
+   * passes this explicitly so the 2-column span stays a deliberate accent.
+   */
+  big?: boolean
+  /** Grid index — reserved for deterministic stagger; not currently read. */
+  index?: number
 }
 
-export function PackageCard({ pkg }: PackageCardProps) {
+const EASE = "cubic-bezier(0.22,1,0.36,1)"
+
+/** Difficulty → number of filled dots in the 3-dot meter. */
+const DIFF: Record<string, number> = {
+  Easy: 1,
+  Moderate: 2,
+  Challenging: 3,
+  Extreme: 3,
+}
+
+/** Per-category accent (prototype CAT_COLOR — only leisure/adventure live now). */
+const CAT_COLOR: Record<string, string> = {
+  leisure: "#C4324A",
+  adventure: "#1F8A7A",
+  educational: "#B8862F",
+}
+
+/** Total segments in the duration bar (prototype renders 12 ticks). */
+const DURATION_SEGMENTS = 12
+
+export function PackageCard({ pkg, big }: PackageCardProps) {
   const {
     title,
     slug,
-    description,
     category,
     duration,
     price,
@@ -39,127 +70,366 @@ export function PackageCard({ pkg }: PackageCardProps) {
     heroImage,
     difficulty,
     featured,
+    rating,
+    reviewCount,
     destination,
   } = pkg
 
-  const hasDiscount = discountedPrice && price && discountedPrice < price
-  const discountPercent = hasDiscount
+  const isBig = big ?? Boolean(featured)
+  const catKey = (category ?? "leisure").toLowerCase()
+  const accent = CAT_COLOR[catKey] ?? "#C4324A"
+
+  const hasDiscount =
+    typeof discountedPrice === "number" &&
+    typeof price === "number" &&
+    discountedPrice < price
+  const pct = hasDiscount
     ? Math.round(((price - discountedPrice) / price) * 100)
     : 0
 
+  const days = duration?.days ?? 0
+  const diffDots = difficulty ? DIFF[difficulty] ?? 1 : 1
+
   return (
-    <Link href={`/packages/${slug}`} className="group block">
-      <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur transition-all duration-300 hover:border-[#C4324A]/30 hover:shadow-lg hover:shadow-[#C4324A]/5">
-        {/* Image */}
-        <div className="relative aspect-[4/3] overflow-hidden">
-          {heroImage ? (
-            <Image
-              src={heroImage}
-              alt={title}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+    <Link
+      href={`/packages/${slug}`}
+      className="pcard group flex h-full flex-col overflow-hidden bg-white no-underline"
+      style={{
+        borderRadius: 20,
+        boxShadow: "0 3px 18px rgba(11,20,38,0.07)",
+        border: "1px solid rgba(176,184,196,0.18)",
+        transition: `box-shadow .5s ${EASE}, transform .5s ${EASE}`,
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.boxShadow = "0 22px 58px rgba(11,20,38,0.16)"
+        e.currentTarget.style.transform = "translateY(-4px)"
+        const im = e.currentTarget.querySelector("img")
+        if (im) (im as HTMLImageElement).style.transform = "scale(1.07)"
+        const ar = e.currentTarget.querySelector<HTMLElement>(".pc-arrow")
+        if (ar) {
+          ar.style.background = "var(--secondary)"
+          ar.style.transform = "translateX(3px)"
+        }
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.boxShadow = "0 3px 18px rgba(11,20,38,0.07)"
+        e.currentTarget.style.transform = "translateY(0)"
+        const im = e.currentTarget.querySelector("img")
+        if (im) (im as HTMLImageElement).style.transform = "scale(1)"
+        const ar = e.currentTarget.querySelector<HTMLElement>(".pc-arrow")
+        if (ar) {
+          ar.style.background = "rgba(196,50,74,0.08)"
+          ar.style.transform = "translateX(0)"
+        }
+      }}
+    >
+      {/* image */}
+      <div
+        className="relative overflow-hidden"
+        style={{ height: isBig ? 240 : 190 }}
+      >
+        {heroImage ? (
+          <Image
+            src={heroImage}
+            alt={title}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover"
+            style={{ transition: `transform 1.1s ${EASE}` }}
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#0D1A30] to-[#0A1425]">
+            <Mountain className="h-12 w-12 text-white/20" />
+          </div>
+        )}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(11,20,38,0.25), transparent 45%)",
+          }}
+        />
+        {/* category tag */}
+        <span
+          className="font-tech absolute"
+          style={{
+            top: 14,
+            left: 14,
+            fontSize: 8.5,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "#fff",
+            background: `${accent}e6`,
+            padding: "5px 10px",
+            borderRadius: 9999,
+          }}
+        >
+          {catKey}
+        </span>
+        {/* % OFF */}
+        {pct > 0 && (
+          <span
+            className="font-tech absolute"
+            style={{
+              top: 14,
+              right: 14,
+              fontSize: 9,
+              letterSpacing: "0.08em",
+              color: "#fff",
+              background: "rgba(11,20,38,0.5)",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
+              padding: "5px 10px",
+              borderRadius: 9999,
+            }}
+          >
+            {pct}% OFF
+          </span>
+        )}
+        {/* rating chip */}
+        {typeof rating === "number" && (
+          <div
+            className="absolute flex items-center"
+            style={{
+              bottom: 12,
+              left: 14,
+              gap: 5,
+              background: "rgba(11,20,38,0.4)",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
+              borderRadius: 9999,
+              padding: "4px 10px",
+            }}
+          >
+            <Star
+              className="h-3 w-3"
+              style={{ color: "var(--secondary-glow)" }}
+              fill="var(--secondary-glow)"
+              strokeWidth={1.5}
             />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#0D1A30] to-[#0A1425]">
-              <Mountain className="h-12 w-12 text-white/20" />
-            </div>
-          )}
-
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/80 via-transparent to-transparent" />
-
-          {/* Top badges */}
-          <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
-            {featured && (
-              <span className="flex items-center gap-1 rounded-full bg-[#D4A853]/90 px-2.5 py-1 text-xs font-medium text-[#0A1425]">
-                <Star className="h-3 w-3" />
-                Featured
-              </span>
-            )}
-            {category && (
-              <span className="rounded-full bg-white/10 px-2.5 py-1 text-xs text-white/80 backdrop-blur">
-                {category}
+            <span style={{ fontSize: 11, fontWeight: 600, color: "#fff" }}>
+              {rating}
+            </span>
+            {typeof reviewCount === "number" && (
+              <span style={{ fontSize: 10, color: "rgba(255,255,255,0.6)" }}>
+                ({reviewCount})
               </span>
             )}
           </div>
+        )}
+      </div>
 
-          {/* Discount badge */}
-          {hasDiscount && (
-            <span className="absolute top-3 right-3 rounded-full bg-[#C4324A] px-2.5 py-1 text-xs font-medium text-white">
-              {discountPercent}% OFF
+      {/* body */}
+      <div className="flex flex-1 flex-col" style={{ padding: 20 }}>
+        <h3
+          className="font-heading m-0"
+          style={{
+            fontSize: isBig ? 23 : 19,
+            fontWeight: 500,
+            color: "var(--primary)",
+            letterSpacing: "-0.015em",
+            lineHeight: 1.12,
+            fontVariationSettings: "'opsz' 144",
+          }}
+        >
+          {title}
+        </h3>
+
+        {destination && (
+          <div
+            className="flex items-center"
+            style={{ gap: 6, marginTop: 7, color: "var(--silver-dark)" }}
+          >
+            {/* Ic.mapPin + Ic.mapPinDot — raw paths verbatim */}
+            <svg
+              width={13}
+              height={13}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--secondary)"
+              strokeWidth={1.5}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+            </svg>
+            <span style={{ fontSize: 12.5, color: "var(--muted-foreground)" }}>
+              {destination.name}
             </span>
-          )}
+            {destination.region && (
+              <>
+                <span
+                  style={{
+                    width: 3,
+                    height: 3,
+                    borderRadius: "50%",
+                    background: "var(--silver)",
+                  }}
+                />
+                <span style={{ fontSize: 12, color: "var(--silver-dark)" }}>
+                  {destination.region}
+                </span>
+              </>
+            )}
+          </div>
+        )}
 
-          {/* Duration badge at bottom of image */}
-          {duration && (
-            <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-[#0A1425]/70 px-3 py-1 text-xs text-white/80 backdrop-blur-sm">
-              <Clock className="h-3 w-3" />
-              {duration.days}D / {duration.nights}N
+        {/* trip spec row */}
+        <div
+          className="flex items-center"
+          style={{
+            gap: 22,
+            marginTop: 16,
+            paddingTop: 16,
+            borderTop: "1px solid rgba(176,184,196,0.22)",
+          }}
+        >
+          {/* duration segment-bar */}
+          <div>
+            <div
+              className="font-tech"
+              style={{
+                fontSize: 7.5,
+                letterSpacing: "0.14em",
+                color: "var(--silver-dark)",
+                textTransform: "uppercase",
+              }}
+            >
+              Duration
+            </div>
+            <div
+              className="flex items-center"
+              style={{ gap: 7, marginTop: 5 }}
+            >
+              <span
+                className="font-heading"
+                style={{
+                  fontSize: 15,
+                  fontWeight: 500,
+                  color: "var(--primary)",
+                }}
+              >
+                {days}D
+              </span>
+              <span className="flex" style={{ gap: 2 }}>
+                {Array.from({ length: DURATION_SEGMENTS }).map((_, b) => (
+                  <span
+                    key={b}
+                    style={{
+                      width: 3,
+                      height: 10,
+                      borderRadius: 1,
+                      background:
+                        b < days
+                          ? "var(--secondary)"
+                          : "rgba(176,184,196,0.3)",
+                    }}
+                  />
+                ))}
+              </span>
+            </div>
+          </div>
+
+          {/* difficulty 3-dot meter */}
+          {difficulty && (
+            <div>
+              <div
+                className="font-tech"
+                style={{
+                  fontSize: 7.5,
+                  letterSpacing: "0.14em",
+                  color: "var(--silver-dark)",
+                  textTransform: "uppercase",
+                }}
+              >
+                Difficulty
+              </div>
+              <div
+                className="flex items-center"
+                style={{ gap: 6, marginTop: 5 }}
+              >
+                <span style={{ fontSize: 12.5, color: "var(--foreground)" }}>
+                  {difficulty}
+                </span>
+                <span className="flex" style={{ gap: 3 }}>
+                  {[1, 2, 3].map((n) => (
+                    <span
+                      key={n}
+                      style={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: "50%",
+                        background:
+                          n <= diffDots ? accent : "rgba(176,184,196,0.35)",
+                      }}
+                    />
+                  ))}
+                </span>
+              </div>
             </div>
           )}
         </div>
 
-        {/* Content */}
-        <div className="flex flex-1 flex-col p-4">
-          <h3 className="font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-xl">
-            {title}
-          </h3>
-
-          {destination && (
-            <div className="mt-1 flex items-center gap-1.5 text-xs text-white/50">
-              <MapPin className="h-3 w-3" />
-              {destination.name}
-              {destination.region && ` · ${destination.region}`}
-            </div>
-          )}
-
-          <p className="mt-2 line-clamp-2 flex-1 text-sm text-white/50">
-            {description}
-          </p>
-
-          {/* Bottom row: difficulty + price */}
-          <div className="mt-4 flex items-end justify-between">
-            {difficulty && (
-              <span
-                className={`rounded-full px-2.5 py-1 text-xs font-medium ${
-                  difficulty === "Easy"
-                    ? "bg-green-500/10 text-green-400"
-                    : difficulty === "Moderate"
-                      ? "bg-yellow-500/10 text-yellow-400"
-                      : difficulty === "Challenging"
-                        ? "bg-orange-500/10 text-orange-400"
-                        : "bg-red-500/10 text-red-400"
-                }`}
-              >
-                {difficulty}
-              </span>
-            )}
-
-            <div className="text-right">
-              {hasDiscount ? (
+        {/* price + arrow */}
+        <div
+          className="flex items-end justify-between"
+          style={{ marginTop: 18, flex: 1 }}
+        >
+          <div style={{ alignSelf: "flex-end" }}>
+            <div className="flex items-baseline" style={{ gap: 7 }}>
+              {price !== undefined ? (
                 <>
-                  <span className="block text-xs text-white/40 line-through">
-                    {formatCurrency(price)}
+                  <span
+                    className="font-heading"
+                    style={{
+                      fontSize: 22,
+                      fontWeight: 500,
+                      color: "var(--secondary)",
+                      letterSpacing: "-0.02em",
+                    }}
+                  >
+                    {formatCurrency(hasDiscount ? discountedPrice : price)}
                   </span>
-                  <span className="text-lg font-medium text-[#C4324A]">
-                    {formatCurrency(discountedPrice)}
-                  </span>
+                  {hasDiscount && (
+                    <span
+                      style={{
+                        fontSize: 13,
+                        color: "var(--silver-dark)",
+                        textDecoration: "line-through",
+                      }}
+                    >
+                      {formatCurrency(price)}
+                    </span>
+                  )}
                 </>
-              ) : price ? (
-                <span className="text-lg font-medium text-[#C4324A]">
-                  {formatCurrency(price)}
-                </span>
               ) : (
-                <span className="text-sm text-white/40">Price on request</span>
+                <span style={{ fontSize: 14, color: "var(--silver-dark)" }}>
+                  Price on request
+                </span>
               )}
-              <span className="block text-xs text-white/30">per person</span>
+            </div>
+            <div style={{ fontSize: 11, color: "var(--silver-dark)" }}>
+              per person
             </div>
           </div>
-
-          <div className="mt-4 flex items-center text-sm font-medium text-[#C4324A] transition-colors group-hover:text-[#C4324A]/80">
-            View Details
-            <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </div>
+          <span
+            className="pc-arrow inline-flex items-center justify-center"
+            style={{
+              width: 38,
+              height: 38,
+              borderRadius: "50%",
+              background: "rgba(196,50,74,0.08)",
+              transition: "background .3s, transform .3s",
+            }}
+          >
+            <ArrowRight
+              className="h-[17px] w-[17px]"
+              style={{ color: "var(--secondary)" }}
+              strokeWidth={1.5}
+            />
+          </span>
         </div>
       </div>
     </Link>

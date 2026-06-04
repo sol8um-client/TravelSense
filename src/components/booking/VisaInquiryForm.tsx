@@ -1,28 +1,40 @@
 "use client"
 
-import { useState } from "react"
+import { useState, type CSSProperties } from "react"
 import { motion } from "framer-motion"
-import { Send, Loader2 } from "lucide-react"
+import { ArrowRight, Loader2 } from "lucide-react"
 import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { cn } from "@/lib/utils"
+
+const GOLD = "#C9A24B"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
-  visible: (i: number = 0) => ({
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, delay: i * 0.08, ease: "easeOut" as const },
-  }),
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+  },
 }
 
-const inputStyles = cn(
-  "mt-1.5 border-white/10 bg-white/5 text-white placeholder:text-white/30",
-  "focus-visible:border-[#C4324A] focus-visible:ring-[#C4324A]/20"
-)
+const labelStyle: CSSProperties = {
+  fontFamily: "var(--font-mono-tech)",
+  fontSize: 8.5,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+  color: "rgba(208,213,220,0.5)",
+}
+
+const fieldStyle: CSSProperties = {
+  height: 46,
+  borderRadius: 11,
+  border: "1px solid rgba(255,255,255,0.14)",
+  background: "rgba(255,255,255,0.04)",
+  padding: "0 14px",
+  fontFamily: "var(--font-body)",
+  fontSize: 14,
+  color: "#fff",
+  outline: "none",
+}
 
 export default function VisaInquiryForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -81,172 +93,173 @@ export default function VisaInquiryForm() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-60px" }}
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: 0.08 } },
-      }}
+      variants={fadeUp}
     >
-      <motion.div
-        variants={fadeUp}
-        custom={0}
-        className="overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 md:p-8"
+      <form
+        onSubmit={onSubmit}
+        style={{
+          borderRadius: 22,
+          border: "1px solid rgba(255,255,255,0.1)",
+          background: "rgba(255,255,255,0.04)",
+          padding: "clamp(24px, 3vw, 36px)",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: 16,
+        }}
       >
-        <form onSubmit={onSubmit} className="space-y-5">
-          {/* Name */}
-          <motion.div variants={fadeUp} custom={1}>
-            <Label htmlFor="visa-name" className="text-white/70 font-body text-sm">
-              Full Name
-            </Label>
-            <Input
-              id="visa-name"
-              name="name"
-              required
-              value={form.name}
-              onChange={handleChange}
-              placeholder="Your full name"
-              aria-label="Full name"
-              className={inputStyles}
-            />
-          </motion.div>
+        {/* Full name */}
+        <label style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+          <span style={labelStyle}>Full name</span>
+          <input
+            type="text"
+            name="name"
+            required
+            value={form.name}
+            onChange={handleChange}
+            placeholder="Your name"
+            aria-label="Full name"
+            className="glass-field-dark"
+            style={fieldStyle}
+          />
+        </label>
 
-          {/* Email + Phone */}
-          <div className="grid gap-5 sm:grid-cols-2">
-            <motion.div variants={fadeUp} custom={2}>
-              <Label htmlFor="visa-email" className="text-white/70 font-body text-sm">
-                Email Address
-              </Label>
-              <Input
-                id="visa-email"
-                name="email"
-                type="email"
-                required
-                value={form.email}
-                onChange={handleChange}
-                placeholder="you@example.com"
-                aria-label="Email address"
-                className={inputStyles}
-              />
-            </motion.div>
+        {/* Email */}
+        <label style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+          <span style={labelStyle}>Email</span>
+          <input
+            type="email"
+            name="email"
+            required
+            value={form.email}
+            onChange={handleChange}
+            placeholder="you@email.com"
+            aria-label="Email"
+            className="glass-field-dark"
+            style={fieldStyle}
+          />
+        </label>
 
-            <motion.div variants={fadeUp} custom={3}>
-              <Label htmlFor="visa-phone" className="text-white/70 font-body text-sm">
-                Phone Number
-              </Label>
-              <Input
-                id="visa-phone"
-                name="phone"
-                type="tel"
-                required
-                value={form.phone}
-                onChange={handleChange}
-                placeholder="+91 98765 43210"
-                aria-label="Phone number"
-                className={inputStyles}
-              />
-            </motion.div>
-          </div>
+        {/* Phone */}
+        <label style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+          <span style={labelStyle}>Phone</span>
+          <input
+            type="tel"
+            name="phone"
+            required
+            value={form.phone}
+            onChange={handleChange}
+            placeholder="+91 ·····"
+            aria-label="Phone"
+            className="glass-field-dark"
+            style={fieldStyle}
+          />
+        </label>
 
-          {/* Destination + Travel Date */}
-          <div className="grid gap-5 sm:grid-cols-2">
-            <motion.div variants={fadeUp} custom={4}>
-              <Label
-                htmlFor="visa-destination"
-                className="text-white/70 font-body text-sm"
-              >
-                Destination Country
-              </Label>
-              <Input
-                id="visa-destination"
-                name="destination"
-                required
-                value={form.destination}
-                onChange={handleChange}
-                placeholder="e.g., Thailand, USA, UK"
-                aria-label="Destination country"
-                className={inputStyles}
-              />
-            </motion.div>
+        {/* Destination */}
+        <label style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+          <span style={labelStyle}>Destination</span>
+          <input
+            type="text"
+            name="destination"
+            required
+            value={form.destination}
+            onChange={handleChange}
+            placeholder="e.g. France"
+            aria-label="Destination"
+            className="glass-field-dark"
+            style={fieldStyle}
+          />
+        </label>
 
-            <motion.div variants={fadeUp} custom={5}>
-              <Label
-                htmlFor="visa-date"
-                className="text-white/70 font-body text-sm"
-              >
-                Travel Date
-              </Label>
-              <Input
-                id="visa-date"
-                name="travelDate"
-                type="date"
-                required
-                value={form.travelDate}
-                onChange={handleChange}
-                aria-label="Travel date"
-                className={cn(inputStyles, "[color-scheme:dark]")}
-              />
-            </motion.div>
-          </div>
+        {/* Travel date */}
+        <label style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+          <span style={labelStyle}>Travel date</span>
+          <input
+            type="date"
+            name="travelDate"
+            required
+            value={form.travelDate}
+            onChange={handleChange}
+            aria-label="Travel date"
+            className="glass-field-dark [color-scheme:dark]"
+            style={fieldStyle}
+          />
+        </label>
 
-          {/* Number of Travelers */}
-          <motion.div variants={fadeUp} custom={6}>
-            <Label
-              htmlFor="visa-travelers"
-              className="text-white/70 font-body text-sm"
-            >
-              Number of Travelers
-            </Label>
-            <Input
-              id="visa-travelers"
-              name="numberOfTravelers"
-              type="number"
-              required
-              min={1}
-              max={20}
-              value={form.numberOfTravelers}
-              onChange={handleChange}
-              placeholder="How many people need visa assistance?"
-              aria-label="Number of travelers"
-              className={inputStyles}
-            />
-          </motion.div>
+        {/* Number of travellers */}
+        <label style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+          <span style={labelStyle}>Travellers</span>
+          <input
+            type="number"
+            name="numberOfTravelers"
+            required
+            min={1}
+            max={20}
+            value={form.numberOfTravelers}
+            onChange={handleChange}
+            placeholder="How many people?"
+            aria-label="Number of travellers"
+            className="glass-field-dark"
+            style={fieldStyle}
+          />
+        </label>
 
-          {/* Message */}
-          <motion.div variants={fadeUp} custom={7}>
-            <Label htmlFor="visa-message" className="text-white/70 font-body text-sm">
-              Additional Details (Optional)
-            </Label>
-            <Textarea
-              id="visa-message"
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder="Passport nationality, visa type needed, any prior rejections, etc."
-              rows={4}
-              aria-label="Additional details"
-              className={cn(inputStyles, "resize-none")}
-            />
-          </motion.div>
+        {/* Message */}
+        <label
+          style={{
+            gridColumn: "span 2",
+            display: "flex",
+            flexDirection: "column",
+            gap: 7,
+          }}
+        >
+          <span style={labelStyle}>Tell us about your trip</span>
+          <textarea
+            name="message"
+            rows={3}
+            value={form.message}
+            onChange={handleChange}
+            placeholder="Travel dates, who's travelling, anything we should know…"
+            aria-label="Tell us about your trip"
+            className="glass-field-dark"
+            style={{
+              ...fieldStyle,
+              height: "auto",
+              padding: 12,
+              resize: "vertical",
+            }}
+          />
+        </label>
 
-          {/* Submit */}
-          <motion.div variants={fadeUp} custom={8}>
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-[#C4324A] font-body text-white hover:bg-[#C4324A]/80"
-              size="lg"
-            >
-              {isSubmitting ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
-              ) : (
-                <>
-                  <Send className="h-4 w-4" />
-                  Submit Visa Inquiry
-                </>
-              )}
-            </Button>
-          </motion.div>
-        </form>
-      </motion.div>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="btn btn-primary"
+          style={{ gridColumn: "span 2", justifyContent: "center", padding: "15px" }}
+        >
+          {isSubmitting ? (
+            <Loader2 size={16} className="animate-spin" />
+          ) : (
+            <>
+              Submit inquiry
+              <ArrowRight size={16} />
+            </>
+          )}
+        </button>
+      </form>
+      <p
+        style={{
+          margin: "16px auto 0",
+          maxWidth: 440,
+          textAlign: "center",
+          fontSize: 11.5,
+          lineHeight: 1.6,
+          color: "rgba(208,213,220,0.4)",
+        }}
+      >
+        <span style={{ color: GOLD }}>TravelSense</span> handles the full file —
+        paperwork, appointments and form-filling included.
+      </p>
     </motion.div>
   )
 }

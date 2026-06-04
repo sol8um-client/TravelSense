@@ -28,17 +28,42 @@ const fadeUp = {
   }),
 }
 
-const inputStyles = cn(
-  "mt-1.5 border-white/10 bg-white/5 text-white placeholder:text-white/30",
-  "focus-visible:border-[#C4324A] focus-visible:ring-[#C4324A]/20"
-)
+const inputStylesByVariant = {
+  dark: cn(
+    "mt-1.5 border-white/10 bg-white/5 text-white placeholder:text-white/30",
+    "focus-visible:border-[#C4324A] focus-visible:ring-[#C4324A]/20"
+  ),
+  light: cn(
+    "mt-1.5 h-11 rounded-[11px] border-[rgba(176,184,196,0.4)] bg-white text-foreground placeholder:text-silver-dark/70",
+    "focus-visible:border-[#C4324A] focus-visible:ring-[#C4324A]/20"
+  ),
+}
 
-const selectStyles = cn(
-  "mt-1.5 flex h-9 w-full rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-white shadow-xs transition-[color,box-shadow] outline-none",
-  "focus-visible:border-[#C4324A] focus-visible:ring-[3px] focus-visible:ring-[#C4324A]/20"
-)
+const selectStylesByVariant = {
+  dark: cn(
+    "mt-1.5 flex h-9 w-full rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-white shadow-xs transition-[color,box-shadow] outline-none",
+    "focus-visible:border-[#C4324A] focus-visible:ring-[3px] focus-visible:ring-[#C4324A]/20"
+  ),
+  light: cn(
+    "mt-1.5 flex h-11 w-full rounded-[11px] border border-[rgba(176,184,196,0.4)] bg-white px-3.5 py-1 text-sm text-foreground shadow-xs transition-[color,box-shadow] outline-none",
+    "focus-visible:border-[#C4324A] focus-visible:ring-[3px] focus-visible:ring-[#C4324A]/20"
+  ),
+}
 
-export default function VehicleRequestForm() {
+interface VehicleRequestFormProps {
+  /** Visual treatment. "dark" (default) for navy sections, "light" for the
+   *  cream/white redesigned request section. Submission logic is identical. */
+  variant?: "dark" | "light"
+}
+
+export default function VehicleRequestForm({ variant = "dark" }: VehicleRequestFormProps) {
+  const isLight = variant === "light"
+  const inputStyles = inputStylesByVariant[variant]
+  const selectStyles = selectStylesByVariant[variant]
+  const labelClass = isLight
+    ? "text-silver-dark font-tech text-[8.5px] tracking-[0.16em] uppercase"
+    : "text-white/70 font-body text-sm"
+  const placeholderMutedClass = isLight ? "text-silver-dark/70" : "text-white/30"
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [form, setForm] = useState({
     name: "",
@@ -106,12 +131,17 @@ export default function VehicleRequestForm() {
       <motion.div
         variants={fadeUp}
         custom={0}
-        className="overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 md:p-8"
+        className={cn(
+          "overflow-hidden",
+          isLight
+            ? "rounded-[22px] border border-[rgba(176,184,196,0.25)] bg-silver-mist p-6 md:p-[34px]"
+            : "rounded-xl border border-white/10 bg-white/5 p-6 md:p-8"
+        )}
       >
         <form onSubmit={onSubmit} className="space-y-5">
           {/* Name */}
           <motion.div variants={fadeUp} custom={1}>
-            <Label htmlFor="veh-name" className="text-white/70 font-body text-sm">
+            <Label htmlFor="veh-name" className={labelClass}>
               Full Name
             </Label>
             <Input
@@ -129,7 +159,7 @@ export default function VehicleRequestForm() {
           {/* Email + Phone */}
           <div className="grid gap-5 sm:grid-cols-2">
             <motion.div variants={fadeUp} custom={2}>
-              <Label htmlFor="veh-email" className="text-white/70 font-body text-sm">
+              <Label htmlFor="veh-email" className={labelClass}>
                 Email Address
               </Label>
               <Input
@@ -146,7 +176,7 @@ export default function VehicleRequestForm() {
             </motion.div>
 
             <motion.div variants={fadeUp} custom={3}>
-              <Label htmlFor="veh-phone" className="text-white/70 font-body text-sm">
+              <Label htmlFor="veh-phone" className={labelClass}>
                 Phone Number
               </Label>
               <Input
@@ -166,10 +196,7 @@ export default function VehicleRequestForm() {
           {/* Destination + Travel Dates */}
           <div className="grid gap-5 sm:grid-cols-2">
             <motion.div variants={fadeUp} custom={4}>
-              <Label
-                htmlFor="veh-destination"
-                className="text-white/70 font-body text-sm"
-              >
+              <Label htmlFor="veh-destination" className={labelClass}>
                 Destination
               </Label>
               <Input
@@ -185,10 +212,7 @@ export default function VehicleRequestForm() {
             </motion.div>
 
             <motion.div variants={fadeUp} custom={5}>
-              <Label
-                htmlFor="veh-dates"
-                className="text-white/70 font-body text-sm"
-              >
+              <Label htmlFor="veh-dates" className={labelClass}>
                 Travel Dates
               </Label>
               <Input
@@ -207,10 +231,7 @@ export default function VehicleRequestForm() {
           {/* Vehicle Type + Group Size */}
           <div className="grid gap-5 sm:grid-cols-2">
             <motion.div variants={fadeUp} custom={6}>
-              <Label
-                htmlFor="veh-type"
-                className="text-white/70 font-body text-sm"
-              >
+              <Label htmlFor="veh-type" className={labelClass}>
                 Vehicle Type
               </Label>
               <select
@@ -222,14 +243,14 @@ export default function VehicleRequestForm() {
                 aria-label="Vehicle type"
                 className={cn(
                   selectStyles,
-                  !form.vehicleType && "text-white/30"
+                  !form.vehicleType && placeholderMutedClass
                 )}
               >
                 {VEHICLE_TYPES.map((opt) => (
                   <option
                     key={opt.value}
                     value={opt.value}
-                    className="bg-[#0A1425] text-white"
+                    className={isLight ? "bg-white text-foreground" : "bg-[#0A1425] text-white"}
                   >
                     {opt.label}
                   </option>
@@ -238,10 +259,7 @@ export default function VehicleRequestForm() {
             </motion.div>
 
             <motion.div variants={fadeUp} custom={7}>
-              <Label
-                htmlFor="veh-group"
-                className="text-white/70 font-body text-sm"
-              >
+              <Label htmlFor="veh-group" className={labelClass}>
                 Group Size
               </Label>
               <Input
@@ -262,7 +280,7 @@ export default function VehicleRequestForm() {
 
           {/* Message */}
           <motion.div variants={fadeUp} custom={8}>
-            <Label htmlFor="veh-message" className="text-white/70 font-body text-sm">
+            <Label htmlFor="veh-message" className={labelClass}>
               Additional Details (Optional)
             </Label>
             <Textarea
@@ -282,7 +300,12 @@ export default function VehicleRequestForm() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-[#C4324A] font-body text-white hover:bg-[#C4324A]/80"
+              className={cn(
+                "w-full font-body text-white",
+                isLight
+                  ? "btn btn-primary h-auto rounded-full py-[15px]"
+                  : "bg-[#C4324A] hover:bg-[#C4324A]/80"
+              )}
               size="lg"
             >
               {isSubmitting ? (

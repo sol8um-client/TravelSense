@@ -1,21 +1,12 @@
-import Link from "next/link"
-import Image from "next/image"
 import { generatePageMetadata } from "@/lib/seo"
 import { JsonLd } from "@/components/shared/JsonLd"
-import { Breadcrumbs } from "@/components/shared/Breadcrumbs"
-import { PageHero } from "@/components/shared/PageHero"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import VisaInquiryForm from "@/components/booking/VisaInquiryForm"
 import VisaChecklist from "@/components/booking/VisaChecklist"
-import { Button } from "@/components/ui/button"
-import {
-  FileCheck2,
-  BookOpen,
-  FileText,
-  Mic2,
-  ArrowRight,
-} from "lucide-react"
+import VisaServicesPanel from "@/components/booking/VisaServicesPanel"
+import VisaPassportHero from "@/components/booking/VisaPassportHero"
+import VisaWorldCollage from "@/components/booking/VisaWorldCollage"
 
 export const metadata = generatePageMetadata({
   title: "Visa & Passport Services — Hassle-Free Documentation",
@@ -24,38 +15,14 @@ export const metadata = generatePageMetadata({
   path: "/visa-passport",
 })
 
-const services = [
-  {
-    icon: FileCheck2,
-    title: "Visa Application",
-    description:
-      "End-to-end visa application support for tourist, business, and transit visas. We handle paperwork, appointments, and follow-ups.",
-  },
-  {
-    icon: BookOpen,
-    title: "Passport Services",
-    description:
-      "New passport applications, renewals, name corrections, and tatkal processing. Guidance through every step of the process.",
-  },
-  {
-    icon: FileText,
-    title: "Document Guidance",
-    description:
-      "Complete checklist of required documents, formatting guidelines, and verification support to ensure your application is accepted.",
-  },
-  {
-    icon: Mic2,
-    title: "Interview Preparation",
-    description:
-      "Mock interview sessions and preparation guides for countries that require visa interviews. Boost your confidence and approval odds.",
-  },
-]
+const NAVY = "#0A1425"
+const GOLD = "#C9A24B"
 
 export default function VisaPassportPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen">
+      <main style={{ background: NAVY }}>
         <JsonLd
           data={{
             "@context": "https://schema.org",
@@ -71,178 +38,161 @@ export default function VisaPassportPage() {
           }}
         />
 
-        <PageHero
-          title="Visa & Passport Services"
-          subtitle="Stress-free documentation assistance so you can focus on planning your trip, not the paperwork."
-          backgroundImage="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=1920&h=1080&fit=crop"
+        {/* ═══════════ HERO — tilted gold-foil passport cover ═══════════ */}
+        <VisaPassportHero />
+
+        {/* ═══════════ SERVICES ═══════════ */}
+        <section style={{ background: NAVY, padding: "20px 32px 90px" }}>
+          <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+            <div style={{ textAlign: "center", marginBottom: 44 }}>
+              <p
+                style={{
+                  margin: "0 0 12px",
+                  fontFamily: "var(--font-body)",
+                  fontSize: 10.5,
+                  fontWeight: 600,
+                  letterSpacing: "0.28em",
+                  textTransform: "uppercase",
+                  color: GOLD,
+                }}
+              >
+                What we handle
+              </p>
+              <h2
+                style={{
+                  margin: 0,
+                  fontFamily: "var(--font-heading), Georgia, serif",
+                  fontSize: "clamp(1.8rem, 3.4vw, 2.8rem)",
+                  fontWeight: 500,
+                  letterSpacing: "-0.025em",
+                  color: "#fff",
+                  fontVariationSettings: "'opsz' 144",
+                }}
+              >
+                Everything,{" "}
+                <em style={{ fontStyle: "italic", fontWeight: 400, color: GOLD }}>
+                  handled.
+                </em>
+              </h2>
+            </div>
+            <VisaServicesPanel />
+          </div>
+        </section>
+
+        {/* ═══════════ PASSPORT SPREAD CHECKLIST ═══════════ */}
+        <section
+          id="checklist"
+          style={{
+            background: "linear-gradient(180deg, #0A1425, #0D1A30)",
+            padding: "90px 32px",
+          }}
         >
-          <Breadcrumbs
-            items={[{ label: "Visa & Passport", href: "/visa-passport" }]}
-          />
-        </PageHero>
-
-        {/* ── Services Grid ───────────────────────────────────── */}
-        <section className="bg-[#0A1425] py-16 md:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
-                Our Services
-              </h2>
-              <p className="mx-auto mt-3 max-w-2xl font-body text-sm text-white/50 md:text-base">
-                From application to approval, we guide you through every step of
-                the visa and passport process.
-              </p>
-            </div>
-
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {services.map((service) => (
-                <div
-                  key={service.title}
-                  className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition-colors hover:border-[#C4324A]/30"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#C4324A]/10 text-[#C4324A] transition-colors group-hover:bg-[#C4324A]/20">
-                    <service.icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="mt-4 font-heading text-sm font-medium tracking-[-0.015em] leading-[1.15] text-white">
-                    {service.title}
-                  </h3>
-                  <p className="mt-2 font-body text-sm leading-relaxed text-white/50">
-                    {service.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Document Checklist by Destination ───────────────── */}
-        <section className="bg-[#0D1A30] py-16 md:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
-                Document Checklist by Destination
-              </h2>
-              <p className="mx-auto mt-3 max-w-2xl font-body text-sm text-white/50 md:text-base">
-                Select a destination to see the visa type, processing time, and
-                the exact documents you will need to prepare.
-              </p>
-            </div>
-
-            <div className="mt-12">
-              <VisaChecklist />
-            </div>
-          </div>
-        </section>
-
-        {/* ── Inquiry Form ────────────────────────────────────── */}
-        <section className="bg-[#0A1425] py-16 md:py-24">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
-                Submit a Visa Inquiry
-              </h2>
-              <p className="mx-auto mt-3 max-w-xl font-body text-sm text-white/50 md:text-base">
-                Share your travel details and our visa experts will guide you
-                through the process.
-              </p>
-            </div>
-
-            <div className="mt-10">
-              <VisaInquiryForm />
-            </div>
-          </div>
-        </section>
-
-        {/* ── Travel Destinations Collage ─────────────────────── */}
-        <section className="bg-[#0D1A30] py-16 md:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
-                Your World Awaits
-              </h2>
-              <p className="mx-auto mt-3 max-w-2xl font-body text-sm text-white/50 md:text-base">
-                From iconic landmarks to hidden gems, we help you get the paperwork sorted so you can explore freely.
-              </p>
-            </div>
-            <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
-              <div className="relative overflow-hidden rounded-2xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&h=500&fit=crop"
-                  alt="Eiffel Tower, Paris"
-                  width={400}
-                  height={500}
-                  className="h-60 w-full object-cover transition-transform duration-500 hover:scale-105 md:h-72"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/80 to-transparent" />
-                <p className="absolute bottom-3 left-3 font-body text-sm font-medium text-white">Paris, France</p>
-              </div>
-              <div className="relative overflow-hidden rounded-2xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=400&h=500&fit=crop"
-                  alt="Sydney Opera House"
-                  width={400}
-                  height={500}
-                  className="h-60 w-full object-cover transition-transform duration-500 hover:scale-105 md:h-72"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/80 to-transparent" />
-                <p className="absolute bottom-3 left-3 font-body text-sm font-medium text-white">Sydney, Australia</p>
-              </div>
-              <div className="relative overflow-hidden rounded-2xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=400&h=500&fit=crop"
-                  alt="Tokyo cityscape"
-                  width={400}
-                  height={500}
-                  className="h-60 w-full object-cover transition-transform duration-500 hover:scale-105 md:h-72"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/80 to-transparent" />
-                <p className="absolute bottom-3 left-3 font-body text-sm font-medium text-white">Tokyo, Japan</p>
-              </div>
-              <div className="relative overflow-hidden rounded-2xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=400&h=500&fit=crop"
-                  alt="Dubai skyline"
-                  width={400}
-                  height={500}
-                  className="h-60 w-full object-cover transition-transform duration-500 hover:scale-105 md:h-72"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1425]/80 to-transparent" />
-                <p className="absolute bottom-3 left-3 font-body text-sm font-medium text-white">Dubai, UAE</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── CTA Section ────────────────────────────────────── */}
-        <section className="bg-[#0A1425] py-16 md:py-24">
-          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="font-heading text-2xl font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-3xl">
-              Have Questions About Visa Requirements?
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl font-body text-sm text-white/50 md:text-base">
-              Our visa experts are here to help you navigate the documentation
-              process. Reach out and we will guide you every step of the way.
-            </p>
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Button
-                asChild
-                className="bg-[#C4324A] font-body text-white hover:bg-[#C4324A]/80"
-                size="lg"
+          <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+            <div style={{ textAlign: "center", marginBottom: 36 }}>
+              <p
+                style={{
+                  margin: 0,
+                  fontFamily: "var(--font-body)",
+                  fontSize: 10.5,
+                  fontWeight: 600,
+                  letterSpacing: "0.28em",
+                  textTransform: "uppercase",
+                  color: GOLD,
+                }}
               >
-                <Link href="/contact">
-                  Contact Us
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border-white/20 font-body text-white hover:bg-white/5"
-                size="lg"
+                Document checklist
+              </p>
+              <h2
+                style={{
+                  margin: "14px 0 0",
+                  fontFamily: "var(--font-heading), Georgia, serif",
+                  fontSize: "clamp(1.8rem, 3.4vw, 2.8rem)",
+                  fontWeight: 500,
+                  letterSpacing: "-0.025em",
+                  color: "#fff",
+                  fontVariationSettings: "'opsz' 144",
+                }}
               >
-                <Link href="/consultation">Book Consultation</Link>
-              </Button>
+                Open your{" "}
+                <em style={{ fontStyle: "italic", fontWeight: 400, color: GOLD }}>
+                  passport.
+                </em>
+              </h2>
+              <p
+                style={{
+                  margin: "12px auto 0",
+                  maxWidth: 520,
+                  fontSize: 14.5,
+                  color: "rgba(208,213,220,0.55)",
+                }}
+              >
+                Pick a region and a country to see the visa type, fees and exact
+                documents you&apos;ll need.
+              </p>
             </div>
+
+            <VisaChecklist />
+          </div>
+        </section>
+
+        {/* ═══════════ INQUIRY FORM ═══════════ */}
+        <section id="inquiry" style={{ background: NAVY, padding: "90px 32px" }}>
+          <div style={{ maxWidth: 680, margin: "0 auto" }}>
+            <div style={{ textAlign: "center", marginBottom: 32 }}>
+              <h2
+                style={{
+                  margin: 0,
+                  fontFamily: "var(--font-heading), Georgia, serif",
+                  fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)",
+                  fontWeight: 500,
+                  letterSpacing: "-0.025em",
+                  color: "#fff",
+                  fontVariationSettings: "'opsz' 144",
+                }}
+              >
+                Submit a visa{" "}
+                <em style={{ fontStyle: "italic", fontWeight: 400, color: GOLD }}>
+                  inquiry.
+                </em>
+              </h2>
+              <p
+                style={{
+                  margin: "12px auto 0",
+                  maxWidth: 440,
+                  fontSize: 14.5,
+                  color: "rgba(208,213,220,0.55)",
+                }}
+              >
+                Share your travel details and our visa experts will guide you through
+                the process.
+              </p>
+            </div>
+            <VisaInquiryForm />
+          </div>
+        </section>
+
+        {/* ═══════════ COLLAGE — your world awaits ═══════════ */}
+        <section style={{ background: "#0D1A30", padding: "90px 32px" }}>
+          <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+            <div style={{ textAlign: "center", marginBottom: 40 }}>
+              <h2
+                style={{
+                  margin: 0,
+                  fontFamily: "var(--font-heading), Georgia, serif",
+                  fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)",
+                  fontWeight: 500,
+                  letterSpacing: "-0.025em",
+                  color: "#fff",
+                  fontVariationSettings: "'opsz' 144",
+                }}
+              >
+                Your world{" "}
+                <em style={{ fontStyle: "italic", fontWeight: 400, color: GOLD }}>
+                  awaits.
+                </em>
+              </h2>
+            </div>
+            <VisaWorldCollage />
           </div>
         </section>
       </main>

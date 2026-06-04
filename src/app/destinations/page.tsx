@@ -1,9 +1,10 @@
+import Link from "next/link"
+import { Phone } from "lucide-react"
 import { generatePageMetadata } from "@/lib/seo"
-import { PageHero } from "@/components/shared/PageHero"
-import { Breadcrumbs } from "@/components/shared/Breadcrumbs"
 import { JsonLd } from "@/components/shared/JsonLd"
-import { DestinationGrid } from "@/components/destinations/DestinationGrid"
+import { DestinationsExplorer } from "@/components/destinations/DestinationsExplorer"
 import type { DestinationCardData } from "@/components/destinations/DestinationCard"
+import { coordFor } from "@/components/destinations/destinationCoords"
 import { destinations, comingSoonDestinations } from "@/data/destinations"
 import { packages } from "@/data/packages"
 
@@ -16,10 +17,16 @@ export const metadata = generatePageMetadata({
   path: "/destinations",
 })
 
-/* ─── Map static data to card format ─────────────────────────────────────── */
+/* ─── Map static data → bento card data (coords + live package counts) ────── */
+
+// Live package count per destination slug ("N experiences").
+const packageCounts: Record<string, number> = packages.reduce<Record<string, number>>((acc, p) => {
+  acc[p.destinationSlug] = (acc[p.destinationSlug] ?? 0) + 1
+  return acc
+}, {})
 
 const destinationCards: DestinationCardData[] = destinations.map((d, i) => {
-  const pkgs = packages.filter((p) => p.destinationSlug === d.slug)
+  const count = packageCounts[d.slug] ?? 0
   return {
     _id: `dest-${i + 1}`,
     name: d.name,
@@ -31,27 +38,19 @@ const destinationCards: DestinationCardData[] = destinations.map((d, i) => {
     startingPrice: d.startingPrice,
     highlights: d.highlights,
     featured: d.featured,
+    coord: coordFor(d.slug),
+    tag: d.tagline,
+    experienceCount: count,
     // If the destination has exactly one package, deep-link straight to it.
-    directPackageSlug: pkgs.length === 1 ? pkgs[0].slug : undefined,
+    directPackageSlug: count === 1 ? packages.find((p) => p.destinationSlug === d.slug)?.slug : undefined,
   }
 })
-
-const comingSoonCards: DestinationCardData[] = comingSoonDestinations.map(
-  (d, i) => ({
-    _id: `soon-${i + 1}`,
-    name: d.name,
-    slug: d.slug,
-    description: d.tagline,
-    heroImage: d.heroImage,
-    region: d.region,
-    country: d.country,
-    comingSoon: true,
-  })
-)
 
 /* ─── Page ────────────────────────────────────────────────────────────────── */
 
 export default function DestinationsPage() {
+  const ctaImage = destinations.find((d) => d.slug === "kerala")?.heroImage
+
   return (
     <>
       <JsonLd
@@ -65,36 +64,116 @@ export default function DestinationsPage() {
         }}
       />
 
-      <PageHero
-        title="Destinations"
-        subtitle="Discover extraordinary places handpicked by our travel experts"
-        backgroundImage="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&h=900&fit=crop"
-      >
-        <Breadcrumbs items={[{ label: "Destinations", href: "/destinations" }]} />
-      </PageHero>
+      {/* Globe-backed cream hero + sticky region board + bento grid */}
+      <DestinationsExplorer destinations={destinationCards} />
 
-      <section className="bg-[#0A1425] px-4 py-16 md:py-20">
-        <div className="mx-auto max-w-7xl">
-          <DestinationGrid destinations={destinationCards} />
-
-          {/* Coming soon — client-provided destinations, itineraries in progress */}
-          {comingSoonCards.length > 0 && (
-            <div className="mt-20">
-              <div className="mb-8 text-center">
-                <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.28em] text-[#2BA5A5]">
-                  Coming Soon
-                </p>
-                <h2 className="mt-2 font-heading text-3xl font-medium tracking-[-0.02em] text-white md:text-4xl">
-                  More destinations, <em className="italic font-normal text-[#FFB3A3]">on the way.</em>
-                </h2>
-                <p className="mx-auto mt-3 max-w-xl text-sm text-white/50">
-                  We&apos;re curating these next. Tap any one to register your interest and we&apos;ll
-                  reach out the moment its itineraries are ready.
-                </p>
-              </div>
-              <DestinationGrid destinations={comingSoonCards} />
+      {/* ═══════════ Coming soon — "More horizons, on the way." ═══════════ */}
+      {comingSoonDestinations.length > 0 && (
+        <section className="bg-brand-mesh" style={{ padding: "0 32px 90px" }}>
+          <div style={{ maxWidth: 1180, margin: "0 auto", textAlign: "center" }}>
+            <p
+              className="font-body"
+              style={{
+                margin: 0,
+                fontSize: 10.5,
+                fontWeight: 600,
+                letterSpacing: "0.28em",
+                textTransform: "uppercase",
+                color: "var(--accent)",
+              }}
+            >
+              Coming soon
+            </p>
+            <h2
+              className="font-heading"
+              style={{
+                margin: "12px 0 0",
+                fontSize: "clamp(1.7rem, 3vw, 2.4rem)",
+                fontWeight: 500,
+                letterSpacing: "-0.02em",
+                color: "var(--primary)",
+                fontVariationSettings: "'opsz' 144",
+              }}
+            >
+              More horizons,{" "}
+              <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--secondary)" }}>on the way.</em>
+            </h2>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                gap: 10,
+                marginTop: 22,
+              }}
+            >
+              {comingSoonDestinations.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/contact?enquiry=${encodeURIComponent(c.name)}`}
+                  className="link-underline"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 7,
+                    borderRadius: 9999,
+                    border: "1px dashed rgba(176,184,196,0.5)",
+                    background: "#fff",
+                    padding: "9px 16px",
+                    fontSize: 13,
+                    color: "var(--muted-foreground)",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent)" }} />
+                  {c.name}
+                </Link>
+              ))}
             </div>
-          )}
+          </div>
+        </section>
+      )}
+
+      {/* ═══════════ CTA — "Can't decide? Let's talk." ═══════════ */}
+      <section style={{ position: "relative", overflow: "hidden", background: "#0A1425" }}>
+        {ctaImage && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={ctaImage}
+            alt=""
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.32 }}
+          />
+        )}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(135deg, rgba(10,20,37,0.9), rgba(21,34,64,0.8))",
+          }}
+        />
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 700, margin: "0 auto", padding: "100px 32px", textAlign: "center" }}>
+          <h2
+            className="font-heading"
+            style={{
+              margin: 0,
+              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontWeight: 500,
+              letterSpacing: "-0.025em",
+              color: "#fff",
+              fontVariationSettings: "'opsz' 144",
+            }}
+          >
+            Can&apos;t decide?{" "}
+            <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--secondary-glow)" }}>Let&apos;s talk.</em>
+          </h2>
+          <p style={{ margin: "18px auto 0", maxWidth: 420, fontSize: 15.5, lineHeight: 1.7, color: "rgba(208,213,220,0.7)" }}>
+            Tell a real expert your vibe and budget — we&apos;ll match you to the perfect place.
+          </p>
+          <div style={{ marginTop: 32, display: "flex", justifyContent: "center" }}>
+            <Link href="/consultation" className="btn btn-primary" style={{ padding: "15px 30px", fontSize: 14 }}>
+              <Phone size={16} strokeWidth={1.5} /> Talk to a human
+            </Link>
+          </div>
         </div>
       </section>
     </>

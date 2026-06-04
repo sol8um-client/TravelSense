@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import { generatePageMetadata, breadcrumbSchema } from "@/lib/seo"
-import { Breadcrumbs } from "@/components/shared/Breadcrumbs"
 import { JsonLd } from "@/components/shared/JsonLd"
-import { PageHero } from "@/components/shared/PageHero"
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
 import { PackageDetail, type PackageDetailData } from "@/components/packages/PackageDetail"
 import { packages } from "@/data/packages"
 import { getDestinationBySlug } from "@/data/destinations"
@@ -130,26 +130,12 @@ export default async function PackageDetailPage({
         }}
       />
 
-      {/* Hero */}
-      <PageHero
-        title={pkg.title}
-        subtitle={pkg.destinationName}
-        backgroundImage={pkg.heroImage}
-      >
-        <Breadcrumbs
-          items={[
-            { label: "Packages", href: "/packages" },
-            { label: pkg.title, href: `/packages/${slug}` },
-          ]}
-        />
-      </PageHero>
-
-      {/* Detail content */}
-      <section className="bg-[#0A1425] px-4 py-16 md:py-20">
-        <div className="mx-auto max-w-7xl">
-          <PackageDetail pkg={detailData} />
-        </div>
-      </section>
+      {/* Global chrome + full-bleed cinematic package page */}
+      <Header />
+      <main>
+        <PackageDetail pkg={detailData} />
+      </main>
+      <Footer />
     </>
   )
 }

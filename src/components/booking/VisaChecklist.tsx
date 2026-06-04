@@ -1,9 +1,7 @@
 "use client"
 
-import { useState, useMemo } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Check, FileText, Clock, BadgeInfo, IndianRupee } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState, useMemo, type CSSProperties } from "react"
+import { Check, FileText, Clock, BadgeInfo } from "lucide-react"
 
 type VisaRegion =
   | "Asia & Middle East"
@@ -24,6 +22,12 @@ interface VisaChecklistEntry {
   documents: string[]
   note?: string
 }
+
+/* Passport-spread palette — all-navy + gold-foil + aged cream + cherry ink. */
+const NAVY = "#0A1425"
+const GOLD = "#C9A24B"
+const CHERRY = "#C4324A"
+const PAPER = "#F4ECD8"
 
 /**
  * Visa document & charges checklist by destination.
@@ -556,6 +560,81 @@ const REGIONS: VisaRegion[] = [
   "Other",
 ]
 
+/* ── Inked entry stamp — rotated cherry-ink circular stamp with a textPath arc ── */
+function Stamp({ country }: { country: string }) {
+  const label = country.split(" ")[0].slice(0, 9).toUpperCase()
+  return (
+    <div
+      style={{
+        position: "relative",
+        width: 110,
+        height: 110,
+        transform: "rotate(-13deg)",
+        opacity: 0.82,
+      }}
+    >
+      <svg viewBox="0 0 120 120" style={{ width: "100%", height: "100%" }}>
+        <circle cx="60" cy="60" r="52" fill="none" stroke={CHERRY} strokeWidth="2.5" />
+        <circle
+          cx="60"
+          cy="60"
+          r="44"
+          fill="none"
+          stroke={CHERRY}
+          strokeWidth="1"
+          strokeDasharray="2 3"
+        />
+        <path
+          id={`stamparc-${label}`}
+          d="M60 18 a42 42 0 0 1 0 84 a42 42 0 0 1 0 -84"
+          fill="none"
+        />
+        <text
+          fill={CHERRY}
+          fontFamily="var(--font-mono-tech), Michroma, sans-serif"
+          fontSize="8.5"
+          letterSpacing="2"
+        >
+          <textPath href={`#stamparc-${label}`} startOffset="6%">
+            ENTRY · TRAVELSENSE · VISA
+          </textPath>
+        </text>
+        <text
+          x="60"
+          y="56"
+          textAnchor="middle"
+          fill={CHERRY}
+          fontFamily="var(--font-heading), Fraunces, serif"
+          fontWeight="600"
+          fontSize="15"
+          letterSpacing="0.5"
+        >
+          {label}
+        </text>
+        <text
+          x="60"
+          y="72"
+          textAnchor="middle"
+          fill={CHERRY}
+          fontFamily="var(--font-mono-tech), Michroma, sans-serif"
+          fontSize="7"
+          letterSpacing="1.5"
+        >
+          APPROVED
+        </text>
+        <path
+          d="M44 80 L52 86 L76 64"
+          fill="none"
+          stroke={CHERRY}
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  )
+}
+
 export default function VisaChecklist() {
   const [activeRegion, setActiveRegion] = useState<VisaRegion>("Asia & Middle East")
   const [selectedSlug, setSelectedSlug] = useState<string>("Singapore")
@@ -574,157 +653,359 @@ export default function VisaChecklist() {
     if (first) setSelectedSlug(first.destination)
   }
 
+  const monoLabel: CSSProperties = {
+    fontFamily: "var(--font-mono-tech), Michroma, sans-serif",
+    textTransform: "uppercase",
+  }
+
   return (
-    <div className="mx-auto max-w-4xl">
-      {/* Region tabs */}
-      <div className="flex flex-wrap justify-center gap-2 border-b border-white/10 pb-4">
-        {REGIONS.map((r) => (
-          <button
-            key={r}
-            type="button"
-            onClick={() => pickRegion(r)}
-            className={cn(
-              "rounded-full border px-4 py-1.5 font-body text-xs font-medium transition-colors sm:text-sm",
-              r === activeRegion
-                ? "border-[#C4324A] bg-[#C4324A]/15 text-white"
-                : "border-white/10 bg-white/5 text-white/55 hover:border-white/20 hover:text-white/80"
-            )}
-          >
-            {r}
-          </button>
-        ))}
+    <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+      {/* region tabs */}
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: 8,
+          paddingBottom: 18,
+          borderBottom: "1px solid rgba(255,255,255,0.1)",
+        }}
+      >
+        {REGIONS.map((r) => {
+          const on = r === activeRegion
+          return (
+            <button
+              key={r}
+              type="button"
+              onClick={() => pickRegion(r)}
+              style={{
+                cursor: "pointer",
+                borderRadius: 9999,
+                padding: "8px 16px",
+                fontFamily: "var(--font-body)",
+                fontSize: 12.5,
+                fontWeight: 600,
+                transition: "all .25s",
+                border: `1px solid ${on ? CHERRY : "rgba(255,255,255,0.12)"}`,
+                background: on ? "rgba(196,50,74,0.16)" : "rgba(255,255,255,0.04)",
+                color: on ? "#fff" : "rgba(208,213,220,0.6)",
+              }}
+            >
+              {r}
+            </button>
+          )
+        })}
       </div>
 
-      {/* Destination chips within active region */}
-      <div className="mt-5 flex flex-wrap justify-center gap-2">
-        {regionEntries.map((entry) => (
-          <button
-            key={entry.destination}
-            type="button"
-            onClick={() => setSelectedSlug(entry.destination)}
-            className={cn(
-              "flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-body text-xs transition-colors sm:text-sm",
-              entry.destination === active.destination
-                ? "border-[#D4A853] bg-[#D4A853]/10 text-white"
-                : "border-white/10 bg-white/5 text-white/60 hover:border-white/20 hover:text-white/80"
-            )}
-          >
-            <span role="img" aria-label={`${entry.destination} flag`}>
-              {entry.flag}
-            </span>
-            {entry.destination}
-          </button>
-        ))}
+      {/* country flag chips */}
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: 8,
+          marginTop: 18,
+        }}
+      >
+        {regionEntries.map((e) => {
+          const on = e.destination === active.destination
+          return (
+            <button
+              key={e.destination}
+              type="button"
+              onClick={() => setSelectedSlug(e.destination)}
+              style={{
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: 7,
+                borderRadius: 9999,
+                padding: "7px 14px",
+                fontFamily: "var(--font-body)",
+                fontSize: 12.5,
+                transition: "all .25s",
+                border: `1px solid ${on ? GOLD : "rgba(255,255,255,0.12)"}`,
+                background: on ? "rgba(201,162,75,0.12)" : "rgba(255,255,255,0.04)",
+                color: on ? "#fff" : "rgba(208,213,220,0.65)",
+              }}
+            >
+              <span style={{ fontSize: 15 }} role="img" aria-label={`${e.destination} flag`}>
+                {e.flag}
+              </span>
+              {e.destination}
+            </button>
+          )
+        })}
       </div>
 
-      {/* Checklist card */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={active.destination}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -12 }}
-          transition={{ duration: 0.25 }}
-          className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur md:p-8"
+      {/* the passport spread */}
+      <div
+        key={active.destination}
+        className="passport-spread"
+        style={{
+          marginTop: 34,
+          position: "relative",
+          borderRadius: 16,
+          overflow: "hidden",
+          background: PAPER,
+          boxShadow: "0 40px 90px rgba(0,0,0,0.5)",
+          border: "8px solid #0A1425",
+          backgroundImage:
+            "radial-gradient(circle, rgba(10,20,37,0.04) 1px, transparent 1px)",
+          backgroundSize: "14px 14px",
+          animation: "fadeUp .5s cubic-bezier(0.22,1,0.36,1) both",
+        }}
+      >
+        {/* spine */}
+        <div
+          className="passport-spine"
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: 0,
+            bottom: 0,
+            width: 30,
+            transform: "translateX(-50%)",
+            background:
+              "linear-gradient(90deg, transparent, rgba(10,20,37,0.16) 45%, rgba(10,20,37,0.16) 55%, transparent)",
+            zIndex: 3,
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* LEFT page */}
+        <div
+          className="passport-page passport-page-left"
+          style={{
+            padding: "clamp(24px, 3vw, 38px)",
+            position: "relative",
+            borderRight: "1px dashed rgba(10,20,37,0.15)",
+          }}
         >
-          {/* Header — destination + visa type + meta */}
-          <div className="flex flex-wrap items-start justify-between gap-4">
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <p
+              style={{
+                ...monoLabel,
+                margin: 0,
+                fontSize: 8,
+                letterSpacing: "0.24em",
+                color: "rgba(10,20,37,0.4)",
+              }}
+            >
+              TYPE P · {active.region.toUpperCase()}
+            </p>
+            <p
+              style={{
+                ...monoLabel,
+                margin: 0,
+                fontSize: 8,
+                letterSpacing: "0.24em",
+                color: "rgba(10,20,37,0.4)",
+              }}
+            >
+              VISA
+            </p>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginTop: 18 }}>
+            <span style={{ fontSize: 44, lineHeight: 1 }} role="img" aria-hidden>
+              {active.flag}
+            </span>
             <div>
-              <h3 className="font-heading text-lg font-medium tracking-[-0.015em] leading-[1.15] text-white md:text-xl">
-                <span className="mr-2" role="img" aria-hidden>
-                  {active.flag}
-                </span>
+              <h3
+                style={{
+                  margin: 0,
+                  fontFamily: "var(--font-heading), Georgia, serif",
+                  fontSize: 26,
+                  fontWeight: 500,
+                  color: NAVY,
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1,
+                  fontVariationSettings: "'opsz' 144",
+                }}
+              >
                 {active.destination}
               </h3>
-              <p className="mt-1 font-body text-sm text-[#D4A853]">
+              <p style={{ margin: "5px 0 0", fontSize: 12.5, color: CHERRY, fontWeight: 500 }}>
                 {active.visaType}
               </p>
             </div>
-            <div className="flex flex-col gap-1.5 text-right">
-              <span className="flex items-center justify-end gap-1.5 font-body text-xs text-white/55">
-                <Clock className="h-3.5 w-3.5" />
-                {active.processingTime}
-              </span>
-              <span className="flex items-center justify-end gap-1.5 font-body text-xs text-white/55">
-                <BadgeInfo className="h-3.5 w-3.5" />
-                {active.validity}
-              </span>
-            </div>
           </div>
 
-          {/* Fees section */}
-          {(active.visaFee || active.serviceCharge) && (
-            <div className="mt-5 grid gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4 sm:grid-cols-2">
-              {active.visaFee && (
-                <div className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#D4A853]/15">
-                    <IndianRupee className="h-3.5 w-3.5 text-[#D4A853]" />
-                  </span>
-                  <div>
-                    <p className="font-heading text-xs font-medium uppercase tracking-wide text-white/50">
-                      Visa Fee
-                    </p>
-                    <p className="mt-0.5 font-body text-sm text-white/85">
-                      {active.visaFee}
-                    </p>
+          <div
+            style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 12 }}
+          >
+            {(
+              [
+                [Clock, "Processing", active.processingTime],
+                [BadgeInfo, "Validity", active.validity],
+              ] as const
+            ).map(([Icon, k, v]) => (
+              <div key={k} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+                <Icon size={15} stroke={NAVY} style={{ marginTop: 2, opacity: 0.6 }} />
+                <div>
+                  <div
+                    style={{
+                      ...monoLabel,
+                      fontSize: 7.5,
+                      letterSpacing: "0.16em",
+                      color: "rgba(10,20,37,0.45)",
+                    }}
+                  >
+                    {k}
                   </div>
+                  <div style={{ fontSize: 13.5, color: NAVY, marginTop: 2 }}>{v}</div>
                 </div>
-              )}
-              {active.serviceCharge && (
-                <div className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#C4324A]/15">
-                    <IndianRupee className="h-3.5 w-3.5 text-[#C4324A]" />
-                  </span>
-                  <div>
-                    <p className="font-heading text-xs font-medium uppercase tracking-wide text-white/50">
-                      Service Charge
-                    </p>
-                    <p className="mt-0.5 font-body text-sm text-white/85">
-                      {active.serviceCharge}
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
+              </div>
+            ))}
+          </div>
 
-          {/* Documents list */}
-          <div className="mt-6">
-            <p className="flex items-center gap-2 font-heading text-sm font-medium text-white">
-              <FileText className="h-4 w-4 text-[#C4324A]" />
-              Required Documents
-            </p>
-            <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
-              {active.documents.map((doc) => (
-                <li
-                  key={doc}
-                  className="flex items-start gap-2.5 font-body text-sm text-white/70"
+          {/* fee tiles */}
+          <div
+            style={{
+              marginTop: 18,
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: 10,
+            }}
+          >
+            {(
+              [
+                ["Visa fee", active.visaFee, GOLD],
+                ["Service", active.serviceCharge, CHERRY],
+              ] as const
+            ).map(([k, v, c]) => (
+              <div
+                key={k}
+                style={{
+                  borderRadius: 12,
+                  border: `1px solid ${c}33`,
+                  background: `${c}10`,
+                  padding: "11px 13px",
+                }}
+              >
+                <div
+                  style={{ ...monoLabel, fontSize: 7, letterSpacing: "0.14em", color: c }}
                 >
-                  <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#C4324A]/15">
-                    <Check className="h-2.5 w-2.5 text-[#C4324A]" />
-                  </span>
-                  {doc}
-                </li>
-              ))}
-            </ul>
+                  {k}
+                </div>
+                <div style={{ marginTop: 4, fontSize: 12.5, fontWeight: 500, color: NAVY }}>
+                  {v || "Confirmed on inquiry"}
+                </div>
+              </div>
+            ))}
           </div>
+
+          {/* stamp */}
+          <div className="passport-stamp" style={{ position: "absolute", right: 18, bottom: 14 }}>
+            <Stamp country={active.destination} />
+          </div>
+        </div>
+
+        {/* RIGHT page */}
+        <div
+          className="passport-page passport-page-right"
+          style={{ padding: "clamp(24px, 3vw, 38px)", position: "relative" }}
+        >
+          <p
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              margin: 0,
+              fontFamily: "var(--font-heading), serif",
+              fontSize: 16,
+              fontWeight: 500,
+              color: NAVY,
+            }}
+          >
+            <FileText size={16} stroke={CHERRY} />
+            Required documents
+          </p>
+          <ul
+            style={{
+              margin: "16px 0 0",
+              padding: 0,
+              listStyle: "none",
+              display: "grid",
+              gridTemplateColumns: "1fr",
+              gap: 9,
+            }}
+          >
+            {active.documents.map((d) => (
+              <li
+                key={d}
+                style={{
+                  display: "flex",
+                  gap: 9,
+                  fontSize: 12.5,
+                  lineHeight: 1.4,
+                  color: "rgba(10,20,37,0.75)",
+                }}
+              >
+                <span
+                  style={{
+                    width: 16,
+                    height: 16,
+                    flexShrink: 0,
+                    borderRadius: "50%",
+                    background: "rgba(196,50,74,0.12)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginTop: 1,
+                  }}
+                >
+                  <Check size={10} stroke={CHERRY} strokeWidth={2.4} />
+                </span>
+                {d}
+              </li>
+            ))}
+          </ul>
 
           {active.note && (
-            <div className="mt-5 rounded-xl border border-[#D4A853]/20 bg-[#D4A853]/5 px-4 py-3">
-              <p className="font-body text-xs leading-relaxed text-[#D4A853]">
+            <div
+              style={{
+                marginTop: 16,
+                borderRadius: 12,
+                border: `1px solid ${GOLD}40`,
+                background: `${GOLD}12`,
+                padding: "11px 14px",
+              }}
+            >
+              <p style={{ margin: 0, fontSize: 11.5, lineHeight: 1.55, color: "#8a6a1f" }}>
                 {active.note}
               </p>
             </div>
           )}
 
-          <p className="mt-5 font-body text-xs leading-relaxed text-white/35">
-            Document lists and charges are indicative and based on the latest
-            embassy / consulate guidelines. Final document checklist and fees
-            are confirmed by our visa team once you submit an inquiry. All form
-            filling is handled by TravelSense.
+          <p
+            style={{
+              margin: "14px 0 0",
+              fontSize: 10,
+              lineHeight: 1.5,
+              color: "rgba(10,20,37,0.4)",
+            }}
+          >
+            Indicative figures based on latest embassy guidelines. Final checklist and
+            fees confirmed on inquiry. All form-filling handled by TravelSense.
           </p>
-        </motion.div>
-      </AnimatePresence>
+        </div>
+      </div>
+
+      {/* spread is a 2-up grid on desktop; stacks on small screens */}
+      <style>{`
+        .passport-spread {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 720px) {
+          .passport-spread { grid-template-columns: 1fr; }
+          .passport-page-left { border-right: none !important; border-bottom: 1px dashed rgba(10,20,37,0.15); }
+          .passport-spine { display: none; }
+          .passport-stamp { right: 14px !important; bottom: 10px !important; }
+        }
+      `}</style>
     </div>
   )
 }
