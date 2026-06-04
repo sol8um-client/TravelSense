@@ -27,11 +27,6 @@ export const mainNavItems: NavItem[] = [
         description: "Trekking, rafting, and outdoor thrills",
       },
       {
-        title: "Educational",
-        href: "/categories/educational",
-        description: "Learning-focused trips & student tours",
-      },
-      {
         title: "All Packages",
         href: "/packages",
         description: "Browse every curated itinerary",
@@ -73,7 +68,6 @@ export const footerNavItems: FooterNavSection = {
   categories: [
     { title: "Leisure Travel", href: "/categories/leisure" },
     { title: "Adventure Travel", href: "/categories/adventure" },
-    { title: "Educational Travel", href: "/categories/educational" },
   ],
   services: [
     { title: "Travel Packages", href: "/packages" },

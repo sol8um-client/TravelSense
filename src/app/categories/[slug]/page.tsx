@@ -19,6 +19,9 @@ import { PageHero } from "@/components/shared/PageHero"
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs"
 
 export const dynamic = "force-static"
+// Only the categories defined in config are valid routes — any other slug
+// (e.g. the archived /categories/educational) hard-404s instead of rendering.
+export const dynamicParams = false
 
 // ─── Static Params ──────────────────────────────────────────────────────────
 

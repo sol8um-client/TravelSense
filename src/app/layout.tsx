@@ -6,10 +6,14 @@ import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics"
 import { MetaPixel } from "@/components/analytics/MetaPixel"
 import "./globals.css"
 
+// Load Fraunces as a VARIABLE font with the optical-size (opsz) axis so the
+// `font-variation-settings: 'opsz' 144` on headings actually renders the dramatic
+// high-contrast DISPLAY cut (per the design). Specifying static `weight`s instead
+// strips the opsz axis and falls back to the flat text optical size.
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  axes: ["opsz"],
   style: ["normal", "italic"],
   display: "swap",
 })
@@ -48,12 +52,11 @@ export const metadata: Metadata = {
     template: "%s | TravelSense",
   },
   description:
-    "Curated leisure, adventure, and educational travel experiences. Expert consultation, personalized itineraries, and seamless booking by TravelSense, Pune.",
+    "Curated leisure and adventure travel experiences. Expert consultation, personalized itineraries, and seamless booking by TravelSense, Pune.",
   keywords: [
     "travel",
     "travel packages",
     "adventure travel",
-    "educational travel",
     "leisure travel",
     "travel consultation",
     "personalized itinerary",
@@ -72,7 +75,7 @@ export const metadata: Metadata = {
     siteName: "TravelSense",
     title: "TravelSense — Your Trusted Travel Partner",
     description:
-      "Curated leisure, adventure, and educational travel experiences. Expert consultation, personalized itineraries, and seamless booking.",
+      "Curated leisure and adventure travel experiences. Expert consultation, personalized itineraries, and seamless booking.",
   },
   twitter: {
     card: "summary_large_image",

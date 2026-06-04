@@ -1,7 +1,6 @@
 import {
   Palmtree,
   Mountain,
-  GraduationCap,
   type LucideIcon,
 } from "lucide-react";
 
@@ -92,40 +91,6 @@ export const travelCategories: TravelCategory[] = [
       "Nepal",
       "Jim Corbett",
       "Coorg",
-    ],
-  },
-  {
-    id: "educational",
-    title: "Educational Travel",
-    slug: "educational",
-    description: "Learning-focused travel experiences",
-    longDescription:
-      "Expand horizons through travel that educates and inspires. Our educational tours combine cultural immersion, historical exploration, and hands-on learning for students, educators, and lifelong learners alike.",
-    icon: GraduationCap,
-    href: "/categories/educational",
-    color: {
-      bg: "bg-teal-50",
-      text: "text-[#2BA5A5]",
-      border: "border-[#2BA5A5]",
-      gradient: "from-[#2BA5A5] to-[#4DC9C9]",
-      light: "#E0F7F7",
-    },
-    image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=600&fit=crop",
-    highlights: [
-      "Heritage and cultural tours",
-      "Student exchange programs",
-      "Science and technology visits",
-      "Astronomy and nature camps",
-      "Language immersion trips",
-      "Museum and art gallery tours",
-    ],
-    popularDestinations: [
-      "Jaipur",
-      "Varanasi",
-      "Delhi",
-      "Hampi",
-      "Kolkata",
-      "Mysore",
     ],
   },
 ];

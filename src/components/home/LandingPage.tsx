@@ -1,9 +1,10 @@
 "use client"
 
-import { useState, useEffect, useRef, useCallback } from "react"
+import { useState, useEffect, useRef, useCallback, useId } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import dynamic from "next/dynamic"
+import { useRouter } from "next/navigation"
 import {
   motion,
   useInView,
@@ -17,7 +18,6 @@ import {
 import { useParallax, useSectionZoom, useStaggerReveal } from "@/hooks/useScrollAnimations"
 import {
   Palmtree,
-  GraduationCap,
   Mountain,
   MapPin,
   ArrowRight,
@@ -33,6 +33,7 @@ import {
   Star,
   BadgeCheck,
   Send,
+  Check,
   CheckCircle,
   ChevronRight,
   Layers,
@@ -40,14 +41,12 @@ import {
   EyeOff,
   BookOpenCheck,
   MessageSquare,
-  Map,
   Ticket,
   Compass,
   Shield,
   Heart,
   Cpu,
   Plane,
-  Headphones,
   Train,
   Sailboat,
   Landmark,
@@ -56,7 +55,6 @@ import {
   Waves,
   Umbrella,
   Hotel,
-  FileText,
   DollarSign,
   Globe,
   Handshake,
@@ -71,7 +69,8 @@ import {
 import { cn } from "@/lib/utils"
 import { use3DTilt } from "@/hooks/use3DTilt"
 import { useLeadModal } from "@/components/shared/LeadCaptureModal"
-import VisorCascade from "./VisorCascade"
+import VisorCascade, { MobileVisorStrip, LogoVisor } from "./VisorCascade"
+import { searchIndex } from "@/data/searchIndex"
 
 /* Lazy-load 3D globe — no SSR (WebGL) */
 const Globe3D = dynamic(() => import("./Globe3D"), {
@@ -182,45 +181,6 @@ function RevealText({ text, className, delay = 0 }: { text: string; className?: 
   )
 }
 
-/* ─── Marquee ─── */
-
-const marqueeIcons = [MapPin, Plane, Star, Compass, Globe, Heart, Landmark, MapPinned, Plane, Star]
-
-function Marquee({ items, speed = 30 }: { items: string[]; speed?: number }) {
-  const doubled = [...items, ...items]
-  const [isHovered, setIsHovered] = useState(false)
-
-  return (
-    <div className="overflow-hidden relative"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}>
-      <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-white to-transparent" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-white to-transparent" />
-      <motion.div
-        className="flex gap-12 whitespace-nowrap"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{ duration: isHovered ? speed * 3 : speed, repeat: Infinity, ease: "linear" }}
-      >
-        {doubled.map((item, i) => {
-          const Icon = marqueeIcons[i % marqueeIcons.length]
-          return (
-            <span key={i} className="text-sm font-medium text-muted-foreground/30 flex items-center gap-3 group/item">
-              <motion.span
-                className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-secondary/[0.06] to-silver/[0.06]"
-                animate={{ scale: [1, 1.15, 1] }}
-                transition={{ duration: 3, delay: (i % 10) * 0.3, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <Icon className="h-2.5 w-2.5 text-secondary/30" strokeWidth={1.5} />
-              </motion.span>
-              {item}
-            </span>
-          )
-        })}
-      </motion.div>
-    </div>
-  )
-}
-
 /* ═══════════════════════════════════════════════════════════════
    1. HERO — Cinematic, full-screen with 3D globe
    ═══════════════════════════════════════════════════════════════ */
@@ -228,7 +188,9 @@ function Marquee({ items, speed = 30 }: { items: string[]; speed?: number }) {
 const heroWords = ["Your Way", "Your Story", "Your Pace"]
 
 // Cities that flip in the hero headline ("Discover <city>, your way.")
-const heroCities = ["Bali", "Kashmir", "Kerala", "Ladakh", "Goa", "Dubai", "Vietnam", "Rajasthan"]
+// Popular, focused destinations only (no broad states) — keeps the headline
+// punchy and short enough never to crowd the visor on the right.
+const heroCities = ["Bali", "Goa", "Dubai", "Jaipur", "Kashmir", "Kerala", "Ladakh", "Udaipur"]
 
 // Quick-pick favourites under the planner — all resolve to real destination pages
 const heroFavourites: { name: string; slug: string }[] = [
@@ -247,8 +209,50 @@ const heroPresence: { name: string; place: string }[] = [
   { name: "Meera", place: "Kerala" },
   { name: "Arjun", place: "Ladakh" },
   { name: "Priya", place: "Dubai" },
-  { name: "Kabir", place: "Vietnam" },
+  { name: "Kabir", place: "Jaipur" },
 ]
+
+/* Rotating word with a CSS-only crossfade.
+   Deliberately NOT framer-motion + AnimatePresence here: framer adds
+   will-change/transform and remounts the node every cycle, which intermittently
+   produces an EMPTY composite layer in Chrome — the large Fraunces headline word
+   silently went invisible (verified live on the deployed hero). A single
+   PERSISTENT node with a plain opacity transition paints reliably. */
+function RotatingWord({
+  words,
+  interval = 2600,
+  suffix = "",
+  className = "",
+  style,
+}: {
+  words: string[]
+  interval?: number
+  suffix?: string
+  className?: string
+  style?: React.CSSProperties
+}) {
+  const [idx, setIdx] = useState(0)
+  const [shown, setShown] = useState(true)
+  useEffect(() => {
+    const t = setInterval(() => {
+      setShown(false)
+      window.setTimeout(() => {
+        setIdx((i) => (i + 1) % words.length)
+        setShown(true)
+      }, 200)
+    }, interval)
+    return () => clearInterval(t)
+  }, [interval, words.length])
+  return (
+    <em
+      className={className}
+      style={{ display: "inline-block", opacity: shown ? 1 : 0, transition: "opacity 0.22s ease", ...style }}
+    >
+      {words[idx]}
+      {suffix}
+    </em>
+  )
+}
 
 function LivePresence() {
   const [i, setI] = useState(0)
@@ -292,24 +296,74 @@ function LivePresence() {
 
 function HeroPlanner() {
   const [dest, setDest] = useState("")
+  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState(0)
+  const router = useRouter()
   const leadModal = useLeadModal()
+
+  const q = dest.trim().toLowerCase()
+  const matches = q
+    ? searchIndex
+        .filter((e) => e.label.toLowerCase().includes(q) || e.sub.toLowerCase().includes(q))
+        .sort((a, b) => {
+          // destinations first, then prioritise label-starts-with matches
+          if (a.type !== b.type) return a.type === "Destination" ? -1 : 1
+          const as = a.label.toLowerCase().startsWith(q) ? 0 : 1
+          const bs = b.label.toLowerCase().startsWith(q) ? 0 : 1
+          return as - bs
+        })
+        .slice(0, 7)
+    : []
+
+  const go = (href: string) => {
+    setOpen(false)
+    router.push(href)
+  }
+
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    leadModal.open(dest ? `hero-planner-${dest}` : "hero-planner")
+    if (matches.length) go(matches[Math.min(active, matches.length - 1)].href)
+    else if (q) router.push("/destinations")
+    else leadModal.open("hero-planner")
   }
+
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (!matches.length) return
+    if (e.key === "ArrowDown") {
+      e.preventDefault()
+      setActive((a) => (a + 1) % matches.length)
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault()
+      setActive((a) => (a - 1 + matches.length) % matches.length)
+    }
+  }
+
   return (
-    <div className="mt-9">
+    <motion.div
+      className="relative mx-auto mt-9 max-w-2xl"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1.25, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+    >
       <form
         onSubmit={onSubmit}
-        className="mx-auto flex max-w-2xl items-center gap-2 rounded-full border border-silver/15 bg-white p-1.5 pl-4 shadow-[0_8px_30px_rgba(11,20,38,0.10)]"
+        className="relative flex items-center gap-2 rounded-full border border-silver/15 bg-white p-1.5 pl-4 shadow-[0_8px_30px_rgba(11,20,38,0.10)] transition-shadow duration-300 focus-within:shadow-[0_10px_40px_rgba(11,20,38,0.16)]"
       >
         <MapPin className="h-4 w-4 shrink-0 text-secondary" />
         <input
           value={dest}
-          onChange={(e) => setDest(e.target.value)}
-          placeholder="Where to? Bali, Kashmir, Goa…"
+          onChange={(e) => {
+            setDest(e.target.value)
+            setOpen(true)
+            setActive(0)
+          }}
+          onFocus={() => setOpen(true)}
+          onBlur={() => window.setTimeout(() => setOpen(false), 150)}
+          onKeyDown={onKeyDown}
+          placeholder="Where to? Bali, Kashmir, Dubai…"
           aria-label="Where do you want to travel?"
-          className="min-w-0 flex-1 bg-transparent py-2 text-[14px] text-foreground placeholder:text-foreground/35 focus:outline-none"
+          autoComplete="off"
+          className="min-w-0 flex-1 bg-transparent py-2 text-[14px] text-foreground placeholder:text-foreground/40 focus:outline-none"
         />
         <button
           type="submit"
@@ -321,6 +375,36 @@ function HeroPlanner() {
           </span>
         </button>
       </form>
+
+      {/* Live suggestions — real destinations & packages from the catalogue */}
+      {open && matches.length > 0 && (
+        <div className="absolute inset-x-0 top-[calc(100%+8px)] z-30 overflow-hidden rounded-2xl border border-silver/15 bg-white py-1.5 text-left shadow-[0_18px_50px_rgba(11,20,38,0.18)]">
+          {matches.map((m, i) => (
+            <button
+              key={m.href}
+              type="button"
+              onMouseDown={(e) => {
+                e.preventDefault()
+                go(m.href)
+              }}
+              onMouseEnter={() => setActive(i)}
+              className={cn(
+                "flex w-full items-center justify-between gap-3 px-4 py-2.5 transition-colors",
+                i === active ? "bg-secondary/[0.06]" : "hover:bg-muted/60",
+              )}
+            >
+              <span className="flex min-w-0 items-center gap-2.5">
+                <MapPin className="h-3.5 w-3.5 shrink-0 text-secondary/70" />
+                <span className="truncate text-[14px] text-foreground">{m.label}</span>
+              </span>
+              <span className="shrink-0 text-[10.5px] uppercase tracking-[0.12em] text-foreground/40">
+                {m.type === "Destination" ? "Destination" : m.sub}
+              </span>
+            </button>
+          ))}
+        </div>
+      )}
+
       <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
         <span className="script text-[15px] text-foreground/40">or pick a favourite —</span>
         {heroFavourites.map((f) => (
@@ -333,7 +417,7 @@ function HeroPlanner() {
           </Link>
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
 
@@ -342,10 +426,7 @@ const floatingIconData: { Icon: LucideIcon; x: number; y: number; dur: number; d
   { Icon: Plane, x: 10, y: 82, dur: 16, delay: 0, color: "text-secondary/20" },
   { Icon: Mountain, x: 85, y: 78, dur: 18, delay: 2, color: "text-silver/25" },
   { Icon: Palmtree, x: 25, y: 88, dur: 20, delay: 4, color: "text-secondary/15" },
-  { Icon: Train, x: 70, y: 85, dur: 17, delay: 6, color: "text-primary/15" },
   { Icon: Landmark, x: 50, y: 80, dur: 19, delay: 3, color: "text-silver/20" },
-  { Icon: Compass, x: 92, y: 70, dur: 15, delay: 1, color: "text-secondary/15" },
-  { Icon: Globe, x: 5, y: 70, dur: 21, delay: 5, color: "text-primary/10" },
 ]
 
 function FloatingTravelIcons() {
@@ -395,7 +476,7 @@ function RealCompass() {
 
   return (
     <motion.div
-      className="absolute top-[10%] right-[4%] hidden flex-col items-center xl:flex"
+      className="absolute top-[5%] right-[2.5%] hidden flex-col items-center xl:flex"
       initial={{ opacity: 0, scale: 0, rotate: -180 }}
       animate={{ opacity: 1, scale: 1, rotate: 0 }}
       transition={{ delay: 1.5, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
@@ -445,7 +526,7 @@ function RealCompass() {
 
 /* Constellation star field — brand colored */
 function ConstellationField() {
-  const stars = Array.from({ length: 50 }, (_, i) => {
+  const stars = Array.from({ length: 16 }, (_, i) => {
     const seed = (i * 2654435761) >>> 0
     const s1 = ((seed * 16807) % 2147483647) / 2147483647
     const s2 = ((seed * 48271) % 2147483647) / 2147483647
@@ -470,30 +551,19 @@ function ConstellationField() {
 }
 
 function HeroSection() {
-  const [wordIdx, setWordIdx] = useState(0)
   const ref = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
   const contentY = useTransform(scrollYProgress, [0, 0.5], [0, -80])
   const contentOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0])
 
-  useEffect(() => {
-    const t = setInterval(() => setWordIdx((i) => (i + 1) % heroCities.length), 2600)
-    return () => clearInterval(t)
-  }, [])
-
   return (
     <section ref={ref} className="relative min-h-[100dvh] flex items-center justify-center bg-brand-mesh pt-24 pb-12 overflow-visible">
-      {/* 1. Animated gradient mesh — brand colors only */}
+      {/* 1. Soft brand-color washes — STATIC on purpose. Animating 180–200px blurs
+             re-rasterizes the whole layer every frame and was the main hero lag. */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div className="absolute top-[10%] right-[5%] h-[500px] w-[500px] rounded-full bg-secondary/[0.04] blur-[180px] morph-blob"
-          animate={{ x: [0, 50, -30, 0], y: [0, -40, 20, 0], scale: [1, 1.1, 0.95, 1] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }} />
-        <motion.div className="absolute bottom-[5%] left-[0%] h-[400px] w-[400px] rounded-full bg-silver/[0.06] blur-[150px] morph-blob"
-          animate={{ x: [0, -40, 30, 0], y: [0, 30, -20, 0], scale: [1, 0.9, 1.1, 1] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }} />
-        <motion.div className="absolute top-[40%] left-[30%] h-[600px] w-[600px] rounded-full bg-primary/[0.02] blur-[200px]"
-          animate={{ x: [0, 60, -40, 0], y: [0, -50, 30, 0] }}
-          transition={{ duration: 35, repeat: Infinity, ease: "easeInOut" }} />
+        <div className="absolute top-[10%] right-[5%] h-[500px] w-[500px] rounded-full bg-secondary/[0.04] blur-[110px]" />
+        <div className="absolute bottom-[5%] left-[0%] h-[400px] w-[400px] rounded-full bg-silver/[0.06] blur-[100px]" />
+        <div className="absolute top-[40%] left-[30%] h-[600px] w-[600px] rounded-full bg-primary/[0.02] blur-[120px]" />
       </div>
 
       {/* 2. Dot grid pattern — only on right half, faded in with mask so no hard edge */}
@@ -507,12 +577,12 @@ function HeroSection() {
       {/* 4. Floating travel icon particles */}
       <FloatingTravelIcons />
 
-      {/* 5. Live compass */}
+      {/* 5. Live compass — top-right, above the right-hand visor cascade */}
       <RealCompass />
 
       {/* 6. 3D WebGL Globe — visible on all sizes */}
       {/* Mobile/tablet: centered, subtle bg behind text. Desktop: full left position */}
-      <div className="absolute inset-0 opacity-40 sm:opacity-50 md:opacity-60 lg:opacity-100 lg:left-[-32%] lg:top-0 lg:bottom-0 lg:right-[30%] lg:inset-auto pointer-events-none" style={{ zIndex: 1, maskImage: "linear-gradient(to right, black 60%, transparent 100%)", WebkitMaskImage: "linear-gradient(to right, black 60%, transparent 100%)" }}>
+      <div className="absolute inset-0 opacity-40 sm:opacity-50 md:opacity-60 lg:opacity-100 lg:left-[-32%] lg:top-0 lg:bottom-0 lg:right-[30%] lg:inset-auto lg:-translate-x-[8%] lg:-translate-y-[13%] pointer-events-none" style={{ zIndex: 1, maskImage: "linear-gradient(to right, black 60%, transparent 100%)", WebkitMaskImage: "linear-gradient(to right, black 60%, transparent 100%)" }}>
         <Globe3D />
       </div>
 
@@ -524,25 +594,25 @@ function HeroSection() {
         {/* Live presence pill — rotating social proof */}
         <LivePresence />
 
-        {/* Main headline — "Discover <flipping city>, your way." (city flips, rest static) */}
-        <h1 className="hx font-heading text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] font-medium leading-[1.16] tracking-[-0.02em]">
-          <span className="metallic-text">Discover</span>{" "}
+        {/* Eyebrow — provenance line (design handoff) */}
+        <p className="mb-3.5 font-body text-[10.5px] font-semibold uppercase tracking-[0.28em] text-secondary">
+          India · Asia · Europe <span className="mx-0.5 text-secondary/55">&bull;</span> Curated since 2018
+        </p>
+
+        {/* Main headline — "Wake up in <rotating destination>." solid navy Fraunces,
+            city in red italic. Destination cycles through heroCities. */}
+        <h1 className="font-heading text-[2.1rem] sm:text-[2.85rem] md:text-[3.4rem] lg:text-[3.85rem] font-medium leading-[1.04] tracking-[-0.025em] text-[#0A1425]">
+          <span>Wake up in</span>
+          <br />
           <span className="relative inline-block align-baseline">
-            <AnimatePresence mode="wait">
-              <motion.em
-                key={wordIdx}
-                initial={{ y: "0.3em", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: "-0.3em", opacity: 0 }}
-                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block whitespace-nowrap italic font-normal text-secondary pl-[0.04em] pr-[0.2em]"
-                style={{ fontVariationSettings: "'opsz' 144" }}
-              >
-                {heroCities[wordIdx % heroCities.length]},
-              </motion.em>
-            </AnimatePresence>
-          </span>{" "}
-          <span className="metallic-text">your way.</span>
+            <RotatingWord
+              words={heroCities}
+              interval={2600}
+              suffix="."
+              className="flip-word whitespace-nowrap italic font-normal text-secondary pl-[0.04em] pr-[0.1em]"
+              style={{ fontVariationSettings: "'opsz' 144" }}
+            />
+          </span>
         </h1>
 
         {/* Subtitle — Outfit body with Caveat script lift */}
@@ -553,70 +623,100 @@ function HeroSection() {
           className="mt-7 text-[15px] sm:text-[17px] leading-[1.7] text-foreground/70 max-w-xl mx-auto font-normal"
         >
           <span className="script text-[22px] sm:text-[26px] text-secondary/90 align-middle mr-1">One conversation</span>
-          &mdash; zero bots, zero IVR. A real travel expert plans, books, and stays with you the whole trip.
+          &mdash; zero bots, zero IVR. A real expert plans, books and stays with you the whole trip.
         </motion.p>
 
         {/* Planner — search + quick-pick favourites (replaces the old tagline + CTA buttons) */}
         <HeroPlanner />
 
-        {/* Trust stats — Fraunces tabular numerals with Outfit labels */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.8, duration: 0.7 }}
-          className="mt-10 sm:mt-14 inline-flex items-center rounded-xl sm:rounded-2xl border border-silver/15 bg-white/80 backdrop-blur-xl shadow-[0_4px_24px_rgba(11,20,38,0.06)] overflow-hidden"
-        >
-          {[
-            { target: 500, suffix: "+", label: "Happy travellers", color: "text-secondary" },
-            { target: 50, suffix: "+", label: "Destinations", color: "text-primary" },
-            { label: "Human support", custom: "24/7", color: "text-secondary" },
-            { target: 4, suffix: ".9/5", label: "Rating", decimal: true, color: "text-primary" },
-          ].map((s, i) => {
-            const counter = s.target ? useCounter(s.target) : null
-            return (
-              <div key={s.label} className={cn(
-                "px-3 sm:px-7 py-2.5 sm:py-4 text-center",
-                i > 0 && "border-l border-silver/10",
-              )}>
-                <p className={cn("text-base sm:text-2xl font-display font-medium tabular-nums tracking-[-0.02em] leading-none", s.color || "text-foreground/80")} style={{ fontVariationSettings: "'opsz' 144" }}>
-                  {s.custom || (
-                    <span ref={counter!.ref}>
-                      {s.decimal ? `${counter!.count}` : counter!.count.toLocaleString()}{s.suffix}
-                    </span>
-                  )}
-                </p>
-                <p className="text-[6px] sm:text-[9px] text-silver-dark/70 mt-1 tracking-[0.22em] sm:tracking-[0.26em] uppercase font-body font-semibold">{s.label}</p>
-              </div>
-            )
-          })}
-        </motion.div>
+        {/* Mobile/tablet only: the visor photos as a compact centred row (desktop
+            gets the right-margin cascade, which is hidden below xl). */}
+        <MobileVisorStrip />
       </motion.div>
     </section>
   )
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   2. TRUST MARQUEE
+   2. TRUST BAR — slim stat strip + "Recently planned" marquee
+      (faithful port of the prototype `TrustBar` in home-sections-c.jsx)
    ═══════════════════════════════════════════════════════════════ */
 
-function TrustMarquee() {
+const TRUST_STATS: [string, string][] = [
+  ["500+", "Happy travellers"],
+  ["50+", "Destinations"],
+  ["4.9★", "Avg rating"],
+  ["24/7", "Human support"],
+]
+
+/* Recently-planned ticker — drawn from our real traveller stories. */
+const RECENT_TRIPS: { who: string; trip: string; rating: string }[] = [
+  { who: "Priya S.", trip: "Kerala · 6 days", rating: "5.0" },
+  { who: "Rahul D.", trip: "Ladakh · 9 days", rating: "4.9" },
+  { who: "Ananya K.", trip: "Bali · 8 days", rating: "5.0" },
+  { who: "Vikram M.", trip: "Rajasthan · 5 days", rating: "4.8" },
+  { who: "Meera T.", trip: "Goa · 4 days", rating: "5.0" },
+  { who: "Dev R.", trip: "Kashmir · 7 days", rating: "4.9" },
+]
+
+function TrustBarSection() {
   return (
-    <section className="py-6 bg-white border-b border-silver/10 -mt-px">
-      <Marquee
-        items={[
-          "Trusted by 500+ travelers",
-          "4.9/5 average rating",
-          "24/7 real human assistance",
-          "Verified testimonials",
-          "Zero IVR, zero bots",
-          "Personalised itineraries",
-          "AR/VR preview — coming soon",
-          "One-stop travel marketplace — coming soon",
-          "Based in Pune, India",
-          "Leisure · Education · Adventure",
-        ]}
-        speed={40}
-      />
+    <section className="bg-white py-[30px] border-t border-b border-silver/[0.18]">
+      <div className="mx-auto max-w-[1180px] px-8 flex flex-wrap items-center justify-between gap-9">
+        {/* stat cluster */}
+        <div className="flex flex-wrap gap-x-[34px] gap-y-4">
+          {TRUST_STATS.map(([n, l], i) => (
+            <motion.div
+              key={l}
+              className="flex flex-col"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ delay: i * 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <span className="font-heading text-[25px] font-medium leading-none tracking-[-0.02em] text-primary" style={{ fontVariationSettings: "'opsz' 144" }}>{n}</span>
+              <span className="mt-[5px] text-[10.5px] tracking-[0.02em] text-muted-foreground">{l}</span>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* "Recently planned" marquee */}
+        <motion.div
+          className="flex min-w-[280px] flex-1 items-center gap-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ delay: 0.1, duration: 0.7 }}
+        >
+          <span className="inline-flex shrink-0 items-center gap-[7px] whitespace-nowrap font-tech text-[8.5px] uppercase tracking-[0.18em] text-muted-foreground">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#1F8A5B]" style={{ boxShadow: "0 0 0 3px rgba(31,138,91,0.18)" }} />
+            Recently planned
+          </span>
+          <div
+            className="flex-1 overflow-hidden"
+            style={{
+              maskImage: "linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent)",
+              WebkitMaskImage: "linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent)",
+            }}
+          >
+            <div className="flex w-max gap-3" style={{ animation: "marqueeX 32s linear infinite" }}>
+              {[...RECENT_TRIPS, ...RECENT_TRIPS].map((r, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-silver/25 bg-silver-mist px-[13px] py-[7px]"
+                >
+                  <span className="text-[12.5px] font-semibold text-primary">{r.who}</span>
+                  <span className="text-[12px] text-muted-foreground">{r.trip}</span>
+                  <span className="inline-flex items-center gap-[3px] text-[11px] font-semibold text-secondary">
+                    <Star className="h-[11px] w-[11px] fill-secondary text-secondary" />
+                    {r.rating}
+                  </span>
+                </span>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </section>
   )
 }
@@ -742,17 +842,19 @@ function BoardingPass({
   route,
   date,
   seat,
+  status,
 }: {
   tag: string
   route: [string, string]
   date: string
   seat: string
+  status?: { label: string; color: string }
 }) {
   return (
     <div
-      className="relative overflow-hidden rounded-[10px] px-[14px] py-3 font-body"
+      className="relative overflow-hidden rounded-[10px] font-body"
       style={{
-        width: 210,
+        width: 236,
         background: "linear-gradient(135deg, #FAF8F4, #E8ECF0)",
         color: "#0A1425",
       }}
@@ -761,28 +863,40 @@ function BoardingPass({
         className="absolute left-0 top-0 bottom-0 w-1"
         style={{ background: "linear-gradient(180deg, #C4324A, #A12A3D)" }}
       />
-      <div className="flex items-start justify-between mb-2 pl-2">
-        <div className="font-heading italic text-[11px] uppercase tracking-[0.15em] text-silver-dark">
-          Boarding Pass
+      {status && (
+        <div
+          className="absolute right-0 top-0 bottom-0 flex items-center justify-center"
+          style={{ width: 58, background: status.color }}
+        >
+          <span className="px-1 text-center text-[8.5px] font-bold uppercase leading-tight tracking-[0.12em] text-white">
+            {status.label}
+          </span>
         </div>
-        <div className="text-[9.5px] font-bold tracking-[0.12em] text-silver-dark">{tag}</div>
-      </div>
-      <div className="flex items-center gap-2 mb-1.5 pl-2">
-        <div className="font-heading text-[20px] font-normal tracking-[-0.02em] leading-none">{route[0]}</div>
-        <div className="flex-1 relative h-[10px]">
-          <div className="absolute inset-x-0 top-1/2 border-t border-dashed border-primary/25" />
-          <Plane
-            className="absolute left-1/2 -translate-x-1/2 rotate-45 text-secondary"
-            style={{ top: -1 }}
-            size={12}
-            strokeWidth={1.8}
-          />
+      )}
+      <div className="py-3 pl-[14px]" style={{ paddingRight: status ? 70 : 14 }}>
+        <div className="mb-2 flex items-start justify-between pl-2">
+          <div className="font-heading text-[11px] uppercase italic tracking-[0.15em] text-silver-dark">
+            Boarding Pass
+          </div>
+          <div className="text-[9.5px] font-bold tracking-[0.12em] text-silver-dark">{tag}</div>
         </div>
-        <div className="font-heading text-[20px] font-normal tracking-[-0.02em] leading-none">{route[1]}</div>
-      </div>
-      <div className="flex justify-between text-[9.5px] uppercase tracking-[0.08em] text-muted-foreground pl-2">
-        <span>{date}</span>
-        <span>Seat {seat}</span>
+        <div className="mb-1.5 flex items-center gap-2 pl-2">
+          <div className="font-heading text-[20px] font-normal leading-none tracking-[-0.02em]">{route[0]}</div>
+          <div className="relative h-[10px] flex-1">
+            <div className="absolute inset-x-0 top-1/2 border-t border-dashed border-primary/25" />
+            <Plane
+              className="absolute left-1/2 -translate-x-1/2 rotate-45 text-secondary"
+              style={{ top: -1 }}
+              size={12}
+              strokeWidth={1.8}
+            />
+          </div>
+          <div className="font-heading text-[20px] font-normal leading-none tracking-[-0.02em]">{route[1]}</div>
+        </div>
+        <div className="flex justify-between pl-2 text-[9.5px] uppercase tracking-[0.08em] text-muted-foreground">
+          <span>{date}</span>
+          <span>Seat {seat}</span>
+        </div>
       </div>
     </div>
   )
@@ -820,54 +934,54 @@ function LuggageTag({ destination, image }: { destination: string; image: string
 function ChaosCanvas() {
   return (
     <div className="relative w-full h-[520px] overflow-visible">
-      {/* Drag hint */}
-      <div className="pointer-events-none absolute top-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 text-silver/60 font-script text-[20px]">
-        <span aria-hidden>↓</span> drag the pieces
-      </div>
-
-      {/* Boarding passes */}
-      <DraggablePiece initial={{ x: 40, y: 60 }} rotation={-8}>
-        <BoardingPass tag="AA 1247" route={["BOM", "GOI"]} date="12 Dec" seat="14A" />
+      {/* Boarding passes — overbooked / delayed */}
+      <DraggablePiece initial={{ x: 30, y: 50 }} rotation={-7}>
+        <BoardingPass tag="AA 1247" route={["DEL", "GOA"]} date="12 Dec" seat="14A" status={{ label: "Overbooked", color: "#C4324A" }} />
       </DraggablePiece>
-      <DraggablePiece initial={{ x: 280, y: 30 }} rotation={6}>
-        <BoardingPass tag="6E 204" route={["DEL", "SXR"]} date="02 Jan" seat="7C" />
-      </DraggablePiece>
-      <DraggablePiece initial={{ x: 200, y: 240 }} rotation={-4}>
-        <BoardingPass tag="QR 538" route={["BOM", "DOH"]} date="18 Feb" seat="22F" />
+      <DraggablePiece initial={{ x: 50, y: 210 }} rotation={5}>
+        <BoardingPass tag="6E 204" route={["BOM", "DXB"]} date="02 Jan" seat="7C" status={{ label: "Delayed", color: "#C9842B" }} />
       </DraggablePiece>
 
-      {/* Luggage tags with real destination imagery */}
-      <DraggablePiece initial={{ x: 30, y: 310 }} rotation={12}>
-        <LuggageTag destination="Goa" image="/images/generated/goa-hero.webp" />
-      </DraggablePiece>
-      <DraggablePiece initial={{ x: 300, y: 290 }} rotation={-10}>
-        <LuggageTag destination="Jaipur" image="/images/generated/rajasthan-hero.webp" />
-      </DraggablePiece>
-      <DraggablePiece initial={{ x: 170, y: 100 }} rotation={18}>
-        <LuggageTag destination="Kashmir" image="/images/generated/kashmir-hero.webp" />
-      </DraggablePiece>
-
-      {/* Handwritten sticky note — Caveat script on a red post-it */}
-      <DraggablePiece initial={{ x: 80, y: 190 }} rotation={-3} zBase={6}>
-        <div
-          className="rounded font-script"
-          style={{
-            width: 130,
-            height: 130,
-            background: "linear-gradient(135deg, #C4324A, #A12A3D)",
-            color: "#fff",
-            padding: 14,
-            fontSize: 17,
-            lineHeight: 1.25,
-            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.18)",
-          }}
-        >
-          <div className="font-body font-bold text-[10.5px] tracking-[0.2em] uppercase opacity-80 mb-1.5">
-            Note to self
-          </div>
-          &quot;cancel hotel, find new flight, call airline… again&quot;
+      {/* Handwritten sticky notes */}
+      <DraggablePiece initial={{ x: 300, y: 30 }} rotation={7} zBase={6}>
+        <div className="rounded font-script" style={{ width: 150, background: "#EAF0F6", color: "#0A1425", padding: 16, fontSize: 19, lineHeight: 1.2, boxShadow: "0 8px 22px rgba(11,20,38,0.12)" }}>
+          where&apos;s my refund?!
         </div>
       </DraggablePiece>
+      <DraggablePiece initial={{ x: 20, y: 350 }} rotation={-4} zBase={6}>
+        <div className="rounded font-script" style={{ width: 168, background: "#FCEFC7", color: "#5A4A1A", padding: 16, fontSize: 17, lineHeight: 1.25, boxShadow: "0 8px 22px rgba(11,20,38,0.12)" }}>
+          5 tabs open just to compare prices 🤯
+        </div>
+      </DraggablePiece>
+
+      {/* Error toasts */}
+      <DraggablePiece initial={{ x: 290, y: 220 }} rotation={3} zBase={5}>
+        <div className="flex items-center gap-3 rounded-xl font-body" style={{ width: 204, background: "rgba(20,30,52,0.88)", border: "1px solid rgba(255,255,255,0.10)", color: "#fff", padding: "11px 14px", boxShadow: "0 12px 30px rgba(3,8,16,0.4)" }}>
+          <span style={{ width: 30, height: 30, borderRadius: 8, background: "rgba(196,50,74,0.22)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            <Zap className="text-secondary-light" size={15} />
+          </span>
+          <div>
+            <div className="text-[12.5px] font-semibold leading-tight">Surprise fee</div>
+            <div className="text-[11px] text-secondary-light">+₹4,800 at checkout</div>
+          </div>
+        </div>
+      </DraggablePiece>
+      <DraggablePiece initial={{ x: 235, y: 375 }} rotation={-2} zBase={5}>
+        <div className="flex items-center gap-3 rounded-xl font-body" style={{ width: 224, background: "rgba(20,30,52,0.88)", border: "1px solid rgba(255,255,255,0.10)", color: "#fff", padding: "11px 14px", boxShadow: "0 12px 30px rgba(3,8,16,0.4)" }}>
+          <span style={{ width: 30, height: 30, borderRadius: 8, background: "rgba(176,184,196,0.18)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            <MessageCircle className="text-silver" size={15} />
+          </span>
+          <div>
+            <div className="text-[12.5px] font-semibold leading-tight">Support offline</div>
+            <div className="text-[11px] text-silver">A bot will reply in… 47 hrs</div>
+          </div>
+        </div>
+      </DraggablePiece>
+
+      {/* Drag hint — meaningful caption (per design) */}
+      <div className="pointer-events-none absolute bottom-1 left-1/2 -translate-x-1/2 whitespace-nowrap font-tech text-[8.5px] uppercase tracking-[0.18em] text-silver/45">
+        ↕ this is planning a trip yourself — drag to feel the mess
+      </div>
     </div>
   )
 }
@@ -1031,24 +1145,6 @@ function ProblemSection() {
                 <TicketCard key={p.tag} p={p} i={i} inView={inView} />
               ))}
             </div>
-
-            {/* Transition to "How TravelSense works" */}
-            <motion.div
-              className="mt-10 flex items-center gap-4"
-              data-reveal
-              style={{ transitionDelay: "0.5s" }}
-            >
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-silver/15 to-transparent" />
-              <p className="text-[12px] font-body font-medium tracking-[0.15em] uppercase text-silver/60 flex items-center gap-2">
-                <motion.span
-                  animate={{ rotate: [0, 15, -15, 0], scale: [1, 1.2, 1] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <Sparkles className="h-4 w-4 text-secondary/70" strokeWidth={1.5} />
-                </motion.span>
-                What if one platform could do it all?
-              </p>
-            </motion.div>
           </div>
         </div>
       </div>
@@ -1057,303 +1153,222 @@ function ProblemSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   3b. HOW IT WORKS — Step-by-step with visual storytelling
+   3b. HOW IT WORKS — sticky boarding-pass builder
+       Faithful port of the prototype `HowItWorks` (home-sections-c.jsx).
+       Scroll-pins for 460vh; one conversation assembles into a booked trip
+       across four steps — Consult → Plan → Book → Travel.
    ═══════════════════════════════════════════════════════════════ */
 
-const steps: { Icon: LucideIcon; title: string; desc: string; action: string; color: string }[] = [
-  { Icon: Headphones, title: "Consult", desc: "Co-create your dream. We listen, you talk.", action: "You talk, we listen", color: "#C4324A" },
-  { Icon: FileText, title: "Plan", desc: "Tailored daily itinerary. Crafted for you.", action: "Custom itinerary in 24hrs", color: "#A8574E" },
-  { Icon: Plane, title: "Book", desc: "Seamless travel details. Everything handled.", action: "Everything sorted", color: "#4A9E7E" },
-  { Icon: Globe, title: "Travel", desc: "Joyful exploration. Always-on support.", action: "We're with you", color: "#2D8B6A" },
+const HIW_STEPS: { n: string; title: string; status: string; color: string }[] = [
+  { n: "01", title: "Consult", status: "DRAFT", color: "#C4324A" },
+  { n: "02", title: "Plan", status: "PLANNED", color: "#A8574E" },
+  { n: "03", title: "Book", status: "CONFIRMED", color: "#1F8A7A" },
+  { n: "04", title: "Travel", status: "BOARDING", color: "#1F8A5B" },
 ]
+const HIW_PREFS = ["Beaches", "Hill air", "Mid-budget", "2 travellers", "Late March"]
+const HIW_PLAN_ROWS: [string, string][] = [
+  ["D1", "Arrive · beach sunset"],
+  ["D2", "Spice plantation walk"],
+  ["D3", "Backwater cruise"],
+]
+const HIW_BOOKED = ["Flights", "Stays", "Visa", "Transfers"]
 
-function HowItWorksSection() {
-  const howRef = useRef<HTMLElement>(null)
-  const howInView = useInView(howRef, { once: true, margin: "-100px" })
-  const leadModal = useLeadModal()
-
-  /* Scroll-linked progress for the section */
-  const { scrollYProgress } = useScroll({ target: howRef, offset: ["start end", "end center"] })
-  const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 })
-
-  /* Derived values from scroll progress */
-  const pathLength = useTransform(smoothProgress, [0.1, 0.7], [0, 1])
-  const step1Opacity = useTransform(smoothProgress, [0.05, 0.2], [0, 1])
-  const step2Opacity = useTransform(smoothProgress, [0.15, 0.35], [0, 1])
-  const step3Opacity = useTransform(smoothProgress, [0.3, 0.5], [0, 1])
-  const step4Opacity = useTransform(smoothProgress, [0.45, 0.65], [0, 1])
-  const stepOpacities = [step1Opacity, step2Opacity, step3Opacity, step4Opacity]
-
-  /* Floating decorative elements reveal */
-  const deco1 = useTransform(smoothProgress, [0.2, 0.4], [0, 1])
-  const deco3 = useTransform(smoothProgress, [0.45, 0.6], [0, 1])
-  const deco4 = useTransform(smoothProgress, [0.55, 0.7], [0, 1])
-
-  /* Glow dot position along path (desktop: horizontal, mobile: vertical) */
-  const dotPosition = useTransform(smoothProgress, [0.1, 0.75], [0, 100])
-  const dotLeft = useTransform(dotPosition, (v) => `${v}%`)
-  const dotTop = useTransform(dotPosition, (v) => `${v}%`)
-
-  /* Pre-computed scale transforms for each step circle (avoid hooks in loop) */
-  const step1Scale = useTransform(step1Opacity, [0, 1], [0.7, 1])
-  const step2Scale = useTransform(step2Opacity, [0, 1], [0.7, 1])
-  const step3Scale = useTransform(step3Opacity, [0, 1], [0.7, 1])
-  const step4Scale = useTransform(step4Opacity, [0, 1], [0.7, 1])
-  const stepScales = [step1Scale, step2Scale, step3Scale, step4Scale]
-
-  return (
-    <section id="how-it-works" ref={howRef} className="scroll-mt-24 py-20 sm:py-28 bg-brand-mesh overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Header — with floating sparkle decorations near top-right matching reference */}
-        <div className="relative text-center mb-14" data-reveal>
-          <p className="text-[10.5px] font-body font-semibold tracking-[0.28em] uppercase text-secondary">Your journey with us</p>
-          <h2 className="hx mt-3 font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.04] metallic-text heading-accent">
-            How TravelSense <em className="italic font-normal text-secondary">works.</em>
-          </h2>
-          {/* Floating sparkle decorations near heading — matching reference top-right */}
-          <motion.div className="hidden md:block absolute -right-4 top-0" style={{ opacity: deco4 }}>
-            <motion.div animate={{ scale: [1, 1.3, 1], rotate: [0, 90, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 0v16M0 8h16M2.3 2.3l11.4 11.4M13.7 2.3L2.3 13.7" stroke="#C4324A" strokeWidth="1" strokeOpacity="0.25" strokeLinecap="round" /></svg>
-            </motion.div>
-          </motion.div>
-          <motion.div className="hidden md:block absolute -right-8 top-8" style={{ opacity: deco4 }}>
-            <motion.div animate={{ scale: [0.8, 1.2, 0.8] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 0v10M0 5h10" stroke="#B0B8C4" strokeWidth="1.2" strokeOpacity="0.3" strokeLinecap="round" /></svg>
-            </motion.div>
-          </motion.div>
+/* The boarding-pass body morphs per scroll step. */
+function PassBody({ step }: { step: number }) {
+  if (step === 0)
+    return (
+      <div>
+        <p className="m-0 mb-3 font-script text-[20px] text-secondary">tell us your vibe — no forms, just talk</p>
+        <div className="flex flex-wrap gap-2">
+          {HIW_PREFS.map((c, i) => (
+            <span
+              key={c}
+              className="rounded-full border border-silver/40 bg-silver-mist px-3.5 py-[7px] text-[12.5px] text-foreground"
+              style={{ animation: `fadeUp .5s cubic-bezier(0.22,1,0.36,1) ${i * 0.1}s both` }}
+            >
+              {c}
+            </span>
+          ))}
         </div>
-
-        {/* Steps — with scroll-animated path */}
-        <div className="relative">
-          {/* Desktop: Scroll-animated dashed SVG connector path — gentle wave */}
-          <div className="hidden md:block absolute top-[35px] left-[6%] right-[6%] h-[55px] z-10 pointer-events-none">
-            <svg className="w-full h-full" viewBox="0 0 1000 50" fill="none" preserveAspectRatio="none">
-              <defs>
-                {/* Gradient from cherry red → amber → teal → deep teal */}
-                <linearGradient id="pathGradGuide" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#C4324A" stopOpacity="0.07" />
-                  <stop offset="33%" stopColor="#A8574E" stopOpacity="0.07" />
-                  <stop offset="66%" stopColor="#4A9E7E" stopOpacity="0.07" />
-                  <stop offset="100%" stopColor="#2D8B6A" stopOpacity="0.07" />
-                </linearGradient>
-                <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#C4324A" />
-                  <stop offset="33%" stopColor="#A8574E" />
-                  <stop offset="66%" stopColor="#4A9E7E" />
-                  <stop offset="100%" stopColor="#2D8B6A" />
-                </linearGradient>
-              </defs>
-              {/* Gentle wave path — faint guide */}
-              <path
-                d="M30 25 C80 25 100 25 125 25 C190 12 260 38 325 25 C360 18 390 25 375 25 C410 25 440 32 500 25 C560 18 590 25 625 25 C690 38 760 12 825 25 C850 25 860 25 875 25 C900 25 940 25 970 25"
-                stroke="url(#pathGradGuide)" strokeWidth="2" strokeDasharray="8 5" fill="none" />
-              {/* Animated dashed path — gradient from red to teal */}
-              <motion.path
-                d="M30 25 C80 25 100 25 125 25 C190 12 260 38 325 25 C360 18 390 25 375 25 C410 25 440 32 500 25 C560 18 590 25 625 25 C690 38 760 12 825 25 C850 25 860 25 875 25 C900 25 940 25 970 25"
-                stroke="url(#pathGrad)" strokeWidth="2" strokeDasharray="8 5" fill="none"
-                style={{ pathLength }} />
-              {/* Node dots at step positions — each step's color */}
-              <motion.circle cx={125} cy={25} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step1Opacity }} />
-              <motion.circle cx={375} cy={25} r={5} fill="#A8574E" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={625} cy={25} r={5} fill="#4A9E7E" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={875} cy={25} r={5} fill="#2D8B6A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step4Opacity }} />
-              {/* Small intermediate dots — blended colors */}
-              <motion.circle cx={250} cy={25} r={2.5} fill="#A8574E" fillOpacity={0.35} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={500} cy={25} r={2.5} fill="#4A9E7E" fillOpacity={0.35} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={750} cy={25} r={2.5} fill="#2D8B6A" fillOpacity={0.35} style={{ opacity: step4Opacity }} />
-            </svg>
-            {/* Traveling glow dot — shifts color along journey */}
-            <motion.div className="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full shadow-[0_0_14px_rgba(74,158,126,0.5)]"
-              style={{ background: "linear-gradient(135deg, #C4324A, #2D8B6A)", left: dotLeft }} />
+      </div>
+    )
+  if (step === 1)
+    return (
+      <div className="relative pl-5">
+        <div
+          className="absolute left-[5px] top-2 bottom-2 w-0.5"
+          style={{ background: "repeating-linear-gradient(180deg, rgba(176,184,196,0.5) 0 4px, transparent 4px 8px)" }}
+        />
+        {HIW_PLAN_ROWS.map((r, i) => (
+          <div
+            key={r[0]}
+            className="relative flex items-center gap-3 py-2"
+            style={{ animation: `fadeUp .5s cubic-bezier(0.22,1,0.36,1) ${i * 0.12}s both` }}
+          >
+            <span className="absolute -left-5 h-2.5 w-2.5 rounded-full border-2 border-secondary bg-white" />
+            <span className="w-[22px] font-tech text-[10px] text-secondary">{r[0]}</span>
+            <span className="text-[13.5px] text-foreground">{r[1]}</span>
           </div>
-
-          {/* Mobile: Vertical curved dashed SVG connector path — matching desktop design language */}
-          <div className="md:hidden absolute top-[60px] bottom-[60px] left-1/2 -translate-x-1/2 w-[60px] z-10 pointer-events-none">
-            <svg className="w-full h-full" viewBox="0 0 60 1000" fill="none" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="mPathGradGuide" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#C4324A" stopOpacity="0.07" />
-                  <stop offset="33%" stopColor="#A8574E" stopOpacity="0.07" />
-                  <stop offset="66%" stopColor="#4A9E7E" stopOpacity="0.07" />
-                  <stop offset="100%" stopColor="#2D8B6A" stopOpacity="0.07" />
-                </linearGradient>
-                <linearGradient id="mPathGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#C4324A" />
-                  <stop offset="33%" stopColor="#A8574E" />
-                  <stop offset="66%" stopColor="#4A9E7E" />
-                  <stop offset="100%" stopColor="#2D8B6A" />
-                </linearGradient>
-              </defs>
-              {/* Gentle S-curve vertical path — gradient guide */}
-              <path
-                d="M30 20 C30 80 30 100 30 125 C18 190 42 260 30 325 C18 390 42 460 30 500 C18 540 42 610 30 675 C18 740 42 810 30 875 C30 900 30 940 30 980"
-                stroke="url(#mPathGradGuide)" strokeWidth="2" strokeDasharray="8 5" fill="none" />
-              <motion.path
-                d="M30 20 C30 80 30 100 30 125 C18 190 42 260 30 325 C18 390 42 460 30 500 C18 540 42 610 30 675 C18 740 42 810 30 875 C30 900 30 940 30 980"
-                stroke="url(#mPathGrad)" strokeWidth="2" strokeDasharray="8 5" fill="none"
-                style={{ pathLength }} />
-              {/* Node dots — each step's color */}
-              <motion.circle cx={30} cy={125} r={5} fill="#C4324A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step1Opacity }} />
-              <motion.circle cx={30} cy={415} r={5} fill="#A8574E" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={30} cy={675} r={5} fill="#4A9E7E" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={30} cy={920} r={5} fill="#2D8B6A" stroke="#FFF" strokeWidth={2.5} style={{ opacity: step4Opacity }} />
-              {/* Intermediate dots */}
-              <motion.circle cx={30} cy={270} r={2.5} fill="#A8574E" fillOpacity={0.35} style={{ opacity: step2Opacity }} />
-              <motion.circle cx={30} cy={545} r={2.5} fill="#4A9E7E" fillOpacity={0.35} style={{ opacity: step3Opacity }} />
-              <motion.circle cx={30} cy={800} r={2.5} fill="#2D8B6A" fillOpacity={0.35} style={{ opacity: step4Opacity }} />
-            </svg>
-            {/* Traveling glow dot */}
-            <motion.div className="absolute left-1/2 -translate-x-1/2 h-3 w-3 rounded-full shadow-[0_0_14px_rgba(74,158,126,0.5)]"
-              style={{ background: "linear-gradient(135deg, #C4324A, #2D8B6A)", top: dotTop }} />
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
-            {steps.map((step, i) => (
-              <motion.div key={step.title} className="relative z-20" style={{ opacity: stepOpacities[i] }}>
-                <div className="group text-center relative">
-                  {/* Icon circle — solid bg so path weaves visibly behind/over */}
-                  <motion.div
-                    className="relative mx-auto mb-5 flex h-[120px] w-[120px] items-center justify-center rounded-full transition-all duration-500 group-hover:-translate-y-2"
-                    style={{
-                      background: `radial-gradient(circle, #FFFFFF 40%, ${step.color}10 70%, ${step.color}18 100%)`,
-                      border: `1.5px solid ${step.color}20`,
-                      boxShadow: `0 0 20px ${step.color}08`,
-                      scale: stepScales[i],
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    {/* Inner dashed ring */}
-                    <div className="absolute inset-3 rounded-full border border-dashed" style={{ borderColor: `${step.color}10` }} />
-                    {/* Icon */}
-                    <motion.div
-                      animate={i === 0 ? { y: [0, -3, 0] } : i === 1 ? { rotateY: [0, 10, 0] } : i === 2 ? { rotate: [0, 5, -5, 0] } : { rotateZ: [0, 360] }}
-                      transition={i === 3 ? { duration: 20, repeat: Infinity, ease: "linear" } : { duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                      <step.Icon className="h-10 w-10" style={{ color: step.color, filter: `drop-shadow(0 2px 6px ${step.color}30)` }} strokeWidth={1.5} />
-                    </motion.div>
-                    {/* Number badge — top-left, matching reference */}
-                    <div className="absolute -top-1 -left-1 flex h-7 w-7 items-center justify-center rounded-full text-white text-[11px] font-bold shadow-lg z-10"
-                      style={{ background: step.color }}>
-                      {i + 1}
-                    </div>
-
-                    {/* === Concentric pulse rings — prominent on step 1 (reference radar effect) === */}
-                    <motion.div className="absolute -inset-1 rounded-full border"
-                      style={{ borderColor: `${step.color}${i === 0 ? '20' : '0A'}` }}
-                      animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0, 0.5] }}
-                      transition={{ duration: 2.5, delay: i * 0.5, repeat: Infinity, ease: "easeInOut" }} />
-                    {i === 0 && (
-                      <>
-                        <motion.div className="absolute -inset-3 rounded-full border"
-                          style={{ borderColor: `${step.color}15` }}
-                          animate={{ scale: [1, 1.12, 1], opacity: [0.4, 0, 0.4] }}
-                          transition={{ duration: 3, delay: 0.4, repeat: Infinity, ease: "easeInOut" }} />
-                        <motion.div className="absolute -inset-5 rounded-full border"
-                          style={{ borderColor: `${step.color}0D` }}
-                          animate={{ scale: [1, 1.08, 1], opacity: [0.3, 0, 0.3] }}
-                          transition={{ duration: 3.5, delay: 0.8, repeat: Infinity, ease: "easeInOut" }} />
-                      </>
-                    )}
-
-                    {/* === Floating decorative elements matching reference exactly === */}
-
-                    {/* Step 1: Chat bubble outlines */}
-                    {i === 0 && (
-                      <>
-                        <motion.div className="absolute -left-8 -top-2" style={{ opacity: deco1 }}>
-                          <motion.div animate={{ y: [0, -4, 0], rotate: [0, -8, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
-                            <MessageSquare className="h-5 w-5 text-secondary/30" strokeWidth={1.5} />
-                          </motion.div>
-                        </motion.div>
-                        <motion.div className="absolute -left-6 bottom-4" style={{ opacity: deco1 }}>
-                          <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
-                            <MessageCircle className="h-4 w-4 text-secondary/20" strokeWidth={1.5} />
-                          </motion.div>
-                        </motion.div>
-                      </>
-                    )}
-
-                    {/* Step 3: VISA card + Key + Location pin — teal tones */}
-                    {i === 2 && (
-                      <>
-                        <motion.div className="absolute -right-12 bottom-2" style={{ opacity: deco3 }}>
-                          <motion.div animate={{ y: [0, -3, 0], rotate: [0, 5, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                            className="flex items-center gap-0.5 rounded px-1.5 py-0.5" style={{ background: "rgba(74,158,126,0.08)", border: "1px solid rgba(74,158,126,0.15)" }}>
-                            <CreditCard className="h-3 w-3" style={{ color: "rgba(74,158,126,0.5)" }} strokeWidth={1.5} />
-                            <span className="text-[7px] font-bold tracking-wide" style={{ color: "rgba(74,158,126,0.45)" }}>VISA</span>
-                          </motion.div>
-                        </motion.div>
-                        <motion.div className="absolute -right-7 -top-5" style={{ opacity: deco3 }}>
-                          <motion.div animate={{ y: [0, 4, 0], rotate: [0, -10, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}>
-                            <KeyRound className="h-4 w-4" style={{ color: "rgba(74,158,126,0.35)" }} strokeWidth={1.5} />
-                          </motion.div>
-                        </motion.div>
-                        <motion.div className="absolute -top-6 right-2" style={{ opacity: deco3 }}>
-                          <motion.div animate={{ y: [0, -3, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}>
-                            <MapPin className="h-4 w-4" style={{ color: "rgba(74,158,126,0.4)" }} strokeWidth={1.5} />
-                          </motion.div>
-                        </motion.div>
-                      </>
-                    )}
-
-                    {/* Step 4: Cross sparkle/asterisk decorations — royal blue for joy */}
-                    {i === 3 && (
-                      <>
-                        <motion.div className="absolute -right-6 -top-4" style={{ opacity: deco4 }}>
-                          <motion.div animate={{ scale: [1, 1.4, 1], rotate: [0, 90, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 0v14M0 7h14M2 2l10 10M12 2L2 12" stroke="#2D8B6A" strokeWidth="1.2" strokeOpacity="0.4" strokeLinecap="round" /></svg>
-                          </motion.div>
-                        </motion.div>
-                        <motion.div className="absolute -right-3 bottom-2" style={{ opacity: deco4 }}>
-                          <motion.div animate={{ scale: [0.8, 1.3, 0.8] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
-                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 0v10M0 5h10" stroke="#2D8B6A" strokeWidth="1.5" strokeOpacity="0.3" strokeLinecap="round" /></svg>
-                          </motion.div>
-                        </motion.div>
-                        <motion.div className="absolute -left-5 -top-2" style={{ opacity: deco4 }}>
-                          <motion.div animate={{ scale: [1, 1.2, 1], rotate: [0, 45, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 0v12M0 6h12M1.7 1.7l8.6 8.6M10.3 1.7l-8.6 8.6" stroke="#2D8B6A" strokeWidth="1" strokeOpacity="0.3" strokeLinecap="round" /></svg>
-                          </motion.div>
-                        </motion.div>
-                      </>
-                    )}
-                  </motion.div>
-
-                  <h3 className="font-heading text-lg font-normal tracking-[0.06em] metallic-text">{step.title}</h3>
-                  <p className="mt-1.5 text-[12px] text-muted-foreground font-light leading-relaxed max-w-[180px] mx-auto">{step.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Mini timeline — matching reference: DAY 1 / DAY 2 / DAY 3 */}
-        <div className="mt-12 flex items-center justify-center gap-3 flex-wrap" data-reveal style={{ transitionDelay: "0.4s" }}>
-          {[
-            { day: "Day 1", text: "You call us", icon: Phone, color: "#C4324A" },
-            { day: "Day 2", text: "Itinerary ready", icon: Map, color: "#A8574E" },
-            { day: "Day 3", text: "Everything booked", icon: CheckCircle, color: "#4A9E7E" },
-          ].map((item, i) => (
-            <div key={item.day} className="flex items-center gap-3">
-              <motion.div className="flex items-center gap-2.5 rounded-full bg-white border border-silver/15 px-4 py-2.5 shadow-sm group hover:shadow-md hover:border-secondary/15 transition-all duration-300"
-                initial={{ opacity: 0, x: -20 }}
-                animate={howInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 1.5 + i * 0.3, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
-                <item.icon className="h-3.5 w-3.5" style={{ color: item.color }} strokeWidth={1.5} />
-                <span className="text-[9.5px] font-body font-semibold tracking-[0.22em] uppercase" style={{ color: item.color }}>{item.day}</span>
-                <span className="text-[11px] text-muted-foreground/60">{item.text}</span>
-              </motion.div>
-              {i < 2 && <ArrowRight className="h-3 w-3 text-silver/30 hidden sm:block" />}
+        ))}
+      </div>
+    )
+  if (step === 2)
+    return (
+      <div className="relative">
+        <div className="grid grid-cols-2 gap-2.5">
+          {HIW_BOOKED.map((b, i) => (
+            <div
+              key={b}
+              className="flex items-center gap-2.5 rounded-[11px] px-3 py-2.5"
+              style={{
+                border: "1px solid rgba(31,138,122,0.25)",
+                background: "rgba(31,138,122,0.06)",
+                animation: `fadeUp .45s cubic-bezier(0.22,1,0.36,1) ${i * 0.08}s both`,
+              }}
+            >
+              <CheckCircle className="h-4 w-4" style={{ color: "#1F8A5B" }} />
+              <span className="text-[13px] text-foreground">{b}</span>
             </div>
           ))}
         </div>
+        <div className="absolute -right-1 -top-4 rotate-[-14deg]" style={{ animation: "fadeUp .4s cubic-bezier(0.34,1.56,0.64,1) .2s both" }}>
+          <span
+            className="inline-block rounded-md font-tech text-[13px] tracking-[0.12em]"
+            style={{ color: "#1F8A5B", border: "2.5px solid #1F8A5B", padding: "5px 10px", opacity: 0.85 }}
+          >
+            CONFIRMED
+          </span>
+        </div>
+      </div>
+    )
+  return (
+    <div className="flex flex-col gap-3">
+      <div
+        className="inline-flex items-center gap-2.5 self-start rounded-full px-4 py-2.5"
+        style={{ background: "rgba(31,138,91,0.08)", border: "1px solid rgba(31,138,91,0.2)" }}
+      >
+        <span className="h-2 w-2 rounded-full" style={{ background: "#1F8A5B", boxShadow: "0 0 0 3px rgba(31,138,91,0.18)", animation: "pulseRing 2s cubic-bezier(0.22,1,0.36,1) infinite" }} />
+        <span className="text-[12.5px] font-semibold" style={{ color: "#1F8A5B" }}>24/7 human on call — a travel expert is online</span>
+      </div>
+      <p className="m-0 font-script text-[24px] text-primary">bon voyage — we&apos;ve got you, the whole way.</p>
+    </div>
+  )
+}
 
-        {/* Bottom CTA */}
-        <div className="mt-10 text-center" data-reveal style={{ transitionDelay: "0.5s" }}>
-          <button onClick={() => leadModal.open("how-it-works")} className="metallic-cta group inline-flex items-center gap-2.5 px-9 py-4 text-[14px] font-body font-semibold text-white tracking-[0.01em] cursor-pointer">
-            <span className="relative z-10 flex items-center gap-2">
-              Start your journey <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2 duration-300" />
-            </span>
-          </button>
+function HowItWorksSection() {
+  const ref = useRef<HTMLElement>(null)
+  const leadModal = useLeadModal()
+  const [t, setT] = useState(0)
+  useEffect(() => {
+    const onScroll = () => {
+      const el = ref.current
+      if (!el) return
+      const total = Math.max(1, el.offsetHeight - window.innerHeight)
+      const scrolled = Math.min(Math.max(-el.getBoundingClientRect().top, 0), total)
+      setT(scrolled / total)
+    }
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", onScroll)
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onScroll)
+    }
+  }, [])
+  const step = Math.min(3, Math.floor((t / 0.86) * 4))
+  const railT = Math.min(1, t / 0.86)
+  const cur = HIW_STEPS[step]
+  const jump = (i: number) => {
+    const el = ref.current
+    if (!el) return
+    const total = Math.max(1, el.offsetHeight - window.innerHeight)
+    window.scrollTo({ top: el.offsetTop + ((i + 0.5) / 4) * 0.86 * total, behavior: "smooth" })
+  }
+
+  return (
+    <section ref={ref} id="how-it-works" className="relative bg-brand-mesh" style={{ height: "460vh" }}>
+      <div className="sticky top-0 flex h-screen flex-col items-center justify-center overflow-hidden px-6 py-10 sm:px-8">
+        {/* compact header */}
+        <div className="max-w-[620px] text-center">
+          <p className="m-0 font-body text-[10.5px] font-semibold uppercase tracking-[0.28em] text-secondary">How it works</p>
+          <h2 className="mt-3 font-heading text-[clamp(1.9rem,3.6vw,3rem)] font-medium leading-[1.04] tracking-[-0.025em] text-primary" style={{ fontVariationSettings: "'opsz' 144" }}>
+            Watch your trip <em className="font-normal italic text-secondary">assemble itself.</em>
+          </h2>
+          <p className="mx-auto mt-3 max-w-[460px] text-[14.5px] leading-[1.65] text-muted-foreground">
+            Keep scrolling — one conversation becomes a fully-booked trip, step by step.
+          </p>
+        </div>
+
+        {/* thin progress rail */}
+        <div className="my-[34px] w-full max-w-[540px]">
+          <div className="mb-3.5 flex justify-between">
+            {HIW_STEPS.map((s, i) => (
+              <button key={s.n} onClick={() => jump(i)} className="flex flex-1 cursor-pointer flex-col items-center gap-[3px]">
+                <span className="font-tech text-[8.5px] tracking-[0.16em]" style={{ color: i <= step ? s.color : "var(--silver-dark)", transition: "color .3s" }}>{s.n}</span>
+                <span className="font-heading text-[15px] font-medium" style={{ color: i === step ? "var(--primary)" : i < step ? "var(--muted-foreground)" : "var(--silver-dark)", transition: "color .3s" }}>{s.title}</span>
+              </button>
+            ))}
+          </div>
+          <div className="relative h-[3px] rounded-sm" style={{ background: "rgba(176,184,196,0.3)" }}>
+            <div className="absolute left-0 top-0 h-full rounded-sm" style={{ width: `${railT * 100}%`, background: "linear-gradient(90deg, #C4324A, #A8574E 45%, #1F8A7A 75%, #1F8A5B)" }} />
+            <div
+              className="absolute top-1/2 flex h-[15px] w-[15px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white"
+              style={{ left: `${railT * 100}%`, border: `2px solid ${cur.color}`, boxShadow: `0 2px 10px ${cur.color}66`, transition: "border-color .3s" }}
+            >
+              <span className="h-[5px] w-[5px] rounded-full" style={{ background: cur.color }} />
+            </div>
+          </div>
+        </div>
+
+        {/* boarding pass */}
+        <div className="relative flex w-full max-w-[700px] overflow-hidden rounded-[20px] bg-white" style={{ boxShadow: "0 24px 64px rgba(11,20,38,0.14)", border: "1px solid rgba(176,184,196,0.2)" }}>
+          <div className="min-w-0 flex-1 px-5 py-6 sm:px-[26px]">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <Image src="/images/brand/logo-emblem.png" alt="" width={22} height={22} className="h-[22px] w-auto" />
+                <span className="font-tech text-[8.5px] uppercase tracking-[0.2em] text-silver-dark">Boarding Pass</span>
+              </div>
+              <span className="rounded-full px-2.5 py-[5px] font-tech text-[9px] tracking-[0.14em] text-white" style={{ background: cur.color, transition: "background .4s" }}>{cur.status}</span>
+            </div>
+            <div className="my-[18px] flex items-center gap-4 border-b border-dashed pb-4" style={{ borderColor: "rgba(176,184,196,0.4)" }}>
+              <div>
+                <div className="font-tech text-[8px] tracking-[0.14em] text-silver-dark">FROM</div>
+                <div className="font-heading text-[26px] font-semibold leading-none text-primary">PNQ</div>
+              </div>
+              <svg width="60" height="20" viewBox="0 0 60 20" className="shrink-0"><path d="M2 10h44M40 4l8 6-8 6" stroke="var(--secondary)" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" /><circle cx="2" cy="10" r="2.5" fill="var(--secondary)" /></svg>
+              <div>
+                <div className="font-tech text-[8px] tracking-[0.14em] text-silver-dark">TO</div>
+                <div className="font-heading text-[26px] font-semibold leading-none" style={{ color: step === 0 ? "var(--silver)" : "var(--primary)", transition: "color .4s" }}>{step === 0 ? "• • •" : "GOA"}</div>
+              </div>
+            </div>
+            <div key={step} className="fade-up min-h-[120px]">
+              <PassBody step={step} />
+            </div>
+          </div>
+          <div className="relative flex w-[94px] shrink-0 flex-col items-center justify-between border-l-2 border-dashed py-5" style={{ borderColor: "rgba(176,184,196,0.5)", background: "linear-gradient(180deg, #FAFBFC, #EEF1F5)" }}>
+            <span className="absolute -left-2 -top-2 h-4 w-4 rounded-full" style={{ background: "#F4EFE6" }} />
+            <span className="absolute -left-2 -bottom-2 h-4 w-4 rounded-full" style={{ background: "#F4EFE6" }} />
+            <div className="text-center">
+              <div className="font-tech text-[7.5px] tracking-[0.12em] text-silver-dark">STEP</div>
+              <div className="font-heading text-[30px] font-semibold leading-none" style={{ color: cur.color, transition: "color .4s" }}>{cur.n}</div>
+            </div>
+            <div className="flex h-10 gap-0.5">{Array.from({ length: 8 }).map((_, b) => <span key={b} className="bg-primary" style={{ width: b % 3 === 0 ? 2.5 : 1.5, opacity: b % 2 ? 0.5 : 0.85 }} />)}</div>
+            <span className="flex h-[30px] w-[30px] items-center justify-center rounded-full" style={{ background: step >= 2 ? "#1F8A5B" : "rgba(176,184,196,0.3)", transition: "background .4s" }}><Check className="h-[15px] w-[15px] text-white" strokeWidth={2.4} /></span>
+          </div>
+        </div>
+
+        {/* scroll hint / CTA */}
+        <div className="mt-7 flex h-11 items-center justify-center">
+          {railT < 1 ? (
+            <div className="flex flex-col items-center gap-[5px] text-silver-dark" style={{ animation: "scrollNudge 2.4s cubic-bezier(0.22,1,0.36,1) infinite" }}>
+              <span className="font-tech text-[9px] uppercase tracking-[0.28em]">scroll</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A929E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>
+            </div>
+          ) : (
+            <button onClick={() => leadModal.open("how-it-works")} className="btn btn-primary fade-up px-[26px] py-[13px] text-[13.5px]">
+              Start your journey <ArrowRight className="h-[15px] w-[15px]" />
+            </button>
+          )}
         </div>
       </div>
     </section>
@@ -1361,68 +1376,156 @@ function HowItWorksSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   3. CATEGORIES — enhanced with icon animations & visual hints
+   3c. CATEGORIES — sticky visor-goggle glide
+       Faithful port of the prototype `Categories` (home-sections-a.jsx).
+       Scroll-pins for 320vh; one goggle glides left → centre → right,
+       cross-fading the framed destination photo + copy per category.
    ═══════════════════════════════════════════════════════════════ */
 
-const categories = [
-  { icon: Palmtree, title: "Leisure", tagline: "Unwind & Recharge", desc: "Pristine beaches, luxury resorts, and serene hill stations — for those who travel to breathe.", image: "/images/categories/leisure.jpg", num: "01", stat: "70+ packages", accent: "#C4324A" },
-  { icon: GraduationCap, title: "Education", tagline: "Learn & Grow", desc: "Heritage walks, cultural immersions, and field trips that turn the world into your classroom.", image: "/images/categories/education.jpg", num: "02", stat: "20+ programs", accent: "#B0B8C4" },
-  { icon: Mountain, title: "Adventure", tagline: "Thrill & Conquer", desc: "Scale peaks, raft rapids, trek ancient trails. For those who travel to feel truly alive.", image: "/images/categories/adventure.jpg", num: "03", stat: "25+ experiences", accent: "#C4324A" },
+const CAT_VISOR_NORM = "M 0.03750 0.53030 C 0.01875 0.33333 0.10625 0.15152 0.23125 0.12121 C 0.40625 0.06818 0.61250 0.06061 0.75625 0.12879 C 0.88125 0.18182 0.97500 0.27273 0.95313 0.43939 C 0.93750 0.63636 0.86563 0.76515 0.77500 0.79545 C 0.71250 0.81818 0.66563 0.81818 0.62188 0.77273 C 0.57500 0.71970 0.54375 0.67424 0.50000 0.67424 C 0.45625 0.67424 0.42500 0.71970 0.37813 0.77273 C 0.33438 0.82576 0.26875 0.87879 0.19688 0.85606 C 0.11875 0.83333 0.05625 0.71970 0.03750 0.53030 Z"
+const CAT_VISOR_VB = "M 12 70 C 6 44 34 20 74 16 C 130 9 196 8 242 17 C 282 24 312 36 305 58 C 300 84 277 101 248 105 C 228 108 213 108 199 102 C 184 95 174 89 160 89 C 146 89 136 95 121 102 C 107 109 86 116 63 113 C 38 110 18 95 12 70 Z"
+
+const CATS: { title: string; place: string; tagline: string; coord: string; desc: string; image: string; num: string; stat: string; accent: string; slug: string }[] = [
+  { title: "Leisure", place: "Goa", tagline: "Unwind & recharge", coord: "15.29°N · 73.97°E", desc: "Pristine beaches, luxury resorts and serene hill stations — for those who travel to breathe.", image: "/images/generated/goa-hero.webp", num: "01", stat: "70+ packages", accent: "#C4324A", slug: "leisure" },
+  { title: "Adventure", place: "Leh-Ladakh", tagline: "Thrill & conquer", coord: "34.15°N · 77.57°E", desc: "Scale peaks, raft rapids, trek ancient trails. For those who travel to feel truly alive.", image: "/images/generated/leh-ladakh-hero.webp", num: "02", stat: "25+ experiences", accent: "#A8574E", slug: "adventure" },
 ]
 
-function CategoriesSection() {
+/* Visor-goggle framed image (brand's signature lens shape). The drop-shadow lives
+   on the navy backing layer (sibling), never on the clipped photo — Chrome drops a
+   clip-path when a filter sits on the clipped element or any ancestor. */
+function VisorImage({ img, width = 392, flip = false, bgSize = "cover" }: { img: string; width?: number; flip?: boolean; bgSize?: string }) {
+  const uid = useId().replace(/:/g, "")
+  const h = width * (132 / 320)
+  const flipT = flip ? "scaleX(-1)" : "none"
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16" data-reveal>
-          <p className="text-[10.5px] font-body font-semibold tracking-[0.28em] uppercase text-secondary">How do you travel?</p>
-          <h2 className="hx mt-4 font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.04] metallic-text heading-accent">
-            Three ways to <em className="italic font-normal text-secondary">explore.</em>
-          </h2>
+    <div className="relative" style={{ width, height: h }}>
+      <svg width="0" height="0" className="absolute" aria-hidden>
+        <defs>
+          <clipPath id={`vg-${uid}`} clipPathUnits="objectBoundingBox"><path d={CAT_VISOR_NORM} /></clipPath>
+        </defs>
+      </svg>
+      <svg width={width} height={h} viewBox="0 0 320 132" preserveAspectRatio="none" className="absolute inset-0 overflow-visible" style={{ transform: flipT, filter: "drop-shadow(0 18px 30px rgba(11,20,38,0.22)) drop-shadow(0 4px 8px rgba(11,20,38,0.14))", zIndex: 1 }}>
+        <path d={CAT_VISOR_VB} fill="#0A1425" />
+      </svg>
+      <div className="absolute inset-0" style={{ zIndex: 2, transform: flipT, clipPath: `url(#vg-${uid})`, WebkitClipPath: `url(#vg-${uid})`, backgroundImage: `url(${img})`, backgroundSize: bgSize, backgroundPosition: "center" }}>
+        <div className="absolute inset-0" style={{ transform: flipT }}>
+          <div className="absolute inset-0" style={{ background: "linear-gradient(168deg, rgba(255,255,255,0.18) 0%, transparent 42%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, rgba(11,20,38,0.28) 100%)" }} />
+        </div>
+      </div>
+      <svg width={width} height={h} viewBox="0 0 320 132" preserveAspectRatio="none" className="absolute inset-0 overflow-visible" style={{ transform: flipT, zIndex: 3 }}>
+        <defs>
+          <linearGradient id={`vgm-${uid}`} x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0%" stopColor="#F4F6F9" /><stop offset="48%" stopColor="#C8CDD5" /><stop offset="58%" stopColor="#C0C5CD" /><stop offset="100%" stopColor="#AAB0BA" />
+          </linearGradient>
+        </defs>
+        <path d={CAT_VISOR_VB} fill="none" stroke={`url(#vgm-${uid})`} strokeWidth="8" strokeLinejoin="round" />
+        <path d={CAT_VISOR_VB} fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinejoin="round" style={{ transformBox: "fill-box", transformOrigin: "center", transform: "scale(0.972)" }} />
+      </svg>
+    </div>
+  )
+}
+
+function CategoriesSection() {
+  const ref = useRef<HTMLElement>(null)
+  const [t, setT] = useState(0)
+  const [vw, setVw] = useState(1280)
+  useEffect(() => {
+    const onScroll = () => {
+      const el = ref.current
+      if (!el) return
+      const total = Math.max(1, el.offsetHeight - window.innerHeight)
+      const scrolled = Math.min(Math.max(-el.getBoundingClientRect().top, 0), total)
+      setT(scrolled / total)
+    }
+    const onResize = () => {
+      setVw(window.innerWidth)
+      onScroll()
+    }
+    onResize()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", onResize)
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onResize)
+    }
+  }, [])
+  const idx = Math.min(CATS.length - 1, Math.floor((t / 0.92) * CATS.length))
+  const c = CATS[idx]
+  const flip = idx % 2 === 1
+  const xpos = idx === 0 ? -22 : idx === CATS.length - 1 ? 22 : 0
+  const goggleW = Math.min(392, Math.round(vw * 0.84))
+  const jump = (i: number) => {
+    const el = ref.current
+    if (!el) return
+    const total = Math.max(1, el.offsetHeight - window.innerHeight)
+    window.scrollTo({ top: el.offsetTop + ((i + 0.5) / CATS.length) * 0.92 * total, behavior: "smooth" })
+  }
+
+  return (
+    <section ref={ref} className="relative bg-white" style={{ height: `${CATS.length * 110}vh` }}>
+      <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
+        {/* header */}
+        <div className="shrink-0 pt-[6vh] text-center">
+          <p className="eyebrow justify-center text-secondary"><span className="dot" /> How do you travel?</p>
+          <h2 className="h-display mt-3 text-3xl sm:text-4xl md:text-5xl">Two ways to <em>explore.</em></h2>
         </div>
 
-        <div className="space-y-6">
-          {categories.map((cat, i) => {
-            const flip = i % 2 === 1
-            return (
-              <div key={cat.title} data-reveal style={{ transitionDelay: `${i * 0.12}s` }}>
-                <TiltCard strength={4} className="cursor-pointer">
-                  <Link href={`/categories/${cat.title === "Education" ? "educational" : cat.title.toLowerCase()}`} className="group block">
-                    <div className="overflow-hidden rounded-2xl bg-white shadow-[0_2px_20px_rgba(11,20,38,0.04)] border border-silver/10 transition-all duration-500 group-hover:shadow-[0_12px_50px_rgba(11,20,38,0.1)] group-hover:border-secondary/10">
-                      <div className={cn("grid grid-cols-1 md:grid-cols-5", flip && "md:[direction:rtl]")}>
-                        {/* Photo */}
-                        <div className="relative h-56 sm:h-64 md:h-80 md:col-span-2 overflow-hidden">
-                          <Image src={cat.image} alt={cat.title} fill className="object-cover transition-all duration-[2s] group-hover:scale-110 group-hover:translate-x-1 group-hover:translate-y-[-2px]" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/15 to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-primary/5" />
-                          <span className="absolute bottom-4 left-5 text-6xl font-bold text-white/[0.08] font-heading select-none overflow-hidden">
-                            <span className="relative inline-block">{cat.num}
-                              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.15] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[2s]" />
-                            </span>
-                          </span>
-                          <div className="absolute top-4 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 backdrop-blur-xl border border-white/10">
-                            <cat.icon className="h-5 w-5 text-white" strokeWidth={1.5} />
-                          </div>
-                        </div>
-                        {/* Content */}
-                        <div className={cn("md:col-span-3 flex flex-col justify-center p-8 sm:p-12", flip && "md:[direction:ltr]")}>
-                          <p className="text-[10px] font-semibold tracking-[0.25em] uppercase" style={{ color: `${cat.accent}99` }}>{cat.tagline}</p>
-                          <h3 className="mt-3 font-heading text-2xl sm:text-3xl font-normal metallic-text tracking-[0.1em]">{cat.title}</h3>
-                          <p className="mt-4 text-[14px] leading-[1.8] text-muted-foreground max-w-md font-light tracking-wide">{cat.desc}</p>
-                          <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-secondary/[0.04] border border-secondary/[0.08] px-3 py-1 text-[10px] font-medium text-secondary/50 tracking-[0.1em]">
-                            {cat.stat}
-                          </div>
-                          <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground/40 group-hover:text-secondary transition-colors duration-500">
-                            Explore {cat.title}
-                            <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-3" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </TiltCard>
+        {/* visor band — goggle glides left → centre → right */}
+        <div className="relative min-h-0 flex-1">
+          <span
+            key={`ghost-${idx}`}
+            aria-hidden
+            className="fade-in-soft pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none font-heading font-medium leading-none"
+            style={{ fontSize: "min(40vh, 380px)", color: "transparent", WebkitTextStroke: `1.5px ${c.accent}14`, zIndex: 1 }}
+          >
+            {c.num}
+          </span>
+
+          <div className="absolute left-1/2 top-1/2" style={{ zIndex: 3, transform: `translate(calc(-50% + ${xpos}vw), -50%)`, transition: "transform .75s cubic-bezier(0.22,1,0.36,1)" }}>
+            <div key={`vis-${idx}`} className="fade-in-soft flex flex-col items-center gap-4">
+              <VisorImage img={c.image} width={goggleW} flip={flip} />
+              <div className="flex flex-col items-center gap-1.5">
+                <div className="flex items-center gap-2.5">
+                  <span className="h-px w-4" style={{ background: `linear-gradient(90deg, transparent, ${c.accent})` }} />
+                  <span className="font-heading text-[18px] font-medium italic leading-none text-primary" style={{ fontVariationSettings: "'opsz' 144" }}>{c.place}</span>
+                  <span className="h-px w-4" style={{ background: `linear-gradient(90deg, ${c.accent}, transparent)` }} />
+                </div>
+                <span className="font-tech text-[8.5px] uppercase tracking-[0.22em] text-silver-dark">{c.coord}</span>
               </div>
-            )
-          })}
+            </div>
+          </div>
+        </div>
+
+        {/* text band */}
+        <div key={`txt-${idx}`} className="fade-in-soft mx-auto max-w-[480px] shrink-0 px-8 text-center">
+          <p className="m-0 text-[10.5px] font-semibold uppercase tracking-[0.22em]" style={{ color: `${c.accent}cc` }}>{c.tagline}</p>
+          <h3 className="mt-1.5 font-heading text-[34px] font-medium tracking-[-0.02em] text-primary" style={{ fontVariationSettings: "'opsz' 144" }}>{c.title}</h3>
+          <p className="mx-auto mt-2.5 max-w-[420px] text-[14px] leading-[1.65] text-muted-foreground">{c.desc}</p>
+          <div className="mt-4 flex items-center justify-center gap-4">
+            <Link href={`/categories/${c.slug}`} className="link-underline inline-flex items-center gap-2 text-[14px] font-semibold text-primary">Explore {c.title} <ArrowRight className="h-4 w-4" /></Link>
+            <span className="rounded-full px-3 py-1.5 text-[10.5px] font-medium tracking-[0.06em]" style={{ background: `${c.accent}0D`, border: `1px solid ${c.accent}20`, color: c.accent }}>{c.stat}</span>
+          </div>
+        </div>
+
+        {/* stepper + progress */}
+        <div className="flex shrink-0 flex-col items-center gap-3.5 pt-[22px] pb-[5vh]">
+          <div className="flex justify-center gap-2.5">
+            {CATS.map((cat, i) => (
+              <button
+                key={cat.title}
+                onClick={() => jump(i)}
+                className="flex cursor-pointer items-center gap-2.5 rounded-full px-4 py-2"
+                style={{ border: `1px solid ${i === idx ? cat.accent : "rgba(176,184,196,0.3)"}`, background: i === idx ? `${cat.accent}0e` : "#fff", transition: "all .3s cubic-bezier(0.22,1,0.36,1)" }}
+              >
+                <span className="h-[7px] w-[7px] rounded-full" style={{ background: i === idx ? cat.accent : "rgba(176,184,196,0.5)", transition: "background .3s" }} />
+                <span className="font-body text-[12.5px] font-semibold" style={{ color: i === idx ? "var(--primary)" : "var(--silver-dark)", transition: "color .3s" }}>{cat.title}</span>
+              </button>
+            ))}
+          </div>
+          <div className="h-[3px] w-[220px] overflow-hidden rounded-sm" style={{ background: "rgba(176,184,196,0.3)" }}>
+            <div className="h-full" style={{ width: `${Math.min(100, (t / 0.92) * 100)}%`, background: `linear-gradient(90deg, ${CATS[0].accent}, ${c.accent})`, transition: "width .15s linear" }} />
+          </div>
         </div>
       </div>
     </section>
@@ -1433,72 +1536,99 @@ function CategoriesSection() {
    4. DESTINATIONS — photo cards with enhanced interaction
    ═══════════════════════════════════════════════════════════════ */
 
-const destinations = [
-  { name: "Kashmir", country: "India", slug: "kashmir", price: 24000, priceLabel: "24,000", rating: "4.9", image: "/images/generated/kashmir-hero.webp", accent: "#C4324A" },
-  { name: "Kerala", country: "India", slug: "kerala", price: 25000, priceLabel: "25,000", rating: "4.8", image: "/images/generated/kerala-hero.webp", accent: "#2BA5A5" },
-  { name: "Rajasthan", country: "India", slug: "rajasthan", price: 25000, priceLabel: "25,000", rating: "4.8", image: "/images/generated/rajasthan-hero.webp", accent: "#D4A853" },
-  { name: "Bali", country: "Indonesia", slug: "bali", price: 58000, priceLabel: "58,000", rating: "4.8", image: "/images/generated/bali-hero.webp", accent: "#C4324A" },
+const destinations: { name: string; country: string; slug: string; code: string; coord: string; gate: string; priceLabel: string; rating: string; image: string }[] = [
+  { name: "Kashmir", country: "India", slug: "kashmir", code: "SXR", coord: "34.08°N", gate: "A1", priceLabel: "24,000", rating: "4.9", image: "/images/generated/kashmir-hero.webp" },
+  { name: "Kerala", country: "India", slug: "kerala", code: "COK", coord: "9.93°N", gate: "B4", priceLabel: "25,000", rating: "4.8", image: "/images/generated/kerala-hero.webp" },
+  { name: "Rajasthan", country: "India", slug: "rajasthan", code: "JAI", coord: "27.02°N", gate: "C2", priceLabel: "25,000", rating: "4.8", image: "/images/generated/rajasthan-hero.webp" },
+  { name: "Bali", country: "Indonesia", slug: "bali", code: "DPS", coord: "8.51°S", gate: "D7", priceLabel: "58,000", rating: "4.8", image: "/images/generated/bali-hero.webp" },
 ]
+
+function BoardingPassCard({ dest, i }: { dest: typeof destinations[number]; i: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30, scale: 0.97 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ delay: i * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <Link
+        href={`/destinations/${dest.slug}`}
+        className="group flex overflow-hidden rounded-[18px] bg-white border border-silver/20 shadow-[0_4px_20px_rgba(11,20,38,0.07)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(11,20,38,0.15)]"
+      >
+        {/* main panel */}
+        <div className="relative flex-1 min-w-0">
+          <div className="relative h-[150px] overflow-hidden">
+            <Image src={dest.image} alt={dest.name} fill className="object-cover transition-transform duration-[1.1s] group-hover:scale-[1.08]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.05] to-primary/55" />
+            {/* coordinate micro-label */}
+            <span className="absolute top-3 left-3.5 font-tech text-[8px] tracking-[0.16em] text-white/80">{dest.coord}</span>
+            {/* rating chip */}
+            <div className="absolute top-2.5 right-3 flex items-center gap-1 rounded-full bg-primary/40 backdrop-blur-md px-2.5 py-1">
+              <Star className="h-[11px] w-[11px] fill-secondary text-secondary" />
+              <span className="text-[10.5px] font-semibold text-white">{dest.rating}</span>
+            </div>
+            {/* hover BOARDING stamp */}
+            <span className="absolute bottom-3 right-3 rounded-md border-2 border-white/80 px-2 py-1 font-tech text-[10px] tracking-[0.1em] text-white opacity-0 rotate-[-12deg] scale-[1.3] transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:opacity-100 group-hover:scale-100">
+              BOARDING
+            </span>
+          </div>
+          <div className="flex items-center justify-between px-4 py-3.5">
+            <div>
+              <div className="flex items-baseline gap-2">
+                <h3 className="font-heading text-[19px] font-medium tracking-[-0.01em] text-primary">{dest.name}</h3>
+                <span className="font-tech text-[11px] tracking-[0.08em] text-secondary">{dest.code}</span>
+              </div>
+              <p className="mt-0.5 flex items-center gap-1 text-[11.5px] text-muted-foreground">
+                <MapPin className="h-3 w-3" /> {dest.country}
+              </p>
+            </div>
+            <div className="text-right">
+              <p className="font-tech text-[7.5px] tracking-[0.14em] uppercase text-muted-foreground">From</p>
+              <p className="mt-0.5 font-heading text-[18px] font-medium tracking-[-0.015em] text-primary">₹{dest.priceLabel}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* perforated stub */}
+        <div className="relative flex w-[66px] shrink-0 flex-col items-center justify-between border-l-2 border-dashed border-silver/50 bg-gradient-to-b from-[#FAFBFC] to-[#F0F2F5] py-3.5">
+          {/* punch holes */}
+          <span className="absolute -left-[7px] -top-[7px] h-3 w-3 rounded-full bg-[#F3EEE6]" />
+          <span className="absolute -left-[7px] -bottom-[7px] h-3 w-3 rounded-full bg-[#F3EEE6]" />
+          <div className="font-tech text-[8px] tracking-[0.14em] text-muted-foreground [writing-mode:vertical-rl] rotate-180">GATE {dest.gate}</div>
+          {/* barcode */}
+          <div className="flex h-10 items-stretch gap-[1.5px]">
+            {Array.from({ length: 9 }).map((_, b) => (
+              <span key={b} className="bg-primary" style={{ width: b % 3 === 0 ? 2.5 : 1.5, opacity: b % 2 ? 0.5 : 0.85 }} />
+            ))}
+          </div>
+          <ArrowRight className="h-3.5 w-3.5 text-secondary transition-transform duration-300 group-hover:translate-x-0.5" />
+        </div>
+      </Link>
+    </motion.div>
+  )
+}
 
 function DestinationsSection() {
   return (
-    <section className="py-24 bg-brand-gradient-light">
+    <section className="py-24 sm:py-28 bg-brand-gradient-light">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-14">
           <div data-reveal>
-            <p className="text-[10.5px] font-body font-semibold tracking-[0.28em] uppercase text-secondary">Trending now</p>
-            <h2 className="hx mt-3 font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.04] metallic-text">
-              Popular <em className="italic font-normal text-secondary">destinations.</em>
+            <p className="eyebrow text-secondary"><span className="dot" /> Trending now</p>
+            <h2 className="h-display mt-3 text-3xl sm:text-4xl md:text-5xl">
+              Popular <em>destinations.</em>
             </h2>
           </div>
           <div data-reveal style={{ transitionDelay: "0.1s" }}>
-            <Link href="/destinations" className="animated-underline inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-secondary transition-colors group">
+            <Link href="/destinations" className="link-underline inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-secondary transition-colors group">
               View all destinations <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {destinations.map((dest, i) => (
-            <div key={dest.name} data-reveal-scale style={{ transitionDelay: `${i * 0.1}s` }}>
-              <TiltCard strength={8}>
-                <Link href={`/destinations/${dest.slug}`} className="group block">
-                  <div className="relative overflow-hidden rounded-2xl shadow-[0_2px_20px_rgba(11,20,38,0.06)] transition-all duration-500 group-hover:shadow-[0_16px_60px_rgba(11,20,38,0.15)]">
-                    <div className="relative h-80 sm:h-[22rem]">
-                      <Image src={dest.image} alt={dest.name} fill className="object-cover transition-transform duration-[1.2s] group-hover:scale-110" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
-
-                      {/* Shine sweep */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.08] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[1.4s] ease-in-out" />
-
-                      {/* Rating chip */}
-                      <div className="absolute top-4 right-4 flex items-center gap-1 rounded-full bg-primary/40 backdrop-blur-xl px-2.5 py-1 border border-silver/[0.1]">
-                        <Star className="h-3 w-3 fill-secondary text-secondary" />
-                        <span className="text-[11px] font-semibold text-white/90">{dest.rating}</span>
-                      </div>
-
-                      {/* Arrow */}
-                      <div className="absolute top-4 left-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/[0.08] backdrop-blur-xl border border-white/[0.08] opacity-0 scale-50 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100">
-                        <ArrowRight className="h-4 w-4 text-white/70" />
-                      </div>
-
-                      {/* Content */}
-                      <div className="absolute bottom-0 left-0 right-0 p-5">
-                        <h3 className="font-heading text-lg font-normal text-white tracking-[0.1em]">{dest.name}</h3>
-                        <div className="flex items-center gap-1.5 mt-1 text-silver-light/60">
-                          <MapPin className="h-3 w-3" />
-                          <span className="text-xs">{dest.country}</span>
-                        </div>
-                        <div className="mt-3 flex items-baseline gap-1">
-                          <span className="text-[10px] text-silver/40 uppercase tracking-wider font-body">From</span>
-                          <span className="text-xl font-bold text-white font-heading font-medium tracking-[-0.015em] leading-[1.15]">₹{dest.priceLabel}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </TiltCard>
-            </div>
+            <BoardingPassCard key={dest.name} dest={dest} i={i} />
           ))}
         </div>
       </div>
@@ -1529,51 +1659,51 @@ function USPSection() {
   }, [inView])
 
   return (
-    <section ref={ref} className="relative overflow-hidden noise-overlay">
-      <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(160deg, #030810 0%, #0A1425 35%, #152240 65%, #0A1425 100%)", backgroundSize: "400% 400%", animation: "gradientShift 25s ease infinite" }} />
-      <div className="absolute top-0 right-[10%] h-[600px] w-[600px] rounded-full bg-secondary/[0.04] blur-[200px] animate-[orbFloat1_30s_ease-in-out_infinite]" />
-      <div className="absolute bottom-0 left-[5%] h-[400px] w-[400px] rounded-full bg-silver/[0.02] blur-[150px] animate-[orbFloat2_35s_ease-in-out_infinite]" />
-      <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: "linear-gradient(rgba(176,184,196,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(176,184,196,0.1) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+    <section ref={ref} className="relative overflow-hidden noise-overlay" style={{ background: "linear-gradient(160deg, #030810 0%, #0A1425 38%, #152240 68%, #0A1425 100%)" }}>
+      {/* ambient orbs + faint grid */}
+      <div className="absolute top-0 right-[8%] h-[520px] w-[520px] rounded-full bg-secondary/[0.05] blur-[180px]" />
+      <div className="absolute bottom-0 left-[4%] h-[380px] w-[380px] rounded-full bg-silver/[0.03] blur-[140px]" />
+      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "linear-gradient(rgba(176,184,196,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(176,184,196,0.4) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
 
-      <div className="relative max-w-6xl mx-auto px-6 py-24 sm:py-32">
+      <div className="relative max-w-6xl mx-auto px-6 pt-24 sm:pt-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left — content */}
           <div>
             <div data-reveal>
-              <div className="brand-badge mb-8" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                <HeartHandshake className="h-3.5 w-3.5 text-secondary/70" />
-                <span className="text-white/25">Our Promise</span>
+              <div className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-7" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
+                <HeartHandshake className="h-3.5 w-3.5 text-secondary/80" />
+                <span className="text-[10.5px] font-body font-semibold tracking-[0.2em] uppercase text-silver/40">Our Promise</span>
               </div>
             </div>
 
             <div data-reveal style={{ transitionDelay: "0.1s" }}>
-              <h2 className="hx font-heading text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.02] tracking-[-0.025em]">
-                <span className="metallic-text-dark">We pick up.</span>
+              <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.04] tracking-[-0.025em]" style={{ fontVariationSettings: "'opsz' 144" }}>
+                <span className="text-[#F4F6F9]">We pick up.</span>
                 <br />
                 <em className="italic font-normal text-secondary">Every call.</em>
                 <br />
-                <span className="metallic-silver">Every time.</span>
+                <span className="text-silver">Every time.</span>
               </h2>
             </div>
 
             <div data-reveal style={{ transitionDelay: "0.2s" }}>
-              <p className="mt-6 text-[14px] leading-[1.9] text-silver/35 max-w-md font-light tracking-wide">
+              <p className="mt-6 text-[15px] leading-[1.85] text-silver/50 max-w-md">
                 Not a chatbot. Not a menu. Not a queue.
                 <br />
                 Just a real person who genuinely cares about making your trip perfect.
               </p>
             </div>
 
-            {/* Anti-features — clearly styled with brand colors */}
+            {/* Anti-features — line-through pills */}
             <div data-reveal className="mt-7 flex flex-wrap gap-2.5" style={{ transitionDelay: "0.3s" }}>
               {[
                 { icon: PhoneOff, label: "No IVR" },
                 { icon: Bot, label: "No Chatbots" },
                 { icon: Users, label: "No Queues" },
               ].map((item) => (
-                <div key={item.label} className="flex items-center gap-2 rounded-full bg-secondary/[0.05] border border-secondary/[0.08] px-4 py-2">
+                <div key={item.label} className="flex items-center gap-2 rounded-full bg-secondary/[0.06] border border-secondary/[0.10] px-4 py-2">
                   <item.icon className="h-3 w-3 text-secondary/50" />
-                  <span className="text-[11px] text-silver/25 line-through decoration-secondary/30">{item.label}</span>
+                  <span className="text-[11.5px] text-silver/40 line-through decoration-secondary/50">{item.label}</span>
                 </div>
               ))}
             </div>
@@ -1593,7 +1723,7 @@ function USPSection() {
                 <motion.div className="h-1.5 w-1.5 rounded-full bg-green-400"
                   animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
                   transition={{ duration: 1.5, repeat: Infinity }} />
-                <span className="text-[10px] text-silver/15 tracking-wide">Avg. response: 30s</span>
+                <span className="text-[11px] text-silver/40 tracking-wide">Avg. response: 30s</span>
               </div>
             </div>
           </div>
@@ -1601,14 +1731,14 @@ function USPSection() {
           {/* Right — animated chat */}
           <div data-reveal-right className="flex justify-center lg:justify-end">
             <TiltCard strength={4} className="w-full max-w-[360px]">
-              <div className="glass-card-dark rounded-[28px] p-5 shadow-[0_25px_80px_rgba(0,0,0,0.4)]">
+              <div className="rounded-[28px] p-5 shadow-[0_25px_80px_rgba(0,0,0,0.4)]" style={{ background: "rgba(255,255,255,0.035)", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(20px)" }}>
                 {/* Header */}
                 <div className="flex items-center gap-3 rounded-2xl bg-white/[0.03] border border-silver/[0.06] px-4 py-3 mb-4">
-                  <div className="h-10 w-10 rounded-full bg-gradient-to-br from-secondary/20 to-silver/10 flex items-center justify-center">
-                    <MessageCircle className="h-4 w-4 text-white/60" />
+                  <div className="h-10 w-10 rounded-full bg-gradient-to-br from-secondary/30 to-silver/15 flex items-center justify-center">
+                    <MessageCircle className="h-4 w-4 text-white/70" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-[13px] font-semibold text-white/80">TravelSense</p>
+                    <p className="text-[13px] font-semibold text-white/85">TravelSense</p>
                     <div className="flex items-center gap-1.5">
                       <div className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
                       <p className="text-[10px] text-green-400/60">Online now</p>
@@ -1629,10 +1759,10 @@ function USPSection() {
                       <div className={cn(
                         "rounded-2xl px-4 py-2.5 max-w-[82%]",
                         msg.from === "user"
-                          ? "rounded-br-sm bg-secondary/40 border border-secondary/20"
-                          : "rounded-bl-sm bg-white/[0.06] border border-silver/[0.06]"
+                          ? "rounded-br-sm bg-secondary/[0.32] border border-secondary/25"
+                          : "rounded-bl-sm bg-white/[0.06] border border-silver/[0.07]"
                       )}>
-                        <p className="text-[12px] leading-relaxed text-white/75">{msg.text}</p>
+                        <p className="text-[12px] leading-relaxed text-white/[0.78]">{msg.text}</p>
                       </div>
                       {msg.from === "user" && idx < msgCount - 1 && (
                         <motion.div className="flex items-center gap-0.5 mt-0.5 mr-1"
@@ -1650,7 +1780,7 @@ function USPSection() {
                       <span className="text-[9px] text-silver/20 px-2">Priya is typing...</span>
                       <div className="flex gap-1.5 px-3 py-2 rounded-xl bg-white/[0.04] border border-silver/[0.04]">
                         {[0, 1, 2].map((d) => (
-                          <div key={d} className="h-1.5 w-1.5 rounded-full bg-silver/20 animate-bounce" style={{ animationDelay: `${d * 150}ms` }} />
+                          <div key={d} className="h-1.5 w-1.5 rounded-full bg-silver/30" style={{ animation: `typingDot 1.2s ${d * 0.15}s infinite` }} />
                         ))}
                       </div>
                     </div>
@@ -1661,13 +1791,37 @@ function USPSection() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: msgCount >= 4 ? 1 : 0 }}
                   transition={{ delay: 0.3 }}
-                  className="mt-3 flex items-center justify-center gap-1.5 rounded-xl bg-green-500/[0.04] border border-green-500/[0.08] py-2.5"
+                  className="mt-3 flex items-center justify-center gap-1.5 rounded-xl bg-green-500/[0.05] border border-green-500/[0.10] py-2.5"
                 >
                   <div className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
-                  <p className="text-[10px] font-medium text-green-400/60">Response: under 30 seconds</p>
+                  <p className="text-[10.5px] font-medium text-green-400/60">Response: under 30 seconds</p>
                 </motion.div>
               </div>
             </TiltCard>
+          </div>
+        </div>
+
+        {/* Differentiator strip — 4-up, above a hairline top border (trimmed from flip-cards) */}
+        <div className="mt-20 sm:mt-24 pb-24 sm:pb-28">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 border-t border-white/[0.07] pt-10">
+            {differentiators.map((d, i) => (
+              <motion.div
+                key={d.title}
+                className="flex flex-col gap-3"
+                initial={{ opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-[13px]" style={{ background: "rgba(196,50,74,0.10)", border: "1px solid rgba(196,50,74,0.16)" }}>
+                  <d.Icon className="h-5 w-5 text-secondary-light/90" strokeWidth={1.4} />
+                </div>
+                <div>
+                  <h4 className="font-heading text-[15.5px] font-medium tracking-[-0.01em] text-[#F4F6F9]">{d.title}</h4>
+                  <p className="mt-1.5 text-[12.5px] leading-relaxed text-silver/45">{d.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
@@ -1675,274 +1829,82 @@ function USPSection() {
   )
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   5b. WHAT SETS US APART — enhanced flip cards with visual clarity
-   ═══════════════════════════════════════════════════════════════ */
-
-/* Unique animation per differentiator card */
-const cardAnimations = [
-  // Card 0 — Consultation: typing dots appear inside
-  { animate: { y: [0, -2, 0] }, transition: { duration: 2, repeat: Infinity, ease: "easeInOut" as const } },
-  // Card 1 — Shield: heartbeat pulse
-  { animate: { scale: [1, 1.12, 1, 1.08, 1] }, transition: { duration: 1.8, repeat: Infinity, repeatDelay: 1.5, ease: "easeInOut" as const } },
-  // Card 2 — Compass: slow continuous rotation
-  { animate: { rotate: [0, 360] }, transition: { duration: 15, repeat: Infinity, ease: "linear" as const } },
-  // Card 3 — Handshake: horizontal oscillation
-  { animate: { x: [0, 3, -3, 2, -1, 0] }, transition: { duration: 2.5, repeat: Infinity, ease: "easeInOut" as const } },
+/* Differentiators — the 4 USP pillars. Rendered as the strip inside USPSection
+   (the prototype trimmed the old standalone flip-cards into this dark strip). */
+const differentiators: { Icon: LucideIcon; title: string; desc: string }[] = [
+  { Icon: MessageSquare, title: "Consultation First", desc: "We listen before we sell" },
+  { Icon: Shield, title: "Women-Led, Trust-Built", desc: "Safety & transparency first" },
+  { Icon: Compass, title: "All Travel, One Place", desc: "Leisure & Adventure" },
+  { Icon: Handshake, title: "Tech + Personal Touch", desc: "Smart tools, real humans" },
 ]
-
-const differentiators: { Icon: LucideIcon; title: string; desc: string; benefit: string; vs: string; color: string }[] = [
-  { Icon: MessageSquare, title: "Consultation First", desc: "We listen before we sell", benefit: "Your trip, your rules", vs: "Others: aggressive upselling", color: "#C4324A" },
-  { Icon: Shield, title: "Women-Led, Trust-Built", desc: "Safety & transparency first", benefit: "Founded by a woman traveler", vs: "Others: faceless corporates", color: "#B0B8C4" },
-  { Icon: Compass, title: "All Travel, One Place", desc: "Leisure + Adventure + Education", benefit: "3 categories, 1 platform", vs: "Others: single category", color: "#C4324A" },
-  { Icon: Handshake, title: "Tech + Personal Touch", desc: "Smart tools, real humans", benefit: "AI-powered, human-delivered", vs: "Others: chatbots only", color: "#B0B8C4" },
-]
-
-function WhatSetsUsApartSection() {
-  const [flippedCards, setFlippedCards] = useState<Record<number, boolean>>({})
-  const toggleFlip = (i: number) => setFlippedCards((prev) => ({ ...prev, [i]: !prev[i] }))
-
-  return (
-    <section className="py-20 bg-brand-mesh">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-14" data-reveal>
-          <p className="text-[10.5px] font-body font-semibold tracking-[0.28em] uppercase text-secondary">Why TravelSense</p>
-          <h2 className="hx mt-3 font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.04] metallic-text heading-accent">
-            What sets us <em className="italic font-normal text-secondary">apart.</em>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {differentiators.map((d, i) => (
-            <div key={d.title} data-reveal-scale style={{ transitionDelay: `${i * 0.1}s` }}>
-              <div className="group relative h-[300px] cursor-pointer flip-card-trigger" style={{ perspective: "800px" }} onClick={() => toggleFlip(i)}>
-                <div className={cn("flip-card-inner relative w-full h-full transition-transform duration-700", flippedCards[i] && "[transform:rotateY(180deg)]")} style={{ transformStyle: "preserve-3d" }}>
-                  {/* Front face */}
-                  <div className="absolute inset-0 rounded-2xl bg-white border border-silver/10 p-6 shadow-[0_2px_20px_rgba(11,20,38,0.04)] text-center flex flex-col items-center justify-center transition-shadow duration-500 group-hover:shadow-[0_10px_40px_rgba(11,20,38,0.08)]" style={{ backfaceVisibility: "hidden" }}>
-                    <motion.div className="mb-4 flex h-20 w-20 items-center justify-center rounded-2xl"
-                      style={{
-                        background: `linear-gradient(135deg, ${d.color}08, ${d.color}18)`,
-                        border: `1.5px solid ${d.color}20`,
-                        boxShadow: `0 4px 20px ${d.color}10`,
-                      }}>
-                      <motion.div className="magnetic-icon"
-                        animate={cardAnimations[i].animate}
-                        transition={cardAnimations[i].transition}>
-                        <d.Icon className="h-9 w-9" style={{ color: d.color, filter: `drop-shadow(0 2px 6px ${d.color}25)` }} strokeWidth={1.5} />
-                      </motion.div>
-                    </motion.div>
-                    <h3 className="font-heading text-[15px] font-normal metallic-text tracking-[0.04em] mb-1.5">{d.title}</h3>
-                    <p className="text-[12px] text-muted-foreground font-light">{d.desc}</p>
-                    {/* Benefit highlight */}
-                    <p className="mt-3 text-[10px] font-medium text-secondary/50 tracking-[0.08em]">{d.benefit}</p>
-                    <p className="mt-3 text-[9px] text-silver/30 tracking-[0.15em] uppercase"><span className="hidden sm:inline">Hover</span><span className="sm:hidden">Tap</span> to compare</p>
-                  </div>
-                  {/* Back face */}
-                  <div className="absolute inset-0 rounded-2xl border border-silver/10 p-6 shadow-[0_2px_20px_rgba(11,20,38,0.04)] text-center flex flex-col items-center justify-center"
-                    style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)", background: `linear-gradient(135deg, ${d.color}08, ${d.color}05)` }}>
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full mb-4" style={{ background: `${d.color}15`, border: `1.5px solid ${d.color}20` }}>
-                      <CheckCircle className="h-7 w-7" style={{ color: d.color }} strokeWidth={1.5} />
-                    </div>
-                    <h3 className="font-heading text-[14px] font-semibold tracking-[0.04em] mb-3" style={{ color: d.color }}>TravelSense</h3>
-                    <p className="text-[12px] text-foreground/60 font-medium mb-4">{d.desc}</p>
-                    <div className="w-full h-px bg-silver/10 mb-3" />
-                    <p className="text-[10px] text-secondary/40 line-through">{d.vs}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   6. COMING SOON — enhanced with brand styling
-   ═══════════════════════════════════════════════════════════════ */
-
-function ComingSoonSection() {
-  return (
-    <section className="py-24 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="text-center mb-14" data-reveal>
-          <span className="brand-badge brand-badge-red mb-5">
-            <Sparkles className="h-3 w-3" /> Coming Soon
-          </span>
-          <h2 className="hx font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.04] metallic-text heading-accent">The future of <em className="italic font-normal text-secondary">travel.</em></h2>
-          <p className="mt-4 text-muted-foreground text-[15px] leading-relaxed">Two game-changing features that will transform how you experience travel.</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[
-            {
-              icon: Glasses, title: "AR/VR Destination Preview",
-              desc: "Walk through hotels, explore landmarks, preview activities — all before you book. See your destination like you're already there.",
-              features: ["360° hotel walkthroughs", "Virtual landmark tours", "Activity previews"],
-              gradient: "from-primary-dark via-primary to-primary-light",
-            },
-            {
-              icon: ShoppingBag, title: "Travel Marketplace",
-              desc: "Flights, hotels, gear, local experiences — everything for your trip in one place. One search. One checkout. Done.",
-              features: ["Flights & accommodation", "Travel gear & essentials", "Local experiences & tours"],
-              gradient: "from-primary-light via-primary to-primary-dark",
-            },
-          ].map((f, i) => (
-            <div key={f.title} data-reveal-scale style={{ transitionDelay: `${i * 0.12}s` }}>
-              <TiltCard strength={5}>
-                <div className="group overflow-hidden rounded-2xl bg-white shadow-[0_2px_20px_rgba(11,20,38,0.04)] transition-all duration-500 hover:shadow-[0_12px_50px_rgba(11,20,38,0.1)] hover:-translate-y-1 relative">
-                  {/* Holographic animated border */}
-                  <div className="absolute inset-0 rounded-2xl p-[1.5px] overflow-hidden">
-                    <motion.div className="absolute inset-[-200%] rounded-2xl"
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                      style={{ background: "conic-gradient(from 0deg, transparent 0%, #C4324A20 25%, #B0B8C430 50%, #C4324A20 75%, transparent 100%)" }} />
-                  </div>
-                  <div className="relative bg-white rounded-2xl overflow-hidden">
-                    {/* Dark header */}
-                    <div className={`relative h-44 bg-gradient-to-br ${f.gradient} flex items-center justify-center overflow-hidden`}>
-                      {i === 0 ? (
-                        <>
-                          <motion.div className="absolute top-4 right-6" animate={{ y: [0, -5, 0], rotate: [0, 10, 0] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
-                            <Glasses className="h-5 w-5 text-silver/10" />
-                          </motion.div>
-                          <motion.div className="absolute bottom-6 left-8" animate={{ y: [0, 5, 0], x: [0, 3, 0] }}
-                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
-                            <Compass className="h-4 w-4 text-silver/8" />
-                          </motion.div>
-                        </>
-                      ) : (
-                        <>
-                          <motion.div className="absolute top-5 left-8" animate={{ y: [0, -4, 0], rotate: [0, -8, 0] }}
-                            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}>
-                            <ShoppingBag className="h-5 w-5 text-silver/10" />
-                          </motion.div>
-                          <motion.div className="absolute bottom-5 right-6" animate={{ y: [0, 4, 0], x: [0, -3, 0] }}
-                            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}>
-                            <Ticket className="h-4 w-4 text-silver/8" />
-                          </motion.div>
-                        </>
-                      )}
-                      <div className="relative flex h-18 w-18 items-center justify-center rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-silver/[0.06] transition-all duration-500 group-hover:scale-110 group-hover:bg-white/[0.1]">
-                        <f.icon className="h-9 w-9 text-silver/60" strokeWidth={1} />
-                      </div>
-                      <div className="absolute top-4 left-4">
-                        <span className="inline-flex items-center gap-1 rounded-full px-3 py-1 text-[8px] font-bold text-silver/60 uppercase tracking-[0.15em] bg-white/[0.06] border border-silver/[0.04] backdrop-blur-xl">
-                          <Sparkles className="h-2.5 w-2.5" /> Phase 2
-                        </span>
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[1.5s]" />
-                      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(rgba(176,184,196,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(176,184,196,0.5) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-                    </div>
-                    {/* Content */}
-                    <div className="p-7">
-                      <h3 className="font-heading text-xl font-normal metallic-text tracking-[0.06em]">{f.title}</h3>
-                      <p className="mt-2 text-[13px] text-muted-foreground leading-[1.8] font-light tracking-wide">{f.desc}</p>
-                      <ul className="mt-5 space-y-2.5">
-                        {f.features.map((feat) => (
-                          <li key={feat} className="flex items-center gap-2.5 text-sm text-foreground/50">
-                            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-secondary/[0.06]">
-                              <ArrowRight className="h-3 w-3 text-secondary/60" />
-                            </div>
-                            {feat}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </TiltCard>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 /* ═══════════════════════════════════════════════════════════════
    7. TESTIMONIALS — enhanced with better visual hierarchy
    ═══════════════════════════════════════════════════════════════ */
 
-const testimonials = [
-  { name: "Priya Sharma", location: "Mumbai", review: "TravelSense made our Kerala trip magical. Every detail felt handpicked — like traveling with a friend who just knows.", initials: "PS", trip: "Kerala, Dec 2025" },
-  { name: "Rahul Deshmukh", location: "Pune", review: "Ladakh was flawless. When I needed help at 11pm, someone actually answered. That never happens anywhere.", initials: "RD", trip: "Ladakh, Oct 2025" },
-  { name: "Ananya Kulkarni", location: "Bangalore", review: "Bali exceeded everything. Having a real human available 24/7 while abroad felt like a genuine lifeline.", initials: "AK", trip: "Bali, Nov 2025" },
-  { name: "Vikram Mehta", location: "Delhi", review: "Organized a trip for 40 students. Heritage walks were beautifully curated. Parents actually called to thank us.", initials: "VM", trip: "Rajasthan, Jan 2026" },
+const testimonials: { name: string; location: string; review: string; initial: string; trip: string; color: string }[] = [
+  { name: "Priya Sharma", location: "Mumbai", review: "TravelSense made our Kerala trip magical. Every detail felt handpicked — like traveling with a friend who just knows.", initial: "P", trip: "Kerala · 6 days", color: "#C4324A" },
+  { name: "Rahul Deshmukh", location: "Pune", review: "Ladakh was flawless. When I needed help at 11pm, someone actually answered. That never happens anywhere.", initial: "R", trip: "Ladakh · 9 days", color: "#4A9E7E" },
+  { name: "Ananya Kulkarni", location: "Bangalore", review: "Bali exceeded everything. Having a real human available 24/7 while abroad felt like a genuine lifeline.", initial: "A", trip: "Bali · 8 days", color: "#A8574E" },
 ]
 
 function TestimonialsSection() {
-  const testRef = useRef<HTMLElement>(null)
-  const testInView = useInView(testRef, { once: true, margin: "-80px" })
-
   return (
-    <section ref={testRef} className="py-24 bg-brand-gradient-light">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="bg-brand-mesh py-24 sm:py-28">
+      <div className="mx-auto max-w-6xl px-6">
+        {/* SectionHeader — eyebrow + Fraunces display headline (italic-cherry word) */}
         <div className="text-center mb-14" data-reveal>
-          <p className="text-[10px] font-body font-normal font-semibold tracking-[0.28em] uppercase text-secondary/70">Real Stories</p>
-          <h2 className="mt-3 font-heading text-2xl sm:text-3xl md:text-4xl font-medium tracking-[-0.02em] leading-[1.06] metallic-text heading-accent">
-            Verified by Travelers
+          <p className="eyebrow justify-center text-secondary"><span className="dot" /> Loved by travellers</p>
+          <h2 className="h-display mt-4 text-3xl sm:text-4xl md:text-5xl">
+            Real trips, real <em>stories.</em>
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground max-w-md mx-auto">
-            Don&apos;t take our word for it. Talk to them directly via WhatsApp.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {testimonials.map((t, i) => (
-            <div key={t.name} data-reveal-scale style={{ transitionDelay: `${i * 0.08}s` }}>
-              <TiltCard strength={5}>
-                <motion.div className="flex flex-col h-full rounded-2xl glass-card p-6 relative"
-                  initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30, rotateY: 10 }}
-                  animate={testInView ? { opacity: 1, x: 0, rotateY: 0 } : {}}
-                  transition={{ delay: 0.2 + i * 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
-                  {/* Quote mark */}
-                  <motion.span className="absolute top-3 right-4 text-4xl font-serif text-secondary/[0.08] leading-none select-none"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={testInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ delay: 0.5 + i * 0.15, duration: 0.5 }}>
-                    &ldquo;
-                  </motion.span>
-                  {/* Stars */}
-                  <div className="flex gap-0.5 mb-4">
-                    {Array.from({ length: 5 }).map((_, j) => (
-                      <motion.div key={j}
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={testInView ? { opacity: 1, scale: 1 } : {}}
-                        transition={{ delay: 0.4 + i * 0.15 + j * 0.08, duration: 0.3, type: "spring", stiffness: 300 }}>
-                        <Star className="h-3.5 w-3.5 fill-secondary text-secondary" />
-                      </motion.div>
-                    ))}
-                  </div>
-                  {/* Quote */}
-                  <p className="flex-1 text-[13px] leading-[1.8] text-muted-foreground font-light tracking-wide">&ldquo;{t.review}&rdquo;</p>
-                  {/* Trip tag */}
-                  <span className="inline-flex self-start items-center rounded-full bg-primary/[0.04] border border-primary/[0.06] px-3 py-1 text-[10px] font-medium text-primary/60 mt-4">{t.trip}</span>
-                  {/* Author */}
-                  <div className="mt-4 flex items-center gap-2.5 border-t border-silver/10 pt-4">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary-light text-[10px] font-bold text-white">{t.initials}</div>
-                    <div>
-                      <div className="flex items-center gap-1">
-                        <p className="text-[12px] font-semibold text-foreground">{t.name}</p>
-                        <BadgeCheck className="h-3.5 w-3.5 text-green-500" />
-                      </div>
-                      <p className="text-[10px] text-silver-dark">{t.location}</p>
-                    </div>
-                  </div>
-                  {/* Verify link */}
-                  <a
-                    href="https://wa.me/918087453658?text=I%20want%20to%20verify%20a%20testimonial"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1 text-[10px] text-silver/30 hover:text-green-600 transition-colors"
+            <motion.div
+              key={t.name}
+              initial={{ opacity: 0, y: 30, scale: 0.96 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div
+                className="group flex h-full flex-col rounded-[20px] bg-white px-7 py-[30px] shadow-[0_2px_20px_rgba(11,20,38,0.04)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_16px_50px_rgba(11,20,38,0.1)]"
+                style={{ border: "1px solid rgba(176,184,196,0.18)" }}
+              >
+                {/* quote-mark icon (cherry, faint) */}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="rgba(196,50,74,0.10)" aria-hidden>
+                  <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-1.5 3-3 3zM15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-1.5 3-3 3z" />
+                </svg>
+                {/* 5 cherry stars */}
+                <div className="mt-1 flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, s) => (
+                    <Star key={s} className="h-3.5 w-3.5 fill-secondary text-secondary" />
+                  ))}
+                </div>
+                {/* quote — Fraunces (opsz 40) */}
+                <p
+                  className="mt-4 flex-1 font-heading text-[14.5px] font-normal leading-[1.75] text-foreground"
+                  style={{ fontVariationSettings: "'opsz' 40" }}
+                >
+                  &ldquo;{t.review}&rdquo;
+                </p>
+                {/* author */}
+                <div className="mt-6 flex items-center gap-3 border-t border-silver/[0.18] pt-5">
+                  <div
+                    className="flex h-[42px] w-[42px] items-center justify-center rounded-full font-heading text-[17px] font-medium text-white"
+                    style={{ background: `linear-gradient(135deg, ${t.color}, ${t.color}aa)` }}
                   >
-                    <MessageCircle className="h-3 w-3" /> Verify via WhatsApp
-                  </a>
-                </motion.div>
-              </TiltCard>
-            </div>
+                    {t.initial}
+                  </div>
+                  <div>
+                    <p className="text-[13.5px] font-semibold text-primary">{t.name}</p>
+                    <p className="mt-0.5 text-[11.5px] text-muted-foreground">{t.trip}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -1955,131 +1917,74 @@ function TestimonialsSection() {
    ═══════════════════════════════════════════════════════════════ */
 
 function CTASection() {
-  const ctaRef = useRef<HTMLElement>(null)
-  const ctaInView = useInView(ctaRef, { once: true, margin: "-100px" })
   const leadModal = useLeadModal()
 
   return (
-    <section ref={ctaRef} className="relative py-28 sm:py-36 overflow-hidden noise-overlay">
-      <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(160deg, #030810 0%, #0A1425 35%, #152240 65%, #0A1425 100%)", backgroundSize: "400% 400%", animation: "gradientShift 25s ease infinite" }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-secondary/[0.05] blur-[200px] animate-[orbFloat1_20s_ease-in-out_infinite]" />
-      <div className="absolute top-[20%] left-[10%] h-[300px] w-[300px] rounded-full bg-silver/[0.02] blur-[150px]" />
-      <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: "linear-gradient(rgba(176,184,196,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(176,184,196,0.3) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
-
-      {/* Animated world map dots — scroll-linked reveal, much more visible */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <svg viewBox="0 0 800 400" className="w-full max-w-5xl opacity-[0.15]">
-          {/* North America — fades in with scroll */}
-          {[[150,100],[160,110],[140,120],[170,105],[155,130],[145,115],[165,125],[135,110],[148,95],[162,135]].map(([x,y],i) => (
-            <motion.circle key={`na-${i}`} cx={x} cy={y} r="4" fill="#B0B8C4"
-              initial={{ opacity: 0 }}
-              animate={ctaInView ? { opacity: [0.3, 0.8, 0.3] } : { opacity: 0 }}
-              transition={{ duration: 3, delay: 0.2 + i * 0.1, repeat: Infinity }} />
-          ))}
-          {/* Europe */}
-          {[[380,90],[390,100],[370,95],[400,85],[385,110],[395,95],[405,100],[375,105],[388,80],[402,92]].map(([x,y],i) => (
-            <motion.circle key={`eu-${i}`} cx={x} cy={y} r="4" fill="#B0B8C4"
-              initial={{ opacity: 0 }}
-              animate={ctaInView ? { opacity: [0.3, 0.8, 0.3] } : { opacity: 0 }}
-              transition={{ duration: 3, delay: 0.8 + i * 0.1, repeat: Infinity }} />
-          ))}
-          {/* Asia/India — cherry red, hero continent */}
-          {[[500,130],[520,140],[510,120],[530,135],[515,150],[525,125],[540,145],[505,140],[498,118],[535,128]].map(([x,y],i) => (
-            <motion.circle key={`as-${i}`} cx={x} cy={y} r="4" fill="#C4324A"
-              initial={{ opacity: 0 }}
-              animate={ctaInView ? { opacity: [0.5, 1, 0.5] } : { opacity: 0 }}
-              transition={{ duration: 2.5, delay: 1.4 + i * 0.08, repeat: Infinity }} />
-          ))}
-          {/* "You are here" pulsing beacon on India */}
-          <motion.circle cx="515" cy="138" r="6" fill="#C4324A"
-            initial={{ opacity: 0 }}
-            animate={ctaInView ? { opacity: [0.6, 1, 0.6] } : { opacity: 0 }}
-            transition={{ duration: 2, delay: 1.8, repeat: Infinity }} />
-          <motion.circle cx="515" cy="138" r="12" fill="none" stroke="#C4324A" strokeWidth="1"
-            initial={{ opacity: 0 }}
-            animate={ctaInView ? { opacity: [0.4, 0, 0.4], r: [8, 18, 8] } : { opacity: 0 }}
-            transition={{ duration: 2, delay: 1.8, repeat: Infinity }} />
-          {/* Africa */}
-          {[[400,180],[410,200],[390,190],[405,210],[395,175],[415,195],[398,205]].map(([x,y],i) => (
-            <motion.circle key={`af-${i}`} cx={x} cy={y} r="3.5" fill="#1B2D4E"
-              initial={{ opacity: 0 }}
-              animate={ctaInView ? { opacity: [0.3, 0.7, 0.3] } : { opacity: 0 }}
-              transition={{ duration: 4, delay: 2 + i * 0.15, repeat: Infinity }} />
-          ))}
-          {/* Australia */}
-          {[[600,240],[610,250],[620,245],[605,255],[615,238]].map(([x,y],i) => (
-            <motion.circle key={`au-${i}`} cx={x} cy={y} r="3.5" fill="#B0B8C4"
-              initial={{ opacity: 0 }}
-              animate={ctaInView ? { opacity: [0.3, 0.7, 0.3] } : { opacity: 0 }}
-              transition={{ duration: 3.5, delay: 2.5 + i * 0.2, repeat: Infinity }} />
-          ))}
-          {/* Connecting flight lines — more visible */}
-          <motion.line x1="160" y1="110" x2="385" y2="100" stroke="#C4324A" strokeWidth="1" strokeDasharray="3 6"
-            initial={{ opacity: 0 }}
-            animate={ctaInView ? { opacity: [0, 0.5, 0], strokeDashoffset: [0, -20] } : { opacity: 0 }}
-            transition={{ duration: 4, delay: 3, repeat: Infinity }} />
-          <motion.line x1="395" y1="100" x2="520" y2="135" stroke="#B0B8C4" strokeWidth="1" strokeDasharray="3 6"
-            initial={{ opacity: 0 }}
-            animate={ctaInView ? { opacity: [0, 0.5, 0], strokeDashoffset: [0, -20] } : { opacity: 0 }}
-            transition={{ duration: 4, delay: 3.5, repeat: Infinity }} />
-          <motion.line x1="520" y1="140" x2="610" y2="248" stroke="#C4324A" strokeWidth="1" strokeDasharray="3 6"
-            initial={{ opacity: 0 }}
-            animate={ctaInView ? { opacity: [0, 0.5, 0], strokeDashoffset: [0, -20] } : { opacity: 0 }}
-            transition={{ duration: 4, delay: 4, repeat: Infinity }} />
-        </svg>
+    <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0A1425, #152240)" }}>
+      {/* cinematic backdrop image (ken-burns) + navy gradient veil */}
+      <div className="absolute inset-0 opacity-40">
+        <Image
+          src="/images/destinations/santorini.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+          style={{ animation: "kenburns 22s ease-in-out infinite alternate" }}
+        />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(10,20,37,0.92), rgba(21,34,64,0.82))" }} />
       </div>
 
-      <div className="relative max-w-2xl mx-auto px-6 text-center">
-        <div data-reveal>
-          <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-medium tracking-[-0.02em] leading-[1.06] leading-[1.15]">
-            <span className="metallic-text-dark">Ready to Plan Your</span>
-            <br />
-            <span className="metallic-red relative inline-block">Dream Trip
-              <motion.span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.08] to-transparent pointer-events-none"
-                animate={{ x: ["-100%", "200%"] }}
-                transition={{ duration: 3, repeat: Infinity, repeatDelay: 2, ease: "easeInOut" }} />
-            </span><span className="metallic-text-dark"> ?</span>
-          </h2>
-        </div>
-        <div data-reveal style={{ transitionDelay: "0.1s" }}>
-          <p className="mt-5 text-[14px] text-silver/30 max-w-lg mx-auto font-light tracking-wide leading-[1.8]">
-            No bots. No waiting. Just honest guidance from a real human who&apos;ll make it happen.
-          </p>
-        </div>
-        <div data-reveal style={{ transitionDelay: "0.12s" }}>
-          <p className="mt-3 text-[9px] tracking-[0.3em] uppercase text-silver/20 font-semibold">Seen · Planned · Sorted</p>
-        </div>
-        <div data-reveal className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4" style={{ transitionDelay: "0.15s" }}>
-          <button onClick={() => leadModal.open("cta-book-consultation")} className="metallic-cta group inline-flex items-center gap-2 px-9 py-4 text-[14px] font-body font-semibold text-white tracking-[0.01em] cursor-pointer">
+      <div className="relative z-[2] mx-auto max-w-[760px] px-8 py-28 sm:py-[120px] text-center">
+        <motion.p
+          className="font-body text-[10.5px] font-semibold uppercase tracking-[0.28em]"
+          style={{ color: "var(--secondary-glow)" }}
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
+          Your next trip starts here
+        </motion.p>
+        <motion.h2
+          className="mt-4 font-heading font-medium leading-[1.05] tracking-[-0.025em] text-white"
+          style={{ fontSize: "clamp(2.4rem, 5vw, 3.8rem)", fontVariationSettings: "'opsz' 144" }}
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ delay: 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
+          Let&apos;s plan something
+          <br />
+          <em className="font-normal italic" style={{ color: "var(--secondary-glow)" }}>unforgettable.</em>
+        </motion.h2>
+        <motion.p
+          className="mx-auto mt-[22px] max-w-[460px] text-[15.5px] leading-[1.7] text-silver/70"
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ delay: 0.16, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
+          One conversation is all it takes. Tell us your dream and we&apos;ll handle the rest — start to finish.
+        </motion.p>
+        <motion.div
+          className="mt-9 flex flex-wrap justify-center gap-3.5"
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ delay: 0.24, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <button onClick={() => leadModal.open("cta-talk-to-expert")} className="metallic-cta group inline-flex items-center gap-2 px-[30px] py-[15px] text-[14px] font-body font-semibold text-white tracking-[0.01em] cursor-pointer">
             <span className="relative z-10 flex items-center gap-2">
-              <motion.span animate={{ rotate: [0, -10, 10, -5, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 4 }}>
+              <motion.span animate={{ rotate: [0, -10, 10, -5, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 4 }}>
                 <Phone className="h-4 w-4" />
               </motion.span>
-              Book free consultation
+              Talk to an expert
             </span>
           </button>
-          <Link href="/destinations" className="inline-flex items-center gap-2 rounded-full border border-silver/[0.1] bg-white/[0.03] px-8 py-4 text-[14px] font-body font-medium text-silver/40 tracking-[0.01em] backdrop-blur-xl hover:bg-white/[0.08] hover:text-silver/60 hover:border-silver/20 transition-all duration-500 cursor-pointer">
+          <Link href="/destinations" className="btn btn-ghost text-[14px]">
             Browse destinations
           </Link>
-        </div>
-
-        {/* Floating testimonial snippets */}
-        <div className="hidden md:block">
-          {[
-            { text: "Best decision ever!", author: "Priya S.", x: "-15%", y: "20%", delay: 0, dur: 8 },
-            { text: "11pm and they picked up!", author: "Rahul D.", x: "85%", y: "30%", delay: 3, dur: 9 },
-            { text: "Felt like a lifeline abroad", author: "Ananya K.", x: "-10%", y: "70%", delay: 6, dur: 7 },
-          ].map((snip, i) => (
-            <motion.div key={i} className="absolute rounded-lg glass-card-dark px-3 py-2 pointer-events-none"
-              style={{ left: snip.x, top: snip.y }}
-              animate={{ opacity: [0, 0.6, 0.6, 0], y: [10, 0, 0, -10] }}
-              transition={{ duration: snip.dur, delay: snip.delay, repeat: Infinity, ease: "easeInOut" }}>
-              <p className="text-[10px] text-silver/30 italic">&ldquo;{snip.text}&rdquo;</p>
-              <p className="text-[8px] text-silver/15 mt-0.5">— {snip.author}</p>
-            </motion.div>
-          ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
@@ -2126,16 +2031,25 @@ function NewsletterSection() {
 
   return (
     <section className="py-14 bg-white border-t border-silver/10">
-      <div className="max-w-md mx-auto px-6 text-center" data-reveal>
-        <RevealText text="Travel Inspiration, Delivered" className="font-heading text-xl font-normal metallic-text tracking-[0.06em]" />
+      <div className="max-w-[440px] mx-auto px-6 text-center" data-reveal>
+        <motion.h3
+          className="font-heading text-[22px] font-medium tracking-[-0.01em] text-primary"
+          style={{ fontVariationSettings: "'opsz' 72" }}
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          Travel inspiration, delivered
+        </motion.h3>
         <motion.p
-          className="mt-1.5 text-sm text-silver-dark/50"
+          className="mt-2 text-[13.5px] text-muted-foreground"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
         >
-          Curated ideas, deals, and tips — straight to your inbox.
+          Curated ideas, deals and tips — straight to your inbox.
         </motion.p>
         <motion.form
           onSubmit={handleSubmit}
@@ -2207,86 +2121,23 @@ function NewsletterSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   WAVE DIVIDERS — brand styled
+   WAVE DIVIDER — faithful port of the prototype `Wave` (home-sections-c.jsx)
+   Two stacked flowing paths pour the `from` colour down into the `to` section.
    ═══════════════════════════════════════════════════════════════ */
 
-function WaveWhiteToGray() {
+function Wave({ from, to }: { from: string; to: string }) {
   return (
-    <div className="wave-divider -mb-3" style={{ background: "#F4F6F9" }}>
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-        <rect x="0" y="0" width="1440" height="8" fill="#FFFFFF" />
-        <path d="M0,0 L0,30 Q360,5 720,35 T1440,20 L1440,0 Z" fill="#FFFFFF" />
-      </svg>
-    </div>
-  )
-}
-
-function WaveGrayToWhite() {
-  return (
-    <div className="wave-divider -mb-3" style={{ background: "#FFFFFF" }}>
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-        <rect x="0" y="0" width="1440" height="8" fill="#F4F6F9" />
-        <path d="M0,0 L0,30 Q360,5 720,35 T1440,20 L1440,0 Z" fill="#F4F6F9" />
-      </svg>
-    </div>
-  )
-}
-
-function WaveWhiteToDark() {
-  return (
-    <div className="wave-divider -mb-3" style={{ background: "#0A1425" }}>
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <rect x="0" y="0" width="1440" height="10" fill="#FFFFFF" />
-        <path d="M0,0 L0,35 Q360,5 720,40 T1440,25 L1440,0 Z" fill="#FFFFFF" />
-        <path d="M0,0 L0,20 Q360,0 720,25 T1440,15 L1440,0 Z" fill="#FFFFFF" opacity="0.5" />
-      </svg>
-    </div>
-  )
-}
-
-function WaveDarkToWhite() {
-  return (
-    <div className="wave-divider -mb-3" style={{ background: "#FFFFFF" }}>
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <rect x="0" y="0" width="1440" height="10" fill="#0A1425" />
-        <path d="M0,0 L0,35 Q360,5 720,40 T1440,25 L1440,0 Z" fill="#0A1425" />
-        <path d="M0,0 L0,20 Q360,0 720,25 T1440,15 L1440,0 Z" fill="#0A1425" opacity="0.5" />
-      </svg>
-    </div>
-  )
-}
-
-function WaveGrayToDark() {
-  return (
-    <div className="wave-divider -mb-3" style={{ background: "#0A1425" }}>
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <rect x="0" y="0" width="1440" height="10" fill="#F4F6F9" />
-        <path d="M0,0 L0,30 Q360,5 720,35 T1440,20 L1440,0 Z" fill="#F4F6F9" />
-        <path d="M0,0 L0,15 Q360,0 720,20 T1440,10 L1440,0 Z" fill="#F4F6F9" opacity="0.5" />
-      </svg>
-    </div>
-  )
-}
-
-function WaveDarkToGray() {
-  return (
-    <div className="wave-divider -mb-3" style={{ background: "#F4F6F9" }}>
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <rect x="0" y="0" width="1440" height="10" fill="#0A1425" />
-        <path d="M0,0 L0,40 Q360,5 720,35 T1440,25 L1440,0 Z" fill="#0A1425" />
-        <path d="M0,0 L0,20 Q360,0 720,25 T1440,10 L1440,0 Z" fill="#0A1425" opacity="0.5" />
-      </svg>
-    </div>
-  )
-}
-
-function WaveToFooter() {
-  return (
-    <div className="wave-divider -mb-3" style={{ background: "#0A1425" }}>
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <rect x="0" y="0" width="1440" height="10" fill="#FFFFFF" />
-        <path d="M0,0 L0,35 Q360,5 720,30 T1440,25 L1440,0 Z" fill="#FFFFFF" />
-        <path d="M0,0 L0,20 Q360,0 720,20 T1440,15 L1440,0 Z" fill="#FFFFFF" opacity="0.5" />
+    <div className="wave-divider -mb-px" style={{ background: to, lineHeight: 0 }}>
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+        <path
+          d="M0,0 L1440,0 L1440,44 C1170,82 980,8 720,40 C500,67 250,18 0,46 Z"
+          fill={from}
+          opacity="0.45"
+        />
+        <path
+          d="M0,0 L1440,0 L1440,34 C1140,70 860,12 600,38 C380,60 180,30 0,40 Z"
+          fill={from}
+        />
       </svg>
     </div>
   )
@@ -2300,25 +2151,23 @@ export default function LandingPage() {
     <>
       <ScrollProgress />
       <HeroSection />
-      <TrustMarquee />
-      <WaveWhiteToDark />
+      <TrustBarSection />
+      <Wave from="#FFFFFF" to="#0A1425" />
       <ProblemSection />
-      <WaveDarkToWhite />
+      <Wave from="#0A1425" to="#FFFFFF" />
       <HowItWorksSection />
-      <WaveWhiteToGray />
+      <Wave from="#F4F6F9" to="#FFFFFF" />
+      <CategoriesSection />
       <DestinationsSection />
-      <WaveGrayToDark />
+      <Wave from="#F4F6F9" to="#030810" />
       <USPSection />
-      <WaveDarkToWhite />
-      <WhatSetsUsApartSection />
-      <ComingSoonSection />
-      <WaveWhiteToGray />
+      <Wave from="#0A1425" to="#FFFFFF" />
       <TestimonialsSection />
-      <WaveGrayToDark />
+      <Wave from="#F4F6F9" to="#0A1425" />
       <CTASection />
-      <WaveDarkToWhite />
+      <Wave from="#0A1425" to="#FFFFFF" />
       <NewsletterSection />
-      <WaveToFooter />
+      <Wave from="#FFFFFF" to="#0A1425" />
     </>
   )
 }

@@ -1,9 +1,9 @@
 # TravelSense — Progress Tracker
 
-**Last Updated:** May 26, 2026
-**Status:** Phase 1 ~99% Complete
+**Last Updated:** June 4, 2026
+**Status:** Phase 1 live · **full-site visual redesign in progress** (foundation + nav + hero done)
 **Live URL:** https://travelsense.co.in
-**Scale now:** 117 packages · 38 destinations · 25 visa destinations · 8 blog articles
+**Scale now:** ~131 packages · 47 destinations (incl. 11 international + 8 educational) · 25 visa destinations · 8 blog articles
 
 ---
 
@@ -16,6 +16,7 @@
 | M3: Website Development | ✅ Complete | 117 packages, 38 destinations, 8 APIs, 6 DB tables, deployed |
 | M4: Content & SEO | ✅ Complete | Rich content, 40+ custom images, SEO, 165-URL sitemap |
 | M5: Launch & QA | 🟡 ~99% Complete | 6 rounds of client feedback processed; awaiting credentials + assets |
+| Full-Site Redesign | 🟡 In progress | Claude design bundle ported page-by-page. **Done & live:** liquid-glass design system, blue-glass collapsing nav + Menu dropdown, redesigned hero ("Wake up in &lt;city&gt;", display-Fraunces fix, +40% visor cascade, working search), Problem chaos-canvas. **Next:** homepage sections → Destinations → Packages → Package Detail → Visa → Vehicles. Keeps globe/copy/data/routes intact. |
 
 ---
 

@@ -141,7 +141,7 @@ const milestones = [
     year: "2018",
     title: "New Categories Launch",
     description:
-      "Introduced educational tours for schools and colleges, broadening beyond leisure into specialised group travel. Distinct travel categories now under one roof.",
+      "Expanded into specialised group travel for families and corporates, broadening beyond pure leisure. Distinct travel experiences now under one roof.",
     icon: Star,
   },
   {

@@ -51,7 +51,7 @@ const vehicleTypes = [
     name: "Mini Bus",
     capacity: "20 - 30 passengers",
     description:
-      "Perfect for large groups, corporate outings, and educational tours. Comfortable seating with entertainment systems.",
+      "Perfect for large groups, corporate outings, and group tours. Comfortable seating with entertainment systems.",
     highlight: false,
     image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=600&h=400&fit=crop",
   },

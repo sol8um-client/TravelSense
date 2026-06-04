@@ -69,7 +69,7 @@ export interface Package {
   seasonalAdvisories?: string[]
 }
 
-export const packages: Package[] = [
+const allPackages: Package[] = [
   {
     title: "Ladakh Complete Circuit",
     slug: "ladakh-complete-circuit",
@@ -14828,144 +14828,6 @@ export const packages: Package[] = [
     ],
   },
   {
-    title: "Japan Discovery — Tokyo, Mount Fuji, Kyoto & Osaka",
-    slug: "japan-discovery-8d",
-    destinationName: "Japan",
-    destinationSlug: "japan",
-    category: "leisure",
-    description:
-      "Eight days across Japan's golden route — neon Tokyo, Mount Fuji and Hakone, the temples and torii of Kyoto, the deer of Nara and the street food of Osaka, linked by the shinkansen bullet train.",
-    heroImage: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&h=600&fit=crop",
-    ],
-    duration: { days: 8, nights: 7 },
-    price: 205000,
-    discountedPrice: 185000,
-    difficulty: "Easy",
-    groupSize: { min: 2, max: 16 },
-    rating: 4.9,
-    reviewCount: 71,
-    inclusions: [
-      "7 nights in 3-4 star hotels with daily breakfast",
-      "Shinkansen bullet train Tokyo-Kyoto",
-      "Tokyo city tour + Mount Fuji/Hakone day trip",
-      "Kyoto & Nara guided sightseeing",
-      "Osaka city tour",
-      "All transfers and an English-speaking guide on tour days",
-    ],
-    exclusions: [
-      "International airfare unless specified",
-      "Visa fees and travel insurance",
-      "Lunches and dinners except where mentioned",
-      "Optional activities and personal expenses",
-      "Tips for guides and drivers",
-      "Anything not listed under inclusions",
-    ],
-    highlights: [
-      "Tokyo Shibuya & Asakusa",
-      "Mount Fuji & Hakone",
-      "Fushimi Inari & Kinkaku-ji, Kyoto",
-      "Nara deer park",
-      "Osaka Dotonbori",
-      "Shinkansen bullet train",
-    ],
-    featured: true,
-    itinerary: [
-      {
-        day: 1,
-        title: "Arrive Tokyo",
-        description:
-          "Arrive at Narita/Haneda and transfer to your hotel. Evening at the Shibuya scramble crossing and Shinjuku.",
-        activities: ["Airport pickup", "Shibuya crossing", "Shinjuku"],
-        meals: "Dinner",
-        accommodation: "Hotel in Tokyo",
-        highlight: "Tokyo's neon nightscape",
-        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
-      },
-      {
-        day: 2,
-        title: "Tokyo City Tour",
-        description:
-          "Asakusa Senso-ji temple, the Imperial Palace gardens, Meiji Shrine and the Tokyo Skytree.",
-        activities: ["Senso-ji temple", "Meiji Shrine", "Tokyo Skytree"],
-        meals: "Breakfast",
-        accommodation: "Hotel in Tokyo",
-        highlight: "Senso-ji & old Asakusa",
-        image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1600&h=900&fit=crop",
-      },
-      {
-        day: 3,
-        title: "Mount Fuji & Hakone",
-        description:
-          "Day trip to the Mount Fuji 5th Station (weather permitting), a Lake Ashi cruise and the Hakone ropeway.",
-        activities: ["Mount Fuji 5th Station", "Lake Ashi cruise", "Hakone ropeway"],
-        meals: "Breakfast",
-        accommodation: "Hotel in Tokyo",
-        highlight: "Mount Fuji up close",
-        image: "https://images.unsplash.com/photo-1578637387939-43c525550085?w=1600&h=900&fit=crop",
-      },
-      {
-        day: 4,
-        title: "Tokyo to Kyoto by Bullet Train",
-        description:
-          "Ride the shinkansen to Kyoto. Afternoon at the golden Kinkaku-ji and Nijo Castle.",
-        activities: ["Shinkansen to Kyoto", "Kinkaku-ji", "Nijo Castle"],
-        meals: "Breakfast",
-        accommodation: "Hotel in Kyoto",
-        highlight: "300 km/h bullet train",
-        image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&h=900&fit=crop",
-      },
-      {
-        day: 5,
-        title: "Kyoto — Fushimi Inari & Arashiyama",
-        description:
-          "The thousand torii of Fushimi Inari, the Arashiyama bamboo grove and the geisha lanes of Gion.",
-        activities: ["Fushimi Inari torii", "Arashiyama bamboo grove", "Gion district"],
-        meals: "Breakfast",
-        accommodation: "Hotel in Kyoto",
-        highlight: "The vermilion torii tunnel",
-        image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&h=900&fit=crop",
-      },
-      {
-        day: 6,
-        title: "Nara Day Trip",
-        description:
-          "Excursion to Nara for the bowing deer of Nara Park and the giant bronze Buddha of Todai-ji.",
-        activities: ["Nara Park deer", "Todai-ji Great Buddha", "Kasuga Shrine"],
-        meals: "Breakfast",
-        accommodation: "Hotel in Kyoto",
-        highlight: "Bowing deer & Great Buddha",
-        image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1600&h=900&fit=crop",
-      },
-      {
-        day: 7,
-        title: "Kyoto to Osaka",
-        description:
-          "Transfer to Osaka — Osaka Castle, the Umeda Sky Building and the street food of Dotonbori.",
-        activities: ["Osaka Castle", "Umeda Sky Building", "Dotonbori street food"],
-        meals: "Breakfast",
-        accommodation: "Hotel in Osaka",
-        highlight: "Dotonbori at night",
-        image: "https://images.unsplash.com/photo-1590559899731-a382839e5549?w=1600&h=900&fit=crop",
-      },
-      {
-        day: 8,
-        title: "Departure",
-        description:
-          "Transfer to Kansai International Airport for your departure flight.",
-        activities: ["Airport transfer"],
-        meals: "Breakfast",
-        accommodation: "N/A — Departure",
-        highlight: "Japan's golden route complete",
-        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
-      },
-    ],
-  },
-  {
     title: "Jordan Highlights — Petra, Wadi Rum & the Dead Sea",
     slug: "jordan-highlights-6d",
     destinationName: "Jordan",
@@ -16960,4 +16822,482 @@ export const packages: Package[] = [
     ],
   },
 
+  {
+    title: "Japan Golden Route - Tokyo, Kyoto & Osaka",
+    slug: "japan-golden-route",
+    destinationName: "Japan",
+    destinationSlug: "japan",
+    category: "leisure",
+    description:
+      "Japan's classic first-timer route - neon Tokyo, imperial Kyoto and kitchen-of-the-nation Osaka - linked by the shinkansen bullet train, with Mount Fuji, a sumo practice and a Hiroshima day trip along the way.",
+    heroImage:
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
+    images: ["https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&h=900&fit=crop", "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&h=900&fit=crop", "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1600&h=900&fit=crop", "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1600&h=900&fit=crop"],
+    duration: { days: 10, nights: 9 },
+    price: 185000,
+    difficulty: "Easy",
+    groupSize: { min: 2, max: 14 },
+    rating: 4.9,
+    reviewCount: 16,
+    inclusions: ["Accommodation on twin-sharing (3-4 star / ryokan where noted)", "Daily breakfast", "Shinkansen bullet-train & intercity rail transfers as per itinerary", "Guided tours and experiences listed in the itinerary", "Airport transfers on arrival and departure", "English-speaking local assistance"],
+    exclusions: ["International airfare to/from Japan", "Japan visa fees and documentation charges", "Lunches and dinners except where specified", "Personal expenses, optional activities and tips", "Travel insurance (strongly recommended)", "Anything not mentioned under inclusions"],
+    highlights: ["Tokyo - Shinjuku & Akihabara", "Mount Fuji & Lake Kawaguchi", "Sumo practice & chanko", "Kyoto Fushimi Inari & Kinkaku-ji", "Arashiyama bamboo grove", "Hiroshima & Miyajima"],
+    featured: true,
+    experienceStory:
+      "Japan rewards the curious traveller like nowhere else - bullet trains that glide at 300 km/h, temples older than memory, and food that turns every meal into a small ceremony. This Golden Route threads the three great cities - neon Tokyo, imperial Kyoto and kitchen-of-the-nation Osaka - with Mount Fuji, a sumo morning and Hiroshima along the way.",
+    transparencyNote:
+      "Pricing is indicative - per person on twin-sharing, land-only, pending final hotel selection and travel dates. Japan rates vary sharply by season (cherry-blossom and autumn peaks cost more). Share your dates and we'll confirm an exact quote. International airfare and Japan visa fees are additional.",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrive in Tokyo - Shinjuku Foodie Tour",
+        description:
+          "Land in Tokyo and transfer to your hotel. In the evening, dive into the city's food scene on a guided Shinjuku foodie tour through izakaya alleys and the neon of Kabukicho.",
+        activities: ["Airport transfer", "Shinjuku foodie tour", "Kabukicho neon walk"],
+        meals: "Dinner",
+        accommodation: "Hotel in Tokyo",
+        highlight: "Tokyo",
+        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 2,
+        title: "Tokyo City Tour - Temples & Akihabara",
+        description:
+          "A full city tour takes in Tokyo's landmark temples and historic sites, then the electric energy of the Akihabara district - anime, gaming and gadget heaven.",
+        activities: ["Senso-ji & historic sites", "Akihabara district", "City sightseeing"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Tokyo",
+        highlight: "Tokyo",
+        image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 3,
+        title: "Sumo in Ryogoku & TeamLab Planets",
+        description:
+          "Watch a morning sumo practice in Ryogoku followed by a wrestler-style chanko lunch, then a self-guided visit to the immersive TeamLab Planets digital-art museum.",
+        activities: ["Sumo practice (Ryogoku)", "Chanko lunch", "TeamLab Planets"],
+        meals: "Breakfast & lunch",
+        accommodation: "Hotel in Tokyo",
+        highlight: "Tokyo",
+        image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 4,
+        title: "Mount Fuji, Lake Kawaguchi & Whisky",
+        description:
+          "Day excursion to the wonders of Mount Fuji and Lake Kawaguchi for Japan's most iconic views, finishing with a Japanese whisky tasting.",
+        activities: ["Mount Fuji viewpoints", "Lake Kawaguchi", "Whisky tasting"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Tokyo",
+        highlight: "Tokyo",
+        image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 5,
+        title: "Bullet Train to Kyoto - Samurai & Tea",
+        description:
+          "Ride the shinkansen west to Kyoto. Explore the Samurai & Ninja Museum and slow down for a traditional kimono tea ceremony.",
+        activities: ["Shinkansen to Kyoto", "Samurai Ninja Museum", "Kimono tea ceremony"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Kyoto",
+        highlight: "Kyoto",
+        image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 6,
+        title: "Kyoto's Most Historic Sites",
+        description:
+          "A full day among Kyoto's greatest hits - golden Kinkaku-ji, the thousand torii of Fushimi Inari and the temples and geisha lanes of the old imperial capital.",
+        activities: ["Kinkaku-ji", "Fushimi Inari", "Gion district"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Kyoto",
+        highlight: "Kyoto",
+        image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 7,
+        title: "Arashiyama - Bamboo Grove & Monkey Park",
+        description:
+          "Explore Arashiyama: the towering bamboo grove, the Iwatayama Monkey Park and the gardens of Tenryu-ji Temple.",
+        activities: ["Arashiyama bamboo grove", "Monkey Park", "Tenryu-ji Temple"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Kyoto",
+        highlight: "Kyoto",
+        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 8,
+        title: "Train to Osaka - Castle & Dotonbori",
+        description:
+          "Transfer to Osaka and visit Osaka Castle, then the shopping of Shinsaibashi and the dazzling neon lights of Dotonbori by night.",
+        activities: ["Osaka Castle", "Shinsaibashi", "Dotonbori neon"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Osaka",
+        highlight: "Osaka",
+        image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 9,
+        title: "Day Trip to Hiroshima & Miyajima",
+        description:
+          "A day trip to Hiroshima for the moving Peace Memorial Park, then the floating torii of Itsukushima Shrine on Miyajima island.",
+        activities: ["Peace Memorial Park", "Itsukushima Shrine", "Miyajima island"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Osaka",
+        highlight: "Osaka",
+        image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 10,
+        title: "Depart Osaka",
+        description:
+          "After breakfast, transfer to the airport for your onward journey home.",
+        activities: ["Airport transfer", "Departure"],
+        meals: "Breakfast",
+        accommodation: "N/A - Departure",
+        image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1600&h=900&fit=crop",
+      },
+    ],
+  },
+  {
+    title: "Japan Grand Tour - Hiroshima, Okinawa & Hakone",
+    slug: "japan-grand-tour",
+    destinationName: "Japan",
+    destinationSlug: "japan",
+    category: "leisure",
+    description:
+      "A wider loop of Japan beyond the Golden Route - Kyoto and Nara, the moving memorials of Hiroshima and Miyajima, the subtropical beaches of Okinawa, a Hakone onsen and finally Tokyo.",
+    heroImage:
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
+    images: ["https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&h=900&fit=crop", "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&h=900&fit=crop", "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1600&h=900&fit=crop", "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1600&h=900&fit=crop"],
+    duration: { days: 12, nights: 11 },
+    price: 245000,
+    difficulty: "Easy",
+    groupSize: { min: 2, max: 14 },
+    rating: 4.8,
+    reviewCount: 9,
+    inclusions: ["Accommodation on twin-sharing (3-4 star / ryokan where noted)", "Daily breakfast", "Shinkansen bullet-train & intercity rail transfers as per itinerary", "Domestic flights where the route requires (Okinawa / Sapporo)", "Guided tours and experiences listed in the itinerary", "Airport transfers on arrival and departure", "English-speaking local assistance"],
+    exclusions: ["International airfare to/from Japan", "Japan visa fees and documentation charges", "Lunches and dinners except where specified", "Personal expenses, optional activities and tips", "Travel insurance (strongly recommended)", "Anything not mentioned under inclusions"],
+    highlights: ["Kyoto Fushimi Inari", "Nara deer & Great Buddha", "Hiroshima Peace Park", "Miyajima floating torii", "Okinawa beaches", "Hakone onsen & Fuji"],
+    featured: false,
+    transparencyNote:
+      "Pricing is indicative - per person on twin-sharing, land-only, pending final hotel selection and travel dates. Japan rates vary sharply by season (cherry-blossom and autumn peaks cost more). Share your dates and we'll confirm an exact quote. International airfare and Japan visa fees are additional.",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrive in Osaka",
+        description:
+          "Arrive in Osaka and transfer to your hotel; settle in to Japan's friendly kitchen city.",
+        activities: ["Airport transfer", "Check-in"],
+        meals: "Dinner",
+        accommodation: "Hotel in Osaka",
+        highlight: "Osaka",
+        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 2,
+        title: "Train to Kyoto",
+        description:
+          "Travel to Kyoto, the old imperial capital, and begin exploring its temples and traditional streets.",
+        activities: ["Transfer to Kyoto", "Old town orientation"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Kyoto",
+        highlight: "Kyoto",
+        image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 3,
+        title: "Fushimi Inari Shrine Hike",
+        description:
+          "Hike the hillside tunnel of thousands of vermilion torii gates at Fushimi Inari, one of Japan's most photographed sights.",
+        activities: ["Fushimi Inari hike", "Torii gates"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Kyoto",
+        highlight: "Kyoto",
+        image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 4,
+        title: "Day Trip to Nara & Uji",
+        description:
+          "Day trip to Nara for its bowing deer and giant bronze Buddha at Todai-ji, and to Uji, home of Japan's finest green tea.",
+        activities: ["Nara deer park", "Todai-ji Great Buddha", "Uji tea town"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Kyoto",
+        highlight: "Kyoto",
+        image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 5,
+        title: "Train to Hiroshima - Memorial Visits",
+        description:
+          "Travel to Hiroshima and visit the Peace Memorial Park and Museum - a powerful and moving experience.",
+        activities: ["Transfer to Hiroshima", "Peace Memorial Park & Museum"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Hiroshima",
+        highlight: "Hiroshima",
+        image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 6,
+        title: "Hiroshima / Miyajima Private Tour",
+        description:
+          "A private tour of Hiroshima and the sacred island of Miyajima with its iconic floating torii gate.",
+        activities: ["Miyajima island", "Itsukushima floating torii", "Private guide"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Hiroshima",
+        highlight: "Hiroshima",
+        image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 7,
+        title: "Fly to Okinawa - Beach Day",
+        description:
+          "Fly south to the subtropical islands of Okinawa for white-sand beaches and turquoise water.",
+        activities: ["Flight to Okinawa", "Beach time"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Okinawa",
+        highlight: "Okinawa",
+        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 8,
+        title: "Tokashiki Island Tour",
+        description:
+          "A self-guided day on Tokashiki Island - some of Okinawa's clearest water for snorkelling and swimming.",
+        activities: ["Tokashiki Island", "Snorkelling", "Kerama beaches"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Okinawa",
+        highlight: "Okinawa",
+        image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 9,
+        title: "Fly to Hakone - Onsen Experience",
+        description:
+          "Fly back to the mainland for Hakone, where a traditional onsen (hot spring) soak awaits amid Fuji views.",
+        activities: ["Flight + transfer to Hakone", "Onsen hot springs"],
+        meals: "Breakfast & dinner",
+        accommodation: "Ryokan / onsen hotel in Hakone",
+        highlight: "Hakone",
+        image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 10,
+        title: "Train to Tokyo - Ginza & Omotesando",
+        description:
+          "Transfer to Tokyo and spend the afternoon along the boulevards of Ginza and Omotesando.",
+        activities: ["Transfer to Tokyo", "Ginza", "Omotesando"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Tokyo",
+        highlight: "Tokyo",
+        image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 11,
+        title: "Sumo Training & Tokyo Tour",
+        description:
+          "Watch a sumo training session, then a guided tour of Tokyo's highlights from Asakusa to the Shibuya crossing.",
+        activities: ["Sumo training session", "Asakusa", "Shibuya crossing"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Tokyo",
+        highlight: "Tokyo",
+        image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 12,
+        title: "Depart Tokyo",
+        description:
+          "After breakfast, transfer to the airport for your departure.",
+        activities: ["Airport transfer", "Departure"],
+        meals: "Breakfast",
+        accommodation: "N/A - Departure",
+        image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1600&h=900&fit=crop",
+      },
+    ],
+  },
+  {
+    title: "Japan Gourmet Trail - Osaka to Hokkaido",
+    slug: "japan-gourmet-trail",
+    destinationName: "Japan",
+    destinationSlug: "japan",
+    category: "leisure",
+    description:
+      "A food-lover's journey the length of Japan - Osaka and Kobe beef, Kyoto's maiko dinner, Tokyo sushi and sumo hot pot, and the seafood, beer and barbecue of Hokkaido from Sapporo to Hakodate.",
+    heroImage:
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
+    images: ["https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&h=900&fit=crop", "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&h=900&fit=crop", "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1600&h=900&fit=crop", "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1600&h=900&fit=crop"],
+    duration: { days: 14, nights: 13 },
+    price: 295000,
+    difficulty: "Easy",
+    groupSize: { min: 2, max: 14 },
+    rating: 4.9,
+    reviewCount: 7,
+    inclusions: ["Accommodation on twin-sharing (3-4 star / ryokan where noted)", "Daily breakfast", "Shinkansen bullet-train & intercity rail transfers as per itinerary", "Domestic flights where the route requires (Okinawa / Sapporo)", "Guided tours and experiences listed in the itinerary", "Airport transfers on arrival and departure", "English-speaking local assistance"],
+    exclusions: ["International airfare to/from Japan", "Japan visa fees and documentation charges", "Lunches and dinners except where specified", "Personal expenses, optional activities and tips", "Travel insurance (strongly recommended)", "Anything not mentioned under inclusions"],
+    highlights: ["Osaka Dotonbori & Kuromon", "Himeji Castle & Kobe beef", "Kyoto maiko dinner show", "Tokyo sushi & sumo hot pot", "Sapporo Michelin & beer", "Hakodate seafood market"],
+    featured: false,
+    transparencyNote:
+      "Pricing is indicative - per person on twin-sharing, land-only, pending final hotel selection and travel dates. Japan rates vary sharply by season (cherry-blossom and autumn peaks cost more). Share your dates and we'll confirm an exact quote. International airfare and Japan visa fees are additional.",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrive Osaka - Dotonbori District",
+        description:
+          "Arrive in Osaka and take a guided evening tour of the buzzing Dotonbori district and its street-food canals.",
+        activities: ["Airport transfer", "Dotonbori guided tour"],
+        meals: "Dinner",
+        accommodation: "Hotel in Osaka",
+        highlight: "Osaka",
+        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 2,
+        title: "Osaka Castle & Kuromon Market",
+        description:
+          "Visit the Museum of Housing & Living and Osaka Castle, then graze the gastronomy of Kuromon Ichiba Market.",
+        activities: ["Museum of Housing & Living", "Osaka Castle", "Kuromon Market"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Osaka",
+        highlight: "Osaka",
+        image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 3,
+        title: "Himeji Castle, Kobe Beef & Sake",
+        description:
+          "Day trip to the magnificent white Himeji Castle, with a Kobe beef lunch and a sake tasting.",
+        activities: ["Himeji Castle", "Kobe beef lunch", "Sake tasting"],
+        meals: "Breakfast & lunch",
+        accommodation: "Hotel in Osaka",
+        highlight: "Osaka",
+        image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 4,
+        title: "Kyoto - Tea Ceremony & Maiko Dinner",
+        description:
+          "Transfer to Kyoto for a tea ceremony and a private maiko (apprentice geisha) dinner show in the evening.",
+        activities: ["Transfer to Kyoto", "Tea ceremony", "Private maiko dinner show"],
+        meals: "Breakfast & dinner",
+        accommodation: "Hotel in Kyoto",
+        highlight: "Kyoto",
+        image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 5,
+        title: "Kyoto Historic Sites & Sake Museum",
+        description:
+          "Explore Kyoto's historic temples and shrines, then a sake museum tour and tasting.",
+        activities: ["Kyoto temples", "Sake museum", "Tasting"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Kyoto",
+        highlight: "Kyoto",
+        image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 6,
+        title: "Ramen Workshop, Train to Tokyo",
+        description:
+          "A hands-on ramen noodle workshop before boarding the bullet train to Tokyo.",
+        activities: ["Ramen factory workshop", "Shinkansen to Tokyo"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Tokyo",
+        highlight: "Tokyo",
+        image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 7,
+        title: "Tokyo City Tour & Sumo Hot Pot",
+        description:
+          "A guided Tokyo city tour followed by a chanko-nabe sumo hot pot dinner.",
+        activities: ["Tokyo city tour", "Sumo hot pot dinner"],
+        meals: "Breakfast & dinner",
+        accommodation: "Hotel in Tokyo",
+        highlight: "Tokyo",
+        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 8,
+        title: "Tsukiji Market & Sushi Lesson",
+        description:
+          "Explore the Tsukiji Outer Market and master the basics in a sushi-making lesson.",
+        activities: ["Tsukiji Outer Market", "Sushi-making lesson"],
+        meals: "Breakfast & lunch",
+        accommodation: "Hotel in Tokyo",
+        highlight: "Tokyo",
+        image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 9,
+        title: "Mount Fuji & Gotemba Distillery",
+        description:
+          "Explore the realm of Mount Fuji, finishing with a tasting at the Fuji Gotemba distillery.",
+        activities: ["Mount Fuji", "Fuji Gotemba distillery", "Tasting"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Tokyo",
+        highlight: "Tokyo",
+        image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 10,
+        title: "Fly to Sapporo - Michelin Tasting",
+        description:
+          "Fly north to Sapporo in Hokkaido for a self-guided tour of its Michelin-starred restaurants.",
+        activities: ["Flight to Sapporo", "Michelin dining"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Sapporo",
+        highlight: "Sapporo",
+        image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 11,
+        title: "Sapporo City Tour, Beer & BBQ",
+        description:
+          "A historic city tour with a beer tasting at the Sapporo Beer Museum and a Genghis Khan barbecue dinner.",
+        activities: ["Sapporo city tour", "Beer tasting", "BBQ dinner"],
+        meals: "Breakfast & dinner",
+        accommodation: "Hotel in Sapporo",
+        highlight: "Sapporo",
+        image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 12,
+        title: "Salmon Hot Pot, Transfer to Hakodate",
+        description:
+          "A salmon hot pot cooking lesson with a local family, then transfer to the port city of Hakodate.",
+        activities: ["Salmon hot pot lesson", "Transfer to Hakodate"],
+        meals: "Breakfast & lunch",
+        accommodation: "Hotel in Hakodate",
+        highlight: "Hakodate",
+        image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 13,
+        title: "Hakodate Morning Market & City Tour",
+        description:
+          "The famous Hakodate Morning Market for a seafood breakfast, followed by a city tour and Mount Hakodate views.",
+        activities: ["Hakodate Morning Market", "Seafood breakfast", "City tour"],
+        meals: "Breakfast",
+        accommodation: "Hotel in Hakodate",
+        highlight: "Hakodate",
+        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
+      },
+      {
+        day: 14,
+        title: "Depart Hakodate",
+        description:
+          "After breakfast, transfer for your onward departure.",
+        activities: ["Airport transfer", "Departure"],
+        meals: "Breakfast",
+        accommodation: "N/A - Departure",
+        image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&h=900&fit=crop",
+      },
+    ],
+  },
 ]
+
+// Education category archived (client request, June 2026): the education-tagged
+// packages remain in the data above but are hidden from the live site. Restore by
+// removing this filter.
+export const packages: Package[] = allPackages.filter((p) => p.category !== "educational")

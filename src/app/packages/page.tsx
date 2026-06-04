@@ -10,7 +10,7 @@ import { destinations } from "@/data/destinations"
 export const metadata = generatePageMetadata({
   title: "Travel Packages",
   description:
-    "Browse curated travel packages across leisure, adventure, and educational categories. Find the perfect trip for your next getaway.",
+    "Browse curated travel packages across leisure and adventure categories. Find the perfect trip for your next getaway.",
   path: "/packages",
 })
 

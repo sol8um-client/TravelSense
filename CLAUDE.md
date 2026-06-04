@@ -582,9 +582,11 @@ pnpm dev
 
 ---
 
-## Current Status — Phase 1 ~99% Complete (as of May 26, 2026)
+## Current Status — Phase 1 live; FULL-SITE REDESIGN in progress (as of June 5, 2026)
 
-**Content scale:** **117 packages across 38 destinations**, **25 visa destinations** with fees + documents, **8 blog articles**, all live on travelsense.co.in.
+**Content scale:** **~101 LIVE packages across 47 destinations** (the **Education category was archived** Jun 5 per client request — 30 packages incl. heritage/pilgrimage hidden but kept in code), **25 visa destinations** with fees + documents, **8 blog articles**, all live on travelsense.co.in.
+
+**Active workstream:** porting a Claude full-site visual redesign (bundle: `C:\Users\vsfag\Downloads\homepage_optmz_1\design_handoff_site\`) page-by-page — liquid-glass design system, display-Fraunces typography, logo-visor cascade, boarding-pass/departures motifs. **Done & verified live:** globals.css foundation, the collapsing blue-glass nav, the hero ("Wake up in <city>"), and now the **ENTIRE HOMEPAGE** — every section ported & verified by rendering `:3000` vs the design `:8766` (incl. the two the prior agent got wrong: **How-it-works = sticky boarding-pass builder**, **Categories = sticky visor-goggle glide** — both live in `home-sections-c.jsx` which overrides `-a` in the prototype). Gotcha logged: `body{overflow-x:hidden}` breaks `position:sticky` → use `clip`. **Remaining:** Destinations, Packages, Package Detail, Visa, Vehicles pages. **Education removal + homepage fixes are validated locally (tsc clean + green `next build`, 198/198 static pages, only leisure/adventure category routes) but NOT yet deployed — awaiting deploy go-ahead.** Globe, real copy, data, and routes kept intact throughout.
 
 - [x] **M1: Brand Identity** — COMPLETE
 - [x] **M2: UI/UX Design** — COMPLETE
@@ -964,3 +966,32 @@ pnpm dev
 #### Outstanding from Sol8um side
 - Once hotel API picked → KYC + integration (~1 week)
 - Once international docx arrives → bulk-add same way as the South India round
+
+---
+
+## Session Log — June 1–4, 2026
+
+### International + Japan + Educational content
+- Added international destinations from the client's travellive.in set: **South Africa, Kenya, Japan, Jordan, Iceland, Finland, Europe (Western + Eastern), Australia, New Zealand** (+ earlier Azerbaijan/Kazakhstan/Uzbekistan). Pricing is **indicative** pending client rates (each carries a `transparencyNote`).
+- **Japan — 3 packages** built from the client's "Itinerary routes (7).docx": `japan-golden-route` (10D Tokyo·Kyoto·Osaka), `japan-grand-tour` (12D +Hiroshima/Okinawa/Hakone), `japan-gourmet-trail` (14D Osaka→Hokkaido). Removed the generic `japan-discovery-8d` duplicate. **Gotcha:** the Japan itineraries were in docx **tables**, not paragraphs — `python-docx`'s `document.paragraphs` skips table cells, so the first extraction wrongly reported Japan as "blank". Always iterate `doc.element.body` over `CT_P`+`CT_Tbl` (see `scripts/add_japan_packages.py`). Did a full doc-vs-site reconciliation: site covers ~everything; only Swiss/Italy standalone (name-only in the doc) outstanding.
+- **8 educational/student packages** (from bharatbooking ref). Honest homepage stats; footer "by V9 Travels".
+
+### FULL-SITE REDESIGN (Claude design bundle) — page-by-page port, in progress
+Bundle: `C:\Users\vsfag\Downloads\homepage_optmz_1\design_handoff_site\` (read `README.md` first). Prototypes = HTML shells + `/src/*.jsx` (React-UMD/Babel — port to ESM) + `src/styles.css` (tokens). Scope guardrails: keep the 3D globe, **don't change copy** (restyle only), keep data/routes/`/public` paths. clip-path+filter gotcha: never put a CSS `filter` on a clipped element/ancestor.
+
+**Done & verified live:**
+- **Foundation (`globals.css`):** liquid-glass system (`.glass-panel/.glass-dark`+`.nav-top`/`.glass-field`/`.glass-pill`), `.h-display`/`.eyebrow`/`.btn` conventions, and motion keyframes (flipBoard, kenburns, visorFloat/Sweep, flightDash, pinDrop, etc.).
+- **Nav (`Header.tsx`):** floating **blue liquid-glass** pill (kept blue in both states, more transparent + frosted dropdowns); collapses **only past the hero** into an inline "Where to?" planner + a **Menu** dropdown (full nav incl. Blog/Contact). Restored the **Services** dropdown to the desktop bar (Visa & Vehicle were missing after a `slice(0,3)` regression → now `slice(0,4)`).
+- **Hero (`LandingPage.tsx` + `VisorCascade.tsx`):** headline **"Wake up in &lt;rotating city&gt;"** in display Fraunces; **font fix** — `layout.tsx` loaded Fraunces with static `weight`s which strips the `opsz` axis (flat "text" cut); switched to `axes:["opsz"]` so `opsz 144` renders the high-contrast **display** cut **site-wide**. Logo-visor cascade enlarged **+40%** and split: **small Iceland lower-left under the globe, big Bali + medium Kerala right**, compass kept, none overlapping nav/title; globe nudged up-left then ~10% back; Bali photo `bgSize:"auto 122%"` to show more landscape. Removed the gray `.metallic-text`, removed the homepage stats bar, added the "INDIA · ASIA · EUROPE · CURATED SINCE 2018" eyebrow.
+- **Working search:** `src/data/searchIndex.ts` (178 light entries, generated by `scripts/gen_search_index.py`) powers a real autocomplete in the hero planner (navigates to destination/package on select/Enter).
+- **Problem section chaos canvas:** updated to the design — boarding passes **DEL→GOA (Overbooked)** / **BOM→DXB (Delayed)** with status stubs, sticky notes "where's my refund?!" + "5 tabs open just to compare prices", toasts "Surprise fee +₹4,800" / "Support offline… 47 hrs", caption **"↕ this is planning a trip yourself — drag to feel the mess"** (replaced "drag the pieces").
+- **Mobile visors** restaged into a staggered varied-size cluster (no uniform row / colliding labels) — *needs a real-device check; browser tooling won't shrink below ~1536px.*
+
+**Remaining redesign ports:** homepage sections (How-it-works flight-path builder → visor-goggle Categories → boarding-pass Destinations → dark USP) → Destinations (bento grid) → Packages (spec cards) → Package Detail (altitude chart + route map) → Visa (passport spread) → Vehicles (fleet spec plates).
+
+### Client decisions / outstanding (June)
+- **Hotel API: client chose TBO** — initial amount **₹1,20,000 one-time**. Pending client confirm/pay → KYC + integration (~1 week). Booking.com affiliate = free fallback.
+- Still need: exact international rates/PDFs; credentials (phone/WhatsApp, GA4, Meta Pixel, Razorpay, Brevo); founder photo; OG image; social URLs.
+
+### Deploy note
+Vercel auto-deploy still disconnected — every change shipped via manual `vercel deploy --prod --yes`, then visually verified in-browser (the homepage's WebGL globe sometimes stalls screenshots/scroll; retry or force scroll via JS with `scroll-behavior:auto`).

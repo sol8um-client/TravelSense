@@ -24,7 +24,7 @@ export const metadata = generatePageMetadata({
 const PLACEHOLDER_CONSULTATIONS = [
   { id: "1", name: "Priya Sharma", email: "priya@example.com", phone: "+91 98765 43210", preferred_date: "2026-04-05", preferred_time: "10:00 AM", interests: "Leisure, Beach", status: "NEW", created_at: "2026-03-30T10:30:00Z" },
   { id: "2", name: "Rahul Mehta", email: "rahul@example.com", phone: "+91 87654 32109", preferred_date: "2026-04-07", preferred_time: "2:00 PM", interests: "Adventure, Trekking", status: "IN_PROGRESS", created_at: "2026-03-29T15:20:00Z" },
-  { id: "3", name: "Anita Desai", email: "anita@example.com", phone: "+91 76543 21098", preferred_date: "2026-04-10", preferred_time: "11:00 AM", interests: "Educational, Heritage", status: "RESPONDED", created_at: "2026-03-28T09:15:00Z" },
+  { id: "3", name: "Anita Desai", email: "anita@example.com", phone: "+91 76543 21098", preferred_date: "2026-04-10", preferred_time: "11:00 AM", interests: "Heritage", status: "RESPONDED", created_at: "2026-03-28T09:15:00Z" },
 ]
 
 const PLACEHOLDER_VEHICLES = [

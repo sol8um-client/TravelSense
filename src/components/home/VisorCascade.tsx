@@ -65,9 +65,9 @@ export type Visor = {
  * Swap `img` paths for your CMS/CDN URLs as needed.
  */
 export const DEFAULT_VISORS: Visor[] = [
-  { img: "/images/generated/bali-hero.webp",   name: "Bali",    coord: "8.51°S · 115.26°E", width: 312, top: 30,  right: 8,   rot: -2, z: 6, floatDur: 9,    floatDelay: 0 },
-  { img: "/images/generated/kerala-hero.webp", name: "Kerala",  coord: "9.93°N · 76.26°E",  width: 210, top: 272, right: 0,   rot: -4, flip: true, z: 5, floatDur: 10.4, floatDelay: 0.4 },
-  { img: "/images/destinations/swiss-alps.jpg", name: "Iceland", coord: "64.13°N · 21.94°W", width: 122, top: 444, right: 110, rot: 5,  z: 4, floatDur: 11.8, floatDelay: 0.8 },
+  { img: "/images/generated/bali-hero.webp",   name: "Bali",    coord: "8.51°S · 115.26°E", width: 493, top: 16,  right: 8,   rot: -2, z: 6, floatDur: 9,    floatDelay: 0 },
+  { img: "/images/generated/kerala-hero.webp", name: "Kerala",  coord: "9.93°N · 76.26°E",  width: 333, top: 372, right: 0,   rot: -4, flip: true, z: 5, floatDur: 10.4, floatDelay: 0.4 },
+  { img: "/images/destinations/swiss-alps.jpg", name: "Iceland", coord: "64.13°N · 21.94°W", width: 199, top: 624, right: 168, rot: 5,  z: 4, floatDur: 11.8, floatDelay: 0.8 },
 ]
 
 function LogoVisor({
@@ -79,7 +79,8 @@ function LogoVisor({
   coord,
   floatDur = 9,
   floatDelay = 0,
-}: Visor & { compass?: boolean }) {
+  bgSize = "cover",
+}: Visor & { compass?: boolean; bgSize?: string }) {
   const rawId = useId()
   const uid = rawId.replace(/:/g, "")
   const h = width * RATIO
@@ -154,7 +155,7 @@ function LogoVisor({
             clipPath: `url(#lens-${uid})`,
             WebkitClipPath: `url(#lens-${uid})`,
             backgroundImage: `url(${img})`,
-            backgroundSize: "cover",
+            backgroundSize: bgSize,
             backgroundPosition: "center",
           }}
         >
@@ -251,7 +252,7 @@ function LogoVisor({
             left: "50%",
             top: "100%",
             zIndex: 4,
-            transform: `translate(-50%, ${8 * labelScale}px) scale(${labelScale})`,
+            transform: `translate(-50%, ${1 * labelScale}px) scale(${labelScale})`,
             transformOrigin: "top center",
             display: "flex",
             flexDirection: "column",
@@ -305,25 +306,79 @@ export default function VisorCascade({
   visors?: Visor[]
   className?: string
 }) {
+  const [bali, kerala, iceland] = visors
+  return (
+    <>
+      {/* RIGHT margin — big Bali over medium Kerala. Dropped below the nav and the
+          compass, and kept clear of the centred title (no overlap). */}
+      <div
+        aria-hidden
+        className={"pointer-events-none absolute right-[1%] top-[128px] z-10 hidden xl:block " + className}
+        style={{ width: 540, height: 640 }}
+      >
+        {bali && (
+          <div style={{ position: "absolute", top: 0, right: 8, zIndex: 6, transform: "rotate(-2deg)" }}>
+            {/* bgSize "auto 122%" zooms the 16:9 photo out a touch so more of the
+                landscape reads inside the wide goggle. */}
+            <LogoVisor {...bali} width={480} bgSize="auto 122%" />
+          </div>
+        )}
+        {kerala && (
+          <div style={{ position: "absolute", top: 304, right: 0, zIndex: 5, transform: "rotate(-4deg)" }}>
+            <LogoVisor {...kerala} width={328} />
+          </div>
+        )}
+      </div>
+
+      {/* LEFT margin — the small visor tucked into the lower-left, below the globe. */}
+      {iceland && (
+        <div aria-hidden className="pointer-events-none absolute left-[5%] top-[80%] z-10 hidden xl:block">
+          <div style={{ transform: "rotate(5deg)" }}>
+            <LogoVisor {...iceland} width={196} />
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
+
+/**
+ * Mobile / tablet variant — a staggered, varied-size CLUSTER (not a uniform row),
+ * spread across the hero width so the goggles feel composed with the rest of the
+ * mobile hero and their labels never collide. Shown only below `xl`.
+ */
+type MobileSlot = { width: number; top: number; left?: string; right?: string; rot: number }
+export function MobileVisorStrip({ visors = DEFAULT_VISORS }: { visors?: Visor[] }) {
+  // Varied sizes + offset positions → an organic scatter; staggered tops keep the
+  // place-name labels (which sit beneath each visor) from overlapping.
+  const layout: MobileSlot[] = [
+    { width: 156, top: 0,   left: "0%",  rot: -3 },
+    { width: 122, top: 122, right: "0%", rot: 4 },
+    { width: 100, top: 212, left: "27%", rot: -5 },
+  ]
   return (
     <div
       aria-hidden
-      className={
-        // decorative; hidden until there's room, pinned to the right margin.
-        // Anchored a little below centre so the compass + caption sit clear above it.
-        "pointer-events-none absolute right-[2%] top-[57%] z-10 hidden -translate-y-1/2 xl:block " +
-        className
-      }
-      style={{ width: 340, height: 560 }}
+      className="relative mx-auto mt-6 mb-2 h-[300px] w-full max-w-[420px] xl:hidden"
     >
-      {visors.map((v, i) => (
-        <div
-          key={i}
-          style={{ position: "absolute", top: v.top, right: v.right, zIndex: v.z ?? 5, transform: `rotate(${v.rot}deg)` }}
-        >
-          <LogoVisor {...v} />
-        </div>
-      ))}
+      {visors.slice(0, 3).map((v, i) => {
+        const s = layout[i]
+        return (
+          <div
+            key={i}
+            style={{
+              position: "absolute",
+              top: s.top,
+              left: s.left,
+              right: s.right,
+              zIndex: 6 - i,
+              transform: `rotate(${s.rot}deg)`,
+            }}
+          >
+            <LogoVisor {...v} width={s.width} />
+          </div>
+        )
+      })}
     </div>
   )
 }

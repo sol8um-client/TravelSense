@@ -3,7 +3,8 @@
 import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, ChevronDown, Phone } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { ChevronDown, Phone, Search, ArrowRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { mainNavItems } from "@/config/navigation"
@@ -12,139 +13,243 @@ import { useLeadModal } from "@/components/shared/LeadCaptureModal"
 import { MobileNav } from "@/components/layout/MobileNav"
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [navQuery, setNavQuery] = useState("")
+  const router = useRouter()
   const leadModal = useLeadModal()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+    const onScroll = () => {
+      // Collapse the nav (glass shift + links→Menu) only after the hero section.
+      const hero = document.querySelector("section")
+      const limit = hero
+        ? hero.offsetTop + hero.offsetHeight - 96
+        : window.innerHeight * 0.8
+      setScrolled(window.scrollY > limit)
     }
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll()
-    return () => window.removeEventListener("scroll", handleScroll)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", onScroll)
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onScroll)
+    }
   }, [])
 
-  const handleDropdownEnter = useCallback((title: string) => {
-    setActiveDropdown(title)
-  }, [])
+  // Close the Menu dropdown whenever we expand back to the full nav.
+  useEffect(() => {
+    if (!scrolled) setMenuOpen(false)
+  }, [scrolled])
 
-  const handleDropdownLeave = useCallback(() => {
-    setActiveDropdown(null)
-  }, [])
+  const handleDropdownEnter = useCallback((title: string) => setActiveDropdown(title), [])
+  const handleDropdownLeave = useCallback(() => setActiveDropdown(null), [])
 
-  // Desktop pill shows the design's three primary items; the rest stay reachable
-  // on mobile (full list below) and in the footer.
-  const primaryNav = mainNavItems.slice(0, 3)
+  // Desktop bar surfaces the four core sections incl. the Services menu.
+  const primaryNav = mainNavItems.slice(0, 4)
+
+  const onNavSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    router.push("/destinations")
+  }
 
   return (
     <>
-      {/* Floating pill navbar (per design handoff) */}
-      <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4">
+      {/* Floating liquid-glass nav pill — navy-blue glass at top → lighter navy glass past the hero */}
+      <header
+        className={cn(
+          "fixed inset-x-0 z-50 flex justify-center px-3 transition-all duration-300 sm:px-4",
+          scrolled ? "top-2 sm:top-3" : "top-3 sm:top-4",
+        )}
+      >
         <div
           className={cn(
-            "mx-auto flex h-14 max-w-5xl items-center justify-between gap-3 rounded-full bg-[#0A1425]/95 py-1.5 pl-5 pr-1.5 shadow-[0_14px_44px_rgba(11,20,38,0.28)] ring-1 ring-white/10 backdrop-blur-xl transition-all duration-300",
-            isScrolled && "max-w-4xl bg-[#0A1425] shadow-[0_10px_30px_rgba(11,20,38,0.35)]"
+            // Always the blue liquid glass (nav-top) — keeps the blue frosted look
+            // in both the hero and scrolled states, per design feedback.
+            "glass-dark nav-top flex h-14 w-full items-center justify-between gap-2 rounded-full py-1.5 pl-5 pr-1.5 transition-all duration-300",
+            scrolled ? "max-w-4xl" : "max-w-5xl",
           )}
         >
           {/* Logo + divider */}
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-3">
             <Link
               href="/"
-              className="group flex items-center transition-opacity hover:opacity-80"
+              className="group flex items-center gap-2 transition-opacity hover:opacity-80"
             >
               <Image
-                src="/images/brand/logo-blue-bg.png"
+                src="/images/brand/logo-emblem.png"
                 alt="TravelSense"
-                width={160}
-                height={90}
-                className="h-9 w-auto logo-embossed"
+                width={120}
+                height={120}
+                className="h-[24px] w-auto"
                 priority
               />
+              <span className="font-body text-[13.5px] font-semibold uppercase leading-none tracking-[0.18em] text-white">
+                Travel<span className="font-normal text-white/85">Sense</span>
+              </span>
             </Link>
             <span className="hidden h-6 w-px bg-white/15 lg:block" />
           </div>
 
-          {/* Desktop Navigation — three primary items */}
-          <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">
-            {primaryNav.map((item) => (
-              <div
-                key={item.title}
-                className="relative"
-                onMouseEnter={() =>
-                  item.children ? handleDropdownEnter(item.title) : undefined
-                }
-                onMouseLeave={handleDropdownLeave}
+          {/* Center: nav links (top) ↔ inline "Where to?" planner (scrolled) */}
+          <div className="hidden min-w-0 flex-1 items-center justify-center lg:flex">
+            {scrolled ? (
+              <form
+                onSubmit={onNavSearch}
+                className="flex w-full max-w-[340px] items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 duration-300 animate-in fade-in slide-in-from-top-1"
               >
-                <Link
-                  href={item.href}
-                  className="inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-[13.5px] font-light tracking-wide text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white"
-                >
-                  {item.title}
-                  {item.children && (
-                    <ChevronDown
-                      className={cn(
-                        "h-3.5 w-3.5 transition-transform duration-200",
-                        activeDropdown === item.title && "rotate-180"
-                      )}
-                    />
-                  )}
-                </Link>
-
-                {/* Dropdown Menu */}
-                {item.children && activeDropdown === item.title && (
-                  <div className="absolute left-1/2 top-full pt-3 -translate-x-1/2">
-                    <div className="min-w-[240px] overflow-hidden rounded-2xl border border-border/80 bg-white p-2 shadow-xl shadow-black/10 animate-in fade-in slide-in-from-top-2 duration-200">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="group/item flex flex-col gap-0.5 rounded-lg px-3 py-2.5 transition-colors hover:bg-muted"
-                        >
-                          <span className="text-sm font-medium text-foreground group-hover/item:text-primary">
-                            {child.title}
-                          </span>
-                          {child.description && (
-                            <span className="text-xs text-muted-foreground">
-                              {child.description}
-                            </span>
+                <Search className="h-3.5 w-3.5 shrink-0 text-[#FF8E9E]" />
+                <input
+                  value={navQuery}
+                  onChange={(e) => setNavQuery(e.target.value)}
+                  placeholder="Where to?"
+                  aria-label="Search destinations"
+                  className="glass-text min-w-0 flex-1 bg-transparent text-[13px] font-medium text-white placeholder:text-white/55 focus:outline-none"
+                />
+              </form>
+            ) : (
+              <nav className="flex items-center gap-1">
+                {primaryNav.map((item) => (
+                  <div
+                    key={item.title}
+                    className="relative"
+                    onMouseEnter={() =>
+                      item.children ? handleDropdownEnter(item.title) : undefined
+                    }
+                    onMouseLeave={handleDropdownLeave}
+                  >
+                    <Link
+                      href={item.href}
+                      className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-[12.5px] font-medium tracking-wide text-white/85 transition-colors duration-200 hover:bg-white/10 hover:text-white"
+                    >
+                      {item.title}
+                      {item.children && (
+                        <ChevronDown
+                          className={cn(
+                            "h-3.5 w-3.5 transition-transform duration-200",
+                            activeDropdown === item.title && "rotate-180",
                           )}
+                        />
+                      )}
+                    </Link>
+
+                    {/* Services dropdown — dark glass per design */}
+                    {item.children && activeDropdown === item.title && (
+                      <div className="absolute left-1/2 top-full -translate-x-1/2 pt-3">
+                        <div className="min-w-[244px] overflow-hidden rounded-2xl border border-white/10 bg-[#0C162A]/88 p-2 shadow-[0_24px_60px_rgba(3,8,16,0.5)] backdrop-blur-[40px] backdrop-saturate-150 duration-200 animate-in fade-in slide-in-from-top-2">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className="flex items-start gap-2.5 rounded-lg px-3 py-2.5 transition-colors hover:bg-white/[0.07]"
+                            >
+                              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
+                              <span className="flex flex-col gap-0.5">
+                                <span className="text-[13px] font-semibold text-white">
+                                  {child.title}
+                                </span>
+                                {child.description && (
+                                  <span className="text-[11px] text-white/55">
+                                    {child.description}
+                                  </span>
+                                )}
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </nav>
+            )}
+          </div>
+
+          {/* Right side actions */}
+          <div className="flex shrink-0 items-center gap-1.5">
+            {/* Menu dropdown — appears when scrolled (full nav incl. Blog/Contact) */}
+            {scrolled && (
+              <div className="relative hidden lg:block">
+                <button
+                  onClick={() => setMenuOpen((o) => !o)}
+                  aria-label="Menu"
+                  aria-expanded={menuOpen}
+                  className="flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3.5 py-2 text-[12.5px] font-semibold text-white transition-colors hover:bg-white/[0.12]"
+                >
+                  <span className="flex w-3.5 flex-col gap-[3px]">
+                    <span className={cn("h-[1.6px] rounded bg-white transition-transform", menuOpen && "translate-y-[4.6px] rotate-45")} />
+                    <span className={cn("h-[1.6px] rounded bg-white transition-opacity", menuOpen && "opacity-0")} />
+                    <span className={cn("h-[1.6px] rounded bg-white transition-transform", menuOpen && "-translate-y-[4.6px] -rotate-45")} />
+                  </span>
+                  Menu
+                </button>
+                {menuOpen && (
+                  <div className="absolute right-0 top-[calc(100%+12px)] w-[280px] rounded-2xl border border-white/[0.12] bg-[#0C162A]/88 p-2 shadow-[0_26px_64px_rgba(3,8,16,0.55)] backdrop-blur-[40px] backdrop-saturate-150 duration-200 animate-in fade-in slide-in-from-top-2">
+                    {mainNavItems.map((l) =>
+                      l.children ? (
+                        <div key={l.title} className="py-1">
+                          <div className="px-3 pb-1 pt-2 font-tech text-[8.5px] uppercase tracking-[0.18em] text-white/50">
+                            {l.title}
+                          </div>
+                          {l.children.map((c) => (
+                            <Link
+                              key={c.href}
+                              href={c.href}
+                              onClick={() => setMenuOpen(false)}
+                              className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 transition-colors hover:bg-white/[0.07]"
+                            >
+                              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
+                              <span className="text-[13px] font-medium text-white">{c.title}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      ) : (
+                        <Link
+                          key={l.title}
+                          href={l.href}
+                          onClick={() => setMenuOpen(false)}
+                          className="flex items-center justify-between rounded-lg px-3 py-2.5 transition-colors hover:bg-white/[0.07]"
+                        >
+                          <span className="text-[13.5px] font-semibold text-white">{l.title}</span>
+                          <ArrowRight className="h-3 w-3 text-white/50" />
                         </Link>
-                      ))}
-                    </div>
+                      ),
+                    )}
                   </div>
                 )}
               </div>
-            ))}
-          </nav>
+            )}
 
-          {/* Right side actions */}
-          <div className="flex items-center gap-2">
-            {/* Phone number - visible on xl+ */}
+            {/* Phone — number text hides when scrolled, icon stays */}
             <a
               href={`tel:${siteConfig.contact.phone}`}
-              className="hidden items-center gap-1.5 pr-1 text-[13px] font-medium text-white/75 transition-colors hover:text-white xl:flex"
+              className="hidden items-center gap-1.5 rounded-full px-2.5 py-2 text-[12.5px] font-medium text-white/80 transition-colors hover:text-white xl:flex"
             >
-              <Phone className="h-3.5 w-3.5" />
-              <span>{siteConfig.contact.phone}</span>
+              <Phone className="h-3.5 w-3.5 text-[#FF8E9E]" />
+              {!scrolled && <span>{siteConfig.contact.phone}</span>}
             </a>
 
-            {/* CTA Button */}
+            {/* CTA */}
             <button
               onClick={() => leadModal.open("header")}
-              className="metallic-cta hidden h-11 items-center rounded-full px-5 text-[13px] font-body font-semibold tracking-[0.01em] text-white cursor-pointer sm:inline-flex"
+              className="metallic-cta hidden h-11 cursor-pointer items-center rounded-full px-5 font-body text-[13px] font-semibold tracking-[0.01em] text-white sm:inline-flex"
             >
               <span className="relative z-10">Plan my trip</span>
             </button>
 
-            {/* Mobile menu trigger */}
+            {/* Mobile hamburger */}
             <button
               onClick={() => setMobileNavOpen(true)}
               className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 lg:hidden"
               aria-label="Open menu"
             >
-              <Menu className="h-5 w-5" />
+              <span className="flex w-4 flex-col gap-[3px]">
+                <span className="h-[2px] rounded bg-white" />
+                <span className="h-[2px] rounded bg-white" />
+                <span className="h-[2px] rounded bg-white" />
+              </span>
             </button>
           </div>
         </div>
