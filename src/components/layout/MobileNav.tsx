@@ -7,6 +7,7 @@ import * as Dialog from "@radix-ui/react-dialog"
 import { X, ChevronDown, Phone, Mail, MapPin } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { waHref } from "@/lib/whatsapp"
 import { mainNavItems } from "@/config/navigation"
 import { siteConfig } from "@/config/site"
 import { Button } from "@/components/ui/button"
@@ -143,7 +144,9 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
               </p>
               <div className="space-y-3">
                 <a
-                  href={`tel:${siteConfig.contact.phone}`}
+                  href={waHref()}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm text-foreground transition-colors hover:text-primary"
                 >
                   <Phone className="h-4 w-4 text-primary" />

@@ -17,6 +17,7 @@ import {
 import { toast } from "sonner"
 
 import { cn } from "@/lib/utils"
+import { waHref } from "@/lib/whatsapp"
 import { footerNavItems } from "@/config/navigation"
 import { siteConfig } from "@/config/site"
 import { Container } from "@/components/layout/Container"
@@ -85,7 +86,9 @@ export function Footer() {
             {/* Contact Details */}
             <div className="mt-6 space-y-3">
               <a
-                href={`tel:${siteConfig.contact.phone}`}
+                href={waHref()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-3 text-[13px] text-white/45 font-light tracking-wide transition-colors hover:text-secondary"
               >
                 <Phone className="h-4 w-4 shrink-0 text-secondary" />

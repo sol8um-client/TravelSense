@@ -386,6 +386,166 @@ export default async function DestinationDetailPage({
         </div>
       </section>
 
+      {/* ═══════════ PACKAGES IN {destination} ═══════════ */}
+      <section style={{ background: "#fff", padding: "clamp(60px, 8vw, 100px) 40px", borderTop: "1px solid rgba(176,184,196,0.2)" }}>
+        <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "space-between",
+              gap: 24,
+              flexWrap: "wrap",
+              marginBottom: 36,
+            }}
+          >
+            <div>
+              <p className="eyebrow">
+                <span className="dot" />
+                Ready-to-book itineraries
+              </p>
+              <h2
+                style={{
+                  margin: "16px 0 0",
+                  fontFamily: "var(--font-heading), Fraunces, serif",
+                  fontSize: "clamp(1.8rem, 3.4vw, 2.8rem)",
+                  fontWeight: 500,
+                  letterSpacing: "-0.025em",
+                  lineHeight: 1.04,
+                  color: "var(--primary)",
+                  fontVariationSettings: "'opsz' 144",
+                }}
+              >
+                Packages in{" "}
+                <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--secondary)" }}>
+                  {destination.name}.
+                </em>
+              </h2>
+              {destinationPackages.length > 0 && (
+                <p style={{ margin: "14px 0 0", maxWidth: 560, fontSize: 14.5, lineHeight: 1.7, color: "var(--muted-foreground)" }}>
+                  {destinationPackages.length === 1
+                    ? `A curated ${destination.name} itinerary — refine it with your travel consultant.`
+                    : `${destinationPackages.length} curated ${destination.name} itineraries, from shorter escapes to extended expeditions — refine any of them with your travel consultant.`}
+                </p>
+              )}
+            </div>
+            {destinationPackages.length > 0 && (
+              <Link
+                href="/packages"
+                className="link-underline"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 7,
+                  fontSize: 13.5,
+                  fontWeight: 600,
+                  color: "var(--muted-foreground)",
+                  textDecoration: "none",
+                  flexShrink: 0,
+                }}
+              >
+                View all packages
+                <ArrowRight size={15} />
+              </Link>
+            )}
+          </div>
+
+          {destinationPackages.length > 0 ? (
+            <div
+              className="dd-pkg-grid"
+              style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}
+            >
+              {destinationPackages.map((pkg, i) => (
+                <PackageCard
+                  key={pkg.slug}
+                  big={i === 0 && pkg.featured ? true : false}
+                  pkg={{
+                    _id: pkg.slug,
+                    title: pkg.title,
+                    slug: pkg.slug,
+                    description: pkg.description,
+                    category: pkg.category,
+                    duration: pkg.duration,
+                    price: pkg.price,
+                    discountedPrice: pkg.discountedPrice,
+                    heroImage: pkg.heroImage,
+                    difficulty: pkg.difficulty,
+                    featured: pkg.featured,
+                    highlights: pkg.highlights,
+                    rating: pkg.rating,
+                    reviewCount: pkg.reviewCount,
+                    destination: {
+                      name: pkg.destinationName,
+                      slug: pkg.destinationSlug,
+                      region: destination.region,
+                    },
+                  }}
+                />
+              ))}
+            </div>
+          ) : (
+            /* 0 packages — tasteful "crafted on request" block */
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: 18,
+                borderRadius: 24,
+                border: "1px solid rgba(176,184,196,0.3)",
+                background: "linear-gradient(135deg, rgba(196,50,74,0.04), transparent 70%), #fff",
+                padding: "clamp(32px, 5vw, 52px)",
+                boxShadow: "0 10px 40px rgba(11,20,38,0.05)",
+              }}
+            >
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 52,
+                  height: 52,
+                  borderRadius: 14,
+                  background: "rgba(196,50,74,0.08)",
+                  border: "1px solid rgba(196,50,74,0.14)",
+                }}
+              >
+                <Compass size={24} color={accent} strokeWidth={1.6} />
+              </span>
+              <h3
+                style={{
+                  margin: 0,
+                  fontFamily: "var(--font-heading), Fraunces, serif",
+                  fontSize: "clamp(1.5rem, 2.6vw, 2.1rem)",
+                  fontWeight: 500,
+                  letterSpacing: "-0.02em",
+                  color: "var(--primary)",
+                  fontVariationSettings: "'opsz' 144",
+                }}
+              >
+                Crafted on request,{" "}
+                <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--secondary)" }}>
+                  just for you.
+                </em>
+              </h3>
+              <p style={{ margin: 0, maxWidth: 560, fontSize: 15, lineHeight: 1.75, color: "var(--muted-foreground)" }}>
+                We don&apos;t have a fixed {destination.name} package listed yet — but this is exactly
+                what we do best. Tell us your dates, pace and interests, and a real travel consultant
+                will build a {destination.name} itinerary around you.
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 6 }}>
+                <Link href="/consultation" className="btn btn-primary">
+                  <Phone size={15} /> Talk to a consultant
+                </Link>
+                <Link href="/packages" className="btn btn-ghost">
+                  Browse all packages
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* ═══════════ EDITORIAL INTRO ═══════════ */}
       <section style={{ padding: "clamp(70px, 9vw, 120px) 40px", maxWidth: 1280, margin: "0 auto" }}>
         <div
@@ -677,166 +837,6 @@ export default async function DestinationDetailPage({
           </div>
         </section>
       )}
-
-      {/* ═══════════ PACKAGES IN {destination} ═══════════ */}
-      <section style={{ background: "#fff", padding: "clamp(60px, 8vw, 100px) 40px", borderTop: "1px solid rgba(176,184,196,0.2)" }}>
-        <div style={{ maxWidth: 1180, margin: "0 auto" }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "flex-end",
-              justifyContent: "space-between",
-              gap: 24,
-              flexWrap: "wrap",
-              marginBottom: 36,
-            }}
-          >
-            <div>
-              <p className="eyebrow">
-                <span className="dot" />
-                Ready-to-book itineraries
-              </p>
-              <h2
-                style={{
-                  margin: "16px 0 0",
-                  fontFamily: "var(--font-heading), Fraunces, serif",
-                  fontSize: "clamp(1.8rem, 3.4vw, 2.8rem)",
-                  fontWeight: 500,
-                  letterSpacing: "-0.025em",
-                  lineHeight: 1.04,
-                  color: "var(--primary)",
-                  fontVariationSettings: "'opsz' 144",
-                }}
-              >
-                Packages in{" "}
-                <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--secondary)" }}>
-                  {destination.name}.
-                </em>
-              </h2>
-              {destinationPackages.length > 0 && (
-                <p style={{ margin: "14px 0 0", maxWidth: 560, fontSize: 14.5, lineHeight: 1.7, color: "var(--muted-foreground)" }}>
-                  {destinationPackages.length === 1
-                    ? `A curated ${destination.name} itinerary — refine it with your travel consultant.`
-                    : `${destinationPackages.length} curated ${destination.name} itineraries, from shorter escapes to extended expeditions — refine any of them with your travel consultant.`}
-                </p>
-              )}
-            </div>
-            {destinationPackages.length > 0 && (
-              <Link
-                href="/packages"
-                className="link-underline"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 7,
-                  fontSize: 13.5,
-                  fontWeight: 600,
-                  color: "var(--muted-foreground)",
-                  textDecoration: "none",
-                  flexShrink: 0,
-                }}
-              >
-                View all packages
-                <ArrowRight size={15} />
-              </Link>
-            )}
-          </div>
-
-          {destinationPackages.length > 0 ? (
-            <div
-              className="dd-pkg-grid"
-              style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}
-            >
-              {destinationPackages.map((pkg, i) => (
-                <PackageCard
-                  key={pkg.slug}
-                  big={i === 0 && pkg.featured ? true : false}
-                  pkg={{
-                    _id: pkg.slug,
-                    title: pkg.title,
-                    slug: pkg.slug,
-                    description: pkg.description,
-                    category: pkg.category,
-                    duration: pkg.duration,
-                    price: pkg.price,
-                    discountedPrice: pkg.discountedPrice,
-                    heroImage: pkg.heroImage,
-                    difficulty: pkg.difficulty,
-                    featured: pkg.featured,
-                    highlights: pkg.highlights,
-                    rating: pkg.rating,
-                    reviewCount: pkg.reviewCount,
-                    destination: {
-                      name: pkg.destinationName,
-                      slug: pkg.destinationSlug,
-                      region: destination.region,
-                    },
-                  }}
-                />
-              ))}
-            </div>
-          ) : (
-            /* 0 packages — tasteful "crafted on request" block */
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-                gap: 18,
-                borderRadius: 24,
-                border: "1px solid rgba(176,184,196,0.3)",
-                background: "linear-gradient(135deg, rgba(196,50,74,0.04), transparent 70%), #fff",
-                padding: "clamp(32px, 5vw, 52px)",
-                boxShadow: "0 10px 40px rgba(11,20,38,0.05)",
-              }}
-            >
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: 52,
-                  height: 52,
-                  borderRadius: 14,
-                  background: "rgba(196,50,74,0.08)",
-                  border: "1px solid rgba(196,50,74,0.14)",
-                }}
-              >
-                <Compass size={24} color={accent} strokeWidth={1.6} />
-              </span>
-              <h3
-                style={{
-                  margin: 0,
-                  fontFamily: "var(--font-heading), Fraunces, serif",
-                  fontSize: "clamp(1.5rem, 2.6vw, 2.1rem)",
-                  fontWeight: 500,
-                  letterSpacing: "-0.02em",
-                  color: "var(--primary)",
-                  fontVariationSettings: "'opsz' 144",
-                }}
-              >
-                Crafted on request,{" "}
-                <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--secondary)" }}>
-                  just for you.
-                </em>
-              </h3>
-              <p style={{ margin: 0, maxWidth: 560, fontSize: 15, lineHeight: 1.75, color: "var(--muted-foreground)" }}>
-                We don&apos;t have a fixed {destination.name} package listed yet — but this is exactly
-                what we do best. Tell us your dates, pace and interests, and a real travel consultant
-                will build a {destination.name} itinerary around you.
-              </p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 6 }}>
-                <Link href="/consultation" className="btn btn-primary">
-                  <Phone size={15} /> Talk to a consultant
-                </Link>
-                <Link href="/packages" className="btn btn-ghost">
-                  Browse all packages
-                </Link>
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
 
       {/* ═══════════ THINGS TO KNOW ═══════════ */}
       {destination.thingsToKnow.length > 0 && (

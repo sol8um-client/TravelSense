@@ -70,7 +70,8 @@ import { cn } from "@/lib/utils"
 import { use3DTilt } from "@/hooks/use3DTilt"
 import { useLeadModal } from "@/components/shared/LeadCaptureModal"
 import { WhatsAppLink } from "@/components/shared/WhatsAppLink"
-import VisorCascade, { MobileVisorStrip, LogoVisor } from "./VisorCascade"
+import DestinationSpotlight from "./DestinationSpotlight"
+import ARVRBanner from "./ARVRBanner"
 import { searchIndex } from "@/data/searchIndex"
 
 /* Lazy-load 3D globe — no SSR (WebGL) */
@@ -605,7 +606,7 @@ function HeroSection() {
       {/* 4. Floating travel icon particles */}
       <FloatingTravelIcons />
 
-      {/* 5. Live compass — top-right, above the right-hand visor cascade */}
+      {/* 5. Live compass — top-right, above the right-hand spotlight card */}
       <RealCompass />
 
       {/* 6. 3D WebGL Globe — visible on all sizes */}
@@ -614,8 +615,12 @@ function HeroSection() {
         <Globe3D />
       </div>
 
-      {/* 7. Logo-visor cascade — decorative destination goggles in the right margin (xl+) */}
-      <VisorCascade />
+      {/* 7. Destination spotlight — auto-advancing showcase card in the right
+             margin (xl+), vertically centred to complement the globe on the left.
+             Below xl it's rendered full-width inside the content flow instead. */}
+      <div className="pointer-events-auto absolute right-[2.5%] top-1/2 z-20 hidden w-[360px] -translate-y-1/2 xl:block 2xl:right-[5%] 2xl:w-[400px]">
+        <DestinationSpotlight />
+      </div>
 
       {/* Content — text shadow on mobile ensures readability over globe */}
       <motion.div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center [text-shadow:0_1px_8px_rgba(255,255,255,0.8)] lg:[text-shadow:none]" style={{ y: contentY, opacity: contentOpacity }}>
@@ -657,9 +662,11 @@ function HeroSection() {
         {/* Planner — search + quick-pick favourites (replaces the old tagline + CTA buttons) */}
         <HeroPlanner />
 
-        {/* Mobile/tablet only: the visor photos as a compact centred row (desktop
-            gets the right-margin cascade, which is hidden below xl). */}
-        <MobileVisorStrip />
+        {/* Mobile/tablet only: the spotlight as a clean full-width card below the
+            headline (desktop gets the right-margin version, hidden below xl). */}
+        <div className="mx-auto mt-10 w-full max-w-[440px] xl:hidden">
+          <DestinationSpotlight />
+        </div>
       </motion.div>
     </section>
   )
@@ -2217,7 +2224,11 @@ export default function LandingPage() {
       <ScrollProgress />
       <HeroSection />
       <TrustBarSection />
+      {/* white → navy transition: the wave leads the eye out of the white TrustBar
+          into the navy AR/VR ribbon, which then flows seamlessly (no divider) into
+          the navy Problem section — one continuous premium navy band. */}
       <Wave from="#FFFFFF" to="#0A1425" />
+      <ARVRBanner />
       <ProblemSection />
       <Wave from="#0A1425" to="#FFFFFF" />
       <HowItWorksSection />
