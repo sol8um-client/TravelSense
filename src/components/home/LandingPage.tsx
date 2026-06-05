@@ -406,6 +406,30 @@ function HeroPlanner() {
         </div>
       )}
 
+      {/* No-result CTA — visitor typed a real query but nothing in the catalogue
+          matches. Capture the demand with a WhatsApp "Talk to an expert" pill
+          instead of dead-ending. Mirrors the dropdown's glass/rounded styling. */}
+      {open && q.length >= 2 && matches.length === 0 && (
+        <div className="absolute inset-x-0 top-[calc(100%+8px)] z-30 overflow-hidden rounded-2xl border border-silver/15 bg-white px-4 py-3.5 text-left shadow-[0_18px_50px_rgba(11,20,38,0.18)]">
+          <p className="flex items-start gap-2.5 text-[13.5px] leading-snug text-foreground/65">
+            <SearchX className="mt-0.5 h-4 w-4 shrink-0 text-secondary/70" strokeWidth={1.6} />
+            <span>
+              No trips matching{" "}
+              <span className="font-semibold text-foreground">&ldquo;{dest.trim()}&rdquo;</span> yet.
+            </span>
+          </p>
+          <WhatsAppLink
+            source="hero-search-no-result"
+            message={`Hi TravelSense! I was looking for "${dest.trim()}" but didn't find it — can you help me plan it?`}
+            onMouseDown={(e) => e.preventDefault()}
+            className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-b from-secondary-light via-secondary to-secondary-dark px-4 py-2 text-[12.5px] font-body font-semibold text-white shadow-[0_6px_16px_rgba(196,50,74,0.28)] transition-transform hover:-translate-y-0.5"
+          >
+            Talk to an expert
+            <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.8} />
+          </WhatsAppLink>
+        </div>
+      )}
+
       <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
         <span className="script text-[15px] text-foreground/40">or pick a favourite —</span>
         {heroFavourites.map((f) => (
