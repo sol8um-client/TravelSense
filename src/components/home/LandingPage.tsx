@@ -1842,69 +1842,108 @@ const differentiators: { Icon: LucideIcon; title: string; desc: string }[] = [
    7. TESTIMONIALS — enhanced with better visual hierarchy
    ═══════════════════════════════════════════════════════════════ */
 
-const testimonials: { name: string; location: string; review: string; initial: string; trip: string; color: string }[] = [
-  { name: "Priya Sharma", location: "Mumbai", review: "TravelSense made our Kerala trip magical. Every detail felt handpicked — like traveling with a friend who just knows.", initial: "P", trip: "Kerala · 6 days", color: "#C4324A" },
-  { name: "Rahul Deshmukh", location: "Pune", review: "Ladakh was flawless. When I needed help at 11pm, someone actually answered. That never happens anywhere.", initial: "R", trip: "Ladakh · 9 days", color: "#4A9E7E" },
-  { name: "Ananya Kulkarni", location: "Bangalore", review: "Bali exceeded everything. Having a real human available 24/7 while abroad felt like a genuine lifeline.", initial: "A", trip: "Bali · 8 days", color: "#A8574E" },
+/* Real, unedited traveller reviews shared by the founder (lightly trimmed for length;
+   words kept authentic). Four carry the travellers' own trip photos (shared with the
+   founder); unnamed reviewers show as "Verified traveller" pending the WhatsApp
+   verification round — swap in names as they come in. */
+type Testimonial = {
+  name: string
+  location: string
+  trip: string
+  coord: string
+  image?: string
+  review: string
+  initial: string
+  color: string
+}
+const testimonials: Testimonial[] = [
+  { name: "Nisha Laddha", location: "Amravati", trip: "Kashmir & Vaishno Devi", coord: "34.08°N · 74.80°E", image: "/images/testimonials/kashmir-laddha.webp", initial: "N", color: "#C4324A", review: "Truly memorable and very well organised. Hotels, arrangements and services were excellent throughout — everything managed smoothly, completely comfortable and stress-free. Heartfelt thanks for the wonderful planning and coordination." },
+  { name: "Verified traveller", location: "", trip: "Andaman Islands", coord: "11.62°N · 92.73°E", image: "/images/testimonials/andaman.webp", initial: "A", color: "#1F8A7A", review: "I was confused which company to choose for Andaman — and my decision to go with V9 was so right. Competitive rates, excellent hotels, polite drivers, and the owner herself available 24×7. Highly recommend." },
+  { name: "Sonal Bihani", location: "", trip: "Rajasthan", coord: "26.91°N · 75.79°E", initial: "S", color: "#A8574E", review: "Amazing service in stay, food and travel. Jayshree maam customised our itinerary to our interests and priorities. To make your trip comfortable and easy, I highly recommend planning with V9." },
+  { name: "Verified traveller", location: "", trip: "Vietnam · 10 days", coord: "21.03°N · 105.85°E", image: "/images/testimonials/vietnam.webp", initial: "V", color: "#C9842B", review: "Our 10-day Vietnam trip was just amazing — stays, sightseeing, food and above all hospitality of a 7-star category, with real value for money. Even last-minute changes were gracefully handled. We felt at home." },
+  { name: "Yogesh & Family Jaju", location: "Sangamner", trip: "Bhutan", coord: "27.47°N · 89.64°E", initial: "Y", color: "#2D8B6A", review: "A huge thank you for arranging such a fantastic trip to Bhutan — an unforgettable experience. The landscapes were stunning, the itinerary spot on, and the local guides amazing. Can't wait to plan the next adventure!" },
+  { name: "Verified traveller", location: "", trip: "Kashmir", coord: "34.05°N · 74.38°E", image: "/images/testimonials/kashmir-snow.webp", initial: "K", color: "#1B6CA8", review: "Hamara trip kaafi memorable aur smooth raha. Superb hotels, perfect arrangements aur har jagah excellent service mili. Poori trip tension-free aur beautifully planned thi — thank you for making our journey so comfortable and special!" },
+  { name: "Chinmay Korad", location: "", trip: "Uttarakhand · 2 tours", coord: "30.07°N · 79.01°E", initial: "C", color: "#1B2D4E", review: "Professionally arranged. The best part — our requirement was understood and options prepared specifically to meet it. Enjoyed the travel, stay and guide arrangements. Thank you for making our two back-to-back tours memorable." },
 ]
 
 function TestimonialsSection() {
   return (
-    <section className="bg-brand-mesh py-24 sm:py-28">
+    <section className="overflow-hidden bg-brand-mesh py-24 sm:py-28">
       <div className="mx-auto max-w-6xl px-6">
-        {/* SectionHeader — eyebrow + Fraunces display headline (italic-cherry word) */}
-        <div className="text-center mb-14" data-reveal>
+        {/* header */}
+        <div className="mb-12 text-center" data-reveal>
           <p className="eyebrow justify-center text-secondary"><span className="dot" /> Loved by travellers</p>
           <h2 className="h-display mt-4 text-3xl sm:text-4xl md:text-5xl">
             Real trips, real <em>stories.</em>
           </h2>
+          <p className="mx-auto mt-4 max-w-xl text-[14.5px] leading-relaxed text-muted-foreground">
+            Unedited words — and real photos — from travellers who planned their journey with V9.
+          </p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={t.name}
-              initial={{ opacity: 0, y: 30, scale: 0.96 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      {/* Travel-postcard carousel — auto-scrolls, pauses on hover */}
+      <div
+        className="group/tm relative"
+        data-reveal
+        style={{
+          maskImage: "linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent)",
+          WebkitMaskImage: "linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent)",
+        }}
+      >
+        <div
+          className="flex w-max items-stretch gap-6 px-6 py-3 group-hover/tm:[animation-play-state:paused]"
+          style={{ animation: "marqueeX 72s linear infinite" }}
+        >
+          {[...testimonials, ...testimonials].map((t, i) => (
+            <article
+              key={i}
+              className="flex w-[320px] shrink-0 flex-col overflow-hidden rounded-[22px] bg-white shadow-[0_10px_34px_rgba(11,20,38,0.08)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_22px_54px_rgba(11,20,38,0.16)]"
+              style={{ border: "1px solid rgba(176,184,196,0.2)" }}
             >
-              <div
-                className="group flex h-full flex-col rounded-[20px] bg-white px-7 py-[30px] shadow-[0_2px_20px_rgba(11,20,38,0.04)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_16px_50px_rgba(11,20,38,0.1)]"
-                style={{ border: "1px solid rgba(176,184,196,0.18)" }}
-              >
-                {/* quote-mark icon (cherry, faint) */}
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="rgba(196,50,74,0.10)" aria-hidden>
-                  <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-1.5 3-3 3zM15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-1.5 3-3 3z" />
-                </svg>
-                {/* 5 cherry stars */}
-                <div className="mt-1 flex gap-0.5">
+              {/* media — real traveller photo, else a destination colour band */}
+              <div className="relative h-[186px] w-full overflow-hidden">
+                {t.image ? (
+                  <Image src={t.image} alt={`${t.name} on their ${t.trip} trip`} fill sizes="320px" className="object-cover object-[center_38%]" />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center" style={{ background: `linear-gradient(150deg, ${t.color}, ${t.color}cc 55%, #0A1425)` }}>
+                    <span className="px-5 text-center font-heading text-[34px] font-medium italic leading-[1.05] text-white/95" style={{ fontVariationSettings: "'opsz' 144" }}>
+                      {t.trip.split(" · ")[0]}
+                    </span>
+                  </div>
+                )}
+                {/* bottom scrim + coordinate micro-label */}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-primary/80 via-primary/25 to-transparent" />
+                <span className="absolute bottom-2.5 left-3.5 font-tech text-[8px] uppercase tracking-[0.18em] text-white/90">{t.coord}</span>
+                {/* trip tag */}
+                <span className="absolute left-3.5 top-3.5 rounded-full bg-white/[0.92] px-2.5 py-1 font-tech text-[8px] uppercase tracking-[0.12em] text-primary backdrop-blur-sm">{t.trip}</span>
+                {/* verified franking stamp */}
+                <div className="absolute right-3.5 top-3.5 flex h-9 w-9 rotate-[9deg] items-center justify-center rounded-full border border-dashed border-white/70 bg-white/15 backdrop-blur-sm" title="Verified traveller">
+                  <Check className="h-4 w-4 text-white" strokeWidth={2.6} />
+                </div>
+              </div>
+
+              {/* body */}
+              <div className="flex flex-1 flex-col px-6 py-5">
+                <div className="flex gap-0.5">
                   {Array.from({ length: 5 }).map((_, s) => (
                     <Star key={s} className="h-3.5 w-3.5 fill-secondary text-secondary" />
                   ))}
                 </div>
-                {/* quote — Fraunces (opsz 40) */}
-                <p
-                  className="mt-4 flex-1 font-heading text-[14.5px] font-normal leading-[1.75] text-foreground"
-                  style={{ fontVariationSettings: "'opsz' 40" }}
-                >
+                <p className="mt-3 flex-1 font-heading text-[13.5px] font-normal leading-[1.7] text-foreground" style={{ fontVariationSettings: "'opsz' 40" }}>
                   &ldquo;{t.review}&rdquo;
                 </p>
-                {/* author */}
-                <div className="mt-6 flex items-center gap-3 border-t border-silver/[0.18] pt-5">
-                  <div
-                    className="flex h-[42px] w-[42px] items-center justify-center rounded-full font-heading text-[17px] font-medium text-white"
-                    style={{ background: `linear-gradient(135deg, ${t.color}, ${t.color}aa)` }}
-                  >
+                <div className="mt-4 flex items-center gap-2.5 border-t border-silver/[0.18] pt-4">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-heading text-[14px] font-medium text-white" style={{ background: `linear-gradient(135deg, ${t.color}, ${t.color}aa)` }}>
                     {t.initial}
                   </div>
-                  <div>
-                    <p className="text-[13.5px] font-semibold text-primary">{t.name}</p>
-                    <p className="mt-0.5 text-[11.5px] text-muted-foreground">{t.trip}</p>
+                  <div className="min-w-0">
+                    <p className="truncate text-[13px] font-semibold text-primary">{t.name}</p>
+                    <p className="truncate text-[11px] text-muted-foreground">{t.trip}{t.location ? ` · ${t.location}` : ""}</p>
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </article>
           ))}
         </div>
       </div>
