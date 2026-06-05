@@ -9,6 +9,7 @@ import { ChevronDown, Phone, Search, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { mainNavItems } from "@/config/navigation"
 import { siteConfig } from "@/config/site"
+import { waHref } from "@/lib/whatsapp"
 import { useLeadModal } from "@/components/shared/LeadCaptureModal"
 import { MobileNav } from "@/components/layout/MobileNav"
 
@@ -222,9 +223,21 @@ export function Header() {
               </div>
             )}
 
-            {/* Phone — number text hides when scrolled, icon stays */}
+            {/* Phone icon + number — opens WhatsApp (number text hides when scrolled, icon stays) */}
             <a
-              href={`tel:${siteConfig.contact.phone}`}
+              href={waHref()}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                try {
+                  const w = window as unknown as {
+                    gtag?: (...args: unknown[]) => void
+                  }
+                  w.gtag?.("event", "whatsapp_click", { source: "header-phone" })
+                } catch {
+                  /* analytics is best-effort */
+                }
+              }}
               className="hidden items-center gap-1.5 rounded-full px-2.5 py-2 text-[12.5px] font-medium text-white/80 transition-colors hover:text-white xl:flex"
             >
               <Phone className="h-3.5 w-3.5 text-[#FF8E9E]" />

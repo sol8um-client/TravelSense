@@ -1,5 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
 import { generatePageMetadata, breadcrumbSchema } from "@/lib/seo"
 import { JsonLd } from "@/components/shared/JsonLd"
 import { PackageFilters } from "@/components/packages/PackageFilters"
@@ -51,7 +53,9 @@ export default function PackagesPage() {
   const pkgCards = getPackageCards()
 
   return (
-    <main style={{ background: "#FAF8F4" }}>
+    <>
+      <Header />
+      <main className="min-h-screen" style={{ background: "#FAF8F4" }}>
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -237,6 +241,8 @@ export default function PackagesPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+      <Footer />
+    </>
   )
 }

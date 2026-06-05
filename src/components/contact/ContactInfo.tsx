@@ -12,6 +12,8 @@ import {
   Linkedin,
 } from "lucide-react"
 import Link from "next/link"
+import { waHref } from "@/lib/whatsapp"
+import { WhatsAppLink } from "@/components/shared/WhatsAppLink"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -25,21 +27,24 @@ const fadeUp = {
 const contactDetails = [
   {
     icon: Phone,
-    label: "Phone",
+    label: "Phone / WhatsApp",
     value: "+91 80874 53658",
-    href: "tel:+918087453658",
+    href: waHref(),
+    external: true,
   },
   {
     icon: Mail,
     label: "Email",
     value: "travelsensepvtltd@gmail.com",
     href: "mailto:travelsensepvtltd@gmail.com",
+    external: false,
   },
   {
     icon: MapPin,
     label: "Registered Office",
     value: "Sangamner, Ahmednagar, Maharashtra 422605, India",
     href: undefined,
+    external: false,
   },
 ]
 
@@ -113,6 +118,8 @@ export default function ContactInfo() {
               <Link
                 key={item.label}
                 href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
                 className="block transition-opacity hover:opacity-80"
               >
                 {content}
@@ -126,10 +133,9 @@ export default function ContactInfo() {
 
       {/* WhatsApp CTA */}
       <motion.div variants={fadeUp} custom={1}>
-        <Link
-          href="https://wa.me/918087453658?text=Hi%20TravelSense%2C%20I%27d%20like%20to%20know%20more%20about%20your%20travel%20services."
-          target="_blank"
-          rel="noopener noreferrer"
+        <WhatsAppLink
+          source="contact-info"
+          message="Hi TravelSense, I'd like to know more about your travel services."
           className="flex items-center gap-4 rounded-2xl border border-[#25D366]/20 bg-[#25D366]/5 p-5 transition-colors hover:border-[#25D366]/40 hover:bg-[#25D366]/10"
         >
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#25D366]/20">
@@ -143,7 +149,7 @@ export default function ContactInfo() {
               Quick responses, usually within 30 minutes
             </p>
           </div>
-        </Link>
+        </WhatsAppLink>
       </motion.div>
 
       {/* Social links */}

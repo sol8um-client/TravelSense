@@ -69,6 +69,7 @@ import {
 import { cn } from "@/lib/utils"
 import { use3DTilt } from "@/hooks/use3DTilt"
 import { useLeadModal } from "@/components/shared/LeadCaptureModal"
+import { WhatsAppLink } from "@/components/shared/WhatsAppLink"
 import VisorCascade, { MobileVisorStrip, LogoVisor } from "./VisorCascade"
 import { searchIndex } from "@/data/searchIndex"
 
@@ -1287,7 +1288,7 @@ function HowItWorksSection() {
 
   return (
     <section ref={ref} id="how-it-works" className="relative bg-brand-mesh" style={{ height: "460vh" }}>
-      <div className="sticky top-0 flex h-screen flex-col items-center justify-center overflow-hidden px-6 py-10 sm:px-8">
+      <div className="sticky top-[var(--nav-h)] flex h-[calc(100svh-var(--nav-h))] flex-col items-center justify-center overflow-hidden px-6 py-10 sm:px-8">
         {/* compact header */}
         <div className="max-w-[620px] text-center">
           <p className="m-0 font-body text-[10.5px] font-semibold uppercase tracking-[0.28em] text-secondary">How it works</p>
@@ -1464,7 +1465,7 @@ function CategoriesSection() {
 
   return (
     <section ref={ref} className="relative bg-white" style={{ height: `${CATS.length * 110}vh` }}>
-      <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
+      <div className="sticky top-[var(--nav-h)] flex h-[calc(100svh-var(--nav-h))] flex-col overflow-hidden">
         {/* header */}
         <div className="shrink-0 pt-[6vh] text-center">
           <p className="eyebrow justify-center text-secondary"><span className="dot" /> How do you travel?</p>
@@ -1710,7 +1711,7 @@ function USPSection() {
 
             {/* CTA */}
             <div data-reveal className="mt-8 flex items-center gap-5" style={{ transitionDelay: "0.4s" }}>
-              <Link href="/consultation" className="metallic-cta group inline-flex items-center gap-2 px-7 py-3.5 text-[14px] font-body font-semibold text-white tracking-[0.01em]">
+              <WhatsAppLink source="usp-talk-human" className="metallic-cta group inline-flex items-center gap-2 px-7 py-3.5 text-[14px] font-body font-semibold text-white tracking-[0.01em]">
                 <span className="relative z-10 flex items-center gap-2">
                   <motion.span animate={{ rotate: [0, -15, 15, -10, 10, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 3, ease: "easeInOut" }}>
@@ -1718,7 +1719,7 @@ function USPSection() {
                   </motion.span>
                   Talk to a human
                 </span>
-              </Link>
+              </WhatsAppLink>
               <div className="flex items-center gap-2">
                 <motion.div className="h-1.5 w-1.5 rounded-full bg-green-400"
                   animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
@@ -1956,8 +1957,6 @@ function TestimonialsSection() {
    ═══════════════════════════════════════════════════════════════ */
 
 function CTASection() {
-  const leadModal = useLeadModal()
-
   return (
     <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0A1425, #152240)" }}>
       {/* cinematic backdrop image (ken-burns) + navy gradient veil */}
@@ -2012,14 +2011,14 @@ function CTASection() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ delay: 0.24, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <button onClick={() => leadModal.open("cta-talk-to-expert")} className="metallic-cta group inline-flex items-center gap-2 px-[30px] py-[15px] text-[14px] font-body font-semibold text-white tracking-[0.01em] cursor-pointer">
+          <WhatsAppLink source="cta-talk-expert" className="metallic-cta group inline-flex items-center gap-2 px-[30px] py-[15px] text-[14px] font-body font-semibold text-white tracking-[0.01em] cursor-pointer">
             <span className="relative z-10 flex items-center gap-2">
               <motion.span animate={{ rotate: [0, -10, 10, -5, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 4 }}>
                 <Phone className="h-4 w-4" />
               </motion.span>
               Talk to an expert
             </span>
-          </button>
+          </WhatsAppLink>
           <Link href="/destinations" className="btn btn-ghost text-[14px]">
             Browse destinations
           </Link>

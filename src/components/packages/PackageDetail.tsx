@@ -699,8 +699,8 @@ function DayByDay({ days, fallbackImage }: { days: ItineraryDay[]; fallbackImage
       <div
         style={{
           position: "sticky",
-          top: 0,
-          height: "100vh",
+          top: "var(--nav-h)",
+          height: "calc(100svh - var(--nav-h))",
           overflow: "hidden",
           display: "flex",
           flexDirection: "column",
@@ -1119,22 +1119,28 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
             backgroundSize: "64px 64px",
           }}
         />
-        {/* frosted readability scrim (no `filter` on this clipped/masked element's ancestors) */}
+        {/* frosted readability scrim — liquid glass that FEATHERS into the sharp
+            image above (no hard edge). The mask ramps the backdrop-blur in over a
+            long span so the frost fades in gradually; the translucent-navy gradient
+            echoes the .glass-* aesthetic. (No `filter` on this masked element's
+            ancestors — would break the mask.) */}
         <div
           style={{
             position: "absolute",
             left: 0,
             right: 0,
             bottom: 0,
-            height: "62%",
+            height: "70%",
             zIndex: 1,
             pointerEvents: "none",
-            WebkitBackdropFilter: "blur(7px)",
-            backdropFilter: "blur(7px)",
+            WebkitBackdropFilter: "blur(12px) saturate(135%)",
+            backdropFilter: "blur(12px) saturate(135%)",
             background:
-              "linear-gradient(180deg, transparent 0%, rgba(10,20,37,0.30) 55%, rgba(10,20,37,0.55) 100%)",
-            WebkitMaskImage: "linear-gradient(180deg, transparent 0%, #000 38%)",
-            maskImage: "linear-gradient(180deg, transparent 0%, #000 38%)",
+              "linear-gradient(180deg, rgba(10,20,37,0) 0%, rgba(10,20,37,0.06) 30%, rgba(10,20,37,0.20) 55%, rgba(12,24,52,0.42) 78%, rgba(10,20,37,0.62) 100%)",
+            WebkitMaskImage:
+              "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.12) 24%, rgba(0,0,0,0.4) 42%, rgba(0,0,0,0.78) 62%, #000 82%)",
+            maskImage:
+              "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.12) 24%, rgba(0,0,0,0.4) 42%, rgba(0,0,0,0.78) 62%, #000 82%)",
           }}
         />
 
@@ -2037,11 +2043,18 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
             display: "flex",
             alignItems: "center",
             gap: 20,
-            background: "linear-gradient(180deg, #122040, #0A1425)",
-            border: "1px solid rgba(176,184,196,0.18)",
+            // real liquid glass (matches .glass-dark / .nav-top in globals.css):
+            // translucent navy + frosted backdrop so it reads over light AND dark
+            // page areas, with a hairline top border and soft shadow.
+            background: "rgba(16,28,58,0.7)",
+            backdropFilter: "blur(28px) saturate(150%)",
+            WebkitBackdropFilter: "blur(28px) saturate(150%)",
+            border: "1px solid rgba(120,150,210,0.25)",
+            borderTop: "1px solid rgba(120,150,210,0.35)",
             borderRadius: 9999,
             padding: "10px 10px 10px 20px",
-            boxShadow: "0 20px 50px rgba(11,20,38,0.4)",
+            boxShadow:
+              "0 20px 50px rgba(3,8,16,0.42), 0 4px 14px rgba(3,8,16,0.18), inset 0 1px 0 rgba(255,255,255,0.18)",
             maxWidth: 760,
             width: "100%",
           }}

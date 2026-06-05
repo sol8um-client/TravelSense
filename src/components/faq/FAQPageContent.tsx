@@ -7,6 +7,7 @@ import { ArrowRight, MessageCircle } from "lucide-react"
 import { PageHero } from "@/components/shared/PageHero"
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs"
 import { Button } from "@/components/ui/button"
+import { waHref } from "@/lib/whatsapp"
 import FAQAccordion, { type FAQItem } from "@/components/faq/FAQAccordion"
 
 const fadeUp = {
@@ -95,9 +96,19 @@ export default function FAQPageContent({ faqs }: FAQPageContentProps) {
             </Button>
             <Button asChild variant="outline" size="lg">
               <a
-                href="https://wa.me/918087453658"
+                href={waHref()}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  try {
+                    const w = window as unknown as {
+                      gtag?: (...args: unknown[]) => void
+                    }
+                    w.gtag?.("event", "whatsapp_click", { source: "faq" })
+                  } catch {
+                    /* analytics is best-effort */
+                  }
+                }}
               >
                 WhatsApp Us
               </a>

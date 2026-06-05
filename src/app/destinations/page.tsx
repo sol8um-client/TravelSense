@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Phone } from "lucide-react"
 import { generatePageMetadata } from "@/lib/seo"
 import { JsonLd } from "@/components/shared/JsonLd"
+import { WhatsAppLink } from "@/components/shared/WhatsAppLink"
 import { DestinationsExplorer } from "@/components/destinations/DestinationsExplorer"
 import type { DestinationCardData } from "@/components/destinations/DestinationCard"
 import { coordFor } from "@/components/destinations/destinationCoords"
@@ -170,9 +171,9 @@ export default function DestinationsPage() {
             Tell a real expert your vibe and budget — we&apos;ll match you to the perfect place.
           </p>
           <div style={{ marginTop: 32, display: "flex", justifyContent: "center" }}>
-            <Link href="/consultation" className="btn btn-primary" style={{ padding: "15px 30px", fontSize: 14 }}>
+            <WhatsAppLink source="destinations-cta" className="btn btn-primary" style={{ padding: "15px 30px", fontSize: 14 }}>
               <Phone size={16} strokeWidth={1.5} /> Talk to a human
-            </Link>
+            </WhatsAppLink>
           </div>
         </div>
       </section>

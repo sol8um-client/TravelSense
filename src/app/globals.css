@@ -37,6 +37,10 @@
 
   /* Radius */
   --radius: 0.75rem;
+
+  /* Floating nav pill clearance — scroll-pinned sections offset their sticky
+     top by this so headers don't hide under the nav. */
+  --nav-h: 84px;
 }
 
 @theme inline {
