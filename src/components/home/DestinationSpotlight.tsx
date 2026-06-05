@@ -133,7 +133,7 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
   return (
     <div
       className={
-        "relative mx-auto w-full max-w-[400px] sm:max-w-[440px] lg:max-w-none " + className
+        "group/spot relative mx-auto w-full max-w-[420px] sm:max-w-[470px] lg:max-w-none " + className
       }
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -143,8 +143,23 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
       aria-roledescription="carousel"
       aria-label="Featured destinations"
     >
-      {/* ── Card ──────────────────────────────────────────────────────────── */}
-      <div className="glass-panel relative overflow-hidden rounded-[26px] p-2 sm:p-2.5 shadow-[0_30px_80px_rgba(11,20,38,0.22)]">
+      {/* soft brand glow behind the card so it melts into the hero (blends with
+          the centre composition rather than reading as a hard-edged box) */}
+      <div
+        className="pointer-events-none absolute -inset-5 -z-10 rounded-[40px] opacity-80"
+        style={{ background: "radial-gradient(60% 60% at 50% 35%, rgba(196,50,74,0.10), transparent 70%), radial-gradient(60% 60% at 60% 85%, rgba(80,128,205,0.12), transparent 72%)", filter: "blur(22px)" }}
+        aria-hidden
+      />
+
+      {/* ── Card — layered liquid glass ───────────────────────────────────── */}
+      <div className="glass-panel relative overflow-hidden rounded-[28px] p-2.5 sm:p-3 shadow-[0_36px_90px_rgba(11,20,38,0.28)] ring-1 ring-white/40 backdrop-blur-xl">
+        {/* thin glass highlight along the top + left edge (reads as liquid glass
+            without washing the photo/controls) */}
+        <div
+          className="pointer-events-none absolute inset-0 z-[25] rounded-[28px]"
+          style={{ background: "linear-gradient(150deg, rgba(255,255,255,0.45), transparent 14%)", mixBlendMode: "soft-light" }}
+          aria-hidden
+        />
         {/* image stage — fixed aspect so there's never a layout jump between slides.
             taller on mobile (portrait-ish), a touch wider on desktop. */}
         <div className="relative aspect-[4/5] sm:aspect-[5/6] lg:aspect-[4/5] w-full overflow-hidden rounded-[20px] bg-primary/10">

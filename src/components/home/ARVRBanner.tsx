@@ -45,27 +45,30 @@ export default function ARVRBanner() {
       {/* hairline gold top edge */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/45 to-transparent" />
 
-      <div className="relative mx-auto max-w-[1180px] px-6 pb-8 pt-[78px] sm:pb-9 sm:pt-[68px]">
-        <div className="glass-dark relative flex flex-col items-center gap-5 rounded-[22px] px-6 pb-6 pt-[74px] text-center sm:flex-row sm:items-center sm:gap-7 sm:px-8 sm:py-6 sm:pl-[188px] sm:text-left">
-          {/* ── Figure: the VR traveller stepping out of the bar in 3D ──────── */}
-          <div
-            className="absolute left-1/2 top-0 z-10 -translate-x-1/2 sm:bottom-0 sm:left-7 sm:top-auto sm:translate-x-0"
-            aria-hidden
-          >
-            {/* gold glow pooled at the figure's feet/base */}
+      <div className="relative mx-auto max-w-[1180px] px-6 py-7 sm:py-8">
+        <div className="glass-dark flex flex-col items-center gap-5 rounded-[22px] px-6 py-5 text-center sm:flex-row sm:gap-7 sm:px-7 sm:text-left">
+          {/* ── Figure: the face area of the VR traveller, in a glowing ring ── */}
+          <div className="relative shrink-0" aria-hidden>
             <span
-              className="absolute bottom-3 left-1/2 h-24 w-28 -translate-x-1/2 rounded-[50%]"
-              style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.45), transparent 75%)", filter: "blur(16px)" }}
+              className="absolute inset-0 -m-2.5 rounded-full"
+              style={{ background: "radial-gradient(circle, rgba(212,168,83,0.34) 0%, transparent 70%)", filter: "blur(14px)" }}
             />
-            <Image
-              src="/images/hero/vr-traveller.png"
-              alt="A traveller previewing a destination in virtual reality"
-              width={533}
-              height={1300}
-              priority
-              className="relative h-[150px] w-auto -translate-y-[54px] object-contain sm:h-[184px] sm:translate-y-0"
-              style={{ filter: "drop-shadow(0 18px 26px rgba(0,0,0,0.5))" }}
-            />
+            <span
+              className="relative block h-[70px] w-[70px] overflow-hidden rounded-full sm:h-[86px] sm:w-[86px]"
+              style={{
+                border: "1px solid rgba(212,168,83,0.5)",
+                boxShadow: "inset 0 1px 0 rgba(255,235,190,0.25), 0 10px 26px rgba(0,0,0,0.42)",
+              }}
+            >
+              <Image
+                src="/images/hero/vr-face.png"
+                alt="A traveller previewing a destination in virtual reality"
+                fill
+                sizes="86px"
+                className="object-cover"
+                priority
+              />
+            </span>
           </div>
 
           {/* ── Copy ──────────────────────────────────────────────────────── */}

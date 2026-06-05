@@ -11,7 +11,6 @@ import {
   useTransform,
   AnimatePresence,
   useMotionValue,
-  useSpring,
   useVelocity,
 } from "framer-motion"
 import { useParallax, useSectionZoom, useStaggerReveal } from "@/hooks/useScrollAnimations"
@@ -473,76 +472,6 @@ function FloatingTravelIcons() {
   )
 }
 
-/* Real Compass */
-function RealCompass() {
-  const [heading, setHeading] = useState(0)
-  const [hasPermission, setHasPermission] = useState(false)
-
-  useEffect(() => {
-    const handleOrientation = (e: DeviceOrientationEvent) => {
-      if (e.alpha !== null) { setHeading(e.alpha); setHasPermission(true) }
-    }
-    if (typeof window !== "undefined" && "DeviceOrientationEvent" in window) {
-      const DOE = DeviceOrientationEvent as any
-      if (typeof DOE.requestPermission !== "function") {
-        window.addEventListener("deviceorientation", handleOrientation)
-      }
-    }
-    return () => window.removeEventListener("deviceorientation", handleOrientation)
-  }, [])
-
-  const needleRotation = useSpring(heading, { stiffness: 50, damping: 15 })
-
-  return (
-    <motion.div
-      className="absolute top-[5%] right-[2.5%] hidden flex-col items-center xl:flex"
-      initial={{ opacity: 0, scale: 0, rotate: -180 }}
-      animate={{ opacity: 1, scale: 1, rotate: 0 }}
-      transition={{ delay: 1.5, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-    >
-      <div className="relative h-20 w-20">
-        <div className="absolute inset-0 rounded-full border-[3px] border-silver/20 shadow-[0_4px_15px_rgba(0,0,0,0.08),inset_0_1px_3px_rgba(255,255,255,0.5)] bg-gradient-to-b from-white/90 to-silver-mist/40 backdrop-blur-sm" />
-        <div className="absolute inset-[4px] rounded-full border border-silver/10" />
-
-        {Array.from({ length: 36 }).map((_, i) => (
-          <div key={i} className="absolute top-[6px] left-1/2 origin-bottom"
-            style={{ height: "calc(50% - 6px)", width: "1px", transform: `rotate(${i * 10}deg) translateX(-50%)` }}>
-            <div className={cn("w-px", i % 9 === 0 ? "h-2.5 bg-primary/20" : "h-1 bg-silver/30")} />
-          </div>
-        ))}
-
-        <span className="absolute top-[10px] left-1/2 -translate-x-1/2 text-[9px] font-heading text-secondary font-bold tracking-[0.2em]">N</span>
-        <span className="absolute bottom-[10px] left-1/2 -translate-x-1/2 text-[8px] font-heading text-silver/40 tracking-[0.2em]">S</span>
-        <span className="absolute right-[10px] top-1/2 -translate-y-1/2 text-[8px] font-heading text-silver/40 tracking-[0.2em]">E</span>
-        <span className="absolute left-[10px] top-1/2 -translate-y-1/2 text-[8px] font-heading text-silver/40 tracking-[0.2em]">W</span>
-
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full"
-          style={hasPermission ? { rotate: needleRotation } : undefined}
-          animate={!hasPermission ? { rotate: [0, 15, -10, 5, 0] } : undefined}
-          transition={!hasPermission ? { duration: 10, repeat: Infinity, ease: "easeInOut" } : undefined}
-        >
-          <div className="absolute top-[18px] left-1/2 -translate-x-1/2 w-0 h-0"
-            style={{ borderLeft: "5px solid transparent", borderRight: "5px solid transparent", borderBottom: "32px solid #C4324A", filter: "drop-shadow(0 1px 3px rgba(196,50,74,0.4))" }} />
-          <div className="absolute bottom-[18px] left-1/2 -translate-x-1/2 w-0 h-0"
-            style={{ borderLeft: "4px solid transparent", borderRight: "4px solid transparent", borderTop: "28px solid #B0B8C4", filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.1))" }} />
-        </motion.div>
-
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full bg-gradient-to-b from-silver-light to-silver-dark shadow-[0_1px_4px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.7)]" />
-
-        <motion.div className="absolute -inset-5" animate={{ rotate: 360 }} transition={{ duration: 15, repeat: Infinity, ease: "linear" }}>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <Plane className="h-3.5 w-3.5 text-secondary/40 rotate-90" strokeWidth={1.5} />
-          </div>
-        </motion.div>
-      </div>
-      <span className="script mt-2 whitespace-nowrap text-[13px] text-foreground/40">
-        true north for travellers
-      </span>
-    </motion.div>
-  )
-}
-
 /* Constellation star field — brand colored */
 function ConstellationField() {
   const stars = Array.from({ length: 16 }, (_, i) => {
@@ -596,10 +525,7 @@ function HeroSection() {
       {/* 4. Floating travel icon particles */}
       <FloatingTravelIcons />
 
-      {/* 5. Live compass — top-right, above the right-hand spotlight card */}
-      <RealCompass />
-
-      {/* 6. Static globe (Nano-Banana art + CSS motion, no WebGL) — all sizes.
+      {/* 5. Static globe (Nano-Banana art + CSS motion, no WebGL) — all sizes.
              Mobile/tablet: a calm, glowing backdrop centred behind the text.
              Desktop (lg+): present on the LEFT with live location image-pins. */}
       <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">
@@ -607,14 +533,14 @@ function HeroSection() {
           className="absolute left-1/2 top-1/2 w-[155%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.4]
                      sm:w-[120%] sm:opacity-[0.46]
                      md:w-[92%] md:opacity-[0.55]
-                     lg:left-0 lg:top-1/2 lg:h-[124%] lg:w-auto lg:-translate-x-[42%] lg:-translate-y-1/2 lg:opacity-100"
+                     lg:left-0 lg:top-1/2 lg:h-[126%] lg:w-auto lg:-translate-x-[30%] lg:-translate-y-1/2 lg:opacity-100"
         />
       </div>
 
       {/* 7. Destination spotlight — auto-advancing showcase card in the right
              margin (xl+), vertically centred to complement the globe on the left.
              Below xl it's rendered full-width inside the content flow instead. */}
-      <div className="pointer-events-auto absolute right-[2.5%] top-1/2 z-20 hidden w-[360px] -translate-y-1/2 xl:block 2xl:right-[5%] 2xl:w-[400px]">
+      <div className="pointer-events-auto absolute right-[3%] top-1/2 z-20 hidden w-[400px] -translate-y-1/2 xl:block 2xl:right-[5.5%] 2xl:w-[440px]">
         <DestinationSpotlight />
       </div>
 
@@ -660,7 +586,7 @@ function HeroSection() {
 
         {/* Mobile/tablet only: the spotlight as a clean full-width card below the
             headline (desktop gets the right-margin version, hidden below xl). */}
-        <div className="mx-auto mt-10 w-full max-w-[440px] xl:hidden">
+        <div className="mx-auto mt-10 w-full max-w-[470px] xl:hidden">
           <DestinationSpotlight />
         </div>
       </motion.div>
