@@ -366,7 +366,7 @@ export function DestinationGrid({
       `}</style>
 
       {showFilters && (
-        <div id="dest-grid" style={{ position: "sticky", top: 0, zIndex: 30 }}>
+        <div id="dest-grid" style={{ position: "sticky", top: "var(--nav-h)", zIndex: 30 }}>
           <div
             className="glass-panel"
             style={{ borderRadius: 0, borderLeft: "none", borderRight: "none", borderTop: "none" }}

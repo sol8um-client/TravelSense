@@ -230,7 +230,7 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
     <div>
       {/* ── Sticky filter + sort board ── */}
       <div
-        className="sticky top-0 z-30"
+        className="sticky top-[var(--nav-h)] z-30"
         style={{
           background: "rgba(250,248,244,0.85)",
           backdropFilter: "blur(12px)",
