@@ -184,4 +184,6 @@ export const searchIndex: SearchEntry[] = [
   {"label": "Sham Valley Winter Trek", "href": "/packages/sham-valley-winter-trek", "type": "Package", "sub": "Leh-Ladakh"},
   {"label": "Kang Yatse II Climb Expedition", "href": "/packages/kang-yatse-ii-climb-expedition", "type": "Package", "sub": "Leh-Ladakh"},
   {"label": "Parang La Trek", "href": "/packages/parang-la-trek", "type": "Package", "sub": "Leh-Ladakh"},
+  {"label": "Dagala Thousand Lakes Trek", "href": "/packages/dagala-thousand-lakes-trek", "type": "Package", "sub": "Bhutan"},
+  {"label": "Mount Elbrus Climb", "href": "/packages/mount-elbrus-climb", "type": "Package", "sub": "Russia"},
 ]

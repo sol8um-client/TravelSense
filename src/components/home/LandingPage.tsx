@@ -204,13 +204,16 @@ const heroFavourites: { name: string; slug: string }[] = [
 ]
 
 // Rotating "live presence" social-proof pill above the headline
-const heroPresence: { name: string; place: string }[] = [
-  { name: "Aanya", place: "Bali" },
-  { name: "Rohan", place: "Kashmir" },
-  { name: "Meera", place: "Kerala" },
-  { name: "Arjun", place: "Ladakh" },
-  { name: "Priya", place: "Dubai" },
-  { name: "Kabir", place: "Jaipur" },
+const heroPresence: { name: string; verb: string; place: string }[] = [
+  { name: "Aanya", verb: "is planning", place: "Bali" },
+  { name: "Rohan", verb: "just booked", place: "Kashmir" },
+  { name: "Meera", verb: "reached out about", place: "Kerala" },
+  { name: "Arjun", verb: "is dreaming of", place: "Ladakh" },
+  { name: "Priya", verb: "just returned from", place: "Dubai" },
+  { name: "Kabir", verb: "enquired about", place: "Jaipur" },
+  { name: "Sara", verb: "is exploring", place: "Vietnam" },
+  { name: "Dev", verb: "just confirmed", place: "Andaman" },
+  { name: "Ishaan", verb: "is comparing", place: "Singapore" },
 ]
 
 /* Rotating word with a CSS-only crossfade.
@@ -283,8 +286,8 @@ function LivePresence() {
             transition={{ duration: 0.35 }}
             className="inline-block"
           >
-            <span className="font-semibold text-primary">{cur.name}</span> is planning{" "}
-            <span className="italic text-secondary">{cur.place}</span>
+            <span className="font-semibold text-primary">{cur.name}</span> {cur.verb}{" "}
+            <span className="font-script text-[1.35em] leading-none text-secondary">{cur.place}</span>
           </motion.span>
         </AnimatePresence>
       </span>
