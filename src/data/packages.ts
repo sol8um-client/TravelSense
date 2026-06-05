@@ -14056,11 +14056,11 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A seven-night Bhutan discovery covering the three western valleys — Paro (Tiger's Nest), Thimphu (Buddha Dordenma + capital tour), and Punakha (Dzong + Mo Chhu rafting). The classic Bhutan first-timer route, inspired by the Six Senses 7-night journey.",
-    heroImage: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/bhutan.webp",
     images: [
-      "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1531219432768-9f540ce91934?w=800&h=600&fit=crop",
+      "/images/destinations/bhutan.webp",
+      "/images/destinations/bhutan.webp",
+      "/images/destinations/bhutan.webp",
       "https://images.unsplash.com/photo-1583309219338-a582f1f9ca6b?w=800&h=600&fit=crop",
     ],
     duration: { days: 8, nights: 7 },
@@ -14108,7 +14108,7 @@ const allPackages: Package[] = [
         elevation: "2,320 m at Thimphu",
         distance: "55 km Paro→Thimphu",
         highlight: "Tashichho Dzong flag-lowering",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 2,
@@ -14118,7 +14118,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Thimphu",
         highlight: "Buddha Dordenma — 51 m bronze",
-        image: "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 3,
@@ -14130,7 +14130,7 @@ const allPackages: Package[] = [
         elevation: "3,100 m at Dochu La, 1,200 m at Punakha",
         distance: "75 km Thimphu→Punakha",
         highlight: "Dochu La with 108 chortens",
-        image: "https://images.unsplash.com/photo-1531219432768-9f540ce91934?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 4,
@@ -14140,7 +14140,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Punakha",
         highlight: "Mo Chhu rafting past Punakha Dzong",
-        image: "https://images.unsplash.com/photo-1531219432768-9f540ce91934?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 5,
@@ -14164,7 +14164,7 @@ const allPackages: Package[] = [
         elevation: "3,120 m at Tiger's Nest",
         distance: "4-5 hrs round trip on foot",
         highlight: "Tiger's Nest — Bhutan's iconic image",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 7,
@@ -14184,7 +14184,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Paro airport approach — one of the world's most dramatic",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
     ],
   },
@@ -14196,11 +14196,11 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A ten-night Bhutan cultural journey — the classic western valleys (Paro, Thimphu, Punakha) plus a deeper exploration of central Bhutan via Trongsa Dzong and the spiritual heartland of Bumthang. Inspired by the Six Senses 10-night journey.",
-    heroImage: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/bhutan.webp",
     images: [
-      "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1531219432768-9f540ce91934?w=800&h=600&fit=crop",
+      "/images/destinations/bhutan.webp",
+      "/images/destinations/bhutan.webp",
+      "/images/destinations/bhutan.webp",
       "https://images.unsplash.com/photo-1543874746-b7e36e8a2b3e?w=800&h=600&fit=crop",
     ],
     duration: { days: 11, nights: 10 },
@@ -14245,7 +14245,7 @@ const allPackages: Package[] = [
         meals: "Lunch, Dinner",
         accommodation: "Hotel in Thimphu",
         highlight: "Tashichho flag ceremony",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 2,
@@ -14255,7 +14255,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Thimphu",
         highlight: "Buddha Dordenma",
-        image: "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 3,
@@ -14266,7 +14266,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Punakha",
         distance: "75 km",
         highlight: "Dochu La",
-        image: "https://images.unsplash.com/photo-1531219432768-9f540ce91934?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 4,
@@ -14276,7 +14276,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Punakha",
         highlight: "Mo Chhu rafting",
-        image: "https://images.unsplash.com/photo-1531219432768-9f540ce91934?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 5,
@@ -14329,7 +14329,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Paro",
         elevation: "3,120 m",
         highlight: "Tiger's Nest",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 10,
@@ -14349,7 +14349,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Western + central Bhutan complete",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
     ],
   },
@@ -14361,11 +14361,11 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A twelve-night Bhutan grand circuit — adds Phobjikha (the black-necked crane valley, Oct-Mar) and a deeper Bumthang stay to the Cultural 10N tour. The most comprehensive Bhutan journey available, inspired by the Six Senses 12-night route.",
-    heroImage: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/bhutan.webp",
     images: [
-      "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1531219432768-9f540ce91934?w=800&h=600&fit=crop",
+      "/images/destinations/bhutan.webp",
+      "/images/destinations/bhutan.webp",
+      "/images/destinations/bhutan.webp",
       "https://images.unsplash.com/photo-1543874746-b7e36e8a2b3e?w=800&h=600&fit=crop",
     ],
     duration: { days: 13, nights: 12 },
@@ -14411,7 +14411,7 @@ const allPackages: Package[] = [
         meals: "Lunch, Dinner",
         accommodation: "Hotel in Thimphu",
         highlight: "Arrival in the kingdom",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 2,
@@ -14421,7 +14421,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Thimphu",
         highlight: "Buddha Dordenma",
-        image: "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 3,
@@ -14431,7 +14431,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Punakha",
         highlight: "108 chortens at Dochu La",
-        image: "https://images.unsplash.com/photo-1531219432768-9f540ce91934?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 4,
@@ -14441,7 +14441,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Punakha",
         highlight: "Punakha Dzong",
-        image: "https://images.unsplash.com/photo-1531219432768-9f540ce91934?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 5,
@@ -14513,7 +14513,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Paro",
         highlight: "Tiger's Nest",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 12,
@@ -14533,7 +14533,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Bhutan's deepest cultural journey",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
     ],
   },
@@ -20401,8 +20401,8 @@ const allPackages: Package[] = [
     category: "adventure",
     description:
       "A high-altitude trek on the Dagala range south of Thimphu, threading a string of clear glacial lakes \u2014 Utsho, Reli Tsho, Setho Tsho and more \u2014 across rolling alpine pasture. From the lake-dotted ridges an unbroken Himalayan wall stands on the horizon, from Jomolhari in the west to distant Kanchenjunga, making this one of Bhutan's finest yet least-crowded walks.",
-    heroImage: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
-    images: ["https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop", "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop", "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop", "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop"],
+    heroImage: "/images/destinations/bhutan.webp",
+    images: ["/images/destinations/bhutan.webp", "/images/destinations/bhutan.webp", "/images/destinations/bhutan.webp", "/images/destinations/bhutan.webp"],
     duration: { days: 6, nights: 5 },
     price: 159000,
     difficulty: "Moderate",
@@ -20427,7 +20427,7 @@ const allPackages: Package[] = [
         elevation: "2,900m",
         distance: "6 km trek",
         highlight: "Onto the trail",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 2,
@@ -20440,7 +20440,7 @@ const allPackages: Package[] = [
         elevation: "4,100m",
         distance: "12 km trek",
         highlight: "Up onto the range",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 3,
@@ -20453,7 +20453,7 @@ const allPackages: Package[] = [
         elevation: "4,300m",
         distance: "8 km trek",
         highlight: "The thousand lakes",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 4,
@@ -20466,7 +20466,7 @@ const allPackages: Package[] = [
         elevation: "4,500m",
         distance: "9 km round",
         highlight: "Himalayan skyline",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 5,
@@ -20479,7 +20479,7 @@ const allPackages: Package[] = [
         elevation: "4,000m",
         distance: "10 km trek",
         highlight: "Crossing the passes",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 6,
@@ -20492,7 +20492,7 @@ const allPackages: Package[] = [
         elevation: "3,200m",
         distance: "14 km trek",
         highlight: "Down to Thimphu",
-        image: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
     ],
   },

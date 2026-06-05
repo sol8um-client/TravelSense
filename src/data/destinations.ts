@@ -2434,14 +2434,14 @@ export const destinations: Destination[] = [
       "Tiger's Nest Monastery clinging to a cliff at 3,120 m, the dzongs of Paro and Punakha, the prayer-flag passes of central Bhutan — the world's only Vajrayana Buddhist kingdom where Gross National Happiness is government policy.",
     longDescription:
       "Bhutan is the world's most carefully managed travel destination — every foreign visitor pays a Sustainable Development Fee that funds free healthcare and education for Bhutanese citizens, and tourism is deliberately kept small-scale. The result: a Himalayan kingdom that has chosen to preserve its Vajrayana Buddhist culture, its 70%-forest cover (constitutionally mandated), and an unhurried pace that disappeared from the rest of Asia decades ago.\n\nParo, where the international airport is, is anchored by the Paro Dzong (Rinpung Dzong) — a 17th-century fortress-monastery — and the National Museum housed in the Ta Dzong watchtower. The signature experience is the hike to Taktsang (Tiger's Nest) Monastery, perched on a cliff 900 m above the Paro valley floor. The 4-5 hour round-trip climb to 3,120 m delivers one of the most photographed sights in the Himalayas.\n\nThimphu, the capital, is the world's only national capital without a single traffic light — police officers in white gloves direct traffic at the main junction. The 51-m bronze Buddha Dordenma overlooking the city, the Memorial Chorten where locals walk meditative circuits, the Tashichho Dzong (seat of government and the King), and the Folk Heritage Museum are essential stops.\n\nPunakha, the former winter capital, has the most beautiful dzong in Bhutan — Punakha Dzong at the confluence of the Pho Chhu and Mo Chhu rivers, with white-water rafting on the Mo Chhu river. The drive to Punakha crosses the Dochu La pass at 3,100 m where 108 chortens (memorial stupas) face the Eastern Himalayas. Longer trips continue to central Bhutan — Trongsa, Bumthang (the spiritual heartland) and the black-necked crane valley of Phobjikha.",
-    heroImage: "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/bhutan.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1602001011404-ec9c5e5c5e6f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1531219432768-9f540ce91934?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1543874746-b7e36e8a2b3e?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1583309219338-a582f1f9ca6b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+      "/images/destinations/bhutan.webp",
+      "/images/destinations/bhutan.webp",
+      "/images/destinations/bhutan.webp",
+      "/images/destinations/bhutan.webp",
+      "/images/destinations/bhutan.webp",
+      "/images/destinations/bhutan.webp",
     ],
     bestTimeToVisit: "March to May, September to November",
     weather:
