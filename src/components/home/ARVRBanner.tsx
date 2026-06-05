@@ -16,6 +16,7 @@
  * ring as the placeholder (no real image used).
  */
 
+import Image from "next/image"
 import Link from "next/link"
 import { Glasses, ArrowRight, Sparkles } from "lucide-react"
 
@@ -44,25 +45,27 @@ export default function ARVRBanner() {
       {/* hairline gold top edge */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/45 to-transparent" />
 
-      <div className="relative mx-auto max-w-[1180px] px-6 py-7 sm:py-8">
-        <div className="glass-dark flex flex-col items-center gap-6 rounded-[22px] px-6 py-6 text-center sm:flex-row sm:gap-8 sm:px-8 sm:text-left">
-          {/* ── Figure slot (placeholder VR goggles in a glowing gold ring) ── */}
-          <div className="relative shrink-0">
+      <div className="relative mx-auto max-w-[1180px] px-6 pb-8 pt-[78px] sm:pb-9 sm:pt-[68px]">
+        <div className="glass-dark relative flex flex-col items-center gap-5 rounded-[22px] px-6 pb-6 pt-[74px] text-center sm:flex-row sm:items-center sm:gap-7 sm:px-8 sm:py-6 sm:pl-[188px] sm:text-left">
+          {/* ── Figure: the VR traveller stepping out of the bar in 3D ──────── */}
+          <div
+            className="absolute left-1/2 top-0 z-10 -translate-x-1/2 sm:bottom-0 sm:left-7 sm:top-auto sm:translate-x-0"
+            aria-hidden
+          >
+            {/* gold glow pooled at the figure's feet/base */}
             <span
-              className="absolute inset-0 -m-2 rounded-full"
-              style={{ background: "radial-gradient(circle, rgba(212,168,83,0.35) 0%, transparent 70%)", filter: "blur(14px)" }}
-              aria-hidden
+              className="absolute bottom-3 left-1/2 h-24 w-28 -translate-x-1/2 rounded-[50%]"
+              style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.45), transparent 75%)", filter: "blur(16px)" }}
             />
-            <div
-              className="relative flex h-[76px] w-[76px] items-center justify-center rounded-full sm:h-[88px] sm:w-[88px]"
-              style={{
-                background: "linear-gradient(160deg, rgba(212,168,83,0.22), rgba(212,168,83,0.06))",
-                border: "1px solid rgba(212,168,83,0.45)",
-                boxShadow: "inset 0 1px 0 rgba(255,235,190,0.3), 0 10px 30px rgba(212,168,83,0.18)",
-              }}
-            >
-              <Glasses className="h-9 w-9 text-accent sm:h-11 sm:w-11" strokeWidth={1.5} />
-            </div>
+            <Image
+              src="/images/hero/vr-traveller.png"
+              alt="A traveller previewing a destination in virtual reality"
+              width={533}
+              height={1300}
+              priority
+              className="relative h-[150px] w-auto -translate-y-[54px] object-contain sm:h-[184px] sm:translate-y-0"
+              style={{ filter: "drop-shadow(0 18px 26px rgba(0,0,0,0.5))" }}
+            />
           </div>
 
           {/* ── Copy ──────────────────────────────────────────────────────── */}

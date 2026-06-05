@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, useCallback, useId } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import dynamic from "next/dynamic"
 import { useRouter } from "next/navigation"
 import {
   motion,
@@ -71,18 +70,9 @@ import { use3DTilt } from "@/hooks/use3DTilt"
 import { useLeadModal } from "@/components/shared/LeadCaptureModal"
 import { WhatsAppLink } from "@/components/shared/WhatsAppLink"
 import DestinationSpotlight from "./DestinationSpotlight"
+import StaticGlobe from "./StaticGlobe"
 import ARVRBanner from "./ARVRBanner"
 import { searchIndex } from "@/data/searchIndex"
-
-/* Lazy-load 3D globe — no SSR (WebGL) */
-const Globe3D = dynamic(() => import("./Globe3D"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center">
-      <div className="w-48 h-48 rounded-full bg-gradient-to-br from-primary/[0.04] to-secondary/[0.04] animate-pulse border border-silver/10" />
-    </div>
-  ),
-})
 
 /* ─── Hooks ─── */
 
@@ -609,10 +599,16 @@ function HeroSection() {
       {/* 5. Live compass — top-right, above the right-hand spotlight card */}
       <RealCompass />
 
-      {/* 6. 3D WebGL Globe — visible on all sizes */}
-      {/* Mobile/tablet: centered, subtle bg behind text. Desktop: full left position */}
-      <div className="absolute inset-0 opacity-40 sm:opacity-50 md:opacity-60 lg:opacity-100 lg:left-[-32%] lg:top-0 lg:bottom-0 lg:right-[30%] lg:inset-auto lg:-translate-x-[8%] lg:-translate-y-[13%] pointer-events-none" style={{ zIndex: 1, maskImage: "linear-gradient(to right, black 60%, transparent 100%)", WebkitMaskImage: "linear-gradient(to right, black 60%, transparent 100%)" }}>
-        <Globe3D />
+      {/* 6. Static globe (Nano-Banana art + CSS motion, no WebGL) — all sizes.
+             Mobile/tablet: a calm, glowing backdrop centred behind the text.
+             Desktop (lg+): present on the LEFT with live location image-pins. */}
+      <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">
+        <StaticGlobe
+          className="absolute left-1/2 top-1/2 w-[155%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.4]
+                     sm:w-[120%] sm:opacity-[0.46]
+                     md:w-[92%] md:opacity-[0.55]
+                     lg:left-0 lg:top-1/2 lg:h-[124%] lg:w-auto lg:-translate-x-[42%] lg:-translate-y-1/2 lg:opacity-100"
+        />
       </div>
 
       {/* 7. Destination spotlight — auto-advancing showcase card in the right
