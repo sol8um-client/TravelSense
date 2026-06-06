@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react"
 import Image from "next/image"
 import { ArrowRight, Compass } from "lucide-react"
+import PageHero from "@/components/shared/PageHero"
 
 /* ═══════════════════════════════════════════════════════════════════════════
    TravelSense - Vehicles fleet section (ported from design_handoff/veh-page.jsx)
@@ -489,70 +490,17 @@ export default function VehicleFleet() {
   return (
     <div style={{ background: "#FAF8F4" }}>
       {/* ═══════════ HERO ═══════════ */}
-      <section
-        className="bg-brand-mesh grain"
-        style={{ position: "relative", overflow: "hidden", padding: "150px 32px 70px" }}
-      >
-        {/* dashed road motif */}
-        <svg
-          style={{ position: "absolute", left: 0, right: 0, bottom: 40, width: "100%", height: 60, opacity: 0.5 }}
-          viewBox="0 0 1400 60"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M-20 40 C 300 10 500 55 760 30 C 1000 8 1200 45 1420 25"
-            fill="none"
-            stroke="rgba(176,184,196,0.5)"
-            strokeWidth="2"
-            strokeDasharray="10 9"
-          />
-        </svg>
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1180, margin: "0 auto", textAlign: "center" }}>
-          <Reveal>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <p className="eyebrow">
-                <span>Vehicle rentals</span>
-                <span className="dot" />
-                <span>Driver included · across India</span>
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h1
-              style={{
-                margin: "18px auto 0",
-                maxWidth: 780,
-                fontFamily: "var(--font-heading, Fraunces, Georgia, serif)",
-                fontSize: "clamp(2.6rem, 5.4vw, 4.4rem)",
-                fontWeight: 500,
-                lineHeight: 1.0,
-                letterSpacing: "-0.03em",
-                color: "var(--primary)",
-                fontVariationSettings: "'opsz' 144",
-              }}
-            >
-              The right ride for{" "}
-              <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--secondary)" }}>
-                every road.
-              </em>
-            </h1>
-          </Reveal>
-          <Reveal delay={0.14}>
-            <p
-              style={{
-                margin: "20px auto 0",
-                maxWidth: 500,
-                fontSize: 16,
-                lineHeight: 1.7,
-                color: "var(--muted-foreground)",
-              }}
-            >
-              A handpicked fleet and experienced drivers - from intimate city sedans to long-haul
-              luxury coaches.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Vehicle rentals · Driver included · across India"
+        title={
+          <>
+            The right ride for{" "}
+            <span className="italic font-normal text-secondary">every road.</span>
+          </>
+        }
+        subtitle="A handpicked fleet and experienced drivers - from intimate city sedans to long-haul luxury coaches."
+        crumb="Vehicles"
+      />
 
       {/* ═══════════ FLEET ═══════════ */}
       <section style={{ padding: "70px 32px 90px" }}>

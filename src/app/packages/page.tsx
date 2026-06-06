@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer"
 import { generatePageMetadata, breadcrumbSchema } from "@/lib/seo"
 import { JsonLd } from "@/components/shared/JsonLd"
 import { PackageFilters } from "@/components/packages/PackageFilters"
+import PageHero from "@/components/shared/PageHero"
 import type { PackageCardData } from "@/components/packages/PackageCard"
 import { packages } from "@/data/packages"
 import { destinations } from "@/data/destinations"
@@ -73,88 +74,18 @@ export default function PackagesPage() {
         ])}
       />
 
-      {/* ── HERO ── */}
-      <section
-        className="bg-brand-mesh grain relative overflow-hidden"
-        style={{ padding: "150px 32px 56px" }}
-      >
-        <div
-          className="relative mx-auto text-center"
-          style={{ zIndex: 2, maxWidth: 1180 }}
-        >
-          {/* breadcrumb trail (light) */}
-          <nav
-            aria-label="Breadcrumb"
-            className="fade-in-soft mb-6 flex justify-center"
-          >
-            <ol
-              className="flex items-center font-body"
-              style={{ gap: 8, fontSize: 13, color: "var(--silver-dark)" }}
-            >
-              <li>
-                <Link href="/" className="link-underline transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li aria-hidden style={{ color: "var(--silver)" }}>
-                /
-              </li>
-              <li style={{ color: "var(--muted-foreground)" }}>Packages</li>
-            </ol>
-          </nav>
-
-          <div className="fade-in-soft flex justify-center">
-            <p className="eyebrow">
-              <span>Curated trips</span>
-              <span className="dot" />
-              <span>Leisure · Adventure</span>
-            </p>
-          </div>
-
-          <h1
-            className="fade-in-soft mx-auto"
-            style={{
-              margin: "18px auto 0",
-              maxWidth: 760,
-              fontFamily: "var(--font-heading, 'Fraunces', Georgia, serif)",
-              fontSize: "clamp(2.6rem, 5.4vw, 4.4rem)",
-              fontWeight: 500,
-              lineHeight: 1.0,
-              letterSpacing: "-0.03em",
-              color: "var(--primary)",
-              fontVariationSettings: "'opsz' 144",
-              animationDelay: "0.08s",
-            }}
-          >
+      <PageHero
+        eyebrow="Curated trips · Leisure · Adventure"
+        title={
+          <>
             Trips crafted by{" "}
-            <em
-              style={{
-                fontStyle: "italic",
-                fontWeight: 400,
-                color: "var(--secondary)",
-              }}
-            >
-              humans,
-            </em>{" "}
-            not algorithms.
-          </h1>
-
-          <p
-            className="fade-in-soft mx-auto font-body"
-            style={{
-              margin: "20px auto 0",
-              maxWidth: 500,
-              fontSize: 16,
-              lineHeight: 1.7,
-              color: "var(--muted-foreground)",
-              animationDelay: "0.14s",
-            }}
-          >
-            Every itinerary is hand-built, fully transparent, and adjustable.
-            Compare, then make it yours.
-          </p>
-        </div>
-      </section>
+            <span className="italic font-normal text-secondary">humans,</span> not
+            algorithms.
+          </>
+        }
+        subtitle="Every itinerary is hand-built, fully transparent, and adjustable. Compare, then make it yours."
+        crumb="Packages"
+      />
 
       {/* ── FILTER BOARD + GRID ── */}
       <section style={{ paddingBottom: 90 }}>

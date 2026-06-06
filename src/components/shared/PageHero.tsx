@@ -50,22 +50,33 @@ export function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-brand-mesh px-4 pt-[116px] pb-16 sm:px-6 sm:pt-[150px] sm:pb-20">
-      {/* layered brand glows */}
+      {/* Layered brand auras - warm sunrise (gold->cherry) upper-left, cool blue
+          atmosphere lower-right, a cherry accent, and a soft warm spotlight behind
+          the headline. Richer hues + glows so the hero reads premium (not flat
+          white) and echoes the homepage's auras. */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div
-          className="absolute -top-[12%] left-[4%] h-[480px] w-[600px] rounded-full"
-          style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.14), rgba(196,50,74,0.06) 50%, transparent 76%)", filter: "blur(95px)" }}
+          className="absolute -top-[16%] -left-[8%] h-[620px] w-[780px] rounded-full"
+          style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.30), rgba(196,50,74,0.13) 46%, transparent 74%)", filter: "blur(90px)" }}
         />
         <div
-          className="absolute -bottom-[16%] right-[2%] h-[520px] w-[520px] rounded-full"
-          style={{ background: "radial-gradient(closest-side, rgba(74,120,205,0.12), transparent 72%)", filter: "blur(110px)" }}
+          className="absolute -bottom-[20%] -right-[8%] h-[640px] w-[640px] rounded-full"
+          style={{ background: "radial-gradient(closest-side, rgba(74,120,205,0.24), rgba(74,120,205,0.07) 55%, transparent 78%)", filter: "blur(100px)" }}
+        />
+        <div
+          className="absolute top-[14%] right-[12%] h-[360px] w-[360px] rounded-full"
+          style={{ background: "radial-gradient(closest-side, rgba(196,50,74,0.13), transparent 70%)", filter: "blur(85px)" }}
+        />
+        <div
+          className="absolute left-1/2 top-[44%] h-[420px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          style={{ background: "radial-gradient(closest-side, rgba(255,238,210,0.6), transparent 72%)", filter: "blur(55px)" }}
         />
       </div>
       {/* faint dot-grid for texture, masked so it melts away toward the centre */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.5]"
+        className="pointer-events-none absolute inset-0 opacity-[0.65]"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(176,184,196,0.5) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, rgba(176,184,196,0.55) 1px, transparent 1px)",
           backgroundSize: "30px 30px",
           maskImage: "radial-gradient(ellipse 70% 60% at 50% 38%, transparent 30%, #000 85%)",
           WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 38%, transparent 30%, #000 85%)",
