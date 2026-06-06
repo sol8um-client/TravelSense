@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { motion } from "framer-motion"
 import {
   Heart,
@@ -20,11 +19,11 @@ import {
   Rocket,
   Plane,
   Monitor,
-  ChevronRight,
   ArrowRight,
   Phone,
 } from "lucide-react"
 import { useLeadModal } from "@/components/shared/LeadCaptureModal"
+import PageHero from "@/components/shared/PageHero"
 import { WhatsAppLink } from "@/components/shared/WhatsAppLink"
 import { SectionWave } from "@/components/shared/SectionWave"
 
@@ -153,99 +152,33 @@ export default function AboutContent() {
   return (
     <>
       {/* ═══════════════════════════════════════════════════════════
-          HERO - light mesh, display headline, breadcrumb, trust chips
+          HERO - shared PageHero, trust chips kept as children
          ═══════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-brand-mesh px-4 pt-[120px] pb-20 sm:px-6 sm:pt-[150px] sm:pb-24">
-        {/* soft brand washes */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-          <div
-            className="absolute -top-[10%] left-[6%] h-[460px] w-[560px] rounded-full"
-            style={{
-              background:
-                "radial-gradient(closest-side, rgba(212,168,83,0.12), rgba(196,50,74,0.05) 52%, transparent 76%)",
-              filter: "blur(90px)",
-            }}
-          />
-          <div
-            className="absolute -bottom-[12%] right-[4%] h-[480px] w-[480px] rounded-full"
-            style={{
-              background: "radial-gradient(closest-side, rgba(74,120,205,0.10), transparent 72%)",
-              filter: "blur(100px)",
-            }}
-          />
-        </div>
-
-        <div className="relative mx-auto max-w-3xl text-center">
-          {/* breadcrumb */}
-          <motion.nav
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-6 flex items-center justify-center gap-1.5 font-body text-[12px] text-muted-foreground"
-            aria-label="Breadcrumb"
-          >
-            <Link href="/" className="transition-colors hover:text-secondary">
-              Home
-            </Link>
-            <ChevronRight className="h-3 w-3 text-silver" />
-            <span className="font-semibold text-primary">About</span>
-          </motion.nav>
-
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-            className="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-white/70 px-3.5 py-1.5 font-body text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary backdrop-blur-md"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-            Who we are
-          </motion.span>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-5 font-heading text-[2.5rem] font-medium leading-[1.04] tracking-[-0.025em] text-primary sm:text-[3.4rem]"
-            style={{ fontVariationSettings: "'opsz' 144" }}
-          >
+      <PageHero
+        eyebrow="Who we are"
+        title={
+          <>
             Travel, the{" "}
             <span className="italic font-normal text-secondary">human</span> way.
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.22 }}
-            className="mx-auto mt-5 max-w-xl font-body text-[15px] leading-[1.7] text-foreground/70 sm:text-[17px]"
+          </>
+        }
+        subtitle="Founded by Jayshree Lakhotiya, TravelSense pairs 15+ years of on-ground travel expertise with modern technology - so every journey feels personal, effortless and unmistakably yours."
+        crumb="About"
+      >
+        {[
+          { icon: Compass, label: "500+ trips planned" },
+          { icon: MapPin, label: "50+ destinations" },
+          { icon: Star, label: "15+ years of craft" },
+        ].map((c) => (
+          <span
+            key={c.label}
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/65 px-3.5 py-1.5 font-body text-[12.5px] font-medium text-primary shadow-[0_6px_18px_rgba(11,20,38,0.06)] backdrop-blur-md"
           >
-            Founded by Jayshree Lakhotiya, TravelSense pairs 15+ years of on-ground travel
-            expertise with modern technology - so every journey feels personal, effortless and
-            unmistakably yours.
-          </motion.p>
-
-          {/* trust chips */}
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.32 }}
-            className="mt-7 flex flex-wrap items-center justify-center gap-2.5"
-          >
-            {[
-              { icon: Compass, label: "500+ trips planned" },
-              { icon: MapPin, label: "50+ destinations" },
-              { icon: Star, label: "15+ years of craft" },
-            ].map((c) => (
-              <span
-                key={c.label}
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/65 px-3.5 py-1.5 font-body text-[12.5px] font-medium text-primary shadow-[0_6px_18px_rgba(11,20,38,0.06)] backdrop-blur-md"
-              >
-                <c.icon className="h-3.5 w-3.5 text-secondary" strokeWidth={1.9} />
-                {c.label}
-              </span>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+            <c.icon className="h-3.5 w-3.5 text-secondary" strokeWidth={1.9} />
+            {c.label}
+          </span>
+        ))}
+      </PageHero>
 
       {/* ═══════════════════════════════════════════════════════════
           STORY - light band, glass card copy + founder portrait

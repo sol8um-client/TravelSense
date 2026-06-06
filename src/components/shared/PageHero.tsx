@@ -1,60 +1,130 @@
 "use client"
 
+import Link from "next/link"
 import { motion } from "framer-motion"
-import { cn } from "@/lib/utils"
+import { ChevronRight } from "lucide-react"
 
-interface PageHeroProps {
-  title: string
-  subtitle?: string
-  backgroundImage?: string
-  className?: string
-  children?: React.ReactNode
+/**
+ * PageHero - the single, shared hero used at the top of every non-home page so
+ * the whole site reads as one premium system. Light "brand-mesh" canvas with
+ * layered brand-colour glows + a faint dot-grid for depth, a frosted eyebrow
+ * pill, a Fraunces display headline (pass the accent word in `accent`, it lands
+ * in italic cherry), a subtitle, an auto Home > <crumb> breadcrumb, and an
+ * optional slot for chips / CTAs - all on a smooth staggered entrance.
+ *
+ * Keep page bodies flowing out of this with a <SectionWave/> or a light band.
+ */
+
+const EASE = [0.22, 1, 0.36, 1] as const
+
+const fade = {
+  hidden: { opacity: 0, y: 16 },
+  show: (i: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: 0.06 + i * 0.08, ease: EASE },
+  }),
 }
 
 export function PageHero({
+  eyebrow,
   title,
+  accent,
   subtitle,
-  backgroundImage,
-  className,
+  crumb,
   children,
-}: PageHeroProps) {
+}: {
+  /** small uppercase kicker shown in the frosted pill */
+  eyebrow?: string
+  /** main line(s); plain string or JSX */
+  title: React.ReactNode
+  /** optional trailing word/phrase rendered in italic cherry on its own line */
+  accent?: string
+  subtitle?: string
+  /** current page label for the "Home > <crumb>" breadcrumb */
+  crumb?: string
+  /** chips, buttons, etc. rendered under the subtitle */
+  children?: React.ReactNode
+  /** legacy prop from the old hero - accepted but ignored while pages migrate */
+  backgroundImage?: string
+}) {
   return (
-    <section
-      className={cn(
-        "relative flex min-h-[320px] items-center justify-center overflow-hidden bg-[#0A1425] px-4 pt-20 pb-12 md:min-h-[400px] md:pt-24",
-        className
-      )}
-    >
-      {/* Background image with overlay */}
-      {backgroundImage && (
+    <section className="relative overflow-hidden bg-brand-mesh px-4 pt-[116px] pb-16 sm:px-6 sm:pt-[150px] sm:pb-20">
+      {/* layered brand glows */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
-        >
-          <div className="absolute inset-0 bg-[#0A1425]/80" />
-        </div>
-      )}
+          className="absolute -top-[12%] left-[4%] h-[480px] w-[600px] rounded-full"
+          style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.14), rgba(196,50,74,0.06) 50%, transparent 76%)", filter: "blur(95px)" }}
+        />
+        <div
+          className="absolute -bottom-[16%] right-[2%] h-[520px] w-[520px] rounded-full"
+          style={{ background: "radial-gradient(closest-side, rgba(74,120,205,0.12), transparent 72%)", filter: "blur(110px)" }}
+        />
+      </div>
+      {/* faint dot-grid for texture, masked so it melts away toward the centre */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.5]"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(176,184,196,0.5) 1px, transparent 1px)",
+          backgroundSize: "30px 30px",
+          maskImage: "radial-gradient(ellipse 70% 60% at 50% 38%, transparent 30%, #000 85%)",
+          WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 38%, transparent 30%, #000 85%)",
+        }}
+      />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A1425]/60 via-transparent to-[#0A1425]" />
+      <div className="relative mx-auto max-w-3xl text-center">
+        {/* breadcrumb */}
+        {crumb && (
+          <motion.nav
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            aria-label="Breadcrumb"
+            className="mb-6 flex items-center justify-center gap-1.5 font-body text-[12px] text-muted-foreground"
+          >
+            <Link href="/" className="transition-colors hover:text-secondary">Home</Link>
+            <ChevronRight className="h-3 w-3 text-silver" />
+            <span className="font-semibold text-primary">{crumb}</span>
+          </motion.nav>
+        )}
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto max-w-4xl text-center">
+        {eyebrow && (
+          <motion.span
+            variants={fade}
+            custom={0}
+            initial="hidden"
+            animate="show"
+            className="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-white/70 px-3.5 py-1.5 font-body text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary backdrop-blur-md"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+            {eyebrow}
+          </motion.span>
+        )}
+
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="hx font-heading text-4xl font-medium tracking-[-0.02em] leading-[1.04] text-white md:text-5xl lg:text-6xl"
+          variants={fade}
+          custom={1}
+          initial="hidden"
+          animate="show"
+          className="mt-5 font-heading text-[2.5rem] font-medium leading-[1.04] tracking-[-0.025em] text-primary sm:text-[3.4rem]"
+          style={{ fontVariationSettings: "'opsz' 144" }}
         >
           {title}
+          {accent && (
+            <>
+              {" "}
+              <span className="italic font-normal text-secondary">{accent}</span>
+            </>
+          )}
         </motion.h1>
 
         {subtitle && (
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="mt-4 font-body text-base text-white/60 md:text-lg"
+            variants={fade}
+            custom={2}
+            initial="hidden"
+            animate="show"
+            className="mx-auto mt-5 max-w-xl font-body text-[15px] leading-[1.7] text-foreground/70 sm:text-[17px]"
           >
             {subtitle}
           </motion.p>
@@ -62,10 +132,11 @@ export function PageHero({
 
         {children && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6"
+            variants={fade}
+            custom={3}
+            initial="hidden"
+            animate="show"
+            className="mt-7 flex flex-wrap items-center justify-center gap-2.5"
           >
             {children}
           </motion.div>
@@ -74,3 +145,5 @@ export function PageHero({
     </section>
   )
 }
+
+export default PageHero

@@ -17,9 +17,9 @@ import {
   Loader2,
   MessageCircle,
   ArrowRight,
-  ChevronRight,
 } from "lucide-react"
 import { toast } from "sonner"
+import PageHero from "@/components/shared/PageHero"
 import { WhatsAppLink } from "@/components/shared/WhatsAppLink"
 import { SectionWave } from "@/components/shared/SectionWave"
 
@@ -127,89 +127,28 @@ export default function HotelsContent() {
 
   return (
     <>
-      {/* ── HERO - light mesh, display headline, glass trust chips ───────────── */}
-      <section className="relative overflow-hidden bg-brand-mesh px-4 pt-[120px] pb-20 sm:px-6 sm:pt-[150px] sm:pb-24">
-        {/* soft brand washes */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div
-            className="absolute -top-[10%] left-[6%] h-[460px] w-[560px] rounded-full"
-            style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.12), rgba(196,50,74,0.05) 52%, transparent 76%)", filter: "blur(90px)" }}
-          />
-          <div
-            className="absolute -bottom-[12%] right-[4%] h-[480px] w-[480px] rounded-full"
-            style={{ background: "radial-gradient(closest-side, rgba(74,120,205,0.10), transparent 72%)", filter: "blur(100px)" }}
-          />
-        </div>
-
-        <div className="relative mx-auto max-w-3xl text-center">
-          {/* breadcrumb */}
-          <motion.nav
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-6 flex items-center justify-center gap-1.5 font-body text-[12px] text-muted-foreground"
-            aria-label="Breadcrumb"
+      {/* ── HERO - shared PageHero, trust chips kept as children ─────────────── */}
+      <PageHero
+        eyebrow="Hotel booking · Launching soon"
+        title="Stays,"
+        accent="sorted."
+        subtitle="Find and book the perfect stay for your trip, from budget-friendly to luxury. Our instant booking engine is on its way - until then, we will hand-pick and book your room for you."
+        crumb="Hotels"
+      >
+        {[
+          { icon: Building2, label: "Curated across India" },
+          { icon: BadgePercent, label: "Fair trade rates" },
+          { icon: HeartHandshake, label: "Booked by a human" },
+        ].map((c) => (
+          <span
+            key={c.label}
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/65 px-3.5 py-1.5 font-body text-[12.5px] font-medium text-primary shadow-[0_6px_18px_rgba(11,20,38,0.06)] backdrop-blur-md"
           >
-            <Link href="/" className="transition-colors hover:text-secondary">Home</Link>
-            <ChevronRight className="h-3 w-3 text-silver" />
-            <span className="font-semibold text-primary">Hotels</span>
-          </motion.nav>
-
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-            className="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-white/70 px-3.5 py-1.5 font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-secondary backdrop-blur-md"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-            Hotel booking &middot; Launching soon
-          </motion.span>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-5 font-heading text-[2.5rem] font-medium leading-[1.04] tracking-[-0.025em] text-primary sm:text-[3.4rem]"
-            style={{ fontVariationSettings: "'opsz' 144" }}
-          >
-            Stays,{" "}
-            <span className="italic font-normal text-secondary">sorted.</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.22 }}
-            className="mx-auto mt-5 max-w-xl font-body text-[15px] leading-[1.7] text-foreground/70 sm:text-[17px]"
-          >
-            Find and book the perfect stay for your trip, from budget-friendly to luxury.
-            Our instant booking engine is on its way - until then, we will hand-pick and
-            book your room for you.
-          </motion.p>
-
-          {/* trust chips */}
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.32 }}
-            className="mt-7 flex flex-wrap items-center justify-center gap-2.5"
-          >
-            {[
-              { icon: Building2, label: "Curated across India" },
-              { icon: BadgePercent, label: "Fair trade rates" },
-              { icon: HeartHandshake, label: "Booked by a human" },
-            ].map((c) => (
-              <span
-                key={c.label}
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/65 px-3.5 py-1.5 font-body text-[12.5px] font-medium text-primary shadow-[0_6px_18px_rgba(11,20,38,0.06)] backdrop-blur-md"
-              >
-                <c.icon className="h-3.5 w-3.5 text-secondary" strokeWidth={1.9} />
-                {c.label}
-              </span>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+            <c.icon className="h-3.5 w-3.5 text-secondary" strokeWidth={1.9} />
+            {c.label}
+          </span>
+        ))}
+      </PageHero>
 
       {/* ── STAY TYPES - editorial glass cards on light ─────────────────────── */}
       <section className="bg-[#F4F6F9] px-4 py-16 sm:px-6 sm:py-20">

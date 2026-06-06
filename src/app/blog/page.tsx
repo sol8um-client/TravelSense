@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
+import { BookOpen, Compass, Sparkles } from "lucide-react"
 import { generatePageMetadata, breadcrumbSchema } from "@/lib/seo"
 import { JsonLd } from "@/components/shared/JsonLd"
 import { PageHero } from "@/components/shared/PageHero"
-import { Breadcrumbs } from "@/components/shared/Breadcrumbs"
 import { BlogGrid } from "@/components/blog/BlogGrid"
 import { blogPosts, categoryDisplayNames } from "@/data/blog"
 import type { BlogPost } from "@/components/blog/BlogCard"
@@ -35,7 +35,7 @@ function mapToBlogPosts(): BlogPost[] {
   }))
 }
 
-// ─── Page ───────────────────────────────────────────────────────────────────
+// ─── Page (blog/layout.tsx already renders Header + Footer) ─────────────────
 
 export default function BlogPage() {
   const posts = mapToBlogPosts()
@@ -49,21 +49,35 @@ export default function BlogPage() {
         ])}
       />
 
+      {/* ── HERO - shared site hero ──────────────────────────────────────── */}
       <PageHero
-        title="Travel Blog"
-        subtitle="Stories, tips, and guides to inspire your next adventure"
-        backgroundImage="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1600&h=600&fit=crop"
-      />
+        eyebrow="The journal"
+        title="Stories that"
+        accent="inspire."
+        subtitle="Tips, guides and tales from the road to help you plan your next adventure."
+        crumb="Blog"
+      >
+        {[
+          { icon: BookOpen, label: `${posts.length} articles` },
+          { icon: Compass, label: "Destination guides" },
+          { icon: Sparkles, label: "Expert insights" },
+        ].map((c) => (
+          <span
+            key={c.label}
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/65 px-3.5 py-1.5 font-body text-[12.5px] font-medium text-primary shadow-[0_6px_18px_rgba(11,20,38,0.06)] backdrop-blur-md"
+          >
+            <c.icon className="h-3.5 w-3.5 text-secondary" strokeWidth={1.9} />
+            {c.label}
+          </span>
+        ))}
+      </PageHero>
 
-      <div className="bg-[#0A1425]">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <Breadcrumbs
-            items={[{ label: "Blog", href: "/blog" }]}
-            className="mb-10"
-          />
+      {/* ── POSTS - glass cards on light ─────────────────────────────────── */}
+      <section className="bg-[#F4F6F9] px-4 py-16 sm:px-6 sm:py-20">
+        <div className="mx-auto max-w-7xl">
           <BlogGrid posts={posts} />
         </div>
-      </div>
+      </section>
     </>
   )
 }

@@ -346,16 +346,16 @@ export function GalleryGrid({ items, className }: GalleryGridProps) {
             className={cn(
               "relative rounded-full px-5 py-2 font-body text-sm font-medium tracking-wide transition-all duration-300",
               activeFilter === option.value
-                ? "bg-[#C4324A] text-white shadow-lg shadow-[#C4324A]/25"
-                : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white/80"
+                ? "text-white"
+                : "glass-pill text-muted-foreground hover:text-primary"
             )}
           >
-            {option.label}
+            <span className="relative z-[1]">{option.label}</span>
             {activeFilter === option.value && (
               <motion.div
                 layoutId="gallery-filter-indicator"
-                className="absolute inset-0 rounded-full bg-[#C4324A]"
-                style={{ zIndex: -1 }}
+                className="absolute inset-0 rounded-full bg-secondary shadow-[0_8px_24px_rgba(196,50,74,0.28)]"
+                style={{ zIndex: 0 }}
                 transition={{
                   type: "spring",
                   damping: 25,
@@ -368,7 +368,7 @@ export function GalleryGrid({ items, className }: GalleryGridProps) {
       </div>
 
       {/* ── Photo Count ── */}
-      <p className="mb-6 text-center font-body text-sm text-[#8A9BB5]">
+      <p className="mb-6 text-center font-body text-sm text-muted-foreground">
         Showing {filteredItems.length} photo
         {filteredItems.length !== 1 ? "s" : ""}
       </p>
@@ -390,7 +390,7 @@ export function GalleryGrid({ items, className }: GalleryGridProps) {
       {/* ── Empty State ── */}
       {filteredItems.length === 0 && (
         <div className="flex flex-col items-center justify-center py-20 text-center">
-          <p className="font-body text-white/40">
+          <p className="font-body text-muted-foreground">
             No photos found for this category.
           </p>
         </div>
@@ -435,10 +435,10 @@ function GalleryCard({
       animate="visible"
       exit="exit"
       custom={index}
-      className="group relative cursor-pointer overflow-hidden rounded-lg break-inside-avoid"
+      className="group relative cursor-pointer overflow-hidden rounded-2xl border border-white/60 bg-white/40 p-1.5 shadow-[0_10px_30px_rgba(11,20,38,0.08)] backdrop-blur-md break-inside-avoid transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(11,20,38,0.16)]"
       onClick={onClick}
     >
-      <div className={cn("relative w-full overflow-hidden", aspectClass)}>
+      <div className={cn("relative w-full overflow-hidden rounded-xl", aspectClass)}>
         <Image
           src={item.imageUrl}
           alt={item.title}

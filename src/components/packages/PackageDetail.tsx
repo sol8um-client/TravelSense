@@ -1084,20 +1084,20 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
 
   useEffect(() => {
     const el = heroRef.current
-    const evalScroll = () => {
+    const evalBar = () => {
       const h = el ? el.offsetHeight : window.innerHeight
-      setShowBar(window.scrollY > h * 0.6)
+      const pastHero = window.scrollY > h * 0.6
+      // Hide again near the page bottom so the bar never covers the footer links.
+      const nearBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 170
+      setShowBar(pastHero && !nearBottom)
     }
-    let io: IntersectionObserver | undefined
-    if (el) {
-      io = new IntersectionObserver(([e]) => setShowBar(!e.isIntersecting), { threshold: 0 })
-      io.observe(el)
-    }
-    evalScroll()
-    window.addEventListener("scroll", evalScroll, { passive: true })
+    evalBar()
+    window.addEventListener("scroll", evalBar, { passive: true })
+    window.addEventListener("resize", evalBar)
     return () => {
-      if (io) io.disconnect()
-      window.removeEventListener("scroll", evalScroll)
+      window.removeEventListener("scroll", evalBar)
+      window.removeEventListener("resize", evalBar)
     }
   }, [])
 
@@ -1349,8 +1349,9 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
       </section>
 
       {/* ═══════════ EXPERIENCE + STAT RAIL ═══════════ */}
-      <section style={{ padding: "clamp(70px, 9vw, 120px) 40px", maxWidth: 1280, margin: "0 auto" }}>
+      <section className="pkg-exp" style={{ padding: "clamp(70px, 9vw, 120px) 40px", maxWidth: 1280, margin: "0 auto" }}>
         <div
+          className="pkg-exp-grid"
           style={{
             display: "grid",
             gridTemplateColumns: railStats.length ? "1.5fr 1fr" : "1fr",
@@ -2068,7 +2069,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
         }}
       >
         <div
-          className="glass-dark"
+          className="glass-dark pkg-bookbar"
           style={{
             pointerEvents: "auto",
             display: "flex",
@@ -2092,7 +2093,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
         >
           <div style={{ display: "flex", alignItems: "center", gap: 12, flex: 1, minWidth: 0 }}>
             {fallbackImage && (
-              <span style={{ position: "relative", width: 38, height: 38, borderRadius: 10, overflow: "hidden", flexShrink: 0 }}>
+              <span className="pkg-bookbar-img" style={{ position: "relative", width: 38, height: 38, borderRadius: 10, overflow: "hidden", flexShrink: 0 }}>
                 <Image src={fallbackImage} alt="" fill sizes="38px" style={{ objectFit: "cover" }} />
               </span>
             )}
@@ -2111,7 +2112,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
               >
                 {pkg.title}
               </div>
-              <div style={{ fontSize: 10.5, color: "rgba(208,213,220,0.82)" }}>
+              <div className="pkg-bookbar-meta" style={{ fontSize: 10.5, color: "rgba(208,213,220,0.82)" }}>
                 {pkg.duration ? `${pkg.duration.days}D / ${pkg.duration.nights}N` : ""}
                 {pkg.difficulty ? ` · ${pkg.difficulty}` : ""}
               </div>
@@ -2134,7 +2135,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
           )}
           <button
             onClick={() => leadModal.open(`package-stickybar-${pkg.slug}`)}
-            className="btn btn-primary"
+            className="btn btn-primary pkg-bookbar-cta"
             style={{ padding: "12px 22px", fontSize: 13, flexShrink: 0 }}
           >
             Plan this trip
@@ -2151,6 +2152,14 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
         }
         @media (max-width: 760px) {
           .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .pkg-exp { padding-left: 22px !important; padding-right: 22px !important; }
+          .pkg-exp-grid { grid-template-columns: 1fr !important; gap: 32px !important; align-items: start !important; }
+        }
+        @media (max-width: 600px) {
+          .pkg-bookbar { gap: 10px !important; padding: 8px 8px 8px 14px !important; }
+          .pkg-bookbar-img { display: none !important; }
+          .pkg-bookbar-meta { display: none !important; }
+          .pkg-bookbar-cta { padding: 11px 15px !important; font-size: 12px !important; }
         }
       `}</style>
     </div>

@@ -1477,6 +1477,107 @@ html {
   font-weight: 600;
 }
 
+/* ═══ Legal prose - long-form copy inside the light glass card ═══
+   Used on the Terms of Service / Privacy Policy pages (LegalContent). Readable
+   display headings + comfortable body rhythm on the frosted panel. No Tailwind
+   typography plugin is installed, so this is hand-rolled to match the system. */
+.legal-prose {
+  font-family: var(--font-body, "Outfit", system-ui, sans-serif);
+  color: rgba(26, 31, 46, 0.78);
+  font-size: 15px;
+  line-height: 1.78;
+}
+
+.legal-prose > p:first-of-type {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(26, 31, 46, 0.9);
+}
+
+.legal-prose h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.9rem;
+  font-family: var(--font-heading, "Fraunces", Georgia, serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--primary);
+  font-variation-settings: 'opsz' 144;
+}
+
+.legal-prose h2:first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 640px) {
+  .legal-prose h2 {
+    font-size: 1.65rem;
+  }
+}
+
+.legal-prose h3 {
+  margin-top: 1.9rem;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-heading, "Fraunces", Georgia, serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--primary);
+  font-variation-settings: 'opsz' 144;
+}
+
+.legal-prose p {
+  margin-bottom: 1.15rem;
+}
+
+.legal-prose ul,
+.legal-prose ol {
+  margin-top: 0.4rem;
+  margin-bottom: 1.3rem;
+  padding-left: 1.4rem;
+}
+
+.legal-prose ul {
+  list-style-type: disc;
+}
+
+.legal-prose ol {
+  list-style-type: decimal;
+}
+
+.legal-prose li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.2rem;
+}
+
+.legal-prose li::marker {
+  color: var(--secondary);
+}
+
+.legal-prose strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.legal-prose a {
+  color: var(--secondary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.25s ease;
+}
+
+.legal-prose a:hover {
+  color: var(--accent-dark);
+}
+
+.legal-prose h2 + p,
+.legal-prose h2 + ul,
+.legal-prose h2 + ol {
+  margin-top: 0;
+}
+
 /* ═══════════════════════════════════════════════════════════════
    PRINT / DOCUMENT TEMPLATES - Letterhead, Invoice, Quotation
    A4 page layout, on-screen preview + print-to-PDF

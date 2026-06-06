@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import * as Accordion from "@radix-ui/react-accordion"
 import { ChevronDown, Search } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -23,6 +22,7 @@ interface FAQAccordionProps {
 export default function FAQAccordion({ faqs }: FAQAccordionProps) {
   const [activeCategory, setActiveCategory] = useState("All")
   const [search, setSearch] = useState("")
+  const [openKey, setOpenKey] = useState<string | null>(null)
 
   // Derive unique categories
   const categories = useMemo(() => {
@@ -46,14 +46,14 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
   return (
     <div className="mx-auto max-w-4xl">
       {/* Search */}
-      <div className="relative mb-8">
-        <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/30" />
+      <div className="relative mb-6">
+        <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         <input
           type="text"
           placeholder="Search questions..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full rounded-xl border border-white/[0.08] bg-white/[0.04] py-3.5 pl-11 pr-4 font-body text-sm text-white placeholder:text-white/30 outline-none transition-colors focus:border-[#C4324A]/40 focus:bg-white/[0.06]"
+          className="glass-field w-full rounded-2xl py-3.5 pl-11 pr-4 font-body text-sm text-primary placeholder:text-muted-foreground outline-none transition-colors focus:border-secondary/40"
         />
       </div>
 
@@ -66,8 +66,8 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
             className={cn(
               "rounded-full px-4 py-1.5 font-body text-sm font-medium transition-all duration-200",
               activeCategory === cat
-                ? "bg-[#C4324A] text-white shadow-lg shadow-[#C4324A]/20"
-                : "bg-white/[0.05] text-white/50 hover:bg-white/[0.08] hover:text-white/70"
+                ? "bg-secondary text-white shadow-[0_8px_24px_rgba(196,50,74,0.28)]"
+                : "glass-pill text-muted-foreground hover:text-primary"
             )}
           >
             {cat}
@@ -75,7 +75,7 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
         ))}
       </div>
 
-      {/* Accordion */}
+      {/* Accordion - glass cards with smooth height motion */}
       <AnimatePresence mode="wait">
         {filtered.length === 0 ? (
           <motion.p
@@ -83,7 +83,7 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="py-12 text-center font-body text-sm text-white/40"
+            className="py-12 text-center font-body text-sm text-muted-foreground"
           >
             No questions match your search. Try a different term.
           </motion.p>
@@ -94,31 +94,62 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
+            className="space-y-3"
           >
-            <Accordion.Root type="multiple" className="space-y-3">
-              {filtered.map((faq, i) => (
-                <Accordion.Item
-                  key={`${faq.category}-${i}`}
-                  value={`${faq.category}-${i}`}
-                  className="group rounded-xl border border-white/[0.06] bg-white/[0.03] transition-colors data-[state=open]:border-[#C4324A]/25 data-[state=open]:bg-white/[0.05]"
+            {filtered.map((faq, i) => {
+              const key = `${faq.category}-${i}`
+              const isOpen = openKey === key
+              return (
+                <div
+                  key={key}
+                  className={cn(
+                    "glass-panel overflow-hidden rounded-2xl transition-colors duration-300",
+                    isOpen && "ring-1 ring-secondary/25"
+                  )}
                 >
-                  <Accordion.Trigger className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left outline-none md:px-6">
-                    <span className="font-body text-sm font-medium leading-snug text-white/80 transition-colors group-data-[state=open]:text-white md:text-base">
+                  <button
+                    type="button"
+                    onClick={() => setOpenKey(isOpen ? null : key)}
+                    aria-expanded={isOpen}
+                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left outline-none md:px-6"
+                  >
+                    <span
+                      className={cn(
+                        "font-body text-sm font-medium leading-snug transition-colors md:text-base",
+                        isOpen ? "text-primary" : "text-foreground/80"
+                      )}
+                    >
                       {faq.question}
                     </span>
-                    <ChevronDown className="h-4 w-4 shrink-0 text-white/30 transition-transform duration-300 group-data-[state=open]:rotate-180 group-data-[state=open]:text-[#C4324A]" />
-                  </Accordion.Trigger>
+                    <ChevronDown
+                      className={cn(
+                        "h-4 w-4 shrink-0 transition-all duration-300",
+                        isOpen ? "rotate-180 text-secondary" : "text-muted-foreground"
+                      )}
+                    />
+                  </button>
 
-                  <Accordion.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-                    <div className="border-t border-white/[0.06] px-5 pb-5 pt-4 md:px-6">
-                      <p className="font-body text-sm leading-relaxed text-white/50">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </Accordion.Content>
-                </Accordion.Item>
-              ))}
-            </Accordion.Root>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="border-t border-secondary/10 px-5 pb-5 pt-4 md:px-6">
+                          <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )
+            })}
           </motion.div>
         )}
       </AnimatePresence>
