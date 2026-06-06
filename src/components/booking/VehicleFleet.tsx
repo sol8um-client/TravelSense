@@ -5,7 +5,7 @@ import Image from "next/image"
 import { ArrowRight, Compass } from "lucide-react"
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   TravelSense — Vehicles fleet section (ported from design_handoff/veh-page.jsx)
+   TravelSense - Vehicles fleet section (ported from design_handoff/veh-page.jsx)
    Signature devices: cream hero + dashed road motif, brushed-aluminium fleet
    "spec plates" with parametric side-profile Silhouettes, person-icon capacity
    gauges, feature chips and indicative ₹/day, the gold "Most popular" plate, a
@@ -19,7 +19,7 @@ const GOLD = "#B8862F"
 
 const fmt = (n: number): string => "₹" + Number(n).toLocaleString("en-IN")
 
-/* ── Reveal — fade/slide in on scroll via IntersectionObserver (home-kit) ──── */
+/* ── Reveal - fade/slide in on scroll via IntersectionObserver (home-kit) ──── */
 interface RevealProps {
   children: ReactNode
   y?: number
@@ -101,7 +101,7 @@ function PathIcon({ d, size = 20, stroke = "currentColor", sw = 1.5 }: PathIconP
   )
 }
 
-/* person silhouette path — capacity gauge */
+/* person silhouette path - capacity gauge */
 const PERSON = "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0"
 
 /* per-type top-view vehicle glyph for the Class tag */
@@ -117,7 +117,7 @@ const VEH_ICON: Record<VehType, string> = {
     "M3 16V7h18v9M3 16h18M7 16a1.5 1.5 0 1 0 0 .01M17 16a1.5 1.5 0 1 0 0 .01M3 11h18",
 }
 
-/* ── Parametric side-profile silhouette — per-type config ──────────────────── */
+/* ── Parametric side-profile silhouette - per-type config ──────────────────── */
 interface ShapeConfig {
   L: number
   body: number
@@ -180,7 +180,7 @@ function Silhouette({ type, color = "#0A1425" }: SilhouetteProps) {
   )
 }
 
-/* ── Fleet data — REAL vehicle list (names/capacities/descriptions) + the
+/* ── Fleet data - REAL vehicle list (names/capacities/descriptions) + the
    design's indicative ₹/day, feature chips, capacity gauge counts & silhouette
    types. Order maps to Class A–E. ────────────────────────────────────────── */
 interface FleetVehicle {
@@ -483,7 +483,7 @@ function FleetCard({ v, i }: FleetCardProps) {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   Exported section — hero + fleet grid + custom card + dark road-trip banner
+   Exported section - hero + fleet grid + custom card + dark road-trip banner
    ═══════════════════════════════════════════════════════════════════════════ */
 export default function VehicleFleet() {
   return (
@@ -547,7 +547,7 @@ export default function VehicleFleet() {
                 color: "var(--muted-foreground)",
               }}
             >
-              A handpicked fleet and experienced drivers — from intimate city sedans to long-haul
+              A handpicked fleet and experienced drivers - from intimate city sedans to long-haul
               luxury coaches.
             </p>
           </Reveal>
@@ -585,7 +585,7 @@ export default function VehicleFleet() {
                   color: "var(--muted-foreground)",
                 }}
               >
-                From intimate city rides to large group journeys — the right vehicle for every trip.
+                From intimate city rides to large group journeys - the right vehicle for every trip.
               </p>
             </Reveal>
           </div>
@@ -656,7 +656,7 @@ export default function VehicleFleet() {
                     color: "var(--muted-foreground)",
                   }}
                 >
-                  Multi-vehicle convoys, self-drive, vintage cars for weddings — just ask.
+                  Multi-vehicle convoys, self-drive, vintage cars for weddings - just ask.
                 </p>
                 <span
                   style={{
@@ -735,7 +735,7 @@ export default function VehicleFleet() {
                   color: "rgba(208,213,220,0.75)",
                 }}
               >
-                From the Western Ghats to the highways of Rajasthan — travel comfortably with our
+                From the Western Ghats to the highways of Rajasthan - travel comfortably with our
                 handpicked fleet and seasoned drivers.
               </p>
             </Reveal>

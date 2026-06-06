@@ -32,7 +32,7 @@ const destinationCards: DestinationCardData[] = destinations.map((d, i) => {
     _id: `dest-${i + 1}`,
     name: d.name,
     slug: d.slug,
-    description: d.tagline + " — " + d.description,
+    description: d.tagline + " - " + d.description,
     heroImage: d.heroImage,
     region: d.region,
     country: d.country,
@@ -68,7 +68,7 @@ export default function DestinationsPage() {
       {/* Globe-backed cream hero + sticky region board + bento grid */}
       <DestinationsExplorer destinations={destinationCards} />
 
-      {/* ═══════════ Coming soon — "More horizons, on the way." ═══════════ */}
+      {/* ═══════════ Coming soon - "More horizons, on the way." ═══════════ */}
       {comingSoonDestinations.length > 0 && (
         <section className="bg-brand-mesh" style={{ padding: "0 32px 90px" }}>
           <div style={{ maxWidth: 1180, margin: "0 auto", textAlign: "center" }}>
@@ -135,7 +135,7 @@ export default function DestinationsPage() {
         </section>
       )}
 
-      {/* ═══════════ CTA — "Can't decide? Let's talk." ═══════════ */}
+      {/* ═══════════ CTA - "Can't decide? Let's talk." ═══════════ */}
       <section style={{ position: "relative", overflow: "hidden", background: "#0A1425" }}>
         {ctaImage && (
           // eslint-disable-next-line @next/next/no-img-element
@@ -168,7 +168,7 @@ export default function DestinationsPage() {
             <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--secondary-glow)" }}>Let&apos;s talk.</em>
           </h2>
           <p style={{ margin: "18px auto 0", maxWidth: 420, fontSize: 15.5, lineHeight: 1.7, color: "rgba(208,213,220,0.7)" }}>
-            Tell a real expert your vibe and budget — we&apos;ll match you to the perfect place.
+            Tell a real expert your vibe and budget - we&apos;ll match you to the perfect place.
           </p>
           <div style={{ marginTop: 32, display: "flex", justifyContent: "center" }}>
             <WhatsAppLink source="destinations-cta" className="btn btn-primary" style={{ padding: "15px 30px", fontSize: 14 }}>

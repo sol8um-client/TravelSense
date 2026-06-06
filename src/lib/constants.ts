@@ -118,7 +118,7 @@ export const INQUIRY_STATUSES = [
   "closed",
 ] as const;
 
-/** Brand colors for programmatic access — Palette A: Midnight Voyager */
+/** Brand colors for programmatic access - Palette A: Midnight Voyager */
 export const BRAND_COLORS = {
   primary: "#0B1426",
   primaryLight: "#1B2D4E",

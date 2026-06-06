@@ -35,7 +35,7 @@ interface PackageCardProps {
    * passes this explicitly so the 2-column span stays a deliberate accent.
    */
   big?: boolean
-  /** Grid index — reserved for deterministic stagger; not currently read. */
+  /** Grid index - reserved for deterministic stagger; not currently read. */
   index?: number
 }
 
@@ -49,7 +49,7 @@ const DIFF: Record<string, number> = {
   Extreme: 3,
 }
 
-/** Per-category accent (prototype CAT_COLOR — only leisure/adventure live now). */
+/** Per-category accent (prototype CAT_COLOR - only leisure/adventure live now). */
 const CAT_COLOR: Record<string, string> = {
   leisure: "#C4324A",
   adventure: "#1F8A7A",
@@ -240,7 +240,7 @@ export function PackageCard({ pkg, big }: PackageCardProps) {
             className="flex items-center"
             style={{ gap: 6, marginTop: 7, color: "var(--silver-dark)" }}
           >
-            {/* Ic.mapPin + Ic.mapPinDot — raw paths verbatim */}
+            {/* Ic.mapPin + Ic.mapPinDot - raw paths verbatim */}
             <svg
               width={13}
               height={13}

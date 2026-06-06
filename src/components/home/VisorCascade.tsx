@@ -1,13 +1,13 @@
 "use client"
 
 /**
- * VisorCascade — decorative cluster of "logo-shape" visors for the homepage hero.
+ * VisorCascade - decorative cluster of "logo-shape" visors for the homepage hero.
  *
  * Each visor clips a destination photo into TravelSense's exact ski-goggle logo
  * silhouette, wrapped in a soft matte-aluminium frame, with a STATIC label below
  * (place name + coordinates). The visors gently float; the labels stay put.
  *
- * This layer is GLOBE-FREE on purpose — drop it INTO the existing hero (which
+ * This layer is GLOBE-FREE on purpose - drop it INTO the existing hero (which
  * already renders the 3D globe + headline + CTAs). It positions itself in the
  * right margin and hides on small screens so it never crowds the centred copy.
  *
@@ -99,7 +99,7 @@ function LogoVisor({
         </defs>
       </svg>
 
-      {/* ── animated visor — ONLY this floats; the label below stays static ── */}
+      {/* ── animated visor - ONLY this floats; the label below stays static ── */}
       <div
         style={{
           position: "absolute",
@@ -107,7 +107,7 @@ function LogoVisor({
           animation: `visorFloat ${floatDur}s ${EASE} ${floatDelay}s infinite`,
         }}
       >
-        {/* soft glow halo (sibling — safe to filter) */}
+        {/* soft glow halo (sibling - safe to filter) */}
         <div
           style={{
             position: "absolute",
@@ -143,7 +143,7 @@ function LogoVisor({
           <path d={VISOR_PATH} fill="#0A1425" />
         </svg>
 
-        {/* photo layer — clip-path ONLY. No filter here or on any ancestor:
+        {/* photo layer - clip-path ONLY. No filter here or on any ancestor:
             Chrome silently drops clip-path:url() when a filter sits on the same
             element or an ancestor. Keep filters on SIBLING layers only. */}
         <div
@@ -309,7 +309,7 @@ export default function VisorCascade({
   const [bali, kerala, iceland] = visors
   return (
     <>
-      {/* RIGHT margin — big Bali over medium Kerala. Dropped below the nav and the
+      {/* RIGHT margin - big Bali over medium Kerala. Dropped below the nav and the
           compass, and kept clear of the centred title (no overlap). */}
       <div
         aria-hidden
@@ -330,7 +330,7 @@ export default function VisorCascade({
         )}
       </div>
 
-      {/* LEFT margin — the small visor tucked into the lower-left, below the globe. */}
+      {/* LEFT margin - the small visor tucked into the lower-left, below the globe. */}
       {iceland && (
         <div aria-hidden className="pointer-events-none absolute left-[5%] top-[80%] z-10 hidden xl:block">
           <div style={{ transform: "rotate(5deg)" }}>
@@ -343,7 +343,7 @@ export default function VisorCascade({
 }
 
 /**
- * Mobile / tablet variant — a staggered, varied-size CLUSTER (not a uniform row),
+ * Mobile / tablet variant - a staggered, varied-size CLUSTER (not a uniform row),
  * spread across the hero width so the goggles feel composed with the rest of the
  * mobile hero and their labels never collide. Shown only below `xl`.
  */

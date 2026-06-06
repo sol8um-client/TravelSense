@@ -9,7 +9,7 @@ import VisaPassportHero from "@/components/booking/VisaPassportHero"
 import VisaWorldCollage from "@/components/booking/VisaWorldCollage"
 
 export const metadata = generatePageMetadata({
-  title: "Visa & Passport Services — Hassle-Free Documentation",
+  title: "Visa & Passport Services - Hassle-Free Documentation",
   description:
     "Get expert assistance with visa applications, passport services, document guidance, and interview preparation. Stress-free travel documentation support.",
   path: "/visa-passport",
@@ -38,7 +38,7 @@ export default function VisaPassportPage() {
           }}
         />
 
-        {/* ═══════════ HERO — tilted gold-foil passport cover ═══════════ */}
+        {/* ═══════════ HERO - tilted gold-foil passport cover ═══════════ */}
         <VisaPassportHero />
 
         {/* ═══════════ SERVICES ═══════════ */}
@@ -171,7 +171,7 @@ export default function VisaPassportPage() {
           </div>
         </section>
 
-        {/* ═══════════ COLLAGE — your world awaits ═══════════ */}
+        {/* ═══════════ COLLAGE - your world awaits ═══════════ */}
         <section style={{ background: "#0D1A30", padding: "90px 32px" }}>
           <div style={{ maxWidth: 1180, margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: 40 }}>

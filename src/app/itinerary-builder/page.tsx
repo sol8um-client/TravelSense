@@ -8,7 +8,7 @@ import Footer from "@/components/layout/Footer"
 import ItineraryForm from "@/components/itinerary/ItineraryForm"
 
 export const metadata = generatePageMetadata({
-  title: "Itinerary Builder — Plan Your Perfect Trip",
+  title: "Itinerary Builder - Plan Your Perfect Trip",
   description:
     "Build a personalized travel itinerary in minutes. Tell us your destination, budget, and interests, and we'll recommend the perfect packages for you.",
   path: "/itinerary-builder",

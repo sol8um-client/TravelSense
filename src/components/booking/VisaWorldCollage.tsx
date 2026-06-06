@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react"
 
-/* "Your world awaits" — 4-up destination collage with scale-in reveal + hover
+/* "Your world awaits" - 4-up destination collage with scale-in reveal + hover
    zoom. Uses the same real images the prototype referenced. (veh-page Reveal). */
 
 const EASE = "cubic-bezier(0.22,1,0.36,1)"

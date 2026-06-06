@@ -21,7 +21,7 @@ const REGIONS = [
 
 const fmt = (n: number): string => formatCurrency(n)
 
-/* ─── Reveal — fade/slide/scale-in on scroll (mirrors home-kit Reveal) ─────── */
+/* ─── Reveal - fade/slide/scale-in on scroll (mirrors home-kit Reveal) ─────── */
 interface RevealProps {
   children: React.ReactNode
   y?: number
@@ -51,7 +51,7 @@ function Reveal({ children, y = 22, delay = 0, scale, style, className }: Reveal
   )
 }
 
-/* ─── Bento destination card — featured (big) span 2 cols + script tagline ── */
+/* ─── Bento destination card - featured (big) span 2 cols + script tagline ── */
 interface DestCardProps {
   d: DestinationCardData
   i: number
@@ -266,7 +266,7 @@ function DestCard({ d, i }: DestCardProps) {
             ) : null}
           </div>
 
-          {/* hover reveal — Explore <name> → */}
+          {/* hover reveal - Explore <name> → */}
           <div className="dc-rev">
             <div
               style={{
@@ -308,10 +308,10 @@ interface DestinationGridProps {
   destinations: DestinationCardData[]
   /** Hide the sticky region board/search (used for the small Coming-Soon grid). */
   showFilters?: boolean
-  /** Controlled region — when provided, the grid reflects this value. */
+  /** Controlled region - when provided, the grid reflects this value. */
   region?: RegionTab
   onRegionChange?: (region: RegionTab) => void
-  /** Controlled search query — when provided, the grid reflects this value. */
+  /** Controlled search query - when provided, the grid reflects this value. */
   query?: string
   onQueryChange?: (query: string) => void
 }
@@ -353,7 +353,7 @@ export function DestinationGrid({
 
   return (
     <div>
-      {/* local styles — hover lift, image-zoom, hover-reveal (no globals.css edit) */}
+      {/* local styles - hover lift, image-zoom, hover-reveal (no globals.css edit) */}
       <style>{`
         .dcard:hover { box-shadow: 0 24px 60px rgba(11,20,38,0.18); transform: translateY(-4px); }
         .dcard:hover .dcard-img { transform: scale(1.08); }
@@ -466,7 +466,7 @@ export function DestinationGrid({
         </div>
       )}
 
-      {/* bento grid — its own max-width container so the sticky bar can be full-bleed */}
+      {/* bento grid - its own max-width container so the sticky bar can be full-bleed */}
       <div
         style={{
           maxWidth: 1180,

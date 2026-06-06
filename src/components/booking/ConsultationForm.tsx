@@ -113,7 +113,7 @@ export default function ConsultationForm() {
       <motion.div
         variants={fadeUp}
         custom={0}
-        className="overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 md:p-8"
+        className="glass-dark overflow-hidden rounded-2xl p-6 md:p-8"
       >
         <form onSubmit={onSubmit} className="space-y-5">
           {/* Name */}

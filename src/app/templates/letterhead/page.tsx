@@ -61,7 +61,7 @@ export default function LetterheadPage() {
 
   return (
     <div className="doc-workspace">
-      {/* Toolbar — hidden on print */}
+      {/* Toolbar - hidden on print */}
       <div className="doc-chrome">
         <div className="flex items-center gap-4">
           <Link
@@ -126,7 +126,7 @@ export default function LetterheadPage() {
                     Date
                   </div>
                   <div key={`date-${today}`} className="mt-1" suppressHydrationWarning {...ed}>
-                    {today || "—"}
+                    {today || "-"}
                   </div>
                 </div>
               )}
@@ -142,7 +142,7 @@ export default function LetterheadPage() {
                     Reference
                   </div>
                   <div key={`ref-${refNo}`} className="mt-1 font-mono" suppressHydrationWarning {...ed}>
-                    {refNo || "—"}
+                    {refNo || "-"}
                   </div>
                 </div>
               )}
@@ -179,7 +179,7 @@ export default function LetterheadPage() {
                 <div {...ed}>[Designation]</div>
                 <div {...ed}>[Company / Organisation]</div>
                 <div {...ed}>[Street Address]</div>
-                <div {...ed}>[City, State — PIN]</div>
+                <div {...ed}>[City, State - PIN]</div>
               </div>
             </div>
           )}
@@ -246,7 +246,7 @@ export default function LetterheadPage() {
             </div>
           )}
 
-          {/* Closing — pushed to bottom of body via marginTop: auto so the
+          {/* Closing - pushed to bottom of body via marginTop: auto so the
               signature naturally sits just above the footer (like a real
               signed letter), not floating mid-page after the paragraphs. */}
           {sections.closing && (
@@ -282,7 +282,7 @@ export default function LetterheadPage() {
             </div>
           )}
 
-          {/* Restore-section bar — only when something is hidden */}
+          {/* Restore-section bar - only when something is hidden */}
           {(!sections.recipient ||
             !sections.subject ||
             !sections.body ||
@@ -327,7 +327,7 @@ export default function LetterheadPage() {
           )}
         </div>
 
-        {/* Footer band — anchored to bottom of A4. Each column individually deletable. */}
+        {/* Footer band - anchored to bottom of A4. Each column individually deletable. */}
         {!allFooterHidden && (
           <footer className="lh-footer">
             <div className="lh-footer-grid">

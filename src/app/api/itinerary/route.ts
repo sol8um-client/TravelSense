@@ -154,7 +154,7 @@ export async function POST(request: Request) {
         recommendations.length > 1 ? "s" : ""
       } matching your preferences.`
     } else {
-      message = `No exact package for "${destination}" yet — here ${
+      message = `No exact package for "${destination}" yet - here ${
         recommendations.length > 1 ? "are" : "is"
       } ${recommendations.length} trip${
         recommendations.length > 1 ? "s" : ""

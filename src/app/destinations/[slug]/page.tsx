@@ -24,7 +24,7 @@ export const dynamic = "force-static"
 
 /* ─── Palette / motion constants (mirror PackageDetail + PackageCard) ──────── */
 
-/** Per-category accent — same mapping the redesigned PackageCard uses. */
+/** Per-category accent - same mapping the redesigned PackageCard uses. */
 const CAT_COLOR: Record<string, string> = {
   leisure: "#C4324A",
   adventure: "#1F8A7A",
@@ -56,7 +56,7 @@ export async function generateMetadata({
   }
 
   return generatePageMetadata({
-    title: `${dest.name} — Travel Guide`,
+    title: `${dest.name} - Travel Guide`,
     description: dest.description,
     path: `/destinations/${slug}`,
     image: dest.heroImage,
@@ -100,14 +100,14 @@ export default async function DestinationDetailPage({
 
   const accent = CAT_COLOR[destination.category] ?? "#C4324A"
 
-  // Hero title — one italic-cherry accent word.
+  // Hero title - one italic-cherry accent word.
   const titleWords = destination.name.split(" ")
   const emIdx = emphasisIndex(titleWords)
 
   // Stylised coordinate micro-label (no real geo data in the dataset).
   const coordLabel = `${destination.region.toUpperCase()} · ${destination.category.toUpperCase()}`
 
-  // Quick-facts rail — only real data.
+  // Quick-facts rail - only real data.
   const facts: { icon: "season" | "weather" | "price"; label: string; value: string }[] = []
   if (destination.bestTimeToVisit)
     facts.push({ icon: "season", label: "Best time to visit", value: destination.bestTimeToVisit })
@@ -176,7 +176,7 @@ export default async function DestinationDetailPage({
         />
         {/* frosted readability scrim that FEATHERS into the sharp image above (no
             hard edge). The mask ramps the backdrop-blur in gradually. No CSS
-            `filter` lives on this masked element's ancestors — that would break
+            `filter` lives on this masked element's ancestors - that would break
             the mask (clip-path + filter gotcha). */}
         <div
           style={{
@@ -198,7 +198,7 @@ export default async function DestinationDetailPage({
           }}
         />
 
-        {/* content — accounts for the floating nav via padding-top */}
+        {/* content - accounts for the floating nav via padding-top */}
         <div
           style={{
             position: "relative",
@@ -222,7 +222,7 @@ export default async function DestinationDetailPage({
             />
           </div>
 
-          {/* eyebrow — region · country */}
+          {/* eyebrow - region · country */}
           <p
             className="fade-up eyebrow"
             style={{ margin: "0 0 18px", color: "var(--secondary-glow)" }}
@@ -424,8 +424,8 @@ export default async function DestinationDetailPage({
               {destinationPackages.length > 0 && (
                 <p style={{ margin: "14px 0 0", maxWidth: 560, fontSize: 14.5, lineHeight: 1.7, color: "var(--muted-foreground)" }}>
                   {destinationPackages.length === 1
-                    ? `A curated ${destination.name} itinerary — refine it with your travel consultant.`
-                    : `${destinationPackages.length} curated ${destination.name} itineraries, from shorter escapes to extended expeditions — refine any of them with your travel consultant.`}
+                    ? `A curated ${destination.name} itinerary - refine it with your travel consultant.`
+                    : `${destinationPackages.length} curated ${destination.name} itineraries, from shorter escapes to extended expeditions - refine any of them with your travel consultant.`}
                 </p>
               )}
             </div>
@@ -484,7 +484,7 @@ export default async function DestinationDetailPage({
               ))}
             </div>
           ) : (
-            /* 0 packages — tasteful "crafted on request" block */
+            /* 0 packages - tasteful "crafted on request" block */
             <div
               style={{
                 display: "flex",
@@ -529,7 +529,7 @@ export default async function DestinationDetailPage({
                 </em>
               </h3>
               <p style={{ margin: 0, maxWidth: 560, fontSize: 15, lineHeight: 1.75, color: "var(--muted-foreground)" }}>
-                We don&apos;t have a fixed {destination.name} package listed yet — but this is exactly
+                We don&apos;t have a fixed {destination.name} package listed yet - but this is exactly
                 what we do best. Tell us your dates, pace and interests, and a real travel consultant
                 will build a {destination.name} itinerary around you.
               </p>
@@ -912,7 +912,7 @@ export default async function DestinationDetailPage({
             </em>
           </h2>
           <p style={{ margin: "20px auto 0", maxWidth: 460, fontSize: 15.5, lineHeight: 1.7, color: "rgba(208,213,220,0.7)" }}>
-            One conversation and a real expert builds this trip around you — every detail handled.
+            One conversation and a real expert builds this trip around you - every detail handled.
             {destination.startingPrice ? ` Trips start from ${formatCurrency(destination.startingPrice)} per person.` : ""}
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", marginTop: 34, flexWrap: "wrap" }}>

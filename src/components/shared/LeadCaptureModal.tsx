@@ -6,7 +6,7 @@ import { X, Send, CheckCircle, MapPin, Calendar, User, Phone, Mail, MessageSquar
 import { submitLead } from "@/lib/supabase"
 
 /* ═══════════════════════════════════════════════════════
-   CONTEXT — global open/close state for all CTAs
+   CONTEXT - global open/close state for all CTAs
    ═══════════════════════════════════════════════════════ */
 
 interface LeadModalContextType {
@@ -129,7 +129,7 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
 
-      {/* Modal — slides up on mobile, centered on desktop */}
+      {/* Modal - slides up on mobile, centered on desktop */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -138,7 +138,7 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
         onClick={(e) => e.stopPropagation()}
         className="relative w-full sm:max-w-lg bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl max-h-[92vh] sm:max-h-[85vh] flex flex-col overflow-hidden"
       >
-        {/* Header — sticky with always-visible close button */}
+        {/* Header - sticky with always-visible close button */}
         <div className="relative bg-gradient-to-r from-[#0B1426] to-[#1B2D4E] px-5 sm:px-6 py-4 sm:py-5 flex-shrink-0">
           <button
             onClick={onClose}
@@ -150,7 +150,7 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
             Start your <em className="italic font-normal text-[#FFB3A3]">journey.</em>
           </h2>
           <p className="text-white/60 text-sm mt-1">
-            Tell us about your dream trip — we&apos;ll handle the rest.
+            Tell us about your dream trip - we&apos;ll handle the rest.
           </p>
         </div>
 
@@ -176,9 +176,9 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
             </p>
           </motion.div>
         ) : (
-          /* Form — scrollable on mobile */
+          /* Form - scrollable on mobile */
           <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-3 sm:space-y-4 overflow-y-auto flex-1">
-            {/* Name — Required */}
+            {/* Name - Required */}
             <div className="relative">
               <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
               <input
@@ -191,7 +191,7 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
               />
             </div>
 
-            {/* Phone — Required */}
+            {/* Phone - Required */}
             <div className="relative">
               <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
               <input
@@ -204,7 +204,7 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
               />
             </div>
 
-            {/* Email — Optional */}
+            {/* Email - Optional */}
             <div className="relative">
               <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
               <input
@@ -217,7 +217,7 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
               />
             </div>
 
-            {/* Destination — Optional with popular chips */}
+            {/* Destination - Optional with popular chips */}
             <div>
               <div className="relative">
                 <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
@@ -249,7 +249,7 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
               </div>
             </div>
 
-            {/* Travel Date — Optional */}
+            {/* Travel Date - Optional */}
             <div className="relative">
               <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
               <input
@@ -261,7 +261,7 @@ function LeadCaptureModal({ ctaLocation, onClose }: { ctaLocation: string; onClo
               />
             </div>
 
-            {/* Message — Optional */}
+            {/* Message - Optional */}
             <div className="relative">
               <MessageSquare className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
               <textarea

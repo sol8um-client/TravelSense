@@ -171,7 +171,7 @@ export default async function BlogPostPage({
             </div>
           </header>
 
-          {/* Body — rendered from HTML string */}
+          {/* Body - rendered from HTML string */}
           <div
             className="blog-content mx-auto max-w-3xl"
             dangerouslySetInnerHTML={{ __html: post.content }}
@@ -199,7 +199,7 @@ export default async function BlogPostPage({
             <AuthorCard
               name={post.author.name}
               image={post.author.avatar}
-              bio={`${post.author.role} — Curating extraordinary travel experiences across India and beyond.`}
+              bio={`${post.author.role} - Curating extraordinary travel experiences across India and beyond.`}
             />
           </div>
 

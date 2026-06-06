@@ -32,7 +32,7 @@ interface GalleryGridProps {
 }
 
 /* ═══════════════════════════════════════════════════════
-   GALLERY DATA — 20 curated India travel photos
+   GALLERY DATA - 20 curated India travel photos
    ═══════════════════════════════════════════════════════ */
 
 export const GALLERY_ITEMS: GalleryItem[] = [
@@ -180,7 +180,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: "15",
     title: "Traditional Kerala Sadhya",
     description:
-      "A feast of over 24 dishes served on a fresh banana leaf — the vegetarian Sadhya is Kerala's most celebrated culinary tradition.",
+      "A feast of over 24 dishes served on a fresh banana leaf - the vegetarian Sadhya is Kerala's most celebrated culinary tradition.",
     imageUrl:
       "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&h=600&fit=crop",
     category: "Food",

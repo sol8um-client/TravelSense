@@ -105,7 +105,7 @@ export default async function BookingsPage() {
       {isPlaceholder && (
         <div className="rounded-lg border border-[#D4A853]/30 bg-[#D4A853]/10 px-4 py-3">
           <p className="text-sm text-[#D4A853]">
-            Database not configured &mdash; showing placeholder data.
+            Database not configured - showing placeholder data.
           </p>
         </div>
       )}
@@ -147,15 +147,15 @@ export default async function BookingsPage() {
                   <TableRow key={item.id} className="border-white/10">
                     <TableCell className="text-white">{item.name}</TableCell>
                     <TableCell className="text-white/70">{item.email}</TableCell>
-                    <TableCell className="text-white/70">{item.phone ?? "—"}</TableCell>
+                    <TableCell className="text-white/70">{item.phone ?? "-"}</TableCell>
                     <TableCell className="text-white/70">
                       {item.preferred_date
                         ? formatDate(item.preferred_date, { format: "medium" })
-                        : "—"}
+                        : "-"}
                     </TableCell>
-                    <TableCell className="text-white/70">{item.preferred_time ?? "—"}</TableCell>
+                    <TableCell className="text-white/70">{item.preferred_time ?? "-"}</TableCell>
                     <TableCell className="max-w-[150px] truncate text-white/70">
-                      {item.interests ?? "—"}
+                      {item.interests ?? "-"}
                     </TableCell>
                     <TableCell>
                       <StatusBadge status={item.status ?? "NEW"} />
@@ -197,9 +197,9 @@ export default async function BookingsPage() {
                   <TableRow key={item.id} className="border-white/10">
                     <TableCell className="text-white">{item.name}</TableCell>
                     <TableCell className="text-white/70">{item.email}</TableCell>
-                    <TableCell className="text-white/70">{item.destination ?? "—"}</TableCell>
-                    <TableCell className="text-white/70">{item.vehicle_type ?? "—"}</TableCell>
-                    <TableCell className="text-white/70">{item.group_size ?? "—"}</TableCell>
+                    <TableCell className="text-white/70">{item.destination ?? "-"}</TableCell>
+                    <TableCell className="text-white/70">{item.vehicle_type ?? "-"}</TableCell>
+                    <TableCell className="text-white/70">{item.group_size ?? "-"}</TableCell>
                     <TableCell>
                       <StatusBadge status={item.status ?? "NEW"} />
                     </TableCell>

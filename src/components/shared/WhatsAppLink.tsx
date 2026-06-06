@@ -4,7 +4,7 @@ import type { AnchorHTMLAttributes, MouseEvent, ReactNode } from "react"
 import { waHref } from "@/lib/whatsapp"
 
 type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
-  /** Where the click came from (e.g. "header", "hero", "package-detail") — sent
+  /** Where the click came from (e.g. "header", "hero", "package-detail") - sent
    *  to analytics so we can see how many people open WhatsApp from each spot. */
   source: string
   /** Optional prefilled message (defaults to a generic planning enquiry). */
@@ -17,7 +17,7 @@ type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
  * analytics event. NOTE: WhatsApp does NOT hand back the visitor's phone number
  * when they tap a wa.me link, so we can only record the *click* (intent) here,
  * not the number of someone who opens WhatsApp but doesn't send a message. To
- * actually capture a phone number you need a form step before the redirect —
+ * actually capture a phone number you need a form step before the redirect -
  * that's what the lead forms on the Contact / request pages are for.
  */
 export function WhatsAppLink({ source, message, children, onClick, ...rest }: Props) {

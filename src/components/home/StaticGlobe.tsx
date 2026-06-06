@@ -1,7 +1,7 @@
 "use client"
 
 /**
- * StaticGlobe — the hero's left-hand showpiece. A single pre-rendered, premium
+ * StaticGlobe - the hero's left-hand showpiece. A single pre-rendered, premium
  * globe image (Nano-Banana art, India / South Asia centred, night-side city
  * lights) with all the motion layered on top in CSS so it stays butter-smooth on
  * every device:
@@ -14,7 +14,7 @@
  *     with a pulsing ground dot + a short connector stalk
  *   • a gentle float on the whole stack (globeFloat keyframe)
  *
- * Pins are desktop-only (lg+) — on phones/tablets the globe reads as a calm,
+ * Pins are desktop-only (lg+) - on phones/tablets the globe reads as a calm,
  * glowing backdrop behind the headline (no clutter, full legibility).
  *
  * Pin %positions are authored against the globe art's geography (verified on a
@@ -28,19 +28,19 @@ import { destinations } from "@/data/destinations"
 
 type PinDef = {
   slug: string
-  /** x / y as a percentage of the globe square — sits on the real country. */
+  /** x / y as a percentage of the globe square - sits on the real country. */
   x: number
   y: number
   delay: number
 }
 
 /* Anchors verified against the globe art: north-India, south-India, SE-Asia
-   mainland, Indonesia — a clean spread across the visible face. */
+   mainland, Indonesia - a clean spread across the visible face. */
 const PIN_DEFS: PinDef[] = [
-  { slug: "kashmir", x: 40, y: 34, delay: 0.15 }, // far-north India / Himalaya
-  { slug: "kerala", x: 41, y: 57, delay: 0.4 }, // south-west coast (peninsula tip)
-  { slug: "thailand", x: 64, y: 52, delay: 0.65 }, // Indochina mainland (E of Bay of Bengal)
-  { slug: "bali", x: 70, y: 71, delay: 0.9 }, // Indonesia
+  { slug: "kashmir", x: 37, y: 32, delay: 0.15 }, // far-north India / NW Himalaya
+  { slug: "kerala", x: 45, y: 55, delay: 0.4 }, // south-west coast of the peninsula
+  { slug: "thailand", x: 67, y: 51, delay: 0.65 }, // Bangkok / Indochina mainland (on the city lights)
+  { slug: "bali", x: 73, y: 69, delay: 0.9 }, // Indonesia (Java/Bali island chain)
 ]
 
 type Pin = PinDef & { name: string; image: string }
@@ -54,20 +54,23 @@ const PINS: Pin[] = PIN_DEFS.flatMap((p) => {
 export default function StaticGlobe({ className = "" }: { className?: string }) {
   // When the spotlight carousel surfaces a new destination it dispatches
   // `ts:spotlight`; the globe gives a subtle reactive nudge so the two hero
-  // showpieces feel connected — the new card reads as "emerging" from the globe.
+  // showpieces feel connected - the new card reads as "emerging" from the globe.
   const stackRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const onPulse = () => {
       const el = stackRef.current
       if (!el || typeof el.animate !== "function") return
+      // A smooth, gentle "swell" - the globe breathes outward a touch then
+      // settles, so a freshly-surfaced card reads as emerging FROM the globe.
+      // No rotation + no overshoot easing on purpose (those felt like a shake);
+      // a soft scale + tiny lift on an ease-in-out curve is calm and premium.
       el.animate(
         [
-          { transform: "translateY(0) rotate(0deg) scale(1)" },
-          { transform: "translateY(-5px) rotate(-1deg) scale(1.015)", offset: 0.32 },
-          { transform: "translateY(1px) rotate(0.55deg) scale(1.006)", offset: 0.62 },
-          { transform: "translateY(0) rotate(0deg) scale(1)" },
+          { transform: "translateY(0px) scale(1)", easing: "cubic-bezier(0.4, 0, 0.2, 1)" },
+          { transform: "translateY(-3px) scale(1.02)", offset: 0.5, easing: "cubic-bezier(0.4, 0, 0.2, 1)" },
+          { transform: "translateY(0px) scale(1)" },
         ],
-        { duration: 950, easing: "cubic-bezier(0.34,1.56,0.64,1)", composite: "add" },
+        { duration: 1500, composite: "add" },
       )
     }
     window.addEventListener("ts:spotlight", onPulse)
@@ -76,7 +79,7 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
 
   return (
     <div className={"relative aspect-square " + className} aria-hidden>
-      {/* ── Cinematic atmosphere — layered soft glows that fade smoothly into the
+      {/* ── Cinematic atmosphere - layered soft glows that fade smoothly into the
           page; deliberately NO bright/hard rim (kills the old "white tube" edge). */}
       {/* outer deep-space halo */}
       <div
@@ -99,7 +102,7 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
 
       {/* ── Floating stack (globe + rings + pins bob together) ─────────────────── */}
       <div ref={stackRef} className="absolute inset-0" style={{ animation: "globeFloat 12s ease-in-out infinite" }}>
-        {/* the globe — desktop right limb softly dissolves so it never fights the
+        {/* the globe - desktop right limb softly dissolves so it never fights the
             centred headline (pins are a sibling layer and stay crisp). */}
         <div
           className="absolute inset-0 lg:[mask-image:linear-gradient(to_right,black_78%,transparent_99%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_78%,transparent_99%)]"
@@ -123,7 +126,7 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
         </div>
 
         {/* rotating radar sweep anchored at the CENTRE OF INDIA (the globe's centre
-            of rotation) — a soft luminous beam that sweeps the whole sphere */}
+            of rotation) - a soft luminous beam that sweeps the whole sphere */}
         <div
           className="absolute inset-0 rounded-full mix-blend-screen"
           style={{
@@ -133,7 +136,7 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
             transformOrigin: "47% 49%",
           }}
         />
-        {/* warm core glow pinned at India — the heart the beam radiates from */}
+        {/* warm core glow pinned at India - the heart the beam radiates from */}
         <div
           className="absolute rounded-full"
           style={{
@@ -149,7 +152,7 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
           }}
         />
 
-        {/* ── Location image-pins (desktop only) — frosted glass chips ────────── */}
+        {/* ── Location image-pins (desktop only) - frosted glass chips ────────── */}
         <div className="pointer-events-none absolute inset-0 hidden lg:block">
           {PINS.map((pin) => (
             <Link
@@ -159,7 +162,7 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
               className="pointer-events-auto group absolute"
               style={{ left: `${pin.x}%`, top: `${pin.y}%` }}
             >
-              {/* ground dot — sits exactly on the location */}
+              {/* ground dot - sits exactly on the location */}
               <span className="absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2">
                 <span
                   className="block h-[7px] w-[7px] rounded-full bg-white"
@@ -167,7 +170,7 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
                 />
               </span>
 
-              {/* marker chip — rises from the dot, frosted so the globe shows through */}
+              {/* marker chip - rises from the dot, frosted so the globe shows through */}
               <span
                 className="absolute left-0 top-0 flex flex-col items-center"
                 style={{ transform: "translate(-50%, -100%)", animation: `pinDrop 0.7s cubic-bezier(0.22,1,0.36,1) ${pin.delay}s both` }}

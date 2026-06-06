@@ -1,5 +1,5 @@
 /**
- * Official company details — TRAVELSENSE PRIVATE LIMITED
+ * Official company details - TRAVELSENSE PRIVATE LIMITED
  *
  * Source: Ministry of Corporate Affairs (MCA) Certificate of Incorporation
  * issued under SPICe+ Part B, Application Reference AB9922964.
@@ -7,7 +7,7 @@
  *
  * Use these constants everywhere we need legal / official company details
  * (letterhead, invoice, footer, contact pages, terms of service).
- * Do NOT inline duplicate values elsewhere — import from here.
+ * Do NOT inline duplicate values elsewhere - import from here.
  */
 
 export const company = {
@@ -16,10 +16,10 @@ export const company = {
   /** Use on signed-off documents (e.g. "For TravelSense Pvt Ltd"). */
   signOffName: "TravelSense Pvt Ltd",
 
-  /** MCA Corporate Identity Number — assigned 24 Dec 2025. */
+  /** MCA Corporate Identity Number - assigned 24 Dec 2025. */
   cin: "U79110PN2025PTC249905",
 
-  /** Permanent Account Number — issued by Income Tax Department. */
+  /** Permanent Account Number - issued by Income Tax Department. */
   pan: "AAMCT6212A",
 
   /** Tax Deduction and Collection Account Number. */
@@ -57,7 +57,7 @@ export const company = {
     website: "travelsense.co.in",
   },
 
-  /** HSN / SAC for travel agency services — used on tax invoices. */
+  /** HSN / SAC for travel agency services - used on tax invoices. */
   sacCode: "998552",
   sacDescription: "Travel Agency Services",
 

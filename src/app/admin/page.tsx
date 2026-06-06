@@ -116,7 +116,7 @@ export default async function AdminDashboardPage() {
       {isPlaceholder && (
         <div className="rounded-lg border border-[#D4A853]/30 bg-[#D4A853]/10 px-4 py-3">
           <p className="text-sm text-[#D4A853]">
-            Database not configured &mdash; showing placeholder data. Connect
+            Database not configured - showing placeholder data. Connect
             Supabase to see real metrics.
           </p>
         </div>

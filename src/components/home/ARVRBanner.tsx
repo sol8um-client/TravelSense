@@ -1,13 +1,13 @@
 "use client"
 
 /**
- * ARVRBanner — a thin, premium "coming soon" ribbon for the upcoming AR/VR
+ * ARVRBanner - a thin, premium "coming soon" ribbon for the upcoming AR/VR
  * preview feature. Dark-navy liquid glass (the Problem-section navy #0A1425)
  * with gold (var(--accent)) accents.
  *
  * It deliberately reads as the white → navy TRANSITION into the Problem section:
  * the band itself is navy, sits flush above the Problem block, and the hero's
- * Wave divider flows the white TrustBar down into it. Thin and elegant — not a
+ * Wave divider flows the white TrustBar down into it. Thin and elegant - not a
  * boxy block. Stacks cleanly on mobile.
  *
  * Figure slot: if `public/images/brand/vr-preview.png` ever ships, swap the
@@ -27,7 +27,7 @@ export default function ARVRBanner() {
       className="relative overflow-hidden"
       style={{ background: "#0A1425" }}
     >
-      {/* soft navy glow for depth (sibling — no filter on clipped kids) */}
+      {/* soft navy glow for depth (sibling - no filter on clipped kids) */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute right-[8%] top-[10%] h-[240px] w-[240px] rounded-full bg-primary-light/30 blur-[80px]" />
       </div>
@@ -77,7 +77,7 @@ export default function ARVRBanner() {
               Preview before you travel.
             </p>
             <p className="mt-2 hidden max-w-xl text-[13.5px] leading-[1.6] text-white/70 sm:mx-0 sm:block">
-              Walk through hotels and experience destinations in VR — choose with confidence.
+              Walk through hotels and experience destinations in VR - choose with confidence.
             </p>
           </div>
 

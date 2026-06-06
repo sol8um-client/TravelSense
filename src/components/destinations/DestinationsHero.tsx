@@ -10,7 +10,7 @@ import { formatCurrency } from "@/lib/utils"
 import type { DestinationCardData } from "./DestinationCard"
 import type { RegionTab } from "./DestinationGrid"
 
-/* Globe reused from the homepage — client-only, no SSR (WebGL). */
+/* Globe reused from the homepage - client-only, no SSR (WebGL). */
 const Globe3D = dynamic(() => import("@/components/home/Globe3D"), { ssr: false })
 
 const EASE = "cubic-bezier(0.22,1,0.36,1)"
@@ -50,7 +50,7 @@ function Reveal({ children, y = 22, delay = 0, style }: RevealProps) {
   )
 }
 
-/* ─── Spotlight — auto-rotating featured carousel + thumbnail filmstrip ────── */
+/* ─── Spotlight - auto-rotating featured carousel + thumbnail filmstrip ────── */
 function Spotlight({ featured }: { featured: DestinationCardData[] }) {
   const [i, setI] = useState(0)
   const [paused, setPaused] = useState(false)
@@ -269,7 +269,7 @@ function Spotlight({ featured }: { featured: DestinationCardData[] }) {
   )
 }
 
-/* ─── Hero — globe-backed cream editorial split + Spotlight + search ───────── */
+/* ─── Hero - globe-backed cream editorial split + Spotlight + search ───────── */
 interface DestinationsHeroProps {
   featured: DestinationCardData[]
   totalCount: number
@@ -291,7 +291,7 @@ export function DestinationsHero({
 
   return (
     <section className="bg-brand-mesh grain" style={{ position: "relative", overflow: "hidden", padding: "136px 32px 56px" }}>
-      {/* Globe — subtle background layer behind the editorial split (lg+ only). */}
+      {/* Globe - subtle background layer behind the editorial split (lg+ only). */}
       <div
         aria-hidden
         className="pointer-events-none hidden lg:block"
@@ -317,7 +317,7 @@ export function DestinationsHero({
           }
         `}</style>
 
-        {/* LEFT — editorial copy + search + region jumps + stats */}
+        {/* LEFT - editorial copy + search + region jumps + stats */}
         <div>
           <Reveal>
             <p className="eyebrow">
@@ -347,7 +347,7 @@ export function DestinationsHero({
 
           <Reveal delay={0.14}>
             <p style={{ margin: "20px 0 0", maxWidth: 440, fontSize: 16, lineHeight: 1.7, color: "var(--muted-foreground)" }}>
-              Extraordinary places, handpicked by our experts and planned by a real human — start to finish. Search a
+              Extraordinary places, handpicked by our experts and planned by a real human - start to finish. Search a
               place, or jump to a region:
             </p>
           </Reveal>
@@ -468,7 +468,7 @@ export function DestinationsHero({
           </Reveal>
         </div>
 
-        {/* RIGHT — auto-rotating featured spotlight */}
+        {/* RIGHT - auto-rotating featured spotlight */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

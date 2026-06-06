@@ -61,7 +61,7 @@ export const DESTINATION_COORDS: Record<string, string> = {
   "new-zealand": "41.29°S · 174.78°E",
 }
 
-/** Safe accessor — falls back to a neutral label if a slug is missing. */
+/** Safe accessor - falls back to a neutral label if a slug is missing. */
 export function coordFor(slug: string): string {
-  return DESTINATION_COORDS[slug] ?? "—°N · —°E"
+  return DESTINATION_COORDS[slug] ?? "-°N · -°E"
 }

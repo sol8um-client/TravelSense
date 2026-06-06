@@ -8,7 +8,7 @@ export function middleware(request: NextRequest) {
   if (pathname.startsWith("/admin")) {
     const adminPassword = process.env.ADMIN_PASSWORD
     if (!adminPassword) {
-      // No password set — allow access in development
+      // No password set - allow access in development
       return NextResponse.next()
     }
 
@@ -36,7 +36,7 @@ export function middleware(request: NextRequest) {
     return new NextResponse(
       `<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Admin Login — TravelSense</title>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Admin Login - TravelSense</title>
 <style>
   body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0A1425;font-family:system-ui,sans-serif;color:#fff}
   .card{background:#0D1A30;border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:40px;max-width:400px;width:90%;text-align:center}

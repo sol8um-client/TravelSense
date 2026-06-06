@@ -13,6 +13,6 @@ export const WHATSAPP_DISPLAY = "+91 80874 53658"
  */
 export function waHref(message?: string): string {
   const text =
-    message ?? "Hi TravelSense! I'd like help planning a trip — can you assist?"
+    message ?? "Hi TravelSense! I'd like help planning a trip - can you assist?"
   return `https://wa.me/${WHATSAPP_DIGITS}?text=${encodeURIComponent(text)}`
 }

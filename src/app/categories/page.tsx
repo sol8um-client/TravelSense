@@ -10,7 +10,7 @@ import { WhatsAppLink } from "@/components/shared/WhatsAppLink"
 export const metadata: Metadata = generatePageMetadata({
   title: "Travel Categories",
   description:
-    "Explore curated travel experiences across leisure and adventure. Find the trip style that fits you — planned end-to-end by a real human.",
+    "Explore curated travel experiences across leisure and adventure. Find the trip style that fits you - planned end-to-end by a real human.",
   path: "/categories",
 })
 
@@ -53,7 +53,7 @@ export default function CategoriesPage() {
             Two ways to <em>explore.</em>
           </h1>
           <p className="mx-auto mt-5 max-w-[520px] text-[15px] leading-[1.7] text-muted-foreground sm:text-[16.5px]">
-            Every trip starts with how you want to feel. Pick your style — a real expert plans, books and
+            Every trip starts with how you want to feel. Pick your style - a real expert plans, books and
             stays with you the whole way.
           </p>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-2.5">
@@ -115,7 +115,7 @@ export default function CategoriesPage() {
                 {/* ── Copy ── */}
                 <div className={flip ? "lg:order-1" : ""}>
                   <p className="font-tech text-[9px] uppercase tracking-[0.22em] text-silver-dark">
-                    0{i + 1} — {c.description}
+                    0{i + 1} - {c.description}
                   </p>
                   <h2
                     className="font-heading mt-2 text-[clamp(1.9rem,4vw,2.8rem)] font-medium leading-[1.05] tracking-[-0.02em] text-primary"
@@ -186,7 +186,7 @@ export default function CategoriesPage() {
             <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--secondary-glow)" }}>Let&apos;s talk.</em>
           </h2>
           <p style={{ margin: "16px auto 0", maxWidth: 440, fontSize: 15.5, lineHeight: 1.7, color: "rgba(208,213,220,0.7)" }}>
-            Tell a real expert your vibe and budget — we&apos;ll match you to the perfect style and place.
+            Tell a real expert your vibe and budget - we&apos;ll match you to the perfect style and place.
           </p>
           <div style={{ marginTop: 30, display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 12 }}>
             <WhatsAppLink source="categories-cta" className="btn btn-primary" style={{ padding: "15px 30px", fontSize: 14 }}>

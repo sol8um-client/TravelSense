@@ -22,7 +22,7 @@ const EASE = "cubic-bezier(0.22,1,0.36,1)"
 const isInternational = (region?: string) =>
   region?.toLowerCase() === "international"
 
-/* Category board — All + the live travelCategories (Leisure / Adventure only). */
+/* Category board - All + the live travelCategories (Leisure / Adventure only). */
 const CATS: { slug: string; label: string }[] = [
   { slug: "", label: "All trips" },
   ...travelCategories.map((c) => ({
@@ -31,7 +31,7 @@ const CATS: { slug: string; label: string }[] = [
   })),
 ]
 
-/* Sort segmented control — maps the design's 3 segments onto the real
+/* Sort segmented control - maps the design's 3 segments onto the real
    SORT_OPTIONS values so the existing sort logic stays untouched. */
 const SORTS: { value: string; label: string }[] = [
   { value: "recommended", label: "Most loved" },
@@ -39,7 +39,7 @@ const SORTS: { value: string; label: string }[] = [
   { value: "duration_asc", label: "Duration ↑" },
 ]
 
-/* Reveal — fade/slide(+optional scale) in on scroll. Mirrors the prototype's
+/* Reveal - fade/slide(+optional scale) in on scroll. Mirrors the prototype's
    IntersectionObserver Reveal via framer-motion whileInView. */
 function Reveal({
   children,
@@ -186,7 +186,7 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
     safePage * ITEMS_PER_PAGE
   )
 
-  /* "Featured packages span 2 columns" — keep it a deliberate accent (like the
+  /* "Featured packages span 2 columns" - keep it a deliberate accent (like the
      prototype's 2-of-8 rhythm) rather than flooding the grid: only the first
      couple of featured cards on the current page get the wide treatment. */
   const bigIds = useMemo(() => {
@@ -587,7 +587,7 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
                 color: "var(--muted-foreground)",
               }}
             >
-              Try widening your search, region or category — or clear the
+              Try widening your search, region or category - or clear the
               filters to see everything.
             </p>
             {hasActiveFilters && (

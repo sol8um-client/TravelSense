@@ -34,7 +34,7 @@ export function useScrollVelocity() {
 }
 
 /**
- * Magnetic hover effect — element displaces toward cursor.
+ * Magnetic hover effect - element displaces toward cursor.
  * Returns motion values for x, y displacement and rotateX, rotateY tilt.
  */
 export function useMagneticHover(strength = 0.15) {

@@ -32,7 +32,7 @@ const SERVICES: ServiceItem[] = [
   {
     Icon: FileCheck2,
     title: "Visa application",
-    desc: "End-to-end support for tourist, business and transit visas — paperwork, appointments and follow-ups, handled.",
+    desc: "End-to-end support for tourist, business and transit visas - paperwork, appointments and follow-ups, handled.",
     tag: "Tourist · business · transit",
     gets: ["Form filling", "Appointments", "Follow-ups"],
   },

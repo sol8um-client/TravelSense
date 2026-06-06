@@ -8,9 +8,9 @@ const palettes = [
     name: "Midnight Voyager",
     tag: "⭐ Recommended",
     description: "Deep navy + silver + compass red. Pulls the red from your logo's compass needle as the CTA accent. Maximum trust + premium feel.",
-    bestFor: "Balanced positioning — premium travel + tech innovation. Best all-rounder.",
+    bestFor: "Balanced positioning - premium travel + tech innovation. Best all-rounder.",
     colors: [
-      { name: "Deep Midnight Navy", hex: "#0B1426", role: "Primary — hero sections, headers, footers" },
+      { name: "Deep Midnight Navy", hex: "#0B1426", role: "Primary - hero sections, headers, footers" },
       { name: "Steel Navy", hex: "#1B2D4E", role: "Cards, secondary backgrounds, hover states" },
       { name: "Brushed Silver", hex: "#B0B8C4", role: "Borders, metadata, subtle UI elements" },
       { name: "Pearl Gray", hex: "#E8ECF0", role: "Light backgrounds, card surfaces, dividers" },
@@ -26,9 +26,9 @@ const palettes = [
     name: "Arctic Explorer",
     tag: "Tech-Clean",
     description: "Apple-inspired ultra-clean aesthetic. Charcoal + pure white + electric blue. Your metallic logo shines on stark white.",
-    bestFor: "Positioning as a TECH company that does travel — like Airbnb, not a hotel chain.",
+    bestFor: "Positioning as a TECH company that does travel - like Airbnb, not a hotel chain.",
     colors: [
-      { name: "Rich Charcoal", hex: "#1C1C2E", role: "Primary — headings, nav bar" },
+      { name: "Rich Charcoal", hex: "#1C1C2E", role: "Primary - headings, nav bar" },
       { name: "Graphite", hex: "#374151", role: "Secondary text, icons" },
       { name: "Cool Silver", hex: "#94A3B8", role: "Borders, metadata, subtle UI" },
       { name: "Electric Blue", hex: "#2563EB", role: "CTAs, links, active states" },
@@ -42,13 +42,13 @@ const palettes = [
     id: "C",
     name: "Golden Compass",
     tag: "Luxury",
-    description: "Deep navy + burnished gold + burgundy. Maximum Indian cultural resonance — Navy (Krishna) + Gold (Lakshmi) + Burgundy (heritage textiles).",
+    description: "Deep navy + burnished gold + burgundy. Maximum Indian cultural resonance - Navy (Krishna) + Gold (Lakshmi) + Burgundy (heritage textiles).",
     bestFor: "High-net-worth Indian travelers. Premium luxury positioning.",
     colors: [
-      { name: "Deep Navy", hex: "#0F2B44", role: "Primary — dominant brand color" },
+      { name: "Deep Navy", hex: "#0F2B44", role: "Primary - dominant brand color" },
       { name: "Burnished Gold", hex: "#C9A96E", role: "Premium elements, borders, icons" },
       { name: "Pale Gold", hex: "#E8D5B5", role: "Subtle backgrounds, card tints" },
-      { name: "Deep Burgundy", hex: "#7A2038", role: "CTAs — from compass red family" },
+      { name: "Deep Burgundy", hex: "#7A2038", role: "CTAs - from compass red family" },
       { name: "Rose", hex: "#D4917B", role: "Hover states, soft highlights" },
       { name: "Warm Ivory", hex: "#FBF7F0", role: "Main page background" },
       { name: "Near Black", hex: "#1A1420", role: "Headings, body text" },
@@ -66,7 +66,7 @@ const palettes = [
       { name: "Deep Slate", hex: "#151B2B", role: "Cards, panels on dark" },
       { name: "Neon Teal", hex: "#00D4AA", role: "Primary CTAs, active states" },
       { name: "Electric Amber", hex: "#FFBE0B", role: "Secondary actions, star ratings" },
-      { name: "Signal Red", hex: "#FF3F5C", role: "From compass — urgent actions, sale badges" },
+      { name: "Signal Red", hex: "#FF3F5C", role: "From compass - urgent actions, sale badges" },
       { name: "White", hex: "#F0F0F0", role: "Main text on dark" },
       { name: "Muted Silver", hex: "#8892A4", role: "Secondary text on dark" },
       { name: "Off White", hex: "#FAFAF8", role: "Light mode fallback background" },
@@ -79,11 +79,11 @@ const palettes = [
     description: "Deep emerald + warm copper + cream. Earth tones meet sophistication. Stands out from the sea of blue travel brands.",
     bestFor: "Eco-tourism, nature travel, heritage experiences. Total visual differentiation.",
     colors: [
-      { name: "Deep Emerald", hex: "#064E3B", role: "Primary — headers, nav, key sections" },
+      { name: "Deep Emerald", hex: "#064E3B", role: "Primary - headers, nav, key sections" },
       { name: "Forest", hex: "#166534", role: "Hover states, secondary areas" },
       { name: "Warm Copper", hex: "#B87333", role: "Accents, icons, borders" },
       { name: "Sand", hex: "#D4B896", role: "Soft backgrounds, card tints" },
-      { name: "Terra Red", hex: "#C0392B", role: "CTAs — from compass needle family" },
+      { name: "Terra Red", hex: "#C0392B", role: "CTAs - from compass needle family" },
       { name: "Warm Linen", hex: "#F8F4EE", role: "Main page background" },
       { name: "Deep Brown", hex: "#2C1810", role: "Headings, body text" },
       { name: "Olive Gray", hex: "#6B7056", role: "Captions, metadata" },
@@ -304,7 +304,7 @@ export default function BrandIdentityPage() {
                       key={color.hex}
                       className="flex-1 relative group cursor-pointer"
                       style={{ backgroundColor: color.hex }}
-                      title={`${color.name} — ${color.hex}`}
+                      title={`${color.name} - ${color.hex}`}
                     >
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
                         <span className="text-white text-[9px] font-mono">{color.hex}</span>
@@ -337,7 +337,7 @@ export default function BrandIdentityPage() {
                             className="w-full px-5 py-2.5 rounded-lg text-white text-sm font-medium shadow-sm"
                             style={{ backgroundColor: color.hex }}
                           >
-                            {color.name} — Book Now →
+                            {color.name} - Book Now →
                           </button>
                         ))}
                       <button
@@ -347,7 +347,7 @@ export default function BrandIdentityPage() {
                           borderColor: palette.colors[0].hex,
                         }}
                       >
-                        Outline — Learn More
+                        Outline - Learn More
                       </button>
                     </div>
                   </div>
@@ -365,11 +365,11 @@ export default function BrandIdentityPage() {
                             className="w-full px-5 py-2.5 rounded-lg text-white text-sm font-medium shadow-sm"
                             style={{ backgroundColor: color.hex }}
                           >
-                            {color.name} — Book Now →
+                            {color.name} - Book Now →
                           </button>
                         ))}
                       <button className="w-full px-5 py-2.5 rounded-lg text-sm font-medium ring-1 ring-white/30 text-white/80">
-                        Outline — Learn More
+                        Outline - Learn More
                       </button>
                     </div>
                   </div>
@@ -391,7 +391,7 @@ export default function BrandIdentityPage() {
           {/* Tier 1 */}
           <div className="mb-8">
             <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4 px-1">
-              🥇 Tier 1 — Top Recommendations
+              🥇 Tier 1 - Top Recommendations
             </h3>
             <div className="grid grid-cols-1 gap-4">
               {taglines
@@ -399,7 +399,7 @@ export default function BrandIdentityPage() {
                 .map((t) => (
                   <div key={t.primary} className="bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-gray-100">
                     <div className="grid grid-cols-1 lg:grid-cols-2">
-                      {/* Tagline display — dark */}
+                      {/* Tagline display - dark */}
                       <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-10 flex items-center justify-center">
                         <div className="text-center">
                           <p className="text-2xl lg:text-3xl font-bold text-white tracking-wide">
@@ -422,7 +422,7 @@ export default function BrandIdentityPage() {
           {/* Tier 2 */}
           <div className="mb-8">
             <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4 px-1">
-              🥈 Tier 2 — Strong Contenders
+              🥈 Tier 2 - Strong Contenders
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {taglines
@@ -439,7 +439,7 @@ export default function BrandIdentityPage() {
           {/* Tier 3 */}
           <div className="mb-8">
             <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4 px-1">
-              🥉 Tier 3 — Bold / Unconventional
+              🥉 Tier 3 - Bold / Unconventional
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {taglines

@@ -222,7 +222,7 @@ export default function PackagesPage() {
           </p>
           <div style={{ marginTop: 32 }} className="flex justify-center">
             <Link href="/consultation" className="btn btn-primary">
-              {/* Ic.phone — raw path verbatim */}
+              {/* Ic.phone - raw path verbatim */}
               <svg
                 width={16}
                 height={16}

@@ -270,7 +270,7 @@ export const blogPosts: BlogPostData[] = [
   // 5. Kerala Houseboat Guide
   // ────────────────────────────────────────────────────────────────────────────
   {
-    title: "Kerala Houseboat Guide — Everything You Need to Know",
+    title: "Kerala Houseboat Guide - Everything You Need to Know",
     slug: "kerala-houseboat-guide-everything-you-need",
     category: "destination_guides",
     excerpt:
@@ -402,7 +402,7 @@ export const blogPosts: BlogPostData[] = [
   // 7. Street Food Tour
   // ────────────────────────────────────────────────────────────────────────────
   {
-    title: "Street Food Tour — Best Eats in Old Delhi, Varanasi & Jaipur",
+    title: "Street Food Tour - Best Eats in Old Delhi, Varanasi & Jaipur",
     slug: "street-food-tour-delhi-varanasi-jaipur",
     category: "food_and_culture",
     excerpt:
@@ -474,7 +474,7 @@ export const blogPosts: BlogPostData[] = [
   // 8. Char Dham Yatra 2026
   // ────────────────────────────────────────────────────────────────────────────
   {
-    title: "Char Dham Yatra 2026 — Complete Planning Guide",
+    title: "Char Dham Yatra 2026 - Complete Planning Guide",
     slug: "char-dham-yatra-2026-complete-planning-guide",
     category: "destination_guides",
     excerpt:
@@ -506,11 +506,11 @@ export const blogPosts: BlogPostData[] = [
       <h2>Route Planning</h2>
       <p>The standard route from Delhi or Haridwar follows this circuit:</p>
       <ul>
-        <li>Day 1: Haridwar to Barkot (210 km, 7-8 hours) — base for Yamunotri</li>
+        <li>Day 1: Haridwar to Barkot (210 km, 7-8 hours) - base for Yamunotri</li>
         <li>Day 2: Barkot to Janki Chatti, trek to Yamunotri temple, return to Barkot</li>
-        <li>Day 3: Barkot to Uttarkashi (100 km, 4 hours) — base for Gangotri</li>
+        <li>Day 3: Barkot to Uttarkashi (100 km, 4 hours) - base for Gangotri</li>
         <li>Day 4: Uttarkashi to Gangotri and back (100 km each way)</li>
-        <li>Day 5: Uttarkashi to Guptkashi (220 km, 8-9 hours) — base for Kedarnath</li>
+        <li>Day 5: Uttarkashi to Guptkashi (220 km, 8-9 hours) - base for Kedarnath</li>
         <li>Day 6: Guptkashi to Gaurikund, trek to Kedarnath (16 km), stay overnight</li>
         <li>Day 7: Kedarnath darshan, trek back to Gaurikund, drive to Guptkashi</li>
         <li>Day 8: Guptkashi to Badrinath (240 km, 8-9 hours)</li>

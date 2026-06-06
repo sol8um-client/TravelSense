@@ -1,7 +1,7 @@
 "use client"
 
 /**
- * DestinationSpotlight — the hero's right-hand showpiece.
+ * DestinationSpotlight - the hero's right-hand showpiece.
  *
  * A single premium "liquid-glass" destination card that AUTO-ADVANCES through a
  * hand-picked set of 6 destinations (~4.5s each), with clickable carousel dots
@@ -18,12 +18,12 @@
  *   • carousel dots beneath
  *
  * Mobile-first: sizes are authored for small screens (clean full-width card) and
- * scale UP at sm/lg — NOT a shrunk desktop card. No overflow, no layout jump.
+ * scale UP at sm/lg - NOT a shrunk desktop card. No overflow, no layout jump.
  *
  * Real data is pulled from `src/data/destinations.ts` by slug, so name / country /
  * heroImage / startingPrice / bestTimeToVisit stay in sync with the catalogue.
  * Only the indicative duration + rating + reviews are hand-set here (honest,
- * representative figures — flagged as indicative, not scraped).
+ * representative figures - flagged as indicative, not scraped).
  */
 
 import { useState, useEffect, useCallback, useRef } from "react"
@@ -122,7 +122,7 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
     }
   }, [paused, count])
 
-  // Nudge the globe whenever a new destination surfaces — but only from the
+  // Nudge the globe whenever a new destination surfaces - but only from the
   // VISIBLE carousel instance (offsetParent is null when display:none), so the
   // hidden desktop/mobile twin doesn't double-fire.
   useEffect(() => {
@@ -159,7 +159,7 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
       aria-roledescription="carousel"
       aria-label="Featured destinations"
     >
-      {/* colour glow derived from the CURRENT image — a soft bloom in the photo's
+      {/* colour glow derived from the CURRENT image - a soft bloom in the photo's
           own palette so the card melts into the hero (image-coloured boundary glow) */}
       <div className="pointer-events-none absolute -inset-[10px] -z-10 overflow-hidden rounded-[32px] opacity-70" aria-hidden>
         <Image
@@ -173,8 +173,8 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
         />
       </div>
 
-      {/* ── Card — NO frame band, NO border: the photo sits edge-to-edge, wrapped
-          only in a soft colour-hued atmospheric glow (like the globe — image +
+      {/* ── Card - NO frame band, NO border: the photo sits edge-to-edge, wrapped
+          only in a soft colour-hued atmospheric glow (like the globe - image +
           glow, no frame). Hue comes from the blurred image behind + the glow. ── */}
       <div
         className="relative overflow-hidden rounded-[24px]"
@@ -183,7 +183,7 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
             "0 22px 54px rgba(11,20,38,0.22), 0 0 18px rgba(74,120,205,0.24), 0 0 32px rgba(226,182,112,0.12)",
         }}
       >
-        {/* image stage — fills the card edge-to-edge (no padded frame). */}
+        {/* image stage - fills the card edge-to-edge (no padded frame). */}
         <div className="relative aspect-[10/9] sm:aspect-[5/6] lg:aspect-[4/5] w-full overflow-hidden rounded-[24px] bg-primary/10">
           <AnimatePresence custom={dir} mode="popLayout" initial={false}>
             <motion.div
@@ -213,7 +213,7 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
             </motion.div>
           </AnimatePresence>
 
-          {/* Best-time pill — top-left */}
+          {/* Best-time pill - top-left */}
           <div className="absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full glass-pill px-3 py-1.5">
             <Clock className="h-3.5 w-3.5 text-secondary" strokeWidth={2} />
             <span className="text-[11px] font-body font-semibold text-primary">
@@ -221,7 +221,7 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
             </span>
           </div>
 
-          {/* Heart / save — top-right */}
+          {/* Heart / save - top-right */}
           <button
             type="button"
             onClick={() => setSaved((m) => ({ ...m, [s.slug]: !m[s.slug] }))}
@@ -238,7 +238,7 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
             />
           </button>
 
-          {/* Bottom overlay — country + NAME + meta + price + CTA */}
+          {/* Bottom overlay - country + NAME + meta + price + CTA */}
           <div className="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div

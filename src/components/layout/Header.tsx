@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 import { ChevronDown, Phone, Search, ArrowRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -20,6 +20,7 @@ export function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [navQuery, setNavQuery] = useState("")
   const router = useRouter()
+  const pathname = usePathname()
   const leadModal = useLeadModal()
 
   useEffect(() => {
@@ -58,7 +59,7 @@ export function Header() {
 
   return (
     <>
-      {/* Floating liquid-glass nav pill — navy-blue glass at top → lighter navy glass past the hero */}
+      {/* Floating liquid-glass nav pill - navy-blue glass at top → lighter navy glass past the hero */}
       <header
         className={cn(
           "fixed inset-x-0 z-50 flex justify-center px-3 transition-all duration-300 sm:px-4",
@@ -67,7 +68,7 @@ export function Header() {
       >
         <div
           className={cn(
-            // Always the blue liquid glass (nav-top) — keeps the blue frosted look
+            // Always the blue liquid glass (nav-top) - keeps the blue frosted look
             // in both the hero and scrolled states, per design feedback.
             "glass-dark nav-top flex h-14 w-full items-center justify-between gap-2 rounded-full py-1.5 pl-5 pr-1.5 transition-all duration-300",
             scrolled ? "max-w-4xl" : "max-w-5xl",
@@ -77,6 +78,14 @@ export function Header() {
           <div className="flex shrink-0 items-center gap-3">
             <Link
               href="/"
+              onClick={(e) => {
+                // On the homepage, "/" is the current route so Next won't
+                // navigate - smooth-scroll up to the hero instead.
+                if (pathname === "/") {
+                  e.preventDefault()
+                  window.scrollTo({ top: 0, behavior: "smooth" })
+                }
+              }}
               className="group flex items-center gap-2 transition-opacity hover:opacity-80"
             >
               <Image
@@ -135,7 +144,7 @@ export function Header() {
                       )}
                     </Link>
 
-                    {/* Services dropdown — dark glass per design */}
+                    {/* Services dropdown - dark glass per design */}
                     {item.children && activeDropdown === item.title && (
                       <div className="absolute left-1/2 top-full -translate-x-1/2 pt-3">
                         <div className="min-w-[244px] overflow-hidden rounded-2xl border border-white/10 bg-[#0C162A]/88 p-2 shadow-[0_24px_60px_rgba(3,8,16,0.5)] backdrop-blur-[40px] backdrop-saturate-150 duration-200 animate-in fade-in slide-in-from-top-2">
@@ -169,7 +178,7 @@ export function Header() {
 
           {/* Right side actions */}
           <div className="flex shrink-0 items-center gap-1.5">
-            {/* Menu dropdown — appears when scrolled (full nav incl. Blog/Contact) */}
+            {/* Menu dropdown - appears when scrolled (full nav incl. Blog/Contact) */}
             {scrolled && (
               <div className="relative hidden lg:block">
                 <button
@@ -222,7 +231,7 @@ export function Header() {
               </div>
             )}
 
-            {/* Phone icon + number — opens WhatsApp (number text hides when scrolled, icon stays) */}
+            {/* Phone icon + number - opens WhatsApp (number text hides when scrolled, icon stays) */}
             <a
               href={waHref()}
               target="_blank"

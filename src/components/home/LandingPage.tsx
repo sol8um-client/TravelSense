@@ -107,7 +107,7 @@ function useCounter(target: number, duration = 2000) {
   return { ref, count }
 }
 
-/* ─── Scroll Progress — brand gradient ─── */
+/* ─── Scroll Progress - brand gradient ─── */
 
 function ScrollProgress() {
   const { scrollYProgress } = useScroll()
@@ -173,17 +173,17 @@ function RevealText({ text, className, delay = 0 }: { text: string; className?: 
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   1. HERO — Cinematic, full-screen with 3D globe
+   1. HERO - Cinematic, full-screen with 3D globe
    ═══════════════════════════════════════════════════════════════ */
 
 const heroWords = ["Your Way", "Your Story", "Your Pace"]
 
 // Cities that flip in the hero headline ("Discover <city>, your way.")
-// Popular, focused destinations only (no broad states) — keeps the headline
+// Popular, focused destinations only (no broad states) - keeps the headline
 // punchy and short enough never to crowd the visor on the right.
 const heroCities = ["Bali", "Goa", "Dubai", "Jaipur", "Kashmir", "Kerala", "Ladakh", "Udaipur"]
 
-// Quick-pick favourites under the planner — all resolve to real destination pages
+// Quick-pick favourites under the planner - all resolve to real destination pages
 const heroFavourites: { name: string; slug: string }[] = [
   { name: "Goa", slug: "goa" },
   { name: "Bali", slug: "bali" },
@@ -209,7 +209,7 @@ const heroPresence: { name: string; verb: string; place: string }[] = [
 /* Rotating word with a CSS-only crossfade.
    Deliberately NOT framer-motion + AnimatePresence here: framer adds
    will-change/transform and remounts the node every cycle, which intermittently
-   produces an EMPTY composite layer in Chrome — the large Fraunces headline word
+   produces an EMPTY composite layer in Chrome - the large Fraunces headline word
    silently went invisible (verified live on the deployed hero). A single
    PERSISTENT node with a plain opacity transition paints reliably. */
 function RotatingWord({
@@ -370,7 +370,7 @@ function HeroPlanner() {
         </button>
       </form>
 
-      {/* Live suggestions — real destinations & packages from the catalogue */}
+      {/* Live suggestions - real destinations & packages from the catalogue */}
       {open && matches.length > 0 && (
         <div className="absolute inset-x-0 top-[calc(100%+8px)] z-30 overflow-hidden rounded-2xl border border-silver/15 bg-white py-1.5 text-left shadow-[0_18px_50px_rgba(11,20,38,0.18)]">
           {matches.map((m, i) => (
@@ -399,7 +399,7 @@ function HeroPlanner() {
         </div>
       )}
 
-      {/* No-result CTA — visitor typed a real query but nothing in the catalogue
+      {/* No-result CTA - visitor typed a real query but nothing in the catalogue
           matches. Capture the demand with a WhatsApp "Talk to an expert" pill
           instead of dead-ending. Mirrors the dropdown's glass/rounded styling. */}
       {open && q.length >= 2 && matches.length === 0 && (
@@ -413,7 +413,7 @@ function HeroPlanner() {
           </p>
           <WhatsAppLink
             source="hero-search-no-result"
-            message={`Hi TravelSense! I was looking for "${dest.trim()}" but didn't find it — can you help me plan it?`}
+            message={`Hi TravelSense! I was looking for "${dest.trim()}" but didn't find it - can you help me plan it?`}
             onMouseDown={(e) => e.preventDefault()}
             className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-b from-secondary-light via-secondary to-secondary-dark px-4 py-2 text-[12.5px] font-body font-semibold text-white shadow-[0_6px_16px_rgba(196,50,74,0.28)] transition-transform hover:-translate-y-0.5"
           >
@@ -424,7 +424,7 @@ function HeroPlanner() {
       )}
 
       <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
-        <span className="script mr-0.5 text-[16px] text-foreground/55">or pick a favourite —</span>
+        <span className="script mr-0.5 text-[16px] text-foreground/55">or pick a favourite -</span>
         {heroFavourites.map((f) => (
           <Link
             key={f.slug}
@@ -439,7 +439,7 @@ function HeroPlanner() {
   )
 }
 
-/* Floating travel icon particles — brand-colored */
+/* Floating travel icon particles - brand-colored */
 const floatingIconData: { Icon: LucideIcon; x: number; y: number; dur: number; delay: number; color: string }[] = [
   { Icon: Plane, x: 10, y: 82, dur: 16, delay: 0, color: "text-secondary/20" },
   { Icon: Mountain, x: 85, y: 78, dur: 18, delay: 2, color: "text-silver/25" },
@@ -472,7 +472,7 @@ function FloatingTravelIcons() {
   )
 }
 
-/* Constellation star field — brand colored */
+/* Constellation star field - brand colored */
 function ConstellationField() {
   const stars = Array.from({ length: 16 }, (_, i) => {
     const seed = (i * 2654435761) >>> 0
@@ -505,21 +505,21 @@ function HeroSection() {
 
   return (
     <section ref={ref} className="relative min-h-[100dvh] flex items-start justify-center bg-brand-mesh pt-[84px] pb-10 lg:items-center lg:pt-24 lg:pb-12 overflow-visible">
-      {/* 1. Soft brand-color washes — STATIC on purpose. Animating 180–200px blurs
+      {/* 1. Soft brand-color washes - STATIC on purpose. Animating 180–200px blurs
              re-rasterizes the whole layer every frame and was the main hero lag. */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* sunrise aura cradling the globe — warm gold melting into cherry (lower-left) */}
+        {/* sunrise aura cradling the globe - warm gold melting into cherry (lower-left) */}
         <div className="absolute -bottom-[8%] left-[1%] h-[540px] w-[640px] rounded-full" style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.11), rgba(196,50,74,0.05) 52%, transparent 76%)", filter: "blur(95px)" }} />
         {/* cool atmospheric depth behind the spotlight card (upper-right) */}
         <div className="absolute -top-[6%] right-[1%] h-[540px] w-[540px] rounded-full" style={{ background: "radial-gradient(closest-side, rgba(74,120,205,0.10), transparent 72%)", filter: "blur(105px)" }} />
-        {/* faint silver lift along the lower centre — grounds the composition */}
+        {/* faint silver lift along the lower centre - grounds the composition */}
         <div className="absolute bottom-[4%] left-1/2 h-[340px] w-[780px] -translate-x-1/2 rounded-full" style={{ background: "radial-gradient(closest-side, rgba(176,184,196,0.07), transparent 70%)", filter: "blur(115px)" }} />
       </div>
 
-      {/* 2. Dot grid pattern — only on right half, faded in with mask so no hard edge */}
+      {/* 2. Dot grid pattern - only on right half, faded in with mask so no hard edge */}
       <div className="absolute inset-0 hidden opacity-[0.025] lg:block" style={{ backgroundImage: "radial-gradient(circle, #B0B8C4 1px, transparent 1px)", backgroundSize: "32px 32px", maskImage: "linear-gradient(to right, transparent 35%, black 55%)", WebkitMaskImage: "linear-gradient(to right, transparent 35%, black 55%)" }} />
 
-      {/* 3. Constellation star field — only on right/content side, faded */}
+      {/* 3. Constellation star field - only on right/content side, faded */}
       <div style={{ maskImage: "linear-gradient(to right, transparent 30%, black 50%)", WebkitMaskImage: "linear-gradient(to right, transparent 30%, black 50%)" }}>
         <ConstellationField />
       </div>
@@ -527,37 +527,46 @@ function HeroSection() {
       {/* 4. Floating travel icon particles */}
       <FloatingTravelIcons />
 
-      {/* 5. Static globe (Nano-Banana art + CSS motion, no WebGL) — all sizes.
+      {/* 5. Static globe (Nano-Banana art + CSS motion, no WebGL) - all sizes.
              Mobile/tablet: a calm, glowing backdrop centred behind the text.
              Desktop (lg+): present on the LEFT with live location image-pins. */}
       <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">
         <StaticGlobe
           className="absolute left-1/2 top-[47%] w-[130%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.6]
                      sm:w-[108%] sm:opacity-[0.66]
-                     md:w-[84%] md:opacity-[0.78]
-                     lg:w-[72%] lg:opacity-[0.82]
+                     md:w-[78%] md:opacity-[0.62]
+                     lg:w-[66%] lg:opacity-[0.64]
                      xl:left-0 xl:top-1/2 xl:h-[116%] xl:w-auto xl:-translate-x-[28%] xl:-translate-y-1/2 xl:opacity-100"
         />
       </div>
 
-      {/* 7. Destination spotlight — auto-advancing showcase card in the right
+      {/* 7. Destination spotlight - auto-advancing showcase card in the right
              margin (xl+), vertically centred to complement the globe on the left.
              Below xl it's rendered full-width inside the content flow instead. */}
       <div className="pointer-events-auto absolute right-[2%] top-1/2 z-20 hidden w-[414px] -translate-y-1/2 xl:block 2xl:right-[4%] 2xl:w-[452px]">
         <DestinationSpotlight />
       </div>
 
-      {/* Content — text shadow on mobile ensures readability over globe */}
+      {/* Content - text shadow on mobile ensures readability over globe */}
       <motion.div className="relative z-30 w-full max-w-5xl mx-auto px-6 text-center [text-shadow:0_1px_8px_rgba(255,255,255,0.8)] xl:[text-shadow:none] xl:max-w-[660px] xl:ml-auto xl:mr-[33%]" style={{ y: contentY }}>
-        {/* Live presence pill — rotating social proof */}
-        <LivePresence />
+        {/* Text block wrapped so a soft legibility scrim sits behind ONLY the
+            headline / subtitle / search on phones + tablets (where they overlay
+            the globe); the spotlight card below stays clear of it. */}
+        <div className="relative">
+          {/* soft light scrim - keeps the dark text legible over the globe (below xl) */}
+          <div
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[128%] w-[150%] -translate-x-1/2 -translate-y-1/2 xl:hidden"
+            style={{ background: "radial-gradient(ellipse 56% 50% at 50% 50%, rgba(247,249,251,0.9) 0%, rgba(247,249,251,0.5) 40%, transparent 72%)" }}
+          />
+          {/* Live presence pill - rotating social proof */}
+          <LivePresence />
 
-        {/* Eyebrow — provenance line (design handoff) */}
+        {/* Eyebrow - provenance line (design handoff) */}
         <p className="mb-3.5 font-body text-[10.5px] font-semibold uppercase tracking-[0.28em] text-secondary">
           India · Asia · Europe <span className="mx-0.5 text-secondary/55">&bull;</span> Curated since 2018
         </p>
 
-        {/* Main headline — "Wake up in <rotating destination>." solid navy Fraunces,
+        {/* Main headline - "Wake up in <rotating destination>." solid navy Fraunces,
             city in red italic. Destination cycles through heroCities. */}
         <h1 className="font-heading text-[2.55rem] sm:text-[3.2rem] md:text-[3.8rem] lg:text-[4.3rem] font-medium leading-[1.04] tracking-[-0.025em] text-[#0A1425] [text-shadow:0_2px_18px_rgba(255,255,255,0.95)] xl:[text-shadow:none]">
           <span>Wake up in</span>
@@ -573,7 +582,7 @@ function HeroSection() {
           </span>
         </h1>
 
-        {/* Subtitle — Outfit body with Caveat script lift */}
+        {/* Subtitle - Outfit body with Caveat script lift */}
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -581,11 +590,12 @@ function HeroSection() {
           className="mt-7 text-[15px] sm:text-[17px] leading-[1.7] text-foreground/70 max-w-xl mx-auto font-normal"
         >
           <span className="script text-[22px] sm:text-[26px] text-secondary/90 align-middle mr-1">One conversation</span>
-          &mdash; zero bots, zero IVR. A real expert plans, books and stays with you the whole trip.
+          - zero bots, zero IVR. A real expert plans, books and stays with you the whole trip.
         </motion.p>
 
-        {/* Planner — search + quick-pick favourites (replaces the old tagline + CTA buttons) */}
+        {/* Planner - search + quick-pick favourites (replaces the old tagline + CTA buttons) */}
         <HeroPlanner />
+        </div>
 
         {/* Mobile/tablet only: the spotlight as a clean full-width card below the
             headline (desktop gets the right-margin version, hidden below xl). */}
@@ -598,7 +608,7 @@ function HeroSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   2. TRUST BAR — slim stat strip + "Recently planned" marquee
+   2. TRUST BAR - slim stat strip + "Recently planned" marquee
       (faithful port of the prototype `TrustBar` in home-sections-c.jsx)
    ═══════════════════════════════════════════════════════════════ */
 
@@ -609,7 +619,7 @@ const TRUST_STATS: [string, string][] = [
   ["24/7", "Human support"],
 ]
 
-/* Recently-planned ticker — drawn from our real traveller stories. */
+/* Recently-planned ticker - drawn from our real traveller stories. */
 const RECENT_TRIPS: { who: string; trip: string; rating: string }[] = [
   { who: "Priya S.", trip: "Kerala · 6 days", rating: "5.0" },
   { who: "Rahul D.", trip: "Ladakh · 9 days", rating: "4.9" },
@@ -625,7 +635,7 @@ function TrustBarSection() {
       {/* rounded liquid-glass pill, hovering over the globe's bottom */}
       <div className="glass-panel mx-auto max-w-[1120px] rounded-[22px] px-5 py-3.5 sm:rounded-[26px] sm:px-9 sm:py-[18px]">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-10">
-          {/* 4 stats — ALWAYS one row (grid on mobile, inline on desktop) */}
+          {/* 4 stats - ALWAYS one row (grid on mobile, inline on desktop) */}
           <div className="grid shrink-0 grid-cols-4 gap-x-2 sm:flex sm:gap-x-[32px]">
             {TRUST_STATS.map(([n, l], i) => (
               <motion.div
@@ -642,7 +652,7 @@ function TrustBarSection() {
             ))}
           </div>
 
-          {/* "Recently planned" marquee — own line on mobile, right side on desktop */}
+          {/* "Recently planned" marquee - own line on mobile, right side on desktop */}
           <motion.div
             className="flex min-w-0 flex-1 items-center gap-3"
             initial={{ opacity: 0 }}
@@ -685,7 +695,7 @@ function TrustBarSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   3a. PROBLEM — The fragmented travel story
+   3a. PROBLEM - The fragmented travel story
    ═══════════════════════════════════════════════════════════════ */
 
 /* ─── Chaos Collage Problem Section data ─── */
@@ -695,7 +705,7 @@ const problems = [
     tag: "AA 1247",
     stamp: "OVERBOOKED",
     title: "Five apps. One trip.",
-    body: "Flights here, hotels there, activities on a third screen. You're not travelling — you're project-managing.",
+    body: "Flights here, hotels there, activities on a third screen. You're not travelling - you're project-managing.",
     fix: "One thread. One human. Done.",
   },
   {
@@ -719,7 +729,7 @@ const problems = [
     tag: "QR 538",
     stamp: "LOST",
     title: "Support vanishes post-booking.",
-    body: "The moment you need a human most — delayed flight, cancelled hotel — you get a chatbot and a sorry.",
+    body: "The moment you need a human most - delayed flight, cancelled hotel - you get a chatbot and a sorry.",
     fix: "24/7 humans. Every timezone.",
   },
 ]
@@ -897,7 +907,7 @@ function LuggageTag({ destination, image }: { destination: string; image: string
 function ChaosCanvas() {
   return (
     <div className="relative w-full h-[520px] overflow-visible">
-      {/* Boarding passes — overbooked / delayed */}
+      {/* Boarding passes - overbooked / delayed */}
       <DraggablePiece initial={{ x: 30, y: 50 }} rotation={-7}>
         <BoardingPass tag="AA 1247" route={["DEL", "GOA"]} date="12 Dec" seat="14A" status={{ label: "Overbooked", color: "#C4324A" }} />
       </DraggablePiece>
@@ -941,9 +951,9 @@ function ChaosCanvas() {
         </div>
       </DraggablePiece>
 
-      {/* Drag hint — meaningful caption (per design) */}
+      {/* Drag hint - meaningful caption (per design) */}
       <div className="pointer-events-none absolute bottom-1 left-1/2 -translate-x-1/2 whitespace-nowrap font-tech text-[8.5px] uppercase tracking-[0.18em] text-silver/45">
-        ↕ this is planning a trip yourself — drag to feel the mess
+        ↕ this is planning a trip yourself - drag to feel the mess
       </div>
     </div>
   )
@@ -972,7 +982,7 @@ function TicketCard({ p, i, inView }: { p: typeof problems[number]; i: number; i
         className="pointer-events-none absolute top-0 bottom-0 border-l border-dashed border-silver/20"
         style={{ left: 70 }}
       />
-      {/* Left stub — icon + vertical "01 / PROBLEM" label */}
+      {/* Left stub - icon + vertical "01 / PROBLEM" label */}
       <div
         className="absolute left-0 top-0 bottom-0 w-[70px] flex flex-col items-center justify-center gap-2"
         style={{ background: "rgba(196,50,74,0.06)" }}
@@ -996,7 +1006,7 @@ function TicketCard({ p, i, inView }: { p: typeof problems[number]; i: number; i
 
       {/* Main content */}
       <div className="relative min-h-[180px] p-[22px] pl-[90px]">
-        {/* Stamp label — rotated */}
+        {/* Stamp label - rotated */}
         <div
           className="absolute text-[9.5px] font-body font-bold uppercase tracking-[0.2em]"
           style={{
@@ -1027,7 +1037,7 @@ function TicketCard({ p, i, inView }: { p: typeof problems[number]; i: number; i
           <p className="m-0 font-body text-[13.5px] leading-[1.6] text-white/65">{p.body}</p>
         </div>
 
-        {/* BACK — the TravelSense fix */}
+        {/* BACK - the TravelSense fix */}
         <div
           className="absolute flex flex-col justify-center transition-[opacity,transform] duration-[400ms] ease-out"
           style={{
@@ -1066,12 +1076,12 @@ function ProblemSection() {
       <div className="relative max-w-6xl mx-auto px-6 py-20 sm:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-[72px] items-center">
 
-          {/* LEFT — draggable chaos canvas */}
+          {/* LEFT - draggable chaos canvas */}
           <div data-reveal className="order-2 lg:order-1">
             <ChaosCanvas />
           </div>
 
-          {/* RIGHT — editorial copy + ticket stack */}
+          {/* RIGHT - editorial copy + ticket stack */}
           <div className="order-1 lg:order-2">
             <div data-reveal>
               <span
@@ -1099,7 +1109,7 @@ function ProblemSection() {
             </div>
             <div data-reveal style={{ transitionDelay: "0.16s" }}>
               <p className="font-script text-[22px] sm:text-[24px] text-white/60 mt-2 mb-9 max-w-[460px]">
-                you know the drill. so do we — that&apos;s why we built this.
+                you know the drill. so do we - that&apos;s why we built this.
               </p>
             </div>
 
@@ -1116,10 +1126,10 @@ function ProblemSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   3b. HOW IT WORKS — sticky boarding-pass builder
+   3b. HOW IT WORKS - sticky boarding-pass builder
        Faithful port of the prototype `HowItWorks` (home-sections-c.jsx).
        Scroll-pins for 460vh; one conversation assembles into a booked trip
-       across four steps — Consult → Plan → Book → Travel.
+       across four steps - Consult → Plan → Book → Travel.
    ═══════════════════════════════════════════════════════════════ */
 
 const HIW_STEPS: { n: string; title: string; status: string; color: string }[] = [
@@ -1141,7 +1151,7 @@ function PassBody({ step }: { step: number }) {
   if (step === 0)
     return (
       <div>
-        <p className="m-0 mb-3 font-script text-[20px] text-secondary">tell us your vibe — no forms, just talk</p>
+        <p className="m-0 mb-3 font-script text-[20px] text-secondary">tell us your vibe - no forms, just talk</p>
         <div className="flex flex-wrap gap-2">
           {HIW_PREFS.map((c, i) => (
             <span
@@ -1211,9 +1221,9 @@ function PassBody({ step }: { step: number }) {
         style={{ background: "rgba(31,138,91,0.08)", border: "1px solid rgba(31,138,91,0.2)" }}
       >
         <span className="h-2 w-2 rounded-full" style={{ background: "#1F8A5B", boxShadow: "0 0 0 3px rgba(31,138,91,0.18)", animation: "pulseRing 2s cubic-bezier(0.22,1,0.36,1) infinite" }} />
-        <span className="text-[12.5px] font-semibold" style={{ color: "#1F8A5B" }}>24/7 human on call — a travel expert is online</span>
+        <span className="text-[12.5px] font-semibold" style={{ color: "#1F8A5B" }}>24/7 human on call - a travel expert is online</span>
       </div>
-      <p className="m-0 font-script text-[24px] text-primary">bon voyage — we&apos;ve got you, the whole way.</p>
+      <p className="m-0 font-script text-[24px] text-primary">bon voyage - we&apos;ve got you, the whole way.</p>
     </div>
   )
 }
@@ -1279,7 +1289,7 @@ function HowItWorksSection() {
             Watch your trip <em className="font-normal italic text-secondary">assemble itself.</em>
           </h2>
           <p className="hiw-sub mx-auto mt-3 max-w-[460px] text-[14.5px] leading-[1.65] text-muted-foreground">
-            Keep scrolling — one conversation becomes a fully-booked trip, step by step.
+            Keep scrolling - one conversation becomes a fully-booked trip, step by step.
           </p>
         </div>
 
@@ -1360,7 +1370,7 @@ function HowItWorksSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   3c. CATEGORIES — sticky visor-goggle glide
+   3c. CATEGORIES - sticky visor-goggle glide
        Faithful port of the prototype `Categories` (home-sections-a.jsx).
        Scroll-pins for 320vh; one goggle glides left → centre → right,
        cross-fading the framed destination photo + copy per category.
@@ -1370,12 +1380,12 @@ const CAT_VISOR_NORM = "M 0.03750 0.53030 C 0.01875 0.33333 0.10625 0.15152 0.23
 const CAT_VISOR_VB = "M 12 70 C 6 44 34 20 74 16 C 130 9 196 8 242 17 C 282 24 312 36 305 58 C 300 84 277 101 248 105 C 228 108 213 108 199 102 C 184 95 174 89 160 89 C 146 89 136 95 121 102 C 107 109 86 116 63 113 C 38 110 18 95 12 70 Z"
 
 const CATS: { title: string; place: string; tagline: string; coord: string; desc: string; image: string; num: string; stat: string; accent: string; slug: string }[] = [
-  { title: "Leisure", place: "Goa", tagline: "Unwind & recharge", coord: "15.29°N · 73.97°E", desc: "Pristine beaches, luxury resorts and serene hill stations — for those who travel to breathe.", image: "/images/generated/goa-hero.webp", num: "01", stat: "70+ packages", accent: "#C4324A", slug: "leisure" },
+  { title: "Leisure", place: "Goa", tagline: "Unwind & recharge", coord: "15.29°N · 73.97°E", desc: "Pristine beaches, luxury resorts and serene hill stations - for those who travel to breathe.", image: "/images/generated/goa-hero.webp", num: "01", stat: "70+ packages", accent: "#C4324A", slug: "leisure" },
   { title: "Adventure", place: "Leh-Ladakh", tagline: "Thrill & conquer", coord: "34.15°N · 77.57°E", desc: "Scale peaks, raft rapids, trek ancient trails. For those who travel to feel truly alive.", image: "/images/generated/leh-ladakh-hero.webp", num: "02", stat: "25+ experiences", accent: "#A8574E", slug: "adventure" },
 ]
 
 /* Visor-goggle framed image (brand's signature lens shape). The drop-shadow lives
-   on the navy backing layer (sibling), never on the clipped photo — Chrome drops a
+   on the navy backing layer (sibling), never on the clipped photo - Chrome drops a
    clip-path when a filter sits on the clipped element or any ancestor. */
 function VisorImage({ img, width = 392, flip = false, bgSize = "cover" }: { img: string; width?: number; flip?: boolean; bgSize?: string }) {
   const uid = useId().replace(/:/g, "")
@@ -1438,7 +1448,7 @@ function CategoriesSection() {
   const c = CATS[idx]
   const flip = idx % 2 === 1
   // On phones the goggle is ~84vw wide, so the desktop left/right glide would
-  // push it off-screen — keep it centred below the lg breakpoint.
+  // push it off-screen - keep it centred below the lg breakpoint.
   const xShift = vw < 1024 ? 0 : 22
   const xpos = idx === 0 ? -xShift : idx === CATS.length - 1 ? xShift : 0
   const goggleW = Math.min(392, Math.round(vw * (vw < 1024 ? 0.74 : 0.84)))
@@ -1458,7 +1468,7 @@ function CategoriesSection() {
           <h2 className="h-display mt-3 text-3xl sm:text-4xl md:text-5xl">Two ways to <em>explore.</em></h2>
         </div>
 
-        {/* visor band — goggle glides left → centre → right */}
+        {/* visor band - goggle glides left → centre → right */}
         <div className="relative min-h-0 flex-1">
           <span
             key={`ghost-${idx}`}
@@ -1520,7 +1530,7 @@ function CategoriesSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   4. DESTINATIONS — photo cards with enhanced interaction
+   4. DESTINATIONS - photo cards with enhanced interaction
    ═══════════════════════════════════════════════════════════════ */
 
 const destinations: { name: string; country: string; slug: string; code: string; coord: string; gate: string; priceLabel: string; rating: string; image: string }[] = [
@@ -1624,7 +1634,7 @@ function DestinationsSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   5. USP — Real Humans, Real Help (enhanced storytelling)
+   5. USP - Real Humans, Real Help (enhanced storytelling)
    ═══════════════════════════════════════════════════════════════ */
 
 function USPSection() {
@@ -1654,7 +1664,7 @@ function USPSection() {
 
       <div className="relative max-w-6xl mx-auto px-6 pt-24 sm:pt-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left — content */}
+          {/* Left - content */}
           <div>
             <div data-reveal>
               <div className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-7" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
@@ -1681,7 +1691,7 @@ function USPSection() {
               </p>
             </div>
 
-            {/* Anti-features — line-through pills */}
+            {/* Anti-features - line-through pills */}
             <div data-reveal className="mt-7 flex flex-wrap gap-2.5" style={{ transitionDelay: "0.3s" }}>
               {[
                 { icon: PhoneOff, label: "No IVR" },
@@ -1715,7 +1725,7 @@ function USPSection() {
             </div>
           </div>
 
-          {/* Right — animated chat */}
+          {/* Right - animated chat */}
           <div data-reveal-right className="flex justify-center lg:justify-end">
             <TiltCard strength={4} className="w-full max-w-[360px]">
               <div className="rounded-[28px] p-5 shadow-[0_25px_80px_rgba(0,0,0,0.4)]" style={{ background: "rgba(255,255,255,0.035)", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(20px)" }}>
@@ -1788,7 +1798,7 @@ function USPSection() {
           </div>
         </div>
 
-        {/* Differentiator strip — 4-up, above a hairline top border (trimmed from flip-cards) */}
+        {/* Differentiator strip - 4-up, above a hairline top border (trimmed from flip-cards) */}
         <div className="mt-20 sm:mt-24 pb-24 sm:pb-28">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 border-t border-white/[0.07] pt-10">
             {differentiators.map((d, i) => (
@@ -1816,7 +1826,7 @@ function USPSection() {
   )
 }
 
-/* Differentiators — the 4 USP pillars. Rendered as the strip inside USPSection
+/* Differentiators - the 4 USP pillars. Rendered as the strip inside USPSection
    (the prototype trimmed the old standalone flip-cards into this dark strip). */
 const differentiators: { Icon: LucideIcon; title: string; desc: string }[] = [
   { Icon: MessageSquare, title: "Consultation First", desc: "We listen before we sell" },
@@ -1826,13 +1836,13 @@ const differentiators: { Icon: LucideIcon; title: string; desc: string }[] = [
 ]
 
 /* ═══════════════════════════════════════════════════════════════
-   7. TESTIMONIALS — enhanced with better visual hierarchy
+   7. TESTIMONIALS - enhanced with better visual hierarchy
    ═══════════════════════════════════════════════════════════════ */
 
 /* Real, unedited traveller reviews shared by the founder (lightly trimmed for length;
    words kept authentic). Four carry the travellers' own trip photos (shared with the
    founder); unnamed reviewers show as "Verified traveller" pending the WhatsApp
-   verification round — swap in names as they come in. */
+   verification round - swap in names as they come in. */
 type Testimonial = {
   name: string
   location: string
@@ -1844,13 +1854,13 @@ type Testimonial = {
   color: string
 }
 const testimonials: Testimonial[] = [
-  { name: "Nisha Laddha", location: "Amravati", trip: "Kashmir & Vaishno Devi", coord: "34.08°N · 74.80°E", image: "/images/testimonials/kashmir-laddha.webp", initial: "N", color: "#C4324A", review: "Truly memorable and very well organised. Hotels, arrangements and services were excellent throughout — everything managed smoothly, completely comfortable and stress-free. Heartfelt thanks for the wonderful planning and coordination." },
-  { name: "Verified traveller", location: "", trip: "Andaman Islands", coord: "11.62°N · 92.73°E", image: "/images/testimonials/andaman.webp", initial: "A", color: "#1F8A7A", review: "I was confused which company to choose for Andaman — and my decision to go with V9 was so right. Competitive rates, excellent hotels, polite drivers, and the owner herself available 24×7. Highly recommend." },
+  { name: "Nisha Laddha", location: "Amravati", trip: "Kashmir & Vaishno Devi", coord: "34.08°N · 74.80°E", image: "/images/testimonials/kashmir-laddha.webp", initial: "N", color: "#C4324A", review: "Truly memorable and very well organised. Hotels, arrangements and services were excellent throughout - everything managed smoothly, completely comfortable and stress-free. Heartfelt thanks for the wonderful planning and coordination." },
+  { name: "Verified traveller", location: "", trip: "Andaman Islands", coord: "11.62°N · 92.73°E", image: "/images/testimonials/andaman.webp", initial: "A", color: "#1F8A7A", review: "I was confused which company to choose for Andaman - and my decision to go with V9 was so right. Competitive rates, excellent hotels, polite drivers, and the owner herself available 24×7. Highly recommend." },
   { name: "Sonal Bihani", location: "", trip: "Rajasthan", coord: "26.91°N · 75.79°E", initial: "S", color: "#A8574E", review: "Amazing service in stay, food and travel. Jayshree maam customised our itinerary to our interests and priorities. To make your trip comfortable and easy, I highly recommend planning with V9." },
-  { name: "Verified traveller", location: "", trip: "Vietnam · 10 days", coord: "21.03°N · 105.85°E", image: "/images/testimonials/vietnam.webp", initial: "V", color: "#C9842B", review: "Our 10-day Vietnam trip was just amazing — stays, sightseeing, food and above all hospitality of a 7-star category, with real value for money. Even last-minute changes were gracefully handled. We felt at home." },
-  { name: "Yogesh & Family Jaju", location: "Sangamner", trip: "Bhutan", coord: "27.47°N · 89.64°E", initial: "Y", color: "#2D8B6A", review: "A huge thank you for arranging such a fantastic trip to Bhutan — an unforgettable experience. The landscapes were stunning, the itinerary spot on, and the local guides amazing. Can't wait to plan the next adventure!" },
-  { name: "Verified traveller", location: "", trip: "Kashmir", coord: "34.05°N · 74.38°E", image: "/images/testimonials/kashmir-snow.webp", initial: "K", color: "#1B6CA8", review: "Hamara trip kaafi memorable aur smooth raha. Superb hotels, perfect arrangements aur har jagah excellent service mili. Poori trip tension-free aur beautifully planned thi — thank you for making our journey so comfortable and special!" },
-  { name: "Chinmay Korad", location: "", trip: "Uttarakhand · 2 tours", coord: "30.07°N · 79.01°E", initial: "C", color: "#1B2D4E", review: "Professionally arranged. The best part — our requirement was understood and options prepared specifically to meet it. Enjoyed the travel, stay and guide arrangements. Thank you for making our two back-to-back tours memorable." },
+  { name: "Verified traveller", location: "", trip: "Vietnam · 10 days", coord: "21.03°N · 105.85°E", image: "/images/testimonials/vietnam.webp", initial: "V", color: "#C9842B", review: "Our 10-day Vietnam trip was just amazing - stays, sightseeing, food and above all hospitality of a 7-star category, with real value for money. Even last-minute changes were gracefully handled. We felt at home." },
+  { name: "Yogesh & Family Jaju", location: "Sangamner", trip: "Bhutan", coord: "27.47°N · 89.64°E", initial: "Y", color: "#2D8B6A", review: "A huge thank you for arranging such a fantastic trip to Bhutan - an unforgettable experience. The landscapes were stunning, the itinerary spot on, and the local guides amazing. Can't wait to plan the next adventure!" },
+  { name: "Verified traveller", location: "", trip: "Kashmir", coord: "34.05°N · 74.38°E", image: "/images/testimonials/kashmir-snow.webp", initial: "K", color: "#1B6CA8", review: "Hamara trip kaafi memorable aur smooth raha. Superb hotels, perfect arrangements aur har jagah excellent service mili. Poori trip tension-free aur beautifully planned thi - thank you for making our journey so comfortable and special!" },
+  { name: "Chinmay Korad", location: "", trip: "Uttarakhand · 2 tours", coord: "30.07°N · 79.01°E", initial: "C", color: "#1B2D4E", review: "Professionally arranged. The best part - our requirement was understood and options prepared specifically to meet it. Enjoyed the travel, stay and guide arrangements. Thank you for making our two back-to-back tours memorable." },
 ]
 
 function TestimonialsSection() {
@@ -1864,12 +1874,12 @@ function TestimonialsSection() {
             Real trips, real <em>stories.</em>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-[14.5px] leading-relaxed text-muted-foreground">
-            Unedited words — and real photos — from travellers who planned their journey with V9.
+            Unedited words - and real photos - from travellers who planned their journey with V9.
           </p>
         </div>
       </div>
 
-      {/* Travel-postcard carousel — auto-scrolls, pauses on hover */}
+      {/* Travel-postcard carousel - auto-scrolls, pauses on hover */}
       <div
         className="group/tm relative"
         data-reveal
@@ -1888,7 +1898,7 @@ function TestimonialsSection() {
               className="flex w-[320px] shrink-0 flex-col overflow-hidden rounded-[22px] bg-white shadow-[0_10px_34px_rgba(11,20,38,0.08)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_22px_54px_rgba(11,20,38,0.16)]"
               style={{ border: "1px solid rgba(176,184,196,0.2)" }}
             >
-              {/* media — real traveller photo, else a destination colour band */}
+              {/* media - real traveller photo, else a destination colour band */}
               <div className="relative h-[186px] w-full overflow-hidden">
                 {t.image ? (
                   <Image src={t.image} alt={`${t.name} on their ${t.trip} trip`} fill sizes="320px" className="object-cover object-[center_38%]" />
@@ -1939,7 +1949,7 @@ function TestimonialsSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   8. CTA — Final conversion push with brand impact
+   8. CTA - Final conversion push with brand impact
    ═══════════════════════════════════════════════════════════════ */
 
 function CTASection() {
@@ -1988,7 +1998,7 @@ function CTASection() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ delay: 0.16, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          One conversation is all it takes. Tell us your dream and we&apos;ll handle the rest — start to finish.
+          One conversation is all it takes. Tell us your dream and we&apos;ll handle the rest - start to finish.
         </motion.p>
         <motion.div
           className="mt-9 flex flex-wrap justify-center gap-3.5"
@@ -2015,7 +2025,7 @@ function CTASection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   9. NEWSLETTER — clean brand-styled
+   9. NEWSLETTER - clean brand-styled
    ═══════════════════════════════════════════════════════════════ */
 
 function NewsletterSection() {
@@ -2073,7 +2083,7 @@ function NewsletterSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
         >
-          Curated ideas, deals and tips — straight to your inbox.
+          Curated ideas, deals and tips - straight to your inbox.
         </motion.p>
         <motion.form
           onSubmit={handleSubmit}
@@ -2145,7 +2155,7 @@ function NewsletterSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   WAVE DIVIDER — faithful port of the prototype `Wave` (home-sections-c.jsx)
+   WAVE DIVIDER - faithful port of the prototype `Wave` (home-sections-c.jsx)
    Two stacked flowing paths pour the `from` colour down into the `to` section.
    ═══════════════════════════════════════════════════════════════ */
 
@@ -2178,7 +2188,7 @@ export default function LandingPage() {
       <TrustBarSection />
       {/* white → navy transition: the wave leads the eye out of the white TrustBar
           into the navy AR/VR ribbon, which then flows seamlessly (no divider) into
-          the navy Problem section — one continuous premium navy band. */}
+          the navy Problem section - one continuous premium navy band. */}
       <Wave from="#FFFFFF" to="#0A1425" />
       <ARVRBanner />
       <ProblemSection />

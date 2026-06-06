@@ -9,7 +9,7 @@ export default function ComingSoon() {
       icon: Glasses,
       title: "AR/VR Destination Preview",
       description:
-        "Experience destinations before you travel. Walk through hotels, explore landmarks, and preview activities — all from the comfort of your home.",
+        "Experience destinations before you travel. Walk through hotels, explore landmarks, and preview activities - all from the comfort of your home.",
       highlights: [
         "360° hotel room walkthroughs",
         "Virtual landmark exploration",
@@ -22,7 +22,7 @@ export default function ComingSoon() {
       icon: ShoppingBag,
       title: "One-Stop Travel Marketplace",
       description:
-        "Book flights, accommodation, travel gear, and local experiences — everything you need for your trip, all in one place.",
+        "Book flights, accommodation, travel gear, and local experiences - everything you need for your trip, all in one place.",
       highlights: [
         "Flights & accommodation",
         "Travel gear & essentials",

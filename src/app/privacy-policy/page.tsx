@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer"
 import { siteConfig } from "@/config/site"
 
 export const metadata = generatePageMetadata({
-  title: "Privacy Policy — TravelSense",
+  title: "Privacy Policy - TravelSense",
   description:
     "Learn how TravelSense collects, uses, and protects your personal information. Your privacy matters to us.",
   path: "/privacy-policy",

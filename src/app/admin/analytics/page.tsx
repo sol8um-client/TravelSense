@@ -87,7 +87,7 @@ export default async function AnalyticsPage() {
       {isPlaceholder && (
         <div className="rounded-lg border border-[#D4A853]/30 bg-[#D4A853]/10 px-4 py-3">
           <p className="text-sm text-[#D4A853]">
-            Database not configured &mdash; showing placeholder data.
+            Database not configured - showing placeholder data.
           </p>
         </div>
       )}
@@ -107,7 +107,7 @@ export default async function AnalyticsPage() {
         <StatCard
           icon={MapPin}
           label="Top Destination"
-          value={analytics.topDestinations[0]?.destination ?? "—"}
+          value={analytics.topDestinations[0]?.destination ?? "-"}
         />
         <StatCard
           icon={GitBranch}

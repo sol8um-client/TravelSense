@@ -255,7 +255,7 @@ export default function VisaInquiryForm() {
           color: "rgba(208,213,220,0.4)",
         }}
       >
-        <span style={{ color: GOLD }}>TravelSense</span> handles the full file —
+        <span style={{ color: GOLD }}>TravelSense</span> handles the full file -
         paperwork, appointments and form-filling included.
       </p>
     </motion.div>

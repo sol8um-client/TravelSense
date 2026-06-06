@@ -8,9 +8,9 @@ import VehicleRequestForm from "@/components/booking/VehicleRequestForm"
 import { Phone, ArrowRight } from "lucide-react"
 
 export const metadata = generatePageMetadata({
-  title: "Vehicle Rental Services — Comfortable Travel Transport",
+  title: "Vehicle Rental Services - Comfortable Travel Transport",
   description:
-    "Book reliable vehicles for your trip — sedans, SUVs, tempo travellers, mini buses, and luxury coaches. Affordable rates with experienced drivers across India.",
+    "Book reliable vehicles for your trip - sedans, SUVs, tempo travellers, mini buses, and luxury coaches. Affordable rates with experienced drivers across India.",
   path: "/vehicles",
 })
 
@@ -90,7 +90,7 @@ export default function VehiclesPage() {
               className="mx-auto mt-[18px] max-w-[430px] font-body text-[15.5px]"
               style={{ lineHeight: 1.7, color: "rgba(208,213,220,0.7)" }}
             >
-              Our experts pair the right vehicle with a route, stays and stops — one seamless plan.
+              Our experts pair the right vehicle with a route, stays and stops - one seamless plan.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-[14px]">
               <Link href="/consultation" className="btn btn-primary">

@@ -119,7 +119,7 @@ export interface AltDay {
 
 /** Short label for a route stop, derived from a day title. */
 function shortLabel(title: string): string {
-  const cut = title.split(/\s+[—·–-]\s+| with | via | to | & /i)[0].trim()
+  const cut = title.split(/\s+[-·–-]\s+| with | via | to | & /i)[0].trim()
   const cleaned = cut
     .replace(
       /^(Arrive in|Arrival in|Arrive|Depart from|Departure from|Depart|Drive to|Fly to|Transfer to|Explore|Discover)\s+/i,
@@ -218,7 +218,7 @@ function buildStops(itinerary: ItineraryDay[]): RouteStop[] {
   })
 }
 
-/* ═══════════ ALTITUDE PROFILE — animated SVG climb chart ═══════════ */
+/* ═══════════ ALTITUDE PROFILE - animated SVG climb chart ═══════════ */
 
 function AltitudeProfile({ days }: { days: AltDay[] }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -438,7 +438,7 @@ function AltitudeProfile({ days }: { days: AltDay[] }) {
   )
 }
 
-/* ═══════════ ROUTE MAP — stylized circuit with animated arcs ═══════════ */
+/* ═══════════ ROUTE MAP - stylized circuit with animated arcs ═══════════ */
 
 function RouteMap({
   stops,
@@ -580,7 +580,7 @@ function RouteMap({
   )
 }
 
-/* ═══════════ Reveal — fade/slide in on scroll (kit primitive) ═══════════ */
+/* ═══════════ Reveal - fade/slide in on scroll (kit primitive) ═══════════ */
 
 function Reveal({
   children,
@@ -652,7 +652,7 @@ function Eyebrow({ text, color = "var(--secondary)" }: { text: string; color?: s
   )
 }
 
-/* ═══════════ DAY BY DAY — pinned scroll, scroll-animated image ═══════════ */
+/* ═══════════ DAY BY DAY - pinned scroll, scroll-animated image ═══════════ */
 
 function DayByDay({ days, fallbackImage }: { days: ItineraryDay[]; fallbackImage: string }) {
   const ref = useRef<HTMLElement>(null)
@@ -795,7 +795,7 @@ function DayByDay({ days, fallbackImage }: { days: ItineraryDay[]; fallbackImage
             ))}
           </div>
 
-          {/* IMAGE — parallaxes with scroll, cross-fades per day */}
+          {/* IMAGE - parallaxes with scroll, cross-fades per day */}
           <div
             style={{
               position: "relative",
@@ -875,7 +875,7 @@ function DayByDay({ days, fallbackImage }: { days: ItineraryDay[]; fallbackImage
             )}
           </div>
 
-          {/* TEXT — cross-fades per day */}
+          {/* TEXT - cross-fades per day */}
           <div key={`txt-${idx}`} className="fade-in-soft" style={{ position: "relative" }}>
             <div style={{ display: "flex", alignItems: "baseline", gap: 16 }}>
               <span
@@ -1026,7 +1026,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
   const altDays = buildAltDays(itinerary)
   const maxAltitude = altDays.length ? Math.max(...altDays.map((a) => a.elev)) : null
   const minAltitude = altDays.length ? Math.min(...altDays.map((a) => a.elev)) : null
-  // Only show "The Climb" when it's actually meaningful — a real elevation swing
+  // Only show "The Climb" when it's actually meaningful - a real elevation swing
   // (≥800m) or a genuinely high point (≥2,500m). Flat / leisure trips skip it.
   const showAltitude =
     altDays.length >= 2 &&
@@ -1043,7 +1043,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
     (!!pkg.destination?.country && pkg.destination.country !== "India")
   const visaCountry = pkg.destination?.country || pkg.destination?.name
 
-  // Stat rail — built from whatever real data exists for this package.
+  // Stat rail - built from whatever real data exists for this package.
   const stats: [string, string][] = []
   if (pkg.duration) stats.push([`${pkg.duration.days}D / ${pkg.duration.nights}N`, "Duration"])
   if (maxAltitude) stats.push([`${maxAltitude.toLocaleString()}m`, "Highest point"])
@@ -1148,11 +1148,11 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
             backgroundSize: "64px 64px",
           }}
         />
-        {/* frosted readability scrim — liquid glass that FEATHERS into the sharp
+        {/* frosted readability scrim - liquid glass that FEATHERS into the sharp
             image above (no hard edge). The mask ramps the backdrop-blur in over a
             long span so the frost fades in gradually; the translucent-navy gradient
             echoes the .glass-* aesthetic. (No `filter` on this masked element's
-            ancestors — would break the mask.) */}
+            ancestors - would break the mask.) */}
         <div
           style={{
             position: "absolute",
@@ -1418,7 +1418,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
         </div>
       </section>
 
-      {/* ═══════════ THE CLIMB — altitude profile (only when elevation data exists) ═══════════ */}
+      {/* ═══════════ THE CLIMB - altitude profile (only when elevation data exists) ═══════════ */}
       {showAltitude && (
         <section
           style={{
@@ -1485,7 +1485,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
         </section>
       )}
 
-      {/* ═══════════ THE ROUTE — animated map (dark key moment) ═══════════ */}
+      {/* ═══════════ THE ROUTE - animated map (dark key moment) ═══════════ */}
       {showRoute && (
         <section
           ref={routeRef}
@@ -1669,7 +1669,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
                   <Info size={22} color={TEAL} strokeWidth={1.8} style={{ flexShrink: 0, marginTop: 2 }} />
                   <div>
                     <p style={{ margin: 0, fontSize: 10.5, fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: TEAL }}>
-                      Good to know — full transparency
+                      Good to know - full transparency
                     </p>
                     <p style={{ margin: "8px 0 0", fontSize: 14.5, lineHeight: 1.75, color: "var(--muted-foreground)", maxWidth: 900 }}>
                       {pkg.transparencyNote}
@@ -1795,7 +1795,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
             </Reveal>
             <Reveal delay={0.1}>
               <p style={{ margin: "0 0 24px", fontSize: 14, lineHeight: 1.7, color: "var(--muted-foreground)", maxWidth: 640 }}>
-                Whole-group package price by vehicle and hotel category — pick the group size and comfort
+                Whole-group package price by vehicle and hotel category - pick the group size and comfort
                 level that suits you.
               </p>
             </Reveal>
@@ -1874,7 +1874,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
         </section>
       )}
 
-      {/* ═══════════ VISA & PASSPORT (international) — keep the forms attachment ═══════════ */}
+      {/* ═══════════ VISA & PASSPORT (international) - keep the forms attachment ═══════════ */}
       {isInternational && (
         <section style={{ background: "#fff", padding: "clamp(50px, 7vw, 90px) 40px", borderTop: "1px solid rgba(176,184,196,0.2)" }}>
           <div style={{ maxWidth: 1180, margin: "0 auto" }}>
@@ -1900,14 +1900,14 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
               <div style={{ borderRadius: 20, border: "1px solid rgba(176,184,196,0.25)", background: "#FAFBFC", padding: 28 }}>
                 <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.75, color: "var(--muted-foreground)" }}>
                   This is an international trip{visaCountry ? ` to ${visaCountry}` : ""}. Our team handles your
-                  visa documentation and passport guidance end-to-end — we share the country-specific document
+                  visa documentation and passport guidance end-to-end - we share the country-specific document
                   checklist, fill in the application forms for you, and track the file until your visa is stamped.
                 </p>
                 <ul style={{ margin: "18px 0 0", padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 11 }}>
                   {[
                     "Passport must be valid for at least 6 months beyond your return date, with 2+ blank pages.",
                     "Country-specific visa fee, processing time and the full document list are on our Visa & Passport page.",
-                    "We complete the visa application form on your behalf — you only provide the documents.",
+                    "We complete the visa application form on your behalf - you only provide the documents.",
                   ].map((t, i) => (
                     <li key={i} style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--muted-foreground)" }}>
                       <Check size={15} color={TEAL} strokeWidth={2} style={{ flexShrink: 0, marginTop: 2 }} />
@@ -2037,7 +2037,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
           </Reveal>
           <Reveal delay={0.1}>
             <p style={{ margin: "20px auto 0", maxWidth: 440, fontSize: 15.5, lineHeight: 1.7, color: "rgba(208,213,220,0.7)" }}>
-              One conversation and a real expert builds this trip around you — every detail handled.
+              One conversation and a real expert builds this trip around you - every detail handled.
             </p>
           </Reveal>
           <Reveal delay={0.18} style={{ display: "flex", gap: 14, justifyContent: "center", marginTop: 34, flexWrap: "wrap" }}>

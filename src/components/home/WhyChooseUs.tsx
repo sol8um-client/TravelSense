@@ -43,7 +43,7 @@ const supportingFeatures = [
 export default function WhyChooseUs() {
   return (
     <section>
-      {/* ═══ HERO USP BLOCK — 24/7 Human Assistance ═══ */}
+      {/* ═══ HERO USP BLOCK - 24/7 Human Assistance ═══ */}
       <div className="relative bg-primary py-20 sm:py-28 overflow-hidden">
         {/* Background texture */}
         <div
@@ -76,12 +76,12 @@ export default function WhyChooseUs() {
 
               <p className="mt-5 text-lg leading-relaxed text-white/70 max-w-lg">
                 When you travel with us, you get a dedicated human travel
-                assistant — not a chatbot, not an automated menu, not a queue.
+                assistant - not a chatbot, not an automated menu, not a queue.
                 Just a real person who cares about your journey, available
                 round the clock.
               </p>
 
-              {/* What we DON'T do — crossed out */}
+              {/* What we DON'T do - crossed out */}
               <div className="mt-8 flex flex-wrap gap-4">
                 {[
                   { icon: PhoneOff, label: "No IVR Menus" },
@@ -110,13 +110,13 @@ export default function WhyChooseUs() {
                     One call. One real person. Zero wait.
                   </p>
                   <p className="text-xs text-white/50 mt-0.5">
-                    Available on call, WhatsApp, and chat — 24 hours a day
+                    Available on call, WhatsApp, and chat - 24 hours a day
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Right: Visual — Chat mockup */}
+            {/* Right: Visual - Chat mockup */}
             <div className="relative flex justify-center lg:justify-end">
               <div className="w-full max-w-sm">
                 {/* Phone frame */}

@@ -4,7 +4,7 @@ import { FileText, Receipt, Printer, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Document Templates",
-  description: "TravelSense letterhead and invoice templates — fill in, print, save as PDF.",
+  description: "TravelSense letterhead and invoice templates - fill in, print, save as PDF.",
   robots: { index: false, follow: false },
 }
 
@@ -98,13 +98,13 @@ export default function TemplatesPage() {
               <p className="font-medium text-white/80">How to use:</p>
               <ol className="mt-2 list-decimal space-y-1 pl-5 leading-relaxed">
                 <li>Open the template you need.</li>
-                <li>Click any field to edit — type your client&apos;s details, package info, dates, amounts.</li>
+                <li>Click any field to edit - type your client&apos;s details, package info, dates, amounts.</li>
                 <li>Click <span className="text-[#FFB3A3]">Print / Save as PDF</span> at the top.</li>
                 <li>In the print dialog, choose <span className="text-white/80">Save as PDF</span> as the destination.</li>
                 <li>The PDF saves at A4 size with proper margins, ready to send.</li>
               </ol>
               <p className="mt-3 text-xs text-white/40">
-                Your edits are session-only — opening a fresh template gives you a blank starting point.
+                Your edits are session-only - opening a fresh template gives you a blank starting point.
                 Keep your saved PDFs filed in your client folder.
               </p>
             </div>

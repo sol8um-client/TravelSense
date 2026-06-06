@@ -103,7 +103,7 @@ export default async function InquiriesPage() {
       {isPlaceholder && (
         <div className="rounded-lg border border-[#D4A853]/30 bg-[#D4A853]/10 px-4 py-3">
           <p className="text-sm text-[#D4A853]">
-            Database not configured &mdash; showing placeholder data.
+            Database not configured - showing placeholder data.
           </p>
         </div>
       )}
@@ -143,8 +143,8 @@ export default async function InquiriesPage() {
                   <TableRow key={item.id} className="border-white/10">
                     <TableCell className="text-white">{item.name}</TableCell>
                     <TableCell className="text-white/70">{item.email}</TableCell>
-                    <TableCell className="text-white/70">{item.phone ?? "—"}</TableCell>
-                    <TableCell className="text-white/70">{item.subject ?? "—"}</TableCell>
+                    <TableCell className="text-white/70">{item.phone ?? "-"}</TableCell>
+                    <TableCell className="text-white/70">{item.subject ?? "-"}</TableCell>
                     <TableCell>
                       <StatusBadge status={item.status ?? "NEW"} />
                     </TableCell>
@@ -184,8 +184,8 @@ export default async function InquiriesPage() {
                   <TableRow key={item.id} className="border-white/10">
                     <TableCell className="text-white">{item.name}</TableCell>
                     <TableCell className="text-white/70">{item.email}</TableCell>
-                    <TableCell className="text-white/70">{item.phone ?? "—"}</TableCell>
-                    <TableCell className="text-white/70">{item.destination ?? "—"}</TableCell>
+                    <TableCell className="text-white/70">{item.phone ?? "-"}</TableCell>
+                    <TableCell className="text-white/70">{item.destination ?? "-"}</TableCell>
                     <TableCell>
                       <StatusBadge status={item.status ?? "NEW"} />
                     </TableCell>

@@ -20,7 +20,7 @@ const testimonials = [
     location: "Mumbai",
     rating: 5,
     review:
-      "We were nervous about taking our two kids to Kashmir in winter, but TravelSense handled every single detail — from the Shikara ride on Dal Lake to the Gulmarg gondola tickets and snow gear rentals. The kids still talk about the bonfire night in Pahalgam. Truly stress-free family travel.",
+      "We were nervous about taking our two kids to Kashmir in winter, but TravelSense handled every single detail - from the Shikara ride on Dal Lake to the Gulmarg gondola tickets and snow gear rentals. The kids still talk about the bonfire night in Pahalgam. Truly stress-free family travel.",
     initials: "PS",
     color: "bg-primary",
     verified: true,
@@ -42,7 +42,7 @@ const testimonials = [
     location: "Bangalore",
     rating: 5,
     review:
-      "Our honeymoon in Kerala felt like it was designed just for us. The Alleppey houseboat had candles and flowers waiting when we boarded, and the private tea tasting in Munnar was magical. Every transfer, every meal, every little romantic touch — TravelSense thought of things we never would have.",
+      "Our honeymoon in Kerala felt like it was designed just for us. The Alleppey houseboat had candles and flowers waiting when we boarded, and the private tea tasting in Munnar was magical. Every transfer, every meal, every little romantic touch - TravelSense thought of things we never would have.",
     initials: "AK",
     color: "bg-secondary",
     verified: true,
@@ -53,7 +53,7 @@ const testimonials = [
     location: "Delhi",
     rating: 5,
     review:
-      "Completed the Char Dham Yatra by helicopter in just five days — something I thought would take weeks. TravelSense arranged VIP darshan at each temple, and the helicopter logistics between Yamunotri, Gangotri, Kedarnath, and Badrinath were flawless. A deeply spiritual experience without the physical strain.",
+      "Completed the Char Dham Yatra by helicopter in just five days - something I thought would take weeks. TravelSense arranged VIP darshan at each temple, and the helicopter logistics between Yamunotri, Gangotri, Kedarnath, and Badrinath were flawless. A deeply spiritual experience without the physical strain.",
     initials: "VM",
     color: "bg-violet-600",
     verified: true,
@@ -171,7 +171,7 @@ export default function Testimonials() {
       <Container>
         <SectionHeading
           title="What Our Travelers Say"
-          subtitle="Real stories from verified travelers. Don't just take our word for it — speak directly with them."
+          subtitle="Real stories from verified travelers. Don't just take our word for it - speak directly with them."
         />
 
         {/* Desktop: card grid */}

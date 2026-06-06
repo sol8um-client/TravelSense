@@ -6,7 +6,7 @@ const v3Concepts = [
     slug: "f",
     name: "The Connected Glasses",
     description:
-      "Smart AR/VR glasses where the left lens is standard (tech) and the right lens is shaped like a location pin (travel destination). The bridge between the lenses is a heartbeat/pulse line — representing 24/7 HUMAN personal assistance at the center of everything. Signal dots from the temple arm suggest smart connectivity.",
+      "Smart AR/VR glasses where the left lens is standard (tech) and the right lens is shaped like a location pin (travel destination). The bridge between the lenses is a heartbeat/pulse line - representing 24/7 HUMAN personal assistance at the center of everything. Signal dots from the temple arm suggest smart connectivity.",
     pillars: [
       { icon: "👓", label: "AR/VR Innovation", detail: "The glasses themselves = tech platform" },
       { icon: "📍", label: "Travel Destinations", detail: "Right lens shaped as location pin" },
@@ -15,7 +15,7 @@ const v3Concepts = [
     vibe: "Tech-Forward, Human-Centered, Modern",
     palette: "Deep Navy #0F2B44 + Gold #C9A96E",
     whyItWorks:
-      "This is the ONLY concept that has all three brand pillars in one single mark: glasses = AR/VR, pin-lens = travel, heartbeat bridge = human touch. And it does it with extreme minimalism — single line weight, no fills.",
+      "This is the ONLY concept that has all three brand pillars in one single mark: glasses = AR/VR, pin-lens = travel, heartbeat bridge = human touch. And it does it with extreme minimalism - single line weight, no fills.",
     files: {
       darkIcon: "f1-connected-glasses-icon.svg",
       lightIcon: "f2-connected-glasses-light.svg",
@@ -48,7 +48,7 @@ const v3Concepts = [
     slug: "c",
     name: "The Guided View",
     description:
-      "Instead of full glasses, this uses a SINGLE AR lens (like a smart monocle) containing a location pin. Signal arcs radiate upward from the lens — reading as both 'connectivity' AND 'expanding horizons'. A human figure dot is tethered to the lens by a connection line, showing the ever-present guide.",
+      "Instead of full glasses, this uses a SINGLE AR lens (like a smart monocle) containing a location pin. Signal arcs radiate upward from the lens - reading as both 'connectivity' AND 'expanding horizons'. A human figure dot is tethered to the lens by a connection line, showing the ever-present guide.",
     pillars: [
       { icon: "🔭", label: "Single AR Lens", detail: "Focused, singular vision = premium" },
       { icon: "📶", label: "Signal = Horizons", detail: "Arcs read as tech AND as expanding world" },
@@ -57,7 +57,7 @@ const v3Concepts = [
     vibe: "Abstract, Premium, Unique",
     palette: "Deep Navy #0F2B44 + Gold #C9A96E",
     whyItWorks:
-      "The most distinctive and premium-feeling concept. The single lens is a strong differentiator — no other travel brand uses this form. The signal arcs are beautiful and have dual meaning. But it's more abstract, requiring a beat longer to 'get'.",
+      "The most distinctive and premium-feeling concept. The single lens is a strong differentiator - no other travel brand uses this form. The signal arcs are beautiful and have dual meaning. But it's more abstract, requiring a beat longer to 'get'.",
     files: {
       darkIcon: "c1-guided-view-icon.svg",
       lightIcon: "c2-guided-view-light.svg",
@@ -88,7 +88,7 @@ const taglineOptions = [
   {
     tagline: "Experience First. Travel Next.",
     explanation:
-      "Perfectly describes AR/VR value prop — experience the destination virtually, then travel there for real. Unexpected word order makes it sticky.",
+      "Perfectly describes AR/VR value prop - experience the destination virtually, then travel there for real. Unexpected word order makes it sticky.",
     rank: 4,
   },
   {
@@ -106,7 +106,7 @@ export default function LogoConceptsPage() {
       <div className="bg-[#0F2B44] text-white py-16">
         <div className="mx-auto max-w-6xl px-6">
           <p className="text-xs font-semibold uppercase tracking-[4px] text-[#C9A96E] mb-3">
-            Brand Identity — V3 Concepts
+            Brand Identity - V3 Concepts
           </p>
           <h1 className="font-heading text-4xl md:text-5xl font-bold">
             Travel<span className="text-[#C9A96E]">Sense</span> Logo Concepts
@@ -133,14 +133,14 @@ export default function LogoConceptsPage() {
               <p className="text-3xl mb-2">🤝</p>
               <h3 className="font-bold text-lg text-[#C9A96E]">24/7 Human Assistance</h3>
               <p className="text-white/70 text-sm mt-1">
-                Real human travel guides available around the clock. Not bots — actual people who care about your journey.
+                Real human travel guides available around the clock. Not bots - actual people who care about your journey.
               </p>
             </div>
             <div className="rounded-xl bg-gradient-to-br from-[#0F2B44] to-[#1a3d5c] p-6 text-white">
               <p className="text-3xl mb-2">🚀</p>
               <h3 className="font-bold text-lg text-[#C9A96E]">Rising Travel Company</h3>
               <p className="text-white/70 text-sm mt-1">
-                Modern, innovative, forward-thinking. Not another generic travel agency — a tech-powered platform.
+                Modern, innovative, forward-thinking. Not another generic travel agency - a tech-powered platform.
               </p>
             </div>
           </div>
@@ -156,7 +156,7 @@ export default function LogoConceptsPage() {
         {/* Side by Side Comparison */}
         <div className="mt-20 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
           <h2 className="font-heading text-2xl font-bold text-gray-900 mb-2">
-            All 3 Concepts — Side by Side
+            All 3 Concepts - Side by Side
           </h2>
           <p className="text-gray-500 text-sm mb-8">
             Compare icons on both light and dark backgrounds
@@ -209,7 +209,7 @@ export default function LogoConceptsPage() {
           <div className="space-y-6">
             {v3Concepts.map((concept) => (
               <div key={concept.id} className="rounded-xl border border-gray-100 p-6">
-                <p className="text-xs font-bold text-[#C9A96E] mb-3">Concept {concept.id} — {concept.name}</p>
+                <p className="text-xs font-bold text-[#C9A96E] mb-3">Concept {concept.id} - {concept.name}</p>
                 <Image
                   src={`/images/brand/concepts-v3/${concept.files.wordmark}`}
                   alt={`${concept.name} full wordmark`}
@@ -228,7 +228,7 @@ export default function LogoConceptsPage() {
             Tagline Options
           </h2>
           <p className="text-gray-500 text-sm mb-8">
-            Each tagline reflects: AR/VR + Human Assistance + Travel — ranked by recommendation
+            Each tagline reflects: AR/VR + Human Assistance + Travel - ranked by recommendation
           </p>
 
           <div className="space-y-4">
@@ -303,7 +303,7 @@ function ConceptCard({ concept, rank }: { concept: typeof v3Concepts[number]; ra
         <div className="flex items-center gap-3">
           <span className="text-3xl">{medals[rank - 1]}</span>
           <div>
-            <p className="text-xs text-[#C9A96E] font-bold uppercase tracking-wider">Concept {concept.id} — Rank #{rank}</p>
+            <p className="text-xs text-[#C9A96E] font-bold uppercase tracking-wider">Concept {concept.id} - Rank #{rank}</p>
             <h3 className="font-heading text-2xl font-bold">{concept.name}</h3>
           </div>
           <span className="ml-auto text-xs text-white/40">{concept.palette}</span>

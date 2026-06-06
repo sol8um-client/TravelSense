@@ -51,7 +51,7 @@ export interface Package {
   /** Optional per-vehicle rate card (South India packages). */
   vehiclePricing?: VehiclePricing
   /**
-   * Optional honest-disclosure note shown prominently on the package page —
+   * Optional honest-disclosure note shown prominently on the package page -
    * pricing basis, seasonal advisories, local taxi clarifications, what's a
    * group vs private departure, etc. Client wants transparency on every page.
    */
@@ -63,7 +63,7 @@ export interface Package {
    */
   experienceStory?: string
   /**
-   * Optional seasonal advisory list — month-by-month or condition notes
+   * Optional seasonal advisory list - month-by-month or condition notes
    * (road closures, snow, monsoon, permit windows).
    */
   seasonalAdvisories?: string[]
@@ -120,20 +120,20 @@ const allPackages: Package[] = [
     ],
     featured: true,
     experienceStory:
-      "Ladakh is less a destination than an expedition into thin air and high silence. From Leh you climb to Khardung La — at 18,380 ft one of the world's highest motorable passes — drop into the Shyok and Nubra dunes where Bactrian camels still walk the old Silk Route, then stand at the edge of Pangong Tso as it shifts through impossible blues at 14,000 ft. Monasteries cling to cliffs, prayer flags shred in the wind, and every pass is crossed with a shout of 'Julley!'.",
+      "Ladakh is less a destination than an expedition into thin air and high silence. From Leh you climb to Khardung La - at 18,380 ft one of the world's highest motorable passes - drop into the Shyok and Nubra dunes where Bactrian camels still walk the old Silk Route, then stand at the edge of Pangong Tso as it shifts through impossible blues at 14,000 ft. Monasteries cling to cliffs, prayer flags shred in the wind, and every pass is crossed with a shout of 'Julley!'.",
     transparencyNote:
-      "Altitude transparency: Leh sits at 11,500 ft and you will go far higher. Day 1-2 are deliberately kept light for acclimatisation — this is not padding, it is what keeps you safe from Acute Mountain Sickness, and it is non-negotiable. Inner Line Permits are required for Nubra, Pangong and Hanle (we arrange them; carry original ID). Only postpaid mobile SIMs work in Ladakh (prepaid does not), fuel and ATMs exist only in Leh, and weather can close a pass at any time — the itinerary stays flexible by design.",
+      "Altitude transparency: Leh sits at 11,500 ft and you will go far higher. Day 1-2 are deliberately kept light for acclimatisation - this is not padding, it is what keeps you safe from Acute Mountain Sickness, and it is non-negotiable. Inner Line Permits are required for Nubra, Pangong and Hanle (we arrange them; carry original ID). Only postpaid mobile SIMs work in Ladakh (prepaid does not), fuel and ATMs exist only in Leh, and weather can close a pass at any time - the itinerary stays flexible by design.",
     seasonalAdvisories: [
       "The high passes and lake roads are typically open only May to early October; Khardung La and Chang La can shut for hours after snow even in summer.",
-      "Pangong and Tso Moriri partly freeze from November, and most camps close for winter — peak season is June to September.",
+      "Pangong and Tso Moriri partly freeze from November, and most camps close for winter - peak season is June to September.",
       "Carry a light down layer year-round: nights at Nubra, Pangong and Sarchu drop near or below freezing.",
     ],
     itinerary: [
       {
         day: 1,
-        title: "Arrive in Leh — Acclimatize",
+        title: "Arrive in Leh - Acclimatize",
         description:
-          "Land at Kushok Bakula Rimpochee Airport, one of the highest commercial airports in the world. The thin air at 3,500m demands respect — today is entirely dedicated to acclimatization. Rest at your hotel, drink plenty of fluids, and take only short walks. In the evening, stroll through Leh's Main Bazaar and soak in the Tibetan-influenced culture.",
+          "Land at Kushok Bakula Rimpochee Airport, one of the highest commercial airports in the world. The thin air at 3,500m demands respect - today is entirely dedicated to acclimatization. Rest at your hotel, drink plenty of fluids, and take only short walks. In the evening, stroll through Leh's Main Bazaar and soak in the Tibetan-influenced culture.",
         activities: ["Airport Transfer", "Rest & Acclimatize", "Leh Main Bazaar Walk", "Hydration"],
         meals: "Dinner",
         accommodation: "Hotel in Leh",
@@ -157,7 +157,7 @@ const allPackages: Package[] = [
         day: 3,
         title: "Leh to Kargil via Magnetic Hill",
         description:
-          "Drive west along the Indus toward Kargil, stopping at some of Ladakh's most iconic sites. Experience the optical illusion of Magnetic Hill, where vehicles appear to roll uphill. Visit the serene confluence of the Indus and Zanskar rivers — a dramatic meeting of blue and green waters. Pay respects at Kargil War Memorial before reaching your hotel.",
+          "Drive west along the Indus toward Kargil, stopping at some of Ladakh's most iconic sites. Experience the optical illusion of Magnetic Hill, where vehicles appear to roll uphill. Visit the serene confluence of the Indus and Zanskar rivers - a dramatic meeting of blue and green waters. Pay respects at Kargil War Memorial before reaching your hotel.",
         activities: ["Magnetic Hill", "Indus-Zanskar Confluence", "Gurudwara Pathar Sahib", "Kargil War Memorial"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Kargil",
@@ -182,7 +182,7 @@ const allPackages: Package[] = [
         day: 5,
         title: "Leh to Nubra Valley via Khardung La",
         description:
-          "Cross the legendary Khardung La at 5,359m — one of the highest motorable passes in the world. The road climbs through snow-dusted switchbacks before dropping into the lush, desert oasis of Nubra Valley. At Hunder, walk among the white sand dunes and spot the rare double-humped Bactrian camels, a living relic of the ancient Silk Road.",
+          "Cross the legendary Khardung La at 5,359m - one of the highest motorable passes in the world. The road climbs through snow-dusted switchbacks before dropping into the lush, desert oasis of Nubra Valley. At Hunder, walk among the white sand dunes and spot the rare double-humped Bactrian camels, a living relic of the ancient Silk Road.",
         activities: ["Khardung La Pass", "Hunder Sand Dunes", "Bactrian Camel Sighting", "Diskit Monastery"],
         meals: "Breakfast, Dinner",
         accommodation: "Camp in Hunder, Nubra Valley",
@@ -200,14 +200,14 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Camp in Hunder, Nubra Valley",
         distance: "90 km from Hunder",
-        highlight: "Turtuk — India's last village",
+        highlight: "Turtuk - India's last village",
         image: "/images/generated/ladakh-day-6-turtuk-village.webp",
       },
       {
         day: 7,
         title: "Nubra Valley to Pangong Lake",
         description:
-          "Traverse the Shyok River road to reach the legendary Pangong Tso — a 134 km long lake that stretches from India into Tibet. As you round the final bend and the lake comes into view, prepare for one of the most jaw-dropping sights on Earth: water that shifts from sapphire to turquoise to emerald depending on the light and depth. Camp on the lakeshore under a sky blazing with stars.",
+          "Traverse the Shyok River road to reach the legendary Pangong Tso - a 134 km long lake that stretches from India into Tibet. As you round the final bend and the lake comes into view, prepare for one of the most jaw-dropping sights on Earth: water that shifts from sapphire to turquoise to emerald depending on the light and depth. Camp on the lakeshore under a sky blazing with stars.",
         activities: ["Shyok Road Drive", "Pangong Lake Arrival", "Lakeside Walk", "Stargazing"],
         meals: "Breakfast, Dinner",
         accommodation: "Lakeside Camp at Pangong",
@@ -220,7 +220,7 @@ const allPackages: Package[] = [
         day: 8,
         title: "Pangong Lake to Leh",
         description:
-          "Watch the sunrise paint Pangong Lake in impossible shades of blue and gold — a moment that stays with you forever. After breakfast, drive back to Leh via Chang La pass at 5,360m, one of the highest motorable passes. Stop at the third-highest village in the world and return to Leh for a farewell dinner featuring traditional Ladakhi cuisine.",
+          "Watch the sunrise paint Pangong Lake in impossible shades of blue and gold - a moment that stays with you forever. After breakfast, drive back to Leh via Chang La pass at 5,360m, one of the highest motorable passes. Stop at the third-highest village in the world and return to Leh for a farewell dinner featuring traditional Ladakhi cuisine.",
         activities: ["Pangong Sunrise", "Chang La Pass", "Tangtse Village", "Farewell Dinner"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Leh",
@@ -233,10 +233,10 @@ const allPackages: Package[] = [
         day: 9,
         title: "Departure from Leh",
         description:
-          "Take one final look at the mighty Himalayan ranges from Leh before heading to the airport. If time permits, pick up Ladakhi souvenirs — Pashmina scarves, turquoise jewelry, and prayer wheels — from the local market. Carry home the memory of passes that touch the sky, lakes that defy color, and a land where silence speaks louder than words.",
+          "Take one final look at the mighty Himalayan ranges from Leh before heading to the airport. If time permits, pick up Ladakhi souvenirs - Pashmina scarves, turquoise jewelry, and prayer wheels - from the local market. Carry home the memory of passes that touch the sky, lakes that defy color, and a land where silence speaks louder than words.",
         activities: ["Souvenir Shopping", "Airport Transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Ladakhi souvenir shopping",
         image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&h=400&fit=crop",
       },
@@ -249,7 +249,7 @@ const allPackages: Package[] = [
     destinationSlug: "golden-triangle",
     category: "educational",
     description:
-      "India's most iconic circuit — experience the Taj Mahal, Amber Fort, and Qutub Minar on this perfect introduction to India. The Golden Triangle connects Delhi, Agra, and Jaipur in a journey through Mughal splendor, Rajput grandeur, and modern India's vibrant capital.",
+      "India's most iconic circuit - experience the Taj Mahal, Amber Fort, and Qutub Minar on this perfect introduction to India. The Golden Triangle connects Delhi, Agra, and Jaipur in a journey through Mughal splendor, Rajput grandeur, and modern India's vibrant capital.",
     heroImage:
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&h=900&fit=crop",
     images: [
@@ -293,7 +293,7 @@ const allPackages: Package[] = [
         day: 1,
         title: "Arrive in Delhi",
         description:
-          "Arrive in the capital of India — a city where ancient empires and modern ambition collide on every street. After checking in, explore Old Delhi's sensory overload: the red sandstone ramparts of the Red Fort, the enormous Jama Masjid, and the spice-scented chaos of Chandni Chowk, one of the oldest and busiest markets in Asia.",
+          "Arrive in the capital of India - a city where ancient empires and modern ambition collide on every street. After checking in, explore Old Delhi's sensory overload: the red sandstone ramparts of the Red Fort, the enormous Jama Masjid, and the spice-scented chaos of Chandni Chowk, one of the oldest and busiest markets in Asia.",
         activities: ["Airport Transfer", "Red Fort", "Jama Masjid", "Chandni Chowk Rickshaw Ride"],
         meals: "Dinner",
         accommodation: "Hotel in Delhi",
@@ -304,7 +304,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Delhi Sightseeing",
         description:
-          "Discover the grand New Delhi designed by Lutyens — drive past Rashtrapati Bhawan and India Gate, then visit Humayun's Tomb, the garden tomb that inspired the Taj Mahal. Explore the soaring Qutub Minar, India's tallest minaret, and the mysterious iron pillar that has never rusted in 1,600 years. End with a peaceful visit to the Lotus Temple, a Bahai masterpiece of modern architecture.",
+          "Discover the grand New Delhi designed by Lutyens - drive past Rashtrapati Bhawan and India Gate, then visit Humayun's Tomb, the garden tomb that inspired the Taj Mahal. Explore the soaring Qutub Minar, India's tallest minaret, and the mysterious iron pillar that has never rusted in 1,600 years. End with a peaceful visit to the Lotus Temple, a Bahai masterpiece of modern architecture.",
         activities: ["India Gate", "Humayun's Tomb", "Qutub Minar", "Lotus Temple", "Connaught Place"],
         meals: "Breakfast",
         accommodation: "Hotel in Delhi",
@@ -313,7 +313,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Delhi to Agra — Taj Mahal",
+        title: "Delhi to Agra - Taj Mahal",
         description:
           "Drive the Yamuna Expressway to Agra and witness the monument that needs no introduction. The Taj Mahal, built by Shah Jahan as an eternal declaration of love, glows with an ethereal luminescence that changes with every hour. Visit the imposing Agra Fort with its marble palaces, then watch the sun set behind the Taj from the Mehtab Bagh gardens across the river.",
         activities: ["Taj Mahal", "Agra Fort", "Mehtab Bagh Sunset", "Marble Inlay Workshop"],
@@ -327,7 +327,7 @@ const allPackages: Package[] = [
         day: 4,
         title: "Agra to Jaipur",
         description:
-          "Drive to Jaipur with a stop at the abandoned Mughal city of Fatehpur Sikri — Emperor Akbar's grand capital that was mysteriously deserted just 14 years after construction. Arrive in the Pink City and ascend to the magnificent Amber Fort, where mirrored halls, secret tunnels, and elephant ramps tell stories of Rajput valor. End the day at Hawa Mahal as the old city lights up.",
+          "Drive to Jaipur with a stop at the abandoned Mughal city of Fatehpur Sikri - Emperor Akbar's grand capital that was mysteriously deserted just 14 years after construction. Arrive in the Pink City and ascend to the magnificent Amber Fort, where mirrored halls, secret tunnels, and elephant ramps tell stories of Rajput valor. End the day at Hawa Mahal as the old city lights up.",
         activities: ["Fatehpur Sikri", "Amber Fort", "Hawa Mahal", "City Palace"],
         meals: "Breakfast",
         accommodation: "Hotel in Jaipur",
@@ -337,12 +337,12 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Jaipur — Departure",
+        title: "Jaipur - Departure",
         description:
-          "Spend the morning at Jantar Mantar, the astronomical observatory built by Maharaja Jai Singh II that still works with scientific precision. Browse the Bapu Bazaar for block-printed textiles, blue pottery, and lac bangles. Depart with a deeper understanding of the civilizations that shaped India — from Mughal emperors to Rajput warriors to the architects of modern democracy.",
+          "Spend the morning at Jantar Mantar, the astronomical observatory built by Maharaja Jai Singh II that still works with scientific precision. Browse the Bapu Bazaar for block-printed textiles, blue pottery, and lac bangles. Depart with a deeper understanding of the civilizations that shaped India - from Mughal emperors to Rajput warriors to the architects of modern democracy.",
         activities: ["Jantar Mantar", "Bapu Bazaar Shopping", "Albert Hall Museum", "Airport Transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Shopping at Bapu Bazaar",
         image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=600&h=400&fit=crop",
       },
@@ -403,7 +403,7 @@ const allPackages: Package[] = [
         day: 1,
         title: "Arrive in Kochi",
         description:
-          "Land at Cochin International Airport and transfer to your hotel in the historic Fort Kochi area. This Portuguese-Dutch-British colonial enclave feels worlds away from modern India with its art galleries, antique shops, and spice warehouses. In the evening, attend a mesmerizing Kathakali performance — Kerala's ancient dance-drama told through elaborate makeup and expressive gestures.",
+          "Land at Cochin International Airport and transfer to your hotel in the historic Fort Kochi area. This Portuguese-Dutch-British colonial enclave feels worlds away from modern India with its art galleries, antique shops, and spice warehouses. In the evening, attend a mesmerizing Kathakali performance - Kerala's ancient dance-drama told through elaborate makeup and expressive gestures.",
         activities: ["Airport Transfer", "Fort Kochi Check-in", "Kathakali Show", "Spice Market Walk"],
         meals: "Dinner",
         accommodation: "Heritage Hotel in Fort Kochi",
@@ -414,7 +414,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Fort Kochi Heritage Walk",
         description:
-          "Explore Fort Kochi on foot — watch the iconic Chinese fishing nets being operated at dawn, visit the Mattancherry Palace with its stunning Hindu murals, and wander through Jew Town's antique shops to the 450-year-old Pardesi Synagogue. End at the Santa Cruz Cathedral and the art-filled streets of the Kochi-Muziris Biennale neighborhood.",
+          "Explore Fort Kochi on foot - watch the iconic Chinese fishing nets being operated at dawn, visit the Mattancherry Palace with its stunning Hindu murals, and wander through Jew Town's antique shops to the 450-year-old Pardesi Synagogue. End at the Santa Cruz Cathedral and the art-filled streets of the Kochi-Muziris Biennale neighborhood.",
         activities: ["Chinese Fishing Nets", "Mattancherry Palace", "Jewish Synagogue", "Santa Cruz Cathedral", "Art District"],
         meals: "Breakfast, Dinner",
         accommodation: "Heritage Hotel in Fort Kochi",
@@ -462,7 +462,7 @@ const allPackages: Package[] = [
         day: 6,
         title: "Thekkady to Alleppey Houseboat",
         description:
-          "Drive to Alleppey (Alappuzha) and board your private houseboat — a traditional Kettuvallam converted into a floating luxury suite. Cruise through the tranquil backwaters as village life unfolds along the palm-fringed canals: fishermen casting nets, children diving from bridges, and toddy tappers climbing coconut palms. Fall asleep to the gentle sounds of water lapping against the hull under a sky full of stars.",
+          "Drive to Alleppey (Alappuzha) and board your private houseboat - a traditional Kettuvallam converted into a floating luxury suite. Cruise through the tranquil backwaters as village life unfolds along the palm-fringed canals: fishermen casting nets, children diving from bridges, and toddy tappers climbing coconut palms. Fall asleep to the gentle sounds of water lapping against the hull under a sky full of stars.",
         activities: ["Backwater Cruise", "Village Stops", "Sunset on Backwaters", "Fresh Kerala Dinner Onboard"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Houseboat on Alleppey Backwaters",
@@ -472,12 +472,12 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Alleppey to Kovalam — Departure",
+        title: "Alleppey to Kovalam - Departure",
         description:
           "Disembark from your houseboat after a peaceful morning cruise and drive south to Kovalam, Kerala's most famous beach. The crescent-shaped Lighthouse Beach offers golden sand, turquoise waves, and dramatic cliff-top views. Enjoy a final Kerala fish curry lunch by the sea before transferring to Trivandrum Airport. Carry home the taste of coconut and spice, the sound of temple bells, and the rhythm of the backwaters.",
         activities: ["Morning Backwater Cruise", "Kovalam Beach", "Lighthouse Walk", "Trivandrum Airport Transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "170 km to Trivandrum",
         highlight: "Kovalam Lighthouse Beach",
         image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&h=400&fit=crop",
@@ -491,7 +491,7 @@ const allPackages: Package[] = [
     destinationSlug: "goa",
     category: "leisure",
     description:
-      "Relax on pristine beaches, explore Portuguese churches, and savour coastal cuisine in India's favourite beach destination. Goa is more than just beaches — it is a fusion of Latin and Indian cultures, with 500-year-old churches, spice farms, and a nightlife that never sleeps.",
+      "Relax on pristine beaches, explore Portuguese churches, and savour coastal cuisine in India's favourite beach destination. Goa is more than just beaches - it is a fusion of Latin and Indian cultures, with 500-year-old churches, spice farms, and a nightlife that never sleeps.",
     heroImage:
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&h=900&fit=crop",
     images: [
@@ -538,7 +538,7 @@ const allPackages: Package[] = [
         day: 1,
         title: "Arrive in North Goa",
         description:
-          "Arrive at Dabolim Airport and transfer to your beachside resort in North Goa. After freshening up, head to the golden sands of Calangute or Baga Beach where the Arabian Sea meets you with warm, rolling waves. As the sun sets, the beach shacks light up with live music, cold Kingfisher beers, and the smell of grilled seafood — your Goan holiday has officially begun.",
+          "Arrive at Dabolim Airport and transfer to your beachside resort in North Goa. After freshening up, head to the golden sands of Calangute or Baga Beach where the Arabian Sea meets you with warm, rolling waves. As the sun sets, the beach shacks light up with live music, cold Kingfisher beers, and the smell of grilled seafood - your Goan holiday has officially begun.",
         activities: ["Airport Transfer", "Beach Resort Check-in", "Calangute Beach", "Beach Shack Dinner"],
         meals: "Dinner",
         accommodation: "Beach Resort in North Goa",
@@ -569,7 +569,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "South Goa — Pristine & Peaceful",
+        title: "South Goa - Pristine & Peaceful",
         description:
           "Escape the crowds and discover the serene South Goa. Palolem Beach, with its crescent shape and calm waters, is often called the prettiest beach in India. Explore the quiet Colva and Benaulim beaches lined with swaying palms and colourful fishing boats. Visit the charming Cabo de Rama Fort perched on a cliff above the sea, offering views that stretch to infinity.",
         activities: ["Palolem Beach", "Colva Beach", "Cabo de Rama Fort", "Kayaking (Optional)", "Mandovi River Cruise"],
@@ -583,10 +583,10 @@ const allPackages: Package[] = [
         day: 5,
         title: "Departure from Goa",
         description:
-          "Enjoy a final lazy morning on the beach — swim, read, or simply listen to the waves one last time. Pick up cashews, port wine, and feni as Goan souvenirs before transferring to the airport. Goa has a way of etching itself into your soul — the susegad (laid-back) lifestyle, the blend of East and West, and the feeling that time moves a little slower by the sea.",
+          "Enjoy a final lazy morning on the beach - swim, read, or simply listen to the waves one last time. Pick up cashews, port wine, and feni as Goan souvenirs before transferring to the airport. Goa has a way of etching itself into your soul - the susegad (laid-back) lifestyle, the blend of East and West, and the feeling that time moves a little slower by the sea.",
         activities: ["Morning Beach Time", "Souvenir Shopping", "Airport Transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Goan cashew and feni shopping",
         image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop",
       },
@@ -658,7 +658,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Ubud Culture & Rice Terraces",
         description:
-          "Drive inland and uphill to Ubud, the cultural heart of Bali. Visit the Sacred Monkey Forest Sanctuary where hundreds of long-tailed macaques roam through ancient banyan trees and moss-covered temple statues. Walk through the spectacular Tegallalang Rice Terraces — emerald green cascading steps carved into the hillside using an ancient irrigation system called subak, a UNESCO-recognized tradition.",
+          "Drive inland and uphill to Ubud, the cultural heart of Bali. Visit the Sacred Monkey Forest Sanctuary where hundreds of long-tailed macaques roam through ancient banyan trees and moss-covered temple statues. Walk through the spectacular Tegallalang Rice Terraces - emerald green cascading steps carved into the hillside using an ancient irrigation system called subak, a UNESCO-recognized tradition.",
         activities: ["Monkey Forest", "Tegallalang Rice Terraces", "Ubud Art Market", "Ubud Palace", "Coffee Plantation"],
         meals: "Breakfast",
         accommodation: "Resort in Ubud",
@@ -680,7 +680,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Temple Circuit — Tanah Lot & Uluwatu",
+        title: "Temple Circuit - Tanah Lot & Uluwatu",
         description:
           "Discover Bali's most iconic temples. Start at the ancient Tirta Empul water temple where Balinese Hindus purify themselves in sacred springs. Continue to the dramatic Tanah Lot, a sea temple perched on a rocky outcrop surrounded by crashing waves. As the day fades, head to the clifftop Uluwatu Temple for the mesmerizing Kecak fire dance performed against a backdrop of the Indian Ocean sunset.",
         activities: ["Tirta Empul Water Temple", "Tanah Lot Temple", "Uluwatu Temple", "Kecak Fire Dance", "Jimbaran Seafood Dinner"],
@@ -693,7 +693,7 @@ const allPackages: Package[] = [
         day: 5,
         title: "Nusa Penida Island Day Trip",
         description:
-          "Take a speedboat across the Badung Strait to Nusa Penida, a rugged island with some of the most dramatic landscapes in Indonesia. Visit the jaw-dropping Kelingking Beach viewpoint — shaped like a T-Rex head plunging into turquoise waters. Swim in the natural infinity pool of Angel's Billabong and snap photos at the Broken Beach sea arch before returning to Bali as the sun sets.",
+          "Take a speedboat across the Badung Strait to Nusa Penida, a rugged island with some of the most dramatic landscapes in Indonesia. Visit the jaw-dropping Kelingking Beach viewpoint - shaped like a T-Rex head plunging into turquoise waters. Swim in the natural infinity pool of Angel's Billabong and snap photos at the Broken Beach sea arch before returning to Bali as the sun sets.",
         activities: ["Speedboat to Nusa Penida", "Kelingking Beach Viewpoint", "Angel's Billabong", "Broken Beach", "Crystal Bay Snorkeling"],
         meals: "Breakfast",
         accommodation: "Resort in Seminyak",
@@ -715,10 +715,10 @@ const allPackages: Package[] = [
         day: 7,
         title: "Departure from Bali",
         description:
-          "Enjoy a final tropical breakfast as frangipani flowers scent the morning air. Pick up last-minute souvenirs — Balinese silver jewelry, organic coffee, or hand-carved wooden masks — before transferring to the airport. Bali has a saying: the island always calls you back. And once you have witnessed its temples, terraces, and sunsets, you will understand exactly why.",
+          "Enjoy a final tropical breakfast as frangipani flowers scent the morning air. Pick up last-minute souvenirs - Balinese silver jewelry, organic coffee, or hand-carved wooden masks - before transferring to the airport. Bali has a saying: the island always calls you back. And once you have witnessed its temples, terraces, and sunsets, you will understand exactly why.",
         activities: ["Souvenir Shopping", "Last Beach Walk", "Airport Transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Balinese silver and coffee souvenirs",
         image: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&h=400&fit=crop",
       },
@@ -731,7 +731,7 @@ const allPackages: Package[] = [
     destinationSlug: "uttarakhand",
     category: "leisure",
     description:
-      "Complete the sacred Char Dham pilgrimage in comfort — visit Yamunotri, Gangotri, Kedarnath, and Badrinath by helicopter. This premium yatra eliminates the arduous trekking while preserving the spiritual essence of visiting Hinduism's four holiest mountain shrines in the Garhwal Himalayas.",
+      "Complete the sacred Char Dham pilgrimage in comfort - visit Yamunotri, Gangotri, Kedarnath, and Badrinath by helicopter. This premium yatra eliminates the arduous trekking while preserving the spiritual essence of visiting Hinduism's four holiest mountain shrines in the Garhwal Himalayas.",
     heroImage:
       "/images/generated/uttarakhand-hero.webp",
     images: [
@@ -777,7 +777,7 @@ const allPackages: Package[] = [
         day: 1,
         title: "Arrive in Dehradun",
         description:
-          "Arrive in Dehradun, the gateway to the Garhwal Himalayas and your launching point for the sacred Char Dham Yatra. Transfer to your premium hotel and attend an orientation briefing about the pilgrimage schedule, weather conditions, helicopter weight limits, and spiritual significance of each dham. Rest well tonight — tomorrow you begin one of Hinduism's most revered journeys.",
+          "Arrive in Dehradun, the gateway to the Garhwal Himalayas and your launching point for the sacred Char Dham Yatra. Transfer to your premium hotel and attend an orientation briefing about the pilgrimage schedule, weather conditions, helicopter weight limits, and spiritual significance of each dham. Rest well tonight - tomorrow you begin one of Hinduism's most revered journeys.",
         activities: ["Airport/Station Transfer", "Hotel Check-in", "Yatra Briefing", "Puja Preparation"],
         meals: "Dinner",
         accommodation: "Premium Hotel in Dehradun",
@@ -786,7 +786,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Dehradun to Kharsali — Yamunotri Darshan",
+        title: "Dehradun to Kharsali - Yamunotri Darshan",
         description:
           "Board your helicopter at the Sahastradhara helipad at dawn and fly over the Garhwal Himalayas to Kharsali, the base for Yamunotri. From the helipad, a short pony / palki ride covers the final stretch to the temple at 3,293m, the source of the sacred Yamuna. Perform puja, bathe in the natural Surya Kund hot spring, and return to Kharsali for an overnight stay in the Yamuna valley.",
         activities: ["Helicopter Dehradun to Kharsali", "Yamunotri Temple Darshan", "Surya Kund Hot Spring", "Divya Shila Puja"],
@@ -798,7 +798,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Kharsali to Harsil — Gangotri Darshan",
+        title: "Kharsali to Harsil - Gangotri Darshan",
         description:
           "Helicopter onward to Harsil in the Bhagirathi valley, the base for Gangotri. After check-in, drive up to Gangotri at 3,100m, where the sacred Ganga is believed to have descended from heaven to Earth. The temple stands beside the thundering Bhagirathi river amid towering peaks and deodar forests. Perform Ganga puja and collect sacred river water before returning to Harsil for the night.",
         activities: ["Helicopter Kharsali to Harsil", "Drive to Gangotri", "Gangotri Temple Darshan", "Ganga Puja", "Sacred Water Collection"],
@@ -810,21 +810,21 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Harsil to Sersi/Phata — Kedarnath Darshan",
+        title: "Harsil to Sersi/Phata - Kedarnath Darshan",
         description:
-          "Fly to Sersi or Phata helipad and shuttle by helicopter to Kedarnath at 3,583m — one of the 12 Jyotirlingas of Lord Shiva, set behind the towering Kedarnath peak. The temple miraculously survived the devastating 2013 floods. After darshan, return by helicopter and overnight at Sersi / Phata in the Mandakini valley, ready for tomorrow's Badrinath leg.",
+          "Fly to Sersi or Phata helipad and shuttle by helicopter to Kedarnath at 3,583m - one of the 12 Jyotirlingas of Lord Shiva, set behind the towering Kedarnath peak. The temple miraculously survived the devastating 2013 floods. After darshan, return by helicopter and overnight at Sersi / Phata in the Mandakini valley, ready for tomorrow's Badrinath leg.",
         activities: ["Helicopter Harsil to Sersi", "Shuttle helicopter to Kedarnath", "Kedarnath Temple Darshan", "Bhairav Temple"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Premium Lodge in Sersi / Phata",
         elevation: "3,583m at Kedarnath",
-        highlight: "Kedarnath Temple — the indestructible shrine",
+        highlight: "Kedarnath Temple - the indestructible shrine",
         image: "/images/generated/char-dham-day-4-kedarnath.webp",
       },
       {
         day: 5,
-        title: "Sersi to Badrinath — Darshan & Mana Village",
+        title: "Sersi to Badrinath - Darshan & Mana Village",
         description:
-          "Helicopter onward to Badrinath, the abode of Lord Vishnu, set against the stunning Neelkanth peak at 3,133m. Bathe in the Tapt Kund hot spring beside the temple, attend the morning aarti, and drive on to Mana — India's last village before the Tibet border — for Vyas Gufa and the source of the Saraswati river. Overnight at Badrinath / Joshimath, with all four dhams blessed.",
+          "Helicopter onward to Badrinath, the abode of Lord Vishnu, set against the stunning Neelkanth peak at 3,133m. Bathe in the Tapt Kund hot spring beside the temple, attend the morning aarti, and drive on to Mana - India's last village before the Tibet border - for Vyas Gufa and the source of the Saraswati river. Overnight at Badrinath / Joshimath, with all four dhams blessed.",
         activities: ["Helicopter Sersi to Badrinath", "Tapt Kund Hot Spring", "Badrinath Temple Darshan", "Mana Village", "Vasudhara Falls"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Premium Lodge in Badrinath / Joshimath",
@@ -834,12 +834,12 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Badrinath to Dehradun — Departure",
+        title: "Badrinath to Dehradun - Departure",
         description:
-          "Final helicopter back to Dehradun with a heart full of divine blessings and a soul refreshed by the Himalayas. Receive your Char Dham Yatra completion certificate and share a farewell breakfast with your fellow pilgrims. Transfer to the airport or railway station carrying the most precious souvenir of all — the blessing of having completed one of Hinduism's holiest pilgrimages.",
+          "Final helicopter back to Dehradun with a heart full of divine blessings and a soul refreshed by the Himalayas. Receive your Char Dham Yatra completion certificate and share a farewell breakfast with your fellow pilgrims. Transfer to the airport or railway station carrying the most precious souvenir of all - the blessing of having completed one of Hinduism's holiest pilgrimages.",
         activities: ["Helicopter to Dehradun", "Yatra Certificate", "Farewell Breakfast", "Airport Transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Char Dham Yatra completion",
         image: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=600&h=400&fit=crop",
       },
@@ -912,7 +912,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Ubud Waterfalls & Culture",
         description:
-          "Head inland to explore Ubud's hidden waterfalls and cultural gems. Start with Tegenungan Waterfall, cascading into an emerald pool surrounded by lush jungle. Continue to the lesser-known Tibumana and Tukad Cepung waterfalls — the latter hidden inside a cave where sunlight streams through a crack in the canyon ceiling creating a magical light show. End with a walk through the iconic Tegallalang Rice Terraces.",
+          "Head inland to explore Ubud's hidden waterfalls and cultural gems. Start with Tegenungan Waterfall, cascading into an emerald pool surrounded by lush jungle. Continue to the lesser-known Tibumana and Tukad Cepung waterfalls - the latter hidden inside a cave where sunlight streams through a crack in the canyon ceiling creating a magical light show. End with a walk through the iconic Tegallalang Rice Terraces.",
         activities: ["Tegenungan Waterfall", "Tukad Cepung Cave Waterfall", "Tegallalang Rice Terraces", "Ubud Market", "Balinese Cooking Class"],
         meals: "Breakfast",
         accommodation: "Jungle Villa in Ubud",
@@ -945,7 +945,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Nusa Penida Day — Kelingking & Manta Point",
+        title: "Nusa Penida Day - Kelingking & Manta Point",
         description:
           "Hop to the larger Nusa Penida for a day of jaw-dropping landscapes. Visit the famous Kelingking Beach viewpoint where a dramatic cliff shaped like a T-Rex head plunges into turquoise waters. Swim in the natural infinity pool of Angel's Billabong, photograph Broken Beach's sea arch, and then snorkel at Manta Point where giant oceanic manta rays glide beneath you like underwater birds.",
         activities: ["Kelingking Beach Viewpoint", "Angel's Billabong", "Broken Beach", "Manta Point Snorkeling", "Crystal Bay"],
@@ -956,7 +956,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Nusa Lembongan — Mangroves & Diving",
+        title: "Nusa Lembongan - Mangroves & Diving",
         description:
           "Kayak through Nusa Lembongan's enchanting mangrove forest, paddling under a canopy of green as fish dart beneath your boat. In the afternoon, take a guided snorkeling or scuba dive at the island's famous coral gardens where sea turtles, colorful reef fish, and garden eels create an underwater wonderland. Return to your bungalow for a sunset dinner right on the sand.",
         activities: ["Mangrove Kayaking", "Coral Garden Snorkeling", "Sea Turtle Spotting", "Seaweed Farm Visit", "Beachfront Sunset Dinner"],
@@ -967,7 +967,7 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Return to Bali — Temple Day",
+        title: "Return to Bali - Temple Day",
         description:
           "Take the speedboat back to Bali and spend the afternoon visiting the island's most spectacular temples. Explore the cliffside Uluwatu Temple as cheeky monkeys patrol the grounds, then stay for the legendary Kecak fire dance performed on the cliff edge against the backdrop of a blazing Indian Ocean sunset. It is one of the most dramatic cultural performances on Earth.",
         activities: ["Speedboat Return", "Uluwatu Temple", "Kecak Fire Dance", "Jimbaran Bay Seafood Dinner"],
@@ -980,7 +980,7 @@ const allPackages: Package[] = [
         day: 8,
         title: "Taman Ayun, Ulun Danu Beratan & Tanah Lot Sunset",
         description:
-          "Your final full day visits Bali's most beautiful temples. Morning at Taman Ayun, the royal Mengwi temple with its moat and tiered meru shrines, then Ulun Danu Beratan — the iconic lake temple that appears to float on Lake Beratan in the cool highlands. In the late afternoon, the cliff-top Tanah Lot temple, perched on a rock surrounded by crashing waves, for one of the most photographed sunsets in Southeast Asia, followed by a farewell dinner.",
+          "Your final full day visits Bali's most beautiful temples. Morning at Taman Ayun, the royal Mengwi temple with its moat and tiered meru shrines, then Ulun Danu Beratan - the iconic lake temple that appears to float on Lake Beratan in the cool highlands. In the late afternoon, the cliff-top Tanah Lot temple, perched on a rock surrounded by crashing waves, for one of the most photographed sunsets in Southeast Asia, followed by a farewell dinner.",
         activities: ["Taman Ayun royal temple", "Ulun Danu Beratan lake temple", "Tanah Lot sunset", "Farewell dinner"],
         meals: "Breakfast",
         accommodation: "Resort in Seminyak",
@@ -991,23 +991,23 @@ const allPackages: Package[] = [
         day: 9,
         title: "Departure from Bali",
         description:
-          "Enjoy one final Balinese morning — perhaps a sunrise yoga session or a last walk on the beach. Pick up silver jewelry from Celuk, organic Luwak coffee, or hand-painted batik as mementos of your island adventure. As your plane lifts off over the emerald rice terraces and turquoise coastline, you will already be planning your return to the Island of the Gods.",
+          "Enjoy one final Balinese morning - perhaps a sunrise yoga session or a last walk on the beach. Pick up silver jewelry from Celuk, organic Luwak coffee, or hand-painted batik as mementos of your island adventure. As your plane lifts off over the emerald rice terraces and turquoise coastline, you will already be planning your return to the Island of the Gods.",
         activities: ["Morning at Leisure", "Last-minute Shopping", "Airport Transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Balinese farewell blessings",
         image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop",
       },
     ],
   },
   {
-    title: "Leh to Leh — Bike & SUV Adventure",
+    title: "Leh to Leh - Bike & SUV Adventure",
     slug: "leh-to-leh-bike-suv",
     destinationName: "Leh-Ladakh",
     destinationSlug: "leh-ladakh",
     category: "adventure",
     description:
-      "The signature Ladakh circuit for riders and thrill-seekers — 700 km of high-altitude adventure across the world's highest motorable passes. Fly into Leh, acclimatize at 3,500m, then ride a Royal Enfield Himalayan (or comfortable SUV tempo) over Khardung La to Nubra Valley's sand dunes, on to the colour-shifting Pangong Tso, and back via Chang La. Six days of monasteries, mountain passes, double-humped camels, and memories that will outlast the trip.",
+      "The signature Ladakh circuit for riders and thrill-seekers - 700 km of high-altitude adventure across the world's highest motorable passes. Fly into Leh, acclimatize at 3,500m, then ride a Royal Enfield Himalayan (or comfortable SUV tempo) over Khardung La to Nubra Valley's sand dunes, on to the colour-shifting Pangong Tso, and back via Chang La. Six days of monasteries, mountain passes, double-humped camels, and memories that will outlast the trip.",
     heroImage: "/images/generated/leh-ladakh-hero.webp",
     images: [
       "/images/generated/ladakh-day-5-khardung-la.webp",
@@ -1046,28 +1046,28 @@ const allPackages: Package[] = [
       "Anything not listed in inclusions",
     ],
     highlights: [
-      "Ride over Khardung La — one of the world's highest motorable passes",
+      "Ride over Khardung La - one of the world's highest motorable passes",
       "Double-humped Bactrian camel ride at Hundar sand dunes, Nubra",
       "Sunset & sunrise at colour-shifting Pangong Tso",
-      "Chang La — the 2nd highest motorable road in the world at 5,350m",
+      "Chang La - the 2nd highest motorable road in the world at 5,350m",
       "Hall of Fame, Magnetic Hill & Indus-Zanskar confluence",
       "Diskit Monastery with its 32-metre Maitreya Buddha statue",
     ],
     experienceStory:
-      "The classic Himalayan road trip, ridden the way it is meant to be. Throttle open across the Khardung La top-world signboard, thread the Shyok river gorge to Nubra, and chase the light to Pangong — a loop of high passes, hairpins and roadside dhabas where the chai is sweet and the horizon is always one more ridge away. Bike or SUV, this is Ladakh earned mile by mile.",
+      "The classic Himalayan road trip, ridden the way it is meant to be. Throttle open across the Khardung La top-world signboard, thread the Shyok river gorge to Nubra, and chase the light to Pangong - a loop of high passes, hairpins and roadside dhabas where the chai is sweet and the horizon is always one more ridge away. Bike or SUV, this is Ladakh earned mile by mile.",
     transparencyNote:
-      "Altitude transparency: a mandatory acclimatisation day in Leh (11,500 ft) comes before any high pass — riders feel altitude harder, so this protects you from AMS. Bikes are well-serviced Royal Enfields with a backup vehicle and mechanic; you carry your own riding gear. Inner Line Permits (arranged by us), postpaid-only mobile network, and Leh-only fuel/ATMs all apply — plan refuelling around the long Nubra and Pangong legs.",
+      "Altitude transparency: a mandatory acclimatisation day in Leh (11,500 ft) comes before any high pass - riders feel altitude harder, so this protects you from AMS. Bikes are well-serviced Royal Enfields with a backup vehicle and mechanic; you carry your own riding gear. Inner Line Permits (arranged by us), postpaid-only mobile network, and Leh-only fuel/ATMs all apply - plan refuelling around the long Nubra and Pangong legs.",
     seasonalAdvisories: [
       "Riding season is roughly mid-May to September; passes can be snow-blocked or muddy outside this window.",
-      "Weather can turn a 5-hour leg into a 9-hour one — never plan a flight out on the same day you ride back to Leh.",
+      "Weather can turn a 5-hour leg into a 9-hour one - never plan a flight out on the same day you ride back to Leh.",
       "Nights at Nubra and Pangong are near freezing; pack thermals even in July.",
     ],
     itinerary: [
       {
         day: 1,
-        title: "Arrival in Leh — Acclimatize",
+        title: "Arrival in Leh - Acclimatize",
         description:
-          "Welcome to the Land of High Passes. Our representative meets you at Leh airport (3,500 m) and drives you to your hotel. Today is deliberately light — your body needs to adjust to thin air. Rest in the morning, then a gentle evening walk to Shanti Stupa for panoramic Leh views, or explore the local bazaar for apricot jam, pashmina scarves, and Tibetan prayer wheels. Dinner and briefing for the journey ahead.",
+          "Welcome to the Land of High Passes. Our representative meets you at Leh airport (3,500 m) and drives you to your hotel. Today is deliberately light - your body needs to adjust to thin air. Rest in the morning, then a gentle evening walk to Shanti Stupa for panoramic Leh views, or explore the local bazaar for apricot jam, pashmina scarves, and Tibetan prayer wheels. Dinner and briefing for the journey ahead.",
         activities: ["Airport Pickup", "Acclimatization Rest", "Shanti Stupa (Optional)", "Leh Market Walk", "Trip Briefing"],
         meals: "Dinner",
         accommodation: "Hotel in Leh",
@@ -1077,21 +1077,21 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Leh Local — Sham Valley Circuit",
+        title: "Leh Local - Sham Valley Circuit",
         description:
-          "After breakfast, head out to Sham Valley for a day of stunning monasteries and roadside wonders. Visit Hall of Fame — the Indian Army's moving tribute to Kargil heroes — then Gurudwara Pathar Sahib, Magnetic Hill (where your vehicle appears to roll uphill), and the dramatic confluence of Indus and Zanskar rivers. Return to Leh for a cosy dinner.",
+          "After breakfast, head out to Sham Valley for a day of stunning monasteries and roadside wonders. Visit Hall of Fame - the Indian Army's moving tribute to Kargil heroes - then Gurudwara Pathar Sahib, Magnetic Hill (where your vehicle appears to roll uphill), and the dramatic confluence of Indus and Zanskar rivers. Return to Leh for a cosy dinner.",
         activities: ["Hall of Fame", "Gurudwara Pathar Sahib", "Magnetic Hill", "Indus-Zanskar Confluence", "Evening at Leh Market"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Leh",
         distance: "70 km round trip",
-        highlight: "Indus-Zanskar confluence — two rivers meeting in stone valleys",
+        highlight: "Indus-Zanskar confluence - two rivers meeting in stone valleys",
         image: "/images/generated/leh-ladakh-hero.webp",
       },
       {
         day: 3,
         title: "Leh to Nubra Valley via Khardung La",
         description:
-          "Today you cross Khardung La — the highest civilian motorable pass in the world at 5,359 m. Stop at the top for summit photos and certificates. Descend into surreal Nubra Valley, visit Diskit Monastery for a view of the 32-metre Maitreya Buddha, then ride into the Hundar sand dunes for a Bactrian camel ride — rare double-humped camels that were once silk-route traders. Dinner and overnight in cottages or camps.",
+          "Today you cross Khardung La - the highest civilian motorable pass in the world at 5,359 m. Stop at the top for summit photos and certificates. Descend into surreal Nubra Valley, visit Diskit Monastery for a view of the 32-metre Maitreya Buddha, then ride into the Hundar sand dunes for a Bactrian camel ride - rare double-humped camels that were once silk-route traders. Dinner and overnight in cottages or camps.",
         activities: ["Ride over Khardung La Pass", "Diskit Monastery", "Hundar Sand Dunes", "Double-humped Camel Ride", "Bonfire at Camps"],
         meals: "Breakfast, Dinner",
         accommodation: "Camps/Cottages in Nubra",
@@ -1104,7 +1104,7 @@ const allPackages: Package[] = [
         day: 4,
         title: "Nubra to Pangong Tso via Shyok",
         description:
-          "Breakfast, then the remote Shyok route to Pangong Tso — a dramatic river-cut gorge drive that skips the longer Leh-Pangong road. Arrive by late afternoon at the 134-km-long saltwater lake that changes colour four to five times a day — cobalt blue to turquoise to steel grey depending on the sun. Spend golden hour at the shore, then dinner and overnight at lakeside camps under a million stars.",
+          "Breakfast, then the remote Shyok route to Pangong Tso - a dramatic river-cut gorge drive that skips the longer Leh-Pangong road. Arrive by late afternoon at the 134-km-long saltwater lake that changes colour four to five times a day - cobalt blue to turquoise to steel grey depending on the sun. Spend golden hour at the shore, then dinner and overnight at lakeside camps under a million stars.",
         activities: ["Shyok River Drive", "Pangong Tso Arrival", "Lakeside Photography", "Sunset at Pangong", "Stargazing"],
         meals: "Breakfast, Dinner",
         accommodation: "Camps at Pangong Tso",
@@ -1117,7 +1117,7 @@ const allPackages: Package[] = [
         day: 5,
         title: "Pangong to Leh via Chang La",
         description:
-          "Wake early for a breathtaking sunrise over Pangong — the lake glows pink, then gold, then electric blue. After breakfast, drive back to Leh over Chang La — the 2nd highest motorable road in the world at 5,360 m. Stop for hot chai at the summit. Reach Leh by evening with time for last-minute shopping in the bazaar — Pashmina, turquoise jewellery, Tibetan singing bowls. Farewell dinner at the hotel.",
+          "Wake early for a breathtaking sunrise over Pangong - the lake glows pink, then gold, then electric blue. After breakfast, drive back to Leh over Chang La - the 2nd highest motorable road in the world at 5,360 m. Stop for hot chai at the summit. Reach Leh by evening with time for last-minute shopping in the bazaar - Pashmina, turquoise jewellery, Tibetan singing bowls. Farewell dinner at the hotel.",
         activities: ["Pangong Sunrise", "Ride over Chang La Pass", "Leh Market Shopping", "Farewell Dinner"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Leh",
@@ -1133,20 +1133,20 @@ const allPackages: Package[] = [
           "After breakfast, your travel consultant escorts you to Leh airport for your onwards flight. You leave with a backpack of apricots, a certificate from Khardung La, and memories of riding through a landscape unlike anywhere else on earth.",
         activities: ["Breakfast at Hotel", "Airport Transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Farewell views from the Leh airport runway",
         image: "/images/generated/leh-ladakh-hero.webp",
       },
     ],
   },
   {
-    title: "Leh to Leh with Turtuk — Ladakh Extended",
+    title: "Leh to Leh with Turtuk - Ladakh Extended",
     slug: "leh-to-leh-with-turtuk",
     destinationName: "Leh-Ladakh",
     destinationSlug: "leh-ladakh",
     category: "adventure",
     description:
-      "The classic Ladakh circuit plus the cultural frontier of Turtuk — India's last village before Pakistan-controlled Gilgit-Baltistan. This 6-day itinerary adds a day exploring the Balti heritage, apricot orchards, and narrow valleys of Turtuk before continuing to Pangong Tso. Perfect for travellers who want both the high-altitude adventure and the cultural depth of Ladakh.",
+      "The classic Ladakh circuit plus the cultural frontier of Turtuk - India's last village before Pakistan-controlled Gilgit-Baltistan. This 6-day itinerary adds a day exploring the Balti heritage, apricot orchards, and narrow valleys of Turtuk before continuing to Pangong Tso. Perfect for travellers who want both the high-altitude adventure and the cultural depth of Ladakh.",
     heroImage: "/images/generated/ladakh-day-6-turtuk-village.webp",
     images: [
       "/images/generated/ladakh-day-6-turtuk-village.webp",
@@ -1184,28 +1184,28 @@ const allPackages: Package[] = [
       "Any damage to the bike (bearer's responsibility)",
     ],
     highlights: [
-      "Cross Khardung La — the world's highest motorable pass at 5,359m",
-      "Visit Turtuk — India's last village, a Balti cultural frontier",
+      "Cross Khardung La - the world's highest motorable pass at 5,359m",
+      "Visit Turtuk - India's last village, a Balti cultural frontier",
       "Apricot orchards & 16th-century Balti heritage homes",
       "Double-humped camel ride at Hundar sand dunes",
       "Colour-shifting Pangong Tso across the day",
-      "Chang La — the 2nd highest motorable road at 5,350m",
+      "Chang La - the 2nd highest motorable road at 5,350m",
     ],
     experienceStory:
-      "An extended loop that reaches Turtuk — a Balti village of apricot orchards and stone-and-wood homes that only opened to travellers in 2010, the last settlement before the Pakistan border and a window into a Ladakh that feels more Central Asian than Indian. Add Khardung La, the Nubra dunes and Pangong's blues, and this is the fullest first-timer's Ladakh.",
+      "An extended loop that reaches Turtuk - a Balti village of apricot orchards and stone-and-wood homes that only opened to travellers in 2010, the last settlement before the Pakistan border and a window into a Ladakh that feels more Central Asian than Indian. Add Khardung La, the Nubra dunes and Pangong's blues, and this is the fullest first-timer's Ladakh.",
     transparencyNote:
-      "Altitude transparency: the first two days in Leh (11,500 ft) are acclimatisation days by design, to keep you ahead of Acute Mountain Sickness before Khardung La. Turtuk and Nubra are border zones — Inner Line Permits are mandatory (we arrange them; carry original photo ID), postpaid mobile network only, and stays in Turtuk are simple homestays/guesthouses, which is the point.",
+      "Altitude transparency: the first two days in Leh (11,500 ft) are acclimatisation days by design, to keep you ahead of Acute Mountain Sickness before Khardung La. Turtuk and Nubra are border zones - Inner Line Permits are mandatory (we arrange them; carry original photo ID), postpaid mobile network only, and stays in Turtuk are simple homestays/guesthouses, which is the point.",
     seasonalAdvisories: [
-      "Turtuk and the high passes are seasonal — broadly May to early October; check road status after any snow.",
+      "Turtuk and the high passes are seasonal - broadly May to early October; check road status after any snow.",
       "Pangong camps and Turtuk homestays largely close in winter; June-September is the reliable window.",
-      "Carry cash from Leh — there are no ATMs in Nubra or Turtuk.",
+      "Carry cash from Leh - there are no ATMs in Nubra or Turtuk.",
     ],
     itinerary: [
       {
         day: 1,
         title: "Arrival in Leh",
         description:
-          "Welcome to Leh at 3,500m. Our representative meets you at the airport and drives you to your hotel. Rest and acclimatize — your body needs this day. Gentle evening stroll to Shanti Stupa or Leh's famous main bazaar. Dinner and briefing at hotel.",
+          "Welcome to Leh at 3,500m. Our representative meets you at the airport and drives you to your hotel. Rest and acclimatize - your body needs this day. Gentle evening stroll to Shanti Stupa or Leh's famous main bazaar. Dinner and briefing at hotel.",
         activities: ["Airport Pickup", "Acclimatization", "Shanti Stupa (Optional)", "Leh Bazaar", "Trip Briefing"],
         meals: "Dinner",
         accommodation: "Hotel in Leh",
@@ -1217,7 +1217,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Leh to Nubra Valley via Khardung La",
         description:
-          "After breakfast, conquer Khardung La — the highest civilian motorable pass in the world at 5,359m. Photos at the summit, then descend into surreal Nubra Valley. Visit Diskit Monastery with its 32m Maitreya Buddha, then ride to Hundar sand dunes for a double-humped Bactrian camel ride — a living relic of the Silk Route. Dinner and bonfire at camps.",
+          "After breakfast, conquer Khardung La - the highest civilian motorable pass in the world at 5,359m. Photos at the summit, then descend into surreal Nubra Valley. Visit Diskit Monastery with its 32m Maitreya Buddha, then ride to Hundar sand dunes for a double-humped Bactrian camel ride - a living relic of the Silk Route. Dinner and bonfire at camps.",
         activities: ["Khardung La Pass", "Diskit Monastery", "Hundar Sand Dunes", "Double-humped Camel Ride", "Bonfire Night"],
         meals: "Breakfast, Dinner",
         accommodation: "Camps/Cottages in Nubra",
@@ -1230,19 +1230,19 @@ const allPackages: Package[] = [
         day: 3,
         title: "Nubra to Turtuk and Back",
         description:
-          "Today you enter a different cultural world. Drive from Nubra to Turtuk — India's last village before Pakistan-occupied Gilgit-Baltistan, and a gateway to the Siachen Glacier region. Linguistically, culturally, and historically distinct from Central Ladakh, Turtuk is a Balti village with 16th-century heritage homes, lush apricot orchards, and narrow valleys flanked by steep mountains. Walk through the village, meet the Balti community, visit the royal Yabgo family's palace, and try apricot tea. Return to Nubra for dinner and overnight.",
+          "Today you enter a different cultural world. Drive from Nubra to Turtuk - India's last village before Pakistan-occupied Gilgit-Baltistan, and a gateway to the Siachen Glacier region. Linguistically, culturally, and historically distinct from Central Ladakh, Turtuk is a Balti village with 16th-century heritage homes, lush apricot orchards, and narrow valleys flanked by steep mountains. Walk through the village, meet the Balti community, visit the royal Yabgo family's palace, and try apricot tea. Return to Nubra for dinner and overnight.",
         activities: ["Drive to Turtuk", "Balti Heritage Walk", "Yabgo Palace Visit", "Apricot Orchards", "Return to Nubra"],
         meals: "Breakfast, Dinner",
         accommodation: "Camps/Cottages in Nubra",
         distance: "180 km round trip",
-        highlight: "Turtuk — India's last village & a Balti cultural frontier",
+        highlight: "Turtuk - India's last village & a Balti cultural frontier",
         image: "/images/generated/ladakh-day-6-turtuk-village.webp",
       },
       {
         day: 4,
         title: "Nubra to Pangong Tso via Shyok",
         description:
-          "Breakfast, then the spectacular Shyok route to Pangong Tso — a dramatic river-cut gorge drive. Arrive by afternoon at the 134-km saltwater lake that shifts through four to five shades of blue during the day. Spend golden hour by the shore, then dinner and overnight at lakeside camps.",
+          "Breakfast, then the spectacular Shyok route to Pangong Tso - a dramatic river-cut gorge drive. Arrive by afternoon at the 134-km saltwater lake that shifts through four to five shades of blue during the day. Spend golden hour by the shore, then dinner and overnight at lakeside camps.",
         activities: ["Shyok River Drive", "Pangong Tso Arrival", "Sunset Photography", "Stargazing"],
         meals: "Breakfast, Dinner",
         accommodation: "Camps at Pangong",
@@ -1255,7 +1255,7 @@ const allPackages: Package[] = [
         day: 5,
         title: "Pangong to Leh via Chang La",
         description:
-          "Wake at dawn for a sunrise that turns Pangong gold, then pink, then electric blue. After breakfast, ride back to Leh over Chang La — the world's 2nd highest motorable road at 5,360m. Reach Leh by evening — time for last-minute shopping in the bazaar. Farewell dinner at the hotel.",
+          "Wake at dawn for a sunrise that turns Pangong gold, then pink, then electric blue. After breakfast, ride back to Leh over Chang La - the world's 2nd highest motorable road at 5,360m. Reach Leh by evening - time for last-minute shopping in the bazaar. Farewell dinner at the hotel.",
         activities: ["Pangong Sunrise", "Chang La Pass", "Leh Bazaar Shopping", "Farewell Dinner"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Leh",
@@ -1271,7 +1271,7 @@ const allPackages: Package[] = [
           "After breakfast, airport transfer. You leave with apricot preserves from Turtuk, a Khardung La summit certificate, and stories that your friends back home won't believe.",
         activities: ["Breakfast", "Airport Transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Final views of the Ladakh skyline",
         image: "/images/generated/leh-ladakh-hero.webp",
       },
@@ -1284,7 +1284,7 @@ const allPackages: Package[] = [
     destinationSlug: "leh-ladakh",
     category: "adventure",
     description:
-      "The ultimate Himalayan road trip — 11 days covering four of the world's highest motorable passes. Start from Delhi, climb to Manali, then ride the legendary Manali-Leh highway over Baralacha La, Nakee La, Lachung La, and Tanglang La into Ladakh. Complete the circle with Nubra Valley, Pangong Tso, and a return journey via Jispa. This is the bucket-list Himalayan motorcycle/SUV expedition.",
+      "The ultimate Himalayan road trip - 11 days covering four of the world's highest motorable passes. Start from Delhi, climb to Manali, then ride the legendary Manali-Leh highway over Baralacha La, Nakee La, Lachung La, and Tanglang La into Ladakh. Complete the circle with Nubra Valley, Pangong Tso, and a return journey via Jispa. This is the bucket-list Himalayan motorcycle/SUV expedition.",
     heroImage: "/images/generated/ladakh-day-5-khardung-la.webp",
     images: [
       "/images/generated/ladakh-day-5-khardung-la.webp",
@@ -1322,29 +1322,29 @@ const allPackages: Package[] = [
       "Any damage to the bike (bearer's responsibility)",
     ],
     highlights: [
-      "Ride the legendary Manali-Leh highway — one of the world's most iconic routes",
+      "Ride the legendary Manali-Leh highway - one of the world's most iconic routes",
       "Cross 4 high-altitude passes: Baralacha La, Nakee La, Lachung La, Tanglang La",
-      "Khardung La pass — the world's highest motorable at 5,359m",
+      "Khardung La pass - the world's highest motorable at 5,359m",
       "Double-humped camels at Hundar sand dunes, Nubra",
       "Colour-shifting Pangong Tso under a million stars",
-      "Gata Loops — 21 iconic hairpin bends at 4,669m",
+      "Gata Loops - 21 iconic hairpin bends at 4,669m",
       "Overnight camping under clear star-filled skies at Sarchu",
     ],
     experienceStory:
       "Two of the planet's great mountain highways, ridden out and back. Climb from the cedar forests of Manali over the Atal Tunnel and the Baralacha La onto the Morey Plains, camp under a blanket of stars at Sarchu, and crest Tanglang La before Leh opens up below. The reward beyond: Khardung La, Nubra and Pangong. This is the high road in its purest, most demanding form.",
     transparencyNote:
-      "Altitude transparency: this route gains height fast and sleeps high — the night at Sarchu is around 14,100 ft, where altitude is genuinely felt. We build in an acclimatisation day at Leh and keep the pace honest; AMS is managed, not ignored. Stretches between Manali and Leh have no fuel, network or medical help for hours — the trip runs with a support plan, and the schedule flexes for road and weather closures on the Baralacha and Tanglang passes.",
+      "Altitude transparency: this route gains height fast and sleeps high - the night at Sarchu is around 14,100 ft, where altitude is genuinely felt. We build in an acclimatisation day at Leh and keep the pace honest; AMS is managed, not ignored. Stretches between Manali and Leh have no fuel, network or medical help for hours - the trip runs with a support plan, and the schedule flexes for road and weather closures on the Baralacha and Tanglang passes.",
     seasonalAdvisories: [
-      "The Manali-Leh highway is open only about June to September/early October — it is snow-closed the rest of the year.",
+      "The Manali-Leh highway is open only about June to September/early October - it is snow-closed the rest of the year.",
       "River crossings (nallahs) on the Pang-Sarchu stretch run high by afternoon snow-melt; early starts are essential.",
-      "Sarchu camps are basic and very cold at night — a four-season sleeping setup and thermals are a must.",
+      "Sarchu camps are basic and very cold at night - a four-season sleeping setup and thermals are a must.",
     ],
     itinerary: [
       {
         day: 1,
         title: "Departure from Delhi",
         description:
-          "Board the overnight Volvo bus from Delhi to Manali at 6:30 PM. Settle in for the 14-hour journey through the Himalayan foothills — a scenic ride that eases you into mountain altitude.",
+          "Board the overnight Volvo bus from Delhi to Manali at 6:30 PM. Settle in for the 14-hour journey through the Himalayan foothills - a scenic ride that eases you into mountain altitude.",
         activities: ["Delhi Bus Boarding", "Overnight Journey"],
         meals: "None",
         accommodation: "Overnight Volvo Bus",
@@ -1355,7 +1355,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Manali Arrival & Leisure",
         description:
-          "Morning arrival at Manali (2,050m). Check into your hotel. After breakfast, the day is yours — explore Mall Road, visit Hidimba Devi Temple in its cedar forest, or take a short trip to Solang Valley. Dinner at hotel.",
+          "Morning arrival at Manali (2,050m). Check into your hotel. After breakfast, the day is yours - explore Mall Road, visit Hidimba Devi Temple in its cedar forest, or take a short trip to Solang Valley. Dinner at hotel.",
         activities: ["Hotel Check-in", "Mall Road Walk", "Hidimba Temple", "Solang Valley (Optional)", "Acclimatization"],
         meals: "Dinner",
         accommodation: "Hotel in Manali",
@@ -1367,7 +1367,7 @@ const allPackages: Package[] = [
         day: 3,
         title: "Manali to Sarchu via Baralacha La",
         description:
-          "Breakfast, then start your ride. Drive through the Atal Tunnel into Lahaul Valley, follow the Chandra river to Keylong (Lahaul-Spiti district headquarters), then Darcha, Patsio, Zingzing Bar, and over Baralacha La (4,892m) — one of the most challenging passes on the Leh highway with sweeping panoramic views. Reach Sarchu by evening. Dinner and camping under a blanket of stars.",
+          "Breakfast, then start your ride. Drive through the Atal Tunnel into Lahaul Valley, follow the Chandra river to Keylong (Lahaul-Spiti district headquarters), then Darcha, Patsio, Zingzing Bar, and over Baralacha La (4,892m) - one of the most challenging passes on the Leh highway with sweeping panoramic views. Reach Sarchu by evening. Dinner and camping under a blanket of stars.",
         activities: ["Atal Tunnel", "Lahaul Valley", "Keylong", "Baralacha La Pass", "Sarchu Camps"],
         meals: "Breakfast, Dinner",
         accommodation: "Camps at Sarchu",
@@ -1380,7 +1380,7 @@ const allPackages: Package[] = [
         day: 4,
         title: "Sarchu to Leh via Tanglang La",
         description:
-          "Breakfast, then the long ride to Leh. Tackle the Gata Loops — 21 iconic hairpin bends at 4,669m. Cross Nakee La (4,739m), Lachung La (5,065m), then lunch at Pang. Drive the 30-km flat Moore Plains, then over Tanglang La — the 3rd highest motorable pass in the world. Reach Leh by late evening. Dinner and rest.",
+          "Breakfast, then the long ride to Leh. Tackle the Gata Loops - 21 iconic hairpin bends at 4,669m. Cross Nakee La (4,739m), Lachung La (5,065m), then lunch at Pang. Drive the 30-km flat Moore Plains, then over Tanglang La - the 3rd highest motorable pass in the world. Reach Leh by late evening. Dinner and rest.",
         activities: ["Gata Loops", "Nakee La", "Lachung La", "Pang Lunch", "Moore Plains", "Tanglang La"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Leh",
@@ -1391,7 +1391,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Leh Local — Sham Valley Circuit",
+        title: "Leh Local - Sham Valley Circuit",
         description:
           "Rest morning, then a light day in Sham Valley. Visit Hall of Fame, Gurudwara Pathar Sahib, Magnetic Hill, and the Indus-Zanskar confluence. Return to Leh for dinner.",
         activities: ["Hall of Fame", "Gurudwara Pathar Sahib", "Magnetic Hill", "Indus-Zanskar Confluence"],
@@ -1405,7 +1405,7 @@ const allPackages: Package[] = [
         day: 6,
         title: "Leh to Nubra Valley via Khardung La",
         description:
-          "Ride over the world's highest motorable pass — Khardung La (5,359m). Visit Diskit Monastery's 32m Maitreya Buddha, then Hundar sand dunes for a double-humped camel ride. Dinner at camps.",
+          "Ride over the world's highest motorable pass - Khardung La (5,359m). Visit Diskit Monastery's 32m Maitreya Buddha, then Hundar sand dunes for a double-humped camel ride. Dinner at camps.",
         activities: ["Khardung La Pass", "Diskit Monastery", "Hundar Dunes", "Camel Ride", "Bonfire"],
         meals: "Breakfast, Dinner",
         accommodation: "Camps/Cottages in Nubra",
@@ -1431,7 +1431,7 @@ const allPackages: Package[] = [
         day: 8,
         title: "Pangong to Leh via Chang La",
         description:
-          "Dawn over Pangong — unforgettable. Breakfast, then ride back to Leh over Chang La (5,360m — the 2nd highest motorable road). Reach Leh by evening for shopping and farewell dinner.",
+          "Dawn over Pangong - unforgettable. Breakfast, then ride back to Leh over Chang La (5,360m - the 2nd highest motorable road). Reach Leh by evening for shopping and farewell dinner.",
         activities: ["Pangong Sunrise", "Chang La Pass", "Leh Bazaar Shopping", "Farewell Dinner"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Leh",
@@ -1444,7 +1444,7 @@ const allPackages: Package[] = [
         day: 9,
         title: "Leh to Jispa",
         description:
-          "Breakfast, then ride out of Leh back over the Manali-Leh highway to Jispa — a gentle green valley settlement along the Bhaga river. Check in at hotel/camp, rest. Dinner and overnight.",
+          "Breakfast, then ride out of Leh back over the Manali-Leh highway to Jispa - a gentle green valley settlement along the Bhaga river. Check in at hotel/camp, rest. Dinner and overnight.",
         activities: ["Descend from Leh", "Bhaga River Drive", "Jispa Stay"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel/Camp in Jispa",
@@ -1472,7 +1472,7 @@ const allPackages: Package[] = [
           "Arrival at Delhi. Teary goodbyes with your new trip family and plans for the next reunion. End of an unforgettable Himalayan circuit.",
         activities: ["Delhi Drop-off"],
         meals: "None",
-        accommodation: "N/A — Trip Ends",
+        accommodation: "N/A - Trip Ends",
         highlight: "Back home with a new family of riders",
         image: "/images/generated/ultimate-ladakh-road-trip.webp",
       },
@@ -1485,7 +1485,7 @@ const allPackages: Package[] = [
     destinationSlug: "leh-ladakh",
     category: "adventure",
     description:
-      "The most ambitious Himalayan road trip — 12 days one-way from Manali to Srinagar through the heart of Ladakh, with Turtuk added as a cultural frontier. You'll ride both the legendary Manali-Leh highway AND the dramatic Srinagar-Leh highway, covering every major high-altitude pass in the Himalayas. Ends with the serene houseboats of Dal Lake in Srinagar. A rider's holy grail.",
+      "The most ambitious Himalayan road trip - 12 days one-way from Manali to Srinagar through the heart of Ladakh, with Turtuk added as a cultural frontier. You'll ride both the legendary Manali-Leh highway AND the dramatic Srinagar-Leh highway, covering every major high-altitude pass in the Himalayas. Ends with the serene houseboats of Dal Lake in Srinagar. A rider's holy grail.",
     heroImage: "/images/generated/kashmir-day-1-arrive-srinagar.webp",
     images: [
       "/images/generated/ladakh-day-5-khardung-la.webp",
@@ -1526,19 +1526,19 @@ const allPackages: Package[] = [
     highlights: [
       "Ride BOTH legendary highways: Manali-Leh AND Srinagar-Leh",
       "6 high-altitude passes: Baralacha La, Nakee La, Lachung La, Tanglang La, Khardung La, Chang La, Zoji La",
-      "Turtuk — India's last village and a Balti cultural frontier",
+      "Turtuk - India's last village and a Balti cultural frontier",
       "Double-humped camels at Hundar sand dunes",
       "Pangong Tso under a million stars",
-      "Drass — the second-coldest inhabited place on earth",
+      "Drass - the second-coldest inhabited place on earth",
       "End in Srinagar with Shikara ride on Dal Lake",
     ],
     experienceStory:
-      "A one-way traverse of the Western Himalaya, climbing out of Manali over the great passes to Leh, then descending the old Treaty Road past Lamayuru's moonland and the Kargil war-memorials to end on a Dal Lake houseboat in Srinagar. Desert to alpine to valley — three worlds in one continuous line across the mountains.",
+      "A one-way traverse of the Western Himalaya, climbing out of Manali over the great passes to Leh, then descending the old Treaty Road past Lamayuru's moonland and the Kargil war-memorials to end on a Dal Lake houseboat in Srinagar. Desert to alpine to valley - three worlds in one continuous line across the mountains.",
     transparencyNote:
-      "Altitude transparency: starting from Manali means you gain height quickly, so an acclimatisation day at Leh is built in before you continue — this is what keeps AMS at bay. The Manali-Leh leg has long no-fuel, no-network stretches and high camps (Sarchu ~14,100 ft); the Leh-Srinagar leg needs an Inner Line awareness near the LoC. The plan stays flexible for pass and weather closures.",
+      "Altitude transparency: starting from Manali means you gain height quickly, so an acclimatisation day at Leh is built in before you continue - this is what keeps AMS at bay. The Manali-Leh leg has long no-fuel, no-network stretches and high camps (Sarchu ~14,100 ft); the Leh-Srinagar leg needs an Inner Line awareness near the LoC. The plan stays flexible for pass and weather closures.",
     seasonalAdvisories: [
       "The full traverse is only possible roughly June to September, when both the Manali-Leh and Zoji La (Leh-Srinagar) roads are open.",
-      "Zoji La can close for hours on weather or convoy days — we keep a buffer before any onward flight from Srinagar.",
+      "Zoji La can close for hours on weather or convoy days - we keep a buffer before any onward flight from Srinagar.",
       "Nights at Sarchu and Leh are cold year-round; pack layers regardless of the calendar.",
     ],
     itinerary: [
@@ -1547,13 +1547,13 @@ const allPackages: Package[] = [
       { day: 3, title: "Manali to Sarchu via Baralacha La", description: "Start the epic ride via Atal Tunnel, Lahaul Valley, Keylong, Darcha, and over Baralacha La (4,892m). Reach Sarchu. Camping under stars.", activities: ["Atal Tunnel", "Keylong", "Baralacha La", "Sarchu Camps"], meals: "Breakfast, Dinner", accommodation: "Camps at Sarchu", elevation: "Sarchu 4,290m", distance: "225 km", highlight: "Starry camp under Baralacha skies", image: "/images/generated/ultimate-ladakh-road-trip.webp" },
       { day: 4, title: "Sarchu to Leh via Tanglang La", description: "Gata Loops (21 hairpins), Nakee La, Lachung La, Pang lunch, Moore Plains, Tanglang La. Reach Leh by late evening.", activities: ["Gata Loops", "Lachung La", "Moore Plains", "Tanglang La"], meals: "Breakfast, Dinner", accommodation: "Hotel in Leh", elevation: "Tanglang La 5,328m", distance: "255 km", highlight: "Crossing 3 passes in a single ride day", image: "/images/generated/leh-ladakh-hero.webp" },
       { day: 5, title: "Leh to Nubra Valley via Khardung La", description: "Conquer Khardung La (5,359m). Diskit Monastery, Hundar sand dunes, double-humped camels.", activities: ["Khardung La", "Diskit Monastery", "Hundar Dunes", "Bactrian Camels"], meals: "Breakfast, Dinner", accommodation: "Camps in Nubra", elevation: "Khardung La 5,359m", distance: "120 km", highlight: "World's highest motorable pass", image: "/images/generated/ladakh-day-5-khardung-la.webp" },
-      { day: 6, title: "Nubra to Turtuk and Back", description: "Drive to Turtuk — India's last village before Gilgit-Baltistan. Balti heritage homes, apricot orchards, Yabgo Palace. Return to Nubra for dinner.", activities: ["Drive to Turtuk", "Balti Heritage Walk", "Yabgo Palace", "Apricot Orchards"], meals: "Breakfast, Dinner", accommodation: "Camps in Nubra", distance: "180 km round trip", highlight: "Balti culture at the edge of India", image: "/images/generated/ladakh-day-6-turtuk-village.webp" },
+      { day: 6, title: "Nubra to Turtuk and Back", description: "Drive to Turtuk - India's last village before Gilgit-Baltistan. Balti heritage homes, apricot orchards, Yabgo Palace. Return to Nubra for dinner.", activities: ["Drive to Turtuk", "Balti Heritage Walk", "Yabgo Palace", "Apricot Orchards"], meals: "Breakfast, Dinner", accommodation: "Camps in Nubra", distance: "180 km round trip", highlight: "Balti culture at the edge of India", image: "/images/generated/ladakh-day-6-turtuk-village.webp" },
       { day: 7, title: "Nubra to Pangong Tso via Shyok", description: "Shyok river gorge drive to the colour-shifting Pangong Tso. Lakeside sunset, stargazing, camp overnight.", activities: ["Shyok Drive", "Pangong Tso", "Sunset", "Stargazing"], meals: "Breakfast, Dinner", accommodation: "Camps at Pangong", elevation: "4,350m", distance: "160 km", highlight: "Pangong shifting from cobalt to turquoise", image: "/images/generated/leh-ladakh-hero.webp" },
       { day: 8, title: "Pangong to Leh via Chang La", description: "Dawn sunrise at Pangong, then ride back to Leh over Chang La (5,360m). Evening at Leh bazaar.", activities: ["Pangong Sunrise", "Chang La Pass", "Leh Bazaar"], meals: "Breakfast, Dinner", accommodation: "Hotel in Leh", elevation: "Chang La 5,360m", distance: "160 km", highlight: "Pangong golden hour", image: "/images/generated/leh-ladakh-hero.webp" },
       { day: 9, title: "Leh to Kargil via Lamayuru", description: "Depart Leh via Magnetic Hill, Gurudwara Pathar Sahib, Indus-Zanskar confluence. Lamayuru Monastery's lunar landscape. Cross Fotu La, Namika La, and Mulbek to reach Kargil by evening.", activities: ["Magnetic Hill", "Lamayuru Monastery", "Fotu La", "Namika La", "Mulbek"], meals: "Breakfast, Dinner", accommodation: "Hotel in Kargil", distance: "220 km", highlight: "Lamayuru's moonscape rock formations", image: "/images/generated/leh-ladakh-hero.webp" },
-      { day: 10, title: "Kargil to Srinagar via Zoji La", description: "Start early. Cross Drass — the second-coldest inhabited place on earth and Gateway to Ladakh. Over Zoji La pass, descend into Sonmarg's meadows, then continue to Srinagar. Check into hotel/houseboat. Dinner.", activities: ["Drass", "Kargil War Memorial (Optional)", "Zoji La", "Sonmarg", "Srinagar Houseboat Check-in"], meals: "Breakfast, Dinner", accommodation: "Houseboat/Hotel in Srinagar", elevation: "Zoji La 3,528m", distance: "200 km", highlight: "Kargil War Memorial & Zoji La crossing", image: "/images/generated/kashmir-hero.webp" },
-      { day: 11, title: "Srinagar — Dal Lake & Mughal Gardens", description: "Leisure day. Shikara ride on Dal Lake, visit Mughal Gardens (Nishat, Shalimar), walk through old Srinagar bazaars. Farewell dinner on houseboat.", activities: ["Shikara Ride", "Nishat Bagh", "Shalimar Bagh", "Dal Lake Walks", "Farewell Dinner"], meals: "Breakfast, Dinner", accommodation: "Houseboat in Srinagar", highlight: "Shikara gliding on Dal Lake at sunset", image: "/images/generated/kashmir-day-1-arrive-srinagar.webp" },
-      { day: 12, title: "Departure from Srinagar", description: "Breakfast, then airport transfer. You leave with a backpack full of memories from both the Manali-Leh highway and the Srinagar-Leh highway — a rider's once-in-a-lifetime feat.", activities: ["Breakfast", "Airport Transfer"], meals: "Breakfast", accommodation: "N/A — Departure", highlight: "Final shikara ride before the flight", image: "/images/generated/kashmir-hero.webp" },
+      { day: 10, title: "Kargil to Srinagar via Zoji La", description: "Start early. Cross Drass - the second-coldest inhabited place on earth and Gateway to Ladakh. Over Zoji La pass, descend into Sonmarg's meadows, then continue to Srinagar. Check into hotel/houseboat. Dinner.", activities: ["Drass", "Kargil War Memorial (Optional)", "Zoji La", "Sonmarg", "Srinagar Houseboat Check-in"], meals: "Breakfast, Dinner", accommodation: "Houseboat/Hotel in Srinagar", elevation: "Zoji La 3,528m", distance: "200 km", highlight: "Kargil War Memorial & Zoji La crossing", image: "/images/generated/kashmir-hero.webp" },
+      { day: 11, title: "Srinagar - Dal Lake & Mughal Gardens", description: "Leisure day. Shikara ride on Dal Lake, visit Mughal Gardens (Nishat, Shalimar), walk through old Srinagar bazaars. Farewell dinner on houseboat.", activities: ["Shikara Ride", "Nishat Bagh", "Shalimar Bagh", "Dal Lake Walks", "Farewell Dinner"], meals: "Breakfast, Dinner", accommodation: "Houseboat in Srinagar", highlight: "Shikara gliding on Dal Lake at sunset", image: "/images/generated/kashmir-day-1-arrive-srinagar.webp" },
+      { day: 12, title: "Departure from Srinagar", description: "Breakfast, then airport transfer. You leave with a backpack full of memories from both the Manali-Leh highway and the Srinagar-Leh highway - a rider's once-in-a-lifetime feat.", activities: ["Breakfast", "Airport Transfer"], meals: "Breakfast", accommodation: "N/A - Departure", highlight: "Final shikara ride before the flight", image: "/images/generated/kashmir-hero.webp" },
     ],
   },
   {
@@ -1563,7 +1563,7 @@ const allPackages: Package[] = [
     destinationSlug: "leh-ladakh",
     category: "adventure",
     description:
-      "The reverse of our flagship expedition — start in the serene Dal Lake of Srinagar, ride east over Zoji La into Ladakh, explore Leh, Turtuk, Pangong, and descend to Manali via the Manali-Leh highway. 11 days covering India's two most iconic mountain highways in a single trip.",
+      "The reverse of our flagship expedition - start in the serene Dal Lake of Srinagar, ride east over Zoji La into Ladakh, explore Leh, Turtuk, Pangong, and descend to Manali via the Manali-Leh highway. 11 days covering India's two most iconic mountain highways in a single trip.",
     heroImage: "/images/generated/kashmir-hero.webp",
     images: [
       "/images/generated/kashmir-day-1-arrive-srinagar.webp",
@@ -1602,42 +1602,42 @@ const allPackages: Package[] = [
     highlights: [
       "Start with Shikara on Dal Lake, end at Manali's Mall Road",
       "Cross Zoji La, Khardung La, Chang La, Baralacha La, Tanglang La",
-      "Turtuk — India's last Balti village",
+      "Turtuk - India's last Balti village",
       "Pangong Tso camping under starry skies",
-      "Drass — India's coldest inhabited place",
+      "Drass - India's coldest inhabited place",
       "21 Gata Loops hairpins on the Sarchu descent",
     ],
     experienceStory:
-      "The connoisseur's direction across the Himalaya. Beginning low in Srinagar's Mughal gardens, you rise gently through Sonmarg and over Zoji La into Ladakh — a gradient that acclimatises you the way the body prefers — past Lamayuru and Leh to the great passes, before the long, dramatic drop over Tanglang La and Baralacha back down to the cedars of Manali.",
+      "The connoisseur's direction across the Himalaya. Beginning low in Srinagar's Mughal gardens, you rise gently through Sonmarg and over Zoji La into Ladakh - a gradient that acclimatises you the way the body prefers - past Lamayuru and Leh to the great passes, before the long, dramatic drop over Tanglang La and Baralacha back down to the cedars of Manali.",
     transparencyNote:
-      "Altitude transparency: starting in Srinagar (5,200 ft) and rising slowly to Leh is the gentler acclimatisation profile, which is why many seasoned travellers prefer this direction — but the high camps and passes are the same, so we still keep a measured pace and watch for AMS. Long no-fuel and no-network stretches, Inner Line awareness near the LoC, and weather-dependent passes all apply.",
+      "Altitude transparency: starting in Srinagar (5,200 ft) and rising slowly to Leh is the gentler acclimatisation profile, which is why many seasoned travellers prefer this direction - but the high camps and passes are the same, so we still keep a measured pace and watch for AMS. Long no-fuel and no-network stretches, Inner Line awareness near the LoC, and weather-dependent passes all apply.",
     seasonalAdvisories: [
       "Both Zoji La (Srinagar side) and the Manali-Leh passes are open only about June to September/early October.",
-      "Afternoon snow-melt streams on the Pang-Sarchu stretch are easiest crossed early — mornings start at dawn.",
+      "Afternoon snow-melt streams on the Pang-Sarchu stretch are easiest crossed early - mornings start at dawn.",
       "Carry cold-weather layers throughout; even mid-summer nights at Leh and Sarchu are near freezing.",
     ],
     itinerary: [
       { day: 1, title: "Srinagar Arrival", description: "Arrive Srinagar airport. Our representative transfers you to your houseboat/hotel. Shikara ride on Dal Lake, stroll the old bazaars, dinner and briefing.", activities: ["Airport Pickup", "Houseboat Check-in", "Shikara Ride", "Old Bazaar Walk", "Trip Briefing"], meals: "Dinner", accommodation: "Houseboat in Srinagar", highlight: "Sunset Shikara on Dal Lake", image: "/images/generated/kashmir-day-1-arrive-srinagar.webp" },
       { day: 2, title: "Srinagar to Kargil via Zoji La", description: "Early start. Drive via Sonmarg's meadows, then Drass (second-coldest inhabited place on earth and Gateway to Ladakh) via Zoji La pass. Continue to Kargil by evening.", activities: ["Sonmarg", "Zoji La", "Drass", "Kargil War Memorial (Optional)"], meals: "Breakfast, Dinner", accommodation: "Hotel in Kargil", elevation: "Zoji La 3,528m", distance: "200 km", highlight: "Kargil War Memorial at Drass", image: "/images/generated/kashmir-hero.webp" },
       { day: 3, title: "Kargil to Leh via Lamayuru", description: "Drive to Leh via Mulbek, Namika La, Fotu La, Lamayuru (lunar landscape monastery), Hangroo Loops, Nimmu. Cover Magnetic Hill, Gurudwara Pathar Sahib and Indus-Zanskar confluence. Reach Leh evening.", activities: ["Lamayuru Monastery", "Fotu La", "Namika La", "Magnetic Hill", "Indus-Zanskar Confluence"], meals: "Breakfast, Dinner", accommodation: "Hotel in Leh", elevation: "3,500m", distance: "220 km", highlight: "Lamayuru's lunar rock formations", image: "/images/generated/leh-ladakh-hero.webp" },
-      { day: 4, title: "Leh to Nubra Valley via Khardung La", description: "Khardung La Pass (5,359m — world's highest motorable). Diskit Monastery, Hundar sand dunes, double-humped camel ride, bonfire at camps.", activities: ["Khardung La", "Diskit Monastery", "Hundar Dunes", "Bactrian Camels", "Bonfire"], meals: "Breakfast, Dinner", accommodation: "Camps in Nubra", elevation: "Khardung La 5,359m", distance: "120 km", highlight: "World's highest motorable pass", image: "/images/generated/ladakh-day-5-khardung-la.webp" },
-      { day: 5, title: "Nubra to Turtuk and Back", description: "Day trip to Turtuk — India's last village before Gilgit-Baltistan. Balti heritage, apricot orchards, Yabgo royal palace. Return to Nubra for dinner.", activities: ["Drive to Turtuk", "Balti Heritage", "Yabgo Palace", "Apricot Orchards"], meals: "Breakfast, Dinner", accommodation: "Camps in Nubra", distance: "180 km round trip", highlight: "Balti village at India's edge", image: "/images/generated/ladakh-day-6-turtuk-village.webp" },
+      { day: 4, title: "Leh to Nubra Valley via Khardung La", description: "Khardung La Pass (5,359m - world's highest motorable). Diskit Monastery, Hundar sand dunes, double-humped camel ride, bonfire at camps.", activities: ["Khardung La", "Diskit Monastery", "Hundar Dunes", "Bactrian Camels", "Bonfire"], meals: "Breakfast, Dinner", accommodation: "Camps in Nubra", elevation: "Khardung La 5,359m", distance: "120 km", highlight: "World's highest motorable pass", image: "/images/generated/ladakh-day-5-khardung-la.webp" },
+      { day: 5, title: "Nubra to Turtuk and Back", description: "Day trip to Turtuk - India's last village before Gilgit-Baltistan. Balti heritage, apricot orchards, Yabgo royal palace. Return to Nubra for dinner.", activities: ["Drive to Turtuk", "Balti Heritage", "Yabgo Palace", "Apricot Orchards"], meals: "Breakfast, Dinner", accommodation: "Camps in Nubra", distance: "180 km round trip", highlight: "Balti village at India's edge", image: "/images/generated/ladakh-day-6-turtuk-village.webp" },
       { day: 6, title: "Nubra to Pangong Tso via Shyok", description: "Shyok river gorge drive to Pangong Tso. Lakeside afternoon, sunset, stargazing, overnight at camps.", activities: ["Shyok Drive", "Pangong Tso", "Sunset"], meals: "Breakfast, Dinner", accommodation: "Camps at Pangong", elevation: "4,350m", distance: "160 km", highlight: "Pangong Tso colour-shifting through the hours", image: "/images/generated/leh-ladakh-hero.webp" },
       { day: 7, title: "Pangong to Leh via Chang La", description: "Pangong sunrise, then ride back to Leh over Chang La (5,360m). Evening at Leh bazaar for shopping.", activities: ["Pangong Sunrise", "Chang La", "Leh Bazaar Shopping"], meals: "Breakfast, Dinner", accommodation: "Hotel in Leh", elevation: "Chang La 5,360m", distance: "160 km", highlight: "Golden dawn over Pangong", image: "/images/generated/leh-ladakh-hero.webp" },
       { day: 8, title: "Leh to Sarchu", description: "Long ride out of Leh. Moore Plains' 30-km flat stretch, lunch at Pang, then Lachung La (5,065m) and Nakee La (4,739m). Just before Sarchu, tackle the 21 Gata Loops at 4,669m. Camp at Sarchu under a million stars.", activities: ["Moore Plains", "Pang Lunch", "Lachung La", "Nakee La", "Gata Loops", "Sarchu Camps"], meals: "Breakfast, Dinner", accommodation: "Camps at Sarchu", elevation: "Sarchu 4,290m", distance: "255 km", highlight: "Sleeping under a million Himalayan stars", image: "/images/generated/ultimate-ladakh-road-trip.webp" },
-      { day: 9, title: "Sarchu to Manali via Baralacha La", description: "Long final ride. Cross Baralacha La (4,892m), see Suraj Tal, drive through Zingzing Bar, Patsio, Darcha, and over Rohtang La (3,970m) or via Atal Tunnel to Manali. Check into hotel for rest.", activities: ["Baralacha La", "Suraj Tal", "Zingzing Bar", "Atal Tunnel/Rohtang La", "Manali Arrival"], meals: "Breakfast, Dinner", accommodation: "Hotel in Manali", elevation: "Baralacha La 4,892m", distance: "225 km", highlight: "Suraj Tal — a sacred alpine lake", image: "/images/generated/ultimate-ladakh-road-trip.webp" },
-      { day: 10, title: "Manali Leisure → Delhi", description: "Morning at leisure — Mall Road, cafes, Hidimba Temple. Evening Volvo bus from Manali to Delhi. Overnight journey.", activities: ["Manali Mall Road", "Hidimba Temple", "Evening Volvo to Delhi"], meals: "Breakfast", accommodation: "Overnight Volvo Bus", highlight: "Last cedar-scented Himalayan morning", image: "/images/generated/ultimate-ladakh-road-trip.webp" },
-      { day: 11, title: "Delhi Arrival", description: "Arrival at Delhi. Farewell with your new trip family. End of a once-in-a-lifetime Himalayan expedition.", activities: ["Delhi Drop-off"], meals: "None", accommodation: "N/A — Trip Ends", highlight: "Back with stories to last a decade", image: "/images/generated/ultimate-ladakh-road-trip.webp" },
+      { day: 9, title: "Sarchu to Manali via Baralacha La", description: "Long final ride. Cross Baralacha La (4,892m), see Suraj Tal, drive through Zingzing Bar, Patsio, Darcha, and over Rohtang La (3,970m) or via Atal Tunnel to Manali. Check into hotel for rest.", activities: ["Baralacha La", "Suraj Tal", "Zingzing Bar", "Atal Tunnel/Rohtang La", "Manali Arrival"], meals: "Breakfast, Dinner", accommodation: "Hotel in Manali", elevation: "Baralacha La 4,892m", distance: "225 km", highlight: "Suraj Tal - a sacred alpine lake", image: "/images/generated/ultimate-ladakh-road-trip.webp" },
+      { day: 10, title: "Manali Leisure → Delhi", description: "Morning at leisure - Mall Road, cafes, Hidimba Temple. Evening Volvo bus from Manali to Delhi. Overnight journey.", activities: ["Manali Mall Road", "Hidimba Temple", "Evening Volvo to Delhi"], meals: "Breakfast", accommodation: "Overnight Volvo Bus", highlight: "Last cedar-scented Himalayan morning", image: "/images/generated/ultimate-ladakh-road-trip.webp" },
+      { day: 11, title: "Delhi Arrival", description: "Arrival at Delhi. Farewell with your new trip family. End of a once-in-a-lifetime Himalayan expedition.", activities: ["Delhi Drop-off"], meals: "None", accommodation: "N/A - Trip Ends", highlight: "Back with stories to last a decade", image: "/images/generated/ultimate-ladakh-road-trip.webp" },
     ],
   },
   {
-    title: "Sri Lanka with Dambulla — Sigiriya, Nuwara Eliya & Colombo",
+    title: "Sri Lanka with Dambulla - Sigiriya, Nuwara Eliya & Colombo",
     slug: "5-nights-with-dambulla",
     destinationName: "Sri Lanka",
     destinationSlug: "sri-lanka",
     category: "leisure",
     description:
-      "A six-day introduction to Sri Lanka's cultural triangle and hill country — the cave temples of Dambulla, the Sigiriya Lion Rock, the tea-country town of Nuwara Eliya, and a finish in seafront Colombo.",
+      "A six-day introduction to Sri Lanka's cultural triangle and hill country - the cave temples of Dambulla, the Sigiriya Lion Rock, the tea-country town of Nuwara Eliya, and a finish in seafront Colombo.",
     heroImage: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
@@ -1687,7 +1687,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Dambulla — Sigiriya & Cave Temple",
+        title: "Dambulla - Sigiriya & Cave Temple",
         description:
           "Climb the Sigiriya Lion Rock fortress with its frescoes and water gardens, then visit the golden Dambulla Cave Temple, five caves of Buddha statues and painted ceilings dating back two millennia.",
         activities: ["Sigiriya Lion Rock", "Sigiriya water gardens", "Dambulla Cave Temple"],
@@ -1709,9 +1709,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Nuwara Eliya — Tea Estates & Lake Gregory",
+        title: "Nuwara Eliya - Tea Estates & Lake Gregory",
         description:
-          "A full day in 'Little England' — stroll the colonial town, Victoria Park and the golf course, and enjoy boating or fishing on Lake Gregory amid the tea-carpeted hills.",
+          "A full day in 'Little England' - stroll the colonial town, Victoria Park and the golf course, and enjoy boating or fishing on Lake Gregory amid the tea-carpeted hills.",
         activities: ["Victoria Park", "Lake Gregory boating", "Nuwara Eliya golf course", "Tea estate walk"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Nuwara Eliya",
@@ -1722,7 +1722,7 @@ const allPackages: Package[] = [
         day: 5,
         title: "Nuwara Eliya – Colombo",
         description:
-          "Descend to Colombo for a city tour — Galle Face Green, Gangaramaya Temple, Independence Square and Pettah bazaar — with time for last-minute shopping.",
+          "Descend to Colombo for a city tour - Galle Face Green, Gangaramaya Temple, Independence Square and Pettah bazaar - with time for last-minute shopping.",
         activities: ["Galle Face Green", "Gangaramaya Temple", "Independence Square", "Pettah bazaar"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Colombo",
@@ -1736,20 +1736,20 @@ const allPackages: Package[] = [
           "After breakfast, transfer to the airport for your departure flight with beautiful memories of the island.",
         activities: ["Airport transfer", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Goodbye to Sri Lanka",
         image: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Andaman Islands — Port Blair, Havelock & Neil (6 Days)",
+    title: "Andaman Islands - Port Blair, Havelock & Neil (6 Days)",
     slug: "andaman-6-days-package",
     destinationName: "Andaman",
     destinationSlug: "andaman-islands",
     category: "leisure",
     description:
-      "A six-day Andaman beach circuit covering all three main islands — Port Blair's Cellular Jail and Light & Sound show, Havelock's Radhanagar and Elephant beaches, and Neil Island's Bharatpur and Laxmanpur. The classic 5N/6D Andaman holiday, perfect for first-timers and honeymooners.",
+      "A six-day Andaman beach circuit covering all three main islands - Port Blair's Cellular Jail and Light & Sound show, Havelock's Radhanagar and Elephant beaches, and Neil Island's Bharatpur and Laxmanpur. The classic 5N/6D Andaman holiday, perfect for first-timers and honeymooners.",
     heroImage: "/images/generated/andaman-islands-hero.webp",
     images: [
       "/images/generated/andaman-islands-hero.webp",
@@ -1792,9 +1792,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Port Blair Arrival — Cellular Jail & Light and Sound Show",
+        title: "Port Blair Arrival - Cellular Jail & Light and Sound Show",
         description:
-          "Arrive at Veer Savarkar International Airport, Port Blair. Transfer to your hotel and rest. Late afternoon visit to the Cellular Jail — the colonial-era prison where Indian freedom fighters were exiled. Evening Light and Sound show inside the jail, narrated by the voices of those imprisoned there. Dinner at the hotel.",
+          "Arrive at Veer Savarkar International Airport, Port Blair. Transfer to your hotel and rest. Late afternoon visit to the Cellular Jail - the colonial-era prison where Indian freedom fighters were exiled. Evening Light and Sound show inside the jail, narrated by the voices of those imprisoned there. Dinner at the hotel.",
         activities: ["Airport pickup", "Hotel check-in", "Cellular Jail visit", "Light and Sound show"],
         meals: "Dinner",
         accommodation: "Hotel in Port Blair",
@@ -1803,9 +1803,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Port Blair to Havelock — Radhanagar Beach",
+        title: "Port Blair to Havelock - Radhanagar Beach",
         description:
-          "Morning ferry from Port Blair to Havelock Island (~2 hours). Check in to your beach resort. Afternoon at Radhanagar Beach — repeatedly voted Asia's best beach by Time magazine. Swim, walk the long white-sand bay, and watch the sunset over the Andaman Sea.",
+          "Morning ferry from Port Blair to Havelock Island (~2 hours). Check in to your beach resort. Afternoon at Radhanagar Beach - repeatedly voted Asia's best beach by Time magazine. Swim, walk the long white-sand bay, and watch the sunset over the Andaman Sea.",
         activities: ["Ferry to Havelock", "Resort check-in", "Radhanagar Beach", "Sunset on the bay"],
         meals: "Breakfast, Dinner",
         accommodation: "Beach resort in Havelock",
@@ -1815,9 +1815,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Havelock — Elephant Beach Water Sports",
+        title: "Havelock - Elephant Beach Water Sports",
         description:
-          "Morning boat ride from Havelock jetty to Elephant Beach — a sheltered cove ringed by coral reef. Optional water-sports day (snorkeling, sea-walking, jet-ski, banana ride — all on direct payment). Return to Havelock for a relaxed evening at the resort.",
+          "Morning boat ride from Havelock jetty to Elephant Beach - a sheltered cove ringed by coral reef. Optional water-sports day (snorkeling, sea-walking, jet-ski, banana ride - all on direct payment). Return to Havelock for a relaxed evening at the resort.",
         activities: ["Boat to Elephant Beach", "Optional snorkeling / sea-walk", "Return to Havelock"],
         meals: "Breakfast, Dinner",
         accommodation: "Beach resort in Havelock",
@@ -1826,9 +1826,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Havelock to Neil Island — Bharatpur, Laxmanpur & Natural Bridge",
+        title: "Havelock to Neil Island - Bharatpur, Laxmanpur & Natural Bridge",
         description:
-          "Morning ferry to Neil Island (~1 hour). Check in to your hotel and head out for the island circuit — Bharatpur Beach for swimming, Laxmanpur Beach for sunset, and the Natural Bridge (Howrah Bridge) — a coral rock formation visible at low tide. Overnight at Neil.",
+          "Morning ferry to Neil Island (~1 hour). Check in to your hotel and head out for the island circuit - Bharatpur Beach for swimming, Laxmanpur Beach for sunset, and the Natural Bridge (Howrah Bridge) - a coral rock formation visible at low tide. Overnight at Neil.",
         activities: ["Ferry to Neil Island", "Bharatpur Beach", "Laxmanpur Beach sunset", "Natural Bridge"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Neil Island",
@@ -1838,7 +1838,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Neil Island to Port Blair — Shopping & Sagarika Emporium",
+        title: "Neil Island to Port Blair - Shopping & Sagarika Emporium",
         description:
           "Morning ferry back to Port Blair (~1.5 hours). Afternoon at leisure. Evening at the Sagarika Government Emporium and Aberdeen Bazaar for shell jewellery, wood-craft, and souvenirs. Dinner at a local seafood restaurant.",
         activities: ["Ferry to Port Blair", "Sagarika Emporium", "Aberdeen Bazaar"],
@@ -1852,23 +1852,23 @@ const allPackages: Package[] = [
         day: 6,
         title: "Port Blair Departure",
         description:
-          "After breakfast, transfer to Veer Savarkar Airport for your onward journey home — six days across three Andaman islands complete.",
+          "After breakfast, transfer to Veer Savarkar Airport for your onward journey home - six days across three Andaman islands complete.",
         activities: ["Morning at leisure", "Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Closing the three-island circuit",
         image: "/images/generated/andaman-islands-hero.webp",
       },
     ],
   },
   {
-    title: "Andaman Extended — Port Blair, Havelock, Neil & Baratang (8 Days)",
+    title: "Andaman Extended - Port Blair, Havelock, Neil & Baratang (8 Days)",
     slug: "andaman-8-days",
     destinationName: "Andaman",
     destinationSlug: "andaman-islands",
     category: "adventure",
     description:
-      "An extended 8-day Andaman tour adding the lesser-visited Ross & North Bay islands, plus the dramatic Baratang limestone caves and mud volcanoes — alongside the classic Havelock and Neil island stays. The deeper Andaman experience for travellers with more time.",
+      "An extended 8-day Andaman tour adding the lesser-visited Ross & North Bay islands, plus the dramatic Baratang limestone caves and mud volcanoes - alongside the classic Havelock and Neil island stays. The deeper Andaman experience for travellers with more time.",
     heroImage: "/images/generated/andaman-islands-hero.webp",
     images: [
       "/images/generated/andaman-islands-hero.webp",
@@ -1913,7 +1913,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Port Blair Arrival — Cellular Jail & Light and Sound Show",
+        title: "Port Blair Arrival - Cellular Jail & Light and Sound Show",
         description:
           "Arrive at Veer Savarkar Airport and transfer to your hotel. Evening visit to the Cellular Jail, the colonial-era prison turned national memorial, followed by the moving Light and Sound show inside the jail courtyard (6 PM showtime).",
         activities: ["Airport pickup", "Hotel check-in", "Cellular Jail visit", "Light and Sound show"],
@@ -1924,7 +1924,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Port Blair — Ross & North Bay (Coral) Islands",
+        title: "Port Blair - Ross & North Bay (Coral) Islands",
         description:
           "Morning speed-boat tour to Ross Island (the former British administrative capital, now reclaimed by the jungle) and North Bay Island, the coral reef famous for snorkeling, glass-bottom boat rides, sea-walking and parasailing (optional water sports at direct payment).",
         activities: ["Speed-boat to Ross Island", "British-era ruins", "North Bay Island", "Optional snorkeling / glass-bottom boat"],
@@ -1935,9 +1935,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Port Blair to Havelock — Radhanagar Beach",
+        title: "Port Blair to Havelock - Radhanagar Beach",
         description:
-          "Morning ferry from Port Blair to Havelock Island (~2 hours). Check in to your beach resort. Afternoon at Radhanagar Beach — repeatedly voted Asia's best beach. Swim, walk the long white-sand bay and watch the sunset.",
+          "Morning ferry from Port Blair to Havelock Island (~2 hours). Check in to your beach resort. Afternoon at Radhanagar Beach - repeatedly voted Asia's best beach. Swim, walk the long white-sand bay and watch the sunset.",
         activities: ["Ferry to Havelock", "Resort check-in", "Radhanagar Beach", "Sunset"],
         meals: "Breakfast, Dinner",
         accommodation: "Beach resort in Havelock",
@@ -1947,9 +1947,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Havelock — Elephant Beach Water Sports",
+        title: "Havelock - Elephant Beach Water Sports",
         description:
-          "Morning boat ride from Havelock jetty to Elephant Beach — a sheltered cove ringed by a coral reef. Optional water sports (snorkeling, sea-walking, jet-ski, banana ride — all on direct payment). Return to Havelock for a relaxed evening.",
+          "Morning boat ride from Havelock jetty to Elephant Beach - a sheltered cove ringed by a coral reef. Optional water sports (snorkeling, sea-walking, jet-ski, banana ride - all on direct payment). Return to Havelock for a relaxed evening.",
         activities: ["Boat to Elephant Beach", "Snorkeling / sea-walking", "Return to Havelock"],
         meals: "Breakfast, Dinner",
         accommodation: "Beach resort in Havelock",
@@ -1958,9 +1958,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Havelock to Neil Island — Bharatpur, Laxmanpur & Natural Bridge",
+        title: "Havelock to Neil Island - Bharatpur, Laxmanpur & Natural Bridge",
         description:
-          "Morning ferry to Neil Island (~1 hour). Check in to your hotel and head out for the island circuit — Bharatpur Beach for swimming, Laxmanpur Beach for sunset, and the Natural Bridge (a coral rock formation visible at low tide). Overnight at Neil.",
+          "Morning ferry to Neil Island (~1 hour). Check in to your hotel and head out for the island circuit - Bharatpur Beach for swimming, Laxmanpur Beach for sunset, and the Natural Bridge (a coral rock formation visible at low tide). Overnight at Neil.",
         activities: ["Ferry to Neil Island", "Bharatpur Beach", "Laxmanpur Beach sunset", "Natural Bridge"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Neil Island",
@@ -1970,9 +1970,9 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Neil Island to Port Blair — Leisure & Shopping",
+        title: "Neil Island to Port Blair - Leisure & Shopping",
         description:
-          "Morning ferry back to Port Blair (~1.5 hours). Afternoon at leisure — optional visits to Corbyn's Cove Beach, Chidiya Tapu (the southernmost tip with the famous sunset point), or Wandoor Beach (for Mahatma Gandhi Marine National Park). Evening at Sagarika Government Emporium and Aberdeen Bazaar for shell jewellery and wood-craft.",
+          "Morning ferry back to Port Blair (~1.5 hours). Afternoon at leisure - optional visits to Corbyn's Cove Beach, Chidiya Tapu (the southernmost tip with the famous sunset point), or Wandoor Beach (for Mahatma Gandhi Marine National Park). Evening at Sagarika Government Emporium and Aberdeen Bazaar for shell jewellery and wood-craft.",
         activities: ["Ferry to Port Blair", "Optional Chidiya Tapu / Corbyn's Cove", "Sagarika Emporium", "Aberdeen Bazaar"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Port Blair",
@@ -1982,9 +1982,9 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Port Blair — Baratang Day Excursion (Limestone Caves & Mud Volcano)",
+        title: "Port Blair - Baratang Day Excursion (Limestone Caves & Mud Volcano)",
         description:
-          "Pre-dawn departure (~6 AM) for the long road-and-ferry journey to Baratang Island (~100 km through dense forest and the Jarawa tribal reserve — no photography or de-boarding allowed in the reserve). At Baratang, take a small ferry through mangrove creeks to the Limestone Caves, then visit the mud volcano. Return to Port Blair by late evening.",
+          "Pre-dawn departure (~6 AM) for the long road-and-ferry journey to Baratang Island (~100 km through dense forest and the Jarawa tribal reserve - no photography or de-boarding allowed in the reserve). At Baratang, take a small ferry through mangrove creeks to the Limestone Caves, then visit the mud volcano. Return to Port Blair by late evening.",
         activities: ["Drive through Jarawa reserve", "Baratang ferry", "Limestone Caves", "Mud volcano", "Return to Port Blair"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Port Blair",
@@ -1996,23 +1996,23 @@ const allPackages: Package[] = [
         day: 8,
         title: "Port Blair Departure",
         description:
-          "After breakfast, transfer to Veer Savarkar Airport for your onward journey home. (Note: Port Blair airport is small with heavy traffic — we recommend reaching at least 2 hours before your flight.)",
+          "After breakfast, transfer to Veer Savarkar Airport for your onward journey home. (Note: Port Blair airport is small with heavy traffic - we recommend reaching at least 2 hours before your flight.)",
         activities: ["Morning at leisure", "Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Eight days across four Andaman islands complete",
         image: "/images/generated/andaman-islands-hero.webp",
       },
     ],
   },
   {
-    title: "Ashtavinayak Yatra — Eight Ganpati Temples from Pune",
+    title: "Ashtavinayak Yatra - Eight Ganpati Temples from Pune",
     slug: "ashthavinayak",
     destinationName: "Maharashtra",
     destinationSlug: "maharashtra",
     category: "educational",
     description:
-      "A three-day Ashtavinayak Yatra covering all eight self-manifested Ganpati temples in Maharashtra, starting and ending at Pune. The pilgrimage follows the traditional clockwise order — Mayureshwar at Morgaon first, Mahaganpati at Ranjangaon last — exactly as prescribed by the Mudgala Purana.",
+      "A three-day Ashtavinayak Yatra covering all eight self-manifested Ganpati temples in Maharashtra, starting and ending at Pune. The pilgrimage follows the traditional clockwise order - Mayureshwar at Morgaon first, Mahaganpati at Ranjangaon last - exactly as prescribed by the Mudgala Purana.",
     heroImage: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800&h=600&fit=crop",
@@ -2056,7 +2056,7 @@ const allPackages: Package[] = [
         day: 1,
         title: "Pune → Morgaon → Siddhatek → Pali → Mahad",
         description:
-          "Early morning departure from Pune. Begin the yatra at Morgaon — the spiritual starting and ending point of the Ashtavinayak circuit — for darshan of Lord Mayureshwar, the swayambhu Ganpati seated on a peacock. Continue to Siddhatek (Karmala) on the Bhima river for Lord Siddhivinayak — the temple visited by Lord Vishnu himself. Late afternoon at Pali for darshan of Lord Ballaleshwar — the only Ashtavinayak temple named after a devotee, not a demon. Evening at Mahad for Lord Varadvinayak. Overnight stay at a temple-town lodge near Mahad / Khopoli.",
+          "Early morning departure from Pune. Begin the yatra at Morgaon - the spiritual starting and ending point of the Ashtavinayak circuit - for darshan of Lord Mayureshwar, the swayambhu Ganpati seated on a peacock. Continue to Siddhatek (Karmala) on the Bhima river for Lord Siddhivinayak - the temple visited by Lord Vishnu himself. Late afternoon at Pali for darshan of Lord Ballaleshwar - the only Ashtavinayak temple named after a devotee, not a demon. Evening at Mahad for Lord Varadvinayak. Overnight stay at a temple-town lodge near Mahad / Khopoli.",
         activities: ["Drive Pune to Morgaon", "Mayureshwar Ganpati darshan", "Drive to Siddhatek", "Siddhivinayak darshan", "Drive to Pali", "Ballaleshwar darshan", "Drive to Mahad", "Varadvinayak darshan"],
         meals: "Dinner",
         accommodation: "Lodge near Mahad / Khopoli",
@@ -2068,7 +2068,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Mahad → Theur → Lenyadri → Ozar",
         description:
-          "Morning drive back via Pune to Theur for darshan of Lord Chintamani — the Ganpati who calmed Lord Brahma's restless mind. Continue north-east to Lenyadri (Junnar) — the only Ashtavinayak temple inside a Buddhist cave complex, where Mata Parvati is believed to have meditated to obtain Ganpati as her son. Late afternoon at Ozar for darshan of Lord Vighneshwar — the destroyer of obstacles. Overnight at Ozar / Junnar.",
+          "Morning drive back via Pune to Theur for darshan of Lord Chintamani - the Ganpati who calmed Lord Brahma's restless mind. Continue north-east to Lenyadri (Junnar) - the only Ashtavinayak temple inside a Buddhist cave complex, where Mata Parvati is believed to have meditated to obtain Ganpati as her son. Late afternoon at Ozar for darshan of Lord Vighneshwar - the destroyer of obstacles. Overnight at Ozar / Junnar.",
         activities: ["Drive Mahad to Theur", "Chintamani Ganpati darshan", "Drive to Lenyadri", "Cave climb to Girijatmaj", "Drive to Ozar", "Vighneshwar darshan"],
         meals: "Breakfast, Dinner",
         accommodation: "Lodge in Ozar / Junnar",
@@ -2080,10 +2080,10 @@ const allPackages: Package[] = [
         day: 3,
         title: "Ozar → Ranjangaon → Pune Departure",
         description:
-          "Morning drive to Ranjangaon — the eighth and final temple — for darshan of Mahaganpati, the most powerful form of Ganpati who helped Lord Shiva defeat the demon Tripurasura. Traditionally the yatra closes here. Return to Pune by afternoon for your onward journey home, having completed the full Ashtavinayak circuit.",
+          "Morning drive to Ranjangaon - the eighth and final temple - for darshan of Mahaganpati, the most powerful form of Ganpati who helped Lord Shiva defeat the demon Tripurasura. Traditionally the yatra closes here. Return to Pune by afternoon for your onward journey home, having completed the full Ashtavinayak circuit.",
         activities: ["Drive Ozar to Ranjangaon", "Mahaganpati darshan", "Closing ritual at Ranjangaon", "Drive to Pune", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "130 km drive",
         highlight: "Completing the Ashtavinayak yatra at Ranjangaon",
         image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
@@ -2091,13 +2091,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Azerbaijan — Baku, Gabala, Shahdag & Quba (8 Days)",
+    title: "Azerbaijan - Baku, Gabala, Shahdag & Quba (8 Days)",
     slug: "azerbaijan-package-highlights",
     destinationName: "Azerbaijan",
     destinationSlug: "azerbaijan",
     category: "leisure",
     description:
-      "Eight days across the Land of Fire — the flame towers and walled Old City of Baku, the fire-temple at Ateshgah and the eternally burning Yanardag hillside, two Caucasus mountain resorts at Gabala (Tufandag) and Shahdag, the high-altitude village of Khinalig, and the UNESCO mud volcanoes and petroglyphs of Gobustan. A clean balance of city, culture and mountain scenery.",
+      "Eight days across the Land of Fire - the flame towers and walled Old City of Baku, the fire-temple at Ateshgah and the eternally burning Yanardag hillside, two Caucasus mountain resorts at Gabala (Tufandag) and Shahdag, the high-altitude village of Khinalig, and the UNESCO mud volcanoes and petroglyphs of Gobustan. A clean balance of city, culture and mountain scenery.",
     heroImage: "/images/destinations/azerbaijan.webp",
     images: [
       "/images/destinations/azerbaijan.webp",
@@ -2131,21 +2131,21 @@ const allPackages: Package[] = [
       "Travel insurance",
     ],
     highlights: [
-      "Baku Old City (Icherisheher) — Maiden Tower & Shirvanshah's Palace",
+      "Baku Old City (Icherisheher) - Maiden Tower & Shirvanshah's Palace",
       "Ateshgah fire temple & Yanardag burning hillside",
       "Tufandag Mountain Resort cable car, Gabala",
       "Shahdag Mountain Resort gondola & alpine views",
-      "Khinalig — one of the highest villages in the Caucasus",
+      "Khinalig - one of the highest villages in the Caucasus",
       "Gobustan UNESCO mud volcanoes & petroglyphs",
     ],
     seasonalAdvisories: [
       "Shahdag and Tufandag are at their best May-October; in winter (Dec-Mar) they become ski resorts and cable-car timings may change with weather.",
-      "Khinalig's mountain road can close briefly after heavy snow or rain — an alternate Quba sightseeing day is kept as backup.",
+      "Khinalig's mountain road can close briefly after heavy snow or rain - an alternate Quba sightseeing day is kept as backup.",
     ],
     itinerary: [
       {
         day: 1,
-        title: "Arrive Baku — Boulevard & Seaside Sunset",
+        title: "Arrive Baku - Boulevard & Seaside Sunset",
         description:
           "Arrive in Baku, the capital on the Caspian shore, and check in to your hotel. After a rest, an easy evening orientation along Baku Boulevard and the Seaside National Park, with the Flame Towers lighting up the skyline and a first view over Baku Bay. Welcome dinner at a local restaurant.",
         activities: ["Airport pickup", "Baku Boulevard walk", "Seaside National Park", "Flame Towers viewpoint", "Welcome dinner"],
@@ -2156,30 +2156,30 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Absheron Peninsula — Fire Temple, Yanardag & Old City",
+        title: "Absheron Peninsula - Fire Temple, Yanardag & Old City",
         description:
-          "A full day on the Absheron Peninsula. Begin at Ateshgah, the Zoroastrian fire temple in Surakhany, then Yanardag — the hillside that has burned continuously for centuries. In the afternoon, explore the walled Old City (Icherisheher) guarded by the twin castle gates, with the iconic Maiden Tower and the Shirvanshah's Palace. Dinner back in the city.",
+          "A full day on the Absheron Peninsula. Begin at Ateshgah, the Zoroastrian fire temple in Surakhany, then Yanardag - the hillside that has burned continuously for centuries. In the afternoon, explore the walled Old City (Icherisheher) guarded by the twin castle gates, with the iconic Maiden Tower and the Shirvanshah's Palace. Dinner back in the city.",
         activities: ["Ateshgah fire temple", "Yanardag burning hillside", "Icherisheher Old City", "Maiden Tower", "Shirvanshah's Palace"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Baku",
-        highlight: "Yanardag — the eternal flame hillside",
+        highlight: "Yanardag - the eternal flame hillside",
         image: "https://images.unsplash.com/photo-1565008576549-57569a49371d?w=1600&h=900&fit=crop",
       },
       {
         day: 3,
-        title: "Baku to Gabala — Shamakhi & Lahij Village en route",
+        title: "Baku to Gabala - Shamakhi & Lahij Village en route",
         description:
           "Drive north to Gabala, the old capital of Caucasian Albania and a Silk Road waypoint. En route, stop at Shamakhi for the Seven Domes (Yeddi Gumbez), the Juma Mosque and Diri Baba mausoleum, then the coppersmith village of Lahij, famed for its medieval craftsmanship. Overnight in Gabala.",
         activities: ["Shamakhi Seven Domes", "Juma Mosque", "Diri Baba mausoleum", "Lahij coppersmith village", "Drive to Gabala"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Gabala",
         distance: "Approx. 225 km",
-        highlight: "Lahij — the coppersmiths' village",
+        highlight: "Lahij - the coppersmiths' village",
         image: "https://images.unsplash.com/photo-1558642084-fd07fae5282e?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
-        title: "Gabala — Tufandag Mountain Cable Car",
+        title: "Gabala - Tufandag Mountain Cable Car",
         description:
           "A morning at the Qafqaz Tufandag Mountain Resort, riding the cableway up through the Caucasus for sweeping alpine views. Visit the Gabaland park area and Nohur Lake before transferring on to the Quba-Qusar region for the night, positioning you for the Shahdag day.",
         activities: ["Tufandag cable car", "Caucasus mountain views", "Nohur Lake", "Transfer to Qusar"],
@@ -2192,29 +2192,29 @@ const allPackages: Package[] = [
         day: 5,
         title: "Shahdag Mountain Resort & Khinalig Village",
         description:
-          "The mountain highlight of the trip. Spend the morning at the Shahdag Mountain Resort — Azerbaijan's largest alpine resort beneath Mount Shahdag — riding the gondola for panoramic peaks, alpine meadows and (in season) snow play. In the afternoon, drive up to Khinalig, one of the highest and oldest continuously inhabited villages in the Caucasus, perched above 2,300 m. Return to Quba for the night.",
+          "The mountain highlight of the trip. Spend the morning at the Shahdag Mountain Resort - Azerbaijan's largest alpine resort beneath Mount Shahdag - riding the gondola for panoramic peaks, alpine meadows and (in season) snow play. In the afternoon, drive up to Khinalig, one of the highest and oldest continuously inhabited villages in the Caucasus, perched above 2,300 m. Return to Quba for the night.",
         activities: ["Shahdag Mountain Resort gondola", "Alpine viewpoints", "Khinalig high village", "Afurja Waterfall (in season)"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Quba",
         elevation: "Shahdag base ~1,435 m; Khinalig ~2,300 m",
-        highlight: "Shahdag gondola — the alpine high point",
+        highlight: "Shahdag gondola - the alpine high point",
         image: "https://images.unsplash.com/photo-1571406252241-db0280bd36cd?w=1600&h=900&fit=crop",
       },
       {
         day: 6,
         title: "Quba Heritage & Red Town, Return to Baku",
         description:
-          "Explore Quba town — the Juma Mosque, the old hammam and the Ardabil Mosque — then cross the river to Qirmizi Qasaba (Red Town), the largest all-Jewish settlement outside Israel. Drive back to Baku in the evening.",
+          "Explore Quba town - the Juma Mosque, the old hammam and the Ardabil Mosque - then cross the river to Qirmizi Qasaba (Red Town), the largest all-Jewish settlement outside Israel. Drive back to Baku in the evening.",
         activities: ["Quba Juma Mosque", "Old hammam", "Ardabil Mosque", "Red Town (Qirmizi Qasaba)", "Return to Baku"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Baku",
         distance: "Approx. 170 km to Baku",
-        highlight: "Red Town — the mountain-Jewish settlement",
+        highlight: "Red Town - the mountain-Jewish settlement",
         image: "https://images.unsplash.com/photo-1558642084-fd07fae5282e?w=1600&h=900&fit=crop",
       },
       {
         day: 7,
-        title: "Gobustan — Mud Volcanoes & Petroglyphs",
+        title: "Gobustan - Mud Volcanoes & Petroglyphs",
         description:
           "Drive south to Gobustan, a UNESCO World Heritage Site, for the bubbling sedimentary mud volcanoes and the open-air museum of Neolithic rock carvings. Return to Baku for a farewell dinner of local Azerbaijani cuisine.",
         activities: ["Gobustan mud volcanoes", "Petroglyph open-air museum", "Gobustan museum", "Farewell dinner"],
@@ -2230,20 +2230,20 @@ const allPackages: Package[] = [
           "A final morning for souvenir shopping at the Old City bazaars before your airport transfer for the departure flight.",
         activities: ["Old City souvenir shopping", "Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Two Caucasus mountain resorts in one trip",
         image: "/images/destinations/azerbaijan.webp",
       },
     ],
   },
   {
-    title: "Badami, Hampi & Chikmagalur — Karnataka Heritage Circuit",
+    title: "Badami, Hampi & Chikmagalur - Karnataka Heritage Circuit",
     slug: "badami-hampi-chikmangluru",
     destinationName: "Karnataka",
     destinationSlug: "karnataka",
     category: "leisure",
     description:
-      "An eight-day loop through Karnataka's greatest heritage and coffee country — the Hoysala temple towns of Belur and Halebid, the UNESCO ruins of Hampi and the Chalukyan rock-temples of Badami, Pattadakal and Aihole, ending in the misty coffee hills of Chikmagalur.",
+      "An eight-day loop through Karnataka's greatest heritage and coffee country - the Hoysala temple towns of Belur and Halebid, the UNESCO ruins of Hampi and the Chalukyan rock-temples of Badami, Pattadakal and Aihole, ending in the misty coffee hills of Chikmagalur.",
     heroImage: "/images/generated/karnataka-hero.webp",
     images: [
       "/images/generated/karnataka-hero.webp",
@@ -2304,7 +2304,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Hampi — UNESCO Ruins by Auto-Rickshaw",
+        title: "Hampi - UNESCO Ruins by Auto-Rickshaw",
         description:
           "A full day exploring Hampi, the 'world's largest open-air museum'. See the Virupaksha Temple, the Vittala Temple with its iconic Stone Chariot and musical pillars, the underground Shiva temple, the Royal Centre (Queen's Bath, Lotus Mahal, Elephant Stables) and the Lakshmi Narasimha monolith.",
         activities: ["Virupaksha Temple", "Vittala Temple & Stone Chariot", "Royal Centre", "Lotus Mahal", "Elephant Stables", "Lakshmi Narasimha"],
@@ -2317,7 +2317,7 @@ const allPackages: Package[] = [
         day: 4,
         title: "Hampi – Badami – Pattadakal – Aihole – Hampi",
         description:
-          "Day trip to the Chalukyan heartland — the red-sandstone Badami cave temples and Bhutanatha group by the lake, the UNESCO temple complex at Pattadakal, and the 5th-century stone temples of Aihole, the cradle of Indian temple architecture. Return to Hampi.",
+          "Day trip to the Chalukyan heartland - the red-sandstone Badami cave temples and Bhutanatha group by the lake, the UNESCO temple complex at Pattadakal, and the 5th-century stone temples of Aihole, the cradle of Indian temple architecture. Return to Hampi.",
         activities: ["Badami cave temples", "Bhutanatha temples", "Pattadakal UNESCO complex", "Aihole stone temples"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Hampi",
@@ -2326,9 +2326,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Hampi — Coracle Ride & Anegundi",
+        title: "Hampi - Coracle Ride & Anegundi",
         description:
-          "A gentler day on the far bank of the Tungabhadra — a traditional coracle (round-boat) ride, the heritage village of Anegundi believed to be the mythical Kishkindha, and a sunset from Hemakuta Hill over the boulder-strewn landscape.",
+          "A gentler day on the far bank of the Tungabhadra - a traditional coracle (round-boat) ride, the heritage village of Anegundi believed to be the mythical Kishkindha, and a sunset from Hemakuta Hill over the boulder-strewn landscape.",
         activities: ["Tungabhadra coracle ride", "Anegundi heritage village", "Hemakuta Hill sunset"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Hampi",
@@ -2348,13 +2348,13 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Chikmagalur — Mullayangiri & Coffee Country",
+        title: "Chikmagalur - Mullayangiri & Coffee Country",
         description:
-          "Explore Chikmagalur — drive up Mullayangiri, the highest peak in Karnataka, through the twisting Western Ghats, visit the Honnamana Halla falls, and tour a working coffee plantation and museum where the beans are sun-dried.",
+          "Explore Chikmagalur - drive up Mullayangiri, the highest peak in Karnataka, through the twisting Western Ghats, visit the Honnamana Halla falls, and tour a working coffee plantation and museum where the beans are sun-dried.",
         activities: ["Mullayangiri Peak", "Western Ghats drive", "Honnamana Halla falls", "Coffee plantation tour"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort in Chikmagalur",
-        highlight: "Mullayangiri — Karnataka's highest peak",
+        highlight: "Mullayangiri - Karnataka's highest peak",
         image: "/images/generated/karnataka-hero.webp",
       },
       {
@@ -2364,20 +2364,20 @@ const allPackages: Package[] = [
           "Drive back to Bengaluru, with a stop at the HAL Aerospace Museum if time allows, and transfer to the airport / railway station for your onward journey.",
         activities: ["Drive to Bengaluru", "HAL Aerospace Museum", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A full Karnataka heritage loop",
         image: "/images/generated/karnataka-hero.webp",
       },
     ],
   },
   {
-    title: "Coorg & Wayanad — Mysore, Coorg Plantations & Wayanad Wildlife",
+    title: "Coorg & Wayanad - Mysore, Coorg Plantations & Wayanad Wildlife",
     slug: "coorg-wayand",
     destinationName: "Kerala",
     destinationSlug: "kerala",
     category: "leisure",
     description:
-      "A six-day Karnataka-Kerala plantation circuit — Mysore Palace and Brindavan Gardens, Coorg's coffee estates and Dubare elephants, Wayanad's Edakkal Caves and Soochipara Falls. South India's most relaxed forest-and-hills weekend.",
+      "A six-day Karnataka-Kerala plantation circuit - Mysore Palace and Brindavan Gardens, Coorg's coffee estates and Dubare elephants, Wayanad's Edakkal Caves and Soochipara Falls. South India's most relaxed forest-and-hills weekend.",
     heroImage: "/images/generated/kerala-hero.webp",
     images: [
       "/images/generated/kerala-hero.webp",
@@ -2420,7 +2420,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Bangalore Arrival — Drive to Mysore",
+        title: "Bangalore Arrival - Drive to Mysore",
         description:
           "Arrive in Bangalore, transfer to Mysore. Afternoon at Mysore Palace, Chamundi Hills temple, and Tippu's Summer Palace. End the day at the Brindavan Gardens musical fountain show.",
         activities: ["Pickup at Bangalore", "Drive to Mysore", "Mysore Palace", "Chamundi Hills", "Brindavan Gardens musical fountain"],
@@ -2432,7 +2432,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Drive Mysore to Coorg — Dubare Elephant Camp",
+        title: "Drive Mysore to Coorg - Dubare Elephant Camp",
         description:
           "Morning drive to Coorg via Kushalnagar. Stop at the Dubare Elephant Camp on the banks of the Cauvery for an interactive elephant experience. Check in at a Madikeri plantation resort and enjoy a coffee-tasting at dusk.",
         activities: ["Drive to Coorg", "Dubare Elephant Camp", "Plantation check-in", "Coffee tasting"],
@@ -2444,9 +2444,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Coorg — Talakaveri, Abbi Falls, Raja's Seat",
+        title: "Coorg - Talakaveri, Abbi Falls, Raja's Seat",
         description:
-          "Full day exploring Coorg — the source of the Cauvery river at Talakaveri, the cascading Abbi Falls, the Omkareshwara temple, and a sunset over the western ghats at Raja's Seat.",
+          "Full day exploring Coorg - the source of the Cauvery river at Talakaveri, the cascading Abbi Falls, the Omkareshwara temple, and a sunset over the western ghats at Raja's Seat.",
         activities: ["Talakaveri", "Bhagamandala", "Abbi Falls", "Omkareshwara Temple", "Raja's Seat sunset"],
         meals: "Breakfast, Dinner",
         accommodation: "Plantation resort in Coorg",
@@ -2455,7 +2455,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive Coorg to Wayanad — Kuruva Island",
+        title: "Drive Coorg to Wayanad - Kuruva Island",
         description:
           "Drive south across the Karnataka-Kerala border into Wayanad. Afternoon at the Kuruva Island freshwater archipelago on the Kabini river, followed by a quiet evening at the resort.",
         activities: ["Drive to Wayanad", "Kuruva Island", "Kabini backwater"],
@@ -2467,9 +2467,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Wayanad — Edakkal Caves, Soochipara Falls, Pookode Lake",
+        title: "Wayanad - Edakkal Caves, Soochipara Falls, Pookode Lake",
         description:
-          "Trek up to the Edakkal Caves — neolithic petroglyphs dating back over 6,000 years. Continue to the three-tiered Soochipara waterfall and the heart-shaped Pookode Lake for a paddleboat. Return to the resort for the night.",
+          "Trek up to the Edakkal Caves - neolithic petroglyphs dating back over 6,000 years. Continue to the three-tiered Soochipara waterfall and the heart-shaped Pookode Lake for a paddleboat. Return to the resort for the night.",
         activities: ["Edakkal Caves trek", "Soochipara Waterfalls", "Pookode Lake boat"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort in Wayanad",
@@ -2478,12 +2478,12 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Wayanad to Bangalore — Departure",
+        title: "Wayanad to Bangalore - Departure",
         description:
           "Drive back to Bangalore (or onward to Coimbatore) for your departing flight or train.",
         activities: ["Drive to Bangalore / Coimbatore", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "275 km drive",
         highlight: "Last green tunnels of the Ghats",
         image: "/images/generated/kerala-hero.webp",
@@ -2491,13 +2491,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Dudhsagar Waterfall Trek — Pune/Mumbai Weekend",
+    title: "Dudhsagar Waterfall Trek - Pune/Mumbai Weekend",
     slug: "dudhsagar-waterfall-trek",
     destinationName: "Goa",
     destinationSlug: "goa",
     category: "adventure",
     description:
-      "A weekend trek to the four-tiered Dudhsagar Falls on the Goa-Karnataka border — an overnight train from Pune, a trek through the Bhagwan Mahaveer Sanctuary in the Western Ghats to the foot of the thundering 'Sea of Milk', and back by the next morning.",
+      "A weekend trek to the four-tiered Dudhsagar Falls on the Goa-Karnataka border - an overnight train from Pune, a trek through the Bhagwan Mahaveer Sanctuary in the Western Ghats to the foot of the thundering 'Sea of Milk', and back by the next morning.",
     heroImage: "/images/generated/goa-hero.webp",
     images: [
       "/images/generated/goa-hero.webp",
@@ -2560,23 +2560,23 @@ const allPackages: Package[] = [
         day: 3,
         title: "Return to Pune / Mumbai",
         description:
-          "Arrive back early morning — Pune participants reach Pune, Mumbai participants continue onward — having captured the fauna of the Western Ghats and the jaw-dropping four-tier Dudhsagar Falls.",
+          "Arrive back early morning - Pune participants reach Pune, Mumbai participants continue onward - having captured the fauna of the Western Ghats and the jaw-dropping four-tier Dudhsagar Falls.",
         activities: ["Morning arrival Pune", "Onward to Mumbai", "Trek concludes"],
         meals: "None",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Memories of the Western Ghats",
         image: "https://images.unsplash.com/photo-1591017403286-fd8493524e1e?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Saurashtra Heritage — Ahmedabad, Dwarka, Somnath, Gir, Junagadh & Palitana",
+    title: "Saurashtra Heritage - Ahmedabad, Dwarka, Somnath, Gir, Junagadh & Palitana",
     slug: "saurashtra-heritage",
     destinationName: "Gujarat",
     destinationSlug: "gujarat",
     category: "leisure",
     description:
-      "A seven-day Saurashtra circuit covering Gujarat's six most-visited pilgrim and heritage stops — Ahmedabad's Gandhi heritage, the Dwarkadheesh and Nageshwar Jyotirlinga at Dwarka, the seaside Somnath Jyotirlinga, an Asiatic Lion safari at Gir, the forts of Junagadh, and the sacred Jain hill of Palitana.",
+      "A seven-day Saurashtra circuit covering Gujarat's six most-visited pilgrim and heritage stops - Ahmedabad's Gandhi heritage, the Dwarkadheesh and Nageshwar Jyotirlinga at Dwarka, the seaside Somnath Jyotirlinga, an Asiatic Lion safari at Gir, the forts of Junagadh, and the sacred Jain hill of Palitana.",
     heroImage: "/images/destinations/gujarat.webp",
     images: [
       "/images/destinations/gujarat.webp",
@@ -2613,13 +2613,13 @@ const allPackages: Package[] = [
       "Two Jyotirlingas in one trip (Somnath + Nageshwar)",
       "Dwarkadheesh temple darshan + Bet Dwarka boat ride",
       "Asiatic Lion safari at Gir National Park",
-      "Palitana Shatrunjaya — 3,500-step sacred Jain hill",
+      "Palitana Shatrunjaya - 3,500-step sacred Jain hill",
       "Junagadh forts and Mahabat Maqbara",
     ],
     itinerary: [
       {
         day: 1,
-        title: "Arrive Ahmedabad — City Heritage",
+        title: "Arrive Ahmedabad - City Heritage",
         description:
           "Arrive at Ahmedabad airport or railway station and transfer to your hotel. Afternoon city tour covering Gandhi Ashram on the banks of the Sabarmati, the Adalaj Stepwell with its intricate sandstone carvings, Akshardham Temple, and Kankaria Lake at sunset. Overnight at Ahmedabad.",
         activities: ["Gandhi Ashram", "Adalaj Stepwell", "Akshardham Temple", "Kankaria Lake sunset"],
@@ -2632,8 +2632,8 @@ const allPackages: Package[] = [
         day: 2,
         title: "Ahmedabad to Dwarka via Jamnagar",
         description:
-          "Early breakfast and drive to Dwarka via Jamnagar (≈450 km, full-day drive). At Jamnagar make a brief stop at Lakhota Lake and Bala Hanuman Temple (where Ram Dhun has been chanted continuously since 1964 — a Guinness Record). Arrive Dwarka by evening. If time permits, attend the evening aarti at Dwarkadheesh Temple. Overnight at Dwarka.",
-        activities: ["Drive Ahmedabad → Dwarka", "Jamnagar — Lakhota Lake & Bala Hanuman", "Optional evening aarti"],
+          "Early breakfast and drive to Dwarka via Jamnagar (≈450 km, full-day drive). At Jamnagar make a brief stop at Lakhota Lake and Bala Hanuman Temple (where Ram Dhun has been chanted continuously since 1964 - a Guinness Record). Arrive Dwarka by evening. If time permits, attend the evening aarti at Dwarkadheesh Temple. Overnight at Dwarka.",
+        activities: ["Drive Ahmedabad → Dwarka", "Jamnagar - Lakhota Lake & Bala Hanuman", "Optional evening aarti"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dwarka",
         distance: "Approx. 450 km / 8-9 hrs",
@@ -2642,9 +2642,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Dwarka — Dwarkadheesh, Nageshwar Jyotirlinga & Bet Dwarka",
+        title: "Dwarka - Dwarkadheesh, Nageshwar Jyotirlinga & Bet Dwarka",
         description:
-          "Morning aarti and darshan at Dwarkadheesh Temple followed by a holy dip at Gomti Ghat. Drive 25 km to Nageshwar Jyotirlinga — one of the twelve sacred Shiva shrines. Continue to Okha and take the boat to Bet Dwarka, the island where Lord Krishna lived; visit the temples and Rukmini Mandir on the return. Evening back at Dwarkadheesh for the deep aarti. Overnight Dwarka.",
+          "Morning aarti and darshan at Dwarkadheesh Temple followed by a holy dip at Gomti Ghat. Drive 25 km to Nageshwar Jyotirlinga - one of the twelve sacred Shiva shrines. Continue to Okha and take the boat to Bet Dwarka, the island where Lord Krishna lived; visit the temples and Rukmini Mandir on the return. Evening back at Dwarkadheesh for the deep aarti. Overnight Dwarka.",
         activities: ["Dwarkadheesh darshan", "Gomti Ghat snan", "Nageshwar Jyotirlinga", "Bet Dwarka boat", "Rukmini Mandir"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dwarka",
@@ -2655,7 +2655,7 @@ const allPackages: Package[] = [
         day: 4,
         title: "Dwarka to Somnath via Porbandar",
         description:
-          "Drive to Somnath via Porbandar (≈230 km). Visit Kirti Mandir at Porbandar — the birthplace of Mahatma Gandhi — and the adjoining Sudama Temple. Continue to Somnath, check in, and visit Bhalka Tirth, Triveni Sangam, and Geeta Mandir. Attend the evening aarti and Light & Sound show at the Somnath Jyotirlinga. Overnight Somnath.",
+          "Drive to Somnath via Porbandar (≈230 km). Visit Kirti Mandir at Porbandar - the birthplace of Mahatma Gandhi - and the adjoining Sudama Temple. Continue to Somnath, check in, and visit Bhalka Tirth, Triveni Sangam, and Geeta Mandir. Attend the evening aarti and Light & Sound show at the Somnath Jyotirlinga. Overnight Somnath.",
         activities: ["Kirti Mandir (Gandhi birthplace)", "Sudama Temple", "Bhalka Tirth", "Triveni Sangam", "Somnath aarti + Light & Sound"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Somnath",
@@ -2665,9 +2665,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Somnath to Sasan Gir — Asiatic Lion Safari",
+        title: "Somnath to Sasan Gir - Asiatic Lion Safari",
         description:
-          "Morning at Somnath. After breakfast drive to Sasan Gir (≈45 km), the only home of the Asiatic Lion. Check in and afternoon shared jeep safari in the Devalia interpretation zone — high lion-sighting success and quicker than the main zone. Evening at the resort for a Gujarati thali dinner. Overnight Sasan Gir.",
+          "Morning at Somnath. After breakfast drive to Sasan Gir (≈45 km), the only home of the Asiatic Lion. Check in and afternoon shared jeep safari in the Devalia interpretation zone - high lion-sighting success and quicker than the main zone. Evening at the resort for a Gujarati thali dinner. Overnight Sasan Gir.",
         activities: ["Drive Somnath → Gir", "Devalia jeep safari", "Lion, leopard, sambhar & spotted deer sightings"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort in Sasan Gir",
@@ -2679,7 +2679,7 @@ const allPackages: Package[] = [
         day: 6,
         title: "Gir to Junagadh & Palitana",
         description:
-          "Drive to Junagadh (≈60 km). Visit Uparkot Fort, the Buddhist caves, and Mahabat Maqbara — Junagadh's most photographed monument with its spiral minarets. Continue to Palitana (≈200 km). Evening rest at Palitana base. Overnight Palitana.",
+          "Drive to Junagadh (≈60 km). Visit Uparkot Fort, the Buddhist caves, and Mahabat Maqbara - Junagadh's most photographed monument with its spiral minarets. Continue to Palitana (≈200 km). Evening rest at Palitana base. Overnight Palitana.",
         activities: ["Uparkot Fort Junagadh", "Junagadh Buddhist Caves", "Mahabat Maqbara", "Drive Junagadh → Palitana"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Palitana",
@@ -2689,26 +2689,26 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Palitana Shatrunjaya — Departure",
+        title: "Palitana Shatrunjaya - Departure",
         description:
-          "Early pre-dawn start for Shatrunjaya — the sacred Jain hill of 3,500 steps and 863 temples at the summit, the holiest pilgrimage site in Jainism. Pony or dholi available on rent for those who cannot climb. Return to Palitana base by mid-afternoon. Drive to Ahmedabad airport/railway station (≈215 km) for departure.",
+          "Early pre-dawn start for Shatrunjaya - the sacred Jain hill of 3,500 steps and 863 temples at the summit, the holiest pilgrimage site in Jainism. Pony or dholi available on rent for those who cannot climb. Return to Palitana base by mid-afternoon. Drive to Ahmedabad airport/railway station (≈215 km) for departure.",
         activities: ["Shatrunjaya climb", "863-temple summit complex", "Drive Palitana → Ahmedabad airport"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "Approx. 215 km / 4-5 hrs to Ahmedabad",
-        highlight: "Shatrunjaya — Jainism's holiest summit",
+        highlight: "Shatrunjaya - Jainism's holiest summit",
         image: "/images/destinations/gujarat.webp",
       },
     ],
   },
   {
-    title: "Kerala 8 Days — Cochin, Munnar, Thekkady, Alleppey & Kovalam",
+    title: "Kerala 8 Days - Cochin, Munnar, Thekkady, Alleppey & Kovalam",
     slug: "kerala-7-days",
     destinationName: "Kerala",
     destinationSlug: "kerala",
     category: "leisure",
     description:
-      "An eight-day grand Kerala circuit — colonial Fort Kochi, the tea hills of Munnar, the Periyar jungle at Thekkady, an Alleppey backwater houseboat, and the beaches of Kovalam. The most complete Kerala itinerary from coast to hills and back.",
+      "An eight-day grand Kerala circuit - colonial Fort Kochi, the tea hills of Munnar, the Periyar jungle at Thekkady, an Alleppey backwater houseboat, and the beaches of Kovalam. The most complete Kerala itinerary from coast to hills and back.",
     heroImage: "/images/generated/kerala-hero.webp",
     images: [
       "/images/generated/kerala-hero.webp",
@@ -2750,9 +2750,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrival in Cochin — Fort Kochi Heritage Walk",
+        title: "Arrival in Cochin - Fort Kochi Heritage Walk",
         description:
-          "Arrive at Cochin airport / railway station and transfer to your hotel. Afternoon heritage walk through Fort Kochi — the Chinese fishing nets, St Francis Church (the oldest European church in India), the Mattancherry 'Dutch' Palace, and the Paradesi Synagogue in Jew Town. Evening at Marine Drive.",
+          "Arrive at Cochin airport / railway station and transfer to your hotel. Afternoon heritage walk through Fort Kochi - the Chinese fishing nets, St Francis Church (the oldest European church in India), the Mattancherry 'Dutch' Palace, and the Paradesi Synagogue in Jew Town. Evening at Marine Drive.",
         activities: ["Arrival pickup", "Chinese fishing nets", "St Francis Church", "Mattancherry Palace", "Jew Town & Synagogue"],
         meals: "Dinner",
         accommodation: "Hotel in Cochin",
@@ -2774,9 +2774,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Munnar Sightseeing — Tea Estates & Eravikulam",
+        title: "Munnar Sightseeing - Tea Estates & Eravikulam",
         description:
-          "Full day exploring Munnar — Eravikulam National Park (home of the Nilgiri tahr), the Tata Tea Museum, Mattupetty Dam, Echo Point, and the Kundala Lake. Photo stops through the rolling tea gardens.",
+          "Full day exploring Munnar - Eravikulam National Park (home of the Nilgiri tahr), the Tata Tea Museum, Mattupetty Dam, Echo Point, and the Kundala Lake. Photo stops through the rolling tea gardens.",
         activities: ["Eravikulam National Park", "Tata Tea Museum", "Mattupetty Dam", "Echo Point", "Kundala Lake"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Munnar",
@@ -2785,7 +2785,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive Munnar to Thekkady — Periyar Jungle",
+        title: "Drive Munnar to Thekkady - Periyar Jungle",
         description:
           "Drive ~3 hours to Thekkady, the wildlife capital of Kerala. Afternoon boat ride on Periyar Lake to spot elephants, bison and deer, followed by a spice plantation walk. Evening Kathakali dance performance.",
         activities: ["Drive to Thekkady", "Periyar Lake boat ride", "Spice plantation walk", "Kathakali show"],
@@ -2797,9 +2797,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Thekkady to Alleppey — Backwater Houseboat",
+        title: "Thekkady to Alleppey - Backwater Houseboat",
         description:
-          "Drive south-west to Alleppey and board your traditional kettuvallam houseboat. Lunch on board as the boat glides through the palm-fringed backwaters past paddy fields and waterside villages. Sunset and dinner on deck — overnight on the houseboat.",
+          "Drive south-west to Alleppey and board your traditional kettuvallam houseboat. Lunch on board as the boat glides through the palm-fringed backwaters past paddy fields and waterside villages. Sunset and dinner on deck - overnight on the houseboat.",
         activities: ["Drive to Alleppey", "Houseboat boarding", "Backwater cruise", "Sunset on deck"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Kettuvallam houseboat",
@@ -2809,7 +2809,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Drive Alleppey to Kovalam — Beach Town",
+        title: "Drive Alleppey to Kovalam - Beach Town",
         description:
           "Disembark after breakfast and drive south to Kovalam, Kerala's premier beach town. Check in and spend the afternoon on the crescent-shaped Lighthouse Beach. Optional Ayurvedic massage at a beachside spa.",
         activities: ["Drive to Kovalam", "Lighthouse Beach", "Optional Ayurveda spa"],
@@ -2821,9 +2821,9 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Kovalam — Trivandrum City Tour",
+        title: "Kovalam - Trivandrum City Tour",
         description:
-          "Day trip to Thiruvananthapuram — the Padmanabhaswamy Temple (dedicated to Lord Vishnu), the Napier Museum and zoo, the Science & Technology Museum, Shanghumukham Beach and Veli Tourist Village. Return to Kovalam for a final beach evening.",
+          "Day trip to Thiruvananthapuram - the Padmanabhaswamy Temple (dedicated to Lord Vishnu), the Napier Museum and zoo, the Science & Technology Museum, Shanghumukham Beach and Veli Tourist Village. Return to Kovalam for a final beach evening.",
         activities: ["Padmanabhaswamy Temple", "Napier Museum", "Shanghumukham Beach", "Veli Tourist Village"],
         meals: "Breakfast, Dinner",
         accommodation: "Beach hotel in Kovalam",
@@ -2835,23 +2835,23 @@ const allPackages: Package[] = [
         day: 8,
         title: "Departure from Trivandrum",
         description:
-          "After breakfast, transfer to Trivandrum airport / railway station for your onward journey home, with a complete Kerala circuit — hills, jungle, backwaters and beach — in the books.",
+          "After breakfast, transfer to Trivandrum airport / railway station for your onward journey home, with a complete Kerala circuit - hills, jungle, backwaters and beach - in the books.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A complete Kerala circuit",
         image: "/images/generated/kerala-hero.webp",
       },
     ],
   },
   {
-    title: "3 Jyotirlinga Yatra — Bhimashankar, Trimbakeshwar & Grishneshwar",
+    title: "3 Jyotirlinga Yatra - Bhimashankar, Trimbakeshwar & Grishneshwar",
     slug: "maharashtra-jyotirlingas",
     destinationName: "Maharashtra",
     destinationSlug: "maharashtra",
     category: "educational",
     description:
-      "A focused 4-day pilgrimage to all three Jyotirlingas of Maharashtra — Bhimashankar (in the Sahyadris), Trimbakeshwar (near Nashik, source of the Godavari) and Grishneshwar (near the Ellora caves at Aurangabad). Starts and ends at Pune. The shortest, cleanest 3-Jyotirlinga route in the country.",
+      "A focused 4-day pilgrimage to all three Jyotirlingas of Maharashtra - Bhimashankar (in the Sahyadris), Trimbakeshwar (near Nashik, source of the Godavari) and Grishneshwar (near the Ellora caves at Aurangabad). Starts and ends at Pune. The shortest, cleanest 3-Jyotirlinga route in the country.",
     heroImage: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800&h=600&fit=crop",
@@ -2895,7 +2895,7 @@ const allPackages: Package[] = [
         day: 1,
         title: "Pune → Bhimashankar Jyotirlinga",
         description:
-          "Pickup at Pune in the morning. Drive ~3.5 hours into the dense Sahyadri forest to Bhimashankar — the source of the Bhima river and one of the 12 Jyotirlingas of Lord Shiva. Afternoon darshan, evening walk in the surrounding Bhimashankar Wildlife Sanctuary (home to the giant Indian squirrel), overnight at a temple lodge.",
+          "Pickup at Pune in the morning. Drive ~3.5 hours into the dense Sahyadri forest to Bhimashankar - the source of the Bhima river and one of the 12 Jyotirlingas of Lord Shiva. Afternoon darshan, evening walk in the surrounding Bhimashankar Wildlife Sanctuary (home to the giant Indian squirrel), overnight at a temple lodge.",
         activities: ["Pickup at Pune", "Drive to Bhimashankar", "Jyotirlinga darshan", "Wildlife sanctuary walk"],
         meals: "Dinner",
         accommodation: "Lodge near Bhimashankar",
@@ -2907,7 +2907,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Bhimashankar → Trimbakeshwar Jyotirlinga",
         description:
-          "Drive north-west to Trimbakeshwar near Nashik — the unique Jyotirlinga with three faces representing Brahma, Vishnu and Mahesh, and the source of the Godavari river. Evening abhishek at Kushavarta Kund, the sacred tank from which the river emerges.",
+          "Drive north-west to Trimbakeshwar near Nashik - the unique Jyotirlinga with three faces representing Brahma, Vishnu and Mahesh, and the source of the Godavari river. Evening abhishek at Kushavarta Kund, the sacred tank from which the river emerges.",
         activities: ["Drive Bhimashankar to Trimbakeshwar", "Trimbakeshwar Jyotirlinga darshan", "Kushavarta Kund", "Evening aarti"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel near Trimbakeshwar / Nashik",
@@ -2919,7 +2919,7 @@ const allPackages: Package[] = [
         day: 3,
         title: "Trimbakeshwar → Grishneshwar (Aurangabad)",
         description:
-          "Long drive south-east to Aurangabad. Afternoon darshan at Grishneshwar — the twelfth and final Jyotirlinga, set in a temple complex 30 km from Aurangabad. Optional add-on (subject to time): a visit to the UNESCO-listed Ellora Caves, just 1 km from Grishneshwar.",
+          "Long drive south-east to Aurangabad. Afternoon darshan at Grishneshwar - the twelfth and final Jyotirlinga, set in a temple complex 30 km from Aurangabad. Optional add-on (subject to time): a visit to the UNESCO-listed Ellora Caves, just 1 km from Grishneshwar.",
         activities: ["Drive Trimbakeshwar to Aurangabad", "Grishneshwar Jyotirlinga darshan", "Optional Ellora Caves visit"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Aurangabad",
@@ -2931,10 +2931,10 @@ const allPackages: Package[] = [
         day: 4,
         title: "Aurangabad → Pune Departure",
         description:
-          "Morning at leisure. Drive back to Pune (~5 hours) — drop at Pune airport / railway station for your onward journey home, having completed the 3 Jyotirlinga circuit of Maharashtra.",
+          "Morning at leisure. Drive back to Pune (~5 hours) - drop at Pune airport / railway station for your onward journey home, having completed the 3 Jyotirlinga circuit of Maharashtra.",
         activities: ["Drive Aurangabad to Pune", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "235 km drive",
         highlight: "Closing the 3-Jyotirlinga yatra",
         image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop",
@@ -2948,7 +2948,7 @@ const allPackages: Package[] = [
     destinationSlug: "maharashtra",
     category: "educational",
     description:
-      "A focused 5-day Maharashtra pilgrimage covering all three Jyotirlingas of the state — Bhimashankar, Trimbakeshwar, Grishneshwar — alongside Shirdi (Sai Baba), Shani Shingnapur (Lord Shani) and the Daulatabad Fort near Aurangabad. The most-asked Maharashtra spiritual circuit for first-time devotees, starting and ending at Pune.",
+      "A focused 5-day Maharashtra pilgrimage covering all three Jyotirlingas of the state - Bhimashankar, Trimbakeshwar, Grishneshwar - alongside Shirdi (Sai Baba), Shani Shingnapur (Lord Shani) and the Daulatabad Fort near Aurangabad. The most-asked Maharashtra spiritual circuit for first-time devotees, starting and ending at Pune.",
     heroImage: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
@@ -2981,7 +2981,7 @@ const allPackages: Package[] = [
     highlights: [
       "All 3 Maharashtra Jyotirlingas (Bhimashankar, Trimbakeshwar, Grishneshwar)",
       "Shirdi Sai Baba samadhi darshan",
-      "Shani Shingnapur — Lord Shani temple",
+      "Shani Shingnapur - Lord Shani temple",
       "Daulatabad Fort & Ellora caves stop",
       "Pune-to-Pune round trip",
     ],
@@ -3001,7 +3001,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Shirdi — Sai Darshan + Shani Shingnapur Day Trip",
+        title: "Shirdi - Sai Darshan + Shani Shingnapur Day Trip",
         description:
           "Early Kakad Aarti at Sai Baba samadhi mandir followed by full darshan. Mid-morning drive to Shani Shingnapur (≈70 km) for darshan of Lord Shani. Visit Dwarkamai and Chavadi back at Shirdi. Evening Shej Aarti. Overnight Shirdi.",
         activities: ["Kakad Aarti", "Sai Baba full darshan", "Shani Shingnapur darshan", "Dwarkamai + Chavadi"],
@@ -3025,14 +3025,14 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Nashik → Aurangabad — Grishneshwar & Daulatabad",
+        title: "Nashik → Aurangabad - Grishneshwar & Daulatabad",
         description:
-          "Drive to Aurangabad (≈210 km). Afternoon visit Grishneshwar Jyotirlinga — the last of the 12 Jyotirlingas — at Verul, right next to Ellora. A brief stop at Ellora Cave 16 (Kailasa Temple) if time permits. Drive to Daulatabad Fort for sunset — the medieval hill fort once Muhammad bin Tughluq's capital. Overnight Aurangabad.",
+          "Drive to Aurangabad (≈210 km). Afternoon visit Grishneshwar Jyotirlinga - the last of the 12 Jyotirlingas - at Verul, right next to Ellora. A brief stop at Ellora Cave 16 (Kailasa Temple) if time permits. Drive to Daulatabad Fort for sunset - the medieval hill fort once Muhammad bin Tughluq's capital. Overnight Aurangabad.",
         activities: ["Drive to Aurangabad", "Grishneshwar Jyotirlinga", "Ellora Kailasa Temple stop", "Daulatabad Fort sunset"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Aurangabad",
         distance: "Approx. 230 km",
-        highlight: "Grishneshwar Jyotirlinga — completes Maharashtra's Jyotirlinga trio",
+        highlight: "Grishneshwar Jyotirlinga - completes Maharashtra's Jyotirlinga trio",
         image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
       {
@@ -3042,7 +3042,7 @@ const allPackages: Package[] = [
           "Morning visit to Bibi ka Maqbara (Aurangabad's mini-Taj) if interested. Drive back to Pune (≈235 km) and drop at airport/railway station. Trip concludes.",
         activities: ["Bibi ka Maqbara", "Drive Aurangabad → Pune", "Drop at Pune airport/station"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "Approx. 235 km",
         highlight: "A clean Jyotirlinga-plus-Sai circuit",
         image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
@@ -3050,13 +3050,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Rann of Kutch — Bhuj Heritage, Banni Villages & White Desert",
+    title: "Rann of Kutch - Bhuj Heritage, Banni Villages & White Desert",
     slug: "rann-of-kutch",
     destinationName: "Gujarat",
     destinationSlug: "gujarat",
     category: "leisure",
     description:
-      "A five-day Kutch journey staying at heritage hotels in Bhuj — Aina Mahal, Pragmahal, the Bhujodi and Ajrakhpur craft villages, day-trips into the Banni grasslands and the White Rann at full moon, sunset at Kalo Dungar. Standard package is based on Bhuj accommodation; a premium tent-stay-at-Dhordo upgrade is available for full-moon dates on request (₹50,000+).",
+      "A five-day Kutch journey staying at heritage hotels in Bhuj - Aina Mahal, Pragmahal, the Bhujodi and Ajrakhpur craft villages, day-trips into the Banni grasslands and the White Rann at full moon, sunset at Kalo Dungar. Standard package is based on Bhuj accommodation; a premium tent-stay-at-Dhordo upgrade is available for full-moon dates on request (₹50,000+).",
     heroImage: "/images/destinations/gujarat.webp",
     images: [
       "/images/destinations/gujarat.webp",
@@ -3095,14 +3095,14 @@ const allPackages: Package[] = [
       "Banni grasslands tribal villages",
       "White Rann at Dhordo (day visit)",
       "Kalo Dungar sunset over the salt desert",
-      "India Bridge — last civilian point",
+      "India Bridge - last civilian point",
     ],
     itinerary: [
       {
         day: 1,
-        title: "Bhuj Arrival — Heritage City Tour",
+        title: "Bhuj Arrival - Heritage City Tour",
         description:
-          "Arrive in Bhuj and check in to your heritage hotel in the old city. Afternoon walking tour of the Bhuj royal quarter — Aina Mahal (mirror palace), Pragmahal Museum, the Royal Cenotaphs and Hamirsar Lake. Evening at a Kutchi thali restaurant in the bazaar.",
+          "Arrive in Bhuj and check in to your heritage hotel in the old city. Afternoon walking tour of the Bhuj royal quarter - Aina Mahal (mirror palace), Pragmahal Museum, the Royal Cenotaphs and Hamirsar Lake. Evening at a Kutchi thali restaurant in the bazaar.",
         activities: ["Pickup at Bhuj", "Hotel check-in", "Aina Mahal", "Pragmahal", "Royal Cenotaphs", "Hamirsar Lake walk"],
         meals: "Dinner",
         accommodation: "Heritage hotel in Bhuj",
@@ -3111,9 +3111,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Bhujodi & Ajrakhpur — Kutch Craft Villages",
+        title: "Bhujodi & Ajrakhpur - Kutch Craft Villages",
         description:
-          "Full-day craft-village circuit from your Bhuj base. Bhujodi for hand-loom weavers and tie-dye artisans. Ajrakhpur for the famous indigo-and-madder Ajrakh block-printing. Visit Khamir NGO to see Kutchi heritage crafts being preserved. Return to Bhuj for the night — no overnight in the desert tonight.",
+          "Full-day craft-village circuit from your Bhuj base. Bhujodi for hand-loom weavers and tie-dye artisans. Ajrakhpur for the famous indigo-and-madder Ajrakh block-printing. Visit Khamir NGO to see Kutchi heritage crafts being preserved. Return to Bhuj for the night - no overnight in the desert tonight.",
         activities: ["Bhujodi weaver workshops", "Ajrakhpur block-print demo", "Khamir craft centre", "Return to Bhuj"],
         meals: "Breakfast, Dinner",
         accommodation: "Heritage hotel in Bhuj",
@@ -3125,7 +3125,7 @@ const allPackages: Package[] = [
         day: 3,
         title: "Banni Villages Day-Trip from Bhuj",
         description:
-          "Drive north into the Banni grasslands. Visit Sumrasar (Kala Raksha NGO embroidery), Bhirandiyara (mawa and pottery), Ludiya (mud-walled bhungas with mirror inlay), and Khavda (Rogan-art painting — the dying craft revived by the Khatri family). Return to Bhuj for the night — keeps you out of the expensive Dhordo tent city.",
+          "Drive north into the Banni grasslands. Visit Sumrasar (Kala Raksha NGO embroidery), Bhirandiyara (mawa and pottery), Ludiya (mud-walled bhungas with mirror inlay), and Khavda (Rogan-art painting - the dying craft revived by the Khatri family). Return to Bhuj for the night - keeps you out of the expensive Dhordo tent city.",
         activities: ["Sumrasar (Kala Raksha)", "Bhirandiyara mawa village", "Ludiya bhunga village", "Khavda Rogan art", "Return to Bhuj"],
         meals: "Breakfast, Dinner",
         accommodation: "Heritage hotel in Bhuj",
@@ -3135,9 +3135,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "White Rann & Kalo Dungar — Day Visit",
+        title: "White Rann & Kalo Dungar - Day Visit",
         description:
-          "Drive to Dhordo for a day visit to the White Rann — walk on the salt desert, camel-cart ride to the horizon. Lunch at a local Banni resort. Late afternoon climb Kalo Dungar (Black Hill) — Kutch's highest point — for sunset over the salt flats and the magnetic-anomaly viewpoint. Visit India Bridge, the last civilian point before the Pakistan border. Drive back to Bhuj for the night (~3 hours each way; tent-stay at Dhordo available only at the ₹50k+ premium tier).",
+          "Drive to Dhordo for a day visit to the White Rann - walk on the salt desert, camel-cart ride to the horizon. Lunch at a local Banni resort. Late afternoon climb Kalo Dungar (Black Hill) - Kutch's highest point - for sunset over the salt flats and the magnetic-anomaly viewpoint. Visit India Bridge, the last civilian point before the Pakistan border. Drive back to Bhuj for the night (~3 hours each way; tent-stay at Dhordo available only at the ₹50k+ premium tier).",
         activities: ["Drive to Dhordo", "White Rann walk", "Camel-cart ride", "Kalo Dungar sunset", "India Bridge viewpoint", "Drive back to Bhuj"],
         meals: "Breakfast, Dinner",
         accommodation: "Heritage hotel in Bhuj",
@@ -3149,23 +3149,23 @@ const allPackages: Package[] = [
         day: 5,
         title: "Bhuj Departure",
         description:
-          "Final morning at leisure in Bhuj — a last walk through the textile bazaar to pick up a Kutchi shawl or Ajrakh stole — then transfer to Bhuj airport / railway station for your onward journey home.",
+          "Final morning at leisure in Bhuj - a last walk through the textile bazaar to pick up a Kutchi shawl or Ajrakh stole - then transfer to Bhuj airport / railway station for your onward journey home.",
         activities: ["Morning souvenir shopping", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Last Kutchi handicraft buy",
         image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&h=400&fit=crop",
       },
     ],
   },
   {
-    title: "Scenic Sri Lanka — Colombo, Kandy, Sigiriya, Ella & Galle",
+    title: "Scenic Sri Lanka - Colombo, Kandy, Sigiriya, Ella & Galle",
     slug: "scenic-sri-lanka",
     destinationName: "Sri Lanka",
     destinationSlug: "sri-lanka",
     category: "adventure",
     description:
-      "A seven-day scenic loop of the island — colonial Colombo, the hill capital of Kandy with its Temple of the Sacred Tooth, the Sigiriya Lion Rock, the tea-country charm of Ella, and the Dutch-walled fort of Galle on the south coast.",
+      "A seven-day scenic loop of the island - colonial Colombo, the hill capital of Kandy with its Temple of the Sacred Tooth, the Sigiriya Lion Rock, the tea-country charm of Ella, and the Dutch-walled fort of Galle on the south coast.",
     heroImage: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
@@ -3261,7 +3261,7 @@ const allPackages: Package[] = [
         day: 6,
         title: "Galle – Colombo",
         description:
-          "Drive back up the coast to Colombo for a city tour — the Independence Square, the National Museum, Pettah bazaar and a stop for shopping before a farewell dinner.",
+          "Drive back up the coast to Colombo for a city tour - the Independence Square, the National Museum, Pettah bazaar and a stop for shopping before a farewell dinner.",
         activities: ["Independence Square", "National Museum", "Pettah bazaar", "Shopping"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Colombo",
@@ -3275,20 +3275,20 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Bandaranaike International Airport for your departure flight, carrying away a bagful of island memories.",
         activities: ["Airport transfer", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Farewell to the teardrop isle",
         image: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Scintillating Sri Lanka — Kandy, Nuwara Eliya, Bentota & Mirissa",
+    title: "Scintillating Sri Lanka - Kandy, Nuwara Eliya, Bentota & Mirissa",
     slug: "scintillating-tropical-tour-to-sri-lanka",
     destinationName: "Sri Lanka",
     destinationSlug: "sri-lanka",
     category: "leisure",
     description:
-      "A seven-day tropical tour pairing the cultural triangle with the beaches of the south-west — Kandy and Sigiriya, the tea-country hill station of Nuwara Eliya, whale-watching at Mirissa, and the golden sands of Bentota.",
+      "A seven-day tropical tour pairing the cultural triangle with the beaches of the south-west - Kandy and Sigiriya, the tea-country hill station of Nuwara Eliya, whale-watching at Mirissa, and the golden sands of Bentota.",
     heroImage: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
@@ -3340,7 +3340,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Sigiriya Excursion",
         description:
-          "A full day at the Sigiriya Rock Fortress — climb the Lion Rock past its mirror wall and frescoes to the summit palace ruins, then visit the Dambulla Cave Temple before returning to Kandy.",
+          "A full day at the Sigiriya Rock Fortress - climb the Lion Rock past its mirror wall and frescoes to the summit palace ruins, then visit the Dambulla Cave Temple before returning to Kandy.",
         activities: ["Sigiriya Lion Rock", "Summit palace ruins", "Dambulla Cave Temple"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Kandy",
@@ -3373,7 +3373,7 @@ const allPackages: Package[] = [
         day: 5,
         title: "Mirissa Excursion",
         description:
-          "An early start to Mirissa for a blue-whale and dolphin watching boat safari — the largest animal on the planet cruises these waters — with the Galle Fort visited on the way back.",
+          "An early start to Mirissa for a blue-whale and dolphin watching boat safari - the largest animal on the planet cruises these waters - with the Galle Fort visited on the way back.",
         activities: ["Mirissa whale watching", "Dolphin spotting", "Galle Fort"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort in Bentota",
@@ -3384,7 +3384,7 @@ const allPackages: Package[] = [
         day: 6,
         title: "Bentota – Colombo",
         description:
-          "Drive to Colombo for a city tour — Gangaramaya Temple, Independence Square, the National Museum and Pettah market — with time for shopping before a farewell dinner.",
+          "Drive to Colombo for a city tour - Gangaramaya Temple, Independence Square, the National Museum and Pettah market - with time for shopping before a farewell dinner.",
         activities: ["Gangaramaya Temple", "Independence Square", "National Museum", "Pettah market"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Colombo",
@@ -3398,20 +3398,20 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Bandaranaike International Airport for your flight home with a plethora of memories.",
         activities: ["Airport transfer", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A scintillating island farewell",
         image: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Seven Sisters Grand Tour — All 7 NE States Across 19 Days",
+    title: "Seven Sisters Grand Tour - All 7 NE States Across 19 Days",
     slug: "seven-sisters",
     destinationName: "Meghalaya",
     destinationSlug: "meghalaya",
     category: "leisure",
     description:
-      "A nineteen-day grand circuit across all seven sister states of the Indian Northeast — Tripura's Ujjayanta Palace, Mizoram's Aizawl, Manipur's floating Loktak Lake, Nagaland's Kohima and Khonoma, Assam's Kaziranga rhinos, Arunachal's Tawang Monastery, and Meghalaya's Mawlynnong and Dawki — the most ambitious Northeast itinerary in the country.",
+      "A nineteen-day grand circuit across all seven sister states of the Indian Northeast - Tripura's Ujjayanta Palace, Mizoram's Aizawl, Manipur's floating Loktak Lake, Nagaland's Kohima and Khonoma, Assam's Kaziranga rhinos, Arunachal's Tawang Monastery, and Meghalaya's Mawlynnong and Dawki - the most ambitious Northeast itinerary in the country.",
     heroImage: "/images/generated/meghalaya-hero.webp",
     images: [
       "/images/generated/meghalaya-hero.webp",
@@ -3452,26 +3452,26 @@ const allPackages: Package[] = [
       "Sela Pass at 13,700 ft",
       "Loktak Lake floating national park",
       "Kaziranga one-horned rhinos",
-      "Khonoma — Asia's first green village",
+      "Khonoma - Asia's first green village",
       "Mawlynnong & Dawki crystal river",
     ],
     itinerary: [
       {
         day: 1,
-        title: "Agartala Arrival — Ujjayanta Palace",
+        title: "Agartala Arrival - Ujjayanta Palace",
         description:
-          "Arrive at Agartala airport (capital of Tripura). Visit Ujjayanta Palace — a former royal palace built in Indo-Saracenic style and now a state museum. Evening welcome dinner.",
+          "Arrive at Agartala airport (capital of Tripura). Visit Ujjayanta Palace - a former royal palace built in Indo-Saracenic style and now a state museum. Evening welcome dinner.",
         activities: ["Pickup at Agartala", "Ujjayanta Palace", "Welcome dinner"],
         meals: "Dinner",
         accommodation: "Hotel in Agartala",
-        highlight: "Ujjayanta Palace — Tripura's royal museum",
+        highlight: "Ujjayanta Palace - Tripura's royal museum",
         image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 2,
-        title: "Agartala — Neer Mahal & India-Bangladesh Border Parade",
+        title: "Agartala - Neer Mahal & India-Bangladesh Border Parade",
         description:
-          "Day-trip to Neer Mahal — the only water palace in eastern India, built on Rudrasagar Lake. Visit the Tripura Sundari Temple (one of the 51 Shakti Peethas) and end the day at Akhaura, the India-Bangladesh border, for the evening flag-lowering parade.",
+          "Day-trip to Neer Mahal - the only water palace in eastern India, built on Rudrasagar Lake. Visit the Tripura Sundari Temple (one of the 51 Shakti Peethas) and end the day at Akhaura, the India-Bangladesh border, for the evening flag-lowering parade.",
         activities: ["Neer Mahal water palace", "Tripura Sundari Temple", "Akhaura border parade"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Agartala",
@@ -3492,7 +3492,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive Silchar to Aizawl — Mizoram Hills",
+        title: "Drive Silchar to Aizawl - Mizoram Hills",
         description:
           "Drive south-east into the Lushai Hills of Mizoram to Aizawl, perched on a knife-edge ridge at 4,000 ft. Evening walk on Zarkawt and Bara Bazaar as the city lights up across the surrounding ridges.",
         activities: ["Drive to Aizawl", "Hotel check-in", "Zarkawt & Bara Bazaar walk"],
@@ -3505,21 +3505,21 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Aizawl — Mizoram State Museum, Drive Back Silchar",
+        title: "Aizawl - Mizoram State Museum, Drive Back Silchar",
         description:
-          "Morning at the Mizoram State Museum (Lushai cultural heritage) and the Solomon's Temple — the largest church in Mizoram. Drive back to Silchar for the night.",
+          "Morning at the Mizoram State Museum (Lushai cultural heritage) and the Solomon's Temple - the largest church in Mizoram. Drive back to Silchar for the night.",
         activities: ["Mizoram State Museum", "Solomon's Temple", "Drive to Silchar"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Silchar",
         distance: "180 km drive",
-        highlight: "Solomon's Temple — Mizoram's biggest church",
+        highlight: "Solomon's Temple - Mizoram's biggest church",
         image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 6,
-        title: "Drive Silchar to Imphal — Manipur Capital",
+        title: "Drive Silchar to Imphal - Manipur Capital",
         description:
-          "Drive east through the rugged Naga-Manipur ridges to Imphal, capital of Manipur. The route is among the most scenic — and slowest — drives in the Northeast. Easy evening at the hotel after a long day.",
+          "Drive east through the rugged Naga-Manipur ridges to Imphal, capital of Manipur. The route is among the most scenic - and slowest - drives in the Northeast. Easy evening at the hotel after a long day.",
         activities: ["Drive Silchar to Imphal", "Hotel check-in", "Evening at Kangla precincts"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Imphal",
@@ -3530,9 +3530,9 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Imphal — Loktak Lake, Kangla Fort, Ima Bazaar",
+        title: "Imphal - Loktak Lake, Kangla Fort, Ima Bazaar",
         description:
-          "Full day exploring Imphal — Loktak Lake (the largest freshwater lake in NE India, with its famous floating phumdis), Keibul Lamjao National Park (the world's only floating national park, home of the endangered sangai deer), Kangla Fort (the historic seat of Manipur royals), and Ima Keithel — the world's only all-women-run market with over 5,000 women traders.",
+          "Full day exploring Imphal - Loktak Lake (the largest freshwater lake in NE India, with its famous floating phumdis), Keibul Lamjao National Park (the world's only floating national park, home of the endangered sangai deer), Kangla Fort (the historic seat of Manipur royals), and Ima Keithel - the world's only all-women-run market with over 5,000 women traders.",
         activities: ["Loktak Lake boat", "Keibul Lamjao floating park", "Kangla Fort", "Govindajee Temple", "Ima Bazaar"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Imphal",
@@ -3541,9 +3541,9 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Drive Imphal to Kohima — Nagaland Capital",
+        title: "Drive Imphal to Kohima - Nagaland Capital",
         description:
-          "Drive north into the Naga Hills to Kohima, the capital of Nagaland, at 1,444 m. Visit the Kohima War Cemetery — one of the most moving WW2 memorials in Asia. Walk through the Naga Bazaar in the evening.",
+          "Drive north into the Naga Hills to Kohima, the capital of Nagaland, at 1,444 m. Visit the Kohima War Cemetery - one of the most moving WW2 memorials in Asia. Walk through the Naga Bazaar in the evening.",
         activities: ["Drive Imphal to Kohima", "Kohima War Cemetery", "Naga Bazaar walk"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Kohima",
@@ -3554,9 +3554,9 @@ const allPackages: Package[] = [
       },
       {
         day: 9,
-        title: "Kohima — Khonoma Village & Kisama Heritage Village",
+        title: "Kohima - Khonoma Village & Kisama Heritage Village",
         description:
-          "Day excursion to Khonoma — Asia's first 'Green Village', renowned for its conservation traditions, Khonoma Nature Conservation & Tragopan Sanctuary, and Angami Naga heritage. Return via Kisama — the Naga Heritage Village that hosts the famous Hornbill Festival each December.",
+          "Day excursion to Khonoma - Asia's first 'Green Village', renowned for its conservation traditions, Khonoma Nature Conservation & Tragopan Sanctuary, and Angami Naga heritage. Return via Kisama - the Naga Heritage Village that hosts the famous Hornbill Festival each December.",
         activities: ["Khonoma village walk", "Khonoma Conservation Sanctuary", "Kisama Heritage Village", "Mithun sighting"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Kohima",
@@ -3567,7 +3567,7 @@ const allPackages: Package[] = [
         day: 10,
         title: "Drive Kohima to Kaziranga National Park",
         description:
-          "Drive west into Assam to Kaziranga — India's premier rhino reserve and a UNESCO World Heritage Site. Easy evening at the resort. Safari briefing for tomorrow.",
+          "Drive west into Assam to Kaziranga - India's premier rhino reserve and a UNESCO World Heritage Site. Easy evening at the resort. Safari briefing for tomorrow.",
         activities: ["Drive to Kaziranga", "Resort check-in", "Safari briefing"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort near Kaziranga",
@@ -3577,7 +3577,7 @@ const allPackages: Package[] = [
       },
       {
         day: 11,
-        title: "Kaziranga — Jeep Safari & Bihu Cultural Evening",
+        title: "Kaziranga - Jeep Safari & Bihu Cultural Evening",
         description:
           "Pre-dawn jeep safari in the Kaziranga central range for one-horned rhinos, wild elephants, swamp deer and rare migratory birds. Afternoon at the Orchid Park, with its 600+ Northeast orchid species. Evening Bihu folk dance performance.",
         activities: ["Morning jeep safari", "Orchid Park", "Bihu dance cultural evening"],
@@ -3588,7 +3588,7 @@ const allPackages: Package[] = [
       },
       {
         day: 12,
-        title: "Drive Kaziranga to Bomdila — Into Arunachal",
+        title: "Drive Kaziranga to Bomdila - Into Arunachal",
         description:
           "Long drive north across the Brahmaputra into Arunachal Pradesh, reaching Bomdila by evening. Inner Line Permits checked en route. Bomdila Monastery and viewpoint visit.",
         activities: ["Drive to Bomdila", "ILP checkpoint", "Bomdila Monastery"],
@@ -3614,7 +3614,7 @@ const allPackages: Package[] = [
       },
       {
         day: 14,
-        title: "Tawang — Bum La Pass, Madhuri Lake & War Memorial",
+        title: "Tawang - Bum La Pass, Madhuri Lake & War Memorial",
         description:
           "Early morning drive to Bum La Pass at the Indo-China border at 15,200 ft (subject to army permits and weather). Visit Pankang Teng Tso lake and Madhuri Lake (named after Madhuri Dixit from the film Koyla). Evening at the Tawang War Memorial with its Sound & Light show. Note: foreigners and NRIs are restricted from Bum La, Pankang Teng Tso and Madhuri Lake.",
         activities: ["Bum La Pass (Indo-China border)", "Pankang Teng Tso Lake", "Madhuri Lake", "Tawang War Memorial", "Sound & Light show"],
@@ -3628,19 +3628,19 @@ const allPackages: Package[] = [
         day: 15,
         title: "Tawang Monastery & Drive Back to Bomdila",
         description:
-          "Morning visit to Tawang Monastery — the second-largest monastery in Asia (after Lhasa's Potala) and birthplace of the 6th Dalai Lama. Drive back to Bomdila via the Nuranang waterfall at Jang.",
+          "Morning visit to Tawang Monastery - the second-largest monastery in Asia (after Lhasa's Potala) and birthplace of the 6th Dalai Lama. Drive back to Bomdila via the Nuranang waterfall at Jang.",
         activities: ["Tawang Monastery", "Drive to Bomdila", "Nuranang waterfall"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Bomdila",
         distance: "170 km drive",
-        highlight: "Tawang Monastery — Asia's 2nd largest",
+        highlight: "Tawang Monastery - Asia's 2nd largest",
         image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 16,
-        title: "Drive Bomdila to Tezpur — Back to Assam Plains",
+        title: "Drive Bomdila to Tezpur - Back to Assam Plains",
         description:
-          "Long drive down out of the Arunachal hills back into Assam to Tezpur. En route, visit the snake temple (Nag Temple) and Agnigarh — the mythological fort where Banasura kept his daughter Usha in isolation.",
+          "Long drive down out of the Arunachal hills back into Assam to Tezpur. En route, visit the snake temple (Nag Temple) and Agnigarh - the mythological fort where Banasura kept his daughter Usha in isolation.",
         activities: ["Drive to Tezpur", "Nag Temple", "Agnigarh fort"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Tezpur",
@@ -3652,7 +3652,7 @@ const allPackages: Package[] = [
         day: 17,
         title: "Drive Tezpur to Shillong via Umiam Lake",
         description:
-          "Long drive south to Shillong — capital of Meghalaya and the 'Scotland of the East'. Stop at the scenic Umiam Lake en route. Evening walk on Police Bazaar.",
+          "Long drive south to Shillong - capital of Meghalaya and the 'Scotland of the East'. Stop at the scenic Umiam Lake en route. Evening walk on Police Bazaar.",
         activities: ["Drive to Shillong", "Umiam Lake viewpoint", "Police Bazaar evening"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Shillong",
@@ -3663,9 +3663,9 @@ const allPackages: Package[] = [
       },
       {
         day: 18,
-        title: "Shillong — Mawlynnong & Dawki Day Trip",
+        title: "Shillong - Mawlynnong & Dawki Day Trip",
         description:
-          "Full day to Mawlynnong (Asia's Cleanest Village) — walk through its bamboo-fenced lanes, visit the Balancing Rock and the Single Decker Living Root Bridge at Riwai. Continue to Dawki for a boat ride on the crystal-clear Umngot river. Return to Shillong for the night.",
+          "Full day to Mawlynnong (Asia's Cleanest Village) - walk through its bamboo-fenced lanes, visit the Balancing Rock and the Single Decker Living Root Bridge at Riwai. Continue to Dawki for a boat ride on the crystal-clear Umngot river. Return to Shillong for the night.",
         activities: ["Mawlynnong Cleanest Village", "Balancing Rock", "Riwai Living Root Bridge", "Dawki Umngot river boat"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Shillong",
@@ -3675,12 +3675,12 @@ const allPackages: Package[] = [
       },
       {
         day: 19,
-        title: "Shillong to Guwahati — Kamakhya Temple & Departure",
+        title: "Shillong to Guwahati - Kamakhya Temple & Departure",
         description:
-          "Drive to Guwahati. Visit the Kamakhya Temple (one of the 51 Shakti Peethas), optional Brahmaputra river ropeway / cruise, and a final souvenir stop at Pan Bazaar. Drop at Guwahati airport / railway station — your Northeast circuit is complete.",
+          "Drive to Guwahati. Visit the Kamakhya Temple (one of the 51 Shakti Peethas), optional Brahmaputra river ropeway / cruise, and a final souvenir stop at Pan Bazaar. Drop at Guwahati airport / railway station - your Northeast circuit is complete.",
         activities: ["Drive to Guwahati", "Kamakhya Temple", "Pan Bazaar souvenirs", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "100 km drive",
         highlight: "Closing the seven-sister circuit",
         image: "/images/generated/meghalaya-hero.webp",
@@ -3688,13 +3688,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Tadoba Tiger Reserve — Maharashtra's Premier Wildlife Escape",
+    title: "Tadoba Tiger Reserve - Maharashtra's Premier Wildlife Escape",
     slug: "tadoba",
     destinationName: "Maharashtra",
     destinationSlug: "maharashtra",
     category: "adventure",
     description:
-      "A short, focused 3-day Tadoba wildlife escape from Nagpur. Tadoba-Andhari Tiger Reserve is the largest and oldest national park in Maharashtra — your best odds in the country to see a Royal Bengal Tiger in the wild, alongside leopards, sloth bears, dhole and over 280 bird species.",
+      "A short, focused 3-day Tadoba wildlife escape from Nagpur. Tadoba-Andhari Tiger Reserve is the largest and oldest national park in Maharashtra - your best odds in the country to see a Royal Bengal Tiger in the wild, alongside leopards, sloth bears, dhole and over 280 bird species.",
     heroImage: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800&h=600&fit=crop",
@@ -3737,9 +3737,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Nagpur to Tadoba — Lodge Check-in & Briefing",
+        title: "Nagpur to Tadoba - Lodge Check-in & Briefing",
         description:
-          "Arrive at Nagpur airport / railway station. Drive ~3 hours south-east to Tadoba — Maharashtra's premier tiger reserve. Check into your forest-edge lodge by lunchtime and rest through the afternoon heat. Evening naturalist briefing on Tadoba's tiger families, safari etiquette and tomorrow's morning drive plan, followed by a short buffer-zone bird walk if light permits.",
+          "Arrive at Nagpur airport / railway station. Drive ~3 hours south-east to Tadoba - Maharashtra's premier tiger reserve. Check into your forest-edge lodge by lunchtime and rest through the afternoon heat. Evening naturalist briefing on Tadoba's tiger families, safari etiquette and tomorrow's morning drive plan, followed by a short buffer-zone bird walk if light permits.",
         activities: ["Pickup at Nagpur", "Drive to Tadoba", "Lodge check-in", "Naturalist briefing", "Buffer-zone bird walk"],
         meals: "Dinner",
         accommodation: "Forest lodge near Tadoba",
@@ -3749,9 +3749,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Tadoba — Morning & Afternoon Jeep Safaris",
+        title: "Tadoba - Morning & Afternoon Jeep Safaris",
         description:
-          "Pre-dawn jeep safari into Tadoba's core zone in search of the Royal Bengal Tiger — Tadoba routinely tops India's tiger-sighting probability charts. Return for breakfast and a rest. Afternoon safari covers a different gate / zone (Moharli, Khutwanda, Pangdi or Kolara, depending on permits) for sloth bear, leopard, dhole packs, gaur and over 280 bird species. Evening lodge dinner with the day's sighting log shared by the naturalist.",
+          "Pre-dawn jeep safari into Tadoba's core zone in search of the Royal Bengal Tiger - Tadoba routinely tops India's tiger-sighting probability charts. Return for breakfast and a rest. Afternoon safari covers a different gate / zone (Moharli, Khutwanda, Pangdi or Kolara, depending on permits) for sloth bear, leopard, dhole packs, gaur and over 280 bird species. Evening lodge dinner with the day's sighting log shared by the naturalist.",
         activities: ["Pre-dawn jeep safari (core zone)", "Tiger tracking", "Afternoon jeep safari (different gate)", "Naturalist debrief"],
         meals: "Breakfast, Dinner",
         accommodation: "Forest lodge near Tadoba",
@@ -3760,12 +3760,12 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Drive Back to Nagpur — Departure",
+        title: "Drive Back to Nagpur - Departure",
         description:
           "Optional dawn safari (extra cost) for those who want one last tiger try, or a relaxed breakfast at the lodge. Drive back to Nagpur airport / railway station by afternoon for your onward journey home.",
         activities: ["Optional dawn safari", "Drive to Nagpur", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "150 km drive",
         highlight: "Last chance at a tiger sighting",
         image: "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=600&h=400&fit=crop",
@@ -3773,13 +3773,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Ujjain, Omkareshwar & Maheshwar — Madhya Pradesh Spiritual Circuit",
+    title: "Ujjain, Omkareshwar & Maheshwar - Madhya Pradesh Spiritual Circuit",
     slug: "ujjain-omkareshwar",
     destinationName: "Madhya Pradesh",
     destinationSlug: "madhya-pradesh",
     category: "educational",
     description:
-      "A five-day spiritual circuit of western Madhya Pradesh — the Mahakaleshwar Jyotirlinga at Ujjain on the Kshipra, the island shrine of Omkareshwar on the Narmada, Ahilyabai's riverside town of Maheshwar, and the romantic ruins of Mandu.",
+      "A five-day spiritual circuit of western Madhya Pradesh - the Mahakaleshwar Jyotirlinga at Ujjain on the Kshipra, the island shrine of Omkareshwar on the Narmada, Ahilyabai's riverside town of Maheshwar, and the romantic ruins of Mandu.",
     heroImage: "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
@@ -3811,7 +3811,7 @@ const allPackages: Package[] = [
       "Mahakaleshwar Jyotirlinga, Ujjain",
       "Omkareshwar island Jyotirlinga",
       "Maheshwar Ahilya Fort & Narmada ghats",
-      "Mandu — Jahaz Mahal & Rani Roopmati",
+      "Mandu - Jahaz Mahal & Rani Roopmati",
       "Narmada boating",
       "Kshipra river ghats",
     ],
@@ -3862,19 +3862,19 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Indore — Lal Bagh Palace & Chappan Dukan, Departure",
+        title: "Indore - Lal Bagh Palace & Chappan Dukan, Departure",
         description:
           "On the final morning, visit Indore's grand Lal Bagh Palace and the Rajwada Holkar palace, then taste the city's famous street food at the 56-stall Chappan Dukan and pick up Maheshwari fabrics at Sarafa Bazaar. Transfer to Indore airport / railway station for your onward journey.",
         activities: ["Lal Bagh Palace", "Rajwada Holkar Palace", "Chappan Dukan street food", "Sarafa Bazaar", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Indore's legendary street food",
         image: "https://images.unsplash.com/photo-1609920658906-8223bd289001?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Kashmir Essence — Srinagar, Gulmarg, Sonmarg & Pahalgam",
+    title: "Kashmir Essence - Srinagar, Gulmarg, Sonmarg & Pahalgam",
     slug: "kashmir-essence-srinagar-pahalgam",
     destinationName: "Kashmir",
     destinationSlug: "kashmir",
@@ -3923,20 +3923,20 @@ const allPackages: Package[] = [
     ],
     featured: true,
     experienceStory:
-      "This is the Kashmir of postcards, lived rather than photographed. You wake to mist lifting off Dal Lake from a carved-cedar houseboat, glide past floating vegetable gardens on a shikara, ride the Gulmarg Gondola — the world's second-highest cable car — to the snow line, and walk the Lidder-river meadows of Pahalgam where the Amarnath pilgrimage begins. Evenings are slow: kahwa by the samovar, a Wazwan feast, and the call to prayer drifting across the lake.",
+      "This is the Kashmir of postcards, lived rather than photographed. You wake to mist lifting off Dal Lake from a carved-cedar houseboat, glide past floating vegetable gardens on a shikara, ride the Gulmarg Gondola - the world's second-highest cable car - to the snow line, and walk the Lidder-river meadows of Pahalgam where the Amarnath pilgrimage begins. Evenings are slow: kahwa by the samovar, a Wazwan feast, and the call to prayer drifting across the lake.",
     transparencyNote:
-      "Local transparency: across Kashmir, sightseeing inside Gulmarg, Pahalgam and Sonmarg is run by the local taxi unions at government-fixed rates — your Srinagar cab drops you at the town and the union vehicle takes you to the actual points (Gulmarg Gondola base, the Betaab/Aru/Chandanwari valleys, the Thajiwas glacier road). These union charges, the Gondola ticket, and pony/sledge rides are optional, paid directly on the spot, and are not part of the package price — we tell you the typical rates in advance so there are no surprises.",
+      "Local transparency: across Kashmir, sightseeing inside Gulmarg, Pahalgam and Sonmarg is run by the local taxi unions at government-fixed rates - your Srinagar cab drops you at the town and the union vehicle takes you to the actual points (Gulmarg Gondola base, the Betaab/Aru/Chandanwari valleys, the Thajiwas glacier road). These union charges, the Gondola ticket, and pony/sledge rides are optional, paid directly on the spot, and are not part of the package price - we tell you the typical rates in advance so there are no surprises.",
     seasonalAdvisories: [
       "The Tulip Garden (Asia's largest) blooms only for roughly 3-4 weeks from late March to mid-April; the Gondola Phase-2 to Apharwat can shut at short notice on weather/avalanche grounds.",
       "The Srinagar-Sonmarg road and Sinthan-side routes can close after fresh snow (Dec-Mar); we keep an alternate valley as backup on snow days.",
-      "Peak demand (May-Jun, and the Amarnath Yatra window) means houseboats and Gulmarg hotels book out early — confirm dates ahead.",
+      "Peak demand (May-Jun, and the Amarnath Yatra window) means houseboats and Gulmarg hotels book out early - confirm dates ahead.",
     ],
     itinerary: [
       {
         day: 1,
-        title: "Arrival Srinagar — Houseboat & Shikara",
+        title: "Arrival Srinagar - Houseboat & Shikara",
         description:
-          "Touch down at Srinagar airport and drive past chinar-lined boulevards to your private houseboat moored on Dal Lake. After a Kahwa welcome and a leisurely check-in, glide across the lake on a sunset Shikara — past floating vegetable gardens, lotus channels and the silhouette of the Zabarwan range.",
+          "Touch down at Srinagar airport and drive past chinar-lined boulevards to your private houseboat moored on Dal Lake. After a Kahwa welcome and a leisurely check-in, glide across the lake on a sunset Shikara - past floating vegetable gardens, lotus channels and the silhouette of the Zabarwan range.",
         activities: ["Airport pickup", "Houseboat check-in", "Welcome Kahwa tea", "Sunset Shikara ride", "Old Srinagar bazaar walk"],
         meals: "Dinner",
         accommodation: "Deluxe Houseboat on Dal Lake",
@@ -3945,9 +3945,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Day Trip to Gulmarg — Gondola Phase 1",
+        title: "Day Trip to Gulmarg - Gondola Phase 1",
         description:
-          "Drive through apple orchards and rice paddies to Gulmarg, the Meadow of Flowers. Ride the Gondola — Asia's highest cable car — up to Kongdoori at 3,080m for sweeping views of Nanga Parbat and the Pir Panjal range. Return to Srinagar by evening for dinner on the lake.",
+          "Drive through apple orchards and rice paddies to Gulmarg, the Meadow of Flowers. Ride the Gondola - Asia's highest cable car - up to Kongdoori at 3,080m for sweeping views of Nanga Parbat and the Pir Panjal range. Return to Srinagar by evening for dinner on the lake.",
         activities: ["Gondola Phase 1 to Kongdoori", "Strawberry Valley walk", "Golf Course views", "Optional pony ride", "Return drive to Srinagar"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Srinagar",
@@ -3958,9 +3958,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Day Trip to Sonmarg — Thajiwas Glacier",
+        title: "Day Trip to Sonmarg - Thajiwas Glacier",
         description:
-          "Drive northeast along the Sindh river to Sonmarg, the Meadow of Gold. A short pony ride takes you to the foot of Thajiwas Glacier — a river of ice that endures even through summer. Return to Srinagar with stops at trout-fishing streams and roadside Kahwa stalls.",
+          "Drive northeast along the Sindh river to Sonmarg, the Meadow of Gold. A short pony ride takes you to the foot of Thajiwas Glacier - a river of ice that endures even through summer. Return to Srinagar with stops at trout-fishing streams and roadside Kahwa stalls.",
         activities: ["Drive to Sonmarg", "Thajiwas Glacier visit", "Pony ride to glacier base", "Sindh river views", "Return drive to Srinagar"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Srinagar",
@@ -3971,9 +3971,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Srinagar Local — Mughal Gardens & Shankaracharya",
+        title: "Srinagar Local - Mughal Gardens & Shankaracharya",
         description:
-          "Spend the day exploring Srinagar's UNESCO-tentative Mughal Gardens — the terraced Nishat Bagh, the Emperor's Shalimar Bagh, and the smaller, charming Chashme Shahi. Drive up to Shankaracharya temple for panoramic views of Dal Lake, the Old City, and the snow-tipped peaks beyond.",
+          "Spend the day exploring Srinagar's UNESCO-tentative Mughal Gardens - the terraced Nishat Bagh, the Emperor's Shalimar Bagh, and the smaller, charming Chashme Shahi. Drive up to Shankaracharya temple for panoramic views of Dal Lake, the Old City, and the snow-tipped peaks beyond.",
         activities: ["Nishat Bagh", "Shalimar Bagh", "Chashme Shahi", "Shankaracharya temple", "Lal Chowk shopping"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Srinagar",
@@ -3982,9 +3982,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Drive Srinagar to Pahalgam — Saffron & Lidder",
+        title: "Drive Srinagar to Pahalgam - Saffron & Lidder",
         description:
-          "Drive south through the saffron fields of Pampore — the world's only commercial Kashmiri saffron region — and reach Pahalgam by lunch. Spend the afternoon walking along the Lidder river and exploring the small markets of this riverside town.",
+          "Drive south through the saffron fields of Pampore - the world's only commercial Kashmiri saffron region - and reach Pahalgam by lunch. Spend the afternoon walking along the Lidder river and exploring the small markets of this riverside town.",
         activities: ["Pampore saffron fields", "Awantipora ruins photo stop", "Lidder river evening walk", "Local Pahalgam bazaar"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Pahalgam",
@@ -3994,9 +3994,9 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Pahalgam Valleys — Betaab, Aru & Chandanwari",
+        title: "Pahalgam Valleys - Betaab, Aru & Chandanwari",
         description:
-          "A full day exploring the spectacular side valleys of Pahalgam. Visit Betaab Valley — once a Bollywood backdrop, now a meadow framed by towering peaks. Continue to flower-carpeted Aru Valley and on to Chandanwari, the snowfield starting point of the Amarnath Yatra.",
+          "A full day exploring the spectacular side valleys of Pahalgam. Visit Betaab Valley - once a Bollywood backdrop, now a meadow framed by towering peaks. Continue to flower-carpeted Aru Valley and on to Chandanwari, the snowfield starting point of the Amarnath Yatra.",
         activities: ["Betaab Valley", "Aru Valley", "Chandanwari snow point", "Optional pony rides", "Riverside picnic"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Pahalgam",
@@ -4005,12 +4005,12 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Pahalgam to Srinagar Airport — Departure",
+        title: "Pahalgam to Srinagar Airport - Departure",
         description:
           "After breakfast, drive back to Srinagar airport with one final glance at the apple orchards and chinar avenues. Carry home Pashmina, saffron, and the memory of a valley that lives up to every postcard.",
         activities: ["Drive to Srinagar airport", "Last-minute shopping (time permitting)"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "95 km to Srinagar airport",
         highlight: "Final glimpse of the Vale",
         image: "/images/generated/kashmir-pahalgam-lidder.webp",
@@ -4018,7 +4018,7 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Kashmir Grand — Jammu, Katra, Pahalgam, Gulmarg, Sonmarg & Srinagar",
+    title: "Kashmir Grand - Jammu, Katra, Pahalgam, Gulmarg, Sonmarg & Srinagar",
     slug: "kashmir-grand-jammu-srinagar",
     destinationName: "Kashmir",
     destinationSlug: "kashmir",
@@ -4066,18 +4066,18 @@ const allPackages: Package[] = [
     ],
     featured: true,
     experienceStory:
-      "A grand arc through Jammu and the Valley — beginning with the climb to Mata Vaishno Devi above Katra, then crossing the Pir Panjal into Kashmir proper: the saffron fields of Pampore, the alpine bowl of Gulmarg, the glacier road at Sonmarg, and three unhurried nights between a Pahalgam riverside and a Dal Lake houseboat. Pilgrimage and paradise in a single journey.",
+      "A grand arc through Jammu and the Valley - beginning with the climb to Mata Vaishno Devi above Katra, then crossing the Pir Panjal into Kashmir proper: the saffron fields of Pampore, the alpine bowl of Gulmarg, the glacier road at Sonmarg, and three unhurried nights between a Pahalgam riverside and a Dal Lake houseboat. Pilgrimage and paradise in a single journey.",
     transparencyNote:
-      "Local transparency: across Kashmir, sightseeing inside Gulmarg, Pahalgam and Sonmarg is run by the local taxi unions at government-fixed rates — your Srinagar cab drops you at the town and the union vehicle takes you to the actual points (Gulmarg Gondola base, the Betaab/Aru/Chandanwari valleys, the Thajiwas glacier road). These union charges, the Gondola ticket, and pony/sledge rides are optional, paid directly on the spot, and are not part of the package price — we tell you the typical rates in advance so there are no surprises. At Katra, the 12 km Vaishno Devi trek is on foot; ponies, palki and the helicopter shuttle are optional and booked/paid separately.",
+      "Local transparency: across Kashmir, sightseeing inside Gulmarg, Pahalgam and Sonmarg is run by the local taxi unions at government-fixed rates - your Srinagar cab drops you at the town and the union vehicle takes you to the actual points (Gulmarg Gondola base, the Betaab/Aru/Chandanwari valleys, the Thajiwas glacier road). These union charges, the Gondola ticket, and pony/sledge rides are optional, paid directly on the spot, and are not part of the package price - we tell you the typical rates in advance so there are no surprises. At Katra, the 12 km Vaishno Devi trek is on foot; ponies, palki and the helicopter shuttle are optional and booked/paid separately.",
     seasonalAdvisories: [
-      "Vaishno Devi helicopter tickets are limited and weather-dependent — book well ahead or plan for the trek/pony option.",
+      "Vaishno Devi helicopter tickets are limited and weather-dependent - book well ahead or plan for the trek/pony option.",
       "The Tulip Garden is late-March to mid-April only; Gulmarg Gondola Phase-2 is weather-gated.",
-      "Sonmarg and high roads can close on heavy-snow days in winter — an alternate sightseeing day is kept in reserve.",
+      "Sonmarg and high roads can close on heavy-snow days in winter - an alternate sightseeing day is kept in reserve.",
     ],
     itinerary: [
       {
         day: 1,
-        title: "Arrival Jammu — Drive to Katra",
+        title: "Arrival Jammu - Drive to Katra",
         description:
           "Arrive at Jammu Airport / Tawi railway station and drive to Katra, the base town for the Vaishno Devi shrine. Check in, rest, and walk through the bazaar to collect your yatra slip and pick up essentials for tomorrow's climb.",
         activities: ["Pickup at Jammu", "Drive to Katra", "Yatra parchi collection", "Local market walk"],
@@ -4091,7 +4091,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Vaishno Devi Yatra",
         description:
-          "Begin the 12-km pilgrimage trek to the cave shrine of Mata Vaishno Devi — by foot, pony, or palki. Enjoy darshan at the holy cave and the new Bhawan complex, with optional onward trek to Bhairon temple. Return to Katra by evening.",
+          "Begin the 12-km pilgrimage trek to the cave shrine of Mata Vaishno Devi - by foot, pony, or palki. Enjoy darshan at the holy cave and the new Bhawan complex, with optional onward trek to Bhairon temple. Return to Katra by evening.",
         activities: ["Yatra trek to Bhawan", "Darshan at the holy cave", "Optional Bhairon temple visit", "Return to Katra"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Katra",
@@ -4104,7 +4104,7 @@ const allPackages: Package[] = [
         day: 3,
         title: "Katra to Pahalgam via Jawahar Tunnel",
         description:
-          "Long but spectacular drive north — through the Jawahar Tunnel that carves under the Pir Panjal range and into Kashmir Valley. Continue past Anantnag and the saffron fields to Pahalgam, arriving in time for dinner.",
+          "Long but spectacular drive north - through the Jawahar Tunnel that carves under the Pir Panjal range and into Kashmir Valley. Continue past Anantnag and the saffron fields to Pahalgam, arriving in time for dinner.",
         activities: ["Drive through Jawahar Tunnel", "Photo stops on the Banihal pass", "Saffron fields drive-by", "Pahalgam check-in"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Pahalgam",
@@ -4114,7 +4114,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Pahalgam Valleys — Betaab, Aru, Chandanwari",
+        title: "Pahalgam Valleys - Betaab, Aru, Chandanwari",
         description:
           "Spend the full day exploring Pahalgam's emerald side valleys. Visit Betaab and Aru, then carry on to Chandanwari, the snowfield starting point of the Amarnath Yatra, before returning for an evening Lidder river walk.",
         activities: ["Betaab Valley", "Aru Valley", "Chandanwari", "Lidder river walk", "Optional pony rides"],
@@ -4127,7 +4127,7 @@ const allPackages: Package[] = [
         day: 5,
         title: "Pahalgam to Gulmarg via Srinagar",
         description:
-          "Drive west through Srinagar and on to Gulmarg, climbing through pine forests to the Meadow of Flowers. Check in to your hotel and take an easy evening walk on the Gulmarg golf course — among the highest in the world.",
+          "Drive west through Srinagar and on to Gulmarg, climbing through pine forests to the Meadow of Flowers. Check in to your hotel and take an easy evening walk on the Gulmarg golf course - among the highest in the world.",
         activities: ["Scenic drive Pahalgam to Gulmarg", "Evening golf-course walk", "Sunset over Pir Panjal"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Gulmarg",
@@ -4138,9 +4138,9 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Gulmarg Gondola — Phase 1 & 2 — Drive to Sonmarg",
+        title: "Gulmarg Gondola - Phase 1 & 2 - Drive to Sonmarg",
         description:
-          "An early start for the Gondola — Phase 1 to Kongdoori, then Phase 2 up to Apharwat at 3,980m for views deep into the Karakoram. After lunch in Gulmarg, drive northeast to Sonmarg for the night.",
+          "An early start for the Gondola - Phase 1 to Kongdoori, then Phase 2 up to Apharwat at 3,980m for views deep into the Karakoram. After lunch in Gulmarg, drive northeast to Sonmarg for the night.",
         activities: ["Gondola Phase 1 + 2", "Apharwat snow point", "Drive to Sonmarg", "Sindh river evening"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Sonmarg",
@@ -4151,7 +4151,7 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Sonmarg Local — Thajiwas Glacier — Drive to Srinagar",
+        title: "Sonmarg Local - Thajiwas Glacier - Drive to Srinagar",
         description:
           "Pony or trek up to Thajiwas Glacier in the morning for one of Kashmir's most photogenic walks. After lunch drive back to Srinagar and check into a Deluxe houseboat moored on Dal Lake for the evening.",
         activities: ["Thajiwas Glacier", "Pony ride", "Drive to Srinagar", "Houseboat check-in", "Evening Shikara"],
@@ -4163,9 +4163,9 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Srinagar Local — Mughal Gardens & Old City",
+        title: "Srinagar Local - Mughal Gardens & Old City",
         description:
-          "Explore the Mughal-era gardens — Nishat, Shalimar, Chashme Shahi — and drive up to Shankaracharya for panoramic Dal Lake views. In the afternoon walk through Old Srinagar's wood-fronted lanes and the historic Jamia Masjid.",
+          "Explore the Mughal-era gardens - Nishat, Shalimar, Chashme Shahi - and drive up to Shankaracharya for panoramic Dal Lake views. In the afternoon walk through Old Srinagar's wood-fronted lanes and the historic Jamia Masjid.",
         activities: ["Mughal Gardens trio", "Shankaracharya viewpoint", "Old Srinagar walk", "Jamia Masjid", "Lal Chowk shopping"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Srinagar",
@@ -4179,7 +4179,7 @@ const allPackages: Package[] = [
           "Final morning on the lake before transfer to Srinagar airport. Carry back saffron, walnut wood crafts, and the memory of a journey that began at a Himalayan shrine and ended on a houseboat veranda.",
         activities: ["Morning at leisure", "Last-minute shopping", "Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Final cup of Kahwa on the lake",
         image: "/images/generated/kashmir-shikara-dal-lake.webp",
       },
@@ -4192,7 +4192,7 @@ const allPackages: Package[] = [
     destinationSlug: "kashmir",
     category: "adventure",
     description:
-      "A nine-day journey beyond the postcards — Srinagar with day trips to Gulmarg, Sonmarg and Doodhpathri, then deep into the remote Gurez Valley along the Line of Control, and on to Pahalgam with the high Sinthan Top excursion. This is Kashmir for travelers who want silence, scale, and the kind of landscape most visitors never see.",
+      "A nine-day journey beyond the postcards - Srinagar with day trips to Gulmarg, Sonmarg and Doodhpathri, then deep into the remote Gurez Valley along the Line of Control, and on to Pahalgam with the high Sinthan Top excursion. This is Kashmir for travelers who want silence, scale, and the kind of landscape most visitors never see.",
     heroImage: "/images/generated/kashmir-hero.webp",
     images: [
       "/images/generated/kashmir-shikara-dal-lake.webp",
@@ -4235,18 +4235,18 @@ const allPackages: Package[] = [
     ],
     featured: false,
     experienceStory:
-      "Beyond the postcard valleys lies the Kashmir few travellers reach. Cross the 11,672 ft Razdan Pass into Gurez — a Dard-Shin valley of log-cabin villages along the Kishanganga, watched over by the pyramid of Habba Khatoon peak, so close to the Line of Control that the next ridge is another country. Add the high meadow of Sinthan Top and the quiet of Doodhpathri, and this becomes a Kashmir of silence, not crowds.",
+      "Beyond the postcard valleys lies the Kashmir few travellers reach. Cross the 11,672 ft Razdan Pass into Gurez - a Dard-Shin valley of log-cabin villages along the Kishanganga, watched over by the pyramid of Habba Khatoon peak, so close to the Line of Control that the next ridge is another country. Add the high meadow of Sinthan Top and the quiet of Doodhpathri, and this becomes a Kashmir of silence, not crowds.",
     transparencyNote:
-      "Local transparency: across Kashmir, sightseeing inside Gulmarg, Pahalgam and Sonmarg is run by the local taxi unions at government-fixed rates — your Srinagar cab drops you at the town and the union vehicle takes you to the actual points (Gulmarg Gondola base, the Betaab/Aru/Chandanwari valleys, the Thajiwas glacier road). These union charges, the Gondola ticket, and pony/sledge rides are optional, paid directly on the spot, and are not part of the package price — we tell you the typical rates in advance so there are no surprises. Gurez is a sensitive border area: carry your original photo ID for the army checkposts (foreign nationals need a permit), expect BSNL/postpaid network only and limited, basic guesthouse stays — it is offbeat by nature, not luxury.",
+      "Local transparency: across Kashmir, sightseeing inside Gulmarg, Pahalgam and Sonmarg is run by the local taxi unions at government-fixed rates - your Srinagar cab drops you at the town and the union vehicle takes you to the actual points (Gulmarg Gondola base, the Betaab/Aru/Chandanwari valleys, the Thajiwas glacier road). These union charges, the Gondola ticket, and pony/sledge rides are optional, paid directly on the spot, and are not part of the package price - we tell you the typical rates in advance so there are no surprises. Gurez is a sensitive border area: carry your original photo ID for the army checkposts (foreign nationals need a permit), expect BSNL/postpaid network only and limited, basic guesthouse stays - it is offbeat by nature, not luxury.",
     seasonalAdvisories: [
       "Gurez is reachable only from about May to October; the Razdan Pass is snow-closed through winter and can shut briefly even in season after rain or landslides.",
       "Sinthan Top stays under snow into early summer; the road opens later than the main valley.",
-      "Mobile network and ATMs are scarce beyond Srinagar — carry cash and download offline maps.",
+      "Mobile network and ATMs are scarce beyond Srinagar - carry cash and download offline maps.",
     ],
     itinerary: [
       {
         day: 1,
-        title: "Arrival Srinagar — Houseboat",
+        title: "Arrival Srinagar - Houseboat",
         description:
           "Arrive in Srinagar and transfer to your houseboat on Dal Lake. Settle in with a Kahwa welcome and watch the sun set over the Zabarwan ridge from the wooden veranda.",
         activities: ["Airport pickup", "Houseboat check-in", "Welcome Kahwa", "Sunset on Dal Lake"],
@@ -4257,7 +4257,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Day Trip Gulmarg — Return Srinagar",
+        title: "Day Trip Gulmarg - Return Srinagar",
         description:
           "Drive to Gulmarg for the day and ride the Gondola up to Kongdoori for sweeping views of Nanga Parbat. Walk on the meadows around the famous golf course before returning to Srinagar.",
         activities: ["Drive to Gulmarg", "Gondola Phase 1", "Strawberry Valley", "Return to Srinagar"],
@@ -4270,9 +4270,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Sonmarg + Doodhpathri — Two-Meadow Day from Srinagar",
+        title: "Sonmarg + Doodhpathri - Two-Meadow Day from Srinagar",
         description:
-          "An ambitious but rewarding day combining two of Kashmir's signature meadows. Morning drive northeast to Sonmarg, the Meadow of Gold, with a pony ride to Thajiwas Glacier and a Sindh-riverside lunch. Afternoon drive west to Doodhpathri — the Valley of Milk — for the silver-meadow walk before returning to Srinagar at sunset.",
+          "An ambitious but rewarding day combining two of Kashmir's signature meadows. Morning drive northeast to Sonmarg, the Meadow of Gold, with a pony ride to Thajiwas Glacier and a Sindh-riverside lunch. Afternoon drive west to Doodhpathri - the Valley of Milk - for the silver-meadow walk before returning to Srinagar at sunset.",
         activities: ["Sonmarg morning", "Thajiwas Glacier walk", "Lunch by Sindh river", "Doodhpathri silver meadows afternoon", "Return to Srinagar"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Srinagar",
@@ -4285,7 +4285,7 @@ const allPackages: Package[] = [
         day: 4,
         title: "Drive to Gurez Valley via Razdan Pass",
         description:
-          "A spectacular but long drive north — climbing the Razdan Pass at over 3,300m and dropping into the secluded Gurez Valley along the Kishanganga river. Check in to a basic but warm guesthouse in Dawar.",
+          "A spectacular but long drive north - climbing the Razdan Pass at over 3,300m and dropping into the secluded Gurez Valley along the Kishanganga river. Check in to a basic but warm guesthouse in Dawar.",
         activities: ["Drive over Razdan Pass", "Photo stops at the pass", "Gurez Valley descent", "Dawar check-in"],
         meals: "Breakfast, Dinner",
         accommodation: "Guesthouse in Dawar (Gurez)",
@@ -4296,7 +4296,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Gurez Full Day — Habba Khatoon, Kishanganga, Dawar",
+        title: "Gurez Full Day - Habba Khatoon, Kishanganga, Dawar",
         description:
           "Explore the pyramid-shaped Habba Khatoon peak that dominates the valley, walk along the turquoise Kishanganga river, and visit Dard-Shin villages of log-and-stone homes. A day in one of India's least-visited Himalayan valleys.",
         activities: ["Habba Khatoon viewpoint", "Kishanganga river walk", "Dard-Shin village visit", "Local lunch with a family"],
@@ -4309,7 +4309,7 @@ const allPackages: Package[] = [
         day: 6,
         title: "Gurez to Srinagar",
         description:
-          "Retrace the Razdan Pass back to Bandipora and on to Srinagar by evening. The drive offers fresh perspectives — the same peaks lit by very different afternoon light.",
+          "Retrace the Razdan Pass back to Bandipora and on to Srinagar by evening. The drive offers fresh perspectives - the same peaks lit by very different afternoon light.",
         activities: ["Gurez departure", "Razdan Pass return crossing", "Bandipora stop", "Srinagar arrival"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Srinagar",
@@ -4319,9 +4319,9 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Srinagar to Pahalgam — Aru, Betaab & Chandanwari",
+        title: "Srinagar to Pahalgam - Aru, Betaab & Chandanwari",
         description:
-          "Drive south through saffron fields and apple orchards into the Lidder valley. Check into Pahalgam by mid-day and head straight to its three signature valleys — Aru's wildflower meadows, Betaab's snow-tipped rim, and the snowfield at Chandanwari where the Amarnath Yatra begins.",
+          "Drive south through saffron fields and apple orchards into the Lidder valley. Check into Pahalgam by mid-day and head straight to its three signature valleys - Aru's wildflower meadows, Betaab's snow-tipped rim, and the snowfield at Chandanwari where the Amarnath Yatra begins.",
         activities: ["Drive Srinagar → Pahalgam", "Saffron fields photo stop", "Aru Valley", "Betaab Valley", "Chandanwari"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Pahalgam",
@@ -4333,7 +4333,7 @@ const allPackages: Package[] = [
         day: 8,
         title: "Sinthan Top Excursion + Pahalgam Local",
         description:
-          "Drive up the Sinthan Top road — a high-altitude pass that connects Kashmir to Kishtwar — for snow even in summer and panoramic views into Jammu's Chenab valley. Afternoon back at Pahalgam for a Lidder riverside walk and Kashmiri pink-tea Kahwa.",
+          "Drive up the Sinthan Top road - a high-altitude pass that connects Kashmir to Kishtwar - for snow even in summer and panoramic views into Jammu's Chenab valley. Afternoon back at Pahalgam for a Lidder riverside walk and Kashmiri pink-tea Kahwa.",
         activities: ["Drive to Sinthan Top", "Snow point at the pass", "Photo stops", "Return to Pahalgam", "Lidder river walk"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Pahalgam",
@@ -4344,12 +4344,12 @@ const allPackages: Package[] = [
       },
       {
         day: 9,
-        title: "Drive Pahalgam to Srinagar — Departure",
+        title: "Drive Pahalgam to Srinagar - Departure",
         description:
           "Drive back to Srinagar airport with a final pause at a Kashmiri craft showroom for Pashmina and walnut-wood souvenirs. Carry home memories of the offbeat valleys that define the real Kashmir.",
         activities: ["Drive to Srinagar airport", "Pashmina/walnut shopping"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "95 km to Srinagar airport",
         highlight: "Final Pashmina pickup",
         image: "/images/generated/kashmir-pahalgam-lidder.webp",
@@ -4357,13 +4357,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Himachal Classic — Shimla & Manali",
+    title: "Himachal Classic - Shimla & Manali",
     slug: "himachal-classic-shimla-manali",
     destinationName: "Himachal Pradesh",
     destinationSlug: "himachal-pradesh",
     category: "leisure",
     description:
-      "A timeless seven-day Himachal favorite — colonial Shimla, the bustling Manali valley, and the snow points of Solang and Atal Tunnel. Perfect for first-timers, families and anyone seeking the quintessential Indian hill-station experience.",
+      "A timeless seven-day Himachal favorite - colonial Shimla, the bustling Manali valley, and the snow points of Solang and Atal Tunnel. Perfect for first-timers, families and anyone seeking the quintessential Indian hill-station experience.",
     heroImage: "/images/generated/himachal-pradesh-hero.webp",
     images: [
       "/images/generated/shimla-mall-road.webp",
@@ -4401,14 +4401,14 @@ const allPackages: Package[] = [
       "Toy train country views",
       "Manali's Hadimba Temple",
       "Solang Valley snow point",
-      "Atal Tunnel — world's longest above 10,000 ft",
+      "Atal Tunnel - world's longest above 10,000 ft",
       "Vashisht hot springs",
     ],
     featured: true,
     itinerary: [
       {
         day: 1,
-        title: "Chandigarh Arrival — Drive to Shimla",
+        title: "Chandigarh Arrival - Drive to Shimla",
         description:
           "Arrive in Chandigarh and start the climb up into the lower Himalayas to Shimla, the former summer capital of British India. Check in and walk the famous Mall Road as the lights come on along the Ridge.",
         activities: ["Pickup at Chandigarh", "Drive to Shimla", "Evening Mall Road walk", "Christ Church viewing"],
@@ -4421,7 +4421,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Shimla Local — Mall, Ridge, Jakhu Temple",
+        title: "Shimla Local - Mall, Ridge, Jakhu Temple",
         description:
           "A full day exploring Shimla's colonial heritage. Walk the Ridge and Mall Road, visit Christ Church, and take the short hike (or pony ride) up to Jakhu Temple for the giant Hanuman statue and views over the entire Shivalik range.",
         activities: ["Christ Church", "Ridge & Mall Road", "Jakhu Temple climb", "Lakkar Bazaar handicrafts"],
@@ -4446,9 +4446,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Manali Local — Hadimba, Naggar Castle & Jana Falls",
+        title: "Manali Local - Hadimba, Naggar Castle & Jana Falls",
         description:
-          "Explore Manali's spiritual heart — the wood-shingled Hadimba Devi temple in its deodar grove, the Manu temple in Old Manali, and the sulfur hot springs at Vashisht. In the afternoon, drive out to the 500-year-old Naggar Castle (the old Kullu-kingdom capital and Roerich art gallery) and the pretty Jana Waterfall, where a local-style sit-down lunch of Himachali dham is a highlight. End with a stroll on Mall Road.",
+          "Explore Manali's spiritual heart - the wood-shingled Hadimba Devi temple in its deodar grove, the Manu temple in Old Manali, and the sulfur hot springs at Vashisht. In the afternoon, drive out to the 500-year-old Naggar Castle (the old Kullu-kingdom capital and Roerich art gallery) and the pretty Jana Waterfall, where a local-style sit-down lunch of Himachali dham is a highlight. End with a stroll on Mall Road.",
         activities: ["Hadimba Temple", "Manu Temple", "Vashisht hot springs", "Naggar Castle", "Jana Waterfall", "Mall Road shopping"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Manali",
@@ -4459,7 +4459,7 @@ const allPackages: Package[] = [
         day: 5,
         title: "Solang Valley & Atal Tunnel / Rohtang Area",
         description:
-          "A full day in Manali's snow country. Visit Solang Valley for cable car, paragliding and zorbing, then drive on through the engineering marvel of the Atal Tunnel to the snow points beyond — or the Rohtang side, depending on permit availability.",
+          "A full day in Manali's snow country. Visit Solang Valley for cable car, paragliding and zorbing, then drive on through the engineering marvel of the Atal Tunnel to the snow points beyond - or the Rohtang side, depending on permit availability.",
         activities: ["Solang Valley", "Atal Tunnel drive-through", "Snow point excursion", "Optional adventure activities"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Manali",
@@ -4470,7 +4470,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Manali to Chandigarh — Long Drive",
+        title: "Manali to Chandigarh - Long Drive",
         description:
           "A full day on the road back to Chandigarh, with stops at the Beas confluence and a leisurely lunch in the Kullu valley. Reach Chandigarh by evening for an overnight stay.",
         activities: ["Drive Manali to Chandigarh", "Lunch stop in Kullu", "Beas confluence photo stop", "Chandigarh check-in"],
@@ -4487,14 +4487,14 @@ const allPackages: Package[] = [
           "After a leisurely breakfast, transfer to Chandigarh airport / railway station for your onward journey home with memories of toy trains, deodar forests, and snow at the Atal Tunnel.",
         activities: ["Morning at leisure", "Airport / railway transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A final pahari breakfast",
         image: "/images/generated/solang-valley-snow.webp",
       },
     ],
   },
   {
-    title: "Himachal Grand Circuit — Shimla, Manali, Bir Billing, Dharamshala, Dalhousie & Amritsar",
+    title: "Himachal Grand Circuit - Shimla, Manali, Bir Billing, Dharamshala, Dalhousie & Amritsar",
     slug: "himachal-grand-circuit",
     destinationName: "Himachal Pradesh",
     destinationSlug: "himachal-pradesh",
@@ -4536,9 +4536,9 @@ const allPackages: Package[] = [
     highlights: [
       "Shimla Ridge & Kufri",
       "Manali Solang & Atal Tunnel",
-      "Bir Billing — paragliding capital",
+      "Bir Billing - paragliding capital",
       "McLeodganj & Dalai Lama temple",
-      "Khajjiar — Mini Switzerland",
+      "Khajjiar - Mini Switzerland",
       "Golden Temple & Wagah Border",
     ],
     featured: true,
@@ -4595,7 +4595,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Manali Local — Solang, Hadimba, Mall Road",
+        title: "Manali Local - Solang, Hadimba, Mall Road",
         description:
           "Visit the famous Hadimba Devi temple in its deodar grove, then drive to Solang Valley for snow points, paragliding and ATV rides. Return to Manali for an evening on Mall Road.",
         activities: ["Solang Valley", "Hadimba Temple", "Vashisht hot springs", "Mall Road evening"],
@@ -4606,9 +4606,9 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Manali Sightseeing — Atal Tunnel & Rohtang Area",
+        title: "Manali Sightseeing - Atal Tunnel & Rohtang Area",
         description:
-          "Drive through the Atal Tunnel — the world's longest highway tunnel above 10,000ft — to the snow country beyond. Conditions and permits permitting, continue to the Rohtang side before returning to Manali.",
+          "Drive through the Atal Tunnel - the world's longest highway tunnel above 10,000ft - to the snow country beyond. Conditions and permits permitting, continue to the Rohtang side before returning to Manali.",
         activities: ["Atal Tunnel drive", "Snow point excursion", "Rohtang area photo stops"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Manali",
@@ -4619,9 +4619,9 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Manali to Bir Billing, Baijnath & Andretta — On to Dharamshala",
+        title: "Manali to Bir Billing, Baijnath & Andretta - On to Dharamshala",
         description:
-          "A scenic drive over the Bhuntar pass to Bir, the paragliding capital of India, for an optional tandem flight from Billing. Continue through the Kangra valley with a stop at the 13th-century Baijnath Shiva temple, one of the oldest in Himachal, and the artists' village of Andretta — known for its Norah Richards theatre cottage and the Andretta studio pottery. Reach Dharamshala for the night.",
+          "A scenic drive over the Bhuntar pass to Bir, the paragliding capital of India, for an optional tandem flight from Billing. Continue through the Kangra valley with a stop at the 13th-century Baijnath Shiva temple, one of the oldest in Himachal, and the artists' village of Andretta - known for its Norah Richards theatre cottage and the Andretta studio pottery. Reach Dharamshala for the night.",
         activities: ["Drive to Bir", "Optional tandem paragliding", "Baijnath Temple", "Andretta pottery village", "Drive on to Dharamshala"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dharamshala",
@@ -4632,7 +4632,7 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Dharamshala — McLeodganj, Dalai Lama Temple, Bhagsu",
+        title: "Dharamshala - McLeodganj, Dalai Lama Temple, Bhagsu",
         description:
           "Spend the day in McLeodganj, home to the Tibetan government in exile and the Dalai Lama Temple complex. Walk to Bhagsu Falls in the afternoon and explore the cafés and bookstores of the upper town.",
         activities: ["Dalai Lama Temple", "Tsuglagkhang Complex", "Bhagsu Falls walk", "McLeodganj cafés"],
@@ -4656,9 +4656,9 @@ const allPackages: Package[] = [
       },
       {
         day: 10,
-        title: "Dalhousie — Khajjiar, Panchpula, Dainkund Peak",
+        title: "Dalhousie - Khajjiar, Panchpula, Dainkund Peak",
         description:
-          "A full sightseeing day around Dalhousie. Drive to Khajjiar — Himachal's Mini Switzerland — for the saucer-shaped meadow ringed by deodar forest, then return via Panchpula water cascades and a quiet visit to Subhash Baoli. Climb to Dainkund Peak for sunset views over the Pir Panjal range.",
+          "A full sightseeing day around Dalhousie. Drive to Khajjiar - Himachal's Mini Switzerland - for the saucer-shaped meadow ringed by deodar forest, then return via Panchpula water cascades and a quiet visit to Subhash Baoli. Climb to Dainkund Peak for sunset views over the Pir Panjal range.",
         activities: ["Khajjiar excursion", "Panchpula falls", "Subhash Baoli", "Dainkund Peak sunset"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dalhousie",
@@ -4669,12 +4669,12 @@ const allPackages: Package[] = [
       },
       {
         day: 11,
-        title: "Dalhousie to Amritsar — Golden Temple, Wagah, Departure",
+        title: "Dalhousie to Amritsar - Golden Temple, Wagah, Departure",
         description:
-          "Drive down to Amritsar for a final flourish — darshan at the gleaming Golden Temple and an evening at the dramatic Wagah Border Beating Retreat ceremony. Drop at Amritsar airport / railway station for your onward journey.",
+          "Drive down to Amritsar for a final flourish - darshan at the gleaming Golden Temple and an evening at the dramatic Wagah Border Beating Retreat ceremony. Drop at Amritsar airport / railway station for your onward journey.",
         activities: ["Drive to Amritsar", "Golden Temple darshan", "Jallianwala Bagh", "Wagah Border ceremony", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "200 km drive",
         highlight: "Wagah Border Beating Retreat",
         image: "/images/generated/khajjiar-meadow.webp",
@@ -4682,7 +4682,7 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Punjab + Himachal Heritage — Amritsar, Dalhousie & Dharamshala",
+    title: "Punjab + Himachal Heritage - Amritsar, Dalhousie & Dharamshala",
     slug: "punjab-himachal-heritage",
     destinationName: "Himachal Pradesh",
     destinationSlug: "himachal-pradesh",
@@ -4725,7 +4725,7 @@ const allPackages: Package[] = [
       "Golden Temple darshan",
       "Jallianwala Bagh memorial",
       "Wagah Border ceremony",
-      "Khajjiar — Mini Switzerland",
+      "Khajjiar - Mini Switzerland",
       "Dalai Lama Temple",
       "Bhagsu Falls walk",
     ],
@@ -4733,7 +4733,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Amritsar Arrival — Golden Temple, Jallianwala Bagh, Wagah",
+        title: "Amritsar Arrival - Golden Temple, Jallianwala Bagh, Wagah",
         description:
           "Arrive in Amritsar and dive straight into its three signature experiences. Start with the gleaming Golden Temple, walk through the sobering memorial at Jallianwala Bagh, and end the day at the Wagah Border ceremony as both armies execute their famous evening choreography.",
         activities: ["Pickup at Amritsar", "Golden Temple darshan", "Jallianwala Bagh", "Wagah Border ceremony", "Amritsari dinner"],
@@ -4746,7 +4746,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Drive Amritsar to Dalhousie",
         description:
-          "Morning drive north into Himachal, climbing through pine forests to Dalhousie — a quiet British-era hill station founded in 1854. Check in, then walk the colonial promenades of Subhash Chowk and Gandhi Chowk in the afternoon.",
+          "Morning drive north into Himachal, climbing through pine forests to Dalhousie - a quiet British-era hill station founded in 1854. Check in, then walk the colonial promenades of Subhash Chowk and Gandhi Chowk in the afternoon.",
         activities: ["Drive to Dalhousie", "Subhash Chowk walk", "Gandhi Chowk evening", "Sunset viewpoint"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dalhousie",
@@ -4757,9 +4757,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Dalhousie Local — Khajjiar, Panchpula, Subhash Baoli",
+        title: "Dalhousie Local - Khajjiar, Panchpula, Subhash Baoli",
         description:
-          "A full sightseeing day. Drive to Khajjiar — the saucer-shaped meadow nicknamed 'Mini Switzerland' — for meadow walks and zorbing. Return via Panchpula water cascades and a quiet visit to Subhash Baoli, the spring where Subhash Chandra Bose meditated.",
+          "A full sightseeing day. Drive to Khajjiar - the saucer-shaped meadow nicknamed 'Mini Switzerland' - for meadow walks and zorbing. Return via Panchpula water cascades and a quiet visit to Subhash Baoli, the spring where Subhash Chandra Bose meditated.",
         activities: ["Khajjiar excursion", "Panchpula falls", "Subhash Baoli", "Dainkund Peak photo stop"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dalhousie",
@@ -4770,9 +4770,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive Dalhousie to Dharamshala — McLeodganj & Norbulingka",
+        title: "Drive Dalhousie to Dharamshala - McLeodganj & Norbulingka",
         description:
-          "Drive south-east to Dharamshala — home of the Tibetan government in exile. En route, visit the Norbulingka Institute, a serene complex dedicated to preserving Tibetan art, with its Japanese-influenced gardens, the Seat of Happiness temple and craft workshops. Spend the afternoon in McLeodganj at the Dalai Lama Temple complex and the prayer-flag-strewn upper town.",
+          "Drive south-east to Dharamshala - home of the Tibetan government in exile. En route, visit the Norbulingka Institute, a serene complex dedicated to preserving Tibetan art, with its Japanese-influenced gardens, the Seat of Happiness temple and craft workshops. Spend the afternoon in McLeodganj at the Dalai Lama Temple complex and the prayer-flag-strewn upper town.",
         activities: ["Norbulingka Institute", "Tibetan craft workshops", "Dalai Lama Temple", "Tsuglagkhang Complex", "McLeodganj walk"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dharamshala",
@@ -4782,7 +4782,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Dharamshala — Bhagsu Falls, Optional Triund Hike",
+        title: "Dharamshala - Bhagsu Falls, Optional Triund Hike",
         description:
           "Walk to Bhagsu Falls and the Bhagsunath temple in the morning, then choose between a relaxed café day in McLeodganj or an optional 9-km Triund hike for stunning views of the Dhauladhar range.",
         activities: ["Bhagsu Falls walk", "Bhagsunath temple", "Optional Triund hike", "McLeodganj cafés"],
@@ -4794,12 +4794,12 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Drive Dharamshala to Amritsar — Departure",
+        title: "Drive Dharamshala to Amritsar - Departure",
         description:
           "Morning drive back to Amritsar, with a stop for langar at the Golden Temple if time permits. Drop at the airport / railway station for your onward journey.",
         activities: ["Drive to Amritsar", "Optional Golden Temple langar", "Amritsar departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "205 km drive",
         highlight: "A second visit to the Golden Temple",
         image: "/images/generated/mcleodganj-monastery.webp",
@@ -4807,13 +4807,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Spiti Valley Adventure — The Lost Buddhist Kingdom",
+    title: "Spiti Valley Adventure - The Lost Buddhist Kingdom",
     slug: "spiti-valley-adventure",
     destinationName: "Himachal Pradesh",
     destinationSlug: "himachal-pradesh",
     category: "adventure",
     description:
-      "A ten-day high-altitude expedition into Spiti — the cold desert valley sometimes called 'Little Tibet'. Trace ancient monasteries at Tabo, Dhankar and Key, sleep at India's highest motorable village, camp by the otherworldly Chandratal Lake, and take an extra day in Kaza to ease into the altitude and explore the Pin Valley.",
+      "A ten-day high-altitude expedition into Spiti - the cold desert valley sometimes called 'Little Tibet'. Trace ancient monasteries at Tabo, Dhankar and Key, sleep at India's highest motorable village, camp by the otherworldly Chandratal Lake, and take an extra day in Kaza to ease into the altitude and explore the Pin Valley.",
     heroImage: "/images/generated/himachal-pradesh-hero.webp",
     images: [
       "/images/generated/shimla-mall-road.webp",
@@ -4848,7 +4848,7 @@ const allPackages: Package[] = [
     highlights: [
       "Tabo Monastery (1,000+ years old)",
       "Key Monastery & Kibber village",
-      "Hikkim — world's highest post office",
+      "Hikkim - world's highest post office",
       "Chandratal Lake camp",
       "Kunzum Pass crossing",
       "Sangla & Kalpa in Kinnaur",
@@ -4859,7 +4859,7 @@ const allPackages: Package[] = [
         day: 1,
         title: "Chandigarh Arrival",
         description:
-          "Arrive in Chandigarh and rest up. Briefing in the evening on altitude, packing and pace of travel — Spiti is one of India's highest road trips and acclimatisation matters.",
+          "Arrive in Chandigarh and rest up. Briefing in the evening on altitude, packing and pace of travel - Spiti is one of India's highest road trips and acclimatisation matters.",
         activities: ["Pickup at Chandigarh", "Pre-trip briefing", "Gear check", "Welcome dinner"],
         meals: "Dinner",
         accommodation: "Hotel in Chandigarh",
@@ -4881,7 +4881,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Drive Shimla to Sangla — Kinnaur Valley",
+        title: "Drive Shimla to Sangla - Kinnaur Valley",
         description:
           "A long, scenic drive deep into Kinnaur along the Sutlej river, with apple orchards and wood-and-slate villages. Reach Sangla by evening for a riverside dinner and an early night.",
         activities: ["Drive via Narkanda, Rampur, Karcham", "Baspa river views", "Sangla check-in"],
@@ -4920,9 +4920,9 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Kaza Local — Langza, Hikkim, Komik & Chicham Bridge",
+        title: "Kaza Local - Langza, Hikkim, Komik & Chicham Bridge",
         description:
-          "A signature Spiti day covering the four iconic high villages. Drive to Key Monastery for sunrise views and Kibber (one of the world's highest motorable villages), cross the Chicham Bridge — Asia's highest suspension bridge spanning a 1,000-ft gorge — then visit Langza's giant Buddha statue, Komik (Asia's highest village with a motorable road, and its monastery) and Hikkim, home of the world's highest post office, from where you post a card home.",
+          "A signature Spiti day covering the four iconic high villages. Drive to Key Monastery for sunrise views and Kibber (one of the world's highest motorable villages), cross the Chicham Bridge - Asia's highest suspension bridge spanning a 1,000-ft gorge - then visit Langza's giant Buddha statue, Komik (Asia's highest village with a motorable road, and its monastery) and Hikkim, home of the world's highest post office, from where you post a card home.",
         activities: ["Key Monastery", "Kibber village", "Chicham Bridge", "Langza Buddha", "Komik village & monastery", "Hikkim post office"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Kaza",
@@ -4933,9 +4933,9 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Pin Valley Excursion — Mud Village & National Park",
+        title: "Pin Valley Excursion - Mud Village & National Park",
         description:
-          "A full day in the green Pin Valley — the rare softer side of Spiti's cold desert, where the Pin river curves through poplar groves and traditional Bhoti villages. Drive to Mud, the last village in Pin, walk into the Pin Valley National Park looking for snow-leopard tracks, and visit Kungri — Spiti's second-oldest monastery.",
+          "A full day in the green Pin Valley - the rare softer side of Spiti's cold desert, where the Pin river curves through poplar groves and traditional Bhoti villages. Drive to Mud, the last village in Pin, walk into the Pin Valley National Park looking for snow-leopard tracks, and visit Kungri - Spiti's second-oldest monastery.",
         activities: ["Drive into Pin Valley", "Kungri Monastery", "Mud village walk", "Pin Valley National Park entry", "Return to Kaza"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Kaza",
@@ -4946,9 +4946,9 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Drive Kaza to Chandratal — Camp at the Moon Lake",
+        title: "Drive Kaza to Chandratal - Camp at the Moon Lake",
         description:
-          "A long, rugged drive west across the Spiti river and up to Chandratal Lake at over 4,300m. Camp tonight at the lake — one of the most remote and beautiful overnights anywhere in the Indian Himalaya.",
+          "A long, rugged drive west across the Spiti river and up to Chandratal Lake at over 4,300m. Camp tonight at the lake - one of the most remote and beautiful overnights anywhere in the Indian Himalaya.",
         activities: ["Drive Kaza to Chandratal", "Lake walk", "Sunset by Chandratal", "Camp dinner under stars"],
         meals: "Breakfast, Dinner",
         accommodation: "Tented camp near Chandratal (Battal area)",
@@ -4972,12 +4972,12 @@ const allPackages: Package[] = [
       },
       {
         day: 10,
-        title: "Drive Manali to Chandigarh — Departure",
+        title: "Drive Manali to Chandigarh - Departure",
         description:
           "Final drive down to Chandigarh through the Beas valley with stops as time permits. Drop at the airport / railway station for your onward journey, with a Spiti circuit completed in the books.",
         activities: ["Drive Manali to Chandigarh", "Lunch en route", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "310 km drive",
         highlight: "Last view of the snow line",
         image: "/images/generated/manali-valley.webp",
@@ -4985,13 +4985,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "UP Spiritual Triangle — Prayagraj, Varanasi & Ayodhya",
+    title: "UP Spiritual Triangle - Prayagraj, Varanasi & Ayodhya",
     slug: "up-spiritual-triangle",
     destinationName: "Varanasi & Uttar Pradesh",
     destinationSlug: "varanasi-uttar-pradesh",
     category: "educational",
     description:
-      "A seven-day pilgrimage circuit through three of India's most sacred cities — the Triveni Sangam at Prayagraj, the timeless ghats of Varanasi, and the newly rebuilt Ram Mandir at Ayodhya. A journey through faith, history, and the rhythms of the Ganga.",
+      "A seven-day pilgrimage circuit through three of India's most sacred cities - the Triveni Sangam at Prayagraj, the timeless ghats of Varanasi, and the newly rebuilt Ram Mandir at Ayodhya. A journey through faith, history, and the rhythms of the Ganga.",
     heroImage: "/images/generated/varanasi-hero.webp",
     images: [
       "/images/generated/varanasi-ganga-aarti.webp",
@@ -5033,9 +5033,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Prayagraj Arrival — Triveni Sangam, Akshayavat",
+        title: "Prayagraj Arrival - Triveni Sangam, Akshayavat",
         description:
-          "Arrive in Prayagraj (Allahabad) and head to the Triveni Sangam — the sacred confluence of the Ganga, Yamuna and the mythical Saraswati. Take a boat to the confluence point, then visit the ancient Akshayavat tree inside Allahabad Fort.",
+          "Arrive in Prayagraj (Allahabad) and head to the Triveni Sangam - the sacred confluence of the Ganga, Yamuna and the mythical Saraswati. Take a boat to the confluence point, then visit the ancient Akshayavat tree inside Allahabad Fort.",
         activities: ["Arrival pickup", "Triveni Sangam boat ride", "Akshayavat darshan", "Allahabad Fort viewing", "Anand Bhavan stop"],
         meals: "Dinner",
         accommodation: "Hotel in Prayagraj",
@@ -5056,9 +5056,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Varanasi — Sunrise Boat, Kashi Vishwanath, Kaal Bhairav & Sarnath",
+        title: "Varanasi - Sunrise Boat, Kashi Vishwanath, Kaal Bhairav & Sarnath",
         description:
-          "Pre-dawn boat ride along the Ganga as the city wakes up — an unforgettable Varanasi experience. After breakfast, darshan at the new Kashi Vishwanath Dham corridor, then drive to Sarnath where Buddha gave his first sermon.",
+          "Pre-dawn boat ride along the Ganga as the city wakes up - an unforgettable Varanasi experience. After breakfast, darshan at the new Kashi Vishwanath Dham corridor, then drive to Sarnath where Buddha gave his first sermon.",
         activities: ["Sunrise boat ride", "Kashi Vishwanath darshan", "Sarnath Stupa & museum", "Mulagandhakuti Vihara", "Kaal Bhairav Temple", "Assi Ghat"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Varanasi",
@@ -5067,7 +5067,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Varanasi — BHU, Ramnagar Fort, Ganga Aarti",
+        title: "Varanasi - BHU, Ramnagar Fort, Ganga Aarti",
         description:
           "Morning visit to Banaras Hindu University and the Vishwanath temple inside the campus, then to Ramnagar Fort across the river. Return for the spectacular evening Ganga Aarti at Dashashwamedh Ghat.",
         activities: ["Banaras Hindu University", "BHU Vishwanath Temple", "Ramnagar Fort", "Evening Ganga Aarti"],
@@ -5078,7 +5078,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Drive Varanasi to Ayodhya — Ram Mandir Darshan",
+        title: "Drive Varanasi to Ayodhya - Ram Mandir Darshan",
         description:
           "Drive ~200 km north to Ayodhya, the birthplace of Lord Ram. After check-in, head straight to the new Ram Mandir for darshan as the temple lights come on at dusk.",
         activities: ["Drive to Ayodhya", "Hotel check-in", "Ram Mandir darshan", "Ram ki Paidi evening"],
@@ -5090,9 +5090,9 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Ayodhya — Hanuman Garhi, Kanak Bhawan, Ram Ki Paidi & Saryu Aarti",
+        title: "Ayodhya - Hanuman Garhi, Kanak Bhawan, Ram Ki Paidi & Saryu Aarti",
         description:
-          "A full day exploring Ayodhya's temples — Hanuman Garhi atop a 70-step climb, the gilded interiors of Kanak Bhawan, and the ghats of the holy Saryu river. Return to Ram Mandir for an evening visit if time permits.",
+          "A full day exploring Ayodhya's temples - Hanuman Garhi atop a 70-step climb, the gilded interiors of Kanak Bhawan, and the ghats of the holy Saryu river. Return to Ram Mandir for an evening visit if time permits.",
         activities: ["Hanuman Garhi", "Kanak Bhawan", "Saryu river ghats", "Optional second Ram Mandir visit", "Ram Ki Paidi", "Saryu Aarti"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Ayodhya",
@@ -5106,20 +5106,20 @@ const allPackages: Package[] = [
           "After a relaxed breakfast, transfer to Ayodhya / Lucknow station / airport for your onward journey, carrying back the rhythms of three of India's holiest cities.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A final visit to a riverside ghat",
         image: "/images/generated/ayodhya-ram-mandir.webp",
       },
     ],
   },
   {
-    title: "Brij Bhoomi Yatra — Delhi, Mathura, Vrindavan & Agra",
+    title: "Brij Bhoomi Yatra - Delhi, Mathura, Vrindavan & Agra",
     slug: "brij-bhoomi-yatra",
     destinationName: "Varanasi & Uttar Pradesh",
     destinationSlug: "varanasi-uttar-pradesh",
     category: "educational",
     description:
-      "A four-day weekend pilgrimage through Krishna's land — the cobbled lanes of Mathura and Vrindavan, the marble splendor of the Taj Mahal at Agra, and the bhajan-filled evenings at Banke Bihari and Prem Mandir. Devotion, history and one of the world's seven wonders, all in a long weekend.",
+      "A four-day weekend pilgrimage through Krishna's land - the cobbled lanes of Mathura and Vrindavan, the marble splendor of the Taj Mahal at Agra, and the bhajan-filled evenings at Banke Bihari and Prem Mandir. Devotion, history and one of the world's seven wonders, all in a long weekend.",
     heroImage: "/images/generated/varanasi-hero.webp",
     images: [
       "/images/generated/varanasi-ganga-aarti.webp",
@@ -5163,7 +5163,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Delhi Arrival — Drive Agra — Taj Mahal Sunset",
+        title: "Delhi Arrival - Drive Agra - Taj Mahal Sunset",
         description:
           "Arrive in Delhi and drive south on the Yamuna Expressway to Agra. After check-in, head straight for an unhurried sunset visit to the Taj Mahal, then cross the river for a magical view from the gardens of Mehtab Bagh.",
         activities: ["Pickup at Delhi", "Drive on Yamuna Expressway", "Taj Mahal sunset", "Mehtab Bagh viewpoint"],
@@ -5187,7 +5187,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Vrindavan — Prem Mandir, Nidhivan, Govardhan Parikrama",
+        title: "Vrindavan - Prem Mandir, Nidhivan, Govardhan Parikrama",
         description:
           "A full day immersing in Brij Bhoomi. Morning visit to the marble Prem Mandir and the mysterious Nidhivan, afternoon Govardhan Parikrama (by car) with stops at Radha Kund and Manasi Ganga.",
         activities: ["Prem Mandir", "Nidhivan", "Govardhan Parikrama", "Radha Kund", "Manasi Ganga"],
@@ -5199,12 +5199,12 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive Vrindavan to Delhi — Departure",
+        title: "Drive Vrindavan to Delhi - Departure",
         description:
           "After a leisurely breakfast, drive back to Delhi for your onward flight or train. Drop at the airport / railway station with a notebook full of Krishna stories and one Taj Mahal memory.",
         activities: ["Drive to Delhi", "Airport / station drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "180 km drive",
         highlight: "Final glance at the Brij plains",
         image: "/images/generated/golden-triangle-day-3-taj-mahal.webp",
@@ -5212,13 +5212,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Complete UP Heritage Circuit — Delhi, Agra, Mathura, Jhansi, Prayagraj, Varanasi & Ayodhya",
+    title: "Complete UP Heritage Circuit - Delhi, Agra, Mathura, Jhansi, Prayagraj, Varanasi & Ayodhya",
     slug: "complete-up-heritage-circuit",
     destinationName: "Varanasi & Uttar Pradesh",
     destinationSlug: "varanasi-uttar-pradesh",
     category: "educational",
     description:
-      "Twelve days, seven cities and the most ambitious heritage journey across north India. From Delhi's Mughal monuments and Agra's Taj Mahal to Jhansi's Rani Mahal, Prayagraj's Sangam and the eternal ghats of Varanasi — finishing at the new Ram Mandir at Ayodhya.",
+      "Twelve days, seven cities and the most ambitious heritage journey across north India. From Delhi's Mughal monuments and Agra's Taj Mahal to Jhansi's Rani Mahal, Prayagraj's Sangam and the eternal ghats of Varanasi - finishing at the new Ram Mandir at Ayodhya.",
     heroImage: "/images/generated/varanasi-hero.webp",
     images: [
       "/images/generated/varanasi-ganga-aarti.webp",
@@ -5262,7 +5262,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Delhi Arrival — Red Fort & Qutub Minar",
+        title: "Delhi Arrival - Red Fort & Qutub Minar",
         description:
           "Arrive in Delhi and dive into Mughal history. Visit the red sandstone walls of the Red Fort, walk through Chandni Chowk's spice lanes, then drive south to the soaring Qutub Minar.",
         activities: ["Airport pickup", "Red Fort", "Chandni Chowk walk", "Qutub Minar", "Welcome dinner"],
@@ -5285,7 +5285,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Mathura-Vrindavan Local — Janmabhoomi, Banke Bihari, Prem Mandir",
+        title: "Mathura-Vrindavan Local - Janmabhoomi, Banke Bihari, Prem Mandir",
         description:
           "Spend the day in Brij Bhoomi. Morning at Dwarkadhish Mathura, afternoon at the marble Prem Mandir and the mysterious Nidhivan, ending with another visit to Banke Bihari at night.",
         activities: ["Dwarkadhish Temple", "Prem Mandir", "Nidhivan", "ISKCON Vrindavan", "Banke Bihari evening visit"],
@@ -5296,9 +5296,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive Vrindavan to Agra — Taj Mahal & Mehtab Bagh Sunset",
+        title: "Drive Vrindavan to Agra - Taj Mahal & Mehtab Bagh Sunset",
         description:
-          "Drive south to Agra. After lunch and check-in, head out for an unhurried sunset visit to the Taj Mahal — the white marble glowing pink in the late light.",
+          "Drive south to Agra. After lunch and check-in, head out for an unhurried sunset visit to the Taj Mahal - the white marble glowing pink in the late light.",
         activities: ["Drive to Agra", "Hotel check-in", "Taj Mahal sunset visit", "Mehtab Bagh viewpoint", "Mehtab Bagh"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Agra",
@@ -5310,7 +5310,7 @@ const allPackages: Package[] = [
         day: 5,
         title: "Agra Fort & Fatehpur Sikri",
         description:
-          "Visit Agra Fort with its superb views back to the Taj across the Yamuna, then drive ~40 km to the abandoned Mughal capital of Fatehpur Sikri — a UNESCO World Heritage Site.",
+          "Visit Agra Fort with its superb views back to the Taj across the Yamuna, then drive ~40 km to the abandoned Mughal capital of Fatehpur Sikri - a UNESCO World Heritage Site.",
         activities: ["Agra Fort", "Drive to Fatehpur Sikri", "Buland Darwaza", "Salim Chishti Dargah"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Agra",
@@ -5346,7 +5346,7 @@ const allPackages: Package[] = [
         day: 8,
         title: "Drive Jhansi to Prayagraj",
         description:
-          "A long drive east to Prayagraj — option to take the Bhopal-Prayagraj train for part of the journey if preferred. Easy evening at the hotel.",
+          "A long drive east to Prayagraj - option to take the Bhopal-Prayagraj train for part of the journey if preferred. Easy evening at the hotel.",
         activities: ["Drive / part-train to Prayagraj", "Hotel check-in", "Optional walk along the Sangam ghats"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Prayagraj",
@@ -5356,7 +5356,7 @@ const allPackages: Package[] = [
       },
       {
         day: 9,
-        title: "Prayagraj — Triveni Sangam, Anand Bhavan, Hanuman Mandir",
+        title: "Prayagraj - Triveni Sangam, Anand Bhavan, Hanuman Mandir",
         description:
           "Boat to the Triveni Sangam at sunrise, then visit Anand Bhavan (the Nehru-Gandhi family home), the giant reclining Hanuman temple and the Akshayavat tree inside the Allahabad Fort.",
         activities: ["Triveni Sangam boat ride", "Akshayavat", "Anand Bhavan", "Lete Hanuman Mandir"],
@@ -5379,7 +5379,7 @@ const allPackages: Package[] = [
       },
       {
         day: 11,
-        title: "Varanasi — Sunrise Boat, Kashi Vishwanath, Sarnath, Ganga Aarti",
+        title: "Varanasi - Sunrise Boat, Kashi Vishwanath, Sarnath, Ganga Aarti",
         description:
           "A signature Varanasi day. Sunrise boat along the ghats, darshan at the new Kashi Vishwanath corridor, Sarnath in the afternoon, and the spectacular evening Ganga Aarti at Dashashwamedh.",
         activities: ["Sunrise boat ride", "Kashi Vishwanath darshan", "Sarnath Stupa & museum", "Ganga Aarti at Dashashwamedh"],
@@ -5390,12 +5390,12 @@ const allPackages: Package[] = [
       },
       {
         day: 12,
-        title: "Drive Varanasi to Ayodhya — Ram Mandir Darshan & Departure",
+        title: "Drive Varanasi to Ayodhya - Ram Mandir Darshan & Departure",
         description:
-          "Final drive of the trip — north to Ayodhya for darshan at the new Ram Mandir, a quick visit to Hanuman Garhi, and an evening drop at Ayodhya / Lucknow station / airport.",
+          "Final drive of the trip - north to Ayodhya for darshan at the new Ram Mandir, a quick visit to Hanuman Garhi, and an evening drop at Ayodhya / Lucknow station / airport.",
         activities: ["Drive to Ayodhya", "Ram Mandir darshan", "Hanuman Garhi", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "230 km drive",
         highlight: "Closing the circuit at Ram Mandir",
         image: "/images/generated/varanasi-hero.webp",
@@ -5403,13 +5403,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Rajasthan Royal Heritage — Jaipur, Ranthambore, Pushkar, Jodhpur & Jaisalmer",
+    title: "Rajasthan Royal Heritage - Jaipur, Ranthambore, Pushkar, Jodhpur & Jaisalmer",
     slug: "rajasthan-royal-heritage",
     destinationName: "Rajasthan",
     destinationSlug: "rajasthan",
     category: "educational",
     description:
-      "Nine days through the storybook heart of Rajasthan — Jaipur's pink palaces, Ranthambore's tigers, Pushkar's holy lake, two unhurried nights in Jodhpur's blue city, and Jaisalmer's golden desert. Forts, camels, tigers and a thousand stories of Rajput valor.",
+      "Nine days through the storybook heart of Rajasthan - Jaipur's pink palaces, Ranthambore's tigers, Pushkar's holy lake, two unhurried nights in Jodhpur's blue city, and Jaisalmer's golden desert. Forts, camels, tigers and a thousand stories of Rajput valor.",
     heroImage: "/images/generated/rajasthan-hero.webp",
     images: [
       "/images/generated/jaipur-hawa-mahal.webp",
@@ -5453,9 +5453,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Jaipur Arrival — Hawa Mahal, City Palace, Jantar Mantar",
+        title: "Jaipur Arrival - Hawa Mahal, City Palace, Jantar Mantar",
         description:
-          "Arrive in the Pink City and start with its three city-centre signatures — the Hawa Mahal's pink lattice facade, the still-royal City Palace, and the giant astronomical instruments of the UNESCO-listed Jantar Mantar.",
+          "Arrive in the Pink City and start with its three city-centre signatures - the Hawa Mahal's pink lattice facade, the still-royal City Palace, and the giant astronomical instruments of the UNESCO-listed Jantar Mantar.",
         activities: ["Pickup at Jaipur", "Hawa Mahal photo stop", "City Palace", "Jantar Mantar", "Bazaar walk"],
         meals: "Dinner",
         accommodation: "Hotel in Jaipur",
@@ -5464,7 +5464,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Jaipur — Amber Fort, Jaigarh, Nahargarh Sunset",
+        title: "Jaipur - Amber Fort, Jaigarh, Nahargarh Sunset",
         description:
           "Morning at Amber Fort with its mirror-mosaic Sheesh Mahal, then on to Jaigarh for the giant Jaivana cannon. End the day with sunset views over the city from Nahargarh Fort.",
         activities: ["Amber Fort & Sheesh Mahal", "Jaigarh Fort & Jaivana cannon", "Jal Mahal photo stop", "Nahargarh sunset"],
@@ -5475,9 +5475,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Drive Jaipur to Ranthambore — Evening Tiger Safari",
+        title: "Drive Jaipur to Ranthambore - Evening Tiger Safari",
         description:
-          "Morning drive south-east to Ranthambore National Park — once the hunting grounds of the Maharajas, today one of India's premier tiger reserves. After lunch and check-in, head straight into the park on an afternoon jeep safari, scanning the dhok forest and ravines for tigers, leopards and the rich supporting cast of crocodile, sambar and sloth bear.",
+          "Morning drive south-east to Ranthambore National Park - once the hunting grounds of the Maharajas, today one of India's premier tiger reserves. After lunch and check-in, head straight into the park on an afternoon jeep safari, scanning the dhok forest and ravines for tigers, leopards and the rich supporting cast of crocodile, sambar and sloth bear.",
         activities: ["Drive to Ranthambore", "Resort check-in", "Afternoon tiger safari", "Resort dinner"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort in Ranthambore",
@@ -5487,7 +5487,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive Ranthambore to Pushkar — Brahma Temple",
+        title: "Drive Ranthambore to Pushkar - Brahma Temple",
         description:
           "Drive west to the holy lakeside town of Pushkar, home to the only major Brahma temple in India. Evening at the ghats as priests perform aarti by the holy lake.",
         activities: ["Drive to Pushkar", "Brahma Temple", "Pushkar Lake ghat", "Evening aarti", "Bazaar walk"],
@@ -5499,9 +5499,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Drive Pushkar to Jodhpur — Mehrangarh Fort",
+        title: "Drive Pushkar to Jodhpur - Mehrangarh Fort",
         description:
-          "Drive west to Jodhpur, the Blue City. Spend the afternoon at the towering Mehrangarh Fort — one of India's most spectacular — and the white-marble Jaswant Thada cenotaph below.",
+          "Drive west to Jodhpur, the Blue City. Spend the afternoon at the towering Mehrangarh Fort - one of India's most spectacular - and the white-marble Jaswant Thada cenotaph below.",
         activities: ["Drive to Jodhpur", "Mehrangarh Fort", "Jaswant Thada", "Sardar Market evening"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Jodhpur",
@@ -5511,9 +5511,9 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Jodhpur Local — Blue City Walk, Toorji ka Jhalra, Mandore",
+        title: "Jodhpur Local - Blue City Walk, Toorji ka Jhalra, Mandore",
         description:
-          "A full day to slow down in the Blue City. Morning walking tour through the indigo lanes below Mehrangarh, with stops at the stepped Toorji ka Jhalra and the bustling Sardar Market under the Clock Tower. Afternoon excursion to Mandore Gardens — the original capital of Marwar — and a sunset rooftop dinner overlooking the lit-up fort.",
+          "A full day to slow down in the Blue City. Morning walking tour through the indigo lanes below Mehrangarh, with stops at the stepped Toorji ka Jhalra and the bustling Sardar Market under the Clock Tower. Afternoon excursion to Mandore Gardens - the original capital of Marwar - and a sunset rooftop dinner overlooking the lit-up fort.",
         activities: ["Blue City walking tour", "Toorji ka Jhalra stepwell", "Sardar Market & Clock Tower", "Mandore Gardens", "Rooftop sunset dinner"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Jodhpur",
@@ -5522,9 +5522,9 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Drive Jodhpur to Jaisalmer — Sonar Quila & Gadisar Lake",
+        title: "Drive Jodhpur to Jaisalmer - Sonar Quila & Gadisar Lake",
         description:
-          "Drive west across the Thar desert plain to Jaisalmer, the Golden City. Evening visit to the inhabited Sonar Quila and the carved sandstone Patwon ki Haveli, finishing at the serene Gadisar Lake — the city's old rainwater reservoir ringed by ghats and shrines — for a golden sunset.",
+          "Drive west across the Thar desert plain to Jaisalmer, the Golden City. Evening visit to the inhabited Sonar Quila and the carved sandstone Patwon ki Haveli, finishing at the serene Gadisar Lake - the city's old rainwater reservoir ringed by ghats and shrines - for a golden sunset.",
         activities: ["Drive to Jaisalmer", "Sonar Quila walk", "Patwon ki Haveli", "Gadisar Lake sunset"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Jaisalmer",
@@ -5534,9 +5534,9 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Jaisalmer — Kuldhara, Sam Sand Dunes & Camel Safari",
+        title: "Jaisalmer - Kuldhara, Sam Sand Dunes & Camel Safari",
         description:
-          "Morning in Jaisalmer's old city, then drive west with a stop at Kuldhara — the haunting abandoned village deserted overnight by its Paliwal Brahmin community some two centuries ago — before reaching the Sam sand dunes for a camel safari at sunset, a desert dinner under the stars and a cultural evening of Rajasthani folk music.",
+          "Morning in Jaisalmer's old city, then drive west with a stop at Kuldhara - the haunting abandoned village deserted overnight by its Paliwal Brahmin community some two centuries ago - before reaching the Sam sand dunes for a camel safari at sunset, a desert dinner under the stars and a cultural evening of Rajasthani folk music.",
         activities: ["Kuldhara abandoned village", "Sam Sand Dunes camel safari", "Sunset over the dunes", "Desert camp dinner", "Folk music & Kalbelia dance"],
         meals: "Breakfast, Dinner",
         accommodation: "Desert camp at Sam (or hotel in Jaisalmer)",
@@ -5548,23 +5548,23 @@ const allPackages: Package[] = [
         day: 9,
         title: "Jaisalmer Departure",
         description:
-          "After a slow breakfast, drop at Jaisalmer airport / railway station — or transfer to Jodhpur for an onward train / flight. Carry home the gold of the desert and the blue of Jodhpur in equal measure.",
+          "After a slow breakfast, drop at Jaisalmer airport / railway station - or transfer to Jodhpur for an onward train / flight. Carry home the gold of the desert and the blue of Jodhpur in equal measure.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Last desert breakfast",
         image: "/images/generated/jodhpur-mehrangarh.webp",
       },
     ],
   },
   {
-    title: "Rajasthan Lakes & Hills — Mount Abu, Udaipur, Jawai & Kumbhalgarh",
+    title: "Rajasthan Lakes & Hills - Mount Abu, Udaipur, Jawai & Kumbhalgarh",
     slug: "rajasthan-lakes-and-hills",
     destinationName: "Rajasthan",
     destinationSlug: "rajasthan",
     category: "leisure",
     description:
-      "A seven-day journey through Rajasthan's softer, greener side — Mount Abu's Dilwara Jain temples, Udaipur's lake palaces, Jawai's leopards on rocky outcrops, and an unhurried night within the colossal walls of Kumbhalgarh fort. A different Rajasthan, away from the desert cliché.",
+      "A seven-day journey through Rajasthan's softer, greener side - Mount Abu's Dilwara Jain temples, Udaipur's lake palaces, Jawai's leopards on rocky outcrops, and an unhurried night within the colossal walls of Kumbhalgarh fort. A different Rajasthan, away from the desert cliché.",
     heroImage: "/images/generated/rajasthan-hero.webp",
     images: [
       "/images/generated/jaipur-hawa-mahal.webp",
@@ -5608,9 +5608,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Mount Abu Arrival — Nakki Lake & Sunset Point",
+        title: "Mount Abu Arrival - Nakki Lake & Sunset Point",
         description:
-          "Arrive in Mount Abu — Rajasthan's only proper hill station. After check-in, take a paddle boat on Nakki Lake and walk up to Sunset Point for a panoramic view across the Aravallis.",
+          "Arrive in Mount Abu - Rajasthan's only proper hill station. After check-in, take a paddle boat on Nakki Lake and walk up to Sunset Point for a panoramic view across the Aravallis.",
         activities: ["Pickup at Mount Abu", "Hotel check-in", "Nakki Lake boat ride", "Sunset Point walk", "Bazaar evening"],
         meals: "Dinner",
         accommodation: "Hotel in Mount Abu",
@@ -5620,9 +5620,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Mount Abu — Dilwara, Achalgarh, Guru Shikhar",
+        title: "Mount Abu - Dilwara, Achalgarh, Guru Shikhar",
         description:
-          "Morning at the breathtaking Dilwara Jain temples — among the finest examples of marble carving anywhere in India. Then on to Achalgarh fort and Guru Shikhar, the highest peak in the Aravalli range.",
+          "Morning at the breathtaking Dilwara Jain temples - among the finest examples of marble carving anywhere in India. Then on to Achalgarh fort and Guru Shikhar, the highest peak in the Aravalli range.",
         activities: ["Dilwara Jain Temples", "Achalgarh Fort", "Guru Shikhar peak", "Honeymoon Point sunset"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Mount Abu",
@@ -5632,7 +5632,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Drive Mount Abu to Udaipur — City Palace, Lake Pichola",
+        title: "Drive Mount Abu to Udaipur - City Palace, Lake Pichola",
         description:
           "Drive north-east to Udaipur, the City of Lakes. After check-in head to the City Palace and end the day with a sunset boat ride across Lake Pichola, past the Lake Palace and Jag Mandir.",
         activities: ["Drive to Udaipur", "City Palace", "Lake Pichola boat ride", "Bagore ki Haveli folk show"],
@@ -5644,7 +5644,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Udaipur — Saheliyon ki Bari, Jagdish Temple, Jag Mandir",
+        title: "Udaipur - Saheliyon ki Bari, Jagdish Temple, Jag Mandir",
         description:
           "Spend the day exploring Udaipur's gardens, temples and lake palaces. Saheliyon ki Bari fountains, the carved Jagdish Temple, and a private boat to lunch at Jag Mandir on the lake.",
         activities: ["Saheliyon ki Bari", "Jagdish Temple", "Jag Mandir boat & lunch", "Sajjangarh Monsoon Palace sunset"],
@@ -5655,7 +5655,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Drive Udaipur to Jawai — Evening Leopard Safari",
+        title: "Drive Udaipur to Jawai - Evening Leopard Safari",
         description:
           "Drive south to Jawai, a rocky landscape of granite outcrops where leopards live alongside Rabari herders. Evening jeep safari to spot leopards, crocodiles and a remarkable variety of birds.",
         activities: ["Drive to Jawai", "Camp check-in", "Evening leopard safari", "Camp dinner"],
@@ -5667,9 +5667,9 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Drive Jawai to Kumbhalgarh — Heritage Stay & Ranakpur",
+        title: "Drive Jawai to Kumbhalgarh - Heritage Stay & Ranakpur",
         description:
-          "Drive north to Kumbhalgarh — a UNESCO-listed fort with the second-longest continuous wall in the world. En route, stop at the marble Ranakpur Jain temple, famous for its 1,400 intricately carved pillars, no two alike. After Ranakpur, continue to Kumbhalgarh, explore the fort and the Badal Mahal at sunset, and stay overnight at a heritage resort beside the fort walls.",
+          "Drive north to Kumbhalgarh - a UNESCO-listed fort with the second-longest continuous wall in the world. En route, stop at the marble Ranakpur Jain temple, famous for its 1,400 intricately carved pillars, no two alike. After Ranakpur, continue to Kumbhalgarh, explore the fort and the Badal Mahal at sunset, and stay overnight at a heritage resort beside the fort walls.",
         activities: ["Drive to Ranakpur", "Ranakpur Jain Temple", "Drive to Kumbhalgarh", "Kumbhalgarh Fort", "Sound & Light show"],
         meals: "Breakfast, Dinner",
         accommodation: "Heritage resort in Kumbhalgarh",
@@ -5679,12 +5679,12 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Drive Kumbhalgarh to Udaipur — Departure",
+        title: "Drive Kumbhalgarh to Udaipur - Departure",
         description:
-          "After breakfast at the heritage resort, drive back to Udaipur for your onward journey home — with marble temples, lake palaces, and leopards on stone outcrops in the rear-view.",
+          "After breakfast at the heritage resort, drive back to Udaipur for your onward journey home - with marble temples, lake palaces, and leopards on stone outcrops in the rear-view.",
         activities: ["Drive to Udaipur", "Last view of Lake Pichola", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "85 km drive",
         highlight: "Last view of Lake Pichola",
         image: "/images/generated/rajasthan-day-7-udaipur-lake-palace.webp",
@@ -5692,13 +5692,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Rajasthan Complete Circuit — Jaipur, Jodhpur, Jaisalmer, Udaipur & Mount Abu",
+    title: "Rajasthan Complete Circuit - Jaipur, Jodhpur, Jaisalmer, Udaipur & Mount Abu",
     slug: "rajasthan-complete-circuit",
     destinationName: "Rajasthan",
     destinationSlug: "rajasthan",
     category: "educational",
     description:
-      "The definitive Rajasthan tour — eleven days, five iconic cities, and two nights in each so you actually experience them rather than rush through. Pink palaces, blue cities, golden forts, lake palaces and the cool Aravalli hills, all woven into one ambitious circuit.",
+      "The definitive Rajasthan tour - eleven days, five iconic cities, and two nights in each so you actually experience them rather than rush through. Pink palaces, blue cities, golden forts, lake palaces and the cool Aravalli hills, all woven into one ambitious circuit.",
     heroImage: "/images/generated/rajasthan-hero.webp",
     images: [
       "/images/generated/jaipur-hawa-mahal.webp",
@@ -5741,9 +5741,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Jaipur Arrival — City Palace, Jantar Mantar, Hawa Mahal",
+        title: "Jaipur Arrival - City Palace, Jantar Mantar, Hawa Mahal",
         description:
-          "Arrive in the Pink City and dive straight into its three central icons — the Hawa Mahal facade, the still-royal City Palace, and Jantar Mantar's giant astronomical instruments.",
+          "Arrive in the Pink City and dive straight into its three central icons - the Hawa Mahal facade, the still-royal City Palace, and Jantar Mantar's giant astronomical instruments.",
         activities: ["Pickup at Jaipur", "Hawa Mahal photo stop", "City Palace", "Jantar Mantar", "Bazaar walk"],
         meals: "Dinner",
         accommodation: "Hotel in Jaipur",
@@ -5752,7 +5752,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Jaipur — Amber Fort, Jaigarh, Nahargarh",
+        title: "Jaipur - Amber Fort, Jaigarh, Nahargarh",
         description:
           "A full day on Jaipur's three forts. Amber Fort with the mirror-mosaic Sheesh Mahal, Jaigarh's Jaivana cannon, and Nahargarh for sunset views back over the city.",
         activities: ["Amber Fort", "Sheesh Mahal", "Jaigarh Fort", "Jal Mahal photo stop", "Nahargarh sunset"],
@@ -5775,7 +5775,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Jodhpur — Mehrangarh Fort & Blue City Walk",
+        title: "Jodhpur - Mehrangarh Fort & Blue City Walk",
         description:
           "Spend the morning at the towering Mehrangarh Fort, walking through its courtyards, museum and palace rooms. After lunch, a guided walk through the indigo-blue lanes of the old city below.",
         activities: ["Mehrangarh Fort", "Jaswant Thada", "Blue City walk", "Toorji ka Jhalra stepwell"],
@@ -5786,7 +5786,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Drive Jodhpur to Jaisalmer — Sonar Quila",
+        title: "Drive Jodhpur to Jaisalmer - Sonar Quila",
         description:
           "Drive west into the Thar to Jaisalmer. Evening exploration of the inhabited Sonar Quila as the sandstone glows gold under the setting sun.",
         activities: ["Drive to Jaisalmer", "Sonar Quila walk", "Patwon ki Haveli", "Gadisar Lake sunset"],
@@ -5798,7 +5798,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Jaisalmer — Sam Sand Dunes Camel Safari",
+        title: "Jaisalmer - Sam Sand Dunes Camel Safari",
         description:
           "Quiet morning in the old city, then drive to Sam for a sunset camel safari, a desert dinner under the stars and a cultural evening of Kalbelia folk dance.",
         activities: ["Sam Sand Dunes camel safari", "Sunset over dunes", "Desert camp dinner", "Folk music & Kalbelia"],
@@ -5812,7 +5812,7 @@ const allPackages: Package[] = [
         day: 7,
         title: "Jaisalmer to Kumbhalgarh via Ranakpur Jain Temple",
         description:
-          "Break the long desert-to-lakes journey with two of Rajasthan's finest monuments in the Jodhpur–Udaipur heritage corridor. En route, visit the breathtaking Ranakpur Jain Temple — a 15th-century marvel of 1,444 individually carved marble pillars, no two alike — then continue into the Aravallis to Kumbhalgarh for the evening. Overnight at a heritage hotel below the fort.",
+          "Break the long desert-to-lakes journey with two of Rajasthan's finest monuments in the Jodhpur–Udaipur heritage corridor. En route, visit the breathtaking Ranakpur Jain Temple - a 15th-century marvel of 1,444 individually carved marble pillars, no two alike - then continue into the Aravallis to Kumbhalgarh for the evening. Overnight at a heritage hotel below the fort.",
         activities: ["Ranakpur Jain Temple", "1,444 carved marble pillars", "Drive into the Aravallis", "Kumbhalgarh heritage stay"],
         meals: "Breakfast, Dinner",
         accommodation: "Heritage hotel in Kumbhalgarh",
@@ -5822,7 +5822,7 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Kumbhalgarh Fort — Great Wall of India, then Udaipur",
+        title: "Kumbhalgarh Fort - Great Wall of India, then Udaipur",
         description:
           "Morning at Kumbhalgarh Fort, whose 36-km perimeter rampart is the second-longest continuous wall in the world after the Great Wall of China and the birthplace of Maharana Pratap. Walk the bastions and the Badal Mahal, then drive down to Udaipur, the City of Lakes, for the evening.",
         activities: ["Kumbhalgarh Fort", "Great Wall of India ramparts", "Badal Mahal", "Drive to Udaipur"],
@@ -5834,7 +5834,7 @@ const allPackages: Package[] = [
       },
       {
         day: 9,
-        title: "Udaipur — City Palace, Lake Pichola, Jag Mandir",
+        title: "Udaipur - City Palace, Lake Pichola, Jag Mandir",
         description:
           "A signature Udaipur day. City Palace in the morning, sunset boat ride on Lake Pichola past the Lake Palace, and a dinner stop at the romantic Jag Mandir island.",
         activities: ["City Palace", "Saheliyon ki Bari", "Jagdish Temple", "Sunset boat on Lake Pichola", "Jag Mandir dinner"],
@@ -5847,7 +5847,7 @@ const allPackages: Package[] = [
         day: 10,
         title: "Drive Udaipur to Mount Abu",
         description:
-          "Drive south-west to Mount Abu — Rajasthan's only proper hill station. After check-in, take a paddle boat on Nakki Lake and walk to Sunset Point for views across the Aravallis.",
+          "Drive south-west to Mount Abu - Rajasthan's only proper hill station. After check-in, take a paddle boat on Nakki Lake and walk to Sunset Point for views across the Aravallis.",
         activities: ["Drive to Mount Abu", "Hotel check-in", "Nakki Lake boat", "Sunset Point"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Mount Abu",
@@ -5857,9 +5857,9 @@ const allPackages: Package[] = [
       },
       {
         day: 11,
-        title: "Mount Abu — Dilwara, Achalgarh, Guru Shikhar",
+        title: "Mount Abu - Dilwara, Achalgarh, Guru Shikhar",
         description:
-          "Morning at the Dilwara Jain temples — some of the finest marble carving in India — then on to Achalgarh fort and Guru Shikhar, the highest peak in the Aravalli range.",
+          "Morning at the Dilwara Jain temples - some of the finest marble carving in India - then on to Achalgarh fort and Guru Shikhar, the highest peak in the Aravalli range.",
         activities: ["Dilwara Jain Temples", "Achalgarh Fort", "Guru Shikhar peak", "Honeymoon Point sunset"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Mount Abu",
@@ -5871,10 +5871,10 @@ const allPackages: Package[] = [
         day: 12,
         title: "Mount Abu Departure",
         description:
-          "Drive down to Udaipur airport / railway station — or onward to Ahmedabad if your flight requires — completing one of the most ambitious heritage circuits in India.",
+          "Drive down to Udaipur airport / railway station - or onward to Ahmedabad if your flight requires - completing one of the most ambitious heritage circuits in India.",
         activities: ["Morning at leisure", "Drive down to Udaipur / Ahmedabad", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "165 km drive to Udaipur",
         highlight: "Last hill-station breakfast",
         image: "/images/generated/rajasthan-day-7-udaipur-lake-palace.webp",
@@ -5882,13 +5882,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Char Dham Yatra by Road — Yamunotri, Gangotri, Kedarnath & Badrinath",
+    title: "Char Dham Yatra by Road - Yamunotri, Gangotri, Kedarnath & Badrinath",
     slug: "char-dham-by-road",
     destinationName: "Uttarakhand",
     destinationSlug: "uttarakhand",
     category: "leisure",
     description:
-      "The classic eleven-day Char Dham circuit by road — Yamunotri, Gangotri, Kedarnath and Badrinath. A traditional pilgrimage that ranks among the most demanding and rewarding in Hindu tradition, visiting all four sacred shrines in the Garhwal Himalaya.",
+      "The classic eleven-day Char Dham circuit by road - Yamunotri, Gangotri, Kedarnath and Badrinath. A traditional pilgrimage that ranks among the most demanding and rewarding in Hindu tradition, visiting all four sacred shrines in the Garhwal Himalaya.",
     heroImage: "/images/generated/char-dham-hero.webp",
     images: [
       "/images/generated/yamunotri-shrine.webp",
@@ -5921,18 +5921,18 @@ const allPackages: Package[] = [
       "Tips and gratuities",
     ],
     highlights: [
-      "Yamunotri — source of the Yamuna",
-      "Gangotri — source of the Ganga",
-      "Kedarnath — Lord Shiva's Himalayan abode",
-      "Badrinath — Vishnu's mountain shrine",
-      "Mana Village — last village before Tibet",
+      "Yamunotri - source of the Yamuna",
+      "Gangotri - source of the Ganga",
+      "Kedarnath - Lord Shiva's Himalayan abode",
+      "Badrinath - Vishnu's mountain shrine",
+      "Mana Village - last village before Tibet",
       "Ganga Aarti at Haridwar",
     ],
     featured: true,
     itinerary: [
       {
         day: 1,
-        title: "Haridwar / Dehradun Arrival — Briefing",
+        title: "Haridwar / Dehradun Arrival - Briefing",
         description:
           "Arrive in Haridwar / Dehradun and complete yatra registration with biometric verification. Pre-trip briefing in the evening on altitude, packing and pace, followed by an attendance at the Har ki Pauri Ganga Aarti.",
         activities: ["Arrival pickup", "Yatra registration", "Pre-trip briefing", "Har ki Pauri Ganga Aarti"],
@@ -5956,9 +5956,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Barkot — Yamunotri Trek — Return",
+        title: "Barkot - Yamunotri Trek - Return",
         description:
-          "Early drive to Janki Chatti, then 5-km trek (or pony / palki) up to Yamunotri at 3,290m — the source shrine of the Yamuna. Darshan, dip in Surya Kund hot spring, and return to Barkot by evening.",
+          "Early drive to Janki Chatti, then 5-km trek (or pony / palki) up to Yamunotri at 3,290m - the source shrine of the Yamuna. Darshan, dip in Surya Kund hot spring, and return to Barkot by evening.",
         activities: ["Drive to Janki Chatti", "5 km trek to Yamunotri", "Darshan & Surya Kund", "Return trek & drive to Barkot"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Barkot",
@@ -5982,9 +5982,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Uttarkashi — Gangotri Darshan — Return",
+        title: "Uttarkashi - Gangotri Darshan - Return",
         description:
-          "Drive up the Bhagirathi gorge to Gangotri at 3,100m — the source shrine of the Ganga. Darshan, evening aarti, and return to Uttarkashi for the night.",
+          "Drive up the Bhagirathi gorge to Gangotri at 3,100m - the source shrine of the Ganga. Darshan, evening aarti, and return to Uttarkashi for the night.",
         activities: ["Drive to Gangotri", "Darshan at Gangotri", "Bhagirathi aarti", "Return to Uttarkashi"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Uttarkashi",
@@ -6008,7 +6008,7 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Guptkashi to Sonprayag — Kedarnath Trek (or Helicopter)",
+        title: "Guptkashi to Sonprayag - Kedarnath Trek (or Helicopter)",
         description:
           "Early drive to Sonprayag and on to Gaurikund, where the 16-km trek to Kedarnath begins. Trek up by foot / pony / palki, or take a helicopter from Phata / Sersi (subject to availability and weather). Overnight at Kedarnath.",
         activities: ["Drive to Sonprayag / Gaurikund", "16 km trek to Kedarnath (or helicopter)", "Darshan at Kedarnath", "Overnight at Kedarnath"],
@@ -6021,9 +6021,9 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Kedarnath — Trek Down — Drive Joshimath",
+        title: "Kedarnath - Trek Down - Drive Joshimath",
         description:
-          "Trek down to Gaurikund (or fly down from Kedarnath helipad), drive to Sonprayag and on to Joshimath in the Alaknanda valley — base camp for tomorrow's Badrinath leg.",
+          "Trek down to Gaurikund (or fly down from Kedarnath helipad), drive to Sonprayag and on to Joshimath in the Alaknanda valley - base camp for tomorrow's Badrinath leg.",
         activities: ["Trek down from Kedarnath", "Drive Sonprayag to Joshimath", "Joshimath check-in"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Joshimath",
@@ -6034,9 +6034,9 @@ const allPackages: Package[] = [
       },
       {
         day: 9,
-        title: "Joshimath — Badrinath Darshan & Mana Village",
+        title: "Joshimath - Badrinath Darshan & Mana Village",
         description:
-          "Drive up to Badrinath at 3,300m for darshan at the Vishnu shrine. Continue to Mana — India's last village before the Tibet border — for visits to Saraswati's birthplace and Vyas Gufa.",
+          "Drive up to Badrinath at 3,300m for darshan at the Vishnu shrine. Continue to Mana - India's last village before the Tibet border - for visits to Saraswati's birthplace and Vyas Gufa.",
         activities: ["Drive to Badrinath", "Darshan at Badrinath", "Mana village walk", "Saraswati & Bheem Pul", "Return to Joshimath"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Joshimath",
@@ -6049,12 +6049,12 @@ const allPackages: Package[] = [
         day: 10,
         title: "Drive Joshimath to Haridwar via Rudraprayag",
         description:
-          "Long, scenic drive down the Alaknanda — past the Panch Prayag confluences at Rudraprayag, Karnaprayag, Nandprayag, Vishnuprayag and Devprayag — and on to Haridwar.",
-        activities: ["Drive Joshimath to Haridwar", "Panch Prayag photo stops", "Devprayag — birth of the Ganga"],
+          "Long, scenic drive down the Alaknanda - past the Panch Prayag confluences at Rudraprayag, Karnaprayag, Nandprayag, Vishnuprayag and Devprayag - and on to Haridwar.",
+        activities: ["Drive Joshimath to Haridwar", "Panch Prayag photo stops", "Devprayag - birth of the Ganga"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Haridwar",
         distance: "270 km drive (long day)",
-        highlight: "Devprayag — where the Ganga is born",
+        highlight: "Devprayag - where the Ganga is born",
         image: "/images/generated/garhwal-pilgrim-town.webp",
       },
       {
@@ -6064,14 +6064,14 @@ const allPackages: Package[] = [
           "After an early breakfast and one final dip at Har ki Pauri, transfer to Haridwar railway station / Dehradun airport for your onward journey, having completed the Char Dham yatra.",
         activities: ["Final dip at Har ki Pauri", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Final dip at Har ki Pauri",
         image: "/images/generated/haridwar-har-ki-pauri.webp",
       },
     ],
   },
   {
-    title: "Uttarakhand Hills & Pilgrimage — Haridwar, Rishikesh, Kainchi Dham, Nainital, Ranikhet & Corbett",
+    title: "Uttarakhand Hills & Pilgrimage - Haridwar, Rishikesh, Kainchi Dham, Nainital, Ranikhet & Corbett",
     slug: "uttarakhand-hills-and-pilgrimage",
     destinationName: "Uttarakhand",
     destinationSlug: "uttarakhand",
@@ -6120,9 +6120,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Haridwar Arrival — Har ki Pauri Ganga Aarti",
+        title: "Haridwar Arrival - Har ki Pauri Ganga Aarti",
         description:
-          "Arrive in Haridwar and head down to Har ki Pauri for the famous evening Ganga Aarti — thousands of diyas floating on the river under flickering temple lamps.",
+          "Arrive in Haridwar and head down to Har ki Pauri for the famous evening Ganga Aarti - thousands of diyas floating on the river under flickering temple lamps.",
         activities: ["Arrival pickup", "Hotel check-in", "Har ki Pauri Ganga Aarti", "Evening bazaar walk"],
         meals: "Dinner",
         accommodation: "Hotel in Haridwar",
@@ -6145,7 +6145,7 @@ const allPackages: Package[] = [
         day: 3,
         title: "Drive Rishikesh to Kainchi Dham",
         description:
-          "Long but spectacular drive across the Garhwal-Kumaon ridge to Kainchi Dham — the small ashram of Neem Karoli Baba, made famous by Steve Jobs and other Western devotees. Darshan and an early night at a guesthouse near the ashram.",
+          "Long but spectacular drive across the Garhwal-Kumaon ridge to Kainchi Dham - the small ashram of Neem Karoli Baba, made famous by Steve Jobs and other Western devotees. Darshan and an early night at a guesthouse near the ashram.",
         activities: ["Long drive Rishikesh to Kainchi", "Kainchi Dham darshan", "Quiet evening near the ashram"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel near Kainchi / Bhowali",
@@ -6155,7 +6155,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive to Nainital — Naini Lake & Mall Road",
+        title: "Drive to Nainital - Naini Lake & Mall Road",
         description:
           "Short drive to Nainital, the gem of the Kumaon. Boat on the emerald-green Naini Lake, walk Mall Road, and visit Naina Devi Temple beside the lake.",
         activities: ["Drive to Nainital", "Naini Lake boating", "Naina Devi Temple", "Mall Road evening"],
@@ -6168,7 +6168,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Nainital Local — Snow View, Tiffin Top & the Lake District",
+        title: "Nainital Local - Snow View, Tiffin Top & the Lake District",
         description:
           "Take the cable car up to Snow View Point for views of Nanda Devi, walk to Tiffin Top, then drive to the birding paradise of Pangot for an afternoon walk through pine and oak forest.",
         activities: ["Snow View cable car", "Tiffin Top walk", "Pangot birding excursion", "Bhimtal", "Sattal", "Naukuchiatal"],
@@ -6193,9 +6193,9 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Drive Ranikhet to Jim Corbett — Evening Safari",
+        title: "Drive Ranikhet to Jim Corbett - Evening Safari",
         description:
-          "Drive south to Jim Corbett National Park, India's oldest tiger reserve. Afternoon jeep safari into the Bijrani / Jhirna zones of the park — tigers, elephants, sloth bear and nearly 600 species of birds.",
+          "Drive south to Jim Corbett National Park, India's oldest tiger reserve. Afternoon jeep safari into the Bijrani / Jhirna zones of the park - tigers, elephants, sloth bear and nearly 600 species of birds.",
         activities: ["Drive to Corbett", "Resort check-in", "Afternoon jeep safari", "Resort dinner"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort near Jim Corbett",
@@ -6205,12 +6205,12 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Drive Corbett to Haridwar — Departure",
+        title: "Drive Corbett to Haridwar - Departure",
         description:
           "After breakfast, drive back to Haridwar and drop at the railway station / Dehradun airport for your onward journey, with one final glimpse of the Ganga as you cross the bridge.",
         activities: ["Drive Corbett to Haridwar", "Final Ganga viewing stop", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "215 km drive",
         highlight: "Last Ganga crossing",
         image: "/images/generated/haridwar-har-ki-pauri.webp",
@@ -6218,13 +6218,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Mussoorie & Garhwal Hills — Dehradun, Mussoorie, Dhanaulti, Kanatal, Tehri & Haridwar",
+    title: "Mussoorie & Garhwal Hills - Dehradun, Mussoorie, Dhanaulti, Kanatal, Tehri & Haridwar",
     slug: "mussoorie-and-garhwal-hills",
     destinationName: "Uttarakhand",
     destinationSlug: "uttarakhand",
     category: "leisure",
     description:
-      "A relaxed seven-day Garhwal hills circuit — from Mussoorie's Mall Road and Kempty Falls to the deodar quiet of Dhanaulti, the lakeside calm of Kanatal and Tehri, and a finale at Haridwar with Mansa Devi, Chandi Devi and an evening Ganga aarti.",
+      "A relaxed seven-day Garhwal hills circuit - from Mussoorie's Mall Road and Kempty Falls to the deodar quiet of Dhanaulti, the lakeside calm of Kanatal and Tehri, and a finale at Haridwar with Mansa Devi, Chandi Devi and an evening Ganga aarti.",
     heroImage: "/images/generated/mussoorie-mall-road.webp",
     images: [
       "/images/generated/mussoorie-mall-road.webp",
@@ -6267,7 +6267,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Dehradun Arrival — Drive to Mussoorie",
+        title: "Dehradun Arrival - Drive to Mussoorie",
         description:
           "Arrive in Dehradun and drive up to Mussoorie, the Queen of the Hills. After check-in, walk the famous Mall Road as the lights come on along the Camel's Back Road.",
         activities: ["Pickup at Dehradun", "Drive to Mussoorie", "Mall Road walk", "Camel's Back Road viewpoint"],
@@ -6280,9 +6280,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Mussoorie — Gun Hill, Kempty Falls, Lal Tibba & Landour",
+        title: "Mussoorie - Gun Hill, Kempty Falls, Lal Tibba & Landour",
         description:
-          "Spend the day on Mussoorie's signature sights — the cable car up to Gun Hill, the cascading Kempty Falls, the British-era observatory at Lal Tibba, and the playful Cloud's End at the western edge of town.",
+          "Spend the day on Mussoorie's signature sights - the cable car up to Gun Hill, the cascading Kempty Falls, the British-era observatory at Lal Tibba, and the playful Cloud's End at the western edge of town.",
         activities: ["Gun Hill cable car", "Kempty Falls", "Lal Tibba", "Cloud's End viewpoint", "Mall Road shopping", "Landour & Char Dukan"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Mussoorie",
@@ -6304,9 +6304,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive Kanatal to Tehri — Lake Boating & Lakeside Stay",
+        title: "Drive Kanatal to Tehri - Lake Boating & Lakeside Stay",
         description:
-          "Drive down to Tehri Lake — the giant reservoir behind Asia's tallest dam. Spend the afternoon on the water with boating and jet-ski rides, take a quiet picnic lunch on the shore, and check in to a lakeside resort at Koteshwar / New Tehri for sunset over the reservoir.",
+          "Drive down to Tehri Lake - the giant reservoir behind Asia's tallest dam. Spend the afternoon on the water with boating and jet-ski rides, take a quiet picnic lunch on the shore, and check in to a lakeside resort at Koteshwar / New Tehri for sunset over the reservoir.",
         activities: ["Drive to Tehri", "Tehri Lake boating", "Jet-ski / kayak", "Lakeside resort check-in", "Sunset over the reservoir"],
         meals: "Breakfast, Dinner",
         accommodation: "Lakeside resort in Tehri / Koteshwar",
@@ -6328,9 +6328,9 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Haridwar — Mansa Devi, Chandi Devi & Ganga Aarti",
+        title: "Haridwar - Mansa Devi, Chandi Devi & Ganga Aarti",
         description:
-          "Take the ropeway up to Mansa Devi temple in the morning and Chandi Devi temple in the afternoon — the two hilltop shrines that frame the holy city. End the day at Har ki Pauri for the famous evening Ganga Aarti.",
+          "Take the ropeway up to Mansa Devi temple in the morning and Chandi Devi temple in the afternoon - the two hilltop shrines that frame the holy city. End the day at Har ki Pauri for the famous evening Ganga Aarti.",
         activities: ["Mansa Devi ropeway", "Chandi Devi ropeway", "Har ki Pauri Ganga Aarti", "Bazaar walk"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Haridwar",
@@ -6339,12 +6339,12 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Drive Haridwar to Dehradun — Departure",
+        title: "Drive Haridwar to Dehradun - Departure",
         description:
           "After a quiet morning, drive back to Dehradun for your onward flight or train. A relaxed end to a relaxed circuit through the gentlest corner of the Garhwal hills.",
         activities: ["Drive Haridwar to Dehradun", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "55 km drive",
         highlight: "Last view of the Garhwal foothills",
         image: "/images/generated/haridwar-har-ki-pauri.webp",
@@ -6352,15 +6352,15 @@ const allPackages: Package[] = [
     ],
   },
 
-  /* ═══════════════════════ MADHYA PRADESH — NEW PACKAGES ═══════════════════════ */
+  /* ═══════════════════════ MADHYA PRADESH - NEW PACKAGES ═══════════════════════ */
   {
-    title: "Narmada Parikrama — Full 15-Day Sacred Circumambulation by Coach",
+    title: "Narmada Parikrama - Full 15-Day Sacred Circumambulation by Coach",
     slug: "narmada-parikrama",
     destinationName: "Madhya Pradesh",
     destinationSlug: "madhya-pradesh",
     category: "educational",
     description:
-      "The full 15-day traditional Narmada Parikrama — circumambulating India's holiest river from Omkareshwar down the south bank to the Arabian Sea, across to the north bank, and back up to Omkareshwar via Amarkantak (the river's source). Covered in comfort by AC luxury coach with deluxe-hotel stays, replacing the traditional 3,300-km walk.",
+      "The full 15-day traditional Narmada Parikrama - circumambulating India's holiest river from Omkareshwar down the south bank to the Arabian Sea, across to the north bank, and back up to Omkareshwar via Amarkantak (the river's source). Covered in comfort by AC luxury coach with deluxe-hotel stays, replacing the traditional 3,300-km walk.",
     heroImage: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
@@ -6378,7 +6378,7 @@ const allPackages: Package[] = [
     inclusions: [
       "Pickup and drop at Indore",
       "14 nights deluxe-hotel accommodation on twin sharing",
-      "All meals — breakfast, lunch and dinner (sattvic)",
+      "All meals - breakfast, lunch and dinner (sattvic)",
       "Tea / coffee / milk daily",
       "AC luxury coach for all transfers",
       "1 litre bottled water per person daily",
@@ -6399,7 +6399,7 @@ const allPackages: Package[] = [
       "Maheshwar Ahilya Ghat & Holkar heritage",
       "Statue of Unity at Kevadia",
       "Sea crossing of the Narmada at Vimleshwar",
-      "Amarkantak — source of the Narmada",
+      "Amarkantak - source of the Narmada",
       "Kapildhara & Doodh Dhara waterfalls",
       "Sankalp Purti closing puja at Omkareshwar",
     ],
@@ -6407,7 +6407,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Indore Arrival — Ujjain Sightseeing",
+        title: "Indore Arrival - Ujjain Sightseeing",
         description:
           "Arrive in Indore by 8 AM. Drive to Ujjain for darshan at Mahakaleshwar Jyotirlinga and Kal Bhairav temple. Return to Indore for an overnight pre-parikrama stay.",
         activities: ["Pickup at Indore", "Drive to Ujjain", "Mahakaleshwar Jyotirlinga", "Kal Bhairav Temple", "Return to Indore"],
@@ -6419,9 +6419,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Indore → Omkareshwar — Parikrama Begins",
+        title: "Indore → Omkareshwar - Parikrama Begins",
         description:
-          "Drive 77 km / 2.5 hrs south to Omkareshwar on the sacred OM-shaped Mandhata island. Darshan at the Omkareshwar Jyotirlinga and Mamleshwar Temple on the south bank — the formal start of the parikrama.",
+          "Drive 77 km / 2.5 hrs south to Omkareshwar on the sacred OM-shaped Mandhata island. Darshan at the Omkareshwar Jyotirlinga and Mamleshwar Temple on the south bank - the formal start of the parikrama.",
         activities: ["Drive to Omkareshwar", "Omkareshwar Jyotirlinga", "Mamleshwar Temple", "Sankalp at the ghat"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Omkareshwar",
@@ -6445,7 +6445,7 @@ const allPackages: Package[] = [
         day: 4,
         title: "Barwani → Ankaleshwar",
         description:
-          "Long drive to Ankaleshwar (280 km / 6 hrs) through southern Gujarat. En route darshan at Vishweshwar & Pushpdanteshwar Temples at Prakasha. Overnight at Ankaleshwar — pre-positioning for the sea-crossing.",
+          "Long drive to Ankaleshwar (280 km / 6 hrs) through southern Gujarat. En route darshan at Vishweshwar & Pushpdanteshwar Temples at Prakasha. Overnight at Ankaleshwar - pre-positioning for the sea-crossing.",
         activities: ["Drive to Ankaleshwar", "Vishweshwar & Pushpdanteshwar Temples (Prakasha)", "Hotel check-in"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Ankaleshwar",
@@ -6455,9 +6455,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Ankaleshwar → Vimleshwar — Narmada Sea Crossing",
+        title: "Ankaleshwar → Vimleshwar - Narmada Sea Crossing",
         description:
-          "The most sacred day of the parikrama — the symbolic crossing of the Narmada at its mouth into the Arabian Sea. Board the ferry at Mithi Talai for the Narmada sangam crossing to Vimleshwar on the north bank. Overnight depending on crossing timing.",
+          "The most sacred day of the parikrama - the symbolic crossing of the Narmada at its mouth into the Arabian Sea. Board the ferry at Mithi Talai for the Narmada sangam crossing to Vimleshwar on the north bank. Overnight depending on crossing timing.",
         activities: ["Drive to Mithi Talai jetty", "Narmada sea crossing by ferry", "Arrival at Vimleshwar"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Lodge near Vimleshwar",
@@ -6481,7 +6481,7 @@ const allPackages: Package[] = [
         day: 7,
         title: "Garudeshwar → Maheshwar",
         description:
-          "Drive back into Madhya Pradesh and reach the holy town of Maheshwar — Ahilyabai Holkar's 18th-century capital on the Narmada. Evening darshan at the Ahilyeshwar Temple.",
+          "Drive back into Madhya Pradesh and reach the holy town of Maheshwar - Ahilyabai Holkar's 18th-century capital on the Narmada. Evening darshan at the Ahilyeshwar Temple.",
         activities: ["Drive to Maheshwar", "Hotel check-in", "Ahilyeshwar Temple", "Ghat evening"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Heritage hotel in Maheshwar",
@@ -6491,7 +6491,7 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Maheshwar Local — Ahilya Ghat, Mandavagarh, Maheshwari Sarees",
+        title: "Maheshwar Local - Ahilya Ghat, Mandavagarh, Maheshwari Sarees",
         description:
           "Morning at the Ahilya Ghat and Ahilyabai Holkar Samadhi. Drive to Mandavagarh (Mandu) for the Jahaz Mahal and the Holkar memorials. Afternoon at a Maheshwari saree workshop. Route to Nemawar via Badwah tomorrow.",
         activities: ["Ahilya Ghat & Samadhi", "Mandavagarh excursion", "Maheshwari saree workshop"],
@@ -6505,7 +6505,7 @@ const allPackages: Package[] = [
         day: 9,
         title: "Maheshwar → Nemawar",
         description:
-          "Drive via Badwah to Nemawar — the geographical midpoint of the Narmada and home to the Siddheshwar Mandir, one of the river's most architecturally significant temples.",
+          "Drive via Badwah to Nemawar - the geographical midpoint of the Narmada and home to the Siddheshwar Mandir, one of the river's most architecturally significant temples.",
         activities: ["Drive to Nemawar via Badwah", "Siddheshwar Mandir darshan", "Riverside evening"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Nemawar",
@@ -6527,9 +6527,9 @@ const allPackages: Package[] = [
       },
       {
         day: 11,
-        title: "Jabalpur → Amarkantak — Source of the Narmada",
+        title: "Jabalpur → Amarkantak - Source of the Narmada",
         description:
-          "Drive into the Maikal hills to Amarkantak (1,065 m) — the source of the Narmada. Visit the Narmada Udgam Kund where the river emerges, and the Kapil Dhara and Doodh Dhara cascades on the upper river.",
+          "Drive into the Maikal hills to Amarkantak (1,065 m) - the source of the Narmada. Visit the Narmada Udgam Kund where the river emerges, and the Kapil Dhara and Doodh Dhara cascades on the upper river.",
         activities: ["Drive to Amarkantak", "Narmada Udgam Kund", "Kapil Dhara", "Doodh Dhara"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Amarkantak",
@@ -6554,7 +6554,7 @@ const allPackages: Package[] = [
         day: 13,
         title: "Narsinghpur → Hoshangabad",
         description:
-          "Drive to Hoshangabad (now Narmadapuram) — a sacred town on the south bank with the famous Sethani Ghat aarti.",
+          "Drive to Hoshangabad (now Narmadapuram) - a sacred town on the south bank with the famous Sethani Ghat aarti.",
         activities: ["Drive to Hoshangabad", "Sethani Ghat", "Narmada aarti"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Hoshangabad",
@@ -6564,14 +6564,14 @@ const allPackages: Package[] = [
       },
       {
         day: 14,
-        title: "Hoshangabad → Omkareshwar — Sankalp Purti Puja",
+        title: "Hoshangabad → Omkareshwar - Sankalp Purti Puja",
         description:
           "Final drive back to Omkareshwar to close the parikrama at the same temple where it began. Special Sankalp Purti (vow-completion) puja and Pap Nashak abhishek at the Omkareshwar Jyotirlinga.",
         activities: ["Drive to Omkareshwar", "Sankalp Purti puja", "Pap Nashak abhishek", "Closing aarti"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Omkareshwar",
         distance: "320 km drive",
-        highlight: "Sankalp Purti — completion of the parikrama",
+        highlight: "Sankalp Purti - completion of the parikrama",
         image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&h=400&fit=crop",
       },
       {
@@ -6581,7 +6581,7 @@ const allPackages: Package[] = [
           "Drive 80 km / 3 hrs back to Indore. Drop at Indore airport / railway station by 2 PM for your onward journey home, having completed the full traditional Narmada Parikrama.",
         activities: ["Drive to Indore", "Departure transfer (ETD 2 PM)"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "80 km / 3 hrs",
         highlight: "Closing the 15-day parikrama",
         image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop",
@@ -6589,13 +6589,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Central MP Wilderness — Bhopal, Pachmarhi, Kanha, Amarkantak & Jabalpur",
+    title: "Central MP Wilderness - Bhopal, Pachmarhi, Kanha, Amarkantak & Jabalpur",
     slug: "central-mp-wilderness",
     destinationName: "Madhya Pradesh",
     destinationSlug: "madhya-pradesh",
     category: "adventure",
     description:
-      "An eight-day Madhya Pradesh wilderness circuit — Bhopal's lakes and Bhimbetka rock art, Pachmarhi's Satpura hill station, Kanha's tigers, Amarkantak's Narmada source and Bhedaghat's marble gorge in Jabalpur. The richest natural circuit in central India.",
+      "An eight-day Madhya Pradesh wilderness circuit - Bhopal's lakes and Bhimbetka rock art, Pachmarhi's Satpura hill station, Kanha's tigers, Amarkantak's Narmada source and Bhedaghat's marble gorge in Jabalpur. The richest natural circuit in central India.",
     heroImage: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=800&h=600&fit=crop",
@@ -6629,17 +6629,17 @@ const allPackages: Package[] = [
     highlights: [
       "Bhopal Upper Lake & Sanchi side trip",
       "Bhimbetka Rock Shelters (UNESCO)",
-      "Pachmarhi — Queen of the Satpuras",
+      "Pachmarhi - Queen of the Satpuras",
       "Kanha Tiger Safaris",
-      "Amarkantak — Narmada source",
+      "Amarkantak - Narmada source",
       "Bhedaghat marble rocks",
     ],
     featured: false,
     itinerary: [
       {
         day: 1,
-        title: "Bhopal Arrival — Upper Lake & Old Bhopal",
-        description: "Arrive in Bhopal and explore the old city — Taj-ul-Masajid (one of India's largest mosques), the chowk bazaars and an evening boat on Upper Lake.",
+        title: "Bhopal Arrival - Upper Lake & Old Bhopal",
+        description: "Arrive in Bhopal and explore the old city - Taj-ul-Masajid (one of India's largest mosques), the chowk bazaars and an evening boat on Upper Lake.",
         activities: ["Pickup at Bhopal", "Taj-ul-Masajid", "Bhopal Chowk", "Upper Lake boat"],
         meals: "Dinner",
         accommodation: "Hotel in Bhopal",
@@ -6648,8 +6648,8 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Bhopal — Bhimbetka & Sanchi Excursion",
-        description: "Full day exploring two UNESCO sites — Bhimbetka's 30,000-year-old rock paintings and Sanchi's Mauryan-era Buddhist stupas (3rd century BCE).",
+        title: "Bhopal - Bhimbetka & Sanchi Excursion",
+        description: "Full day exploring two UNESCO sites - Bhimbetka's 30,000-year-old rock paintings and Sanchi's Mauryan-era Buddhist stupas (3rd century BCE).",
         activities: ["Bhimbetka Rock Shelters", "Sanchi Great Stupa", "Local museum"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Bhopal",
@@ -6659,7 +6659,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Drive Bhopal to Pachmarhi — Queen of the Satpuras",
+        title: "Drive Bhopal to Pachmarhi - Queen of the Satpuras",
         description: "Drive south-east into the Satpura hills to Pachmarhi (1,067 m), MP's only hill station. Evening at Bee Falls or the Pandav Caves.",
         activities: ["Drive to Pachmarhi", "Bee Falls", "Pandav Caves"],
         meals: "Breakfast, Dinner",
@@ -6671,8 +6671,8 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Pachmarhi — Dhupgarh, Jata Shankar, Apsara Falls",
-        description: "Full day exploring Pachmarhi — sunrise at Dhupgarh (central India's highest peak), the natural Shiva shrine at Jata Shankar, and the Apsara Vihar falls for an afternoon dip.",
+        title: "Pachmarhi - Dhupgarh, Jata Shankar, Apsara Falls",
+        description: "Full day exploring Pachmarhi - sunrise at Dhupgarh (central India's highest peak), the natural Shiva shrine at Jata Shankar, and the Apsara Vihar falls for an afternoon dip.",
         activities: ["Dhupgarh Peak", "Jata Shankar", "Apsara Vihar Falls", "Reechgarh"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Pachmarhi",
@@ -6683,7 +6683,7 @@ const allPackages: Package[] = [
       {
         day: 5,
         title: "Drive Pachmarhi to Kanha Tiger Reserve",
-        description: "Long drive east through Satpura forests to Kanha — one of India's premier tiger reserves and the inspiration for Kipling's Jungle Book. Evening briefing for tomorrow's safari.",
+        description: "Long drive east through Satpura forests to Kanha - one of India's premier tiger reserves and the inspiration for Kipling's Jungle Book. Evening briefing for tomorrow's safari.",
         activities: ["Drive to Kanha", "Lodge check-in", "Safari briefing"],
         meals: "Breakfast, Dinner",
         accommodation: "Forest lodge near Kanha",
@@ -6693,8 +6693,8 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Kanha — Morning Safari, Drive to Amarkantak",
-        description: "Pre-dawn jeep safari deep into Kanha's sal forests — tigers, leopards, barasingha (swamp deer) and over 300 bird species. Afternoon drive east to Amarkantak.",
+        title: "Kanha - Morning Safari, Drive to Amarkantak",
+        description: "Pre-dawn jeep safari deep into Kanha's sal forests - tigers, leopards, barasingha (swamp deer) and over 300 bird species. Afternoon drive east to Amarkantak.",
         activities: ["Morning jeep safari", "Drive to Amarkantak", "Narmada Udgam Kund"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Amarkantak",
@@ -6705,7 +6705,7 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Amarkantak — Kapildhara, Drive to Bhedaghat",
+        title: "Amarkantak - Kapildhara, Drive to Bhedaghat",
         description: "Morning at Kapildhara and Dudhdhara waterfalls of the upper Narmada. Afternoon drive west to Bhedaghat near Jabalpur for the marble rocks boat ride and Dhuandhar Falls.",
         activities: ["Kapildhara & Dudhdhara Falls", "Drive to Bhedaghat", "Marble rocks boat ride", "Dhuandhar Falls"],
         meals: "Breakfast, Dinner",
@@ -6720,20 +6720,20 @@ const allPackages: Package[] = [
         description: "After breakfast, drop at Jabalpur airport / railway station for your onward journey, having traversed central India's richest natural and cultural circuit.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Last view of the Narmada",
         image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&h=400&fit=crop",
       },
     ],
   },
   {
-    title: "MP Tiger & Hills — Bhopal, Pachmarhi, Kanha & Jabalpur",
+    title: "MP Tiger & Hills - Bhopal, Pachmarhi, Kanha & Jabalpur",
     slug: "mp-tiger-and-hills",
     destinationName: "Madhya Pradesh",
     destinationSlug: "madhya-pradesh",
     category: "adventure",
     description:
-      "A shorter six-day Madhya Pradesh circuit for travellers tight on time — Bhopal's heritage, Pachmarhi's Satpura hills, Kanha's tigers and Bhedaghat's marble rocks. The greatest hits of central India in under a week.",
+      "A shorter six-day Madhya Pradesh circuit for travellers tight on time - Bhopal's heritage, Pachmarhi's Satpura hills, Kanha's tigers and Bhedaghat's marble rocks. The greatest hits of central India in under a week.",
     heroImage: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=800&h=600&fit=crop",
@@ -6775,8 +6775,8 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Bhopal Arrival — Old City",
-        description: "Arrive in Bhopal and walk the old city — Taj-ul-Masajid, the Chowk bazaars, evening on Upper Lake.",
+        title: "Bhopal Arrival - Old City",
+        description: "Arrive in Bhopal and walk the old city - Taj-ul-Masajid, the Chowk bazaars, evening on Upper Lake.",
         activities: ["Pickup at Bhopal", "Taj-ul-Masajid", "Upper Lake boat ride"],
         meals: "Dinner",
         accommodation: "Hotel in Bhopal",
@@ -6797,8 +6797,8 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Pachmarhi — Dhupgarh & Pandav Caves",
-        description: "Sunrise at Dhupgarh, central India's highest peak, then explore the ancient Pandav Caves and Jata Shankar — Pachmarhi's natural Shiva shrine.",
+        title: "Pachmarhi - Dhupgarh & Pandav Caves",
+        description: "Sunrise at Dhupgarh, central India's highest peak, then explore the ancient Pandav Caves and Jata Shankar - Pachmarhi's natural Shiva shrine.",
         activities: ["Dhupgarh sunrise", "Pandav Caves", "Jata Shankar"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Pachmarhi",
@@ -6819,7 +6819,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Kanha Morning Safari — Drive to Bhedaghat",
+        title: "Kanha Morning Safari - Drive to Bhedaghat",
         description: "Pre-dawn jeep safari into Kanha. Afternoon drive west to Bhedaghat for the marble rocks boat and Dhuandhar Falls.",
         activities: ["Morning Kanha safari", "Drive to Bhedaghat", "Marble rocks boat", "Dhuandhar Falls"],
         meals: "Breakfast, Dinner",
@@ -6834,22 +6834,22 @@ const allPackages: Package[] = [
         description: "After breakfast, drop at Jabalpur airport / railway station for your onward journey.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Last view of the Narmada",
         image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&h=400&fit=crop",
       },
     ],
   },
 
-  /* ═══════════════════════ GUJARAT — NEW PACKAGES ═══════════════════════ */
+  /* ═══════════════════════ GUJARAT - NEW PACKAGES ═══════════════════════ */
   {
-    title: "Statue of Unity & Narmada Valley — Kevadia Heritage Weekend",
+    title: "Statue of Unity & Narmada Valley - Kevadia Heritage Weekend",
     slug: "statue-of-unity-narmada",
     destinationName: "Gujarat",
     destinationSlug: "gujarat",
     category: "leisure",
     description:
-      "A three-day weekend trip to the Statue of Unity — the world's tallest statue at 182 m — and the Narmada Valley around Kevadia. Includes Nilkanteshwar Mahadev temple and the lesser-known Dhan Kuber temple.",
+      "A three-day weekend trip to the Statue of Unity - the world's tallest statue at 182 m - and the Narmada Valley around Kevadia. Includes Nilkanteshwar Mahadev temple and the lesser-known Dhan Kuber temple.",
     heroImage: "/images/destinations/gujarat.webp",
     images: [
       "/images/destinations/gujarat.webp",
@@ -6881,7 +6881,7 @@ const allPackages: Package[] = [
     highlights: [
       "Statue of Unity (world's tallest)",
       "Viewing gallery at 153 m",
-      "Valley of Flowers — Kevadia",
+      "Valley of Flowers - Kevadia",
       "Sardar Sarovar Dam",
       "Nilkanteshwar Mahadev Temple",
       "Dhan Kuber Temple",
@@ -6890,7 +6890,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Vadodara Arrival — Drive to Kevadia",
+        title: "Vadodara Arrival - Drive to Kevadia",
         description: "Arrive in Vadodara and drive to Kevadia (~90 km), checking in at a resort overlooking the Narmada. Afternoon visit to the Statue of Unity for the famous laser-and-sound show after sunset.",
         activities: ["Pickup at Vadodara", "Drive to Kevadia", "Statue of Unity light & sound show", "Resort dinner"],
         meals: "Dinner",
@@ -6901,8 +6901,8 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Kevadia — Statue Viewing Gallery, Valley of Flowers, Ekta Cruise",
-        description: "Full day at the Statue of Unity complex — ride the high-speed lift to the 153 m viewing gallery, walk through the Valley of Flowers, take the Ekta Cruise on the Narmada, and visit the Jungle Safari park.",
+        title: "Kevadia - Statue Viewing Gallery, Valley of Flowers, Ekta Cruise",
+        description: "Full day at the Statue of Unity complex - ride the high-speed lift to the 153 m viewing gallery, walk through the Valley of Flowers, take the Ekta Cruise on the Narmada, and visit the Jungle Safari park.",
         activities: ["Viewing gallery at 153 m", "Valley of Flowers", "Sardar Sarovar Dam viewpoint", "Ekta Cruise", "Jungle Safari park"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort in Kevadia",
@@ -6911,11 +6911,11 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Nilkanteshwar Mahadev, Dhan Kuber Temple — Vadodara Departure",
-        description: "Morning visit to the Nilkanteshwar Mahadev temple (Poicha) — a striking 33-foot Shiva idol set in extensive gardens — and the lesser-known Dhan Kuber temple en route back to Vadodara for departure.",
+        title: "Nilkanteshwar Mahadev, Dhan Kuber Temple - Vadodara Departure",
+        description: "Morning visit to the Nilkanteshwar Mahadev temple (Poicha) - a striking 33-foot Shiva idol set in extensive gardens - and the lesser-known Dhan Kuber temple en route back to Vadodara for departure.",
         activities: ["Nilkanteshwar Mahadev darshan", "Dhan Kuber Temple", "Drive to Vadodara", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "90 km drive",
         highlight: "33-foot Shiva at Nilkanteshwar",
         image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&h=400&fit=crop",
@@ -6923,13 +6923,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Gujarat Grand Tour — Rann of Kutch, Bhuj, Mandvi, Dwarka, Somnath, Diu, Gir & Junagadh",
+    title: "Gujarat Grand Tour - Rann of Kutch, Bhuj, Mandvi, Dwarka, Somnath, Diu, Gir & Junagadh",
     slug: "gujarat-grand-tour-15-days",
     destinationName: "Gujarat",
     destinationSlug: "gujarat",
     category: "educational",
     description:
-      "Fifteen days through Gujarat's most ambitious circuit — the Little Rann of Kutch's wild ass, Bhuj's mirror-work palaces, Mandvi's beaches, Dwarka and Somnath's Jyotirlingas, Diu's Portuguese churches, Gir's Asiatic lions and Junagadh's hill forts.",
+      "Fifteen days through Gujarat's most ambitious circuit - the Little Rann of Kutch's wild ass, Bhuj's mirror-work palaces, Mandvi's beaches, Dwarka and Somnath's Jyotirlingas, Diu's Portuguese churches, Gir's Asiatic lions and Junagadh's hill forts.",
     heroImage: "/images/destinations/gujarat.webp",
     images: [
       "/images/destinations/gujarat.webp",
@@ -6999,7 +6999,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Bhuj to Hodka Village — Heritage Stay",
+        title: "Bhuj to Hodka Village - Heritage Stay",
         description: "Drive into the Banni grasslands to Hodka, staying in traditional bhungas (mud houses) at Shaam-e-Sarhad resort. Evening of folk music, traditional dinner and bonfire under the stars.",
         activities: ["Drive to Hodka", "Bhunga resort check-in", "Banni grassland walk", "Folk music & dinner"],
         meals: "Breakfast, Dinner",
@@ -7010,8 +7010,8 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Banni & Pachcham — Great Rann & Kalo Dungar Sunset",
-        description: "Day exploring the Banni-Pachcham region — Dhordo (Rann Utsav site), Bhirandiyara, Ludiya and Khavda villages. Evening drive to Kalo Dungar (Black Hill) for sunset over the white salt desert.",
+        title: "Banni & Pachcham - Great Rann & Kalo Dungar Sunset",
+        description: "Day exploring the Banni-Pachcham region - Dhordo (Rann Utsav site), Bhirandiyara, Ludiya and Khavda villages. Evening drive to Kalo Dungar (Black Hill) for sunset over the white salt desert.",
         activities: ["Dhordo Tent City", "Bhirandiyara embroidery village", "Ludiya village", "Khavda artisan workshop", "Kalo Dungar sunset", "White Rann"],
         meals: "Breakfast, Dinner",
         accommodation: "Bhunga resort, Hodka",
@@ -7021,7 +7021,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Drive Hodka to Mandvi — Beach Town",
+        title: "Drive Hodka to Mandvi - Beach Town",
         description: "Drive south to the coastal town of Mandvi. Afternoon visit to the Vijay Vilas Palace (the Lagaan filming location), then sunset on Mandvi beach.",
         activities: ["Drive to Mandvi", "Vijay Vilas Palace", "Mandvi beach sunset"],
         meals: "Breakfast, Dinner",
@@ -7032,7 +7032,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Mandvi — Shipyard & Beach Activities",
+        title: "Mandvi - Shipyard & Beach Activities",
         description: "Morning visit to the centuries-old Mandvi shipyard where Kharwa shipwrights still build 1,000-tonne wooden vessels by hand. Afternoon free for beach activities or the 72 Jain Temple complex.",
         activities: ["Mandvi shipyard tour", "72 Jain Temple complex", "Beach time"],
         meals: "Breakfast, Dinner",
@@ -7043,7 +7043,7 @@ const allPackages: Package[] = [
       {
         day: 7,
         title: "Drive Mandvi to Jamnagar",
-        description: "Drive east to Jamnagar — the original pearl city of Gujarat. Afternoon visit to Lakhota Lake and the Bala Hanuman Temple, famous for the world's longest continuous Ram Dhun chant since 1964.",
+        description: "Drive east to Jamnagar - the original pearl city of Gujarat. Afternoon visit to Lakhota Lake and the Bala Hanuman Temple, famous for the world's longest continuous Ram Dhun chant since 1964.",
         activities: ["Drive to Jamnagar", "Lakhota Lake", "Bala Hanuman Temple"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Jamnagar",
@@ -7054,7 +7054,7 @@ const allPackages: Package[] = [
       {
         day: 8,
         title: "Drive Jamnagar to Dwarka",
-        description: "Drive to the holy city of Dwarka — believed to be Krishna's mainland kingdom. Visit Dwarkadhish Temple, then take a boat from Okha to Bet Dwarka island for the original temple. Nageshwar Jyotirlinga visit en route.",
+        description: "Drive to the holy city of Dwarka - believed to be Krishna's mainland kingdom. Visit Dwarkadhish Temple, then take a boat from Okha to Bet Dwarka island for the original temple. Nageshwar Jyotirlinga visit en route.",
         activities: ["Drive to Dwarka", "Dwarkadhish Temple", "Bet Dwarka boat", "Nageshwar Jyotirlinga"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dwarka",
@@ -7086,7 +7086,7 @@ const allPackages: Package[] = [
       },
       {
         day: 11,
-        title: "Diu — Fort, Churches, Beach",
+        title: "Diu - Fort, Churches, Beach",
         description: "Morning at Diu Fort and St Paul's Church (1610), then museum visit. Afternoon free at Nagoa or Ghoghla beach.",
         activities: ["Diu Fort", "St Paul's Church", "Diu Museum", "Ghoghla Beach"],
         meals: "Breakfast, Dinner",
@@ -7097,7 +7097,7 @@ const allPackages: Package[] = [
       {
         day: 12,
         title: "Drive Diu to Sasangir",
-        description: "Drive to Sasangir — the only place in the world where the Asiatic lion still roams free. Afternoon at the Gir Interpretation Zone at Devaliya (open-jeep safari).",
+        description: "Drive to Sasangir - the only place in the world where the Asiatic lion still roams free. Afternoon at the Gir Interpretation Zone at Devaliya (open-jeep safari).",
         activities: ["Drive to Sasangir", "Gir Interpretation Zone safari", "Lion sighting"],
         meals: "Breakfast, Dinner",
         accommodation: "Lodge near Sasangir",
@@ -7108,7 +7108,7 @@ const allPackages: Package[] = [
       {
         day: 13,
         title: "Gir Safari & Drive to Rajkot",
-        description: "Pre-dawn open-jeep safari deep into Gir National Park for lions, leopards and 300 bird species. Afternoon drive to Junagadh — visit Uperkot Fort, Mahabat Maqbara — then on to Rajkot.",
+        description: "Pre-dawn open-jeep safari deep into Gir National Park for lions, leopards and 300 bird species. Afternoon drive to Junagadh - visit Uperkot Fort, Mahabat Maqbara - then on to Rajkot.",
         activities: ["Morning Gir National Park safari", "Drive to Junagadh", "Uperkot Fort", "Mahabat Maqbara", "Drive to Rajkot"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Rajkot",
@@ -7133,22 +7133,22 @@ const allPackages: Package[] = [
         description: "After breakfast, drop at Ahmedabad airport / railway station for your onward journey home, having completed Gujarat's most ambitious circuit.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A complete Gujarat circuit done",
         image: "/images/destinations/gujarat.webp",
       },
     ],
   },
 
-  /* ═══════════════════════ MAHARASHTRA — NEW PACKAGES ═══════════════════════ */
+  /* ═══════════════════════ MAHARASHTRA - NEW PACKAGES ═══════════════════════ */
   {
-    title: "5 Jyotirlinga Yatra — Bhimashankar, Trimbakeshwar, Grishneshwar, Mallikarjuna & Omkareshwar",
+    title: "5 Jyotirlinga Yatra - Bhimashankar, Trimbakeshwar, Grishneshwar, Mallikarjuna & Omkareshwar",
     slug: "5-jyotirlinga-yatra",
     destinationName: "Maharashtra",
     destinationSlug: "maharashtra",
     category: "educational",
     description:
-      "A seven-day pilgrimage extending the Maharashtra circuit to cover five of the twelve Jyotirlingas — all three of Maharashtra (Bhimashankar, Trimbakeshwar, Grishneshwar) plus Mallikarjuna in Andhra Pradesh (one of Hinduism's holiest combined Shiva-Shakti shrines, above the Krishna river) and Omkareshwar on the Narmada in Madhya Pradesh.",
+      "A seven-day pilgrimage extending the Maharashtra circuit to cover five of the twelve Jyotirlingas - all three of Maharashtra (Bhimashankar, Trimbakeshwar, Grishneshwar) plus Mallikarjuna in Andhra Pradesh (one of Hinduism's holiest combined Shiva-Shakti shrines, above the Krishna river) and Omkareshwar on the Narmada in Madhya Pradesh.",
     heroImage: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
@@ -7203,7 +7203,7 @@ const allPackages: Package[] = [
       {
         day: 2,
         title: "Bhimashankar → Trimbakeshwar Jyotirlinga",
-        description: "Drive north-west to Trimbakeshwar near Nashik — the three-faced Jyotirlinga and the source of the Godavari river. Evening at Kushavarta Kund.",
+        description: "Drive north-west to Trimbakeshwar near Nashik - the three-faced Jyotirlinga and the source of the Godavari river. Evening at Kushavarta Kund.",
         activities: ["Drive to Trimbakeshwar", "Jyotirlinga darshan", "Kushavarta Kund", "Godavari source"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel near Trimbakeshwar",
@@ -7214,7 +7214,7 @@ const allPackages: Package[] = [
       {
         day: 3,
         title: "Trimbakeshwar → Grishneshwar (Aurangabad)",
-        description: "Drive south-east to Aurangabad. Afternoon darshan at Grishneshwar — the twelfth and final Jyotirlinga. Optional visit to the UNESCO-listed Ellora Caves just 1 km from the temple.",
+        description: "Drive south-east to Aurangabad. Afternoon darshan at Grishneshwar - the twelfth and final Jyotirlinga. Optional visit to the UNESCO-listed Ellora Caves just 1 km from the temple.",
         activities: ["Drive to Aurangabad", "Grishneshwar Jyotirlinga", "Optional Ellora Caves"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Aurangabad",
@@ -7235,8 +7235,8 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Hyderabad → Srisailam — Mallikarjuna Jyotirlinga",
-        description: "Drive south through the Nallamala forest to Srisailam, perched above the Krishna river. Evening darshan at the Mallikarjuna Jyotirlinga and the adjacent Bhramaramba Shakti Peetha — one of only two places where a Jyotirlinga and Shakti Peetha share a temple complex.",
+        title: "Hyderabad → Srisailam - Mallikarjuna Jyotirlinga",
+        description: "Drive south through the Nallamala forest to Srisailam, perched above the Krishna river. Evening darshan at the Mallikarjuna Jyotirlinga and the adjacent Bhramaramba Shakti Peetha - one of only two places where a Jyotirlinga and Shakti Peetha share a temple complex.",
         activities: ["Drive to Srisailam", "Mallikarjuna Jyotirlinga darshan", "Bhramaramba Shakti Peetha"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Srisailam",
@@ -7258,10 +7258,10 @@ const allPackages: Package[] = [
       {
         day: 7,
         title: "Omkareshwar Jyotirlinga → Indore Departure",
-        description: "Morning darshan at the Omkareshwar Jyotirlinga (the OM-shaped sacred island in the Narmada) and the Mamleshwar Jyotirlinga on the south bank. Drive to Indore airport for your onward journey home — five Jyotirlingas complete.",
+        description: "Morning darshan at the Omkareshwar Jyotirlinga (the OM-shaped sacred island in the Narmada) and the Mamleshwar Jyotirlinga on the south bank. Drive to Indore airport for your onward journey home - five Jyotirlingas complete.",
         activities: ["Omkareshwar Jyotirlinga darshan", "Mamleshwar Temple", "Drive to Indore airport", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "80 km drive",
         highlight: "Closing the 5-Jyotirlinga yatra",
         image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
@@ -7269,13 +7269,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Mahabaleshwar & Lonavala — Sahyadri Weekend Getaway",
+    title: "Mahabaleshwar & Lonavala - Sahyadri Weekend Getaway",
     slug: "mahabaleshwar-lonavala-weekend",
     destinationName: "Maharashtra",
     destinationSlug: "maharashtra",
     category: "leisure",
     description:
-      "A three-day Sahyadri weekend escape — Mahabaleshwar's strawberry farms and Pratapgad fort, plus Lonavala's misty viewpoints and the Karla Caves. Pune & Mumbai's favourite quick getaway.",
+      "A three-day Sahyadri weekend escape - Mahabaleshwar's strawberry farms and Pratapgad fort, plus Lonavala's misty viewpoints and the Karla Caves. Pune & Mumbai's favourite quick getaway.",
     heroImage: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
@@ -7316,7 +7316,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Pune to Mahabaleshwar — Strawberry Farms & Venna Lake",
+        title: "Pune to Mahabaleshwar - Strawberry Farms & Venna Lake",
         description: "Drive up the Sahyadris to Mahabaleshwar (1,372 m). Stop at Mapro Garden for strawberries-and-cream, then check in and head to Venna Lake for a paddle-boat ride and the old Mahabaleshwar temple.",
         activities: ["Pickup at Pune", "Drive to Mahabaleshwar", "Mapro Garden", "Venna Lake boat", "Old Mahabaleshwar temple"],
         meals: "Dinner",
@@ -7328,8 +7328,8 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Mahabaleshwar — Pratapgad, Viewpoints, Drive Lonavala",
-        description: "Morning excursion to Pratapgad fort, the site of Shivaji's famous Afzal Khan battle. Afternoon viewpoints — Arthur's Seat, Wilson Point. Late afternoon drive to Lonavala for the night.",
+        title: "Mahabaleshwar - Pratapgad, Viewpoints, Drive Lonavala",
+        description: "Morning excursion to Pratapgad fort, the site of Shivaji's famous Afzal Khan battle. Afternoon viewpoints - Arthur's Seat, Wilson Point. Late afternoon drive to Lonavala for the night.",
         activities: ["Pratapgad Fort", "Arthur's Seat viewpoint", "Wilson Point", "Drive to Lonavala"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Lonavala",
@@ -7340,11 +7340,11 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Lonavala — Tiger's Leap, Karla Caves, Pune Departure",
+        title: "Lonavala - Tiger's Leap, Karla Caves, Pune Departure",
         description: "Morning at Tiger's Leap and Lion's Point for valley views, then visit the 2nd-century Karla and Bhaja Buddhist rock-cut caves. Afternoon drop at Pune / Mumbai.",
         activities: ["Tiger's Leap", "Lion's Point", "Karla Caves", "Bhaja Caves", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "65 km drive",
         highlight: "2,000-year-old Karla Caves",
         image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
@@ -7352,13 +7352,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Matheran — Asia's Smallest Vehicle-Free Hill Station",
+    title: "Matheran - Asia's Smallest Vehicle-Free Hill Station",
     slug: "matheran-weekend",
     destinationName: "Maharashtra",
     destinationSlug: "maharashtra",
     category: "leisure",
     description:
-      "A two-day vehicle-free hill station weekend — the toy train up to Matheran, the panorama at Charlotte Lake, sunset at Panorama Point, and the colonial calm of one of India's smallest hill stations.",
+      "A two-day vehicle-free hill station weekend - the toy train up to Matheran, the panorama at Charlotte Lake, sunset at Panorama Point, and the colonial calm of one of India's smallest hill stations.",
     heroImage: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
@@ -7400,7 +7400,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Mumbai to Matheran — Toy Train, Charlotte Lake, Louisa Sunset",
+        title: "Mumbai to Matheran - Toy Train, Charlotte Lake, Louisa Sunset",
         description: "Drive to Neral and take the famous Matheran toy train (or hike from Dasturi Naka). Vehicle-free zone, so transfers within town are by hand-pulled rickshaw or horse. Afternoon walk to Charlotte Lake, sunset at Louisa Point.",
         activities: ["Drive to Neral", "Toy train to Matheran", "Hotel check-in", "Charlotte Lake walk", "Louisa Point sunset"],
         meals: "Dinner",
@@ -7412,11 +7412,11 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Matheran — Sunrise at Panorama Point, Echo Point, Departure",
+        title: "Matheran - Sunrise at Panorama Point, Echo Point, Departure",
         description: "Pre-dawn walk to Panorama Point for sunrise over the Sahyadris, then Echo Point, then return to Dasturi Naka by toy train / horseback. Drive back to Mumbai.",
         activities: ["Panorama Point sunrise", "Echo Point", "Toy train down", "Drive to Mumbai"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "100 km drive",
         highlight: "Sunrise from Panorama Point",
         image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&h=400&fit=crop",
@@ -7424,13 +7424,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Igatpuri Trek — Vineyard, Sandhan Valley & Hidden Sahyadris",
+    title: "Igatpuri Trek - Vineyard, Sandhan Valley & Hidden Sahyadris",
     slug: "igatpuri-vineyard-sandhan-valley",
     destinationName: "Maharashtra",
     destinationSlug: "maharashtra",
     category: "adventure",
     description:
-      "A three-day adventure in the Igatpuri Sahyadris — Sandhan Valley's slot-canyon trek, a Sula vineyard tour with wine tasting, and the Bhandardara backwaters. Maharashtra's best-kept weekend secret.",
+      "A three-day adventure in the Igatpuri Sahyadris - Sandhan Valley's slot-canyon trek, a Sula vineyard tour with wine tasting, and the Bhandardara backwaters. Maharashtra's best-kept weekend secret.",
     heroImage: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
@@ -7460,7 +7460,7 @@ const allPackages: Package[] = [
       "Tips and gratuities",
     ],
     highlights: [
-      "Sandhan Valley — 'Valley of Shadows'",
+      "Sandhan Valley - 'Valley of Shadows'",
       "Sula Vineyards wine tasting",
       "Bhandardara backwaters",
       "Wilson Dam",
@@ -7471,7 +7471,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Mumbai/Pune to Igatpuri — Bhandardara Sunset",
+        title: "Mumbai/Pune to Igatpuri - Bhandardara Sunset",
         description: "Drive to Igatpuri (~3 hrs from Mumbai). Check in at a Bhandardara lakeside resort. Easy evening walk to Wilson Dam and the Arthur Lake at sunset, optional star-gazing at night.",
         activities: ["Pickup at Mumbai / Pune", "Drive to Bhandardara", "Wilson Dam", "Arthur Lake sunset", "Optional star-gazing"],
         meals: "Dinner",
@@ -7483,7 +7483,7 @@ const allPackages: Package[] = [
       {
         day: 2,
         title: "Sandhan Valley Slot-Canyon Trek",
-        description: "Drive to Sandhan Valley — the 'Valley of Shadows', a 200-foot-deep slot canyon carved by floodwaters. 4-hour trek through the gorge with some easy rappelling. Return to Bhandardara for dinner.",
+        description: "Drive to Sandhan Valley - the 'Valley of Shadows', a 200-foot-deep slot canyon carved by floodwaters. 4-hour trek through the gorge with some easy rappelling. Return to Bhandardara for dinner.",
         activities: ["Drive to Sandhan", "Slot-canyon trek (4 hrs)", "Easy rappelling", "Picnic lunch", "Return to Bhandardara"],
         meals: "Breakfast, Dinner",
         accommodation: "Lakeside resort, Bhandardara",
@@ -7493,11 +7493,11 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Sula Vineyards — Wine Tasting, Departure",
-        description: "Drive to Nashik to visit Sula Vineyards — India's largest winery. Guided estate tour, 4-wine tasting, and farm-to-table lunch at the vineyard restaurant. Afternoon drive back to Mumbai / Pune.",
+        title: "Sula Vineyards - Wine Tasting, Departure",
+        description: "Drive to Nashik to visit Sula Vineyards - India's largest winery. Guided estate tour, 4-wine tasting, and farm-to-table lunch at the vineyard restaurant. Afternoon drive back to Mumbai / Pune.",
         activities: ["Drive to Nashik", "Sula vineyard tour", "Wine tasting (4 wines)", "Vineyard lunch", "Drive back"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "175 km drive",
         highlight: "Sula vineyard wine tasting",
         image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
@@ -7505,13 +7505,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Konkan Coastal — Tarkarli, Sindhudurg, Ganpatipule & Devbagh",
+    title: "Konkan Coastal - Tarkarli, Sindhudurg, Ganpatipule & Devbagh",
     slug: "konkan-coastal",
     destinationName: "Maharashtra",
     destinationSlug: "maharashtra",
     category: "leisure",
     description:
-      "A five-day Konkan coast circuit — Tarkarli's turquoise scuba waters, Sindhudurg's sea fort, Ganpatipule's Ashtavinayak temple, the Devbagh sangam, and seafood that you will dream about for months.",
+      "A five-day Konkan coast circuit - Tarkarli's turquoise scuba waters, Sindhudurg's sea fort, Ganpatipule's Ashtavinayak temple, the Devbagh sangam, and seafood that you will dream about for months.",
     heroImage: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
@@ -7555,7 +7555,7 @@ const allPackages: Package[] = [
       {
         day: 1,
         title: "Pune to Ganpatipule",
-        description: "Long drive south through the Konkan ghats to Ganpatipule. Evening at Ganpatipule beach and the swayambhu Ganesh temple — a self-manifested idol facing the sea.",
+        description: "Long drive south through the Konkan ghats to Ganpatipule. Evening at Ganpatipule beach and the swayambhu Ganesh temple - a self-manifested idol facing the sea.",
         activities: ["Pickup at Pune", "Drive to Ganpatipule", "Ganpatipule Beach", "Swayambhu Ganesh Temple"],
         meals: "Dinner",
         accommodation: "Beach resort in Ganpatipule",
@@ -7565,8 +7565,8 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Drive Ganpatipule to Tarkarli — Beach Time",
-        description: "Drive further south along the coast to Tarkarli — Maharashtra's clearest-water beach. Afternoon swimming, dolphin-spotting boat ride, and a sunset walk along the white sands.",
+        title: "Drive Ganpatipule to Tarkarli - Beach Time",
+        description: "Drive further south along the coast to Tarkarli - Maharashtra's clearest-water beach. Afternoon swimming, dolphin-spotting boat ride, and a sunset walk along the white sands.",
         activities: ["Drive to Tarkarli", "Resort check-in", "Dolphin-spotting boat", "Sunset beach walk"],
         meals: "Breakfast, Dinner",
         accommodation: "Beach resort in Tarkarli",
@@ -7576,7 +7576,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Tarkarli — Scuba Diving & Sindhudurg Fort",
+        title: "Tarkarli - Scuba Diving & Sindhudurg Fort",
         description: "Morning scuba / snorkel session in Tarkarli's clear waters. Afternoon boat to the spectacular Sindhudurg sea fort, built by Shivaji on a rocky island just off the coast.",
         activities: ["Scuba / snorkel session", "Boat to Sindhudurg Fort", "Fort exploration", "Sunset on boat"],
         meals: "Breakfast, Dinner",
@@ -7586,8 +7586,8 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Tarkarli — Devbagh Sangam, Drive to Vijaydurg",
-        description: "Morning at Devbagh sangam — where the Karli river meets the Arabian Sea. Afternoon drive north to Vijaydurg, another Shivaji-era sea fort, before returning to Tarkarli for the night.",
+        title: "Tarkarli - Devbagh Sangam, Drive to Vijaydurg",
+        description: "Morning at Devbagh sangam - where the Karli river meets the Arabian Sea. Afternoon drive north to Vijaydurg, another Shivaji-era sea fort, before returning to Tarkarli for the night.",
         activities: ["Devbagh Sangam boat", "Drive to Vijaydurg", "Vijaydurg Fort", "Return to Tarkarli"],
         meals: "Breakfast, Dinner",
         accommodation: "Beach resort in Tarkarli",
@@ -7597,11 +7597,11 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Drive Tarkarli to Pune — Departure",
+        title: "Drive Tarkarli to Pune - Departure",
         description: "Long drive back along the Konkan coast and over the Sahyadris to Pune. Drop at Pune airport / railway station.",
         activities: ["Drive to Pune", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "460 km drive (long day)",
         highlight: "Final glimpse of the Konkan",
         image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
@@ -7609,15 +7609,15 @@ const allPackages: Package[] = [
     ],
   },
 
-  /* ═══════════════════════ BIHAR — NEW PACKAGE ═══════════════════════ */
+  /* ═══════════════════════ BIHAR - NEW PACKAGE ═══════════════════════ */
   {
-    title: "Buddhist Circuit — Bodh Gaya, Rajgir, Nalanda, Vaishali & Kushinagar",
+    title: "Buddhist Circuit - Bodh Gaya, Rajgir, Nalanda, Vaishali & Kushinagar",
     slug: "buddhist-circuit-bihar",
     destinationName: "Bihar",
     destinationSlug: "bihar",
     category: "educational",
     description:
-      "A six-day pilgrimage through Buddhism's most sacred sites in India — Bodh Gaya's Mahabodhi Temple where Buddha attained enlightenment, Rajgir's Vulture Peak, Nalanda's ancient university, Vaishali's first Buddhist republic, and Kushinagar's parinirvana site.",
+      "A six-day pilgrimage through Buddhism's most sacred sites in India - Bodh Gaya's Mahabodhi Temple where Buddha attained enlightenment, Rajgir's Vulture Peak, Nalanda's ancient university, Vaishali's first Buddhist republic, and Kushinagar's parinirvana site.",
     heroImage: "/images/destinations/bihar.webp",
     images: [
       "/images/destinations/bihar.webp",
@@ -7651,16 +7651,16 @@ const allPackages: Package[] = [
     highlights: [
       "Mahabodhi Temple (UNESCO)",
       "Sitting under the Bodhi Tree",
-      "Vulture Peak — Buddha's preaching site",
+      "Vulture Peak - Buddha's preaching site",
       "Nalanda University Ruins (UNESCO)",
-      "Vaishali — First Buddhist Republic",
-      "Kushinagar — Buddha's parinirvana",
+      "Vaishali - First Buddhist Republic",
+      "Kushinagar - Buddha's parinirvana",
     ],
     featured: false,
     itinerary: [
       {
         day: 1,
-        title: "Gaya Arrival — Bodh Gaya Mahabodhi Temple",
+        title: "Gaya Arrival - Bodh Gaya Mahabodhi Temple",
         description: "Arrive at Gaya airport / railway station and transfer to Bodh Gaya. Evening visit to the Mahabodhi Temple, sitting in silent meditation beneath the descendant Bodhi tree where the Buddha attained enlightenment.",
         activities: ["Arrival pickup", "Hotel check-in", "Mahabodhi Temple", "Bodhi Tree meditation", "Evening aarti"],
         meals: "Dinner",
@@ -7671,8 +7671,8 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Bodh Gaya — Foreign Monasteries, Sujata Village",
-        description: "Walking tour of the international monasteries clustered around Bodh Gaya — Thai, Tibetan, Bhutanese, Japanese, Vietnamese. Cross the Niranjana river to Sujata village (the milkmaid who fed the starving Buddha) and visit the Sujata Stupa.",
+        title: "Bodh Gaya - Foreign Monasteries, Sujata Village",
+        description: "Walking tour of the international monasteries clustered around Bodh Gaya - Thai, Tibetan, Bhutanese, Japanese, Vietnamese. Cross the Niranjana river to Sujata village (the milkmaid who fed the starving Buddha) and visit the Sujata Stupa.",
         activities: ["Thai Monastery", "Tibetan Monastery", "80-foot Buddha statue", "Sujata village", "Sujata Stupa"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Bodh Gaya",
@@ -7681,7 +7681,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Drive Bodh Gaya to Rajgir — Vulture Peak & Hot Springs",
+        title: "Drive Bodh Gaya to Rajgir - Vulture Peak & Hot Springs",
         description: "Drive to Rajgir, the ancient capital of Magadha. Ropeway up to Vishwa Shanti Stupa, then visit Vulture Peak where the Buddha gave many of his most important sermons. Evening at the natural hot springs.",
         activities: ["Drive to Rajgir", "Vishwa Shanti Stupa ropeway", "Vulture Peak", "Rajgir hot springs", "Saptaparni Caves"],
         meals: "Breakfast, Dinner",
@@ -7692,8 +7692,8 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Rajgir — Nalanda University, Drive to Patna",
-        description: "Morning excursion to the Nalanda ruins (UNESCO) — the world's earliest residential university where 10,000 students studied at its peak. Continue to Patna in the afternoon. Evening walk at Gandhi Maidan.",
+        title: "Rajgir - Nalanda University, Drive to Patna",
+        description: "Morning excursion to the Nalanda ruins (UNESCO) - the world's earliest residential university where 10,000 students studied at its peak. Continue to Patna in the afternoon. Evening walk at Gandhi Maidan.",
         activities: ["Nalanda University ruins", "Nalanda Museum", "Drive to Patna", "Gandhi Maidan walk"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Patna",
@@ -7704,7 +7704,7 @@ const allPackages: Package[] = [
       {
         day: 5,
         title: "Drive Patna to Vaishali to Kushinagar",
-        description: "Drive north to Vaishali — believed to be the world's first republic and the site of Buddha's last sermon. Continue across the Ganges to Kushinagar (in UP), where the Buddha attained parinirvana (final passing) in 483 BCE.",
+        description: "Drive north to Vaishali - believed to be the world's first republic and the site of Buddha's last sermon. Continue across the Ganges to Kushinagar (in UP), where the Buddha attained parinirvana (final passing) in 483 BCE.",
         activities: ["Vaishali Ashokan Pillar", "World Peace Pagoda", "Drive to Kushinagar", "Mahaparinirvana Temple", "Reclining Buddha statue"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Kushinagar",
@@ -7714,11 +7714,11 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Kushinagar — Ramabhar Stupa, Drive to Lucknow Departure",
+        title: "Kushinagar - Ramabhar Stupa, Drive to Lucknow Departure",
         description: "Morning at the Ramabhar Stupa (cremation site) and the Wat Thai Kushinagar temple. Afternoon drive to Lucknow airport / railway station for departure.",
         activities: ["Ramabhar Stupa", "Wat Thai Kushinagar", "Drive to Lucknow", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "300 km drive",
         highlight: "Cremation Stupa at Ramabhar",
         image: "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=600&h=400&fit=crop",
@@ -7726,15 +7726,15 @@ const allPackages: Package[] = [
     ],
   },
 
-  /* ═══════════════════════ WEST BENGAL — NEW PACKAGES ═══════════════════════ */
+  /* ═══════════════════════ WEST BENGAL - NEW PACKAGES ═══════════════════════ */
   {
-    title: "Pelling, Gangtok & Ravangla — West Sikkim & Capital Circuit",
+    title: "Pelling, Gangtok & Ravangla - West Sikkim & Capital Circuit",
     slug: "pelling-gangtok-ravangla",
     destinationName: "West Bengal",
     destinationSlug: "west-bengal",
     category: "leisure",
     description:
-      "A six-day West Sikkim and Gangtok circuit from Bagdogra (West Bengal) — Pelling's Kanchenjunga views, the gold-roofed Pemayangtse Monastery, Ravangla's Buddha Park, and Gangtok's MG Marg and Tsomgo Lake.",
+      "A six-day West Sikkim and Gangtok circuit from Bagdogra (West Bengal) - Pelling's Kanchenjunga views, the gold-roofed Pemayangtse Monastery, Ravangla's Buddha Park, and Gangtok's MG Marg and Tsomgo Lake.",
     heroImage: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&h=600&fit=crop",
@@ -7789,7 +7789,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Pelling — Sangachoeling, Pemayangtse, Khecheopalri",
+        title: "Pelling - Sangachoeling, Pemayangtse, Khecheopalri",
         description: "Sunrise from the Kanchenjunga viewpoint. Visit Sangachoeling (Sikkim's second-oldest monastery, 1697) and Pemayangtse, then the sacred Khecheopalri lake.",
         activities: ["Kanchenjunga sunrise", "Sangachoeling Monastery", "Pemayangtse Monastery", "Khecheopalri Lake"],
         meals: "Breakfast, Dinner",
@@ -7799,7 +7799,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Drive Pelling to Ravangla — Buddha Park",
+        title: "Drive Pelling to Ravangla - Buddha Park",
         description: "Drive east to Ravangla. Afternoon at the Buddha Park (Tathagata Tsal) with its 130-ft Buddha statue, and the Ralang Monastery nearby.",
         activities: ["Drive to Ravangla", "Buddha Park", "Ralang Monastery"],
         meals: "Breakfast, Dinner",
@@ -7811,7 +7811,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive Ravangla to Gangtok — MG Marg",
+        title: "Drive Ravangla to Gangtok - MG Marg",
         description: "Drive north to Gangtok, Sikkim's capital. Afternoon walk on MG Marg (the pedestrianised central street), Rumtek Monastery in the evening.",
         activities: ["Drive to Gangtok", "Rumtek Monastery", "MG Marg evening walk"],
         meals: "Breakfast, Dinner",
@@ -7823,7 +7823,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Gangtok — Tsomgo Lake & Baba Mandir",
+        title: "Gangtok - Tsomgo Lake & Baba Mandir",
         description: "Full-day excursion to Tsomgo (Changu) Lake at 12,310 ft, then Baba Harbhajan Singh temple at the China border. Return to Gangtok for an evening of momos and Tibetan tea.",
         activities: ["Drive to Tsomgo", "Lake walk", "Baba Mandir", "Return to Gangtok"],
         meals: "Breakfast, Dinner",
@@ -7835,11 +7835,11 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Drive Gangtok to Bagdogra — Departure",
+        title: "Drive Gangtok to Bagdogra - Departure",
         description: "Morning drive down the Teesta valley to Bagdogra airport / NJP for departure.",
         activities: ["Drive to Bagdogra", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "125 km drive",
         highlight: "Last view of the Teesta",
         image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=600&h=400&fit=crop",
@@ -7847,13 +7847,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Lamahatta, Tinchuley, Chatakpur & Darjeeling — Offbeat Tea Villages",
+    title: "Lamahatta, Tinchuley, Chatakpur & Darjeeling - Offbeat Tea Villages",
     slug: "lamahatta-tinchuley-chatakpur-darjeeling",
     destinationName: "West Bengal",
     destinationSlug: "west-bengal",
     category: "leisure",
     description:
-      "A six-day offbeat tea-village circuit in the Darjeeling hills — Lamahatta's pine forests, Tinchuley's orange orchards, Chatakpur eco-village inside Senchal forest, and a finale in colonial Darjeeling.",
+      "A six-day offbeat tea-village circuit in the Darjeeling hills - Lamahatta's pine forests, Tinchuley's orange orchards, Chatakpur eco-village inside Senchal forest, and a finale in colonial Darjeeling.",
     heroImage: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
@@ -7897,7 +7897,7 @@ const allPackages: Package[] = [
       {
         day: 1,
         title: "Bagdogra to Lamahatta",
-        description: "Pickup at Bagdogra / NJP and drive up to Lamahatta (~4 hrs) — a quiet ridge-top village surrounded by pines. Evening walk at the eco-park.",
+        description: "Pickup at Bagdogra / NJP and drive up to Lamahatta (~4 hrs) - a quiet ridge-top village surrounded by pines. Evening walk at the eco-park.",
         activities: ["Pickup at Bagdogra", "Drive to Lamahatta", "Eco-park walk", "Village evening"],
         meals: "Dinner",
         accommodation: "Homestay in Lamahatta",
@@ -7909,7 +7909,7 @@ const allPackages: Package[] = [
       {
         day: 2,
         title: "Drive Lamahatta to Tinchuley",
-        description: "Short drive to Tinchuley — a tiny orange-orchard village on the Indo-Bhutan border ridge. Walk through the orchards, visit the Gumba monastery, sunset over the Teesta valley.",
+        description: "Short drive to Tinchuley - a tiny orange-orchard village on the Indo-Bhutan border ridge. Walk through the orchards, visit the Gumba monastery, sunset over the Teesta valley.",
         activities: ["Drive to Tinchuley", "Orange orchard walk", "Tinchuley Gumba", "Teesta sunset"],
         meals: "Breakfast, Dinner",
         accommodation: "Homestay in Tinchuley",
@@ -7921,7 +7921,7 @@ const allPackages: Package[] = [
       {
         day: 3,
         title: "Drive Tinchuley to Chatakpur Eco-Village",
-        description: "Drive to Chatakpur — a tiny eco-village inside Senchal Wildlife Sanctuary, 10 km from Darjeeling. Forest walk in the afternoon and Kanchenjunga viewpoint at dusk.",
+        description: "Drive to Chatakpur - a tiny eco-village inside Senchal Wildlife Sanctuary, 10 km from Darjeeling. Forest walk in the afternoon and Kanchenjunga viewpoint at dusk.",
         activities: ["Drive to Chatakpur", "Forest department check-in", "Senchal forest walk", "Kanchenjunga viewpoint"],
         meals: "Breakfast, Dinner",
         accommodation: "Eco-cottage in Chatakpur",
@@ -7932,7 +7932,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive Chatakpur to Darjeeling — Tea Garden Walk",
+        title: "Drive Chatakpur to Darjeeling - Tea Garden Walk",
         description: "Short drive to Darjeeling. Afternoon tea-garden walk with a planter at Happy Valley Tea Estate, then evening at the Mall and Glenary's bakery.",
         activities: ["Drive to Darjeeling", "Happy Valley tea garden walk", "Mall Road evening", "Glenary's"],
         meals: "Breakfast, Dinner",
@@ -7944,7 +7944,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Darjeeling — Tiger Hill Sunrise, Toy Train",
+        title: "Darjeeling - Tiger Hill Sunrise, Toy Train",
         description: "Pre-dawn drive to Tiger Hill for sunrise over Kanchenjunga (and distant Everest on clear days). Return for breakfast, then the famous Darjeeling toy train joy ride. Afternoon at Padmaja Naidu Zoo and the Himalayan Mountaineering Institute.",
         activities: ["Tiger Hill sunrise", "Batasia Loop", "Toy train joy ride", "HMI & Padmaja Naidu Zoo"],
         meals: "Breakfast, Dinner",
@@ -7959,7 +7959,7 @@ const allPackages: Package[] = [
         description: "Morning drive down to Bagdogra airport / NJP for departure.",
         activities: ["Drive to Bagdogra", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "95 km drive",
         highlight: "Final view of the Darjeeling hills",
         image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=600&h=400&fit=crop",
@@ -7967,13 +7967,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Darjeeling & Gangtok — Classic Twin-Hills Circuit",
+    title: "Darjeeling & Gangtok - Classic Twin-Hills Circuit",
     slug: "darjeeling-gangtok-classic",
     destinationName: "West Bengal",
     destinationSlug: "west-bengal",
     category: "leisure",
     description:
-      "A seven-day classic Darjeeling and Gangtok itinerary with three nights in each — perfect for travellers who want to slow down and soak up both hill stations rather than rush.",
+      "A seven-day classic Darjeeling and Gangtok itinerary with three nights in each - perfect for travellers who want to slow down and soak up both hill stations rather than rush.",
     heroImage: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
@@ -8029,7 +8029,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Darjeeling — Tiger Hill Sunrise, Toy Train",
+        title: "Darjeeling - Tiger Hill Sunrise, Toy Train",
         description: "Pre-dawn to Tiger Hill for Kanchenjunga sunrise, then breakfast and the toy train joy ride. Afternoon at HMI and Padmaja Naidu Zoo, then evening on Mall Road.",
         activities: ["Tiger Hill sunrise", "Batasia Loop", "Toy train joy ride", "HMI", "Padmaja Naidu Zoo"],
         meals: "Breakfast, Dinner",
@@ -8039,7 +8039,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Darjeeling — Tea Garden Walk, Monasteries",
+        title: "Darjeeling - Tea Garden Walk, Monasteries",
         description: "Morning at Happy Valley tea estate with first-flush tasting, then Ghoom monastery (the oldest in Darjeeling), Japanese Peace Pagoda, and the Lloyd's Botanical Garden.",
         activities: ["Happy Valley Tea Estate", "Ghoom Monastery", "Japanese Peace Pagoda", "Lloyd's Botanical Garden"],
         meals: "Breakfast, Dinner",
@@ -8061,7 +8061,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Gangtok — Tsomgo Lake & Baba Mandir",
+        title: "Gangtok - Tsomgo Lake & Baba Mandir",
         description: "Full-day excursion to Tsomgo (Changu) Lake at 12,310 ft, then Baba Harbhajan Singh temple at the China border.",
         activities: ["Drive to Tsomgo Lake", "Lake walk", "Baba Mandir", "Return to Gangtok"],
         meals: "Breakfast, Dinner",
@@ -8073,7 +8073,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Gangtok Local — Enchey Monastery, Hanuman Tok",
+        title: "Gangtok Local - Enchey Monastery, Hanuman Tok",
         description: "Morning at Enchey Monastery and Hanuman Tok. Visit the Namgyal Institute of Tibetology, the Do Drul Chorten, and the flower exhibition centre.",
         activities: ["Enchey Monastery", "Hanuman Tok", "Do Drul Chorten", "Flower Exhibition Centre"],
         meals: "Breakfast, Dinner",
@@ -8083,11 +8083,11 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Drive Gangtok to Bagdogra — Departure",
+        title: "Drive Gangtok to Bagdogra - Departure",
         description: "Morning drive down the Teesta to Bagdogra airport / NJP for departure.",
         activities: ["Drive to Bagdogra", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "125 km drive",
         highlight: "Last view of the Teesta",
         image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=600&h=400&fit=crop",
@@ -8095,13 +8095,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Dooars Wildlife Circuit — Buxa, Jaldapara & Gorumara",
+    title: "Dooars Wildlife Circuit - Buxa, Jaldapara & Gorumara",
     slug: "dooars-buxa-jaldapara-gorumara",
     destinationName: "West Bengal",
     destinationSlug: "west-bengal",
     category: "adventure",
     description:
-      "A six-day Dooars wildlife circuit — Buxa Tiger Reserve's dense forests, Jaldapara's one-horned rhinos, and Gorumara's herds of bison. The lesser-known forests at the foot of the Bhutan Himalayas.",
+      "A six-day Dooars wildlife circuit - Buxa Tiger Reserve's dense forests, Jaldapara's one-horned rhinos, and Gorumara's herds of bison. The lesser-known forests at the foot of the Bhutan Himalayas.",
     heroImage: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
@@ -8156,7 +8156,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Buxa — Jeep Safari & Buxa Fort Trek",
+        title: "Buxa - Jeep Safari & Buxa Fort Trek",
         description: "Morning jeep safari into Buxa Tiger Reserve, looking for elephants, leopards, gaur and many bird species. Afternoon short trek up to Buxa Fort, where Netaji Subhash Chandra Bose was imprisoned.",
         activities: ["Morning Buxa jeep safari", "Trek to Buxa Fort", "Local Drukpa village visit"],
         meals: "Breakfast, Dinner",
@@ -8166,8 +8166,8 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Drive Buxa to Jaldapara — Evening Safari",
-        description: "Drive west to Jaldapara — famed for one-horned rhinos. Stay at the iconic Hollong forest bungalow inside the park if booking permits. Afternoon jeep safari into the park.",
+        title: "Drive Buxa to Jaldapara - Evening Safari",
+        description: "Drive west to Jaldapara - famed for one-horned rhinos. Stay at the iconic Hollong forest bungalow inside the park if booking permits. Afternoon jeep safari into the park.",
         activities: ["Drive to Jaldapara", "Hollong bungalow check-in", "Afternoon jeep safari", "Rhino sighting"],
         meals: "Breakfast, Dinner",
         accommodation: "Hollong Forest Bungalow (or nearby lodge)",
@@ -8177,8 +8177,8 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Jaldapara — Elephant Safari, Drive to Gorumara",
-        description: "Early morning elephant-back safari at Jaldapara (subject to availability — book months ahead). Afternoon drive west to Gorumara and the riverside village of Murti.",
+        title: "Jaldapara - Elephant Safari, Drive to Gorumara",
+        description: "Early morning elephant-back safari at Jaldapara (subject to availability - book months ahead). Afternoon drive west to Gorumara and the riverside village of Murti.",
         activities: ["Elephant safari at Jaldapara", "Drive to Gorumara", "Murti riverside walk"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort in Murti",
@@ -8188,8 +8188,8 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Gorumara — Jeep Safari, Lataguri Watchtower",
-        description: "Morning jeep safari into Gorumara — wild elephants, gaur (Indian bison), and over 200 bird species. Visit the Chukchuki and Jatraprasad watchtowers for waterhole sightings.",
+        title: "Gorumara - Jeep Safari, Lataguri Watchtower",
+        description: "Morning jeep safari into Gorumara - wild elephants, gaur (Indian bison), and over 200 bird species. Visit the Chukchuki and Jatraprasad watchtowers for waterhole sightings.",
         activities: ["Morning Gorumara jeep safari", "Chukchuki watchtower", "Jatraprasad watchtower", "Lataguri evening"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort in Murti / Lataguri",
@@ -8198,11 +8198,11 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Drive Gorumara to Bagdogra — Departure",
+        title: "Drive Gorumara to Bagdogra - Departure",
         description: "Morning drive to Bagdogra / NJP for departure.",
         activities: ["Drive to Bagdogra", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "85 km drive",
         highlight: "Last glimpse of the Dooars",
         image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
@@ -8210,15 +8210,15 @@ const allPackages: Package[] = [
     ],
   },
 
-  /* ═══════════════════════ ODISHA — NEW PACKAGES ═══════════════════════ */
+  /* ═══════════════════════ ODISHA - NEW PACKAGES ═══════════════════════ */
   {
-    title: "Odisha Highlights — Bhubaneshwar, Puri, Konark & Nandan Kanan",
+    title: "Odisha Highlights - Bhubaneshwar, Puri, Konark & Nandan Kanan",
     slug: "odisha-highlights",
     destinationName: "Odisha",
     destinationSlug: "odisha",
     category: "educational",
     description:
-      "A seven-day Odisha highlights circuit — Bhubaneshwar's temple city, Puri's Jagannath Dham, Konark's 13th-century Sun Temple, and Chilika Lake's flamingos at Barkul. The state's signature pilgrim-and-beach circuit.",
+      "A seven-day Odisha highlights circuit - Bhubaneshwar's temple city, Puri's Jagannath Dham, Konark's 13th-century Sun Temple, and Chilika Lake's flamingos at Barkul. The state's signature pilgrim-and-beach circuit.",
     heroImage: "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&h=600&fit=crop",
@@ -8259,18 +8259,18 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Bhubaneshwar Arrival — Lingaraj & Old Temples",
-        description: "Arrive in Bhubaneshwar and explore the temple city — Lingaraj (11th-century Shiva temple), Mukteshwar (the gem of Odisha temple architecture), Rajarani and Brahmeshwar. Afternoon at Khandagiri-Udayagiri Jain caves and Kala Bhoomi crafts museum.",
+        title: "Bhubaneshwar Arrival - Lingaraj & Old Temples",
+        description: "Arrive in Bhubaneshwar and explore the temple city - Lingaraj (11th-century Shiva temple), Mukteshwar (the gem of Odisha temple architecture), Rajarani and Brahmeshwar. Afternoon at Khandagiri-Udayagiri Jain caves and Kala Bhoomi crafts museum.",
         activities: ["Pickup at Bhubaneshwar", "Lingaraj Temple", "Mukteshwar Temple", "Rajarani Temple", "Khandagiri-Udayagiri Caves", "Kala Bhoomi"],
         meals: "Lunch, Dinner",
         accommodation: "Panthanivas Bhubaneshwar",
-        highlight: "Mukteshwar — gem of Kalinga architecture",
+        highlight: "Mukteshwar - gem of Kalinga architecture",
         image: "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=600&h=400&fit=crop",
       },
       {
         day: 2,
         title: "Bhubaneshwar to Barkul (Chilika)",
-        description: "Morning drive to Barkul on Chilika Lake — Asia's largest brackish-water lagoon. Afternoon boat ride to Nalabana bird sanctuary and Kalijai temple on its island.",
+        description: "Morning drive to Barkul on Chilika Lake - Asia's largest brackish-water lagoon. Afternoon boat ride to Nalabana bird sanctuary and Kalijai temple on its island.",
         activities: ["Drive to Barkul", "Kalijai Temple boat", "Nalabana bird sanctuary boat", "Chilika sunset"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Panthanivas Barkul",
@@ -8291,8 +8291,8 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Gopalpur — Chandragiri Buddhist Monastery Excursion",
-        description: "Excursion to Chandragiri — a Tibetan settlement with the Jirang Buddhist Monastery and a Tibetan village. Hot Sulphur Spring and Deer Park en route. Back to Gopalpur for the night.",
+        title: "Gopalpur - Chandragiri Buddhist Monastery Excursion",
+        description: "Excursion to Chandragiri - a Tibetan settlement with the Jirang Buddhist Monastery and a Tibetan village. Hot Sulphur Spring and Deer Park en route. Back to Gopalpur for the night.",
         activities: ["Drive to Chandragiri", "Jirang Monastery", "Tibetan village", "Hot Sulphur Spring", "Deer Park"],
         meals: "Breakfast, Dinner",
         accommodation: "Panthanivas Gopalpur",
@@ -8303,7 +8303,7 @@ const allPackages: Package[] = [
       {
         day: 5,
         title: "Drive Gopalpur to Puri",
-        description: "Drive north to Puri. Afternoon at the Jagannath Dham — view the temple from the Raghunandan Library rooftop (non-Hindus not permitted inside). Evening at Puri beach for the rath darshan.",
+        description: "Drive north to Puri. Afternoon at the Jagannath Dham - view the temple from the Raghunandan Library rooftop (non-Hindus not permitted inside). Evening at Puri beach for the rath darshan.",
         activities: ["Drive to Puri", "Jagannath Temple darshan", "Raghunandan Library rooftop view", "Puri beach evening"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Puri",
@@ -8313,8 +8313,8 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Puri — Konark Sun Temple, Raghurajpur Crafts Village",
-        description: "Drive to Konark for the 13th-century Sun Temple (UNESCO) — the colossal stone chariot of Surya. Continue to Raghurajpur — Odisha's heritage Pattachitra painting village. Return to Puri for the night.",
+        title: "Puri - Konark Sun Temple, Raghurajpur Crafts Village",
+        description: "Drive to Konark for the 13th-century Sun Temple (UNESCO) - the colossal stone chariot of Surya. Continue to Raghurajpur - Odisha's heritage Pattachitra painting village. Return to Puri for the night.",
         activities: ["Drive to Konark", "Sun Temple", "Drive to Raghurajpur", "Pattachitra artists' homes"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Puri",
@@ -8324,11 +8324,11 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Puri to Bhubaneshwar — Nandankanan, Departure",
+        title: "Puri to Bhubaneshwar - Nandankanan, Departure",
         description: "Drive back to Bhubaneshwar via Nandankanan Zoo (white tigers, Asiatic lions). Evening drop at Bhubaneshwar airport / railway station.",
         activities: ["Drive to Bhubaneshwar", "Nandankanan Zoo", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "85 km drive",
         highlight: "White tigers at Nandankanan",
         image: "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1600&h=900&fit=crop",
@@ -8336,13 +8336,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Kolkata, Gangasagar & Odisha Coast — Bengal-Odisha Pilgrim Circuit",
+    title: "Kolkata, Gangasagar & Odisha Coast - Bengal-Odisha Pilgrim Circuit",
     slug: "kolkata-gangasagar-odisha-coast",
     destinationName: "Odisha",
     destinationSlug: "odisha",
     category: "educational",
     description:
-      "An eight-day Bengal-Odisha pilgrim-and-coast circuit — Kolkata's heritage, the holy Gangasagar at Sagar Island where the Ganga meets the sea, then south to Bhubaneshwar's temples, Puri's Jagannath Dham and Konark's Sun Temple.",
+      "An eight-day Bengal-Odisha pilgrim-and-coast circuit - Kolkata's heritage, the holy Gangasagar at Sagar Island where the Ganga meets the sea, then south to Bhubaneshwar's temples, Puri's Jagannath Dham and Konark's Sun Temple.",
     heroImage: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&h=600&fit=crop",
@@ -8374,7 +8374,7 @@ const allPackages: Package[] = [
     highlights: [
       "Victoria Memorial Kolkata",
       "Howrah Bridge & Kalighat",
-      "Gangasagar — sacred Ganga-sea sangam",
+      "Gangasagar - sacred Ganga-sea sangam",
       "Konark Sun Temple (UNESCO)",
       "Jagannath Dham at Puri",
       "Chilika Lake flamingos",
@@ -8383,8 +8383,8 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Kolkata Arrival — Victoria Memorial & Howrah Bridge",
-        description: "Arrive in Kolkata and explore the heritage core — Victoria Memorial, St Paul's Cathedral, Howrah Bridge by tram, and an evening on Park Street with kebabs at Peter Cat.",
+        title: "Kolkata Arrival - Victoria Memorial & Howrah Bridge",
+        description: "Arrive in Kolkata and explore the heritage core - Victoria Memorial, St Paul's Cathedral, Howrah Bridge by tram, and an evening on Park Street with kebabs at Peter Cat.",
         activities: ["Pickup at Kolkata", "Victoria Memorial", "St Paul's Cathedral", "Howrah Bridge", "Park Street dinner"],
         meals: "Dinner",
         accommodation: "Hotel in Kolkata",
@@ -8393,7 +8393,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Kolkata — Kalighat, College Street & Indian Museum",
+        title: "Kolkata - Kalighat, College Street & Indian Museum",
         description: "Morning at Kalighat Kali Temple, then College Street's book bazaar (Asia's largest) with coffee at Indian Coffee House. Afternoon at the Indian Museum and Marble Palace.",
         activities: ["Kalighat Kali Temple", "College Street", "Indian Coffee House", "Indian Museum", "Marble Palace"],
         meals: "Breakfast, Dinner",
@@ -8404,7 +8404,7 @@ const allPackages: Package[] = [
       {
         day: 3,
         title: "Kolkata to Gangasagar (Sagar Island)",
-        description: "Early drive to Harwood Point, ferry across to Sagar Island, and on to Gangasagar — where the Ganga finally meets the Bay of Bengal. Visit the Kapil Muni temple and a holy dip in the sangam.",
+        description: "Early drive to Harwood Point, ferry across to Sagar Island, and on to Gangasagar - where the Ganga finally meets the Bay of Bengal. Visit the Kapil Muni temple and a holy dip in the sangam.",
         activities: ["Drive to Harwood Point", "Ferry to Sagar Island", "Kapil Muni Temple", "Holy dip at the sangam"],
         meals: "Breakfast, Dinner",
         accommodation: "Lodge at Gangasagar",
@@ -8425,12 +8425,12 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Bhubaneshwar — Lingaraj, Mukteshwar & Khandagiri Caves",
-        description: "Full day of Bhubaneshwar's temple city — Lingaraj, Mukteshwar, Rajarani temples. Afternoon at Khandagiri-Udayagiri caves and the Tribal Museum.",
+        title: "Bhubaneshwar - Lingaraj, Mukteshwar & Khandagiri Caves",
+        description: "Full day of Bhubaneshwar's temple city - Lingaraj, Mukteshwar, Rajarani temples. Afternoon at Khandagiri-Udayagiri caves and the Tribal Museum.",
         activities: ["Lingaraj Temple", "Mukteshwar Temple", "Rajarani Temple", "Khandagiri-Udayagiri", "Tribal Museum"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Bhubaneshwar",
-        highlight: "Mukteshwar — gem of Kalinga style",
+        highlight: "Mukteshwar - gem of Kalinga style",
         image: "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=600&h=400&fit=crop",
       },
       {
@@ -8446,7 +8446,7 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Puri — Jagannath Dham, Chilika Excursion",
+        title: "Puri - Jagannath Dham, Chilika Excursion",
         description: "Morning Jagannath Temple darshan, then day-trip to Chilika Lake at Satapada for a boat to spot the resident Irrawaddy dolphins. Return to Puri for the night.",
         activities: ["Jagannath Temple darshan", "Drive to Satapada", "Chilika boat", "Irrawaddy dolphin sighting"],
         meals: "Breakfast, Dinner",
@@ -8457,11 +8457,11 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Drive Puri to Bhubaneshwar — Departure",
+        title: "Drive Puri to Bhubaneshwar - Departure",
         description: "Drive back to Bhubaneshwar airport / railway station for departure.",
         activities: ["Drive to Bhubaneshwar", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "60 km drive",
         highlight: "Closing the Bengal-Odisha circuit",
         image: "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=600&h=400&fit=crop",
@@ -8469,15 +8469,15 @@ const allPackages: Package[] = [
     ],
   },
 
-  /* ═══════════════════════ TELANGANA — NEW PACKAGES ═══════════════════════ */
+  /* ═══════════════════════ TELANGANA - NEW PACKAGES ═══════════════════════ */
   {
-    title: "Hyderabad with Srisailam — Pilgrim & Heritage Circuit",
+    title: "Hyderabad with Srisailam - Pilgrim & Heritage Circuit",
     slug: "hyderabad-srisailam",
     destinationName: "Telangana",
     destinationSlug: "telangana",
     category: "educational",
     description:
-      "A six-day Telangana circuit combining Hyderabad's Nizami heritage with Srisailam's Mallikarjuna Jyotirlinga — one of the 12 holiest Shiva shrines, perched above the Krishna river in the Nallamala hills.",
+      "A six-day Telangana circuit combining Hyderabad's Nizami heritage with Srisailam's Mallikarjuna Jyotirlinga - one of the 12 holiest Shiva shrines, perched above the Krishna river in the Nallamala hills.",
     heroImage: "/images/destinations/telangana.webp",
     images: [
       "/images/destinations/telangana.webp",
@@ -8520,8 +8520,8 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Hyderabad Arrival — Charminar Old City",
-        description: "Arrive in Hyderabad and walk through the old city around Charminar — Laad Bazaar's bangle shops, Mecca Masjid, and Nimrah Café for Irani chai and Osmania biscuits. Evening biryani at Shadab.",
+        title: "Hyderabad Arrival - Charminar Old City",
+        description: "Arrive in Hyderabad and walk through the old city around Charminar - Laad Bazaar's bangle shops, Mecca Masjid, and Nimrah Café for Irani chai and Osmania biscuits. Evening biryani at Shadab.",
         activities: ["Airport pickup", "Charminar", "Laad Bazaar", "Mecca Masjid", "Nimrah Café", "Shadab dinner"],
         meals: "Dinner",
         accommodation: "Hotel in Hyderabad",
@@ -8530,7 +8530,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Hyderabad — Golconda Fort, Qutb Shahi Tombs, Chowmahalla",
+        title: "Hyderabad - Golconda Fort, Qutb Shahi Tombs, Chowmahalla",
         description: "Morning at Golconda Fort with its famous acoustic clap and the Qutb Shahi Tombs. Afternoon at Chowmahalla Palace, the official residence of the Nizams. Evening Sound & Light show at Golconda.",
         activities: ["Golconda Fort", "Qutb Shahi Tombs", "Chowmahalla Palace", "Golconda Sound & Light"],
         meals: "Breakfast, Dinner",
@@ -8540,8 +8540,8 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Hyderabad — Salar Jung Museum, Ramoji Film City",
-        description: "Morning at Salar Jung Museum — one of the world's largest one-man art collections. Afternoon at Ramoji Film City — the world's largest integrated film studio complex.",
+        title: "Hyderabad - Salar Jung Museum, Ramoji Film City",
+        description: "Morning at Salar Jung Museum - one of the world's largest one-man art collections. Afternoon at Ramoji Film City - the world's largest integrated film studio complex.",
         activities: ["Salar Jung Museum", "Ramoji Film City"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Hyderabad",
@@ -8550,8 +8550,8 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive Hyderabad to Srisailam — Mallikarjuna Darshan",
-        description: "Long drive south into the Nallamala forest range to Srisailam, perched above the Krishna river. Evening darshan at the Mallikarjuna Jyotirlinga and Bhramaramba Shakti Peetha — a rare combined Shiva-Shakti pilgrimage.",
+        title: "Drive Hyderabad to Srisailam - Mallikarjuna Darshan",
+        description: "Long drive south into the Nallamala forest range to Srisailam, perched above the Krishna river. Evening darshan at the Mallikarjuna Jyotirlinga and Bhramaramba Shakti Peetha - a rare combined Shiva-Shakti pilgrimage.",
         activities: ["Long drive to Srisailam", "Mallikarjuna Jyotirlinga darshan", "Bhramaramba Shakti Peetha", "Patalaganga ghat"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Srisailam",
@@ -8561,7 +8561,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Srisailam — Sakshi Ganapati, Akkamahadevi Caves, Dam",
+        title: "Srisailam - Sakshi Ganapati, Akkamahadevi Caves, Dam",
         description: "Morning visit to Sakshi Ganapati temple and the Akkamahadevi caves (boat ride). Afternoon at the Srisailam dam viewpoint. Return for evening aarti at the main temple.",
         activities: ["Sakshi Ganapati", "Boat to Akkamahadevi Caves", "Srisailam Dam viewpoint", "Evening aarti"],
         meals: "Breakfast, Dinner",
@@ -8571,11 +8571,11 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Drive Srisailam to Hyderabad — Departure",
+        title: "Drive Srisailam to Hyderabad - Departure",
         description: "Morning drive back to Hyderabad through the Nallamala forest. Drop at airport / railway station for departure.",
         activities: ["Drive to Hyderabad", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "215 km drive",
         highlight: "Last view of the Nallamala",
         image: "/images/destinations/telangana.webp",
@@ -8583,13 +8583,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Hyderabad + Srisailam + Somasila — Krishna River Pilgrim Cruise Circuit",
+    title: "Hyderabad + Srisailam + Somasila - Krishna River Pilgrim Cruise Circuit",
     slug: "hyderabad-srisailam-somasila",
     destinationName: "Telangana",
     destinationSlug: "telangana",
     category: "educational",
     description:
-      "A six-day Krishna river pilgrim circuit — Hyderabad's Nizami heritage, Srisailam's Mallikarjuna Jyotirlinga, and a unique river cruise from Srisailam reservoir down to Somasila. Pilgrimage with a side of houseboat.",
+      "A six-day Krishna river pilgrim circuit - Hyderabad's Nizami heritage, Srisailam's Mallikarjuna Jyotirlinga, and a unique river cruise from Srisailam reservoir down to Somasila. Pilgrimage with a side of houseboat.",
     heroImage: "/images/destinations/telangana.webp",
     images: [
       "/images/destinations/telangana.webp",
@@ -8632,8 +8632,8 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Hyderabad Arrival — Old City",
-        description: "Arrive in Hyderabad and walk the old city — Charminar, Laad Bazaar, Mecca Masjid. Dinner at Shadab or Paradise.",
+        title: "Hyderabad Arrival - Old City",
+        description: "Arrive in Hyderabad and walk the old city - Charminar, Laad Bazaar, Mecca Masjid. Dinner at Shadab or Paradise.",
         activities: ["Airport pickup", "Charminar", "Laad Bazaar", "Mecca Masjid", "Biryani dinner"],
         meals: "Dinner",
         accommodation: "Hotel in Hyderabad",
@@ -8642,7 +8642,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Hyderabad — Golconda, Qutb Shahi Tombs, Chowmahalla",
+        title: "Hyderabad - Golconda, Qutb Shahi Tombs, Chowmahalla",
         description: "Morning at Golconda Fort and the Qutb Shahi Tombs. Afternoon at Chowmahalla Palace. Evening Sound & Light show.",
         activities: ["Golconda Fort", "Qutb Shahi Tombs", "Chowmahalla Palace", "Golconda Sound & Light"],
         meals: "Breakfast, Dinner",
@@ -8652,7 +8652,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Drive Hyderabad to Srisailam — Mallikarjuna",
+        title: "Drive Hyderabad to Srisailam - Mallikarjuna",
         description: "Drive through the Nallamala forest to Srisailam. Evening Mallikarjuna Jyotirlinga and Bhramaramba Shakti Peetha darshan.",
         activities: ["Drive to Srisailam", "Mallikarjuna Jyotirlinga", "Bhramaramba Shakti Peetha"],
         meals: "Breakfast, Dinner",
@@ -8663,7 +8663,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Srisailam to Somasila — Pilgrim Cruise (Overnight on Boat)",
+        title: "Srisailam to Somasila - Pilgrim Cruise (Overnight on Boat)",
         description: "Morning at Akkamahadevi caves and Sakshi Ganapati. Afternoon board the pilgrim cruise from Srisailam reservoir, journeying down the Krishna river through forested Nallamala banks. Overnight on the boat with dinner served on deck.",
         activities: ["Akkamahadevi Caves", "Sakshi Ganapati", "Board Srisailam cruise", "Sunset on the Krishna", "Overnight on boat"],
         meals: "Breakfast, Dinner",
@@ -8673,8 +8673,8 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Somasila — Cruise Arrival, Drive to Hyderabad",
-        description: "Morning cruise arrival at Somasila. Disembark and drive back to Hyderabad — evening at leisure.",
+        title: "Somasila - Cruise Arrival, Drive to Hyderabad",
+        description: "Morning cruise arrival at Somasila. Disembark and drive back to Hyderabad - evening at leisure.",
         activities: ["Cruise to Somasila", "Disembark", "Drive to Hyderabad"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Hyderabad",
@@ -8688,20 +8688,20 @@ const allPackages: Package[] = [
         description: "After breakfast, drop at Hyderabad airport / railway station for departure.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Last view of Hyderabad",
         image: "/images/destinations/telangana.webp",
       },
     ],
   },
   {
-    title: "Hyderabad City Break — Charminar, Golconda, Falaknuma & Ramoji",
+    title: "Hyderabad City Break - Charminar, Golconda, Falaknuma & Ramoji",
     slug: "hyderabad-city-break-4n",
     destinationName: "Telangana",
     destinationSlug: "telangana",
     category: "leisure",
     description:
-      "A focused 4-night Hyderabad city break — the Charminar and old-city bazaars, Golconda Fort's whispering acoustics, Chowmahalla and Falaknuma palaces, Salar Jung museum, and a full day at Ramoji Film City. The complete Hyderabad sampler for first-time visitors.",
+      "A focused 4-night Hyderabad city break - the Charminar and old-city bazaars, Golconda Fort's whispering acoustics, Chowmahalla and Falaknuma palaces, Salar Jung museum, and a full day at Ramoji Film City. The complete Hyderabad sampler for first-time visitors.",
     heroImage: "/images/destinations/telangana.webp",
     images: [
       "/images/destinations/telangana.webp",
@@ -8735,7 +8735,7 @@ const allPackages: Package[] = [
     highlights: [
       "Charminar and old-city bazaars (pearls, bangles, biryani)",
       "Golconda Fort whispering wall acoustics",
-      "Ramoji Film City — world's largest film studio",
+      "Ramoji Film City - world's largest film studio",
       "Salar Jung Museum & Chowmahalla Palace",
       "Optional Falaknuma Palace tea/dinner",
     ],
@@ -8743,9 +8743,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Hyderabad — Charminar & Old City",
+        title: "Arrive Hyderabad - Charminar & Old City",
         description:
-          "Arrive at Hyderabad airport/railway station and transfer to your hotel. Afternoon walking tour of the old city around Charminar — Laad Bazaar for lacquer bangles, Patthargatti for pearls, and a Hyderabadi biryani dinner at Shadab or Bawarchi. Overnight Hyderabad.",
+          "Arrive at Hyderabad airport/railway station and transfer to your hotel. Afternoon walking tour of the old city around Charminar - Laad Bazaar for lacquer bangles, Patthargatti for pearls, and a Hyderabadi biryani dinner at Shadab or Bawarchi. Overnight Hyderabad.",
         activities: ["Charminar visit", "Laad Bazaar (bangles)", "Patthargatti (pearls)", "Old-city biryani dinner"],
         meals: "Breakfast",
         accommodation: "Hotel in Hyderabad",
@@ -8756,7 +8756,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Golconda Fort, Qutb Shahi Tombs & Chowmahalla Palace",
         description:
-          "Morning visit to Golconda Fort — climb to the Bala Hissar pavilion and test the whispering-wall acoustics that carry sound a kilometre. Continue to the Qutb Shahi Tombs nearby. Afternoon at Chowmahalla Palace, seat of the Nizams, and the adjoining Mecca Masjid. Evening at Hussain Sagar lakefront.",
+          "Morning visit to Golconda Fort - climb to the Bala Hissar pavilion and test the whispering-wall acoustics that carry sound a kilometre. Continue to the Qutb Shahi Tombs nearby. Afternoon at Chowmahalla Palace, seat of the Nizams, and the adjoining Mecca Masjid. Evening at Hussain Sagar lakefront.",
         activities: ["Golconda Fort climb", "Qutb Shahi Tombs", "Chowmahalla Palace", "Mecca Masjid", "Hussain Sagar lake"],
         meals: "Breakfast",
         accommodation: "Hotel in Hyderabad",
@@ -8765,21 +8765,21 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Ramoji Film City — Full Day",
+        title: "Ramoji Film City - Full Day",
         description:
-          "Full-day excursion to Ramoji Film City — the world's largest film-studio complex (1,666 acres, Guinness Record). Guided tour bus through outdoor sets, live action shows, a Wild West attraction, Eureka and Ramoji Tower, and the Bahubali sets. Return by evening. Overnight Hyderabad.",
+          "Full-day excursion to Ramoji Film City - the world's largest film-studio complex (1,666 acres, Guinness Record). Guided tour bus through outdoor sets, live action shows, a Wild West attraction, Eureka and Ramoji Tower, and the Bahubali sets. Return by evening. Overnight Hyderabad.",
         activities: ["Ramoji Film City guided tour", "Live-action shows", "Bahubali set", "Eureka park"],
         meals: "Breakfast",
         accommodation: "Hotel in Hyderabad",
         distance: "Approx. 50 km round trip",
-        highlight: "Ramoji — world's largest film studio",
+        highlight: "Ramoji - world's largest film studio",
         image: "/images/destinations/telangana.webp",
       },
       {
         day: 4,
         title: "Salar Jung Museum, Birla Mandir & Optional Falaknuma",
         description:
-          "Morning at Salar Jung Museum — one of India's largest single-collector museums (44,000 artefacts). Afternoon at Birla Mandir (white marble temple over the city) and Lumbini Park boat to Buddha statue. Evening optional high-tea at the Taj Falaknuma Palace (the Nizam's residence, now a Taj hotel — separate booking, must be reserved 3 days ahead).",
+          "Morning at Salar Jung Museum - one of India's largest single-collector museums (44,000 artefacts). Afternoon at Birla Mandir (white marble temple over the city) and Lumbini Park boat to Buddha statue. Evening optional high-tea at the Taj Falaknuma Palace (the Nizam's residence, now a Taj hotel - separate booking, must be reserved 3 days ahead).",
         activities: ["Salar Jung Museum", "Birla Mandir", "Lumbini Park boat", "Buddha statue Hussain Sagar", "Optional Falaknuma tea"],
         meals: "Breakfast",
         accommodation: "Hotel in Hyderabad",
@@ -8793,22 +8793,22 @@ const allPackages: Package[] = [
           "Morning at leisure. Last-minute shopping at Sultan Bazaar or pearl-shopping in Charminar area. Transfer to airport/railway station for departure.",
         activities: ["Morning at leisure", "Optional shopping", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Pearl pickup",
         image: "/images/destinations/telangana.webp",
       },
     ],
   },
 
-  /* ═══════════════════════ MEGHALAYA — STAND-ALONE PACKAGE ═══════════════════════ */
+  /* ═══════════════════════ MEGHALAYA - STAND-ALONE PACKAGE ═══════════════════════ */
   {
-    title: "Meghalaya Essence — Shillong, Cherrapunjee, Mawlynnong & Dawki",
+    title: "Meghalaya Essence - Shillong, Cherrapunjee, Mawlynnong & Dawki",
     slug: "meghalaya-essence",
     destinationName: "Meghalaya",
     destinationSlug: "meghalaya",
     category: "leisure",
     description:
-      "A seven-day Meghalaya-only itinerary focusing entirely on the 'Abode of Clouds' — Shillong's pine ridges, Cherrapunjee's living root bridges, Mawlynnong's cleanest village, Dawki's crystal river, and Krang Suri's blue cascade. The deepest dive into Meghalaya without the rush of multi-state circuits.",
+      "A seven-day Meghalaya-only itinerary focusing entirely on the 'Abode of Clouds' - Shillong's pine ridges, Cherrapunjee's living root bridges, Mawlynnong's cleanest village, Dawki's crystal river, and Krang Suri's blue cascade. The deepest dive into Meghalaya without the rush of multi-state circuits.",
     heroImage: "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=800&h=600&fit=crop",
@@ -8843,7 +8843,7 @@ const allPackages: Package[] = [
     highlights: [
       "Cherrapunjee waterfall circuit",
       "Double Decker Living Root Bridge trek",
-      "Mawlynnong — Asia's Cleanest Village",
+      "Mawlynnong - Asia's Cleanest Village",
       "Dawki crystal Umngot river",
       "Krang Suri's blue cascade",
       "Laitlum Canyons & Shillong Peak",
@@ -8864,9 +8864,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Shillong Local — Elephant Falls, Don Bosco Museum & Mawphlang",
+        title: "Shillong Local - Elephant Falls, Don Bosco Museum & Mawphlang",
         description:
-          "Full local Shillong day — the three-tiered Elephant Falls, Ward's Lake colonial gardens, the Don Bosco Museum of Indigenous Cultures (one of the best ethnographic museums in India), and the city's highest point at Shillong Peak for sweeping views.",
+          "Full local Shillong day - the three-tiered Elephant Falls, Ward's Lake colonial gardens, the Don Bosco Museum of Indigenous Cultures (one of the best ethnographic museums in India), and the city's highest point at Shillong Peak for sweeping views.",
         activities: ["Elephant Falls", "Ward's Lake", "Don Bosco Museum", "Shillong Peak", "Lewduh / Bara Bazar walk", "Mawphlang Sacred Forest"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Shillong",
@@ -8876,7 +8876,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Shillong to Cherrapunjee — Wei Sawdong, Arwah Caves & Nohkalikai",
+        title: "Shillong to Cherrapunjee - Wei Sawdong, Arwah Caves & Nohkalikai",
         description:
           "Drive south to Cherrapunjee, once the wettest place on earth. Stop at Mawkdok Dympep viewpoint, hike to the three-tiered Wei Sawdong Falls, then visit Nohkalikai (India's tallest plunge waterfall), the Seven Sisters Falls and Mawsmai limestone caves.",
         activities: ["Drive to Cherrapunjee", "Mawkdok Dympep viewpoint", "Wei Sawdong Falls", "Nohkalikai Falls", "Seven Sisters Falls", "Mawsmai Caves", "Arwah Cave", "Garden of Caves"],
@@ -8889,7 +8889,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Cherrapunjee — Double Decker Living Root Bridge Trek",
+        title: "Cherrapunjee - Double Decker Living Root Bridge Trek",
         description:
           "Drive to Tyrna village and trek down ~3,000 steps through cloud forest to Nongriat, home to the famous 200-year-old Double Decker Living Root Bridge. Cross wire suspension bridges over crystal streams. Optional extension to Rainbow Falls. Return trek up and back to the hotel.",
         activities: ["Drive to Tyrna", "Nongriat trek", "Double Decker Root Bridge", "Optional Rainbow Falls", "Return trek", "Rainbow Falls (optional)"],
@@ -8903,7 +8903,7 @@ const allPackages: Package[] = [
         day: 5,
         title: "Cherrapunjee to Mawlynnong & Dawki",
         description:
-          "Drive to Mawlynnong — Asia's Cleanest Village — for its bamboo-fenced lanes, Balancing Rock, Sky View machaan and the Single Decker Living Root Bridge at Riwai. Continue to Dawki for a sunset boat ride on the crystal-clear Umngot river. Overnight at a riverside camp at Shnongpdeng.",
+          "Drive to Mawlynnong - Asia's Cleanest Village - for its bamboo-fenced lanes, Balancing Rock, Sky View machaan and the Single Decker Living Root Bridge at Riwai. Continue to Dawki for a sunset boat ride on the crystal-clear Umngot river. Overnight at a riverside camp at Shnongpdeng.",
         activities: ["Drive to Mawlynnong", "Cleanest Village walk", "Sky View machaan", "Riwai Root Bridge", "Drive to Dawki", "Umngot river boat"],
         meals: "Breakfast, Dinner",
         accommodation: "Riverside camp Shnongpdeng / Dawki",
@@ -8913,9 +8913,9 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Dawki to Jowai to Shillong — Krang Suri & Laitlum Canyons",
+        title: "Dawki to Jowai to Shillong - Krang Suri & Laitlum Canyons",
         description:
-          "Drive north via Jowai to Krang Suri Falls — Meghalaya's bluest waterfall — with a natural pool perfect for a swim. Continue to Laitlum Canyons (famous from the film Rock On 2) for sweeping views across the Khasi Hills. Reach Shillong by evening.",
+          "Drive north via Jowai to Krang Suri Falls - Meghalaya's bluest waterfall - with a natural pool perfect for a swim. Continue to Laitlum Canyons (famous from the film Rock On 2) for sweeping views across the Khasi Hills. Reach Shillong by evening.",
         activities: ["Drive to Krang Suri", "Swim at the blue falls", "Laitlum Canyons", "Drive to Shillong"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Shillong",
@@ -8925,12 +8925,12 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Shillong to Guwahati — Departure",
+        title: "Shillong to Guwahati - Departure",
         description:
           "Morning drive back to Guwahati. Drop at the airport / railway station for your onward journey home.",
         activities: ["Drive to Guwahati", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "100 km drive",
         highlight: "Last view of the Khasi Hills",
         image: "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=600&h=400&fit=crop",
@@ -8938,15 +8938,15 @@ const allPackages: Package[] = [
     ],
   },
 
-  /* ═══════════════════════ SIKKIM — ADDITIONAL COMBINATIONS ═══════════════════════ */
+  /* ═══════════════════════ SIKKIM - ADDITIONAL COMBINATIONS ═══════════════════════ */
   {
-    title: "North Sikkim Grand — Gangtok, Tsomgo, Lachen, Lachung & Gurudongmar",
+    title: "North Sikkim Grand - Gangtok, Tsomgo, Lachen, Lachung & Gurudongmar",
     slug: "north-sikkim-lachen-lachung",
     destinationName: "Sikkim & Darjeeling",
     destinationSlug: "sikkim-darjeeling",
     category: "adventure",
     description:
-      "An eight-day deep-Sikkim circuit — Gangtok's monasteries, the sacred Tsomgo Lake and Baba Mandir, Lachen's frozen Gurudongmar Lake at 17,800 ft, Lachung's Yumthang 'Valley of Flowers' and the dramatic Zero Point at the China border. The complete North Sikkim itinerary.",
+      "An eight-day deep-Sikkim circuit - Gangtok's monasteries, the sacred Tsomgo Lake and Baba Mandir, Lachen's frozen Gurudongmar Lake at 17,800 ft, Lachung's Yumthang 'Valley of Flowers' and the dramatic Zero Point at the China border. The complete North Sikkim itinerary.",
     heroImage: "/images/generated/sikkim-and-darjeeling-hero.webp",
     images: [
       "/images/generated/sikkim-and-darjeeling-hero.webp",
@@ -9002,8 +9002,8 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Gangtok — Tsomgo Lake & Baba Mandir",
-        description: "Full-day excursion to the sacred Tsomgo (Changu) Lake at 12,310 ft — a glacial lake that changes colour with the seasons — and the Baba Harbhajan Singh Mandir near the China border. Optional extension to Nathula Pass (at extra cost, subject to permits). These are the must-do sights of Sikkim.",
+        title: "Gangtok - Tsomgo Lake & Baba Mandir",
+        description: "Full-day excursion to the sacred Tsomgo (Changu) Lake at 12,310 ft - a glacial lake that changes colour with the seasons - and the Baba Harbhajan Singh Mandir near the China border. Optional extension to Nathula Pass (at extra cost, subject to permits). These are the must-do sights of Sikkim.",
         activities: ["Tsomgo Lake", "Baba Mandir", "Optional Nathula Pass", "Yak ride (optional)"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Gangtok",
@@ -9014,7 +9014,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Gangtok Local — Rumtek, Do Drul Chorten, Enchey",
+        title: "Gangtok Local - Rumtek, Do Drul Chorten, Enchey",
         description: "Visit Rumtek Monastery (seat of the Karmapa Lama), the Do Drul Chorten stupa, the Namgyal Institute of Tibetology, Enchey Monastery, the Tashi Viewpoint and the Hanuman Tok hilltop temple.",
         activities: ["Rumtek Monastery", "Do Drul Chorten", "Namgyal Institute", "Enchey Monastery", "Tashi Viewpoint", "Hanuman Tok"],
         meals: "Breakfast, Dinner",
@@ -9024,7 +9024,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive Gangtok to Lachen — Seven Sisters & Naga Falls",
+        title: "Drive Gangtok to Lachen - Seven Sisters & Naga Falls",
         description: "Long drive north up the Teesta to Lachen at 2,750 m. Photo stops at Seven Sisters Waterfall and Naga Falls en route. Briefing at the lodge for tomorrow's high-altitude trip.",
         activities: ["Drive to Lachen", "Seven Sisters Waterfall", "Naga Falls", "Lachen lodge check-in"],
         meals: "Breakfast, Dinner",
@@ -9036,8 +9036,8 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Lachen — Gurudongmar Lake Excursion, Drive to Lachung",
-        description: "Pre-dawn drive to Gurudongmar Lake at 17,800 ft — one of the highest lakes in the world, sacred to Sikkimese Buddhists and Sikhs. Return to Lachen for breakfast, then drive south to Lachung in the evening.",
+        title: "Lachen - Gurudongmar Lake Excursion, Drive to Lachung",
+        description: "Pre-dawn drive to Gurudongmar Lake at 17,800 ft - one of the highest lakes in the world, sacred to Sikkimese Buddhists and Sikhs. Return to Lachen for breakfast, then drive south to Lachung in the evening.",
         activities: ["Pre-dawn drive to Gurudongmar", "Sacred lake visit", "Return to Lachen", "Drive to Lachung"],
         meals: "Breakfast, Dinner",
         accommodation: "Lodge in Lachung",
@@ -9048,8 +9048,8 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Lachung — Yumthang Valley of Flowers & Zero Point",
-        description: "Drive to Yumthang Valley — the 'Valley of Flowers' which blooms with rhododendrons and primulas in April-May. Continue to Zero Point at 15,300 ft — the last civilian outpost before the China border. Return to Lachung for the night.",
+        title: "Lachung - Yumthang Valley of Flowers & Zero Point",
+        description: "Drive to Yumthang Valley - the 'Valley of Flowers' which blooms with rhododendrons and primulas in April-May. Continue to Zero Point at 15,300 ft - the last civilian outpost before the China border. Return to Lachung for the night.",
         activities: ["Drive to Yumthang", "Valley of Flowers", "Zero Point at 15,300 ft", "Return to Lachung"],
         meals: "Breakfast, Dinner",
         accommodation: "Lodge in Lachung",
@@ -9071,11 +9071,11 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Drive Gangtok to Bagdogra — Departure",
+        title: "Drive Gangtok to Bagdogra - Departure",
         description: "Morning drive down the Teesta to Bagdogra airport / NJP for departure.",
         activities: ["Drive to Bagdogra", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "125 km drive",
         highlight: "Closing the Sikkim circuit",
         image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=600&h=400&fit=crop",
@@ -9083,13 +9083,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Sikkim Family Circuit — Gangtok, Pelling, Namchi & Tsomgo",
+    title: "Sikkim Family Circuit - Gangtok, Pelling, Namchi & Tsomgo",
     slug: "sikkim-family-circuit",
     destinationName: "Sikkim & Darjeeling",
     destinationSlug: "sikkim-darjeeling",
     category: "leisure",
     description:
-      "A relaxed eight-day Sikkim family circuit — Gangtok's Tsomgo Lake and Rumtek monastery, Pelling's Kanchenjunga sunrise, Namchi's giant Padmasambhava statue and Char Dham complex, and gentle drives through the Teesta valley. Best for couples and families avoiding high-altitude treks.",
+      "A relaxed eight-day Sikkim family circuit - Gangtok's Tsomgo Lake and Rumtek monastery, Pelling's Kanchenjunga sunrise, Namchi's giant Padmasambhava statue and Char Dham complex, and gentle drives through the Teesta valley. Best for couples and families avoiding high-altitude treks.",
     heroImage: "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=800&h=600&fit=crop",
@@ -9144,7 +9144,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Gangtok Local — Rumtek, Enchey, Hanuman Tok",
+        title: "Gangtok Local - Rumtek, Enchey, Hanuman Tok",
         description: "Visit Rumtek Monastery (seat of the Karmapa Lama), Enchey Monastery, Hanuman Tok and Ganesh Tok hilltop temples, and the Namgyal Institute of Tibetology.",
         activities: ["Rumtek Monastery", "Enchey Monastery", "Hanuman Tok", "Ganesh Tok", "Namgyal Institute"],
         meals: "Breakfast, Dinner",
@@ -9154,7 +9154,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Gangtok — Tsomgo Lake & Baba Mandir",
+        title: "Gangtok - Tsomgo Lake & Baba Mandir",
         description: "Full-day excursion to Tsomgo Lake at 12,310 ft and Baba Harbhajan Singh temple near the China border. Return to Gangtok for the night.",
         activities: ["Drive to Tsomgo", "Lake walk", "Baba Mandir", "Return to Gangtok"],
         meals: "Breakfast, Dinner",
@@ -9178,7 +9178,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Pelling — Kanchenjunga Sunrise, Pemayangtse Monastery, Khecheopalri Lake",
+        title: "Pelling - Kanchenjunga Sunrise, Pemayangtse Monastery, Khecheopalri Lake",
         description: "Pre-dawn at the Kanchenjunga viewpoint for sunrise on the third-highest peak in the world. Visit Sangachoeling Monastery (1697) and Pemayangtse Monastery (1705) in the morning, then the sacred Khecheopalri Lake in the afternoon.",
         activities: ["Kanchenjunga sunrise", "Sangachoeling Monastery", "Pemayangtse Monastery", "Khecheopalri Lake"],
         meals: "Breakfast, Dinner",
@@ -9188,8 +9188,8 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Drive Pelling to Namchi — Samdruptse & Char Dham",
-        description: "Drive south to Namchi to visit Samdruptse — a 135-foot statue of Guru Padmasambhava on a hilltop — and the Char Dham complex with miniature replicas of all four major Hindu shrines. Stay at Namchi for the night.",
+        title: "Drive Pelling to Namchi - Samdruptse & Char Dham",
+        description: "Drive south to Namchi to visit Samdruptse - a 135-foot statue of Guru Padmasambhava on a hilltop - and the Char Dham complex with miniature replicas of all four major Hindu shrines. Stay at Namchi for the night.",
         activities: ["Drive to Namchi", "Samdruptse statue (135 ft)", "Char Dham complex"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Namchi",
@@ -9199,7 +9199,7 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Namchi to Darjeeling — Tea Garden Walk",
+        title: "Namchi to Darjeeling - Tea Garden Walk",
         description: "Drive east to Darjeeling. Afternoon at Happy Valley tea estate with first-flush tasting, then evening on the Mall with dinner at Glenary's.",
         activities: ["Drive to Darjeeling", "Happy Valley tea estate", "Mall Road evening"],
         meals: "Breakfast, Dinner",
@@ -9215,7 +9215,7 @@ const allPackages: Package[] = [
         description: "Pre-dawn at Tiger Hill for Kanchenjunga sunrise. Drive down to Bagdogra airport / NJP for departure.",
         activities: ["Tiger Hill sunrise", "Batasia Loop", "Drive to Bagdogra", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "95 km drive",
         highlight: "Final Tiger Hill sunrise",
         image: "/images/generated/sikkim-and-darjeeling-hero.webp",
@@ -9224,15 +9224,15 @@ const allPackages: Package[] = [
   },
 
 
-  /* ═══════════════════════ CHHATTISGARH — NEW PACKAGES ═══════════════════════ */
+  /* ═══════════════════════ CHHATTISGARH - NEW PACKAGES ═══════════════════════ */
   {
-    title: "Bastar & Chitrakote — Tribal Heartland & Waterfalls",
+    title: "Bastar & Chitrakote - Tribal Heartland & Waterfalls",
     slug: "bastar-chitrakote",
     destinationName: "Chhattisgarh",
     destinationSlug: "chhattisgarh",
     category: "adventure",
     description:
-      "A six-day journey into Chhattisgarh's Bastar region — the thundering Chitrakote Falls (India's widest), the limestone Kutumsar Caves, tribal weekly markets, Dhokra metalcraft villages, and the deep sal forests of Kanger Valley National Park.",
+      "A six-day journey into Chhattisgarh's Bastar region - the thundering Chitrakote Falls (India's widest), the limestone Kutumsar Caves, tribal weekly markets, Dhokra metalcraft villages, and the deep sal forests of Kanger Valley National Park.",
     heroImage: "/images/destinations/chhattisgarh.webp",
     images: [
       "/images/destinations/chhattisgarh.webp",
@@ -9265,7 +9265,7 @@ const allPackages: Package[] = [
       "Tips and gratuities",
     ],
     highlights: [
-      "Chitrakote Falls — India's widest waterfall",
+      "Chitrakote Falls - India's widest waterfall",
       "Kutumsar limestone caves",
       "Tirathgarh five-tiered falls",
       "Bastar tribal haat markets",
@@ -9275,9 +9275,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Raipur Arrival — Drive to Jagdalpur",
+        title: "Raipur Arrival - Drive to Jagdalpur",
         description:
-          "Arrive in Raipur, the Chhattisgarh capital, and drive south through sal forest to Jagdalpur — the heart of the Bastar region. Easy evening at the hotel after the long drive.",
+          "Arrive in Raipur, the Chhattisgarh capital, and drive south through sal forest to Jagdalpur - the heart of the Bastar region. Easy evening at the hotel after the long drive.",
         activities: ["Pickup at Raipur", "Drive to Jagdalpur", "Hotel check-in"],
         meals: "Dinner",
         accommodation: "Hotel in Jagdalpur",
@@ -9287,9 +9287,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Chitrakote Falls — The Niagara of India",
+        title: "Chitrakote Falls - The Niagara of India",
         description:
-          "Drive to Chitrakote Falls — India's widest waterfall, a 300-metre horseshoe where the Indravati river thunders over a sandstone shelf. Take a small boat to the base of the falls, then visit a nearby Dhokra metalcraft village to watch the 4,000-year-old lost-wax bronze casting technique.",
+          "Drive to Chitrakote Falls - India's widest waterfall, a 300-metre horseshoe where the Indravati river thunders over a sandstone shelf. Take a small boat to the base of the falls, then visit a nearby Dhokra metalcraft village to watch the 4,000-year-old lost-wax bronze casting technique.",
         activities: ["Chitrakote Falls", "Boat to the falls base", "Dhokra metalcraft village"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort near Chitrakote",
@@ -9299,9 +9299,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Kanger Valley — Kutumsar Caves & Tirathgarh Falls",
+        title: "Kanger Valley - Kutumsar Caves & Tirathgarh Falls",
         description:
-          "Full day in Kanger Valley National Park — descend into the limestone Kutumsar Caves with their stalactites and blind cave fish, then explore the five-tiered Tirathgarh Falls cascading through dense forest. Look out for the Bastar hill myna, the state bird.",
+          "Full day in Kanger Valley National Park - descend into the limestone Kutumsar Caves with their stalactites and blind cave fish, then explore the five-tiered Tirathgarh Falls cascading through dense forest. Look out for the Bastar hill myna, the state bird.",
         activities: ["Kutumsar Caves", "Tirathgarh Falls", "Kanger Dhara", "Forest walk"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort near Chitrakote",
@@ -9325,7 +9325,7 @@ const allPackages: Package[] = [
         day: 5,
         title: "Drive Jagdalpur to Raipur via Sirpur",
         description:
-          "Drive back towards Raipur, stopping at Sirpur — a 5th–8th century archaeological site with the brick Lakshmana Temple and Buddhist monastery ruins on the banks of the Mahanadi. Reach Raipur by evening.",
+          "Drive back towards Raipur, stopping at Sirpur - a 5th–8th century archaeological site with the brick Lakshmana Temple and Buddhist monastery ruins on the banks of the Mahanadi. Reach Raipur by evening.",
         activities: ["Drive to Raipur", "Sirpur Lakshmana Temple", "Buddhist monastery ruins"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Raipur",
@@ -9340,20 +9340,20 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Raipur airport / railway station for your onward journey, having explored one of India's most untouched tribal and natural regions.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Closing the Bastar circuit",
         image: "/images/destinations/chhattisgarh.webp",
       },
     ],
   },
   {
-    title: "Chhattisgarh Wildlife & Heritage — Raipur, Barnawapara & Sirpur",
+    title: "Chhattisgarh Wildlife & Heritage - Raipur, Barnawapara & Sirpur",
     slug: "chhattisgarh-wildlife-heritage",
     destinationName: "Chhattisgarh",
     destinationSlug: "chhattisgarh",
     category: "adventure",
     description:
-      "A four-day short break through central Chhattisgarh — jeep safaris at Barnawapara Wildlife Sanctuary, the ancient temple-and-monastery ruins of Sirpur, and the lakes and museums of Raipur. A relaxed introduction to the state for travellers short on time.",
+      "A four-day short break through central Chhattisgarh - jeep safaris at Barnawapara Wildlife Sanctuary, the ancient temple-and-monastery ruins of Sirpur, and the lakes and museums of Raipur. A relaxed introduction to the state for travellers short on time.",
     heroImage: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
@@ -9396,9 +9396,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Raipur Arrival — City Tour",
+        title: "Raipur Arrival - City Tour",
         description:
-          "Arrive in Raipur and explore the capital — the Mahant Ghasidas Memorial Museum, the lakeside Vivekananda Sarovar (Budha Talab), and the Mahamaya Temple. Evening at the local markets.",
+          "Arrive in Raipur and explore the capital - the Mahant Ghasidas Memorial Museum, the lakeside Vivekananda Sarovar (Budha Talab), and the Mahamaya Temple. Evening at the local markets.",
         activities: ["Pickup at Raipur", "Mahant Ghasidas Museum", "Vivekananda Sarovar", "Mahamaya Temple"],
         meals: "Dinner",
         accommodation: "Hotel in Raipur",
@@ -9407,7 +9407,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Drive Raipur to Barnawapara — Evening Safari",
+        title: "Drive Raipur to Barnawapara - Evening Safari",
         description:
           "Drive east to Barnawapara Wildlife Sanctuary, set in dense sal and teak forest. Afternoon jeep safari in search of sloth bear, leopard, gaur, flying squirrel and over 150 bird species. Overnight at a forest resort.",
         activities: ["Drive to Barnawapara", "Resort check-in", "Evening jeep safari"],
@@ -9419,9 +9419,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Barnawapara to Sirpur — Ancient Ruins, Drive Raipur",
+        title: "Barnawapara to Sirpur - Ancient Ruins, Drive Raipur",
         description:
-          "Morning forest walk, then drive to Sirpur on the banks of the Mahanadi — a 5th–8th century site with the brick Lakshmana Temple, Buddhist viharas and Jain shrines. Continue back to Raipur for the night.",
+          "Morning forest walk, then drive to Sirpur on the banks of the Mahanadi - a 5th–8th century site with the brick Lakshmana Temple, Buddhist viharas and Jain shrines. Continue back to Raipur for the night.",
         activities: ["Morning forest walk", "Sirpur Lakshmana Temple", "Buddhist viharas", "Drive to Raipur"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Raipur",
@@ -9436,22 +9436,22 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Raipur airport / railway station for your onward journey home.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A quick taste of Chhattisgarh",
         image: "https://images.unsplash.com/photo-1518972559570-7cc1309f3229?w=600&h=400&fit=crop",
       },
     ],
   },
 
-  /* ═══════════════════════ ARUNACHAL PRADESH — REBUILT PACKAGES ═══════════════════════ */
+  /* ═══════════════════════ ARUNACHAL PRADESH - REBUILT PACKAGES ═══════════════════════ */
   {
-    title: "Tawang Classic — Tezpur, Dirang, Tawang & Bomdila",
+    title: "Tawang Classic - Tezpur, Dirang, Tawang & Bomdila",
     slug: "arunachal-tawang-classic",
     destinationName: "Arunachal Pradesh",
     destinationSlug: "arunachal-pradesh",
     category: "adventure",
     description:
-      "An eight-day Arunachal circuit from Guwahati — Tezpur on the Brahmaputra, the apple-orchard valley of Dirang, two nights at Tawang for its great monastery and the Bum La border, Bomdila's hilltop gompa, and a finale night at Nameri on the Assam border.",
+      "An eight-day Arunachal circuit from Guwahati - Tezpur on the Brahmaputra, the apple-orchard valley of Dirang, two nights at Tawang for its great monastery and the Bum La border, Bomdila's hilltop gompa, and a finale night at Nameri on the Assam border.",
     heroImage: "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=800&h=600&fit=crop",
@@ -9485,7 +9485,7 @@ const allPackages: Package[] = [
       "Tips and gratuities",
     ],
     highlights: [
-      "Tawang Monastery — Asia's 2nd largest",
+      "Tawang Monastery - Asia's 2nd largest",
       "Sela Pass at 13,700 ft",
       "Dirang apple-orchard valley",
       "Bum La Pass (subject to army permits)",
@@ -9495,7 +9495,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Guwahati Arrival — Drive to Tezpur",
+        title: "Guwahati Arrival - Drive to Tezpur",
         description:
           "Arrive at Guwahati airport / railway station and drive east along the Brahmaputra to Tezpur. Evening visit to the Agnigarh hillock and the Cole Park before an overnight stay.",
         activities: ["Pickup at Guwahati", "Drive to Tezpur", "Agnigarh hillock", "Cole Park"],
@@ -9509,7 +9509,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Drive Tezpur to Dirang",
         description:
-          "Climb into Arunachal Pradesh, with the Inner Line Permit check at Bhalukpong. Drive through dense forest and the Bomdila ridge to Dirang — a quiet apple-orchard valley. Visit the Dirang Dzong and the hot springs.",
+          "Climb into Arunachal Pradesh, with the Inner Line Permit check at Bhalukpong. Drive through dense forest and the Bomdila ridge to Dirang - a quiet apple-orchard valley. Visit the Dirang Dzong and the hot springs.",
         activities: ["Drive to Dirang", "ILP check at Bhalukpong", "Dirang Dzong", "Hot springs"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dirang",
@@ -9533,9 +9533,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Tawang — Bum La Pass, Madhuri Lake & Monastery",
+        title: "Tawang - Bum La Pass, Madhuri Lake & Monastery",
         description:
-          "Early drive to Bum La Pass at the Indo-China border (subject to army permits and weather), then Pankang Teng Tso and Madhuri Lake. Afternoon at Tawang Monastery — the second-largest in Asia and birthplace of the 6th Dalai Lama. Foreigners and NRIs are restricted from Bum La and Madhuri Lake.",
+          "Early drive to Bum La Pass at the Indo-China border (subject to army permits and weather), then Pankang Teng Tso and Madhuri Lake. Afternoon at Tawang Monastery - the second-largest in Asia and birthplace of the 6th Dalai Lama. Foreigners and NRIs are restricted from Bum La and Madhuri Lake.",
         activities: ["Bum La Pass", "Pankang Teng Tso Lake", "Madhuri Lake", "Tawang Monastery", "War Memorial"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Tawang",
@@ -9560,7 +9560,7 @@ const allPackages: Package[] = [
         day: 6,
         title: "Drive Bomdila to Nameri",
         description:
-          "Descend out of the Arunachal hills to Nameri on the Assam border — a riverside reserve known for its birdlife. Easy evening at an eco-camp by the Jia Bhoroli river.",
+          "Descend out of the Arunachal hills to Nameri on the Assam border - a riverside reserve known for its birdlife. Easy evening at an eco-camp by the Jia Bhoroli river.",
         activities: ["Drive to Nameri", "Eco-camp check-in", "Riverside walk"],
         meals: "Breakfast, Dinner",
         accommodation: "Eco-camp in Nameri",
@@ -9570,7 +9570,7 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Nameri — Nature Walk, Drive to Guwahati",
+        title: "Nameri - Nature Walk, Drive to Guwahati",
         description:
           "Morning nature walk or optional river rafting on the Jia Bhoroli at Nameri, then drive to Guwahati for the night.",
         activities: ["Nameri nature walk", "Optional river rafting", "Drive to Guwahati"],
@@ -9587,20 +9587,20 @@ const allPackages: Package[] = [
           "Visit the Kamakhya Temple if time permits, then transfer to Guwahati airport / railway station for your onward journey.",
         activities: ["Optional Kamakhya Temple", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Closing the Tawang circuit",
         image: "/images/generated/arunachal-pradesh-hero.webp",
       },
     ],
   },
   {
-    title: "Tawang In-Depth — Guwahati, Tezpur, Dirang & Tawang",
+    title: "Tawang In-Depth - Guwahati, Tezpur, Dirang & Tawang",
     slug: "arunachal-tawang-in-depth",
     destinationName: "Arunachal Pradesh",
     destinationSlug: "arunachal-pradesh",
     category: "adventure",
     description:
-      "A nine-day unhurried Arunachal circuit — two nights in Guwahati, the Brahmaputra town of Tezpur, the Dirang valley, and three full nights at Tawang to properly explore its monastery, lakes and the Bum La border, with a Bomdila finale.",
+      "A nine-day unhurried Arunachal circuit - two nights in Guwahati, the Brahmaputra town of Tezpur, the Dirang valley, and three full nights at Tawang to properly explore its monastery, lakes and the Bum La border, with a Bomdila finale.",
     heroImage: "/images/generated/arunachal-pradesh-hero.webp",
     images: [
       "/images/generated/arunachal-pradesh-hero.webp",
@@ -9634,7 +9634,7 @@ const allPackages: Package[] = [
       "Tips and gratuities",
     ],
     highlights: [
-      "Two nights in Guwahati — Kamakhya Temple",
+      "Two nights in Guwahati - Kamakhya Temple",
       "Tezpur on the Brahmaputra",
       "Dirang apple-orchard valley",
       "Three nights at Tawang",
@@ -9644,7 +9644,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Guwahati Arrival — Kamakhya Temple",
+        title: "Guwahati Arrival - Kamakhya Temple",
         description:
           "Arrive in Guwahati and visit the Kamakhya Temple, one of the 51 Shakti Peethas, on Nilachal Hill. Evening Brahmaputra river sunset cruise.",
         activities: ["Pickup at Guwahati", "Kamakhya Temple", "Brahmaputra sunset cruise"],
@@ -9655,7 +9655,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Guwahati — Umananda & City, Drive to Tezpur",
+        title: "Guwahati - Umananda & City, Drive to Tezpur",
         description:
           "Morning visit to Umananda Island (the world's smallest river island) and the Assam State Museum. Afternoon drive east to Tezpur along the Brahmaputra.",
         activities: ["Umananda Island", "Assam State Museum", "Drive to Tezpur", "Agnigarh hillock"],
@@ -9693,9 +9693,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Tawang — Monastery & Local Sightseeing",
+        title: "Tawang - Monastery & Local Sightseeing",
         description:
-          "A full day at Tawang Monastery — the second-largest in Asia — plus the Tawang War Memorial, the Craft Centre, the Urgelling Monastery (birthplace of the 6th Dalai Lama) and the local market.",
+          "A full day at Tawang Monastery - the second-largest in Asia - plus the Tawang War Memorial, the Craft Centre, the Urgelling Monastery (birthplace of the 6th Dalai Lama) and the local market.",
         activities: ["Tawang Monastery", "War Memorial", "Urgelling Monastery", "Craft Centre", "Tawang market"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Tawang",
@@ -9704,7 +9704,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Tawang — Bum La Pass & Madhuri Lake",
+        title: "Tawang - Bum La Pass & Madhuri Lake",
         description:
           "Early drive to Bum La Pass at the Indo-China border at 15,200 ft (subject to army permits and weather), with stops at Pankang Teng Tso and Madhuri Lake. Foreigners and NRIs are restricted from Bum La and Madhuri Lake.",
         activities: ["Bum La Pass", "Pankang Teng Tso Lake", "Madhuri Lake", "Y-Junction"],
@@ -9746,20 +9746,20 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Guwahati airport / railway station for your onward journey home.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Closing the Tawang circuit",
         image: "/images/generated/arunachal-pradesh-hero.webp",
       },
     ],
   },
   {
-    title: "Arunachal & Kaziranga — Tawang Circuit with the Rhino Reserve",
+    title: "Arunachal & Kaziranga - Tawang Circuit with the Rhino Reserve",
     slug: "arunachal-tawang-kaziranga",
     destinationName: "Arunachal Pradesh",
     destinationSlug: "arunachal-pradesh",
     category: "adventure",
     description:
-      "A twelve-day grand circuit combining Arunachal's Tawang highlands — Tezpur, the Dirang valley, three nights at Tawang and Bomdila — with two nights of safaris at Kaziranga's one-horned rhino reserve, finishing with two nights in Guwahati.",
+      "A twelve-day grand circuit combining Arunachal's Tawang highlands - Tezpur, the Dirang valley, three nights at Tawang and Bomdila - with two nights of safaris at Kaziranga's one-horned rhino reserve, finishing with two nights in Guwahati.",
     heroImage: "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=800&h=600&fit=crop",
@@ -9804,7 +9804,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Guwahati Arrival — Drive to Tezpur",
+        title: "Guwahati Arrival - Drive to Tezpur",
         description:
           "Arrive in Guwahati and drive east along the Brahmaputra to Tezpur. Evening at the Agnigarh hillock and Cole Park.",
         activities: ["Pickup at Guwahati", "Drive to Tezpur", "Agnigarh hillock", "Cole Park"],
@@ -9829,9 +9829,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Dirang — Sangti Valley & Local Sightseeing",
+        title: "Dirang - Sangti Valley & Local Sightseeing",
         description:
-          "A full day around Dirang — the Sangti Valley (a winter home of black-necked cranes), the National Yak Research Centre, and the old Dirang village with its 500-year-old stone houses.",
+          "A full day around Dirang - the Sangti Valley (a winter home of black-necked cranes), the National Yak Research Centre, and the old Dirang village with its 500-year-old stone houses.",
         activities: ["Sangti Valley", "Yak Research Centre", "Old Dirang village", "Kalachakra Gompa"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dirang",
@@ -9853,9 +9853,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Tawang — Monastery & Local Sightseeing",
+        title: "Tawang - Monastery & Local Sightseeing",
         description:
-          "A full day at Tawang Monastery, the War Memorial, the Craft Centre and the Urgelling Monastery — birthplace of the 6th Dalai Lama.",
+          "A full day at Tawang Monastery, the War Memorial, the Craft Centre and the Urgelling Monastery - birthplace of the 6th Dalai Lama.",
         activities: ["Tawang Monastery", "War Memorial", "Urgelling Monastery", "Craft Centre"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Tawang",
@@ -9864,7 +9864,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Tawang — Bum La Pass & Madhuri Lake",
+        title: "Tawang - Bum La Pass & Madhuri Lake",
         description:
           "Early drive to Bum La Pass at the Indo-China border (subject to army permits), with stops at Pankang Teng Tso and Madhuri Lake. Foreigners and NRIs are restricted from Bum La and Madhuri Lake.",
         activities: ["Bum La Pass", "Pankang Teng Tso Lake", "Madhuri Lake"],
@@ -9891,7 +9891,7 @@ const allPackages: Package[] = [
         day: 8,
         title: "Drive Bomdila to Kaziranga National Park",
         description:
-          "Descend out of the Arunachal hills and drive to Kaziranga — India's premier one-horned rhino reserve and a UNESCO World Heritage Site. Evening safari briefing.",
+          "Descend out of the Arunachal hills and drive to Kaziranga - India's premier one-horned rhino reserve and a UNESCO World Heritage Site. Evening safari briefing.",
         activities: ["Drive to Kaziranga", "Resort check-in", "Safari briefing"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort near Kaziranga",
@@ -9901,9 +9901,9 @@ const allPackages: Package[] = [
       },
       {
         day: 9,
-        title: "Kaziranga — Morning & Afternoon Jeep Safaris",
+        title: "Kaziranga - Morning & Afternoon Jeep Safaris",
         description:
-          "Two jeep safaris into Kaziranga's central and western ranges — one-horned rhinos, wild elephants, swamp deer and, with luck, a tiger. Afternoon at the Orchid Park.",
+          "Two jeep safaris into Kaziranga's central and western ranges - one-horned rhinos, wild elephants, swamp deer and, with luck, a tiger. Afternoon at the Orchid Park.",
         activities: ["Morning jeep safari", "Afternoon jeep safari", "Orchid Park"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort near Kaziranga",
@@ -9924,7 +9924,7 @@ const allPackages: Package[] = [
       },
       {
         day: 11,
-        title: "Guwahati — Umananda Island & City",
+        title: "Guwahati - Umananda Island & City",
         description:
           "Visit Umananda Island, the Assam State Museum, the Srimanta Sankardev Kalakshetra cultural centre, and Pan Bazaar for souvenirs.",
         activities: ["Umananda Island", "Assam State Museum", "Kalakshetra", "Pan Bazaar"],
@@ -9940,22 +9940,22 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Guwahati airport / railway station for your onward journey home, with a complete Arunachal-and-Kaziranga circuit in the books.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Closing the grand Northeast circuit",
         image: "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=600&h=400&fit=crop",
       },
     ],
   },
 
-  /* ═══════════════════════ ASSAM — REBUILT PACKAGES ═══════════════════════ */
+  /* ═══════════════════════ ASSAM - REBUILT PACKAGES ═══════════════════════ */
   {
-    title: "Assam Tea & Wildlife — Kaziranga, Jorhat & Dibrugarh",
+    title: "Assam Tea & Wildlife - Kaziranga, Jorhat & Dibrugarh",
     slug: "assam-kaziranga-jorhat-dibrugarh",
     destinationName: "Assam",
     destinationSlug: "assam",
     category: "adventure",
     description:
-      "A six-day Upper Assam circuit — two nights of safaris at Kaziranga's one-horned rhino reserve, the tea-and-satra culture of Jorhat with Majuli island, and two nights amid the colonial tea estates of Dibrugarh.",
+      "A six-day Upper Assam circuit - two nights of safaris at Kaziranga's one-horned rhino reserve, the tea-and-satra culture of Jorhat with Majuli island, and two nights amid the colonial tea estates of Dibrugarh.",
     heroImage: "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800&h=600&fit=crop",
@@ -9990,7 +9990,7 @@ const allPackages: Package[] = [
     ],
     highlights: [
       "Kaziranga one-horned rhino safaris",
-      "Majuli — world's largest river island",
+      "Majuli - world's largest river island",
       "Jorhat satras (Vaishnavite monasteries)",
       "Dibrugarh colonial tea estates",
       "Sivasagar Ahom monuments",
@@ -9999,9 +9999,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Guwahati Arrival — Drive to Kaziranga",
+        title: "Guwahati Arrival - Drive to Kaziranga",
         description:
-          "Arrive at Guwahati airport / railway station and drive east to Kaziranga National Park — India's premier rhino reserve. Evening safari briefing at the resort.",
+          "Arrive at Guwahati airport / railway station and drive east to Kaziranga National Park - India's premier rhino reserve. Evening safari briefing at the resort.",
         activities: ["Pickup at Guwahati", "Drive to Kaziranga", "Resort check-in", "Safari briefing"],
         meals: "Dinner",
         accommodation: "Resort near Kaziranga",
@@ -10011,9 +10011,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Kaziranga — Morning & Afternoon Jeep Safaris",
+        title: "Kaziranga - Morning & Afternoon Jeep Safaris",
         description:
-          "Two jeep safaris into Kaziranga — the central and western ranges — for one-horned rhinos, wild elephants, swamp deer and, with luck, a tiger. Afternoon at the Orchid Park and a Bihu cultural evening.",
+          "Two jeep safaris into Kaziranga - the central and western ranges - for one-horned rhinos, wild elephants, swamp deer and, with luck, a tiger. Afternoon at the Orchid Park and a Bihu cultural evening.",
         activities: ["Morning jeep safari", "Afternoon jeep safari", "Orchid Park", "Bihu cultural evening"],
         meals: "Breakfast, Dinner",
         accommodation: "Resort near Kaziranga",
@@ -10022,21 +10022,21 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Drive Kaziranga to Jorhat — Majuli Island",
+        title: "Drive Kaziranga to Jorhat - Majuli Island",
         description:
-          "Drive to Jorhat and take the ferry across the Brahmaputra to Majuli — the world's largest river island and the heart of Assam's neo-Vaishnavite satra culture. Visit the Kamalabari and Auniati satras, then return to Jorhat.",
+          "Drive to Jorhat and take the ferry across the Brahmaputra to Majuli - the world's largest river island and the heart of Assam's neo-Vaishnavite satra culture. Visit the Kamalabari and Auniati satras, then return to Jorhat.",
         activities: ["Drive to Jorhat", "Ferry to Majuli", "Kamalabari Satra", "Auniati Satra"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Jorhat",
         distance: "100 km drive + ferry",
-        highlight: "Majuli — world's largest river island",
+        highlight: "Majuli - world's largest river island",
         image: "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=600&h=400&fit=crop",
       },
       {
         day: 4,
         title: "Drive Jorhat to Dibrugarh via Sivasagar",
         description:
-          "Drive to Dibrugarh, stopping at Sivasagar — the former Ahom dynasty capital — to see the Rang Ghar (Asia's oldest amphitheatre), the Talatal Ghar palace and the Sivadol temple. Check in to a colonial tea bungalow at Dibrugarh.",
+          "Drive to Dibrugarh, stopping at Sivasagar - the former Ahom dynasty capital - to see the Rang Ghar (Asia's oldest amphitheatre), the Talatal Ghar palace and the Sivadol temple. Check in to a colonial tea bungalow at Dibrugarh.",
         activities: ["Drive to Sivasagar", "Rang Ghar", "Talatal Ghar", "Sivadol Temple", "Drive to Dibrugarh"],
         meals: "Breakfast, Dinner",
         accommodation: "Tea bungalow in Dibrugarh",
@@ -10046,9 +10046,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Dibrugarh — Tea Estate Walk & Brahmaputra",
+        title: "Dibrugarh - Tea Estate Walk & Brahmaputra",
         description:
-          "A relaxed day in Dibrugarh — a guided walk through a working tea estate with a planter, a visit to the Jagannath Temple, and a sunset on the Brahmaputra at the Dibrugarh ghat.",
+          "A relaxed day in Dibrugarh - a guided walk through a working tea estate with a planter, a visit to the Jagannath Temple, and a sunset on the Brahmaputra at the Dibrugarh ghat.",
         activities: ["Tea estate walk", "Tea tasting", "Jagannath Temple", "Brahmaputra sunset"],
         meals: "Breakfast, Dinner",
         accommodation: "Tea bungalow in Dibrugarh",
@@ -10062,20 +10062,20 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Dibrugarh airport / railway station for your onward journey home.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Closing the Upper Assam circuit",
         image: "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=600&h=400&fit=crop",
       },
     ],
   },
   {
-    title: "Assam Wildlife Trail — Manas, Nameri, Kaziranga & Guwahati",
+    title: "Assam Wildlife Trail - Manas, Nameri, Kaziranga & Guwahati",
     slug: "assam-manas-nameri-kaziranga",
     destinationName: "Assam",
     destinationSlug: "assam",
     category: "adventure",
     description:
-      "An eight-day Assam wildlife circuit through three national parks — Manas on the Bhutan border, the birding reserve of Nameri, and Kaziranga's rhino grasslands — finishing with a night in Guwahati.",
+      "An eight-day Assam wildlife circuit through three national parks - Manas on the Bhutan border, the birding reserve of Nameri, and Kaziranga's rhino grasslands - finishing with a night in Guwahati.",
     heroImage: "/images/generated/assam-hero.webp",
     images: [
       "/images/generated/assam-hero.webp",
@@ -10118,9 +10118,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Guwahati Arrival — Drive to Manas National Park",
+        title: "Guwahati Arrival - Drive to Manas National Park",
         description:
-          "Arrive in Guwahati and drive north-west to Manas National Park — a UNESCO World Heritage Site on the Bhutan border. Evening safari briefing at a forest lodge.",
+          "Arrive in Guwahati and drive north-west to Manas National Park - a UNESCO World Heritage Site on the Bhutan border. Evening safari briefing at a forest lodge.",
         activities: ["Pickup at Guwahati", "Drive to Manas", "Lodge check-in", "Safari briefing"],
         meals: "Dinner",
         accommodation: "Forest lodge near Manas",
@@ -10130,9 +10130,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Manas — Jeep Safari & Bhutan Border",
+        title: "Manas - Jeep Safari & Bhutan Border",
         description:
-          "Morning jeep safari into Manas — tigers, golden langur, pygmy hog, wild buffalo and over 450 bird species. Afternoon at the Bhutan border viewpoint at Mathanguri on the Manas river.",
+          "Morning jeep safari into Manas - tigers, golden langur, pygmy hog, wild buffalo and over 450 bird species. Afternoon at the Bhutan border viewpoint at Mathanguri on the Manas river.",
         activities: ["Morning jeep safari", "Mathanguri viewpoint", "Manas river", "Bhutan border"],
         meals: "Breakfast, Dinner",
         accommodation: "Forest lodge near Manas",
@@ -10153,9 +10153,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Nameri — Nature Walk & River Rafting",
+        title: "Nameri - Nature Walk & River Rafting",
         description:
-          "Morning guided nature walk in Nameri — a birding paradise with the rare white-winged wood duck — followed by a gentle river-rafting float down the Jia Bhoroli.",
+          "Morning guided nature walk in Nameri - a birding paradise with the rare white-winged wood duck - followed by a gentle river-rafting float down the Jia Bhoroli.",
         activities: ["Nameri nature walk", "Birdwatching", "Jia Bhoroli river rafting"],
         meals: "Breakfast, Dinner",
         accommodation: "Eco-camp in Nameri",
@@ -10176,7 +10176,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Kaziranga — Morning & Afternoon Jeep Safaris",
+        title: "Kaziranga - Morning & Afternoon Jeep Safaris",
         description:
           "Two jeep safaris into Kaziranga for one-horned rhinos, wild elephants, swamp deer and tigers. Afternoon at the Orchid Park and a Bihu cultural evening.",
         activities: ["Morning jeep safari", "Afternoon jeep safari", "Orchid Park", "Bihu cultural evening"],
@@ -10204,22 +10204,22 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Guwahati airport / railway station for your onward journey, with three of Assam's national parks explored.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Closing the Assam wildlife trail",
         image: "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=600&h=400&fit=crop",
       },
     ],
   },
 
-  /* ═══════ SOUTH INDIA — CLIENT ITINERARIES ═══════ */
+  /* ═══════ SOUTH INDIA - CLIENT ITINERARIES ═══════ */
   {
-    title: "Karnataka Royal & Rustic — Mysore & Coorg",
+    title: "Karnataka Royal & Rustic - Mysore & Coorg",
     slug: "karnataka-mysore-coorg",
     destinationName: "Karnataka",
     destinationSlug: "karnataka",
     category: "leisure",
     description:
-      "A five-day Karnataka circuit from Bengaluru — the royal city of Mysore with its illuminated palace and Chamundi Hill, and the coffee-scented hills of Coorg with Abbey Falls and the Dubare Elephant Camp.",
+      "A five-day Karnataka circuit from Bengaluru - the royal city of Mysore with its illuminated palace and Chamundi Hill, and the coffee-scented hills of Coorg with Abbey Falls and the Dubare Elephant Camp.",
     heroImage: "/images/generated/karnataka-hero.webp",
     images: [
       "/images/generated/karnataka-hero.webp",
@@ -10261,7 +10261,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrival via Bengaluru — Drive to Mysore",
+        title: "Arrival via Bengaluru - Drive to Mysore",
         description:
           "Arrive at Kempegowda International Airport and drive to Mysore. Visit Mysore Palace, Chamundi Hill with the Sri Chamundeshwari Temple, and the bustling Devaraja Market.",
         activities: ["Pickup at Bengaluru", "Drive to Mysore", "Mysore Palace", "Chamundi Hill", "Devaraja Market"],
@@ -10281,9 +10281,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Coorg — Abbey Falls & Dubare Elephant Camp",
+        title: "Coorg - Abbey Falls & Dubare Elephant Camp",
         description:
-          "A full day in Coorg — the cascading Abbey Falls amid coffee and spice plantations, and the Dubare Elephant Camp on the Cauvery river.",
+          "A full day in Coorg - the cascading Abbey Falls amid coffee and spice plantations, and the Dubare Elephant Camp on the Cauvery river.",
         activities: ["Abbey Falls", "Coffee plantation walk", "Dubare Elephant Camp"],
         meals: "Breakfast",
         accommodation: "Resort in Coorg",
@@ -10306,30 +10306,30 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Kempegowda International Airport for your onward journey.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         image: "/images/generated/karnataka-hero.webp",
       },
     ],
     vehiclePricing: {
       categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
       rows: [
-        { vehicle: "2 Pax — Sedan", prices: [28600, 31900, 35200, 39300, 48900] },
-        { vehicle: "4 Pax — Ertiga / Innova", prices: [44100, 50600, 57400, 65400, 85000] },
-        { vehicle: "6 Pax — Ertiga / Innova", prices: [54500, 64300, 74400, 86500, 115900] },
-        { vehicle: "8 Pax — Tempo Traveller", prices: [74200, 87300, 100800, 116900, 156000] },
-        { vehicle: "10 Pax — Tempo Traveller", prices: [84600, 100900, 117800, 137900, 187000] },
+        { vehicle: "2 Pax - Sedan", prices: [28600, 31900, 35200, 39300, 48900] },
+        { vehicle: "4 Pax - Ertiga / Innova", prices: [44100, 50600, 57400, 65400, 85000] },
+        { vehicle: "6 Pax - Ertiga / Innova", prices: [54500, 64300, 74400, 86500, 115900] },
+        { vehicle: "8 Pax - Tempo Traveller", prices: [74200, 87300, 100800, 116900, 156000] },
+        { vehicle: "10 Pax - Tempo Traveller", prices: [84600, 100900, 117800, 137900, 187000] },
       ],
       note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
     },
   },
   {
-    title: "Serene Kerala — Munnar, Thekkady & Alleppey",
+    title: "Serene Kerala - Munnar, Thekkady & Alleppey",
     slug: "kerala-munnar-thekkady-alleppey",
     destinationName: "Kerala",
     destinationSlug: "kerala",
     category: "leisure",
     description:
-      "A five-day Kerala escape through 'God's Own Country' — the misty tea hills of Munnar, the Periyar wildlife of Thekkady, and a backwater finale at Alleppey, the Venice of the East.",
+      "A five-day Kerala escape through 'God's Own Country' - the misty tea hills of Munnar, the Periyar wildlife of Thekkady, and a backwater finale at Alleppey, the Venice of the East.",
     heroImage: "/images/generated/kerala-hero.webp",
     images: [
       "/images/generated/kerala-hero.webp",
@@ -10381,9 +10381,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Munnar — Eravikulam & Tea Museum",
+        title: "Munnar - Eravikulam & Tea Museum",
         description:
-          "Explore Munnar — Eravikulam National Park (home of the Nilgiri Tahr), the Tata Tea Museum, Mattupetty Dam, Echo Point and Kundala Lake.",
+          "Explore Munnar - Eravikulam National Park (home of the Nilgiri Tahr), the Tata Tea Museum, Mattupetty Dam, Echo Point and Kundala Lake.",
         activities: ["Eravikulam National Park", "Tata Tea Museum", "Mattupetty Dam", "Echo Point", "Kundala Lake"],
         meals: "Breakfast",
         accommodation: "Hotel in Munnar",
@@ -10391,7 +10391,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Thekkady — Periyar Wildlife Sanctuary",
+        title: "Thekkady - Periyar Wildlife Sanctuary",
         description:
           "Drive to Thekkady and spend the afternoon at the Periyar Wildlife Sanctuary with a boat ride on Periyar Lake. Optional spice plantation visit or a Kathakali / Kalaripayattu performance.",
         activities: ["Drive to Thekkady", "Periyar Lake boat ride", "Optional spice plantation / Kathakali"],
@@ -10401,7 +10401,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Alleppey — Backwaters & Beach",
+        title: "Alleppey - Backwaters & Beach",
         description:
           "Drive to Alleppey, the 'Venice of the East'. Optional motorboat or houseboat cruise through the palm-fringed backwaters, then a sunset at Alleppey Beach.",
         activities: ["Drive to Alleppey", "Optional backwater cruise", "Alleppey Beach sunset"],
@@ -10416,30 +10416,30 @@ const allPackages: Package[] = [
           "After breakfast, transfer from Alleppey to Cochin International Airport for your flight home.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         image: "/images/generated/kerala-hero.webp",
       },
     ],
     vehiclePricing: {
       categories: ["Deluxe", "Super Deluxe", "Sup. Deluxe Premium Combo", "Premium", "Super Premium", "Sup. Premium Luxury Combo", "Luxury"],
       rows: [
-        { vehicle: "2 Pax — Sedan", prices: [22200, 24800, 27200, 28300, 30100, 33000, 36100] },
-        { vehicle: "4 Pax — Innova / Ertiga", prices: [33500, 38800, 43500, 45800, 49300, 55200, 61500] },
-        { vehicle: "6 Pax — Innova / Ertiga", prices: [42300, 50400, 57400, 60900, 66100, 74900, 84300] },
-        { vehicle: "8 Pax — Tempo Traveller", prices: [57200, 67900, 77200, 81900, 88900, 100600, 113000] },
-        { vehicle: "10 Pax — Tempo Traveller", prices: [66000, 79400, 91100, 96900, 105700, 120300, 136000] },
+        { vehicle: "2 Pax - Sedan", prices: [22200, 24800, 27200, 28300, 30100, 33000, 36100] },
+        { vehicle: "4 Pax - Innova / Ertiga", prices: [33500, 38800, 43500, 45800, 49300, 55200, 61500] },
+        { vehicle: "6 Pax - Innova / Ertiga", prices: [42300, 50400, 57400, 60900, 66100, 74900, 84300] },
+        { vehicle: "8 Pax - Tempo Traveller", prices: [57200, 67900, 77200, 81900, 88900, 100600, 113000] },
+        { vehicle: "10 Pax - Tempo Traveller", prices: [66000, 79400, 91100, 96900, 105700, 120300, 136000] },
       ],
       note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
     },
   },
   {
-    title: "Tamil Nadu Coastal & Spiritual Trail — Madurai, Rameswaram & Kanyakumari",
+    title: "Tamil Nadu Coastal & Spiritual Trail - Madurai, Rameswaram & Kanyakumari",
     slug: "tamilnadu-madurai-rameswaram-kanyakumari",
     destinationName: "Tamil Nadu",
     destinationSlug: "tamil-nadu",
     category: "educational",
     description:
-      "A five-day Tamil Nadu temple-and-coast trail — Madurai's towering Meenakshi temple, the island shrine of Rameswaram, the ghost town of Dhanushkodi, and the three-sea sunset at Kanyakumari.",
+      "A five-day Tamil Nadu temple-and-coast trail - Madurai's towering Meenakshi temple, the island shrine of Rameswaram, the ghost town of Dhanushkodi, and the three-sea sunset at Kanyakumari.",
     heroImage: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
@@ -10481,7 +10481,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Madurai Arrival — Temple Exploration",
+        title: "Madurai Arrival - Temple Exploration",
         description:
           "Land at Madurai Airport and visit the Meenakshi Amman Temple, with its 14 towering gopurams covered in thousands of sculptures, and the grand Thirumalai Nayakkar Palace.",
         activities: ["Pickup at Madurai", "Meenakshi Amman Temple", "Thirumalai Nayakkar Palace"],
@@ -10491,7 +10491,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Rameswaram — Sacred Sites",
+        title: "Rameswaram - Sacred Sites",
         description:
           "Drive to the holy island of Rameswaram. Visit the Ramanathaswamy Temple, one of the 12 Jyotirlingas, with the longest temple corridor in India, and take a holy dip at Agnitheertham.",
         activities: ["Drive to Rameswaram", "Ramanathaswamy Temple", "Agnitheertham"],
@@ -10501,7 +10501,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Rameswaram — Dhanushkodi & Rama Setu",
+        title: "Rameswaram - Dhanushkodi & Rama Setu",
         description:
           "Visit the Dr. A.P.J. Abdul Kalam Memorial and the haunting ghost town of Dhanushkodi at the tip of Pamban Island, with the legend of Rama Setu / Adam's Bridge.",
         activities: ["Abdul Kalam Memorial", "Dhanushkodi ghost town", "Pamban Island", "Rama Setu viewpoint"],
@@ -10511,7 +10511,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Kanyakumari — Sunset Spectacle",
+        title: "Kanyakumari - Sunset Spectacle",
         description:
           "Drive to Kanyakumari, the southern tip of India. Ferry to the Vivekananda Rock Memorial and the Thiruvalluvar Statue, then watch the sun set over the confluence of three seas.",
         activities: ["Drive to Kanyakumari", "Vivekananda Rock Memorial", "Thiruvalluvar Statue", "Three-sea sunset"],
@@ -10526,30 +10526,30 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Trivandrum Airport for your onward journey home.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&h=400&fit=crop",
       },
     ],
     vehiclePricing: {
       categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
       rows: [
-        { vehicle: "2 Pax — Sedan", prices: [32300, 34300, 37900, 49000, 53600] },
-        { vehicle: "4 Pax — Ertiga / Innova", prices: [48900, 52800, 60000, 82400, 91700] },
-        { vehicle: "6 Pax — Ertiga / Innova", prices: [60200, 66100, 77000, 110500, 124800] },
-        { vehicle: "8 Pax — Tempo Traveller", prices: [78500, 86400, 100900, 142500, 164700] },
-        { vehicle: "10 Pax — Tempo Traveller", prices: [89800, 99700, 117800, 169900, 197700] },
+        { vehicle: "2 Pax - Sedan", prices: [32300, 34300, 37900, 49000, 53600] },
+        { vehicle: "4 Pax - Ertiga / Innova", prices: [48900, 52800, 60000, 82400, 91700] },
+        { vehicle: "6 Pax - Ertiga / Innova", prices: [60200, 66100, 77000, 110500, 124800] },
+        { vehicle: "8 Pax - Tempo Traveller", prices: [78500, 86400, 100900, 142500, 164700] },
+        { vehicle: "10 Pax - Tempo Traveller", prices: [89800, 99700, 117800, 169900, 197700] },
       ],
       note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
     },
   },
   {
-    title: "Sacred & Serene — Chennai, Tirupati & Pondicherry",
+    title: "Sacred & Serene - Chennai, Tirupati & Pondicherry",
     slug: "chennai-tirupati-pondicherry",
     destinationName: "Tamil Nadu",
     destinationSlug: "tamil-nadu",
     category: "educational",
     description:
-      "A five-day circuit pairing the temple town of Tirupati with the French charm of Pondicherry and the colonial sights of Chennai — pilgrimage, promenade and Marina Beach in one trip.",
+      "A five-day circuit pairing the temple town of Tirupati with the French charm of Pondicherry and the colonial sights of Chennai - pilgrimage, promenade and Marina Beach in one trip.",
     heroImage: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
@@ -10593,7 +10593,7 @@ const allPackages: Package[] = [
         day: 1,
         title: "Tirupati Arrival & Temple",
         description:
-          "Land at Chennai Airport and drive to Tirupati. Darshan at the Sri Venkateswara Swamy Temple atop Tirumala Hill — one of the most visited pilgrimage sites in the world.",
+          "Land at Chennai Airport and drive to Tirupati. Darshan at the Sri Venkateswara Swamy Temple atop Tirumala Hill - one of the most visited pilgrimage sites in the world.",
         activities: ["Pickup at Chennai", "Drive to Tirupati", "Sri Venkateswara Temple"],
         meals: "Breakfast",
         accommodation: "Hotel in Tirupati",
@@ -10601,7 +10601,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Drive Tirupati to Pondicherry — French Charm",
+        title: "Drive Tirupati to Pondicherry - French Charm",
         description:
           "Drive to Pondicherry. Explore the French Quarter's mustard-yellow villas, the seaside Promenade Beach and the Sri Aurobindo Ashram.",
         activities: ["Drive to Pondicherry", "French Quarter", "Promenade Beach", "Sri Aurobindo Ashram"],
@@ -10611,7 +10611,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Pondicherry — Auroville & Paradise Beach",
+        title: "Pondicherry - Auroville & Paradise Beach",
         description:
           "Visit Auroville and view the golden Matrimandir, relax at Paradise Beach, and browse the French cafes and craft markets of White Town.",
         activities: ["Auroville", "Matrimandir viewpoint", "Paradise Beach", "French cafes"],
@@ -10621,7 +10621,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Drive Pondicherry to Chennai — City Sights",
+        title: "Drive Pondicherry to Chennai - City Sights",
         description:
           "Drive to Chennai. Visit Fort St. George, the long sweep of Marina Beach and the 12th-century Kapaleeshwarar Temple at Mylapore.",
         activities: ["Drive to Chennai", "Fort St. George", "Marina Beach", "Kapaleeshwarar Temple"],
@@ -10636,24 +10636,24 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Chennai Airport for your onward journey home.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&h=400&fit=crop",
       },
     ],
     vehiclePricing: {
       categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
       rows: [
-        { vehicle: "2 Pax — Sedan", prices: [39400, 44400, 45400, 45800, 66600] },
-        { vehicle: "4 Pax — Ertiga / Innova", prices: [62000, 72000, 73800, 74700, 117000] },
-        { vehicle: "6 Pax — Ertiga / Innova", prices: [75700, 90700, 93500, 94700, 159000] },
-        { vehicle: "8 Pax — Tempo Traveller", prices: [99300, 119000, 123000, 124800, 211000] },
-        { vehicle: "10 Pax — Tempo Traveller", prices: [110700, 135000, 139800, 141800, 253400] },
+        { vehicle: "2 Pax - Sedan", prices: [39400, 44400, 45400, 45800, 66600] },
+        { vehicle: "4 Pax - Ertiga / Innova", prices: [62000, 72000, 73800, 74700, 117000] },
+        { vehicle: "6 Pax - Ertiga / Innova", prices: [75700, 90700, 93500, 94700, 159000] },
+        { vehicle: "8 Pax - Tempo Traveller", prices: [99300, 119000, 123000, 124800, 211000] },
+        { vehicle: "10 Pax - Tempo Traveller", prices: [110700, 135000, 139800, 141800, 253400] },
       ],
       note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
     },
   },
   {
-    title: "The Soul of Kerala — Cochin, Munnar, Thekkady & Alleppey",
+    title: "The Soul of Kerala - Cochin, Munnar, Thekkady & Alleppey",
     slug: "kerala-cochin-munnar-thekkady",
     destinationName: "Kerala",
     destinationSlug: "kerala",
@@ -10701,9 +10701,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Cochin — Heritage Tour",
+        title: "Cochin - Heritage Tour",
         description:
-          "Land at Cochin International Airport and explore Fort Kochi — the Chinese fishing nets, St. Francis Church, the Indo-Portuguese Museum, the Mattancherry Dutch Palace, the Paradesi Synagogue and Marine Drive.",
+          "Land at Cochin International Airport and explore Fort Kochi - the Chinese fishing nets, St. Francis Church, the Indo-Portuguese Museum, the Mattancherry Dutch Palace, the Paradesi Synagogue and Marine Drive.",
         activities: ["Pickup at Cochin", "Chinese fishing nets", "St. Francis Church", "Mattancherry Palace", "Marine Drive"],
         meals: "Breakfast",
         accommodation: "Hotel in Cochin",
@@ -10721,9 +10721,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Munnar — Eravikulam & Tea Museum",
+        title: "Munnar - Eravikulam & Tea Museum",
         description:
-          "Explore Munnar — Eravikulam National Park, the Tata Tea Museum, Mattupetty Dam, Echo Point and Kundala Lake.",
+          "Explore Munnar - Eravikulam National Park, the Tata Tea Museum, Mattupetty Dam, Echo Point and Kundala Lake.",
         activities: ["Eravikulam National Park", "Tata Tea Museum", "Mattupetty Dam", "Echo Point", "Kundala Lake"],
         meals: "Breakfast",
         accommodation: "Hotel in Munnar",
@@ -10731,7 +10731,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Thekkady — Periyar Wildlife",
+        title: "Thekkady - Periyar Wildlife",
         description:
           "Drive to Thekkady for the Periyar Wildlife Sanctuary and a boat ride on Periyar Lake. Optional spice plantation visit or Kathakali / Kalaripayattu performance.",
         activities: ["Drive to Thekkady", "Periyar Lake boat ride", "Optional spice plantation / Kathakali"],
@@ -10741,7 +10741,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Alleppey — Backwaters & Beach",
+        title: "Alleppey - Backwaters & Beach",
         description:
           "Drive to Alleppey, the 'Venice of the East'. Optional houseboat backwater cruise and a sunset at Alleppey Beach.",
         activities: ["Drive to Alleppey", "Optional backwater cruise", "Alleppey Beach sunset"],
@@ -10756,30 +10756,30 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Cochin International Airport for your flight home.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         image: "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=600&h=400&fit=crop",
       },
     ],
     vehiclePricing: {
       categories: ["Deluxe", "Super Deluxe", "Sup. Deluxe Premium Combo", "Premium", "Super Premium", "Sup. Premium Luxury Combo", "Luxury"],
       rows: [
-        { vehicle: "2 Pax — Sedan", prices: [25800, 28700, 31600, 32600, 35300, 38900, 42200] },
-        { vehicle: "4 Pax — Innova / Ertiga", prices: [39800, 45600, 51300, 53300, 58900, 65900, 72700] },
-        { vehicle: "6 Pax — Innova / Ertiga", prices: [51100, 59900, 68400, 71400, 79800, 90300, 100400] },
-        { vehicle: "8 Pax — Tempo Traveller", prices: [69200, 80900, 92300, 96200, 107400, 121400, 135000] },
-        { vehicle: "10 Pax — Tempo Traveller", prices: [95400, 110000, 124300, 129200, 143200, 160700, 177700] },
+        { vehicle: "2 Pax - Sedan", prices: [25800, 28700, 31600, 32600, 35300, 38900, 42200] },
+        { vehicle: "4 Pax - Innova / Ertiga", prices: [39800, 45600, 51300, 53300, 58900, 65900, 72700] },
+        { vehicle: "6 Pax - Innova / Ertiga", prices: [51100, 59900, 68400, 71400, 79800, 90300, 100400] },
+        { vehicle: "8 Pax - Tempo Traveller", prices: [69200, 80900, 92300, 96200, 107400, 121400, 135000] },
+        { vehicle: "10 Pax - Tempo Traveller", prices: [95400, 110000, 124300, 129200, 143200, 160700, 177700] },
       ],
       note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
     },
   },
   {
-    title: "Royal & Wild Sojourn — Mysore, Coorg & Wayanad",
+    title: "Royal & Wild Sojourn - Mysore, Coorg & Wayanad",
     slug: "karnataka-kerala-coorg-wayanad",
     destinationName: "Karnataka",
     destinationSlug: "karnataka",
     category: "leisure",
     description:
-      "A seven-day Karnataka-Kerala circuit from Bengaluru — royal Mysore, the coffee hills of Coorg, and the prehistoric caves and waterfalls of Wayanad.",
+      "A seven-day Karnataka-Kerala circuit from Bengaluru - royal Mysore, the coffee hills of Coorg, and the prehistoric caves and waterfalls of Wayanad.",
     heroImage: "/images/generated/karnataka-hero.webp",
     images: [
       "/images/generated/karnataka-hero.webp",
@@ -10821,7 +10821,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrival via Bengaluru — Drive to Mysore",
+        title: "Arrival via Bengaluru - Drive to Mysore",
         description:
           "Arrive at Kempegowda International Airport and drive to Mysore. Visit Mysore Palace, Chamundi Hill and the Devaraja Market.",
         activities: ["Pickup at Bengaluru", "Mysore Palace", "Chamundi Hill", "Devaraja Market"],
@@ -10841,9 +10841,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Coorg — Abbey Falls & Dubare Elephant Camp",
+        title: "Coorg - Abbey Falls & Dubare Elephant Camp",
         description:
-          "A full day in Coorg — Abbey Falls amid the coffee plantations and the Dubare Elephant Camp on the Cauvery river.",
+          "A full day in Coorg - Abbey Falls amid the coffee plantations and the Dubare Elephant Camp on the Cauvery river.",
         activities: ["Abbey Falls", "Coffee plantation walk", "Dubare Elephant Camp"],
         meals: "Breakfast",
         accommodation: "Resort in Coorg",
@@ -10853,7 +10853,7 @@ const allPackages: Package[] = [
         day: 4,
         title: "Drive Coorg to Wayanad",
         description:
-          "Drive across into Kerala to Wayanad — a green highland of forests, plantations and waterfalls. Evening at leisure.",
+          "Drive across into Kerala to Wayanad - a green highland of forests, plantations and waterfalls. Evening at leisure.",
         activities: ["Drive to Wayanad", "Resort check-in"],
         meals: "Breakfast",
         accommodation: "Resort in Wayanad",
@@ -10861,7 +10861,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Wayanad — Edakkal Caves & Soochipara Falls",
+        title: "Wayanad - Edakkal Caves & Soochipara Falls",
         description:
           "Trek to the Edakkal Caves with their prehistoric rock art, visit the three-tiered Soochipara Falls and the heart-shaped Pookode Lake for a paddleboat.",
         activities: ["Edakkal Caves", "Soochipara Falls", "Pookode Lake boat"],
@@ -10886,30 +10886,30 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Kempegowda International Airport for your onward journey.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         image: "/images/generated/karnataka-hero.webp",
       },
     ],
     vehiclePricing: {
       categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
       rows: [
-        { vehicle: "2 Pax — Sedan", prices: [40100, 46600, 51200, 56800, 69900] },
-        { vehicle: "4 Pax — Ertiga / Innova", prices: [62500, 75300, 84600, 95900, 122400] },
-        { vehicle: "6 Pax — Ertiga / Innova", prices: [76800, 96100, 110000, 127000, 167000] },
-        { vehicle: "8 Pax — Tempo Traveller", prices: [109000, 135200, 153800, 176400, 229800] },
-        { vehicle: "10 Pax — Tempo Traveller", prices: [123800, 156000, 179000, 207000, 274500] },
+        { vehicle: "2 Pax - Sedan", prices: [40100, 46600, 51200, 56800, 69900] },
+        { vehicle: "4 Pax - Ertiga / Innova", prices: [62500, 75300, 84600, 95900, 122400] },
+        { vehicle: "6 Pax - Ertiga / Innova", prices: [76800, 96100, 110000, 127000, 167000] },
+        { vehicle: "8 Pax - Tempo Traveller", prices: [109000, 135200, 153800, 176400, 229800] },
+        { vehicle: "10 Pax - Tempo Traveller", prices: [123800, 156000, 179000, 207000, 274500] },
       ],
       note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
     },
   },
   {
-    title: "Royal & Hilly Sojourn — Mysore, Coorg & Ooty",
+    title: "Royal & Hilly Sojourn - Mysore, Coorg & Ooty",
     slug: "karnataka-coorg-ooty",
     destinationName: "Karnataka",
     destinationSlug: "karnataka",
     category: "leisure",
     description:
-      "A seven-day circuit from Bengaluru — royal Mysore, the coffee hills of Coorg, and Ooty, the Queen of Hill Stations in the Nilgiris.",
+      "A seven-day circuit from Bengaluru - royal Mysore, the coffee hills of Coorg, and Ooty, the Queen of Hill Stations in the Nilgiris.",
     heroImage: "/images/generated/karnataka-hero.webp",
     images: [
       "/images/generated/karnataka-hero.webp",
@@ -10951,7 +10951,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrival via Bengaluru — Drive to Mysore",
+        title: "Arrival via Bengaluru - Drive to Mysore",
         description:
           "Arrive at Kempegowda International Airport and drive to Mysore. Visit Mysore Palace, Chamundi Hill and the Devaraja Market.",
         activities: ["Pickup at Bengaluru", "Mysore Palace", "Chamundi Hill", "Devaraja Market"],
@@ -10971,9 +10971,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Coorg — Abbey Falls & Dubare Elephant Camp",
+        title: "Coorg - Abbey Falls & Dubare Elephant Camp",
         description:
-          "A full day in Coorg — Abbey Falls and the Dubare Elephant Camp on the Cauvery river.",
+          "A full day in Coorg - Abbey Falls and the Dubare Elephant Camp on the Cauvery river.",
         activities: ["Abbey Falls", "Coffee plantation walk", "Dubare Elephant Camp"],
         meals: "Breakfast",
         accommodation: "Resort in Coorg",
@@ -10991,9 +10991,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Ooty — Botanical Gardens, Lake & Doddabetta",
+        title: "Ooty - Botanical Gardens, Lake & Doddabetta",
         description:
-          "Explore Ooty — the Government Botanical Gardens, a boat ride on Ooty Lake, and Doddabetta Peak, the highest point in the Nilgiris.",
+          "Explore Ooty - the Government Botanical Gardens, a boat ride on Ooty Lake, and Doddabetta Peak, the highest point in the Nilgiris.",
         activities: ["Botanical Gardens", "Ooty Lake boat", "Doddabetta Peak"],
         meals: "Breakfast",
         accommodation: "Hotel in Ooty",
@@ -11016,30 +11016,30 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Kempegowda International Airport for your onward journey.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         image: "/images/generated/karnataka-hero.webp",
       },
     ],
     vehiclePricing: {
       categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
       rows: [
-        { vehicle: "2 Pax — Sedan", prices: [43800, 46400, 53300, 59000, 70700] },
-        { vehicle: "4 Pax — Ertiga / Innova", prices: [69900, 75100, 88800, 100000, 124000] },
-        { vehicle: "6 Pax — Ertiga / Innova", prices: [88000, 95700, 116000, 133600, 169600] },
-        { vehicle: "8 Pax — Tempo Traveller", prices: [119000, 129400, 157000, 180000, 227900] },
-        { vehicle: "10 Pax — Tempo Traveller", prices: [137200, 150000, 184500, 213300, 273400] },
+        { vehicle: "2 Pax - Sedan", prices: [43800, 46400, 53300, 59000, 70700] },
+        { vehicle: "4 Pax - Ertiga / Innova", prices: [69900, 75100, 88800, 100000, 124000] },
+        { vehicle: "6 Pax - Ertiga / Innova", prices: [88000, 95700, 116000, 133600, 169600] },
+        { vehicle: "8 Pax - Tempo Traveller", prices: [119000, 129400, 157000, 180000, 227900] },
+        { vehicle: "10 Pax - Tempo Traveller", prices: [137200, 150000, 184500, 213300, 273400] },
       ],
       note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
     },
   },
   {
-    title: "The Hilly Duo — Mysore, Ooty & Kodaikanal",
+    title: "The Hilly Duo - Mysore, Ooty & Kodaikanal",
     slug: "mysore-ooty-kodaikanal",
     destinationName: "Karnataka",
     destinationSlug: "karnataka",
     category: "leisure",
     description:
-      "A seven-day southern hills circuit from Bengaluru — royal Mysore, then the twin hill stations of Ooty (Queen of Hill Stations) and Kodaikanal (Princess of Hill Stations).",
+      "A seven-day southern hills circuit from Bengaluru - royal Mysore, then the twin hill stations of Ooty (Queen of Hill Stations) and Kodaikanal (Princess of Hill Stations).",
     heroImage: "/images/generated/karnataka-hero.webp",
     images: [
       "/images/generated/karnataka-hero.webp",
@@ -11081,7 +11081,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrival via Bengaluru — Drive to Mysore",
+        title: "Arrival via Bengaluru - Drive to Mysore",
         description:
           "Arrive at Kempegowda International Airport and drive to Mysore. Visit Mysore Palace, Chamundi Hill and the Devaraja Market.",
         activities: ["Pickup at Bengaluru", "Mysore Palace", "Chamundi Hill", "Devaraja Market"],
@@ -11101,9 +11101,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Ooty — Botanical Gardens, Lake & Doddabetta",
+        title: "Ooty - Botanical Gardens, Lake & Doddabetta",
         description:
-          "Explore Ooty — the Government Botanical Gardens, a boat ride on Ooty Lake, and Doddabetta Peak.",
+          "Explore Ooty - the Government Botanical Gardens, a boat ride on Ooty Lake, and Doddabetta Peak.",
         activities: ["Botanical Gardens", "Ooty Lake boat", "Doddabetta Peak"],
         meals: "Breakfast",
         accommodation: "Hotel in Ooty",
@@ -11121,9 +11121,9 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Kodaikanal — Coaker's Walk, Bryant Park & Lake",
+        title: "Kodaikanal - Coaker's Walk, Bryant Park & Lake",
         description:
-          "Explore Kodaikanal — the cliffside Coaker's Walk, the landscaped Bryant Park, and a boat ride on the star-shaped Kodaikanal Lake.",
+          "Explore Kodaikanal - the cliffside Coaker's Walk, the landscaped Bryant Park, and a boat ride on the star-shaped Kodaikanal Lake.",
         activities: ["Coaker's Walk", "Bryant Park", "Kodaikanal Lake boat"],
         meals: "Breakfast",
         accommodation: "Hotel in Kodaikanal",
@@ -11146,24 +11146,24 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Kempegowda International Airport for your onward journey.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         image: "/images/generated/karnataka-hero.webp",
       },
     ],
     vehiclePricing: {
       categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
       rows: [
-        { vehicle: "2 Pax — Sedan", prices: [44100, 44800, 53000, 59000, 69600] },
-        { vehicle: "4 Pax — Ertiga / Innova", prices: [70400, 71800, 88300, 100000, 121800] },
-        { vehicle: "6 Pax — Ertiga / Innova", prices: [88700, 90800, 115600, 133700, 166000] },
-        { vehicle: "8 Pax — Tempo Traveller", prices: [120000, 122900, 156000, 180000, 223000] },
-        { vehicle: "10 Pax — Tempo Traveller", prices: [138400, 141900, 183300, 213000, 267500] },
+        { vehicle: "2 Pax - Sedan", prices: [44100, 44800, 53000, 59000, 69600] },
+        { vehicle: "4 Pax - Ertiga / Innova", prices: [70400, 71800, 88300, 100000, 121800] },
+        { vehicle: "6 Pax - Ertiga / Innova", prices: [88700, 90800, 115600, 133700, 166000] },
+        { vehicle: "8 Pax - Tempo Traveller", prices: [120000, 122900, 156000, 180000, 223000] },
+        { vehicle: "10 Pax - Tempo Traveller", prices: [138400, 141900, 183300, 213000, 267500] },
       ],
       note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
     },
   },
   {
-    title: "A Kerala Sojourn — Munnar, Thekkady, Alleppey & Kovalam",
+    title: "A Kerala Sojourn - Munnar, Thekkady, Alleppey & Kovalam",
     slug: "kerala-munnar-alleppey-kovalam",
     destinationName: "Kerala",
     destinationSlug: "kerala",
@@ -11221,9 +11221,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Munnar — Eravikulam & Tea Museum",
+        title: "Munnar - Eravikulam & Tea Museum",
         description:
-          "Explore Munnar — Eravikulam National Park, the Tata Tea Museum, Mattupetty Dam, Echo Point and Kundala Lake.",
+          "Explore Munnar - Eravikulam National Park, the Tata Tea Museum, Mattupetty Dam, Echo Point and Kundala Lake.",
         activities: ["Eravikulam National Park", "Tata Tea Museum", "Mattupetty Dam", "Echo Point"],
         meals: "Breakfast",
         accommodation: "Hotel in Munnar",
@@ -11231,7 +11231,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Thekkady — Periyar Wildlife",
+        title: "Thekkady - Periyar Wildlife",
         description:
           "Drive to Thekkady for the Periyar Wildlife Sanctuary and a boat ride on Periyar Lake. Optional spice plantation or Kathakali / Kalaripayattu performance.",
         activities: ["Drive to Thekkady", "Periyar Lake boat ride", "Optional spice plantation / Kathakali"],
@@ -11241,7 +11241,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Alleppey — Backwaters & Beach",
+        title: "Alleppey - Backwaters & Beach",
         description:
           "Drive to Alleppey for an optional houseboat backwater cruise and a sunset at Alleppey Beach.",
         activities: ["Drive to Alleppey", "Optional backwater cruise", "Alleppey Beach sunset"],
@@ -11251,7 +11251,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Kovalam — Beach Leisure",
+        title: "Kovalam - Beach Leisure",
         description:
           "Drive to Kovalam, Kerala's premier beach town. Afternoon on the Lighthouse, Hawa and Samudra beaches.",
         activities: ["Drive to Kovalam", "Lighthouse Beach", "Hawa & Samudra beaches"],
@@ -11263,7 +11263,7 @@ const allPackages: Package[] = [
         day: 6,
         title: "Kovalam & Trivandrum City Day",
         description:
-          "Day trip to Thiruvananthapuram — the Sree Padmanabhaswamy Temple, Napier Museum, Sri Chitra Art Gallery and Kuthiramalika Palace. Evening back at Kovalam.",
+          "Day trip to Thiruvananthapuram - the Sree Padmanabhaswamy Temple, Napier Museum, Sri Chitra Art Gallery and Kuthiramalika Palace. Evening back at Kovalam.",
         activities: ["Padmanabhaswamy Temple", "Napier Museum", "Kuthiramalika Palace"],
         meals: "Breakfast",
         accommodation: "Beach hotel in Kovalam",
@@ -11276,30 +11276,30 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Trivandrum International Airport for your onward journey home.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         image: "/images/generated/kerala-hero.webp",
       },
     ],
     vehiclePricing: {
       categories: ["Deluxe", "Super Deluxe", "Sup. Deluxe Premium Combo", "Premium", "Super Premium", "Sup. Premium Luxury Combo", "Luxury"],
       rows: [
-        { vehicle: "2 Pax — Sedan", prices: [33500, 38000, 41600, 42800, 47200, 52200, 55400] },
-        { vehicle: "4 Pax — Innova", prices: [51000, 60000, 67300, 69600, 78500, 88500, 94800] },
-        { vehicle: "6 Pax — Innova", prices: [64500, 78100, 89000, 92500, 105800, 120800, 130300] },
-        { vehicle: "8 Pax — Tempo Traveller", prices: [86800, 105000, 119400, 124000, 141800, 161900, 174500] },
-        { vehicle: "10 Pax — Tempo Traveller", prices: [100000, 123000, 141100, 147000, 169000, 194000, 210000] },
+        { vehicle: "2 Pax - Sedan", prices: [33500, 38000, 41600, 42800, 47200, 52200, 55400] },
+        { vehicle: "4 Pax - Innova", prices: [51000, 60000, 67300, 69600, 78500, 88500, 94800] },
+        { vehicle: "6 Pax - Innova", prices: [64500, 78100, 89000, 92500, 105800, 120800, 130300] },
+        { vehicle: "8 Pax - Tempo Traveller", prices: [86800, 105000, 119400, 124000, 141800, 161900, 174500] },
+        { vehicle: "10 Pax - Tempo Traveller", prices: [100000, 123000, 141100, 147000, 169000, 194000, 210000] },
       ],
       note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
     },
   },
   {
-    title: "Grand Southern Sojourn — Madurai, Kodaikanal, Rameswaram, Kanyakumari & Kovalam",
+    title: "Grand Southern Sojourn - Madurai, Kodaikanal, Rameswaram, Kanyakumari & Kovalam",
     slug: "tamilnadu-kerala-grand-south",
     destinationName: "Tamil Nadu",
     destinationSlug: "tamil-nadu",
     category: "educational",
     description:
-      "A seven-day grand South India circuit — Madurai's Meenakshi temple, the Kodaikanal hills, the island shrine of Rameswaram, the three-sea cape at Kanyakumari, and a finale on the beaches of Kovalam.",
+      "A seven-day grand South India circuit - Madurai's Meenakshi temple, the Kodaikanal hills, the island shrine of Rameswaram, the three-sea cape at Kanyakumari, and a finale on the beaches of Kovalam.",
     heroImage: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
@@ -11341,7 +11341,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrival via Madurai — Drive to Kodaikanal",
+        title: "Arrival via Madurai - Drive to Kodaikanal",
         description:
           "Land at Madurai Airport and drive through the Palani Hills to Kodaikanal, the Princess of Hill Stations. Easy evening.",
         activities: ["Pickup at Madurai", "Drive to Kodaikanal", "Resort check-in"],
@@ -11351,9 +11351,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Kodaikanal — Coaker's Walk, Bryant Park & Lake",
+        title: "Kodaikanal - Coaker's Walk, Bryant Park & Lake",
         description:
-          "Explore Kodaikanal — Coaker's Walk, Bryant Park and a boat ride on the star-shaped Kodaikanal Lake.",
+          "Explore Kodaikanal - Coaker's Walk, Bryant Park and a boat ride on the star-shaped Kodaikanal Lake.",
         activities: ["Coaker's Walk", "Bryant Park", "Kodaikanal Lake boat"],
         meals: "Breakfast",
         accommodation: "Hotel in Kodaikanal",
@@ -11361,7 +11361,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Drive Kodaikanal to Madurai — Temple Exploration",
+        title: "Drive Kodaikanal to Madurai - Temple Exploration",
         description:
           "Drive down to Madurai and visit the Meenakshi Amman Temple, with its towering sculpted gopurams.",
         activities: ["Drive to Madurai", "Meenakshi Amman Temple"],
@@ -11371,7 +11371,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Rameswaram — Sacred Sites & Dhanushkodi",
+        title: "Rameswaram - Sacred Sites & Dhanushkodi",
         description:
           "Drive to the holy island of Rameswaram. Visit the Ramanathaswamy Temple and the ghost town of Dhanushkodi at the tip of Pamban Island.",
         activities: ["Drive to Rameswaram", "Ramanathaswamy Temple", "Dhanushkodi ghost town"],
@@ -11381,7 +11381,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Kanyakumari — Sunset Spectacle",
+        title: "Kanyakumari - Sunset Spectacle",
         description:
           "Drive to Kanyakumari. Ferry to the Vivekananda Rock Memorial and the Thiruvalluvar Statue, then watch the sunset over the confluence of three seas.",
         activities: ["Drive to Kanyakumari", "Vivekananda Rock Memorial", "Thiruvalluvar Statue", "Three-sea sunset"],
@@ -11391,7 +11391,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Kovalam — Beach Leisure",
+        title: "Kovalam - Beach Leisure",
         description:
           "Drive to Kovalam for a relaxed day on the Lighthouse, Hawa and Samudra beaches.",
         activities: ["Drive to Kovalam", "Lighthouse Beach", "Hawa & Samudra beaches"],
@@ -11406,30 +11406,30 @@ const allPackages: Package[] = [
           "After breakfast, transfer from Kovalam to Trivandrum Airport for your onward journey home.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
       },
     ],
     vehiclePricing: {
       categories: ["Deluxe", "Super Deluxe", "Premium", "Super Premium", "Luxury"],
       rows: [
-        { vehicle: "2 Pax — Sedan", prices: [45200, 47900, 55400, 65700, 70500] },
-        { vehicle: "4 Pax — Ertiga / Innova", prices: [70400, 75900, 90800, 111300, 121200] },
-        { vehicle: "6 Pax — Ertiga / Innova", prices: [88800, 97000, 119400, 150200, 164900] },
-        { vehicle: "8 Pax — Tempo Traveller", prices: [116200, 127200, 157100, 198200, 215500] },
-        { vehicle: "10 Pax — Tempo Traveller", prices: [134600, 148300, 185700, 237000, 258800] },
+        { vehicle: "2 Pax - Sedan", prices: [45200, 47900, 55400, 65700, 70500] },
+        { vehicle: "4 Pax - Ertiga / Innova", prices: [70400, 75900, 90800, 111300, 121200] },
+        { vehicle: "6 Pax - Ertiga / Innova", prices: [88800, 97000, 119400, 150200, 164900] },
+        { vehicle: "8 Pax - Tempo Traveller", prices: [116200, 127200, 157100, 198200, 215500] },
+        { vehicle: "10 Pax - Tempo Traveller", prices: [134600, 148300, 185700, 237000, 258800] },
       ],
       note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
     },
   },
   {
-    title: "The Ultimate Kerala Escape — Cochin, Munnar, Thekkady, Alleppey & Kovalam",
+    title: "The Ultimate Kerala Escape - Cochin, Munnar, Thekkady, Alleppey & Kovalam",
     slug: "kerala-ultimate-escape",
     destinationName: "Kerala",
     destinationSlug: "kerala",
     category: "leisure",
     description:
-      "An eight-day grand Kerala circuit — colonial Fort Kochi, the tea hills of Munnar, the Periyar jungle at Thekkady, the Alleppey backwaters and the beaches of Kovalam, with a Trivandrum city day.",
+      "An eight-day grand Kerala circuit - colonial Fort Kochi, the tea hills of Munnar, the Periyar jungle at Thekkady, the Alleppey backwaters and the beaches of Kovalam, with a Trivandrum city day.",
     heroImage: "/images/generated/kerala-hero.webp",
     images: [
       "/images/generated/kerala-hero.webp",
@@ -11471,9 +11471,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Cochin — Heritage Tour",
+        title: "Cochin - Heritage Tour",
         description:
-          "Land at Cochin International Airport and explore Fort Kochi — the Chinese fishing nets, St. Francis Church, the Mattancherry Dutch Palace, the Paradesi Synagogue and Marine Drive.",
+          "Land at Cochin International Airport and explore Fort Kochi - the Chinese fishing nets, St. Francis Church, the Mattancherry Dutch Palace, the Paradesi Synagogue and Marine Drive.",
         activities: ["Pickup at Cochin", "Chinese fishing nets", "St. Francis Church", "Mattancherry Palace"],
         meals: "Breakfast",
         accommodation: "Hotel in Cochin",
@@ -11491,9 +11491,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Munnar — Eravikulam & Tea Museum",
+        title: "Munnar - Eravikulam & Tea Museum",
         description:
-          "Explore Munnar — Eravikulam National Park, the Tata Tea Museum, Mattupetty Dam, Echo Point and Kundala Lake.",
+          "Explore Munnar - Eravikulam National Park, the Tata Tea Museum, Mattupetty Dam, Echo Point and Kundala Lake.",
         activities: ["Eravikulam National Park", "Tata Tea Museum", "Mattupetty Dam", "Echo Point"],
         meals: "Breakfast",
         accommodation: "Hotel in Munnar",
@@ -11501,7 +11501,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Thekkady — Periyar Wildlife",
+        title: "Thekkady - Periyar Wildlife",
         description:
           "Drive to Thekkady for the Periyar Wildlife Sanctuary and a boat ride on Periyar Lake. Optional spice plantation or Kathakali / Kalaripayattu performance.",
         activities: ["Drive to Thekkady", "Periyar Lake boat ride", "Optional spice plantation / Kathakali"],
@@ -11511,7 +11511,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Alleppey — Backwaters & Beach",
+        title: "Alleppey - Backwaters & Beach",
         description:
           "Drive to Alleppey for an optional houseboat backwater cruise and a sunset at Alleppey Beach.",
         activities: ["Drive to Alleppey", "Optional backwater cruise", "Alleppey Beach sunset"],
@@ -11521,7 +11521,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Kovalam — Beach Leisure",
+        title: "Kovalam - Beach Leisure",
         description:
           "Drive to Kovalam, Kerala's premier beach town. Afternoon on the Lighthouse, Hawa and Samudra beaches.",
         activities: ["Drive to Kovalam", "Lighthouse Beach", "Hawa & Samudra beaches"],
@@ -11533,7 +11533,7 @@ const allPackages: Package[] = [
         day: 7,
         title: "Kovalam & Trivandrum City Day",
         description:
-          "Day trip to Thiruvananthapuram — the Sree Padmanabhaswamy Temple, Napier Museum, Sri Chitra Art Gallery and Kuthiramalika Palace.",
+          "Day trip to Thiruvananthapuram - the Sree Padmanabhaswamy Temple, Napier Museum, Sri Chitra Art Gallery and Kuthiramalika Palace.",
         activities: ["Padmanabhaswamy Temple", "Napier Museum", "Kuthiramalika Palace"],
         meals: "Breakfast",
         accommodation: "Beach hotel in Kovalam",
@@ -11546,32 +11546,32 @@ const allPackages: Package[] = [
           "After breakfast, transfer to Trivandrum International Airport for your onward journey home.",
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         image: "/images/generated/kerala-hero.webp",
       },
     ],
     vehiclePricing: {
       categories: ["Deluxe", "Super Deluxe", "Sup. Deluxe Premium Combo", "Premium", "Super Premium", "Sup. Premium Luxury Combo", "Luxury"],
       rows: [
-        { vehicle: "2 Pax — Sedan", prices: [37200, 42000, 45600, 47100, 52600, 57600, 61600] },
-        { vehicle: "4 Pax — Innova", prices: [57100, 66700, 73900, 77000, 87900, 98000, 105900] },
-        { vehicle: "6 Pax — Innova", prices: [73100, 87500, 98300, 102900, 119300, 134400, 146300] },
-        { vehicle: "8 Pax — Tempo Traveller", prices: [98800, 117900, 132400, 138500, 160400, 180500, 196300] },
-        { vehicle: "10 Pax — Tempo Traveller", prices: [114800, 138700, 156800, 164400, 191800, 216900, 236700] },
+        { vehicle: "2 Pax - Sedan", prices: [37200, 42000, 45600, 47100, 52600, 57600, 61600] },
+        { vehicle: "4 Pax - Innova", prices: [57100, 66700, 73900, 77000, 87900, 98000, 105900] },
+        { vehicle: "6 Pax - Innova", prices: [73100, 87500, 98300, 102900, 119300, 134400, 146300] },
+        { vehicle: "8 Pax - Tempo Traveller", prices: [98800, 117900, 132400, 138500, 160400, 180500, 196300] },
+        { vehicle: "10 Pax - Tempo Traveller", prices: [114800, 138700, 156800, 164400, 191800, 216900, 236700] },
       ],
       note: "Whole-group package price (land only) by vehicle and hotel category, valid 01 Apr - 30 Sep 2026. Rates are net per package, not per person.",
     },
   },
 
-  /* ═══════════════════════ LAKSHADWEEP — NEW PACKAGE ═══════════════════════ */
+  /* ═══════════════════════ LAKSHADWEEP - NEW PACKAGE ═══════════════════════ */
   {
-    title: "Lakshadweep Coral Islands — Agatti, Bangaram & Kadmat",
+    title: "Lakshadweep Coral Islands - Agatti, Bangaram & Kadmat",
     slug: "lakshadweep-coral-islands",
     destinationName: "Lakshadweep",
     destinationSlug: "lakshadweep",
     category: "adventure",
     description:
-      "A seven-day Lakshadweep escape across three coral islands — Agatti's lagoon, Bangaram's luxury atoll, and Kadmat's world-class dive reef. Permits, ship transfers and PADI scuba instruction included. India's quietest beach destination, done properly.",
+      "A seven-day Lakshadweep escape across three coral islands - Agatti's lagoon, Bangaram's luxury atoll, and Kadmat's world-class dive reef. Permits, ship transfers and PADI scuba instruction included. India's quietest beach destination, done properly.",
     heroImage: "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=800&h=600&fit=crop",
@@ -11601,7 +11601,7 @@ const allPackages: Package[] = [
       "Travel to/from Kochi",
       "Additional certified dives (₹3,500-5,000 per dive)",
       "PADI Open Water certification course (optional, ₹28,000)",
-      "Alcohol (Bangaram only — purchased on island)",
+      "Alcohol (Bangaram only - purchased on island)",
       "Personal expenses, tips, laundry",
       "Travel insurance (mandatory; we can arrange)",
     ],
@@ -11616,9 +11616,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Kochi to Agatti — Boat Transfer to Bangaram",
+        title: "Kochi to Agatti - Boat Transfer to Bangaram",
         description:
-          "Catch the morning Air India flight from Kochi to Agatti (~1h 30m). The descent over Agatti's coral atoll — turquoise reef ringing a thread of white sand — is famously one of the most beautiful in commercial aviation. On arrival, transfer by speedboat (~1h 30m) to Bangaram, the only resort island in Lakshadweep. Check in, lunch on the deck, and the rest of the afternoon free for the beach.",
+          "Catch the morning Air India flight from Kochi to Agatti (~1h 30m). The descent over Agatti's coral atoll - turquoise reef ringing a thread of white sand - is famously one of the most beautiful in commercial aviation. On arrival, transfer by speedboat (~1h 30m) to Bangaram, the only resort island in Lakshadweep. Check in, lunch on the deck, and the rest of the afternoon free for the beach.",
         activities: ["Kochi-Agatti flight", "Aerial view of the atoll", "Speedboat to Bangaram", "Beach time"],
         meals: "Lunch, Dinner",
         accommodation: "Bangaram Island Resort",
@@ -11628,7 +11628,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Bangaram — Snorkeling, Glass-Bottom Boat, Sunset Dhoni",
+        title: "Bangaram - Snorkeling, Glass-Bottom Boat, Sunset Dhoni",
         description:
           "Full day on Bangaram Atoll. Morning snorkel session on the resort's house reef (turtles, parrotfish, the occasional reef shark), afternoon glass-bottom boat ride across the lagoon for coral and ray viewing, and an evening dhoni sail to a deserted neighbouring islet for sundowners on white sand.",
         activities: ["House-reef snorkeling", "Glass-bottom boat tour", "Sunset dhoni sail", "Sandbar dinner"],
@@ -11639,9 +11639,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Bangaram to Kadmat — Inter-Island Transfer",
+        title: "Bangaram to Kadmat - Inter-Island Transfer",
         description:
-          "Morning at leisure on Bangaram, then board the inter-island ship / speedboat north-east to Kadmat (~3-4 hours depending on the sea state). Kadmat is the diving hub of Lakshadweep — long, narrow island ringed by a wide lagoon on one side and an open reef wall on the other. Evening dive briefing for tomorrow's introductory dive.",
+          "Morning at leisure on Bangaram, then board the inter-island ship / speedboat north-east to Kadmat (~3-4 hours depending on the sea state). Kadmat is the diving hub of Lakshadweep - long, narrow island ringed by a wide lagoon on one side and an open reef wall on the other. Evening dive briefing for tomorrow's introductory dive.",
         activities: ["Morning beach", "Ship to Kadmat", "Kadmat resort check-in", "Dive briefing"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Kadmat Beach Resort",
@@ -11651,9 +11651,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Kadmat — PADI Discover Scuba & Lagoon Kayaking",
+        title: "Kadmat - PADI Discover Scuba & Lagoon Kayaking",
         description:
-          "Morning PADI Discover Scuba session — a short shore-based theory and practice in the lagoon, then a guided open-water dive on the house reef to 12m. Lunch back at the resort. Afternoon kayaking on the calm lagoon side, sunset walk along the western beach.",
+          "Morning PADI Discover Scuba session - a short shore-based theory and practice in the lagoon, then a guided open-water dive on the house reef to 12m. Lunch back at the resort. Afternoon kayaking on the calm lagoon side, sunset walk along the western beach.",
         activities: ["PADI theory briefing", "Pool / lagoon skills", "Open-water guided dive (12m)", "Lagoon kayaking", "Sunset beach walk"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Kadmat Beach Resort",
@@ -11662,7 +11662,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Kadmat — Full Day Diving / Reef Walk Options",
+        title: "Kadmat - Full Day Diving / Reef Walk Options",
         description:
           "Full day at Kadmat. Certified divers can opt for the famous Kadmat Drift and Pottukallu Reef sites (additional cost). Non-divers can snorkel the same reef shallows, walk the entire 8-km island, or join the resort's daily reef-ecology talk. Evening at the deck restaurant with fresh tuna and barracuda from the morning's catch.",
         activities: ["Optional certified dives (extra)", "Snorkeling", "Full-island reef walk", "Marine ecology talk"],
@@ -11673,7 +11673,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Kadmat to Agatti — Sunset over the Lagoon",
+        title: "Kadmat to Agatti - Sunset over the Lagoon",
         description:
           "Morning ship back south-west to Agatti, the gateway island. Check in at a small island guesthouse, walk the village lanes (Lakshadweep's only Indian-Ocean culture preserved in everyday life), and end the day at the southern point for sunset over the lagoon.",
         activities: ["Ship to Agatti", "Village walk", "Lighthouse Point", "Sunset on the lagoon"],
@@ -11685,12 +11685,12 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Agatti to Kochi — Departure",
+        title: "Agatti to Kochi - Departure",
         description:
           "Sunrise walk on Agatti beach. Transfer to Agatti airport for the late-morning flight back to Kochi, connecting to your onward journey home.",
         activities: ["Sunrise beach walk", "Agatti airport transfer", "Flight to Kochi"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "Flight 1.5h",
         highlight: "Closing the coral-island circuit",
         image: "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=600&h=400&fit=crop",
@@ -11698,15 +11698,15 @@ const allPackages: Package[] = [
     ],
   },
 
-  /* ═══════════════════════ KARNATAKA — COASTAL CIRCUIT ═══════════════════════ */
+  /* ═══════════════════════ KARNATAKA - COASTAL CIRCUIT ═══════════════════════ */
   {
-    title: "Coastal Karnataka — Udupi, Murudeshwar & Gokarna",
+    title: "Coastal Karnataka - Udupi, Murudeshwar & Gokarna",
     slug: "karnataka-udupi-murudeshwar-gokarna",
     destinationName: "Karnataka",
     destinationSlug: "karnataka",
     category: "leisure",
     description:
-      "A five-day coastal Karnataka circuit threading together the temple town of Udupi (the Krishna Mutt and the eight Ashta Mathas), Murudeshwar (the world's second-tallest Shiva statue on the Arabian Sea), and Gokarna's hippie-trail beaches — Om, Half-Moon and Paradise. South India's quietest beach route, far off the Goa traffic.",
+      "A five-day coastal Karnataka circuit threading together the temple town of Udupi (the Krishna Mutt and the eight Ashta Mathas), Murudeshwar (the world's second-tallest Shiva statue on the Arabian Sea), and Gokarna's hippie-trail beaches - Om, Half-Moon and Paradise. South India's quietest beach route, far off the Goa traffic.",
     heroImage: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
@@ -11742,7 +11742,7 @@ const allPackages: Package[] = [
     highlights: [
       "Sri Krishna Mutt, Udupi",
       "Malpe Beach & St Mary's Island",
-      "Murudeshwar — world's 2nd-tallest Shiva (123 ft)",
+      "Murudeshwar - world's 2nd-tallest Shiva (123 ft)",
       "Mahabaleshwara Temple, Gokarna (Atma Linga)",
       "Om Beach, Half-Moon & Paradise (boat hop)",
       "Yana rock formations (optional)",
@@ -11750,9 +11750,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Mangaluru Arrival — Drive to Udupi",
+        title: "Mangaluru Arrival - Drive to Udupi",
         description:
-          "Arrive at Mangaluru airport and drive ~1 hour north along the coast to Udupi. After hotel check-in, head to the famous Sri Krishna Mutt — the 13th-century Madhva temple where the deity is viewed only through a silver-barred window (Kanakana Kindi). Walk the Car Street temple complex and the surrounding eight Ashta Mathas. Evening at Malpe Beach for sunset.",
+          "Arrive at Mangaluru airport and drive ~1 hour north along the coast to Udupi. After hotel check-in, head to the famous Sri Krishna Mutt - the 13th-century Madhva temple where the deity is viewed only through a silver-barred window (Kanakana Kindi). Walk the Car Street temple complex and the surrounding eight Ashta Mathas. Evening at Malpe Beach for sunset.",
         activities: ["Pickup at Mangaluru", "Drive to Udupi", "Sri Krishna Mutt darshan", "Car Street temple walk", "Malpe Beach sunset"],
         meals: "Dinner",
         accommodation: "Hotel in Udupi",
@@ -11762,9 +11762,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Udupi — St Mary's Island & Drive to Murudeshwar",
+        title: "Udupi - St Mary's Island & Drive to Murudeshwar",
         description:
-          "Morning boat from Malpe to St Mary's Island — a tiny offshore island with columnar basalt rock formations created by ancient volcanic activity (a Geological Monument of India). Return to Udupi for lunch and drive north along the coast to Murudeshwar (~2 hours), arriving in time for sunset darshan at the temple — set against the towering 123-ft Shiva statue overlooking the Arabian Sea.",
+          "Morning boat from Malpe to St Mary's Island - a tiny offshore island with columnar basalt rock formations created by ancient volcanic activity (a Geological Monument of India). Return to Udupi for lunch and drive north along the coast to Murudeshwar (~2 hours), arriving in time for sunset darshan at the temple - set against the towering 123-ft Shiva statue overlooking the Arabian Sea.",
         activities: ["Boat to St Mary's Island", "Basalt formations walk", "Drive to Murudeshwar", "Shiva statue & temple darshan", "Sunset on the sea"],
         meals: "Breakfast, Dinner",
         accommodation: "Beach hotel in Murudeshwar",
@@ -11774,9 +11774,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Murudeshwar — Gopuram Lift & Drive to Gokarna",
+        title: "Murudeshwar - Gopuram Lift & Drive to Gokarna",
         description:
-          "Morning ascent of the 20-storey Murudeshwar Gopuram lift for panoramic views of the temple, the sea and the Bhatkal coastline. Optional snorkeling at Netrani Island (extra cost) — one of India's best dive spots. Afternoon drive north to Gokarna (~2 hours). Evening at Gokarna's main beach and the Mahabaleshwara Temple — home to the Atma Linga said to have been brought from Kailash by Ravana.",
+          "Morning ascent of the 20-storey Murudeshwar Gopuram lift for panoramic views of the temple, the sea and the Bhatkal coastline. Optional snorkeling at Netrani Island (extra cost) - one of India's best dive spots. Afternoon drive north to Gokarna (~2 hours). Evening at Gokarna's main beach and the Mahabaleshwara Temple - home to the Atma Linga said to have been brought from Kailash by Ravana.",
         activities: ["Murudeshwar Gopuram lift", "Optional Netrani snorkeling", "Drive to Gokarna", "Mahabaleshwara Temple", "Gokarna Main Beach evening"],
         meals: "Breakfast, Dinner",
         accommodation: "Beach resort in Gokarna",
@@ -11786,9 +11786,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Gokarna Beach Hop — Om, Half-Moon & Paradise",
+        title: "Gokarna Beach Hop - Om, Half-Moon & Paradise",
         description:
-          "Full day on the Gokarna beach hop. Walk or boat to Om Beach (named for its OM-shaped twin crescents), then Half-Moon Beach (only reachable by short trek or boat), and finally Paradise Beach — the most secluded of the four, with backpacker shacks and crystal water. Late afternoon swim, beach yoga, and a sunset seafood dinner.",
+          "Full day on the Gokarna beach hop. Walk or boat to Om Beach (named for its OM-shaped twin crescents), then Half-Moon Beach (only reachable by short trek or boat), and finally Paradise Beach - the most secluded of the four, with backpacker shacks and crystal water. Late afternoon swim, beach yoga, and a sunset seafood dinner.",
         activities: ["Om Beach", "Half-Moon Beach", "Paradise Beach", "Optional kayaking", "Sunset seafood dinner"],
         meals: "Breakfast, Dinner",
         accommodation: "Beach resort in Gokarna",
@@ -11797,27 +11797,27 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Drive Gokarna to Goa — Departure",
+        title: "Drive Gokarna to Goa - Departure",
         description:
-          "Morning at leisure on the beach. Drive ~3 hours north up the Konkan coast to Goa (Dabolim airport / Madgaon station) for your onward flight or train home — the coastal Karnataka circuit complete.",
+          "Morning at leisure on the beach. Drive ~3 hours north up the Konkan coast to Goa (Dabolim airport / Madgaon station) for your onward flight or train home - the coastal Karnataka circuit complete.",
         activities: ["Beach morning", "Drive to Goa", "Departure transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "150 km drive",
         highlight: "Konkan-coast drive into Goa",
         image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&h=400&fit=crop",
       },
     ],
   },
-  /* ═══════════════════════ VIETNAM — DOCX 5 ═══════════════════════ */
+  /* ═══════════════════════ VIETNAM - DOCX 5 ═══════════════════════ */
   {
-    title: "Vietnam Classic — Hanoi, Sapa, Da Nang & Hoi An",
+    title: "Vietnam Classic - Hanoi, Sapa, Da Nang & Hoi An",
     slug: "vietnam-classic-6n",
     destinationName: "Vietnam",
     destinationSlug: "vietnam",
     category: "leisure",
     description:
-      "A six-night Vietnam classic — two nights in the lake-fringed Old Quarter of Hanoi, two nights amid the terraced rice fields of Sapa, and two nights coast-side at Da Nang with a day in lantern-lit Hoi An. The perfect first-time Vietnam introduction.",
+      "A six-night Vietnam classic - two nights in the lake-fringed Old Quarter of Hanoi, two nights amid the terraced rice fields of Sapa, and two nights coast-side at Da Nang with a day in lantern-lit Hoi An. The perfect first-time Vietnam introduction.",
     heroImage: "/images/generated/vietnam-hero.webp",
     images: [
       "https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&h=600&fit=crop",
@@ -11860,7 +11860,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Hanoi — Old Quarter Walk",
+        title: "Arrive Hanoi - Old Quarter Walk",
         description:
           "Arrive at Noi Bai airport and transfer to your Old Quarter hotel. Afternoon walk through the 36 ancient streets, Hoan Kiem Lake and Ngoc Son Temple. Evening water-puppet show.",
         activities: ["Hanoi airport pickup", "Hoan Kiem Lake walk", "36 Streets Old Quarter", "Water puppet show"],
@@ -11873,7 +11873,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Halong Bay Day Cruise",
         description:
-          "Pre-dawn departure for Halong Bay (3.5 hrs). Board a junk for the day cruise — Sung Sot Cave, Ti Top Island viewpoint, kayaking around the limestone karsts, seafood lunch on board. Return Hanoi by evening.",
+          "Pre-dawn departure for Halong Bay (3.5 hrs). Board a junk for the day cruise - Sung Sot Cave, Ti Top Island viewpoint, kayaking around the limestone karsts, seafood lunch on board. Return Hanoi by evening.",
         activities: ["Drive to Halong (3.5 hrs)", "Junk boat cruise", "Sung Sot Cave", "Ti Top Island", "Kayaking", "Seafood lunch on board"],
         meals: "Breakfast, Lunch",
         accommodation: "Hotel in Hanoi Old Quarter",
@@ -11883,7 +11883,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Hanoi to Sapa — Overnight Train or Bus",
+        title: "Hanoi to Sapa - Overnight Train or Bus",
         description:
           "Morning at leisure in Hanoi. Afternoon Temple of Literature visit. Evening overnight train (or bus) to Lao Cai for Sapa. Soft-sleeper cabins recommended.",
         activities: ["Temple of Literature", "Hanoi café day", "Overnight train to Lao Cai"],
@@ -11895,9 +11895,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Sapa Village Trek — Cat Cat & Y Linh Ho",
+        title: "Sapa Village Trek - Cat Cat & Y Linh Ho",
         description:
-          "Arrive Lao Cai dawn and transfer to Sapa (1 hr). Check in to your Sapa hotel and start the half-day trek to Cat Cat Hmong village and Y Linh Ho — through terraced rice fields with stunning views of Fansipan, Vietnam's tallest mountain.",
+          "Arrive Lao Cai dawn and transfer to Sapa (1 hr). Check in to your Sapa hotel and start the half-day trek to Cat Cat Hmong village and Y Linh Ho - through terraced rice fields with stunning views of Fansipan, Vietnam's tallest mountain.",
         activities: ["Sapa hotel check-in", "Cat Cat Hmong village trek", "Y Linh Ho terraces", "Local Hmong lunch"],
         meals: "Breakfast",
         accommodation: "Hotel in Sapa",
@@ -11919,7 +11919,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Hoi An Day — Lantern-Lit Old Town",
+        title: "Hoi An Day - Lantern-Lit Old Town",
         description:
           "Drive 30 min to Hoi An (UNESCO World Heritage). Walking tour of the Japanese Covered Bridge, Tan Ky Old House, Fujian Assembly Hall, and the Central Market. Stay for the magical lantern-lit evening when boats float candles down the Thu Bon river. Return Da Nang.",
         activities: ["Drive to Hoi An", "Japanese Covered Bridge", "Tan Ky House", "Tailor shopping", "Lantern boats at dusk"],
@@ -11931,25 +11931,25 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Da Nang — Marble Mountains & Departure",
+        title: "Da Nang - Marble Mountains & Departure",
         description:
-          "Morning at the Marble Mountains — five limestone hills riddled with Buddhist caves and shrines. Drop at Da Nang airport for departure flight.",
+          "Morning at the Marble Mountains - five limestone hills riddled with Buddhist caves and shrines. Drop at Da Nang airport for departure flight.",
         activities: ["Marble Mountains caves", "Beach morning", "Da Nang airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Marble Mountains cave shrines",
         image: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Phu Quoc Beach Retreat — 4 Nights",
+    title: "Phu Quoc Beach Retreat - 4 Nights",
     slug: "vietnam-phu-quoc-4n",
     destinationName: "Vietnam",
     destinationSlug: "vietnam",
     category: "leisure",
     description:
-      "Four nights on Phu Quoc — Vietnam's largest island in the Gulf of Thailand. White-sand beaches, snorkelling at the An Thoi archipelago, the world's longest sea cable car to Hon Thom, sunset cocktails at Long Beach, and Vinpearl Safari for the kids.",
+      "Four nights on Phu Quoc - Vietnam's largest island in the Gulf of Thailand. White-sand beaches, snorkelling at the An Thoi archipelago, the world's longest sea cable car to Hon Thom, sunset cocktails at Long Beach, and Vinpearl Safari for the kids.",
     heroImage: "/images/generated/vietnam-hero.webp",
     images: [
       "/images/generated/vietnam-hero.webp",
@@ -11991,7 +11991,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Phu Quoc — Long Beach Check-in",
+        title: "Arrive Phu Quoc - Long Beach Check-in",
         description:
           "Arrive at Phu Quoc airport and transfer to your Long Beach resort. Afternoon at the beach, sunset cocktails, and dinner at the night market.",
         activities: ["Airport pickup", "Resort check-in", "Long Beach evening", "Night Market dinner"],
@@ -12004,7 +12004,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "An Thoi 4-Island Snorkel Day",
         description:
-          "Full-day boat trip to the An Thoi archipelago — 15 small islands off the southern tip of Phu Quoc. Three snorkelling stops over coral reefs with tropical fish, lunch on board, and beach time at the prettiest island.",
+          "Full-day boat trip to the An Thoi archipelago - 15 small islands off the southern tip of Phu Quoc. Three snorkelling stops over coral reefs with tropical fish, lunch on board, and beach time at the prettiest island.",
         activities: ["Boat trip to An Thoi", "3 snorkelling stops", "Lunch on boat", "Beach time"],
         meals: "Breakfast, Lunch",
         accommodation: "4-star resort on Long Beach",
@@ -12024,9 +12024,9 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Phu Quoc North — Vinpearl Safari & Local Crafts",
+        title: "Phu Quoc North - Vinpearl Safari & Local Crafts",
         description:
-          "Morning at Vinpearl Safari — the only semi-wild safari park in Vietnam, home to white tigers, lions, giraffes and rhinos on an open drive-through trail. Afternoon visits to a traditional fish-sauce (nuoc mam) factory and a Phu Quoc pearl farm, ending at Dinh Cau Night Market for fresh seafood.",
+          "Morning at Vinpearl Safari - the only semi-wild safari park in Vietnam, home to white tigers, lions, giraffes and rhinos on an open drive-through trail. Afternoon visits to a traditional fish-sauce (nuoc mam) factory and a Phu Quoc pearl farm, ending at Dinh Cau Night Market for fresh seafood.",
         activities: ["Vinpearl Safari", "Fish-sauce factory tour", "Pearl farm visit", "Dinh Cau Night Market"],
         meals: "Breakfast",
         accommodation: "4-star resort on Long Beach",
@@ -12040,20 +12040,20 @@ const allPackages: Package[] = [
           "Morning at leisure. Last beach swim. Transfer to Phu Quoc airport.",
         activities: ["Morning at leisure", "Airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A final morning on Long Beach",
         image: "/images/generated/vietnam-hero.webp",
       },
     ],
   },
   {
-    title: "Vietnam Full Circuit — Hanoi, Sapa, Ninh Binh, Da Nang & Ho Chi Minh",
+    title: "Vietnam Full Circuit - Hanoi, Sapa, Ninh Binh, Da Nang & Ho Chi Minh",
     slug: "vietnam-full-circuit-9n",
     destinationName: "Vietnam",
     destinationSlug: "vietnam",
     category: "leisure",
     description:
-      "A nine-night Vietnam north-to-south grand circuit — Hanoi's Old Quarter, Sapa's terraced fields, Ninh Binh's 'Halong on land', Da Nang & Hoi An, and Ho Chi Minh City's frenetic charm with a Mekong Delta day trip.",
+      "A nine-night Vietnam north-to-south grand circuit - Hanoi's Old Quarter, Sapa's terraced fields, Ninh Binh's 'Halong on land', Da Nang & Hoi An, and Ho Chi Minh City's frenetic charm with a Mekong Delta day trip.",
     heroImage: "/images/generated/vietnam-hero.webp",
     images: [
       "https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&h=600&fit=crop",
@@ -12089,7 +12089,7 @@ const allPackages: Package[] = [
     highlights: [
       "Hanoi Old Quarter + Halong Bay",
       "Sapa overnight train + village trek",
-      "Ninh Binh — Tam Coc + Hoa Lu (Halong on land)",
+      "Ninh Binh - Tam Coc + Hoa Lu (Halong on land)",
       "Da Nang + Hoi An lantern town",
       "Saigon + Mekong Delta floating markets",
       "Cu Chi Tunnels",
@@ -12098,7 +12098,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Hanoi — Old Quarter",
+        title: "Arrive Hanoi - Old Quarter",
         description: "Arrive Noi Bai airport, transfer to Old Quarter hotel. Afternoon walk around Hoan Kiem Lake, the 36 Streets and an evening Water Puppet show.",
         activities: ["Airport pickup", "Hoan Kiem Lake", "36 Old Streets", "Water puppet show"],
         meals: "Breakfast",
@@ -12119,7 +12119,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Hanoi to Sapa — Overnight Train",
+        title: "Hanoi to Sapa - Overnight Train",
         description: "Morning Temple of Literature visit, afternoon at leisure. Board the overnight sleeper train to Lao Cai for Sapa.",
         activities: ["Temple of Literature", "Train Street Hanoi", "Overnight train"],
         meals: "Breakfast",
@@ -12130,7 +12130,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Sapa — Cat Cat Village Trek",
+        title: "Sapa - Cat Cat Village Trek",
         description: "Arrive Lao Cai, transfer to Sapa, breakfast. Half-day trek to Cat Cat Hmong village and Y Linh Ho rice terraces. Optional afternoon Fansipan cable car for Vietnam's roof.",
         activities: ["Sapa hotel", "Cat Cat village trek", "Y Linh Ho terraces", "Optional Fansipan cable car"],
         meals: "Breakfast",
@@ -12152,8 +12152,8 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Ninh Binh — Tam Coc Sampan + Hoa Lu + Fly Da Nang",
-        description: "Sampan ride through Tam Coc — 'Halong on Land' — past limestone karsts and rice paddies. Visit Hoa Lu, the 10th-century capital, and Mua Cave viewpoint. Afternoon flight to Da Nang.",
+        title: "Ninh Binh - Tam Coc Sampan + Hoa Lu + Fly Da Nang",
+        description: "Sampan ride through Tam Coc - 'Halong on Land' - past limestone karsts and rice paddies. Visit Hoa Lu, the 10th-century capital, and Mua Cave viewpoint. Afternoon flight to Da Nang.",
         activities: ["Tam Coc sampan", "Hoa Lu ancient capital", "Mua Cave viewpoint", "Flight to Da Nang"],
         meals: "Breakfast",
         accommodation: "Beach hotel in Da Nang",
@@ -12162,8 +12162,8 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Hoi An Day — Lantern Town",
-        description: "Drive to Hoi An (30 min) for the walking tour — Japanese Bridge, Tan Ky House, Fujian Assembly Hall. Tailor stop. Stay for the lantern boat sunset on the Thu Bon river. Return Da Nang late.",
+        title: "Hoi An Day - Lantern Town",
+        description: "Drive to Hoi An (30 min) for the walking tour - Japanese Bridge, Tan Ky House, Fujian Assembly Hall. Tailor stop. Stay for the lantern boat sunset on the Thu Bon river. Return Da Nang late.",
         activities: ["Hoi An walking tour", "Japanese Covered Bridge", "Tailor shopping", "Lantern boats sunset"],
         meals: "Breakfast",
         accommodation: "Beach hotel in Da Nang",
@@ -12174,7 +12174,7 @@ const allPackages: Package[] = [
       {
         day: 8,
         title: "Da Nang to Ho Chi Minh City",
-        description: "Morning Marble Mountains cave temples. Afternoon flight Da Nang → Saigon. Evening walk around District 1 — Notre Dame Basilica, Saigon Central Post Office, Ben Thanh Market dinner.",
+        description: "Morning Marble Mountains cave temples. Afternoon flight Da Nang → Saigon. Evening walk around District 1 - Notre Dame Basilica, Saigon Central Post Office, Ben Thanh Market dinner.",
         activities: ["Marble Mountains", "Flight to HCMC", "Notre Dame Basilica", "Ben Thanh Market"],
         meals: "Breakfast",
         accommodation: "Hotel in HCMC District 1",
@@ -12184,7 +12184,7 @@ const allPackages: Package[] = [
       {
         day: 9,
         title: "Mekong Delta + Cu Chi Tunnels",
-        description: "Full-day excursion: morning Mekong Delta — boat ride past floating markets and a coconut candy workshop, lunch at a riverside garden. Afternoon Cu Chi Tunnels — the legendary Viet Cong underground network from the war.",
+        description: "Full-day excursion: morning Mekong Delta - boat ride past floating markets and a coconut candy workshop, lunch at a riverside garden. Afternoon Cu Chi Tunnels - the legendary Viet Cong underground network from the war.",
         activities: ["Mekong boat ride", "Coconut candy workshop", "Riverside lunch", "Cu Chi Tunnels"],
         meals: "Breakfast, Lunch",
         accommodation: "Hotel in HCMC",
@@ -12198,20 +12198,20 @@ const allPackages: Package[] = [
         description: "Morning at leisure or last-minute shopping at Ben Thanh. Transfer to Tan Son Nhat airport for departure.",
         activities: ["Morning at leisure", "Shopping", "Airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A complete Vietnam circuit",
         image: "https://images.unsplash.com/photo-1555921015-5532091f6026?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Vietnam Grand Group Tour — 13 Days (Hanoi to Mekong)",
+    title: "Vietnam Grand Group Tour - 13 Days (Hanoi to Mekong)",
     slug: "vietnam-grand-14n",
     destinationName: "Vietnam",
     destinationSlug: "vietnam",
     category: "leisure",
     description:
-      "Our flagship 13-day Vietnam group departure — the complete north-to-south journey. Hanoi's old quarter, the 'Halong Bay on land' at Ninh Binh, an overnight luxury cruise on Halong Bay, the Golden Bridge at Ba Na Hills, the world's longest sea-crossing cable car at Phu Quoc, VinWonders, and Saigon with the Mekong Delta. Indian meals throughout, English-speaking guides, and a fixed September departure.",
+      "Our flagship 13-day Vietnam group departure - the complete north-to-south journey. Hanoi's old quarter, the 'Halong Bay on land' at Ninh Binh, an overnight luxury cruise on Halong Bay, the Golden Bridge at Ba Na Hills, the world's longest sea-crossing cable car at Phu Quoc, VinWonders, and Saigon with the Mekong Delta. Indian meals throughout, English-speaking guides, and a fixed September departure.",
     heroImage: "/images/generated/vietnam-hero.webp",
     images: [
       "https://images.unsplash.com/photo-1528127269322-539801943592?w=800&h=600&fit=crop",
@@ -12229,7 +12229,7 @@ const allPackages: Package[] = [
     inclusions: [
       "12 nights in 3-star and 4-star hotels with daily breakfast (4-star upgrade available)",
       "1 night on a Halong Bay deluxe overnight cruise (all meals on board)",
-      "Indian meals through the tour (except breakfast, buffets and meals on cruise) — veg options available",
+      "Indian meals through the tour (except breakfast, buffets and meals on cruise) - veg options available",
       "Private air-conditioned vehicle and English-speaking guide at every city",
       "All entrance fees as per programme",
       "Ba Na Hills cable car, Golden Bridge and Fantasy Park entry",
@@ -12244,7 +12244,7 @@ const allPackages: Package[] = [
       "International and domestic airfare (approx. ₹30,000 return + domestic sectors)",
       "Vietnam e-visa (USD 25-30 per person)",
       "Beverages and any meals not mentioned in the programme",
-      "Optional activities — alpine coaster, wine cellar, wax museum and paid games at Fantasy Park",
+      "Optional activities - alpine coaster, wine cellar, wax museum and paid games at Fantasy Park",
       "Early check-in / late check-out at hotels",
       "Travel insurance and personal expenses",
       "Surcharge for holiday-period travel (Christmas, New Year, Vietnam Independence Day)",
@@ -12253,10 +12253,10 @@ const allPackages: Package[] = [
     highlights: [
       "Halong Bay deluxe overnight cruise",
       "Ba Na Hills Golden Bridge (the giant stone hands)",
-      "Hon Thom — world's longest sea-crossing cable car (~8 km)",
+      "Hon Thom - world's longest sea-crossing cable car (~8 km)",
       "VinWonders Phu Quoc theme park",
       "Hoi An Ancient Town (UNESCO) + lantern night market",
-      "Ninh Binh Tam Coc — 'Halong Bay on land'",
+      "Ninh Binh Tam Coc - 'Halong Bay on land'",
       "Saigon + Mekong Delta sampan cruise",
     ],
     transparencyNote:
@@ -12265,9 +12265,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Hanoi — Tran Quoc Pagoda & the Old Quarter",
+        title: "Arrive Hanoi - Tran Quoc Pagoda & the Old Quarter",
         description:
-          "Land at Noi Bai Airport where our guide and driver welcome you. The first stop is Tran Quoc Pagoda, the oldest Buddhist temple in Hanoi, set on a little island in West Lake. Then a walk through the Old Quarter — the famous '36 Streets', each historically named after the trade once sold there. Check in and unwind, followed by dinner at an Indian restaurant.",
+          "Land at Noi Bai Airport where our guide and driver welcome you. The first stop is Tran Quoc Pagoda, the oldest Buddhist temple in Hanoi, set on a little island in West Lake. Then a walk through the Old Quarter - the famous '36 Streets', each historically named after the trade once sold there. Check in and unwind, followed by dinner at an Indian restaurant.",
         activities: ["Airport welcome", "Tran Quoc Pagoda", "Old Quarter 36 Streets walk", "Indian dinner"],
         meals: "Dinner",
         accommodation: "Thang Long Espana or similar (Hanoi, 3★) / La Casa Hanoi (4★)",
@@ -12276,9 +12276,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Ninh Binh — Hoa Lu & Tam Coc 'Halong on Land'",
+        title: "Ninh Binh - Hoa Lu & Tam Coc 'Halong on Land'",
         description:
-          "After breakfast, drive to Ninh Binh province. Visit Hoa Lu, the ancient capital of Vietnam (968-1010 AD) under the Dinh, Le and Ly dynasties. Then a 1.5-hour bamboo boat through Tam Coc — paddy fields, river, sky and a stunning cave system the Vietnamese call 'Halong Bay on land'. Dinner and return to Hanoi for the night.",
+          "After breakfast, drive to Ninh Binh province. Visit Hoa Lu, the ancient capital of Vietnam (968-1010 AD) under the Dinh, Le and Ly dynasties. Then a 1.5-hour bamboo boat through Tam Coc - paddy fields, river, sky and a stunning cave system the Vietnamese call 'Halong Bay on land'. Dinner and return to Hanoi for the night.",
         activities: ["Hoa Lu ancient capital", "Tam Coc 1.5-hr bamboo boat", "Cave system", "Dinner"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Hanoi",
@@ -12288,12 +12288,12 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Halong Bay — Overnight on a Deluxe Cruise",
+        title: "Halong Bay - Overnight on a Deluxe Cruise",
         description:
-          "Drive to Halong Bay (about 3 hrs) and board your cruise at Tuan Chau Marina around midday. Welcome drink, cabin check-in and lunch as you sail into the bay. Afternoon at the Surprising (Sung Sot) Cave — the most beautiful in Halong — then Titop Island for a swim and the climb to the summit viewpoint. Sunset party on the sundeck with a spring-roll cooking class, dinner and an overnight on board.",
+          "Drive to Halong Bay (about 3 hrs) and board your cruise at Tuan Chau Marina around midday. Welcome drink, cabin check-in and lunch as you sail into the bay. Afternoon at the Surprising (Sung Sot) Cave - the most beautiful in Halong - then Titop Island for a swim and the climb to the summit viewpoint. Sunset party on the sundeck with a spring-roll cooking class, dinner and an overnight on board.",
         activities: ["Tuan Chau Marina embarkation", "Sung Sot 'Surprising' Cave", "Titop Island summit", "Sunset party", "Spring-roll cooking class"],
         meals: "Breakfast, Lunch, Dinner",
-        accommodation: "Le Journey Premium Cruise — Deluxe or similar (overnight on board)",
+        accommodation: "Le Journey Premium Cruise - Deluxe or similar (overnight on board)",
         highlight: "Sunset over Halong Bay from the sundeck",
         image: "https://images.unsplash.com/photo-1528127269322-539801943592?w=1600&h=900&fit=crop",
       },
@@ -12301,7 +12301,7 @@ const allPackages: Package[] = [
         day: 4,
         title: "Halong Half-Day → Fly Hanoi to Da Nang",
         description:
-          "Breakfast on board as the boat cruises to the natural preservation area. Kayak to Luon Cave — keep an eye out for the cliff monkeys — and continue past Dog Islet before disembarking around noon at Tuan Chau. Transfer back to Hanoi, dinner, then an evening flight to Da Nang (after 21:00). Our driver escorts you to the Da Nang hotel.",
+          "Breakfast on board as the boat cruises to the natural preservation area. Kayak to Luon Cave - keep an eye out for the cliff monkeys - and continue past Dog Islet before disembarking around noon at Tuan Chau. Transfer back to Hanoi, dinner, then an evening flight to Da Nang (after 21:00). Our driver escorts you to the Da Nang hotel.",
         activities: ["Breakfast cruising", "Kayaking at Luon Cave", "Dog Islet", "Transfer to Hanoi", "Evening flight to Da Nang"],
         meals: "Breakfast, Brunch, Dinner",
         accommodation: "Sepon Blue Da Nang or similar (3★) / Yarra Ocean Suite (4★)",
@@ -12312,7 +12312,7 @@ const allPackages: Package[] = [
         day: 5,
         title: "Son Tra · Marble Mountains · Coconut Forest · Hoi An",
         description:
-          "Begin at Son Tra ('Monkey Mountain') and Linh Ung Pagoda, home to the 67-metre Goddess of Mercy — the tallest in Southeast Asia. Next the Marble Mountains with their caves and Buddhist pagodas, and the Non Nuoc stone-carving village. Then Cam Thanh Coconut Forest for a hands-on basket-boat ride. The afternoon belongs to Hoi An Ancient Town — Phuc Kien Pagoda, the Japanese Covered Bridge, Phung Hung old house and the central market — staying for the shimmering lantern night market.",
+          "Begin at Son Tra ('Monkey Mountain') and Linh Ung Pagoda, home to the 67-metre Goddess of Mercy - the tallest in Southeast Asia. Next the Marble Mountains with their caves and Buddhist pagodas, and the Non Nuoc stone-carving village. Then Cam Thanh Coconut Forest for a hands-on basket-boat ride. The afternoon belongs to Hoi An Ancient Town - Phuc Kien Pagoda, the Japanese Covered Bridge, Phung Hung old house and the central market - staying for the shimmering lantern night market.",
         activities: ["Linh Ung Pagoda (Son Tra)", "Marble Mountains", "Non Nuoc stone village", "Cam Thanh basket-boat", "Hoi An Old Town", "Lantern night market"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Da Nang",
@@ -12323,7 +12323,7 @@ const allPackages: Package[] = [
         day: 6,
         title: "Ba Na Hills & the Golden Bridge",
         description:
-          "Ride the Suoi Mo cable-car system — holder of four world records — up the mountain past white-foaming waterfalls and primeval forest. Visit Linh Ung Pagoda and the 27-metre Shakyamuni Buddha, the 'Le Jardin d'Amour' flower garden, and the world-famous Golden Bridge held aloft by two giant stone hands at 1,400 m. A second cable line takes you to the summit and Fantasy Park — the third-largest indoor amusement park in the world (most games free). The last cable car down is 15:00.",
+          "Ride the Suoi Mo cable-car system - holder of four world records - up the mountain past white-foaming waterfalls and primeval forest. Visit Linh Ung Pagoda and the 27-metre Shakyamuni Buddha, the 'Le Jardin d'Amour' flower garden, and the world-famous Golden Bridge held aloft by two giant stone hands at 1,400 m. A second cable line takes you to the summit and Fantasy Park - the third-largest indoor amusement park in the world (most games free). The last cable car down is 15:00.",
         activities: ["Suoi Mo cable car", "Linh Ung Pagoda & 27m Buddha", "Golden Bridge", "Le Jardin d'Amour", "Fantasy Park", "French Village"],
         meals: "Breakfast, Lunch (buffet), Dinner",
         accommodation: "Hotel in Da Nang",
@@ -12333,9 +12333,9 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Fly to Phu Quoc — Grand World",
+        title: "Fly to Phu Quoc - Grand World",
         description:
-          "Drive to Da Nang airport and fly to Phu Quoc, Vietnam's largest island. After hotel check-in, head to Grand World for a vibrant evening — sightseeing, canal walks and the Bamboo Legend traditional performance. Dinner and overnight on the island.",
+          "Drive to Da Nang airport and fly to Phu Quoc, Vietnam's largest island. After hotel check-in, head to Grand World for a vibrant evening - sightseeing, canal walks and the Bamboo Legend traditional performance. Dinner and overnight on the island.",
         activities: ["Flight to Phu Quoc", "Grand World", "Canal walk", "Bamboo Legend show"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Gaia Phu Quoc or similar (3★) / AVS Hotel Phu Quoc (4★)",
@@ -12346,7 +12346,7 @@ const allPackages: Package[] = [
         day: 8,
         title: "Hon Thom Sea Cable Car · Aquatopia · Sunset Town",
         description:
-          "Drive to An Thoi station and ride the world's longest sea-crossing cable car — almost 8 km across the ocean — to Hon Thom island, with panoramic views of turquoise water, islets and fishing boats. Spend the day at Aquatopia Water Park (20+ slides), then cable-car back to the mainland. Close the day in Sunset Town's European-style streets with a sunset at the iconic Kiss Bridge.",
+          "Drive to An Thoi station and ride the world's longest sea-crossing cable car - almost 8 km across the ocean - to Hon Thom island, with panoramic views of turquoise water, islets and fishing boats. Spend the day at Aquatopia Water Park (20+ slides), then cable-car back to the mainland. Close the day in Sunset Town's European-style streets with a sunset at the iconic Kiss Bridge.",
         activities: ["Hon Thom 8 km sea cable car", "Aquatopia Water Park", "Sunset Town", "Kiss Bridge sunset"],
         meals: "Breakfast, Lunch (buffet), Dinner",
         accommodation: "Hotel in Phu Quoc",
@@ -12355,9 +12355,9 @@ const allPackages: Package[] = [
       },
       {
         day: 9,
-        title: "VinWonders Phu Quoc — Full Day",
+        title: "VinWonders Phu Quoc - Full Day",
         description:
-          "A full day at VinWonders, one of Vietnam's largest theme parks — thrilling rides, themed zones and a water park. Dinner and overnight in Phu Quoc.",
+          "A full day at VinWonders, one of Vietnam's largest theme parks - thrilling rides, themed zones and a water park. Dinner and overnight in Phu Quoc.",
         activities: ["VinWonders theme park", "Themed zones", "Water park"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Phu Quoc",
@@ -12366,7 +12366,7 @@ const allPackages: Package[] = [
       },
       {
         day: 10,
-        title: "Fly to Ho Chi Minh City — Ben Thanh Market",
+        title: "Fly to Ho Chi Minh City - Ben Thanh Market",
         description:
           "Fly to Ho Chi Minh City; our driver escorts you to the hotel. In the late afternoon, explore and shop at the bustling Ben Thanh Market. Evening free to discover Saigon's energy on your own.",
         activities: ["Flight to Ho Chi Minh City", "Ben Thanh Market", "Evening in Saigon"],
@@ -12377,9 +12377,9 @@ const allPackages: Package[] = [
       },
       {
         day: 11,
-        title: "Ho Chi Minh City — Full-Day Tour",
+        title: "Ho Chi Minh City - Full-Day Tour",
         description:
-          "A full city tour starting at the Independence (Reunification) Palace, then the War Remnants Museum for a powerful look at Vietnam's past. A short walk reaches two French-colonial landmarks — the Central Post Office and Notre Dame Cathedral (1877-1883). Continue west to Cho Lon (the Big Market) and Thien Hau Pagoda in Chinatown.",
+          "A full city tour starting at the Independence (Reunification) Palace, then the War Remnants Museum for a powerful look at Vietnam's past. A short walk reaches two French-colonial landmarks - the Central Post Office and Notre Dame Cathedral (1877-1883). Continue west to Cho Lon (the Big Market) and Thien Hau Pagoda in Chinatown.",
         activities: ["Independence Palace", "War Remnants Museum", "Central Post Office", "Notre Dame Cathedral", "Cho Lon", "Thien Hau Pagoda"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Ho Chi Minh City",
@@ -12388,9 +12388,9 @@ const allPackages: Package[] = [
       },
       {
         day: 12,
-        title: "Mekong Delta — My Tho & the Tien River",
+        title: "Mekong Delta - My Tho & the Tien River",
         description:
-          "Drive into the Mekong Delta past green rice paddies, stopping at Vinh Trang — the biggest pagoda in the delta. At My Tho, a boat on the Tien River weaves past the four islands (Dragon, Unicorn, Phoenix and Tortoise). Glide a small canal by sampan, cycle a little through the village, visit a coconut-candy workshop, taste seasonal fruit with honey tea, and hear Southern Vietnamese folk music performed by locals. Return to Saigon for dinner.",
+          "Drive into the Mekong Delta past green rice paddies, stopping at Vinh Trang - the biggest pagoda in the delta. At My Tho, a boat on the Tien River weaves past the four islands (Dragon, Unicorn, Phoenix and Tortoise). Glide a small canal by sampan, cycle a little through the village, visit a coconut-candy workshop, taste seasonal fruit with honey tea, and hear Southern Vietnamese folk music performed by locals. Return to Saigon for dinner.",
         activities: ["Vinh Trang Pagoda", "My Tho Tien River boat", "Sampan canal", "Coconut-candy workshop", "Folk music"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Ho Chi Minh City",
@@ -12405,22 +12405,22 @@ const allPackages: Package[] = [
           "Breakfast at the hotel and time to relax until check-out at noon. Based on your flight time, our driver escorts you to the airport. End of service.",
         activities: ["Leisure morning", "Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A complete north-to-south Vietnam journey",
         image: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1600&h=900&fit=crop",
       },
     ],
   },
 
-  /* ═══════════════════════ THAILAND — DOCX 5 ═══════════════════════ */
+  /* ═══════════════════════ THAILAND - DOCX 5 ═══════════════════════ */
   {
-    title: "Thailand Twin — Bangkok & Pattaya",
+    title: "Thailand Twin - Bangkok & Pattaya",
     slug: "thailand-bangkok-pattaya-4n",
     destinationName: "Thailand",
     destinationSlug: "thailand",
     category: "leisure",
     description:
-      "A four-night Thailand introduction — two nights in Bangkok's neon-lit chaos with the Grand Palace and a Chao Phraya river dinner, followed by two nights at the Pattaya beachfront with the famous Coral Island tour.",
+      "A four-night Thailand introduction - two nights in Bangkok's neon-lit chaos with the Grand Palace and a Chao Phraya river dinner, followed by two nights at the Pattaya beachfront with the famous Coral Island tour.",
     heroImage: "/images/generated/thailand-hero.webp",
     images: [
       "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&h=600&fit=crop",
@@ -12463,9 +12463,9 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Bangkok — Evening at Leisure",
+        title: "Arrive Bangkok - Evening at Leisure",
         description:
-          "Arrive at Bangkok Suvarnabhumi airport and transfer to your hotel. Evening at leisure — explore Khao San Road or the rooftop bars at Asiatique.",
+          "Arrive at Bangkok Suvarnabhumi airport and transfer to your hotel. Evening at leisure - explore Khao San Road or the rooftop bars at Asiatique.",
         activities: ["Airport pickup", "Hotel check-in", "Evening at leisure"],
         meals: "Breakfast",
         accommodation: "Hotel in Bangkok",
@@ -12476,7 +12476,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Bangkok City Tour + Drive Pattaya",
         description:
-          "Morning half-day city tour — Grand Palace, Wat Phra Kaew (Emerald Buddha), Wat Pho (Reclining Buddha). Afternoon drive to Pattaya (2 hrs). Evening Alcazar cabaret show.",
+          "Morning half-day city tour - Grand Palace, Wat Phra Kaew (Emerald Buddha), Wat Pho (Reclining Buddha). Afternoon drive to Pattaya (2 hrs). Evening Alcazar cabaret show.",
         activities: ["Grand Palace", "Wat Phra Kaew", "Wat Pho", "Drive Pattaya", "Alcazar cabaret"],
         meals: "Breakfast",
         accommodation: "Beach hotel in Pattaya",
@@ -12488,7 +12488,7 @@ const allPackages: Package[] = [
         day: 3,
         title: "Coral Island Day Trip",
         description:
-          "Boat to Koh Larn (Coral Island) — 7 km off the Pattaya coast. White-sand beaches, snorkelling, parasailing (optional), and a Thai seafood lunch on the beach. Return Pattaya by sunset for Walking Street.",
+          "Boat to Koh Larn (Coral Island) - 7 km off the Pattaya coast. White-sand beaches, snorkelling, parasailing (optional), and a Thai seafood lunch on the beach. Return Pattaya by sunset for Walking Street.",
         activities: ["Boat to Coral Island", "Snorkelling", "Beach lunch", "Optional water sports", "Walking Street evening"],
         meals: "Breakfast, Lunch",
         accommodation: "Beach hotel in Pattaya",
@@ -12499,7 +12499,7 @@ const allPackages: Package[] = [
         day: 4,
         title: "Nong Nooch Garden, Sanctuary of Truth & Big Buddha",
         description:
-          "A full Pattaya sightseeing day — morning at the Nong Nooch Tropical Garden with its Thai cultural show and elephant performance, then the all-teak Sanctuary of Truth, a hand-carved seafront temple. Afternoon at the Big Buddha (Wat Phra Yai) and the Pattaya Viewpoint, ending at Mini Siam and a beach dinner.",
+          "A full Pattaya sightseeing day - morning at the Nong Nooch Tropical Garden with its Thai cultural show and elephant performance, then the all-teak Sanctuary of Truth, a hand-carved seafront temple. Afternoon at the Big Buddha (Wat Phra Yai) and the Pattaya Viewpoint, ending at Mini Siam and a beach dinner.",
         activities: ["Nong Nooch Tropical Garden", "Thai cultural show", "Sanctuary of Truth", "Big Buddha (Wat Phra Yai)", "Pattaya Viewpoint", "Mini Siam"],
         meals: "Breakfast",
         accommodation: "Beach hotel in Pattaya",
@@ -12508,12 +12508,12 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Pattaya to Bangkok Airport — Departure",
+        title: "Pattaya to Bangkok Airport - Departure",
         description:
           "Morning transfer back to Bangkok airport (2.5 hrs including buffer). Onward departure.",
         activities: ["Drive to Bangkok airport"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         distance: "150 km",
         highlight: "A clean BKK+Pattaya combo",
         image: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=1600&h=900&fit=crop",
@@ -12521,13 +12521,13 @@ const allPackages: Package[] = [
     ],
   },
   {
-    title: "Thailand Beach Grand — Bangkok, Pattaya, Phuket & Krabi",
+    title: "Thailand Beach Grand - Bangkok, Pattaya, Phuket & Krabi",
     slug: "thailand-grand-beach-8n",
     destinationName: "Thailand",
     destinationSlug: "thailand",
     category: "leisure",
     description:
-      "Eight nights across Thailand's two beach coasts — Bangkok and Pattaya on the Gulf side, then Phuket and Krabi on the Andaman side. The complete Thailand beach tour combining culture, nightlife, island hopping and limestone karst landscapes.",
+      "Eight nights across Thailand's two beach coasts - Bangkok and Pattaya on the Gulf side, then Phuket and Krabi on the Andaman side. The complete Thailand beach tour combining culture, nightlife, island hopping and limestone karst landscapes.",
     heroImage: "/images/generated/thailand-hero.webp",
     images: [
       "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&h=600&fit=crop",
@@ -12592,7 +12592,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Pattaya — Coral Island Day Trip",
+        title: "Pattaya - Coral Island Day Trip",
         description: "Speedboat to Koh Larn for beach time, snorkelling, lunch. Return Pattaya for Walking Street evening.",
         activities: ["Coral Island boat", "Snorkelling", "Beach lunch", "Walking Street"],
         meals: "Breakfast, Lunch",
@@ -12612,7 +12612,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Phuket — Phi Phi Islands Day Tour",
+        title: "Phuket - Phi Phi Islands Day Tour",
         description: "Speedboat to Phi Phi Don, Phi Phi Leh (Maya Bay), Bamboo Island and Monkey Beach. Snorkelling, lunch on Phi Phi. Return Phuket evening.",
         activities: ["Speedboat to Phi Phi", "Maya Bay", "Bamboo Island", "Monkey Beach", "Snorkelling"],
         meals: "Breakfast, Lunch",
@@ -12633,7 +12633,7 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Krabi — 4-Islands Tour",
+        title: "Krabi - 4-Islands Tour",
         description: "Longtail boat to Poda Island, Tup Island (sandbar), Chicken Island and Phra Nang Cave Beach. Snorkelling, lunch. Optional sunset Railay Beach climb evening.",
         activities: ["4-Islands tour", "Poda Island", "Tup sandbar", "Phra Nang Cave Beach", "Optional Railay climb"],
         meals: "Breakfast, Lunch",
@@ -12644,7 +12644,7 @@ const allPackages: Package[] = [
       {
         day: 8,
         title: "Emerald Pool, Hot Springs & Tiger Cave Temple",
-        description: "A jungle-and-temple day inland from Krabi — the Emerald Pool (Sa Morakot), a crystal-clear spring-fed pool in the Khao Phanom Bencha forest, the nearby natural Hot Springs waterfall, and the Tiger Cave Temple (Wat Tham Suea) with its 1,237-step climb to a hilltop Buddha and panoramic views. Evening Thai cooking class at the hotel.",
+        description: "A jungle-and-temple day inland from Krabi - the Emerald Pool (Sa Morakot), a crystal-clear spring-fed pool in the Khao Phanom Bencha forest, the nearby natural Hot Springs waterfall, and the Tiger Cave Temple (Wat Tham Suea) with its 1,237-step climb to a hilltop Buddha and panoramic views. Evening Thai cooking class at the hotel.",
         activities: ["Emerald Pool (Sa Morakot)", "Natural Hot Springs", "Tiger Cave Temple", "Thai cooking class"],
         meals: "Breakfast",
         accommodation: "Beach hotel in Krabi",
@@ -12653,24 +12653,24 @@ const allPackages: Package[] = [
       },
       {
         day: 9,
-        title: "Krabi to Bangkok — Departure",
+        title: "Krabi to Bangkok - Departure",
         description: "Morning flight Krabi → Bangkok and onward international departure.",
         activities: ["Drive to Krabi airport", "Flight to Bangkok"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Two coasts in one trip",
         image: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Thailand Island Hopper — Bangkok, Koh Samui & Phuket",
+    title: "Thailand Island Hopper - Bangkok, Koh Samui & Phuket",
     slug: "thailand-bangkok-samui-phuket-6n",
     destinationName: "Thailand",
     destinationSlug: "thailand",
     category: "leisure",
     description:
-      "A six-night Thailand island sampler — two nights in Bangkok with the Grand Palace, two nights of luxury at Koh Samui's Chaweng Beach, and two nights on Phuket's Andaman coast with the Phi Phi Islands tour.",
+      "A six-night Thailand island sampler - two nights in Bangkok with the Grand Palace, two nights of luxury at Koh Samui's Chaweng Beach, and two nights on Phuket's Andaman coast with the Phi Phi Islands tour.",
     heroImage: "/images/generated/thailand-hero.webp",
     images: [
       "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&h=600&fit=crop",
@@ -12744,7 +12744,7 @@ const allPackages: Package[] = [
       {
         day: 4,
         title: "Koh Samui Island Tour",
-        description: "Half-day Samui tour — Big Buddha temple, Wat Plai Laem, Hin Ta & Hin Yai (Grandfather/Grandmother Rocks), Na Muang Waterfalls. Afternoon free for the beach.",
+        description: "Half-day Samui tour - Big Buddha temple, Wat Plai Laem, Hin Ta & Hin Yai (Grandfather/Grandmother Rocks), Na Muang Waterfalls. Afternoon free for the beach.",
         activities: ["Big Buddha temple", "Wat Plai Laem", "Hin Ta Hin Yai rocks", "Na Muang Waterfalls"],
         meals: "Breakfast",
         accommodation: "Resort on Chaweng Beach, Koh Samui",
@@ -12763,7 +12763,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Phuket — Phi Phi Islands Tour",
+        title: "Phuket - Phi Phi Islands Tour",
         description: "Full-day speedboat to Phi Phi Don, Phi Phi Leh (Maya Bay), Bamboo Island. Snorkelling + lunch. Return Phuket for Karon viewpoint sunset.",
         activities: ["Speedboat to Phi Phi", "Maya Bay", "Bamboo Island", "Snorkelling", "Karon viewpoint sunset"],
         meals: "Breakfast, Lunch",
@@ -12777,22 +12777,22 @@ const allPackages: Package[] = [
         description: "Morning at leisure. Drop at Phuket airport for departure flight.",
         activities: ["Morning at leisure", "Airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Three Thai stops in one week",
         image: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=1600&h=900&fit=crop",
       },
     ],
   },
 
-  /* ═══════════════════════ HONG KONG — DOCX 5 ═══════════════════════ */
+  /* ═══════════════════════ HONG KONG - DOCX 5 ═══════════════════════ */
   {
-    title: "Hong Kong Essentials — 4 Nights",
+    title: "Hong Kong Essentials - 4 Nights",
     slug: "hong-kong-essentials-4n",
     destinationName: "Hong Kong",
     destinationSlug: "hong-kong",
     category: "leisure",
     description:
-      "Four nights in Hong Kong — Victoria Peak's iconic skyline, the bustling Tsim Sha Tsui waterfront with Symphony of Lights, Lantau Island's Big Buddha, and a full day at Hong Kong Disneyland for the family.",
+      "Four nights in Hong Kong - Victoria Peak's iconic skyline, the bustling Tsim Sha Tsui waterfront with Symphony of Lights, Lantau Island's Big Buddha, and a full day at Hong Kong Disneyland for the family.",
     heroImage: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=800&h=600&fit=crop",
@@ -12835,7 +12835,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Hong Kong — Tsim Sha Tsui",
+        title: "Arrive Hong Kong - Tsim Sha Tsui",
         description: "Arrive at HKG, transfer to your Kowloon hotel. Afternoon walk on the Avenue of Stars and 8 PM Symphony of Lights show across Victoria Harbour.",
         activities: ["Airport pickup", "Avenue of Stars", "Symphony of Lights"],
         meals: "Breakfast",
@@ -12846,7 +12846,7 @@ const allPackages: Package[] = [
       {
         day: 2,
         title: "City Tour + Victoria Peak Tram",
-        description: "Morning city tour — Victoria Peak Tram ride to The Peak, Sky Terrace 428 panoramic views, Aberdeen sampan fishing village, Stanley Market. Afternoon free.",
+        description: "Morning city tour - Victoria Peak Tram ride to The Peak, Sky Terrace 428 panoramic views, Aberdeen sampan fishing village, Stanley Market. Afternoon free.",
         activities: ["Peak Tram", "Sky Terrace 428", "Aberdeen sampan", "Stanley Market"],
         meals: "Breakfast",
         accommodation: "Hotel in Tsim Sha Tsui, Kowloon",
@@ -12856,7 +12856,7 @@ const allPackages: Package[] = [
       {
         day: 3,
         title: "Hong Kong Disneyland",
-        description: "Full day at Hong Kong Disneyland — Tomorrowland, Adventureland, Fantasyland and the spectacular Magic Access fireworks finale.",
+        description: "Full day at Hong Kong Disneyland - Tomorrowland, Adventureland, Fantasyland and the spectacular Magic Access fireworks finale.",
         activities: ["Disneyland full day", "Rides", "Character meet", "Fireworks finale"],
         meals: "Breakfast",
         accommodation: "Hotel in Tsim Sha Tsui, Kowloon",
@@ -12865,7 +12865,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Lantau Island — Big Buddha + Cable Car",
+        title: "Lantau Island - Big Buddha + Cable Car",
         description: "Ngong Ping 360 cable car (5.7 km) up to Lantau Island. Visit the 34-m Tian Tan Buddha (Big Buddha), Po Lin Monastery, and Tai O fishing village stilt houses. Return city.",
         activities: ["Ngong Ping 360 cable car", "Big Buddha", "Po Lin Monastery", "Tai O fishing village"],
         meals: "Breakfast",
@@ -12879,14 +12879,14 @@ const allPackages: Package[] = [
         description: "Morning at leisure. Last-minute shopping at Harbour City or Causeway Bay. Airport drop.",
         activities: ["Morning at leisure", "Shopping", "Airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "HK in 5 days",
         image: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Hong Kong + Macau — 6 Nights",
+    title: "Hong Kong + Macau - 6 Nights",
     slug: "hong-kong-macau-6n",
     destinationName: "Hong Kong",
     destinationSlug: "hong-kong",
@@ -12958,7 +12958,7 @@ const allPackages: Package[] = [
       {
         day: 3,
         title: "Hong Kong Disneyland",
-        description: "Full day at Disneyland — rides, character meets, parade and fireworks finale.",
+        description: "Full day at Disneyland - rides, character meets, parade and fireworks finale.",
         activities: ["Disneyland full day", "Rides", "Fireworks"],
         meals: "Breakfast",
         accommodation: "Hotel in Tsim Sha Tsui, Kowloon",
@@ -12967,7 +12967,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Lantau — Ngong Ping + Big Buddha",
+        title: "Lantau - Ngong Ping + Big Buddha",
         description: "Cable car to Lantau. Big Buddha, Po Lin Monastery, Tai O village. Evening return city.",
         activities: ["Ngong Ping cable car", "Big Buddha", "Tai O village"],
         meals: "Breakfast",
@@ -12977,8 +12977,8 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "HK to Macau Ferry — Heritage Tour",
-        description: "Morning ferry from Sheung Wan to Macau (1 hr). Half-day heritage tour — Senado Square (UNESCO), Ruins of St Paul's, A-Ma Temple. Evening at The Venetian Macau.",
+        title: "HK to Macau Ferry - Heritage Tour",
+        description: "Morning ferry from Sheung Wan to Macau (1 hr). Half-day heritage tour - Senado Square (UNESCO), Ruins of St Paul's, A-Ma Temple. Evening at The Venetian Macau.",
         activities: ["HK→Macau ferry", "Senado Square", "Ruins of St Paul's", "A-Ma Temple", "The Venetian"],
         meals: "Breakfast",
         accommodation: "Resort in Macau",
@@ -12988,8 +12988,8 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Macau Cotai Strip — Venetian, Macau Tower & Galaxy",
-        description: "A full day on the Cotai Strip — gondola ride at The Venetian Macau, the Galaxy Macau resort, and the 338-m Macau Tower with its glass-floor observation deck (and optional bungee). Evening at the spectacular House of Dancing Water show.",
+        title: "Macau Cotai Strip - Venetian, Macau Tower & Galaxy",
+        description: "A full day on the Cotai Strip - gondola ride at The Venetian Macau, the Galaxy Macau resort, and the 338-m Macau Tower with its glass-floor observation deck (and optional bungee). Evening at the spectacular House of Dancing Water show.",
         activities: ["The Venetian gondola", "Galaxy Macau", "Macau Tower observation deck", "House of Dancing Water show"],
         meals: "Breakfast",
         accommodation: "Resort in Macau",
@@ -12998,26 +12998,26 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Macau to Hong Kong Airport — Departure",
+        title: "Macau to Hong Kong Airport - Departure",
         description: "Morning ferry back to HK or direct Macau airport departure. Trip concludes.",
         activities: ["Ferry to HK or Macau airport", "Onward flight"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Two cities, one trip",
         image: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
       },
     ],
   },
 
-  /* ═══════════════════════ DUBAI — DOCX 5 ═══════════════════════ */
+  /* ═══════════════════════ DUBAI - DOCX 5 ═══════════════════════ */
   {
-    title: "Dubai Classic — 6 Nights",
+    title: "Dubai Classic - 6 Nights",
     slug: "dubai-classic-6n",
     destinationName: "Dubai & UAE",
     destinationSlug: "dubai-uae",
     category: "leisure",
     description:
-      "Six nights in Dubai covering all the headline experiences — Burj Khalifa At The Top, the Dubai Desert Safari with belly-dance dinner, Dubai Marina dhow cruise, Dubai Frame, Miracle Garden, Palm Jumeirah and the Gold Souk. The complete Dubai sampler.",
+      "Six nights in Dubai covering all the headline experiences - Burj Khalifa At The Top, the Dubai Desert Safari with belly-dance dinner, Dubai Marina dhow cruise, Dubai Frame, Miracle Garden, Palm Jumeirah and the Gold Souk. The complete Dubai sampler.",
     heroImage: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=600&fit=crop",
@@ -13062,13 +13062,13 @@ const allPackages: Package[] = [
       "La Mer Beach, Souk Madinat & Ain Dubai",
     ],
     transparencyNote:
-      "Every day is planned with real sightseeing — no filler 'free days'. Miracle Garden and Global Village are seasonal (roughly Nov-May / Oct-Apr); if you travel off-season we swap in equivalent attractions (Dubai Garden Glow, an extra water park, or Aquaventure) at no change in price. The Dubai city tour uses shared/SIC coaches by default; a private car can be arranged on request.",
+      "Every day is planned with real sightseeing - no filler 'free days'. Miracle Garden and Global Village are seasonal (roughly Nov-May / Oct-Apr); if you travel off-season we swap in equivalent attractions (Dubai Garden Glow, an extra water park, or Aquaventure) at no change in price. The Dubai city tour uses shared/SIC coaches by default; a private car can be arranged on request.",
     featured: true,
     itinerary: [
       {
         day: 1,
-        title: "Arrive Dubai — JBR, The Beach & Ain Dubai",
-        description: "Airport pickup and hotel check-in. Evening at JBR (Jumeirah Beach Residence) — a stroll along The Beach promenade, the Dubai Marina waterfront, and a sunset view of Ain Dubai, the world's largest observation wheel, before dinner.",
+        title: "Arrive Dubai - JBR, The Beach & Ain Dubai",
+        description: "Airport pickup and hotel check-in. Evening at JBR (Jumeirah Beach Residence) - a stroll along The Beach promenade, the Dubai Marina waterfront, and a sunset view of Ain Dubai, the world's largest observation wheel, before dinner.",
         activities: ["Airport pickup", "JBR The Beach walk", "Dubai Marina waterfront", "Ain Dubai sunset view"],
         meals: "Breakfast",
         accommodation: "Hotel in Dubai",
@@ -13078,7 +13078,7 @@ const allPackages: Package[] = [
       {
         day: 2,
         title: "Old & Modern Dubai City Tour + Burj Khalifa",
-        description: "A full day across the city. Morning old Dubai — Al Fahidi historic district, the Dubai Museum quarter, the Coffee Museum, and an abra (creek boat) crossing to the Gold and Spice Souks. Then modern Dubai — Jumeirah Mosque, Burj Al Arab photo stop, and the Museum of the Future, Dubai's most striking new landmark. Evening Burj Khalifa At The Top (124-125th floor) at sunset.",
+        description: "A full day across the city. Morning old Dubai - Al Fahidi historic district, the Dubai Museum quarter, the Coffee Museum, and an abra (creek boat) crossing to the Gold and Spice Souks. Then modern Dubai - Jumeirah Mosque, Burj Al Arab photo stop, and the Museum of the Future, Dubai's most striking new landmark. Evening Burj Khalifa At The Top (124-125th floor) at sunset.",
         activities: ["Al Fahidi historic district", "Coffee Museum", "Abra creek crossing", "Gold & Spice Souk", "Jumeirah Mosque", "Burj Al Arab photo", "Museum of the Future", "Burj Khalifa At The Top"],
         meals: "Breakfast",
         accommodation: "Hotel in Dubai",
@@ -13088,7 +13088,7 @@ const allPackages: Package[] = [
       {
         day: 3,
         title: "Dubai Frame, Garden Glow & Desert Safari",
-        description: "Morning at the Dubai Frame — the 150-m golden frame linking old and new Dubai — followed by the Dubai Garden Glow / Dinosaur Park. Afternoon 4WD desert safari with dune bashing, a camel ride and sand boarding, a sunset photo stop, and a BBQ dinner with belly dance and tanura at the Bedouin camp.",
+        description: "Morning at the Dubai Frame - the 150-m golden frame linking old and new Dubai - followed by the Dubai Garden Glow / Dinosaur Park. Afternoon 4WD desert safari with dune bashing, a camel ride and sand boarding, a sunset photo stop, and a BBQ dinner with belly dance and tanura at the Bedouin camp.",
         activities: ["Dubai Frame", "Dubai Garden Glow", "Dune bashing", "Camel ride", "Sand boarding", "Belly dance & tanura", "BBQ dinner"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dubai",
@@ -13098,7 +13098,7 @@ const allPackages: Package[] = [
       {
         day: 4,
         title: "Palm Jumeirah, The View & Marina Dhow Cruise",
-        description: "Morning at Palm Jumeirah — the monorail to Atlantis and The View at The Palm (Palm Tower observation deck, 240 m) for the best look over the man-made island. Afternoon at Souk Madinat Jumeirah and the Burj Al Arab views, then Dubai Mall with the Dubai Aquarium & Underwater Zoo and the Fountain Show. Evening dhow dinner cruise on Dubai Marina with live entertainment.",
+        description: "Morning at Palm Jumeirah - the monorail to Atlantis and The View at The Palm (Palm Tower observation deck, 240 m) for the best look over the man-made island. Afternoon at Souk Madinat Jumeirah and the Burj Al Arab views, then Dubai Mall with the Dubai Aquarium & Underwater Zoo and the Fountain Show. Evening dhow dinner cruise on Dubai Marina with live entertainment.",
         activities: ["Palm Monorail", "The View at The Palm", "Souk Madinat Jumeirah", "Dubai Mall", "Dubai Aquarium & Underwater Zoo", "Fountain Show", "Marina dhow dinner cruise"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dubai",
@@ -13108,11 +13108,11 @@ const allPackages: Package[] = [
       {
         day: 5,
         title: "Miracle Garden, Global Village & Mall of the Emirates",
-        description: "Morning at Miracle Garden — 50 million flowers across 72,000 sq m, the world's largest flower garden (Nov-May). Afternoon at Mall of the Emirates with a stop at Ski Dubai's snow penguins, then evening at Global Village (Oct-Apr) — pavilions, street food and shows from 90+ cultures. (Off-season: replaced with Dubai Garden Glow + an extra attraction.)",
+        description: "Morning at Miracle Garden - 50 million flowers across 72,000 sq m, the world's largest flower garden (Nov-May). Afternoon at Mall of the Emirates with a stop at Ski Dubai's snow penguins, then evening at Global Village (Oct-Apr) - pavilions, street food and shows from 90+ cultures. (Off-season: replaced with Dubai Garden Glow + an extra attraction.)",
         activities: ["Miracle Garden", "Mall of the Emirates", "Ski Dubai viewing", "Global Village"],
         meals: "Breakfast",
         accommodation: "Hotel in Dubai",
-        highlight: "Miracle Garden — world's largest flower display",
+        highlight: "Miracle Garden - world's largest flower display",
         image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&h=900&fit=crop",
       },
       {
@@ -13122,7 +13122,7 @@ const allPackages: Package[] = [
         activities: ["La Mer Beach", "Bluewaters Island", "Ain Dubai observation wheel", "Dubai Festival City", "IMAGINE laser show"],
         meals: "Breakfast",
         accommodation: "Hotel in Dubai",
-        highlight: "Ain Dubai — the world's largest observation wheel",
+        highlight: "Ain Dubai - the world's largest observation wheel",
         image: "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1600&h=900&fit=crop",
       },
       {
@@ -13131,20 +13131,20 @@ const allPackages: Package[] = [
         description: "After breakfast and a last stop for souvenirs at the Gold Souk, transfer to Dubai International airport for the departure flight.",
         activities: ["Gold Souk souvenirs", "Airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A fully-packed Dubai sampler",
         image: "https://images.unsplash.com/photo-1546412414-e1885259563a?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Dubai + Abu Dhabi — 8 Nights",
+    title: "Dubai + Abu Dhabi - 8 Nights",
     slug: "dubai-abu-dhabi-8n",
     destinationName: "Dubai & UAE",
     destinationSlug: "dubai-uae",
     category: "leisure",
     description:
-      "An eight-night UAE grand tour — six nights in Dubai with all the headline attractions plus two nights in Abu Dhabi to see the Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, Ferrari World, Qasr Al Watan Presidential Palace, and Yas Island.",
+      "An eight-night UAE grand tour - six nights in Dubai with all the headline attractions plus two nights in Abu Dhabi to see the Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, Ferrari World, Qasr Al Watan Presidential Palace, and Yas Island.",
     heroImage: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=600&fit=crop",
@@ -13191,7 +13191,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Dubai — Marina Walk",
+        title: "Arrive Dubai - Marina Walk",
         description: "Airport pickup, hotel check-in. Evening JBR Beach + Marina sunset.",
         activities: ["Pickup", "JBR Beach", "Marina sunset"],
         meals: "Breakfast",
@@ -13202,7 +13202,7 @@ const allPackages: Package[] = [
       {
         day: 2,
         title: "Dubai City Tour + Burj Khalifa",
-        description: "Morning city tour — Jumeirah Mosque, Burj Al Arab photo stop, Palm Jumeirah monorail, Gold & Spice Souk abra ride. Evening Burj Khalifa At The Top.",
+        description: "Morning city tour - Jumeirah Mosque, Burj Al Arab photo stop, Palm Jumeirah monorail, Gold & Spice Souk abra ride. Evening Burj Khalifa At The Top.",
         activities: ["Jumeirah", "Burj Al Arab", "Palm Monorail", "Souks", "Burj Khalifa"],
         meals: "Breakfast",
         accommodation: "Hotel in Dubai",
@@ -13212,7 +13212,7 @@ const allPackages: Package[] = [
       {
         day: 3,
         title: "Desert Safari + BBQ Dinner",
-        description: "Afternoon desert safari — dune bashing, camel ride, sand boarding, BBQ dinner with belly dance at Bedouin camp.",
+        description: "Afternoon desert safari - dune bashing, camel ride, sand boarding, BBQ dinner with belly dance at Bedouin camp.",
         activities: ["Dune bashing", "Camel ride", "BBQ dinner", "Belly dance"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dubai",
@@ -13242,7 +13242,7 @@ const allPackages: Package[] = [
       {
         day: 6,
         title: "Palm Jumeirah, The View & Marina Dhow Cruise",
-        description: "Morning at Palm Jumeirah — the monorail to Atlantis and The View at The Palm observation deck (240 m). Afternoon at Souk Madinat Jumeirah and the Dubai Aquarium & Underwater Zoo at Dubai Mall. Evening dhow dinner cruise on Dubai Marina.",
+        description: "Morning at Palm Jumeirah - the monorail to Atlantis and The View at The Palm observation deck (240 m). Afternoon at Souk Madinat Jumeirah and the Dubai Aquarium & Underwater Zoo at Dubai Mall. Evening dhow dinner cruise on Dubai Marina.",
         activities: ["Palm Monorail", "The View at The Palm", "Souk Madinat Jumeirah", "Dubai Aquarium & Underwater Zoo", "Marina dhow dinner cruise"],
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Dubai",
@@ -13251,8 +13251,8 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Dubai to Abu Dhabi — Grand Mosque + Qasr Al Watan",
-        description: "Drive to Abu Dhabi (1.5 hrs). Visit Sheikh Zayed Grand Mosque — the breathtaking white marble masterpiece. Afternoon Qasr Al Watan Presidential Palace tour. Evening at Yas Marina.",
+        title: "Dubai to Abu Dhabi - Grand Mosque + Qasr Al Watan",
+        description: "Drive to Abu Dhabi (1.5 hrs). Visit Sheikh Zayed Grand Mosque - the breathtaking white marble masterpiece. Afternoon Qasr Al Watan Presidential Palace tour. Evening at Yas Marina.",
         activities: ["Drive Dubai→AD", "Sheikh Zayed Grand Mosque", "Qasr Al Watan Palace", "Yas Marina"],
         meals: "Breakfast",
         accommodation: "Hotel in Abu Dhabi",
@@ -13276,22 +13276,22 @@ const allPackages: Package[] = [
         description: "Transfer to Abu Dhabi or Dubai airport (your choice) for departure.",
         activities: ["Airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Two emirates, one trip",
         image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&h=900&fit=crop",
       },
     ],
   },
 
-  /* ═══════════════════════ SINGAPORE — DOCX 5 ═══════════════════════ */
+  /* ═══════════════════════ SINGAPORE - DOCX 5 ═══════════════════════ */
   {
-    title: "Singapore Classic — 4 Nights",
+    title: "Singapore Classic - 4 Nights",
     slug: "singapore-classic-4n",
     destinationName: "Singapore",
     destinationSlug: "singapore",
     category: "leisure",
     description:
-      "Four nights in the Lion City covering all the headline attractions — Universal Studios, Sentosa Island, Gardens by the Bay, Marina Bay Sands SkyPark, Singapore Zoo Night Safari, and a city tour with Merlion Park.",
+      "Four nights in the Lion City covering all the headline attractions - Universal Studios, Sentosa Island, Gardens by the Bay, Marina Bay Sands SkyPark, Singapore Zoo Night Safari, and a city tour with Merlion Park.",
     heroImage: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&h=600&fit=crop",
@@ -13336,8 +13336,8 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Singapore — Night Safari",
-        description: "Pickup at Changi airport. Hotel check-in. Evening Night Safari at Singapore Zoo — the world's first wildlife park designed for nocturnal viewing.",
+        title: "Arrive Singapore - Night Safari",
+        description: "Pickup at Changi airport. Hotel check-in. Evening Night Safari at Singapore Zoo - the world's first wildlife park designed for nocturnal viewing.",
         activities: ["Airport pickup", "Hotel check-in", "Night Safari"],
         meals: "Breakfast",
         accommodation: "Hotel in Singapore",
@@ -13347,7 +13347,7 @@ const allPackages: Package[] = [
       {
         day: 2,
         title: "Singapore City Tour + Marina Bay",
-        description: "Half-day city tour — Merlion Park, Singapore Flyer, Esplanade, Little India spice shops, Chinatown temples. Evening Marina Bay Sands Spectra light & water show.",
+        description: "Half-day city tour - Merlion Park, Singapore Flyer, Esplanade, Little India spice shops, Chinatown temples. Evening Marina Bay Sands Spectra light & water show.",
         activities: ["Merlion Park", "Esplanade", "Little India", "Chinatown", "Spectra show"],
         meals: "Breakfast",
         accommodation: "Hotel in Singapore",
@@ -13356,8 +13356,8 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Universal Studios Singapore — Full Day",
-        description: "Full day at Universal Studios on Sentosa Island — Transformers ride, Battlestar Galactica dual coasters, Madagascar zone, Far Far Away show, Mummy ride.",
+        title: "Universal Studios Singapore - Full Day",
+        description: "Full day at Universal Studios on Sentosa Island - Transformers ride, Battlestar Galactica dual coasters, Madagascar zone, Far Far Away show, Mummy ride.",
         activities: ["USS rides", "Transformers", "Battlestar Galactica", "Madagascar zone", "Mummy ride"],
         meals: "Breakfast",
         accommodation: "Hotel in Singapore",
@@ -13367,7 +13367,7 @@ const allPackages: Package[] = [
       {
         day: 4,
         title: "Sentosa SEA Aquarium + Gardens by the Bay",
-        description: "Morning SEA Aquarium at Sentosa — one of the world's largest aquariums (100,000+ marine animals). Evening Gardens by the Bay — Cloud Forest dome, Flower Dome, and the OCBC Skyway over the Supertree Grove.",
+        description: "Morning SEA Aquarium at Sentosa - one of the world's largest aquariums (100,000+ marine animals). Evening Gardens by the Bay - Cloud Forest dome, Flower Dome, and the OCBC Skyway over the Supertree Grove.",
         activities: ["SEA Aquarium", "Cloud Forest dome", "Flower Dome", "OCBC Skyway"],
         meals: "Breakfast",
         accommodation: "Hotel in Singapore",
@@ -13380,20 +13380,20 @@ const allPackages: Package[] = [
         description: "Morning at leisure for last-minute shopping at Orchard Road. Drop at Changi airport.",
         activities: ["Orchard Road shopping", "Airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A complete Singapore sampler",
         image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Singapore + Bintan — 6 Nights",
+    title: "Singapore + Bintan - 6 Nights",
     slug: "singapore-bintan-6n",
     destinationName: "Singapore",
     destinationSlug: "singapore",
     category: "leisure",
     description:
-      "Four nights in Singapore covering Universal Studios, Gardens by the Bay and Night Safari, then a two-night beach extension at Bintan Island (Indonesia) — pristine beaches, Lagoi resorts and dolphin watching.",
+      "Four nights in Singapore covering Universal Studios, Gardens by the Bay and Night Safari, then a two-night beach extension at Bintan Island (Indonesia) - pristine beaches, Lagoi resorts and dolphin watching.",
     heroImage: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&h=600&fit=crop",
@@ -13435,7 +13435,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Singapore — Night Safari",
+        title: "Arrive Singapore - Night Safari",
         description: "Airport pickup. Evening Night Safari at Singapore Zoo.",
         activities: ["Airport pickup", "Night Safari"],
         meals: "Breakfast",
@@ -13466,7 +13466,7 @@ const allPackages: Package[] = [
       {
         day: 4,
         title: "Gardens by the Bay + Ferry to Bintan",
-        description: "Morning Gardens by the Bay — Cloud Forest and Flower Dome. Afternoon ferry from Tanah Merah to Bintan Lagoi (1 hr). Resort check-in. Sunset.",
+        description: "Morning Gardens by the Bay - Cloud Forest and Flower Dome. Afternoon ferry from Tanah Merah to Bintan Lagoi (1 hr). Resort check-in. Sunset.",
         activities: ["Cloud Forest", "Flower Dome", "Ferry to Bintan", "Resort check-in"],
         meals: "Breakfast",
         accommodation: "Resort in Lagoi, Bintan",
@@ -13476,8 +13476,8 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Bintan — Mangrove Tour & Beach Day",
-        description: "A relaxed Bintan day — a morning Sebung River mangrove discovery tour, an optional ATV jungle ride, and an afternoon on the resort's private beach with water sports and a sunset over the South China Sea.",
+        title: "Bintan - Mangrove Tour & Beach Day",
+        description: "A relaxed Bintan day - a morning Sebung River mangrove discovery tour, an optional ATV jungle ride, and an afternoon on the resort's private beach with water sports and a sunset over the South China Sea.",
         activities: ["Sebung mangrove tour", "ATV jungle ride", "Resort beach & water sports", "Sunset"],
         meals: "Breakfast",
         accommodation: "Resort in Lagoi, Bintan",
@@ -13486,7 +13486,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Bintan to Singapore — Return Ferry & Departure",
+        title: "Bintan to Singapore - Return Ferry & Departure",
         description: "Morning ferry back to Singapore, with a last stop at Orchard Road or Marina Bay before the airport transfer for your onward international flight.",
         activities: ["Ferry to Singapore", "Orchard Road stop", "Airport transfer"],
         meals: "Breakfast",
@@ -13500,14 +13500,14 @@ const allPackages: Package[] = [
         description: "Drop at Changi airport.",
         activities: ["Airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Two countries, one trip",
         image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Singapore + Malaysia — 6 Nights",
+    title: "Singapore + Malaysia - 6 Nights",
     slug: "singapore-malaysia-6n",
     destinationName: "Singapore",
     destinationSlug: "singapore",
@@ -13556,7 +13556,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Singapore — Night Safari",
+        title: "Arrive Singapore - Night Safari",
         description: "Pickup at Changi. Hotel. Night Safari evening.",
         activities: ["Airport pickup", "Night Safari"],
         meals: "Breakfast",
@@ -13607,7 +13607,7 @@ const allPackages: Package[] = [
       {
         day: 6,
         title: "Genting Highlands Day Trip & KL Shopping",
-        description: "Day trip to Genting Highlands — the Awana SkyWay cable car up to the hilltop resort, SkyAvenue mall and the Chin Swee Caves Temple on the way. Return to KL for an evening at Pavilion KL and the Petaling Street (Chinatown) market.",
+        description: "Day trip to Genting Highlands - the Awana SkyWay cable car up to the hilltop resort, SkyAvenue mall and the Chin Swee Caves Temple on the way. Return to KL for an evening at Pavilion KL and the Petaling Street (Chinatown) market.",
         activities: ["Awana SkyWay cable car", "Genting SkyAvenue", "Chin Swee Caves Temple", "Pavilion KL", "Petaling Street market"],
         meals: "Breakfast",
         accommodation: "Hotel in Kuala Lumpur",
@@ -13620,14 +13620,14 @@ const allPackages: Package[] = [
         description: "Drop at KLIA airport.",
         activities: ["Airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Two capitals, one trip",
         image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Singapore + Cruise + Malaysia — 8 Nights",
+    title: "Singapore + Cruise + Malaysia - 8 Nights",
     slug: "singapore-cruise-malaysia-8n",
     destinationName: "Singapore",
     destinationSlug: "singapore",
@@ -13676,7 +13676,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Singapore — Night Safari",
+        title: "Arrive Singapore - Night Safari",
         description: "Pickup, hotel, Night Safari.",
         activities: ["Pickup", "Night Safari"],
         meals: "Breakfast",
@@ -13716,8 +13716,8 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "At Sea — Cruise Day",
-        description: "Full day at sea — pools, shows, casino, on-board activities. Optional spa, water slides.",
+        title: "At Sea - Cruise Day",
+        description: "Full day at sea - pools, shows, casino, on-board activities. Optional spa, water slides.",
         activities: ["Pool deck", "On-board shows", "Casino", "Spa"],
         meals: "All meals on board",
         accommodation: "Cruise inside cabin",
@@ -13737,7 +13737,7 @@ const allPackages: Package[] = [
       {
         day: 7,
         title: "KL City Tour + Twin Towers + Batu Caves",
-        description: "Full-day KL — Batu Caves, Twin Towers Sky Bridge, Suria KLCC mall, Jalan Alor street-food dinner.",
+        description: "Full-day KL - Batu Caves, Twin Towers Sky Bridge, Suria KLCC mall, Jalan Alor street-food dinner.",
         activities: ["Batu Caves", "Twin Towers", "Suria KLCC", "Jalan Alor"],
         meals: "Breakfast",
         accommodation: "Hotel in Kuala Lumpur",
@@ -13760,22 +13760,22 @@ const allPackages: Package[] = [
         description: "Drop at KLIA airport.",
         activities: ["Airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Cruise + 2 capitals",
         image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1600&h=900&fit=crop",
       },
     ],
   },
 
-  /* ═══════════════════════ MALAYSIA — DOCX 5 ═══════════════════════ */
+  /* ═══════════════════════ MALAYSIA - DOCX 5 ═══════════════════════ */
   {
-    title: "Malaysia Triangle — Kuala Lumpur, Penang & Langkawi",
+    title: "Malaysia Triangle - Kuala Lumpur, Penang & Langkawi",
     slug: "malaysia-kl-penang-langkawi-7n",
     destinationName: "Malaysia",
     destinationSlug: "malaysia",
     category: "leisure",
     description:
-      "A seven-night Malaysia triangle — two nights in Kuala Lumpur (Petronas Twin Towers + Batu Caves), two nights in Penang's UNESCO-listed Georgetown (heritage walk + hawker food), and three nights in Langkawi (SkyCab + Cenang Beach water sports + Sky Bridge).",
+      "A seven-night Malaysia triangle - two nights in Kuala Lumpur (Petronas Twin Towers + Batu Caves), two nights in Penang's UNESCO-listed Georgetown (heritage walk + hawker food), and three nights in Langkawi (SkyCab + Cenang Beach water sports + Sky Bridge).",
     heroImage: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&h=600&fit=crop",
@@ -13820,7 +13820,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Kuala Lumpur — Bukit Bintang",
+        title: "Arrive Kuala Lumpur - Bukit Bintang",
         description: "Pickup at KLIA. Hotel check-in. Evening Bukit Bintang walk + Jalan Alor street-food dinner.",
         activities: ["Airport pickup", "Bukit Bintang", "Jalan Alor street food"],
         meals: "Breakfast",
@@ -13840,8 +13840,8 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Fly KL → Penang — Georgetown Heritage Walk",
-        description: "Morning flight to Penang (50 min). Check in to your Georgetown hotel. Afternoon walking tour — Cheong Fatt Tze Blue Mansion, Khoo Kongsi clan temple, Chinese clan jetties, street-art trail. Evening at Gurney Drive hawker street.",
+        title: "Fly KL → Penang - Georgetown Heritage Walk",
+        description: "Morning flight to Penang (50 min). Check in to your Georgetown hotel. Afternoon walking tour - Cheong Fatt Tze Blue Mansion, Khoo Kongsi clan temple, Chinese clan jetties, street-art trail. Evening at Gurney Drive hawker street.",
         activities: ["Flight to Penang", "Cheong Fatt Tze Mansion", "Khoo Kongsi", "Clan Jetties", "Street art", "Gurney Drive dinner"],
         meals: "Breakfast",
         accommodation: "Hotel in Georgetown, Penang",
@@ -13851,16 +13851,16 @@ const allPackages: Package[] = [
       {
         day: 4,
         title: "Penang Hill + Kek Lok Si Temple",
-        description: "Morning Penang Hill funicular (optional ticket) for panoramic views. Afternoon Kek Lok Si Temple — Southeast Asia's largest Buddhist temple complex. Evening at New Lane hawker for char kway teow.",
+        description: "Morning Penang Hill funicular (optional ticket) for panoramic views. Afternoon Kek Lok Si Temple - Southeast Asia's largest Buddhist temple complex. Evening at New Lane hawker for char kway teow.",
         activities: ["Penang Hill funicular (optional)", "Kek Lok Si Temple", "New Lane hawker dinner"],
         meals: "Breakfast",
         accommodation: "Hotel in Georgetown, Penang",
-        highlight: "Kek Lok Si — Southeast Asia's largest Buddhist temple",
+        highlight: "Kek Lok Si - Southeast Asia's largest Buddhist temple",
         image: "https://images.unsplash.com/photo-1601762603339-fd61e28b698a?w=1600&h=900&fit=crop",
       },
       {
         day: 5,
-        title: "Fly Penang → Langkawi — Cenang Beach",
+        title: "Fly Penang → Langkawi - Cenang Beach",
         description: "Morning flight Penang → Langkawi (45 min). Resort check-in at Cenang Beach. Afternoon at the beach. Optional sunset cruise.",
         activities: ["Flight to Langkawi", "Resort check-in", "Cenang Beach", "Optional sunset cruise"],
         meals: "Breakfast",
@@ -13871,7 +13871,7 @@ const allPackages: Package[] = [
       {
         day: 6,
         title: "Langkawi SkyCab + Sky Bridge",
-        description: "Morning SkyCab cable car — the world's steepest at 42 degrees — up Mount Mat Cincang to the Sky Bridge (125-m curved bridge at 700 m). Afternoon Eagle Square and Cenang Walk. Evening at Cenang Beach.",
+        description: "Morning SkyCab cable car - the world's steepest at 42 degrees - up Mount Mat Cincang to the Sky Bridge (125-m curved bridge at 700 m). Afternoon Eagle Square and Cenang Walk. Evening at Cenang Beach.",
         activities: ["SkyCab cable car", "Sky Bridge walk", "Eagle Square", "Cenang Walk"],
         meals: "Breakfast",
         accommodation: "Beach resort on Cenang Beach, Langkawi",
@@ -13881,7 +13881,7 @@ const allPackages: Package[] = [
       {
         day: 7,
         title: "Mangrove + Eagle Watching Boat Tour",
-        description: "Half-day mangrove tour in Kilim Geoforest Park — bat caves, fish farm, eagle feeding. Afternoon free at the resort beach or optional 3-island hop. Evening at Langkawi Night Market.",
+        description: "Half-day mangrove tour in Kilim Geoforest Park - bat caves, fish farm, eagle feeding. Afternoon free at the resort beach or optional 3-island hop. Evening at Langkawi Night Market.",
         activities: ["Kilim mangrove tour", "Bat caves", "Eagle feeding", "Optional 3-island hop", "Night Market"],
         meals: "Breakfast",
         accommodation: "Beach resort on Cenang Beach, Langkawi",
@@ -13894,22 +13894,22 @@ const allPackages: Package[] = [
         description: "Drop at Langkawi airport for departure flight.",
         activities: ["Airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Three Malaysian highlights",
         image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1600&h=900&fit=crop",
       },
     ],
   },
 
-  /* ═══════════════════════ PHILIPPINES — DOCX 5 ═══════════════════════ */
+  /* ═══════════════════════ PHILIPPINES - DOCX 5 ═══════════════════════ */
   {
-    title: "Philippines Grand Circuit — Manila, Cebu, Boracay & Puerto Princesa",
+    title: "Philippines Grand Circuit - Manila, Cebu, Boracay & Puerto Princesa",
     slug: "philippines-grand-circuit-9d",
     destinationName: "Philippines",
     destinationSlug: "philippines",
     category: "leisure",
     description:
-      "Nine days across four Philippine islands — two nights of colonial heritage in Manila, two nights of beaches and history in Cebu, two nights at Asia's best beach Boracay, and two nights at the Puerto Princesa Underground River (UNESCO).",
+      "Nine days across four Philippine islands - two nights of colonial heritage in Manila, two nights of beaches and history in Cebu, two nights at Asia's best beach Boracay, and two nights at the Puerto Princesa Underground River (UNESCO).",
     heroImage: "/images/destinations/philippines.webp",
     images: [
       "/images/destinations/philippines.webp",
@@ -13955,8 +13955,8 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Manila — Intramuros",
-        description: "Arrive at Ninoy Aquino International Airport. Transfer to your Manila hotel. Afternoon walking tour of Intramuros — the walled city. Visit Fort Santiago, San Agustin Church (oldest church in the Philippines, 1607), Casa Manila and Plaza Roma. Evening at Rizal Park.",
+        title: "Arrive Manila - Intramuros",
+        description: "Arrive at Ninoy Aquino International Airport. Transfer to your Manila hotel. Afternoon walking tour of Intramuros - the walled city. Visit Fort Santiago, San Agustin Church (oldest church in the Philippines, 1607), Casa Manila and Plaza Roma. Evening at Rizal Park.",
         activities: ["Airport pickup", "Intramuros walk", "Fort Santiago", "San Agustin Church", "Casa Manila", "Rizal Park"],
         meals: "Breakfast",
         accommodation: "Hotel in Manila",
@@ -13965,8 +13965,8 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Manila City Tour — Greenbelt Shopping",
-        description: "Morning city tour — Bonifacio Global City, SM Mall of Asia, the Manila Cathedral. Afternoon free for shopping at Greenbelt or Ayala Centre.",
+        title: "Manila City Tour - Greenbelt Shopping",
+        description: "Morning city tour - Bonifacio Global City, SM Mall of Asia, the Manila Cathedral. Afternoon free for shopping at Greenbelt or Ayala Centre.",
         activities: ["Bonifacio Global City", "SM Mall of Asia", "Manila Cathedral", "Greenbelt shopping"],
         meals: "Breakfast",
         accommodation: "Hotel in Manila",
@@ -13975,8 +13975,8 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Fly Manila → Cebu — City Tour",
-        description: "Morning flight to Cebu (1.5 hrs). Check in. Half-day Cebu city tour — Magellan's Cross (where Christianity arrived in the Philippines, 1521), Basilica del Santo Niño, Fort San Pedro, Taoist Temple. Evening at Mactan Island resort.",
+        title: "Fly Manila → Cebu - City Tour",
+        description: "Morning flight to Cebu (1.5 hrs). Check in. Half-day Cebu city tour - Magellan's Cross (where Christianity arrived in the Philippines, 1521), Basilica del Santo Niño, Fort San Pedro, Taoist Temple. Evening at Mactan Island resort.",
         activities: ["Flight to Cebu", "Magellan's Cross", "Basilica del Santo Niño", "Fort San Pedro", "Taoist Temple"],
         meals: "Breakfast",
         accommodation: "Beach resort on Mactan Island, Cebu",
@@ -13985,8 +13985,8 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Cebu — Optional Oslob Whale Sharks or Kawasan Falls",
-        description: "OPTION A: Pre-dawn drive to Oslob (3 hrs) for whale-shark snorkelling — Cebu's signature experience. OPTION B: Kawasan Falls canyoneering adventure. OPTION C: Free beach day at Mactan resort.",
+        title: "Cebu - Optional Oslob Whale Sharks or Kawasan Falls",
+        description: "OPTION A: Pre-dawn drive to Oslob (3 hrs) for whale-shark snorkelling - Cebu's signature experience. OPTION B: Kawasan Falls canyoneering adventure. OPTION C: Free beach day at Mactan resort.",
         activities: ["Oslob whale sharks (optional)", "Kawasan Falls canyoneering (optional)", "Resort beach day"],
         meals: "Breakfast",
         accommodation: "Beach resort on Mactan Island, Cebu",
@@ -14006,7 +14006,7 @@ const allPackages: Package[] = [
       {
         day: 6,
         title: "Boracay Island Hopping",
-        description: "Full-day island hopping tour — Crystal Cove Island, Magic Island cliff jumping (optional), Puka Beach, and snorkelling at Crocodile Island. Lunch on board. Evening at D'Mall shopping.",
+        description: "Full-day island hopping tour - Crystal Cove Island, Magic Island cliff jumping (optional), Puka Beach, and snorkelling at Crocodile Island. Lunch on board. Evening at D'Mall shopping.",
         activities: ["Island hopping", "Crystal Cove", "Magic Island", "Puka Beach", "Snorkelling", "D'Mall evening"],
         meals: "Breakfast, Lunch",
         accommodation: "Hotel near White Beach, Boracay",
@@ -14016,7 +14016,7 @@ const allPackages: Package[] = [
       {
         day: 7,
         title: "Boracay → Puerto Princesa",
-        description: "Morning boat to Caticlan + flight to Puerto Princesa (1 hr). Check in. Afternoon city tour — Plaza Cuartel, Immaculate Conception Cathedral, Mitra's Ranch viewpoint, Iwahig Firefly Watching tour after sunset.",
+        description: "Morning boat to Caticlan + flight to Puerto Princesa (1 hr). Check in. Afternoon city tour - Plaza Cuartel, Immaculate Conception Cathedral, Mitra's Ranch viewpoint, Iwahig Firefly Watching tour after sunset.",
         activities: ["Flight to Puerto Princesa", "Plaza Cuartel", "Iwahig Firefly Watching"],
         meals: "Breakfast",
         accommodation: "Hotel in Puerto Princesa, Palawan",
@@ -14026,7 +14026,7 @@ const allPackages: Package[] = [
       {
         day: 8,
         title: "Underground River + Honda Bay",
-        description: "Pre-dawn drive to Sabang. Boat to the Puerto Princesa Underground River — UNESCO World Heritage and one of the New 7 Wonders of Nature. 45-min cave river paddle. Return for Honda Bay afternoon island hop — Cowrie, Starfish and Luli islands.",
+        description: "Pre-dawn drive to Sabang. Boat to the Puerto Princesa Underground River - UNESCO World Heritage and one of the New 7 Wonders of Nature. 45-min cave river paddle. Return for Honda Bay afternoon island hop - Cowrie, Starfish and Luli islands.",
         activities: ["Underground River cave tour", "Honda Bay island hop", "Cowrie Island", "Starfish Island"],
         meals: "Breakfast, Lunch",
         accommodation: "Hotel in Puerto Princesa, Palawan",
@@ -14040,22 +14040,22 @@ const allPackages: Package[] = [
         description: "Morning flight Puerto Princesa → Manila + onward international departure.",
         activities: ["Flight to Manila", "Onward international flight"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Four Philippine islands in 9 days",
         image: "/images/destinations/philippines.webp",
       },
     ],
   },
 
-  /* ═══════════════════════ BHUTAN — DOCX 5 (Six Senses reference) ═══════════════════════ */
+  /* ═══════════════════════ BHUTAN - DOCX 5 (Six Senses reference) ═══════════════════════ */
   {
-    title: "Bhutan Discovery — Paro, Thimphu & Punakha (7 Nights)",
+    title: "Bhutan Discovery - Paro, Thimphu & Punakha (7 Nights)",
     slug: "bhutan-discovery-7n",
     destinationName: "Bhutan",
     destinationSlug: "bhutan",
     category: "leisure",
     description:
-      "A seven-night Bhutan discovery covering the three western valleys — Paro (Tiger's Nest), Thimphu (Buddha Dordenma + capital tour), and Punakha (Dzong + Mo Chhu rafting). The classic Bhutan first-timer route, inspired by the Six Senses 7-night journey.",
+      "A seven-night Bhutan discovery covering the three western valleys - Paro (Tiger's Nest), Thimphu (Buddha Dordenma + capital tour), and Punakha (Dzong + Mo Chhu rafting). The classic Bhutan first-timer route, inspired by the Six Senses 7-night journey.",
     heroImage: "/images/destinations/bhutan.webp",
     images: [
       "/images/destinations/bhutan.webp",
@@ -14072,7 +14072,7 @@ const allPackages: Package[] = [
     reviewCount: 42,
     inclusions: [
       "7 nights in 3-4 star Bhutanese hotels (Paro, Thimphu, Punakha)",
-      "All meals (breakfast, lunch, dinner) — Bhutanese trips are full-board",
+      "All meals (breakfast, lunch, dinner) - Bhutanese trips are full-board",
       "Bhutan SDF (Sustainable Development Fee) at Indian rate (INR 1,200/day)",
       "Permit arrangement through licensed Bhutanese operator",
       "Private vehicle with English-speaking driver-guide throughout",
@@ -14091,8 +14091,8 @@ const allPackages: Package[] = [
     highlights: [
       "Tiger's Nest (Taktsang) Monastery hike",
       "Buddha Dordenma 51-m bronze statue, Thimphu",
-      "Punakha Dzong — Bhutan's most beautiful fortress",
-      "Dochu La Pass — 108 chortens",
+      "Punakha Dzong - Bhutan's most beautiful fortress",
+      "Dochu La Pass - 108 chortens",
       "Mo Chhu white-water rafting",
       "Paro Rinpung Dzong",
     ],
@@ -14100,8 +14100,8 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Paro — Drive to Thimphu",
-        description: "Arrive at Paro International Airport — one of the world's most spectacular flight approaches. Drive to Thimphu (1.5 hrs). Check in. Evening at Tashichho Dzong (seat of government) for the lowering of the flag ceremony.",
+        title: "Arrive Paro - Drive to Thimphu",
+        description: "Arrive at Paro International Airport - one of the world's most spectacular flight approaches. Drive to Thimphu (1.5 hrs). Check in. Evening at Tashichho Dzong (seat of government) for the lowering of the flag ceremony.",
         activities: ["Paro airport arrival", "Drive to Thimphu", "Tashichho Dzong evening"],
         meals: "Lunch, Dinner",
         accommodation: "Hotel in Thimphu",
@@ -14112,18 +14112,18 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Thimphu City — Buddha Dordenma + Memorial Chorten",
-        description: "Full-day Thimphu sightseeing — Memorial Chorten (devotees walking meditative circuits), the 51-m Buddha Dordenma overlooking the valley, National Folk Heritage Museum, Takin Preserve (Bhutan's national animal), and the Trashichho Dzong.",
+        title: "Thimphu City - Buddha Dordenma + Memorial Chorten",
+        description: "Full-day Thimphu sightseeing - Memorial Chorten (devotees walking meditative circuits), the 51-m Buddha Dordenma overlooking the valley, National Folk Heritage Museum, Takin Preserve (Bhutan's national animal), and the Trashichho Dzong.",
         activities: ["Memorial Chorten", "Buddha Dordenma", "Folk Heritage Museum", "Takin Preserve", "Trashichho Dzong"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Thimphu",
-        highlight: "Buddha Dordenma — 51 m bronze",
+        highlight: "Buddha Dordenma - 51 m bronze",
         image: "/images/destinations/bhutan.webp",
       },
       {
         day: 3,
         title: "Thimphu to Punakha via Dochu La Pass",
-        description: "Drive to Punakha (3 hrs) crossing the spectacular Dochu La Pass at 3,100 m — 108 chortens face the Eastern Himalayas. On clear days you can see Gangkar Puensum (Bhutan's tallest mountain, 7,570 m). Arrive Punakha. Afternoon visit to Chimi Lhakhang — the Temple of Fertility.",
+        description: "Drive to Punakha (3 hrs) crossing the spectacular Dochu La Pass at 3,100 m - 108 chortens face the Eastern Himalayas. On clear days you can see Gangkar Puensum (Bhutan's tallest mountain, 7,570 m). Arrive Punakha. Afternoon visit to Chimi Lhakhang - the Temple of Fertility.",
         activities: ["Dochu La Pass", "108 chortens", "Chimi Lhakhang"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Punakha",
@@ -14134,8 +14134,8 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Punakha — Dzong + Mo Chhu Rafting",
-        description: "Visit Punakha Dzong — Bhutan's most beautiful fortress, set at the confluence of the Pho Chhu and Mo Chhu rivers, framed by jacaranda blossoms in spring. Afternoon white-water rafting on the Mo Chhu (Class II-III, gentle) past the dzong.",
+        title: "Punakha - Dzong + Mo Chhu Rafting",
+        description: "Visit Punakha Dzong - Bhutan's most beautiful fortress, set at the confluence of the Pho Chhu and Mo Chhu rivers, framed by jacaranda blossoms in spring. Afternoon white-water rafting on the Mo Chhu (Class II-III, gentle) past the dzong.",
         activities: ["Punakha Dzong", "Mo Chhu river rafting"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Punakha",
@@ -14157,18 +14157,18 @@ const allPackages: Package[] = [
       {
         day: 6,
         title: "Tiger's Nest (Taktsang) Monastery Hike",
-        description: "The signature Bhutan experience — pre-dawn drive to the trailhead. 4-5 hour round-trip climb to the Tiger's Nest Monastery, perched on a cliff 900 m above the Paro valley floor. Halfway tea-house stop. Return to Paro by afternoon for hot stone bath at the hotel.",
+        description: "The signature Bhutan experience - pre-dawn drive to the trailhead. 4-5 hour round-trip climb to the Tiger's Nest Monastery, perched on a cliff 900 m above the Paro valley floor. Halfway tea-house stop. Return to Paro by afternoon for hot stone bath at the hotel.",
         activities: ["Tiger's Nest hike", "Tea-house stop", "Hot stone bath"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Paro",
         elevation: "3,120 m at Tiger's Nest",
         distance: "4-5 hrs round trip on foot",
-        highlight: "Tiger's Nest — Bhutan's iconic image",
+        highlight: "Tiger's Nest - Bhutan's iconic image",
         image: "/images/destinations/bhutan.webp",
       },
       {
         day: 7,
-        title: "Paro Valley — Drukgyel Dzong + Kyichu Lhakhang",
+        title: "Paro Valley - Drukgyel Dzong + Kyichu Lhakhang",
         description: "Visit Drukgyel Dzong ruins (a 1647 fortress destroyed by fire), Kyichu Lhakhang (one of Bhutan's oldest temples, 7th century), and shop for handicrafts at Paro town's main street. Evening at the hotel for a Bhutanese folk dance performance.",
         activities: ["Drukgyel Dzong", "Kyichu Lhakhang", "Paro town shopping", "Folk dance evening"],
         meals: "Breakfast, Lunch, Dinner",
@@ -14182,20 +14182,20 @@ const allPackages: Package[] = [
         description: "Drop at Paro International Airport for departure.",
         activities: ["Drive to Paro airport", "Departure flight"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
-        highlight: "Paro airport approach — one of the world's most dramatic",
+        accommodation: "N/A - Departure",
+        highlight: "Paro airport approach - one of the world's most dramatic",
         image: "/images/destinations/bhutan.webp",
       },
     ],
   },
   {
-    title: "Bhutan Cultural — Paro, Thimphu, Punakha & Bumthang (10 Nights)",
+    title: "Bhutan Cultural - Paro, Thimphu, Punakha & Bumthang (10 Nights)",
     slug: "bhutan-cultural-10n",
     destinationName: "Bhutan",
     destinationSlug: "bhutan",
     category: "leisure",
     description:
-      "A ten-night Bhutan cultural journey — the classic western valleys (Paro, Thimphu, Punakha) plus a deeper exploration of central Bhutan via Trongsa Dzong and the spiritual heartland of Bumthang. Inspired by the Six Senses 10-night journey.",
+      "A ten-night Bhutan cultural journey - the classic western valleys (Paro, Thimphu, Punakha) plus a deeper exploration of central Bhutan via Trongsa Dzong and the spiritual heartland of Bumthang. Inspired by the Six Senses 10-night journey.",
     heroImage: "/images/destinations/bhutan.webp",
     images: [
       "/images/destinations/bhutan.webp",
@@ -14231,7 +14231,7 @@ const allPackages: Package[] = [
       "Tiger's Nest hike",
       "Buddha Dordenma + Memorial Chorten Thimphu",
       "Punakha Dzong + Mo Chhu rafting",
-      "Trongsa Dzong — Bhutan's longest dzong",
+      "Trongsa Dzong - Bhutan's longest dzong",
       "Jakar Dzong + Bumthang valley monasteries",
       "Burning Lake at Bumthang",
     ],
@@ -14239,7 +14239,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Paro — Drive Thimphu",
+        title: "Arrive Paro - Drive Thimphu",
         description: "Paro arrival, drive to Thimphu, evening at Tashichho Dzong.",
         activities: ["Airport arrival", "Drive Thimphu", "Tashichho Dzong"],
         meals: "Lunch, Dinner",
@@ -14281,7 +14281,7 @@ const allPackages: Package[] = [
       {
         day: 5,
         title: "Punakha to Trongsa (≈3,425 m Pele La pass)",
-        description: "Long but spectacular drive (6 hrs) to Trongsa, crossing Pele La pass. Trongsa Dzong sunset view — Bhutan's longest dzong, ancestral home of the royal family.",
+        description: "Long but spectacular drive (6 hrs) to Trongsa, crossing Pele La pass. Trongsa Dzong sunset view - Bhutan's longest dzong, ancestral home of the royal family.",
         activities: ["Drive to Trongsa", "Pele La Pass", "Trongsa Dzong viewpoint"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Trongsa",
@@ -14292,7 +14292,7 @@ const allPackages: Package[] = [
       {
         day: 6,
         title: "Trongsa to Bumthang",
-        description: "Visit Trongsa Dzong and the Ta Dzong Museum. Drive to Bumthang (3 hrs) — Bhutan's spiritual heartland.",
+        description: "Visit Trongsa Dzong and the Ta Dzong Museum. Drive to Bumthang (3 hrs) - Bhutan's spiritual heartland.",
         activities: ["Trongsa Dzong tour", "Ta Dzong Museum", "Drive to Bumthang"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Jakar, Bumthang",
@@ -14302,12 +14302,12 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Bumthang Valley — Monasteries & Burning Lake",
-        description: "Jakar Dzong, Jambay Lhakhang (7th-century, built by Tibetan king Songtsen Gampo on the same day as Kyichu in Paro), Kurjey Lhakhang (Guru Rinpoche's body imprint), and Mebar Tsho (Burning Lake) — where treasure-finder Pema Lingpa retrieved sacred texts.",
+        title: "Bumthang Valley - Monasteries & Burning Lake",
+        description: "Jakar Dzong, Jambay Lhakhang (7th-century, built by Tibetan king Songtsen Gampo on the same day as Kyichu in Paro), Kurjey Lhakhang (Guru Rinpoche's body imprint), and Mebar Tsho (Burning Lake) - where treasure-finder Pema Lingpa retrieved sacred texts.",
         activities: ["Jakar Dzong", "Jambay Lhakhang", "Kurjey Lhakhang", "Burning Lake (Mebar Tsho)"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Jakar, Bumthang",
-        highlight: "Burning Lake — Mebar Tsho",
+        highlight: "Burning Lake - Mebar Tsho",
         image: "https://images.unsplash.com/photo-1583309219338-a582f1f9ca6b?w=1600&h=900&fit=crop",
       },
       {
@@ -14333,7 +14333,7 @@ const allPackages: Package[] = [
       },
       {
         day: 10,
-        title: "Paro Valley — Drukgyel Dzong + Kyichu",
+        title: "Paro Valley - Drukgyel Dzong + Kyichu",
         description: "Drukgyel Dzong ruins and Kyichu Lhakhang (7th century). Evening Bhutanese folk dance.",
         activities: ["Drukgyel Dzong", "Kyichu Lhakhang", "Folk dance"],
         meals: "Breakfast, Lunch, Dinner",
@@ -14347,20 +14347,20 @@ const allPackages: Package[] = [
         description: "Airport drop and departure.",
         activities: ["Airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Western + central Bhutan complete",
         image: "/images/destinations/bhutan.webp",
       },
     ],
   },
   {
-    title: "Bhutan Grand — Western + Central + Phobjikha Crane Valley (12 Nights)",
+    title: "Bhutan Grand - Western + Central + Phobjikha Crane Valley (12 Nights)",
     slug: "bhutan-grand-12n",
     destinationName: "Bhutan",
     destinationSlug: "bhutan",
     category: "leisure",
     description:
-      "A twelve-night Bhutan grand circuit — adds Phobjikha (the black-necked crane valley, Oct-Mar) and a deeper Bumthang stay to the Cultural 10N tour. The most comprehensive Bhutan journey available, inspired by the Six Senses 12-night route.",
+      "A twelve-night Bhutan grand circuit - adds Phobjikha (the black-necked crane valley, Oct-Mar) and a deeper Bumthang stay to the Cultural 10N tour. The most comprehensive Bhutan journey available, inspired by the Six Senses 12-night route.",
     heroImage: "/images/destinations/bhutan.webp",
     images: [
       "/images/destinations/bhutan.webp",
@@ -14446,7 +14446,7 @@ const allPackages: Package[] = [
       {
         day: 5,
         title: "Punakha → Phobjikha Valley",
-        description: "Drive to Phobjikha (4 hrs) — a glacial U-shaped valley at 3,000 m, winter home of the black-necked cranes (Oct-Mar). Visit Gangtey Monastery on a hillside overlooking the valley.",
+        description: "Drive to Phobjikha (4 hrs) - a glacial U-shaped valley at 3,000 m, winter home of the black-necked cranes (Oct-Mar). Visit Gangtey Monastery on a hillside overlooking the valley.",
         activities: ["Drive Phobjikha", "Gangtey Monastery"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Phobjikha (3,000 m)",
@@ -14456,7 +14456,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Phobjikha — Crane Centre + Valley Walk",
+        title: "Phobjikha - Crane Centre + Valley Walk",
         description: "Morning at the Black-Necked Crane Information Centre (RSPN). Afternoon nature walk through the valley along the Gangtey Nature Trail.",
         activities: ["Crane Information Centre", "Gangtey Nature Trail walk"],
         meals: "Breakfast, Lunch, Dinner",
@@ -14477,7 +14477,7 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Bumthang Valley Day 1 — Jakar + Jambay",
+        title: "Bumthang Valley Day 1 - Jakar + Jambay",
         description: "Jakar Dzong, Jambay Lhakhang (7th century), Kurjey Lhakhang.",
         activities: ["Jakar Dzong", "Jambay Lhakhang", "Kurjey Lhakhang"],
         meals: "Breakfast, Lunch, Dinner",
@@ -14487,7 +14487,7 @@ const allPackages: Package[] = [
       },
       {
         day: 9,
-        title: "Bumthang Valley Day 2 — Burning Lake + Tang Valley",
+        title: "Bumthang Valley Day 2 - Burning Lake + Tang Valley",
         description: "Day excursion to Tang Valley and Mebar Tsho (Burning Lake). Visit Ogyen Choling Manor (private museum). Cheese factory + Red Panda Brewery on return.",
         activities: ["Tang Valley", "Burning Lake", "Ogyen Choling Manor", "Cheese factory", "Red Panda Brewery"],
         meals: "Breakfast, Lunch, Dinner",
@@ -14517,7 +14517,7 @@ const allPackages: Package[] = [
       },
       {
         day: 12,
-        title: "Paro Valley — Drukgyel + Kyichu + Farmhouse Visit",
+        title: "Paro Valley - Drukgyel + Kyichu + Farmhouse Visit",
         description: "Drukgyel Dzong ruins, Kyichu Lhakhang. Lunch at a traditional Bhutanese farmhouse with the family. Evening folk dance at hotel.",
         activities: ["Drukgyel Dzong", "Kyichu Lhakhang", "Farmhouse lunch", "Folk dance"],
         meals: "Breakfast, Lunch, Dinner",
@@ -14531,20 +14531,20 @@ const allPackages: Package[] = [
         description: "Airport drop and departure.",
         activities: ["Airport drop"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Bhutan's deepest cultural journey",
         image: "/images/destinations/bhutan.webp",
       },
     ],
   },
   {
-    title: "South Africa Highlights — Cape Town, Garden Route & Kruger Safari",
+    title: "South Africa Highlights - Cape Town, Garden Route & Kruger Safari",
     slug: "south-africa-highlights-10d",
     destinationName: "South Africa",
     destinationSlug: "south-africa",
     category: "leisure",
     description:
-      "Ten days covering the three faces of South Africa — cosmopolitan Cape Town and Table Mountain, the scenic Garden Route along the Indian Ocean, and Big Five game drives in the Greater Kruger.",
+      "Ten days covering the three faces of South Africa - cosmopolitan Cape Town and Table Mountain, the scenic Garden Route along the Indian Ocean, and Big Five game drives in the Greater Kruger.",
     heroImage: "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&h=600&fit=crop",
@@ -14584,7 +14584,7 @@ const allPackages: Package[] = [
       "Greater Kruger Big Five safari",
     ],
     transparencyNote:
-      "Land cost per person on twin sharing; international and the one domestic flight are additional. The Greater Kruger area is a malaria-precaution zone — please consult your doctor. Safari game viewing is wild and never guaranteed, but the Greater Kruger has excellent Big Five density.",
+      "Land cost per person on twin sharing; international and the one domestic flight are additional. The Greater Kruger area is a malaria-precaution zone - please consult your doctor. Safari game viewing is wild and never guaranteed, but the Greater Kruger has excellent Big Five density.",
     featured: true,
     itinerary: [
       {
@@ -14611,9 +14611,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Cape Peninsula — Cape Point & Penguins",
+        title: "Cape Peninsula - Cape Point & Penguins",
         description:
-          "Full-day Cape Peninsula tour — Chapman's Peak drive, Cape of Good Hope, Cape Point and the African penguins at Boulders Beach.",
+          "Full-day Cape Peninsula tour - Chapman's Peak drive, Cape of Good Hope, Cape Point and the African penguins at Boulders Beach.",
         activities: ["Chapman's Peak Drive", "Cape of Good Hope", "Cape Point", "Boulders Beach penguins"],
         meals: "Breakfast",
         accommodation: "Hotel in Cape Town",
@@ -14633,7 +14633,7 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Garden Route — Drive to Knysna",
+        title: "Garden Route - Drive to Knysna",
         description:
           "Begin the Garden Route drive east along the coast to Knysna, the lagoon town, via Mossel Bay.",
         activities: ["Garden Route drive", "Mossel Bay", "Knysna lagoon"],
@@ -14666,7 +14666,7 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Kruger — Full Safari Day",
+        title: "Kruger - Full Safari Day",
         description:
           "Dawn and afternoon 4x4 game drives in search of the Big Five, with a bush brunch between drives.",
         activities: ["Dawn game drive", "Big Five tracking", "Afternoon game drive"],
@@ -14693,20 +14693,20 @@ const allPackages: Package[] = [
           "Transfer to OR Tambo International Airport for your departure flight.",
         activities: ["Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "City, coast and safari in one trip",
         image: "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Kenya Safari — Masai Mara, Lake Nakuru & Amboseli",
+    title: "Kenya Safari - Masai Mara, Lake Nakuru & Amboseli",
     slug: "kenya-safari-7d",
     destinationName: "Kenya",
     destinationSlug: "kenya",
     category: "leisure",
     description:
-      "A classic seven-day Kenyan safari circuit — the big cats of the Masai Mara, the flamingos and rhino of Lake Nakuru, and the elephants of Amboseli beneath Mount Kilimanjaro.",
+      "A classic seven-day Kenyan safari circuit - the big cats of the Masai Mara, the flamingos and rhino of Lake Nakuru, and the elephants of Amboseli beneath Mount Kilimanjaro.",
     heroImage: "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=800&h=600&fit=crop",
@@ -14745,7 +14745,7 @@ const allPackages: Package[] = [
       "Optional balloon safari",
     ],
     transparencyNote:
-      "Land cost per person on twin sharing; international airfare is additional. A yellow-fever certificate may be required and malaria prophylaxis is advised. The Great Migration river crossings (roughly Jul-Oct) are seasonal and wild — never guaranteed, but the Mara has superb year-round game viewing.",
+      "Land cost per person on twin sharing; international airfare is additional. A yellow-fever certificate may be required and malaria prophylaxis is advised. The Great Migration river crossings (roughly Jul-Oct) are seasonal and wild - never guaranteed, but the Mara has superb year-round game viewing.",
     featured: true,
     itinerary: [
       {
@@ -14772,7 +14772,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Masai Mara — Full Day",
+        title: "Masai Mara - Full Day",
         description:
           "Full day of game drives across the Mara plains in search of lion, cheetah and leopard, with an optional dawn balloon safari.",
         activities: ["Dawn game drive", "Optional balloon safari", "Big-cat tracking"],
@@ -14805,7 +14805,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Amboseli — Kilimanjaro Views",
+        title: "Amboseli - Kilimanjaro Views",
         description:
           "Morning and afternoon game drives with classic views of Kilimanjaro, plus a Maasai village visit.",
         activities: ["Dawn game drive", "Kilimanjaro views", "Maasai village visit"],
@@ -14816,25 +14816,25 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Amboseli to Nairobi — Departure",
+        title: "Amboseli to Nairobi - Departure",
         description:
           "Drive back to Nairobi for your departure flight, or onward connection.",
         activities: ["Drive to Nairobi", "Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Three iconic parks in a week",
         image: "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Jordan Highlights — Petra, Wadi Rum & the Dead Sea",
+    title: "Jordan Highlights - Petra, Wadi Rum & the Dead Sea",
     slug: "jordan-highlights-6d",
     destinationName: "Jordan",
     destinationSlug: "jordan",
     category: "leisure",
     description:
-      "Six days through Jordan's greatest hits — the rose-red rock city of Petra, the desert of Wadi Rum, a float in the Dead Sea, and the Roman ruins of Jerash near Amman.",
+      "Six days through Jordan's greatest hits - the rose-red rock city of Petra, the desert of Wadi Rum, a float in the Dead Sea, and the Roman ruins of Jerash near Amman.",
     heroImage: "/images/destinations/jordan.webp",
     images: [
       "/images/destinations/jordan.webp",
@@ -14876,7 +14876,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Amman — Jerash",
+        title: "Arrive Amman - Jerash",
         description:
           "Arrive in Amman and drive to Jerash, one of the best-preserved Roman provincial cities. Return to Amman for the citadel and city view.",
         activities: ["Airport pickup", "Jerash Roman city", "Amman Citadel"],
@@ -14898,9 +14898,9 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Petra — Full Day",
+        title: "Petra - Full Day",
         description:
-          "A full day in Petra — walk the Siq to the Treasury, the Street of Facades, the Royal Tombs and climb to the Monastery.",
+          "A full day in Petra - walk the Siq to the Treasury, the Street of Facades, the Royal Tombs and climb to the Monastery.",
         activities: ["Petra Siq walk", "The Treasury", "Royal Tombs", "Monastery climb"],
         meals: "Breakfast",
         accommodation: "Hotel in Petra",
@@ -14931,12 +14931,12 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Dead Sea to Amman — Departure",
+        title: "Dead Sea to Amman - Departure",
         description:
           "Morning at leisure by the sea, then transfer to Queen Alia International Airport for departure.",
         activities: ["Resort morning", "Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A complete Jordan in 6 days",
         image: "/images/destinations/jordan.webp",
       },
@@ -14949,7 +14949,7 @@ const allPackages: Package[] = [
     destinationSlug: "iceland",
     category: "leisure",
     description:
-      "Seven days circling Iceland's south — the Golden Circle's geysers and waterfalls, the south coast's black beaches and glacier lagoon, the Blue Lagoon, and winter nights chasing the Northern Lights.",
+      "Seven days circling Iceland's south - the Golden Circle's geysers and waterfalls, the south coast's black beaches and glacier lagoon, the Blue Lagoon, and winter nights chasing the Northern Lights.",
     heroImage: "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&h=600&fit=crop",
@@ -14988,7 +14988,7 @@ const allPackages: Package[] = [
       "Blue Lagoon spa",
     ],
     transparencyNote:
-      "Land cost per person; international airfare and the Schengen visa are additional. The Northern Lights are a natural phenomenon needing dark, clear winter skies — they are never guaranteed, but winter departures include multiple hunt nights. The aurora hunt does not run on summer (midnight-sun) departures.",
+      "Land cost per person; international airfare and the Schengen visa are additional. The Northern Lights are a natural phenomenon needing dark, clear winter skies - they are never guaranteed, but winter departures include multiple hunt nights. The aurora hunt does not run on summer (midnight-sun) departures.",
     featured: true,
     itinerary: [
       {
@@ -15015,7 +15015,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "South Coast — Waterfalls & Black Beach",
+        title: "South Coast - Waterfalls & Black Beach",
         description:
           "Seljalandsfoss and Skogafoss waterfalls, the black-sand beach of Reynisfjara and the village of Vik.",
         activities: ["Seljalandsfoss", "Skogafoss", "Reynisfjara black beach", "Vik"],
@@ -15064,20 +15064,20 @@ const allPackages: Package[] = [
           "Transfer to Keflavik International Airport for your departure flight.",
         activities: ["Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Fire, ice and aurora",
         image: "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Finnish Lapland Northern Lights — Rovaniemi & Helsinki",
+    title: "Finnish Lapland Northern Lights - Rovaniemi & Helsinki",
     slug: "finland-lapland-northern-lights-7d",
     destinationName: "Finland",
     destinationSlug: "finland",
     category: "leisure",
     description:
-      "Seven days in the Finnish Arctic — Santa Claus Village on the Arctic Circle, husky and reindeer sleds, glass-igloo aurora nights in Rovaniemi, and a finish in design-led Helsinki.",
+      "Seven days in the Finnish Arctic - Santa Claus Village on the Arctic Circle, husky and reindeer sleds, glass-igloo aurora nights in Rovaniemi, and a finish in design-led Helsinki.",
     heroImage: "https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=800&h=600&fit=crop",
@@ -15117,7 +15117,7 @@ const allPackages: Package[] = [
       "Helsinki & Suomenlinna",
     ],
     transparencyNote:
-      "A winter (Dec-Mar) Lapland programme; land cost per person, international airfare and the Schengen visa are additional. The Northern Lights are natural and weather-dependent — multiple hunt nights are built in but sightings are never guaranteed. Thermal outerwear is provided on activities.",
+      "A winter (Dec-Mar) Lapland programme; land cost per person, international airfare and the Schengen visa are additional. The Northern Lights are natural and weather-dependent - multiple hunt nights are built in but sightings are never guaranteed. Thermal outerwear is provided on activities.",
     featured: true,
     itinerary: [
       {
@@ -15193,20 +15193,20 @@ const allPackages: Package[] = [
           "Transfer to Helsinki Airport for your departure flight.",
         activities: ["Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "The ultimate Arctic winter",
         image: "https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Western Europe Grand Tour — London, Paris, Switzerland & Italy",
+    title: "Western Europe Grand Tour - London, Paris, Switzerland & Italy",
     slug: "western-europe-grand-tour-11d",
     destinationName: "Europe",
     destinationSlug: "europe",
     category: "leisure",
     description:
-      "Eleven days through Western Europe's icons — London and Paris, the Swiss Alps with a cogwheel train to a glacier summit, and Italy's Venice, Florence and Rome, linked by fast trains and scenic coaches.",
+      "Eleven days through Western Europe's icons - London and Paris, the Swiss Alps with a cogwheel train to a glacier summit, and Italy's Venice, Florence and Rome, linked by fast trains and scenic coaches.",
     heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&h=600&fit=crop",
@@ -15246,7 +15246,7 @@ const allPackages: Package[] = [
       "Vatican & Colosseum",
     ],
     transparencyNote:
-      "Land cost per person on twin sharing; international airfare is additional. London requires a separate UK visa in addition to the Schengen visa for the European leg — we guide you through both. Itinerary order may flex with train timetables.",
+      "Land cost per person on twin sharing; international airfare is additional. London requires a separate UK visa in addition to the Schengen visa for the European leg - we guide you through both. Itinerary order may flex with train timetables.",
     featured: true,
     itinerary: [
       {
@@ -15306,7 +15306,7 @@ const allPackages: Package[] = [
       },
       {
         day: 6,
-        title: "Swiss Alps — Glacier Summit",
+        title: "Swiss Alps - Glacier Summit",
         description:
           "Cogwheel train to a glacier summit (Jungfraujoch or Mt Titlis) for snow and panoramic Alpine views.",
         activities: ["Cogwheel mountain train", "Glacier summit", "Ice palace", "Snow play"],
@@ -15350,7 +15350,7 @@ const allPackages: Package[] = [
       },
       {
         day: 10,
-        title: "Rome — Vatican & Colosseum",
+        title: "Rome - Vatican & Colosseum",
         description:
           "The Vatican Museums and St Peter's, the Colosseum and the Roman Forum.",
         activities: ["Vatican Museums", "St Peter's Basilica", "Colosseum", "Roman Forum"],
@@ -15366,20 +15366,20 @@ const allPackages: Package[] = [
           "Transfer to Rome Fiumicino Airport for your departure flight.",
         activities: ["Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Four countries, ten nights",
         image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Eastern Europe — Prague, Vienna & Budapest",
+    title: "Eastern Europe - Prague, Vienna & Budapest",
     slug: "eastern-europe-prague-vienna-budapest-8d",
     destinationName: "Europe",
     destinationSlug: "europe",
     category: "leisure",
     description:
-      "Eight days through the imperial heart of Central Europe — fairy-tale Prague, the palaces and coffee houses of Vienna, and Budapest straddling the Danube with its thermal baths and parliament.",
+      "Eight days through the imperial heart of Central Europe - fairy-tale Prague, the palaces and coffee houses of Vienna, and Budapest straddling the Danube with its thermal baths and parliament.",
     heroImage: "https://images.unsplash.com/photo-1541849546-216549ae216d?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&h=600&fit=crop",
@@ -15457,7 +15457,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Vienna — Schonbrunn & City",
+        title: "Vienna - Schonbrunn & City",
         description:
           "The Schonbrunn Palace and gardens, St Stephen's Cathedral and a classic Viennese coffee-house stop.",
         activities: ["Schonbrunn Palace", "St Stephen's Cathedral", "Viennese coffee house"],
@@ -15490,7 +15490,7 @@ const allPackages: Package[] = [
       },
       {
         day: 7,
-        title: "Budapest — Thermal Baths",
+        title: "Budapest - Thermal Baths",
         description:
           "Morning at the Szechenyi thermal baths, afternoon free for the Central Market and Andrassy Avenue.",
         activities: ["Szechenyi thermal baths", "Central Market Hall", "Andrassy Avenue"],
@@ -15506,20 +15506,20 @@ const allPackages: Package[] = [
           "Transfer to Budapest Airport for your departure flight.",
         activities: ["Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Three imperial capitals",
         image: "https://images.unsplash.com/photo-1541849546-216549ae216d?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Australia Highlights — Sydney, Cairns & Melbourne",
+    title: "Australia Highlights - Sydney, Cairns & Melbourne",
     slug: "australia-highlights-9d",
     destinationName: "Australia",
     destinationSlug: "australia",
     category: "leisure",
     description:
-      "Nine days across Australia's best — Sydney's harbour and Opera House, the Great Barrier Reef from Cairns, and Melbourne with the Great Ocean Road, linked by domestic flights.",
+      "Nine days across Australia's best - Sydney's harbour and Opera House, the Great Barrier Reef from Cairns, and Melbourne with the Great Ocean Road, linked by domestic flights.",
     heroImage: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&h=600&fit=crop",
@@ -15587,7 +15587,7 @@ const allPackages: Package[] = [
         day: 3,
         title: "Blue Mountains Day Trip",
         description:
-          "Day trip to the Blue Mountains — the Three Sisters, Scenic World railway and Featherdale wildlife park.",
+          "Day trip to the Blue Mountains - the Three Sisters, Scenic World railway and Featherdale wildlife park.",
         activities: ["Three Sisters", "Scenic World", "Featherdale wildlife"],
         meals: "Breakfast",
         accommodation: "Hotel in Sydney",
@@ -15631,7 +15631,7 @@ const allPackages: Package[] = [
         day: 7,
         title: "Cairns to Melbourne",
         description:
-          "Fly south to Melbourne. Afternoon city tour — Federation Square, the laneways and the Queen Victoria Market.",
+          "Fly south to Melbourne. Afternoon city tour - Federation Square, the laneways and the Queen Victoria Market.",
         activities: ["Flight to Melbourne", "Federation Square", "Laneway cafes"],
         meals: "Breakfast",
         accommodation: "Hotel in Melbourne",
@@ -15656,20 +15656,20 @@ const allPackages: Package[] = [
           "Transfer to Melbourne Airport for your departure flight.",
         activities: ["Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Cities, reef and coast",
         image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "New Zealand Explorer — North & South Island",
+    title: "New Zealand Explorer - North & South Island",
     slug: "new-zealand-explorer-10d",
     destinationName: "New Zealand",
     destinationSlug: "new-zealand",
     category: "leisure",
     description:
-      "Ten days across both New Zealand islands — Auckland, Rotorua's geysers and Hobbiton on the North Island, then Christchurch, Mount Cook, Queenstown and the Milford Sound fiords on the South.",
+      "Ten days across both New Zealand islands - Auckland, Rotorua's geysers and Hobbiton on the North Island, then Christchurch, Mount Cook, Queenstown and the Milford Sound fiords on the South.",
     heroImage: "https://images.unsplash.com/photo-1469521669194-babb45599def?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1469521669194-babb45599def?w=800&h=600&fit=crop",
@@ -15747,7 +15747,7 @@ const allPackages: Package[] = [
         day: 4,
         title: "Fly to Christchurch",
         description:
-          "Fly to the South Island's Christchurch. Afternoon city tour — the Botanic Gardens and Re:START.",
+          "Fly to the South Island's Christchurch. Afternoon city tour - the Botanic Gardens and Re:START.",
         activities: ["Flight to Christchurch", "Botanic Gardens", "City tour"],
         meals: "Breakfast",
         accommodation: "Hotel in Christchurch",
@@ -15789,7 +15789,7 @@ const allPackages: Package[] = [
       },
       {
         day: 8,
-        title: "Queenstown — Adventure or Wine",
+        title: "Queenstown - Adventure or Wine",
         description:
           "Choose adrenaline (jetboat, bungy) or a relaxed Gibbston Valley wine and Arrowtown day.",
         activities: ["Shotover jetboat / bungy", "Arrowtown", "Gibbston Valley wine"],
@@ -15816,20 +15816,20 @@ const allPackages: Package[] = [
           "Transfer to Queenstown Airport for your departure flight.",
         activities: ["Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Both islands in ten days",
         image: "https://images.unsplash.com/photo-1469521669194-babb45599def?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Kazakhstan — Almaty, Big Almaty Lake & Charyn Canyon",
+    title: "Kazakhstan - Almaty, Big Almaty Lake & Charyn Canyon",
     slug: "kazakhstan-almaty-5d",
     destinationName: "Kazakhstan",
     destinationSlug: "kazakhstan",
     category: "leisure",
     description:
-      "A five-day Almaty escape — the turquoise Big Almaty Lake, the red cliffs of Charyn Canyon, the Shymbulak cable car and the leafy city itself, an easy short-haul break from India.",
+      "A five-day Almaty escape - the turquoise Big Almaty Lake, the red cliffs of Charyn Canyon, the Shymbulak cable car and the leafy city itself, an easy short-haul break from India.",
     heroImage: "https://images.unsplash.com/photo-1596306499317-8490232098fa?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1596306499317-8490232098fa?w=800&h=600&fit=crop",
@@ -15883,7 +15883,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Big Almaty Lake & City Tour",
         description:
-          "Drive up to the turquoise Big Almaty Lake, then a city tour — Panfilov Park, Zenkov Cathedral and the Green Bazaar.",
+          "Drive up to the turquoise Big Almaty Lake, then a city tour - Panfilov Park, Zenkov Cathedral and the Green Bazaar.",
         activities: ["Big Almaty Lake", "Panfilov Park", "Zenkov Cathedral", "Green Bazaar"],
         meals: "Breakfast",
         accommodation: "Hotel in Almaty",
@@ -15919,20 +15919,20 @@ const allPackages: Package[] = [
           "Transfer to Almaty International Airport for your departure flight.",
         activities: ["Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Mountains, lake and city",
         image: "https://images.unsplash.com/photo-1596306499317-8490232098fa?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Uzbekistan Silk Road — Tashkent, Samarkand, Bukhara & Khiva",
+    title: "Uzbekistan Silk Road - Tashkent, Samarkand, Bukhara & Khiva",
     slug: "uzbekistan-silk-road-8d",
     destinationName: "Uzbekistan",
     destinationSlug: "uzbekistan",
     category: "leisure",
     description:
-      "Eight days along the Silk Road — Tashkent's metro and bazaars, the mosaic madrasas of Samarkand's Registan, the ancient lanes of Bukhara and the walled medieval town of Khiva.",
+      "Eight days along the Silk Road - Tashkent's metro and bazaars, the mosaic madrasas of Samarkand's Registan, the ancient lanes of Bukhara and the walled medieval town of Khiva.",
     heroImage: "/images/destinations/uzbekistan.webp",
     images: [
       "/images/destinations/uzbekistan.webp",
@@ -15997,7 +15997,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Samarkand — Registan & Tombs",
+        title: "Samarkand - Registan & Tombs",
         description:
           "The Registan's three mosaic madrasas, the Gur-e-Amir tomb of Timur and the Bibi-Khanym mosque.",
         activities: ["Registan Square", "Gur-e-Amir", "Bibi-Khanym Mosque"],
@@ -16008,7 +16008,7 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Samarkand — Shah-i-Zinda & on to Bukhara",
+        title: "Samarkand - Shah-i-Zinda & on to Bukhara",
         description:
           "The Shah-i-Zinda avenue of mausoleums and Ulugh Beg's observatory, then drive/train to Bukhara.",
         activities: ["Shah-i-Zinda", "Ulugh Beg Observatory", "Travel to Bukhara"],
@@ -16057,20 +16057,20 @@ const allPackages: Package[] = [
           "Transfer to Tashkent International Airport for your departure flight.",
         activities: ["Airport transfer"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "The full Silk Road",
         image: "/images/destinations/uzbekistan.webp",
       },
     ],
   },
   {
-    title: "Jim Corbett Wildlife & Nature Camp — Student Tour",
+    title: "Jim Corbett Wildlife & Nature Camp - Student Tour",
     slug: "student-corbett-wildlife-3d",
     destinationName: "Uttarakhand",
     destinationSlug: "uttarakhand",
     category: "educational",
     description:
-      "A three-day wildlife and nature learning camp at Jim Corbett, India's oldest tiger reserve — jeep safaris, a nature-interpretation centre and riverside ecology walks that bring biology and conservation to life for students.",
+      "A three-day wildlife and nature learning camp at Jim Corbett, India's oldest tiger reserve - jeep safaris, a nature-interpretation centre and riverside ecology walks that bring biology and conservation to life for students.",
     heroImage: "https://images.unsplash.com/photo-1549366021-9f761d450615?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1549366021-9f761d450615?w=800&h=600&fit=crop",
@@ -16087,7 +16087,7 @@ const allPackages: Package[] = [
     reviewCount: 38,
     inclusions: [
       "Accommodation in student-friendly hotels/hostels (dorm or sharing)",
-      "All meals — breakfast, lunch and dinner (veg/Jain available)",
+      "All meals - breakfast, lunch and dinner (veg/Jain available)",
       "All transfers and sightseeing in private buses/tempo travellers",
       "TravelSense tour educator + local guides",
       "All listed monument and activity entry fees",
@@ -16110,12 +16110,12 @@ const allPackages: Package[] = [
     transparencyNote:
       "Designed for school and college groups (20-150 students). Price is per student on group sharing; accompanying teachers/escorts travel complimentary as per group size. Includes a TravelSense tour educator, a learning workbook, first-aid and 24x7 supervision. Dates, board (veg/Jain meals) and the academic focus are customised to your institution.",
     experienceStory:
-      "A hands-on introduction to wildlife biology and conservation — students track signs of tiger, elephant and deer on a guided jeep safari, learn how a tiger reserve protects an ecosystem, and study river and forest habitats with a naturalist.",
+      "A hands-on introduction to wildlife biology and conservation - students track signs of tiger, elephant and deer on a guided jeep safari, learn how a tiger reserve protects an ecosystem, and study river and forest habitats with a naturalist.",
     featured: false,
     itinerary: [
       {
         day: 1,
-        title: "Delhi/NCR to Jim Corbett — Nature Orientation",
+        title: "Delhi/NCR to Jim Corbett - Nature Orientation",
         description:
           "Board the bus to Jim Corbett (approx. 6 hrs). Check in to the resort, an evening nature-orientation session with the tour educator, and a briefing on the park's wildlife and rules.",
         activities: ["Drive to Corbett", "Nature orientation", "Wildlife briefing"],
@@ -16137,25 +16137,25 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Corbett to Delhi — Departure",
+        title: "Corbett to Delhi - Departure",
         description:
           "After breakfast and a wrap-up session on what was learned, drive back to Delhi/NCR for departure.",
         activities: ["Wrap-up session", "Drive to Delhi", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A field lesson in conservation",
         image: "https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Delhi & Agra Heritage & Monuments — Student Tour",
+    title: "Delhi & Agra Heritage & Monuments - Student Tour",
     slug: "student-delhi-agra-heritage-4d",
     destinationName: "Golden Triangle",
     destinationSlug: "golden-triangle",
     category: "educational",
     description:
-      "A four-day history-and-architecture tour of Delhi and Agra for students — the Red Fort, Qutub Minar and Humayun's Tomb, a science centre, and the Taj Mahal, Agra Fort and Fatehpur Sikri, turning textbook history into living monuments.",
+      "A four-day history-and-architecture tour of Delhi and Agra for students - the Red Fort, Qutub Minar and Humayun's Tomb, a science centre, and the Taj Mahal, Agra Fort and Fatehpur Sikri, turning textbook history into living monuments.",
     heroImage: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
@@ -16172,7 +16172,7 @@ const allPackages: Package[] = [
     reviewCount: 52,
     inclusions: [
       "Accommodation in student-friendly hotels/hostels (dorm or sharing)",
-      "All meals — breakfast, lunch and dinner (veg/Jain available)",
+      "All meals - breakfast, lunch and dinner (veg/Jain available)",
       "All transfers and sightseeing in private buses/tempo travellers",
       "TravelSense tour educator + local guides",
       "All listed monument and activity entry fees",
@@ -16201,7 +16201,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Delhi — Red Fort, Jama Masjid & Qutub Minar",
+        title: "Delhi - Red Fort, Jama Masjid & Qutub Minar",
         description:
           "Arrive in Delhi and begin with the Red Fort and Chandni Chowk, then the towering Qutub Minar and India Gate, with the tour educator framing the Sultanate and Mughal timeline.",
         activities: ["Red Fort", "Chandni Chowk", "Qutub Minar", "India Gate"],
@@ -16212,7 +16212,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Delhi — Humayun's Tomb & Science Centre",
+        title: "Delhi - Humayun's Tomb & Science Centre",
         description:
           "Humayun's Tomb (the blueprint for the Taj) and the Lotus Temple in the morning; afternoon at the National Science Centre / Nehru Planetarium for an interactive science session.",
         activities: ["Humayun's Tomb", "Lotus Temple", "National Science Centre", "Planetarium show"],
@@ -16223,7 +16223,7 @@ const allPackages: Package[] = [
       },
       {
         day: 3,
-        title: "Drive to Agra — Taj Mahal & Agra Fort",
+        title: "Drive to Agra - Taj Mahal & Agra Fort",
         description:
           "Drive to Agra on the expressway. Visit the Taj Mahal and study its Mughal architecture and symmetry, then the red-sandstone Agra Fort overlooking the Yamuna.",
         activities: ["Drive to Agra", "Taj Mahal", "Agra Fort", "Mughal architecture study"],
@@ -16239,20 +16239,20 @@ const allPackages: Package[] = [
           "Visit the abandoned Mughal capital of Fatehpur Sikri (UNESCO) en route back to Delhi for departure.",
         activities: ["Fatehpur Sikri", "Buland Darwaza", "Drive to Delhi", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "The ghost city of Fatehpur Sikri",
         image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Jaipur Royal Heritage & Astronomy — Student Tour",
+    title: "Jaipur Royal Heritage & Astronomy - Student Tour",
     slug: "student-jaipur-heritage-3d",
     destinationName: "Rajasthan",
     destinationSlug: "rajasthan",
     category: "educational",
     description:
-      "A three-day Pink City tour for students — the Amber Fort, City Palace and Hawa Mahal alongside the Jantar Mantar, the world's largest stone astronomical observatory, blending Rajput history with hands-on astronomy.",
+      "A three-day Pink City tour for students - the Amber Fort, City Palace and Hawa Mahal alongside the Jantar Mantar, the world's largest stone astronomical observatory, blending Rajput history with hands-on astronomy.",
     heroImage: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop",
@@ -16269,7 +16269,7 @@ const allPackages: Package[] = [
     reviewCount: 44,
     inclusions: [
       "Accommodation in student-friendly hotels/hostels (dorm or sharing)",
-      "All meals — breakfast, lunch and dinner (veg/Jain available)",
+      "All meals - breakfast, lunch and dinner (veg/Jain available)",
       "All transfers and sightseeing in private buses/tempo travellers",
       "TravelSense tour educator + local guides",
       "All listed monument and activity entry fees",
@@ -16297,7 +16297,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Jaipur — City Palace, Jantar Mantar & Hawa Mahal",
+        title: "Jaipur - City Palace, Jantar Mantar & Hawa Mahal",
         description:
           "Arrive in Jaipur and explore the City Palace, the Jantar Mantar observatory (a UNESCO site of giant astronomical instruments) and the honeycomb facade of Hawa Mahal.",
         activities: ["City Palace", "Jantar Mantar observatory", "Hawa Mahal", "Astronomy session"],
@@ -16324,20 +16324,20 @@ const allPackages: Package[] = [
           "After breakfast and a wrap-up, transfer to the station/airport for departure.",
         activities: ["Wrap-up session", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A royal history field trip",
         image: "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Shimla–Manali Himalayan Adventure & Ecology — Student Tour",
+    title: "Shimla–Manali Himalayan Adventure & Ecology - Student Tour",
     slug: "student-shimla-manali-5d",
     destinationName: "Himachal Pradesh",
     destinationSlug: "himachal-pradesh",
     category: "educational",
     description:
-      "A five-day Himalayan camp for students across Shimla and Manali — colonial hill-station history, alpine ecology and safe adventure activities at Solang Valley, with the mountains as the classroom.",
+      "A five-day Himalayan camp for students across Shimla and Manali - colonial hill-station history, alpine ecology and safe adventure activities at Solang Valley, with the mountains as the classroom.",
     heroImage: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop",
@@ -16354,7 +16354,7 @@ const allPackages: Package[] = [
     reviewCount: 40,
     inclusions: [
       "Accommodation in student-friendly hotels/hostels (dorm or sharing)",
-      "All meals — breakfast, lunch and dinner (veg/Jain available)",
+      "All meals - breakfast, lunch and dinner (veg/Jain available)",
       "All transfers and sightseeing in private buses/tempo travellers",
       "TravelSense tour educator + local guides",
       "All listed monument and activity entry fees",
@@ -16369,7 +16369,7 @@ const allPackages: Package[] = [
     ],
     highlights: [
       "Shimla Ridge & Kufri",
-      "Manali — Hadimba & Solang Valley",
+      "Manali - Hadimba & Solang Valley",
       "Atal Tunnel & Himalayan ecology",
       "Safe adventure activities",
       "Colonial hill-station history",
@@ -16393,9 +16393,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Shimla — Kufri & Colonial Heritage",
+        title: "Shimla - Kufri & Colonial Heritage",
         description:
-          "Visit Kufri for Himalayan views and the nature park, the Viceregal Lodge and Christ Church — studying colonial architecture and mountain ecology.",
+          "Visit Kufri for Himalayan views and the nature park, the Viceregal Lodge and Christ Church - studying colonial architecture and mountain ecology.",
         activities: ["Kufri", "Himalayan Nature Park", "Viceregal Lodge", "Christ Church"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Student hotel in Shimla",
@@ -16417,7 +16417,7 @@ const allPackages: Package[] = [
         day: 4,
         title: "Solang Valley Adventure & Atal Tunnel",
         description:
-          "A full day at Solang Valley for safe, supervised adventure activities (ropeway, zorbing), then the Atal Tunnel and Hadimba Temple — a lesson in mountain engineering and ecology.",
+          "A full day at Solang Valley for safe, supervised adventure activities (ropeway, zorbing), then the Atal Tunnel and Hadimba Temple - a lesson in mountain engineering and ecology.",
         activities: ["Solang Valley activities", "Ropeway", "Atal Tunnel", "Hadimba Temple"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Student hotel in Manali",
@@ -16426,25 +16426,25 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Manali to Chandigarh — Departure",
+        title: "Manali to Chandigarh - Departure",
         description:
           "After breakfast and a wrap-up session, drive back to Chandigarh for departure.",
         activities: ["Wrap-up session", "Drive to Chandigarh", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Mountains as the classroom",
         image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Nainital Lake District Ecology — Student Tour",
+    title: "Nainital Lake District Ecology - Student Tour",
     slug: "student-nainital-ecology-4d",
     destinationName: "Uttarakhand",
     destinationSlug: "uttarakhand",
     category: "educational",
     description:
-      "A four-day ecology tour of the Kumaon lake district — Naini, Bhimtal, Sattal and Naukuchiatal lakes plus the birding forests of Pangot — where students study freshwater ecosystems and Himalayan birdlife first-hand.",
+      "A four-day ecology tour of the Kumaon lake district - Naini, Bhimtal, Sattal and Naukuchiatal lakes plus the birding forests of Pangot - where students study freshwater ecosystems and Himalayan birdlife first-hand.",
     heroImage: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&h=600&fit=crop",
@@ -16461,7 +16461,7 @@ const allPackages: Package[] = [
     reviewCount: 33,
     inclusions: [
       "Accommodation in student-friendly hotels/hostels (dorm or sharing)",
-      "All meals — breakfast, lunch and dinner (veg/Jain available)",
+      "All meals - breakfast, lunch and dinner (veg/Jain available)",
       "All transfers and sightseeing in private buses/tempo travellers",
       "TravelSense tour educator + local guides",
       "All listed monument and activity entry fees",
@@ -16484,7 +16484,7 @@ const allPackages: Package[] = [
     transparencyNote:
       "Designed for school and college groups (20-150 students). Price is per student on group sharing; accompanying teachers/escorts travel complimentary as per group size. Includes a TravelSense tour educator, a learning workbook, first-aid and 24x7 supervision. Dates, board (veg/Jain meals) and the academic focus are customised to your institution.",
     experienceStory:
-      "Freshwater ecology in the field: students compare the lake systems of the Kumaon — Naini, Bhimtal, Sattal and Naukuchiatal — and spend a morning birding in the oak forests of Pangot to understand Himalayan biodiversity.",
+      "Freshwater ecology in the field: students compare the lake systems of the Kumaon - Naini, Bhimtal, Sattal and Naukuchiatal - and spend a morning birding in the oak forests of Pangot to understand Himalayan biodiversity.",
     featured: false,
     itinerary: [
       {
@@ -16500,9 +16500,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Lake District — Bhimtal, Sattal & Naukuchiatal",
+        title: "Lake District - Bhimtal, Sattal & Naukuchiatal",
         description:
-          "A full day studying the satellite lakes — Bhimtal with its island aquarium, the seven interconnected lakes of Sattal, and the nine-cornered Naukuchiatal — comparing their ecology.",
+          "A full day studying the satellite lakes - Bhimtal with its island aquarium, the seven interconnected lakes of Sattal, and the nine-cornered Naukuchiatal - comparing their ecology.",
         activities: ["Bhimtal & aquarium", "Sattal lakes", "Naukuchiatal", "Freshwater ecology study"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Student hotel in Nainital",
@@ -16522,25 +16522,25 @@ const allPackages: Package[] = [
       },
       {
         day: 4,
-        title: "Nainital to Delhi — Departure",
+        title: "Nainital to Delhi - Departure",
         description:
           "After breakfast and a wrap-up, drive back to Delhi/NCR for departure.",
         activities: ["Wrap-up session", "Drive to Delhi", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "A lesson in lake ecology",
         image: "/images/generated/uttarakhand-hero.webp",
       },
     ],
   },
   {
-    title: "Haridwar & Rishikesh — Ganga, Ecology & Adventure Student Tour",
+    title: "Haridwar & Rishikesh - Ganga, Ecology & Adventure Student Tour",
     slug: "student-haridwar-rishikesh-3d",
     destinationName: "Uttarakhand",
     destinationSlug: "uttarakhand",
     category: "educational",
     description:
-      "A three-day Ganga tour for students — the grand Har ki Pauri aarti at Haridwar, river ecology and white-water rafting at Rishikesh, and an introduction to yoga, blending culture, environment and adventure.",
+      "A three-day Ganga tour for students - the grand Har ki Pauri aarti at Haridwar, river ecology and white-water rafting at Rishikesh, and an introduction to yoga, blending culture, environment and adventure.",
     heroImage: "/images/generated/uttarakhand-hero.webp",
     images: [
       "/images/generated/uttarakhand-hero.webp",
@@ -16557,7 +16557,7 @@ const allPackages: Package[] = [
     reviewCount: 47,
     inclusions: [
       "Accommodation in student-friendly hotels/hostels (dorm or sharing)",
-      "All meals — breakfast, lunch and dinner (veg/Jain available)",
+      "All meals - breakfast, lunch and dinner (veg/Jain available)",
       "All transfers and sightseeing in private buses/tempo travellers",
       "TravelSense tour educator + local guides",
       "All listed monument and activity entry fees",
@@ -16585,7 +16585,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Haridwar — Har ki Pauri Ganga Aarti",
+        title: "Haridwar - Har ki Pauri Ganga Aarti",
         description:
           "Arrive in Haridwar and head to Har ki Pauri for the famous evening Ganga Aarti, with a session on the river's cultural and ecological importance.",
         activities: ["Har ki Pauri", "Ganga Aarti", "River-culture session"],
@@ -16596,7 +16596,7 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Rishikesh — Rafting & River Ecology",
+        title: "Rishikesh - Rafting & River Ecology",
         description:
           "Drive to Rishikesh for a graded, fully-supervised white-water rafting stretch, the Lakshman/Ram Jhula suspension bridges, a river-ecology talk and an evening yoga introduction.",
         activities: ["White-water rafting", "Lakshman Jhula", "River ecology talk", "Yoga introduction"],
@@ -16612,20 +16612,20 @@ const allPackages: Package[] = [
           "After breakfast and a wrap-up, transfer for departure.",
         activities: ["Wrap-up session", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Culture, river and adventure",
         image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Gangtok & Darjeeling — Himalayan Culture & Tea Science Student Tour",
+    title: "Gangtok & Darjeeling - Himalayan Culture & Tea Science Student Tour",
     slug: "student-gangtok-darjeeling-5d",
     destinationName: "Sikkim & Darjeeling",
     destinationSlug: "sikkim-darjeeling",
     category: "educational",
     description:
-      "A five-day Eastern-Himalayan tour for students — Gangtok's monasteries and zoological park, Darjeeling's tea estates and the toy-train, and a sunrise over Kanchenjunga from Tiger Hill — combining mountain geography, tea science and culture.",
+      "A five-day Eastern-Himalayan tour for students - Gangtok's monasteries and zoological park, Darjeeling's tea estates and the toy-train, and a sunrise over Kanchenjunga from Tiger Hill - combining mountain geography, tea science and culture.",
     heroImage: "https://images.unsplash.com/photo-1544233726-9f1d2b27be8b?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1544233726-9f1d2b27be8b?w=800&h=600&fit=crop",
@@ -16642,7 +16642,7 @@ const allPackages: Package[] = [
     reviewCount: 29,
     inclusions: [
       "Accommodation in student-friendly hotels/hostels (dorm or sharing)",
-      "All meals — breakfast, lunch and dinner (veg/Jain available)",
+      "All meals - breakfast, lunch and dinner (veg/Jain available)",
       "All transfers and sightseeing in private buses/tempo travellers",
       "TravelSense tour educator + local guides",
       "All listed monument and activity entry fees",
@@ -16681,9 +16681,9 @@ const allPackages: Package[] = [
       },
       {
         day: 2,
-        title: "Gangtok — Rumtek & Himalayan Zoological Park",
+        title: "Gangtok - Rumtek & Himalayan Zoological Park",
         description:
-          "Visit the Rumtek Monastery, the Himalayan Zoological Park (red panda, snow leopard) and the Namgyal Institute of Tibetology — a study of Himalayan ecology and Buddhist culture.",
+          "Visit the Rumtek Monastery, the Himalayan Zoological Park (red panda, snow leopard) and the Namgyal Institute of Tibetology - a study of Himalayan ecology and Buddhist culture.",
         activities: ["Rumtek Monastery", "Himalayan Zoological Park", "Institute of Tibetology", "Handicraft centre"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Student hotel in Gangtok",
@@ -16714,25 +16714,25 @@ const allPackages: Package[] = [
       },
       {
         day: 5,
-        title: "Darjeeling to Bagdogra — Departure",
+        title: "Darjeeling to Bagdogra - Departure",
         description:
           "After breakfast and a wrap-up, drive down to Bagdogra for departure.",
         activities: ["Wrap-up session", "Drive to Bagdogra", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "Tea science in the field",
         image: "https://images.unsplash.com/photo-1544233726-9f1d2b27be8b?w=1600&h=900&fit=crop",
       },
     ],
   },
   {
-    title: "Goa Heritage & Coastal Ecology — Student Tour",
+    title: "Goa Heritage & Coastal Ecology - Student Tour",
     slug: "student-goa-heritage-ecology-4d",
     destinationName: "Goa",
     destinationSlug: "goa",
     category: "educational",
     description:
-      "A four-day Goa tour for students — the UNESCO churches of Old Goa and Portuguese heritage, a spice plantation for botany, and the beaches and forts of the coast for marine and coastal ecology.",
+      "A four-day Goa tour for students - the UNESCO churches of Old Goa and Portuguese heritage, a spice plantation for botany, and the beaches and forts of the coast for marine and coastal ecology.",
     heroImage: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&h=600&fit=crop",
@@ -16749,7 +16749,7 @@ const allPackages: Package[] = [
     reviewCount: 36,
     inclusions: [
       "Accommodation in student-friendly hotels/hostels (dorm or sharing)",
-      "All meals — breakfast, lunch and dinner (veg/Jain available)",
+      "All meals - breakfast, lunch and dinner (veg/Jain available)",
       "All transfers and sightseeing in private buses/tempo travellers",
       "TravelSense tour educator + local guides",
       "All listed monument and activity entry fees",
@@ -16777,7 +16777,7 @@ const allPackages: Package[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Goa — Coastal Orientation",
+        title: "Arrive Goa - Coastal Orientation",
         description:
           "Arrive in Goa and check in. Evening orientation at a calm beach with an introduction to the coast's geography and the trip's themes.",
         activities: ["Arrival & check-in", "Beach orientation", "Theme briefing"],
@@ -16790,7 +16790,7 @@ const allPackages: Package[] = [
         day: 2,
         title: "Old Goa Churches & Spice Plantation",
         description:
-          "Morning at the UNESCO churches of Old Goa — the Basilica of Bom Jesus and Se Cathedral — studying Portuguese colonial history; afternoon at a working spice plantation for a botany and agriculture session.",
+          "Morning at the UNESCO churches of Old Goa - the Basilica of Bom Jesus and Se Cathedral - studying Portuguese colonial history; afternoon at a working spice plantation for a botany and agriculture session.",
         activities: ["Basilica of Bom Jesus", "Se Cathedral", "Portuguese heritage walk", "Spice plantation botany"],
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Student hotel in Goa",
@@ -16815,7 +16815,7 @@ const allPackages: Package[] = [
           "After breakfast and a wrap-up, transfer to the station/airport for departure.",
         activities: ["Wrap-up session", "Departure"],
         meals: "Breakfast",
-        accommodation: "N/A — Departure",
+        accommodation: "N/A - Departure",
         highlight: "History and ecology by the sea",
         image: "/images/generated/goa-hero.webp",
       },

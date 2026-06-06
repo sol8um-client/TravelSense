@@ -3,7 +3,7 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js"
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ""
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""
 
-// Only create client if env vars are set — prevents crash during dev without Supabase
+// Only create client if env vars are set - prevents crash during dev without Supabase
 let supabase: SupabaseClient | null = null
 if (supabaseUrl && supabaseAnonKey) {
   supabase = createClient(supabaseUrl, supabaseAnonKey)
@@ -25,7 +25,7 @@ export interface Lead {
 
 export async function submitLead(lead: Lead) {
   if (!supabase) {
-    // Dev fallback — log to console if Supabase not configured
+    // Dev fallback - log to console if Supabase not configured
     console.log("📋 Lead captured (Supabase not configured):", lead)
     return null
   }

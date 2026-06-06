@@ -204,19 +204,19 @@ export default function InvoicePage() {
                   suppressHydrationWarning
                   {...ed}
                 >
-                  {invoiceNo || "—"}
+                  {invoiceNo || "-"}
                 </span>
                 <span className="font-body font-semibold tracking-[0.18em] uppercase text-white/55" {...ed}>
                   Date
                 </span>
                 <span key={`date-${today}`} className="text-white" suppressHydrationWarning {...ed}>
-                  {today || "—"}
+                  {today || "-"}
                 </span>
                 <span className="font-body font-semibold tracking-[0.18em] uppercase text-white/55" {...ed}>
                   Due
                 </span>
                 <span key={`due-${dueDate}`} className="text-white" suppressHydrationWarning {...ed}>
-                  {dueDate || "—"}
+                  {dueDate || "-"}
                 </span>
               </div>
             </div>
@@ -276,7 +276,7 @@ export default function InvoicePage() {
                   [Client Name]
                 </div>
                 <div {...ed}>[Address line 1]</div>
-                <div {...ed}>[City, State — PIN]</div>
+                <div {...ed}>[City, State - PIN]</div>
                 <div className="mt-1.5">
                   <span className="font-semibold tracking-[0.12em] uppercase text-[#5A6478] text-[10.5px]" {...ed}>
                     Phone:
@@ -375,7 +375,7 @@ export default function InvoicePage() {
             Add line item
           </button>
 
-          {/* Totals — dynamic taxes */}
+          {/* Totals - dynamic taxes */}
           <div className="inv-totals">
             <div className="inv-totals-row">
               <span className="text-[#5A6478]" {...ed}>Subtotal</span>
@@ -427,7 +427,7 @@ export default function InvoicePage() {
             </div>
           </div>
 
-          {/* Amount in words — deletable */}
+          {/* Amount in words - deletable */}
           {sections.amountInWords && (
             <div className="doc-section mt-4 rounded-md border border-dashed border-[#0A1425]/15 bg-[#FAF8F4] px-4 py-2.5">
               <button
@@ -450,7 +450,7 @@ export default function InvoicePage() {
             </div>
           )}
 
-          {/* Payment + Bank details — each block individually deletable */}
+          {/* Payment + Bank details - each block individually deletable */}
           {(sections.bankDetails || sections.paymentTerms) && (
             <div className="mt-7 grid grid-cols-1 md:grid-cols-2 gap-6">
               {sections.bankDetails && (
@@ -511,7 +511,7 @@ export default function InvoicePage() {
                   </div>
                   <div className="text-[11px] leading-[1.6] text-[#5A6478]" {...ed}>
                     <p>50% advance to confirm booking · balance 21 days before departure.</p>
-                    <p className="mt-1.5">Cancellation: 30+ days — 50% retention · 15-30 days — 75% · 0-15 days — 100%.</p>
+                    <p className="mt-1.5">Cancellation: 30+ days - 50% retention · 15-30 days - 75% · 0-15 days - 100%.</p>
                     <p className="mt-1.5">All bookings governed by TravelSense Terms of Service at travelsense.co.in/terms-of-service.</p>
                   </div>
                 </div>
@@ -519,7 +519,7 @@ export default function InvoicePage() {
             </div>
           )}
 
-          {/* Signature — deletable */}
+          {/* Signature - deletable */}
           {sections.signature && (
             <div className="doc-section mt-9 flex flex-col-reverse sm:flex-row sm:items-end sm:justify-between gap-5">
               <button
@@ -560,7 +560,7 @@ export default function InvoicePage() {
             </div>
           )}
 
-          {/* Restore-section bar — visible only on screen, only when something is hidden */}
+          {/* Restore-section bar - visible only on screen, only when something is hidden */}
           {(!sections.amountInWords ||
             !sections.bankDetails ||
             !sections.paymentTerms ||

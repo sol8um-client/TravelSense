@@ -27,7 +27,7 @@ export function DestinationsExplorer({ destinations }: DestinationsExplorerProps
   )
 
   // Mirror DestinationGrid's filter predicate so we can detect when an active
-  // search yields nothing — then swap the grid for a "talk to an expert" capture
+  // search yields nothing - then swap the grid for a "talk to an expert" capture
   // block instead of leaving the visitor at a dead end.
   const q = query.trim()
   const filteredCount = useMemo(() => {
@@ -67,7 +67,7 @@ export function DestinationsExplorer({ destinations }: DestinationsExplorerProps
         `}</style>
 
         {noMatches ? (
-          /* Empty state — a search is active but no destination matches. Keep a
+          /* Empty state - a search is active but no destination matches. Keep a
              search field (bound to the same query state) so the visitor can edit
              or clear their term, then a centered capture block + WhatsApp CTA. */
           <div>
@@ -191,7 +191,7 @@ export function DestinationsExplorer({ destinations }: DestinationsExplorerProps
               <div style={{ marginTop: 26, display: "flex", justifyContent: "center" }}>
                 <WhatsAppLink
                   source="destinations-search-no-result"
-                  message={`Hi TravelSense! I was looking for "${q}" but didn't find it — can you help me plan it?`}
+                  message={`Hi TravelSense! I was looking for "${q}" but didn't find it - can you help me plan it?`}
                   className="btn btn-primary"
                 >
                   Talk to an expert

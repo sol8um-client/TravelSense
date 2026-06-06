@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 
 import { FileText } from "lucide-react"
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   TravelSense — Visa & Passport hero (ported from design_handoff/vp-page.jsx)
+   TravelSense - Visa & Passport hero (ported from design_handoff/vp-page.jsx)
    Signature device: a tilted gold-foil PASSPORT COVER graphic with a spinning
    gold compass emblem, floating over a navy radial field dusted with faint
    embassy stamps and a gold grid. All-navy + gold-foil theme.
@@ -13,7 +13,7 @@ import { FileText } from "lucide-react"
 const EASE = "cubic-bezier(0.22,1,0.36,1)"
 const GOLD = "#C9A24B"
 
-/* ── Reveal — fade/slide in on scroll via IntersectionObserver (home-kit) ──── */
+/* ── Reveal - fade/slide in on scroll via IntersectionObserver (home-kit) ──── */
 interface RevealProps {
   children: ReactNode
   y?: number
@@ -57,7 +57,7 @@ function Reveal({ children, y = 22, delay = 0, style, className }: RevealProps) 
   )
 }
 
-/* ── Gold compass emblem — raw SVG (geometry reproduced from shared.jsx Compass,
+/* ── Gold compass emblem - raw SVG (geometry reproduced from shared.jsx Compass,
    recoloured to gold-foil to sit on the navy passport cover). ──────────────── */
 function GoldCompass({ size = 92 }: { size?: number }) {
   return (
@@ -229,7 +229,7 @@ export default function VisaPassportHero() {
               }}
             >
               From document checklists to embassy appointments, our visa team handles
-              the file end-to-end — we even fill the forms for you.
+              the file end-to-end - we even fill the forms for you.
             </p>
           </Reveal>
           <Reveal delay={0.2} style={{ display: "flex", gap: 12, marginTop: 30, flexWrap: "wrap" }}>

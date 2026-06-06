@@ -21,7 +21,7 @@ const faqs = [
   {
     question: "Which destinations does TravelSense cover?",
     answer:
-      "We cover all major domestic destinations across India — from Goa and Kerala to Ladakh and the Northeast — as well as popular international destinations including Southeast Asia, Europe, the Middle East, and more. If there is a place you want to go, we can plan it.",
+      "We cover all major domestic destinations across India - from Goa and Kerala to Ladakh and the Northeast - as well as popular international destinations including Southeast Asia, Europe, the Middle East, and more. If there is a place you want to go, we can plan it.",
     category: "General",
   },
   {
@@ -123,9 +123,9 @@ const faqs = [
 /* ─── Metadata ───────────────────────────────────────────────────────── */
 
 export const metadata = generatePageMetadata({
-  title: "FAQ — TravelSense",
+  title: "FAQ - TravelSense",
   description:
-    "Find answers to common questions about TravelSense — booking, payments, cancellations, packages, and more. Everything you need to know before you travel.",
+    "Find answers to common questions about TravelSense - booking, payments, cancellations, packages, and more. Everything you need to know before you travel.",
   path: "/faq",
 })
 

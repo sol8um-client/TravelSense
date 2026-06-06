@@ -23,7 +23,7 @@ interface VisaChecklistEntry {
   note?: string
 }
 
-/* Passport-spread palette — all-navy + gold-foil + aged cream + cherry ink. */
+/* Passport-spread palette - all-navy + gold-foil + aged cream + cherry ink. */
 const NAVY = "#0A1425"
 const GOLD = "#C9A24B"
 const CHERRY = "#C4324A"
@@ -76,7 +76,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
       "Hotel voucher / accommodation proof",
       "Bank statements (last 6 months)",
     ],
-    note: "Visa on Arrival pre-approval available at ₹300 — fastest route.",
+    note: "Visa on Arrival pre-approval available at ₹300 - fastest route.",
   },
   {
     region: "Asia & Middle East",
@@ -166,7 +166,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
       "Hotel voucher",
       "Confirmed return flight ticket",
     ],
-    note: "Indian passport holders need a free Pre-arrival Registration online — no embassy visit required.",
+    note: "Indian passport holders need a free Pre-arrival Registration online - no embassy visit required.",
   },
   {
     region: "Asia & Middle East",
@@ -243,7 +243,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     region: "Europe",
     destination: "Germany",
     flag: "\u{1F1E9}\u{1F1EA}",
-    visaType: "Schengen Short-Stay Visa (Type C) — Tourist",
+    visaType: "Schengen Short-Stay Visa (Type C) - Tourist",
     processingTime: "15–20 working days (up to 30 peak)",
     validity: "Up to 90 days within any 180-day period",
     visaFee: "€90 (~₹8,280); €45 children 6-12; free under 6",
@@ -266,7 +266,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     region: "Europe",
     destination: "France",
     flag: "\u{1F1EB}\u{1F1F7}",
-    visaType: "Schengen Short-Stay Visa (Type C) — Tourist",
+    visaType: "Schengen Short-Stay Visa (Type C) - Tourist",
     processingTime: "15 calendar days (up to 45 in complex cases)",
     validity: "Up to 90 days within any 180-day period",
     visaFee: "€90 (~₹7,800–8,100)",
@@ -314,7 +314,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     region: "Europe",
     destination: "Spain",
     flag: "\u{1F1EA}\u{1F1F8}",
-    visaType: "Schengen Short-Stay Visa (Type C) — Tourist",
+    visaType: "Schengen Short-Stay Visa (Type C) - Tourist",
     processingTime: "10–15 working days (up to 25 peak)",
     validity: "Up to 180 days from issue; 90 days in 180-day period",
     visaFee: "€90 (~₹8,300–8,920); €45 children 6-12",
@@ -378,7 +378,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
       "Employment letter with NOC / business registration / GST certificate",
       "Proof of legal residence (Aadhaar / Voter ID)",
     ],
-    note: "Stricter documentation checks in 2026 — minor inconsistencies trigger system flags.",
+    note: "Stricter documentation checks in 2026 - minor inconsistencies trigger system flags.",
   },
   {
     region: "Europe",
@@ -462,7 +462,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     region: "Australia",
     destination: "Australia",
     flag: "\u{1F1E6}\u{1F1FA}",
-    visaType: "Visitor Visa (Subclass 600) — Tourist Stream",
+    visaType: "Visitor Visa (Subclass 600) - Tourist Stream",
     processingTime: "11 days (50% of apps); 23 days (90%); max 30 days",
     validity: "Up to 12 months multiple entry; 3 months stay per visit",
     visaFee: "AUD 190 (~₹13,200) offshore; AUD 475 (~₹32,900) onshore",
@@ -479,7 +479,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
       "Cover letter explaining travel plans and ties to India",
       "Travel insurance (min AUD 5,000 recommended)",
     ],
-    note: "Requirements vary by location and profession — consult a visa expert before applying.",
+    note: "Requirements vary by location and profession - consult a visa expert before applying.",
   },
 
   // ────────────── OTHER (Eurasia / Africa) ──────────────
@@ -488,7 +488,7 @@ const VISA_CHECKLISTS: VisaChecklistEntry[] = [
     destination: "Turkey",
     flag: "\u{1F1F9}\u{1F1F7}",
     visaType: "e-Visa (Tourist / Business / Study / Transit)",
-    processingTime: "Online — usually instant to a few days",
+    processingTime: "Online - usually instant to a few days",
     validity: "30 days maximum stay",
     visaFee: "₹8,471 – ₹24,100 (inclusive)",
     serviceCharge: "Included in service package",
@@ -560,7 +560,7 @@ const REGIONS: VisaRegion[] = [
   "Other",
 ]
 
-/* ── Inked entry stamp — rotated cherry-ink circular stamp with a textPath arc ── */
+/* ── Inked entry stamp - rotated cherry-ink circular stamp with a textPath arc ── */
 function Stamp({ country }: { country: string }) {
   const label = country.split(" ")[0].slice(0, 9).toUpperCase()
   return (

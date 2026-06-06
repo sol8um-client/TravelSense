@@ -39,7 +39,7 @@ function ll3(lat: number, lng: number, r = 1.005): [number, number, number] {
 }
 
 /* ═══════════════════════════════════════════════════════
-   LAYER 1 — TEXTURED GLOBE SPHERE
+   LAYER 1 - TEXTURED GLOBE SPHERE
    Frosted glass look: light silver base, continents show
    as slightly more defined/opaque areas via NASA texture
    ═══════════════════════════════════════════════════════ */
@@ -72,7 +72,7 @@ function GlobeSphere() {
 
         void main() {
           vec4 tex = texture2D(earthMap, vUv);
-          // Convert to luminance — land is brighter in Blue Marble
+          // Convert to luminance - land is brighter in Blue Marble
           float lum = dot(tex.rgb, vec3(0.299, 0.587, 0.114));
 
           // Frosted glass: ocean = light, land = clearly visible darker
@@ -84,7 +84,7 @@ function GlobeSphere() {
           // Rim: edges darken slightly to create visible boundary
           float facing = dot(vNormal, vViewDir);
           float rim = 1.0 - facing;
-          // Darken the edge instead of lightening it — keeps globe boundary visible
+          // Darken the edge instead of lightening it - keeps globe boundary visible
           vec3 edgeColor = vec3(0.55, 0.60, 0.70);
           color = mix(color, edgeColor, smoothstep(0.5, 0.9, rim) * 0.4);
           // Keep solid opacity even at edges
@@ -108,7 +108,7 @@ function GlobeSphere() {
   )
 }
 
-/* ═══ Globe Edge Rim — visible boundary line ═══ */
+/* ═══ Globe Edge Rim - visible boundary line ═══ */
 
 function GlobeEdge() {
   const mat = useMemo(
@@ -129,7 +129,7 @@ function GlobeEdge() {
       varying vec3 vViewDir;
       void main() {
         float rim = 1.0 - abs(dot(vNormal, vViewDir));
-        // Visible edge boundary — wider and stronger
+        // Visible edge boundary - wider and stronger
         float edge = smoothstep(0.45, 0.75, rim);
         // Blue-grey edge color matching brand navy
         vec3 color = vec3(0.35, 0.42, 0.55);
@@ -153,7 +153,7 @@ function GlobeEdge() {
 }
 
 /* ═══════════════════════════════════════════════════════
-   LAYER 2 — ATMOSPHERE GLOW
+   LAYER 2 - ATMOSPHERE GLOW
    Seamless fade from globe edge → white background
    ═══════════════════════════════════════════════════════ */
 
@@ -207,7 +207,7 @@ function Atmosphere() {
 }
 
 /* ═══════════════════════════════════════════════════════
-   LAYER 3 — DESTINATION DOTS
+   LAYER 3 - DESTINATION DOTS
    Simple small colored spheres at key cities
    Gold = featured/Asian   Blue = international
    ═══════════════════════════════════════════════════════ */
@@ -219,7 +219,7 @@ type Dest = {
 }
 
 const DESTS: Dest[] = [
-  // Cherry/pink dots (like the reference) — featured
+  // Cherry/pink dots (like the reference) - featured
   { lat: 18.5, lng: 73.8, color: CHERRY },      // Pune (hub)
   { lat: -8.3, lng: 115.1, color: CHERRY },      // Bali
   { lat: 27.17, lng: 78.04, color: CHERRY },     // Taj Mahal
@@ -230,7 +230,7 @@ const DESTS: Dest[] = [
   { lat: -13.16, lng: -72.55, color: CHERRY },   // Machu Picchu
   { lat: 13.08, lng: 80.27, color: CHERRY },     // Chennai
   { lat: 28.6, lng: 77.2, color: CHERRY },       // Delhi
-  // Blue dots — international
+  // Blue dots - international
   { lat: 36.4, lng: 25.4, color: BLUE_LIGHT },   // Santorini
   { lat: 46.8, lng: 8.2, color: BLUE_LIGHT },    // Swiss Alps
   { lat: 41.89, lng: 12.49, color: BLUE_LIGHT }, // Colosseum
@@ -243,7 +243,7 @@ const DESTS: Dest[] = [
   { lat: 1.35, lng: 103.82, color: BLUE_LIGHT }, // Singapore
 ]
 
-/* Location Pin — simple 3D pin: cone needle + sphere head, oriented outward */
+/* Location Pin - simple 3D pin: cone needle + sphere head, oriented outward */
 function DestinationPins() {
   const ref = useRef<THREE.Group>(null)
 
@@ -273,7 +273,7 @@ function DestinationPins() {
         )
         return (
           <group key={i} position={[surfacePos.x, surfacePos.y, surfacePos.z]} quaternion={quat}>
-            {/* Needle — thin cone from surface outward */}
+            {/* Needle - thin cone from surface outward */}
             <mesh position={[0, 0.018, 0]}>
               <coneGeometry args={[0.003, 0.035, 6]} />
               <meshStandardMaterial
@@ -282,7 +282,7 @@ function DestinationPins() {
                 emissiveIntensity={0.6}
               />
             </mesh>
-            {/* Pin head — sphere at top */}
+            {/* Pin head - sphere at top */}
             <mesh position={[0, 0.038, 0]}>
               <sphereGeometry args={[0.008, 10, 10]} />
               <meshStandardMaterial
@@ -299,9 +299,9 @@ function DestinationPins() {
 }
 
 /* ═══════════════════════════════════════════════════════
-   LAYER 4 — FLIGHT ROUTE ARCS
+   LAYER 4 - FLIGHT ROUTE ARCS
    Curved arcs with animated draw-on + traveling glow dot
-   The hero visual — makes this feel like a travel globe
+   The hero visual - makes this feel like a travel globe
    ═══════════════════════════════════════════════════════ */
 
 function FlightArc({
@@ -373,7 +373,7 @@ function FlightArc({
   )
 }
 
-/* ═══ EARTH — all layers assembled ═══ */
+/* ═══ EARTH - all layers assembled ═══ */
 
 function Earth() {
   const ref = useRef<THREE.Group>(null)
@@ -387,7 +387,7 @@ function Earth() {
       <GlobeEdge />
       <DestinationPins />
 
-      {/* Flight routes — cherry/pink like reference */}
+      {/* Flight routes - cherry/pink like reference */}
       <FlightArc from={[18.5, 73.8]} to={[48.86, 2.35]} color={CHERRY} h={0.4} speed={0.07} />
       <FlightArc from={[18.5, 73.8]} to={[-8.3, 115.1]} color={CHERRY} h={0.35} speed={0.06} />
       <FlightArc from={[40.7, -74]} to={[51.5, -0.1]} color={CHERRY} h={0.3} speed={0.08} />

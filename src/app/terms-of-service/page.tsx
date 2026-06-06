@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer"
 import { siteConfig } from "@/config/site"
 
 export const metadata = generatePageMetadata({
-  title: "Terms of Service — TravelSense",
+  title: "Terms of Service - TravelSense",
   description:
     "Read the terms and conditions that govern the use of TravelSense travel services and website.",
   path: "/terms-of-service",

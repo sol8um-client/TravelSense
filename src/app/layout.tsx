@@ -4,6 +4,7 @@ import { Toaster } from "sonner"
 import { LeadModalProvider } from "@/components/shared/LeadCaptureModal"
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics"
 import { MetaPixel } from "@/components/analytics/MetaPixel"
+import ScrollToTop from "@/components/shared/ScrollToTop"
 import "./globals.css"
 
 // Load Fraunces as a VARIABLE font with the optical-size (opsz) axis so the
@@ -48,7 +49,7 @@ const exo2 = Exo_2({
 
 export const metadata: Metadata = {
   title: {
-    default: "TravelSense — Your Trusted Travel Partner",
+    default: "TravelSense - Your Trusted Travel Partner",
     template: "%s | TravelSense",
   },
   description:
@@ -73,13 +74,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "TravelSense",
-    title: "TravelSense — Your Trusted Travel Partner",
+    title: "TravelSense - Your Trusted Travel Partner",
     description:
       "Curated leisure and adventure travel experiences. Expert consultation, personalized itineraries, and seamless booking.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TravelSense — Your Trusted Travel Partner",
+    title: "TravelSense - Your Trusted Travel Partner",
     description:
       "Curated travel experiences with expert consultation and personalized itineraries.",
   },
@@ -102,6 +103,7 @@ export default function RootLayout({
         <LeadModalProvider>
           {children}
         </LeadModalProvider>
+        <ScrollToTop />
         <Toaster
           position="top-right"
           toastOptions={{
