@@ -27,9 +27,8 @@ export default function ARVRBanner() {
       className="relative overflow-hidden"
       style={{ background: "#0A1425" }}
     >
-      {/* soft gold + navy glows for depth (siblings — no filter on clipped kids) */}
+      {/* soft navy glow for depth (sibling — no filter on clipped kids) */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-[6%] top-1/2 h-[280px] w-[280px] -translate-y-1/2 rounded-full bg-accent/[0.10] blur-[90px]" />
         <div className="absolute right-[8%] top-[10%] h-[240px] w-[240px] rounded-full bg-primary-light/30 blur-[80px]" />
       </div>
       {/* faint dot grid (right side) */}
@@ -44,12 +43,8 @@ export default function ARVRBanner() {
       />
       <div className="relative mx-auto max-w-[1180px] px-4 py-3.5 sm:px-6 sm:py-8">
         <div className="glass-dark flex flex-row items-center gap-3 rounded-[18px] px-3.5 py-3 text-left sm:gap-7 sm:rounded-[22px] sm:px-7 sm:py-5" style={{ border: "none" }}>
-          {/* ── Figure: the face area of the VR traveller, in a glowing ring ── */}
+          {/* ── Figure: the face area of the VR traveller, in a clean ring ── */}
           <div className="relative shrink-0" aria-hidden>
-            <span
-              className="absolute inset-0 -m-2.5 rounded-full"
-              style={{ background: "radial-gradient(circle, rgba(212,168,83,0.34) 0%, transparent 70%)", filter: "blur(14px)" }}
-            />
             <span
               className="relative block h-[44px] w-[44px] overflow-hidden rounded-full sm:h-[86px] sm:w-[86px]"
               style={{
@@ -63,7 +58,7 @@ export default function ARVRBanner() {
                 fill
                 sizes="86px"
                 className="object-cover"
-                priority
+                loading="lazy"
               />
             </span>
           </div>

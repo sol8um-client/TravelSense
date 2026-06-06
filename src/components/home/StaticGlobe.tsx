@@ -106,7 +106,7 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
           style={{ filter: "drop-shadow(0 26px 64px rgba(10,20,37,0.36))" }}
         >
           <Image
-            src="/images/hero/globe.png"
+            src="/images/hero/globe.webp"
             alt="Interactive globe of TravelSense destinations across Asia"
             fill
             priority

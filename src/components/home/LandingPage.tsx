@@ -259,7 +259,7 @@ function LivePresence() {
     <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2, duration: 0.6 }}
+      transition={{ delay: 0.05, duration: 0.5 }}
       className="mx-auto mb-6 inline-flex items-center gap-2.5 rounded-full border border-silver/15 bg-white/80 px-3 py-1.5 text-[12px] sm:text-[13px] shadow-[0_4px_20px_rgba(11,20,38,0.06)] backdrop-blur-xl"
     >
       <span className="relative flex h-2 w-2">
@@ -337,7 +337,7 @@ function HeroPlanner() {
       className="relative mx-auto mt-9 max-w-2xl"
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1.25, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ delay: 0.36, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
       <form
         onSubmit={onSubmit}
@@ -577,7 +577,7 @@ function HeroSection() {
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.0, duration: 0.6 }}
+          transition={{ delay: 0.22, duration: 0.55 }}
           className="mt-7 text-[15px] sm:text-[17px] leading-[1.7] text-foreground/70 max-w-xl mx-auto font-normal"
         >
           <span className="script text-[22px] sm:text-[26px] text-secondary/90 align-middle mr-1">One conversation</span>
@@ -1250,20 +1250,41 @@ function HowItWorksSection() {
 
   return (
     <section ref={ref} id="how-it-works" className="relative bg-brand-mesh" style={{ height: "460vh" }}>
-      <div className="sticky top-[var(--nav-h)] flex h-[calc(100svh-var(--nav-h))] flex-col items-center justify-center overflow-hidden px-6 py-6 sm:px-8 sm:py-10">
+      {/* Short-viewport guard: laptops & iPad-landscape are often < 860px tall,
+          where the centred stack used to overflow `100svh − nav` and CLIP the
+          "Start your journey" CTA at the bottom. Compress the vertical rhythm on
+          short screens so the button is always inside the section. Tall monitors
+          keep the full, lush spacing. */}
+      <style>{`
+        @media (max-height: 860px) {
+          .hiw-stage { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+          .hiw-rail { margin-top: 1rem; margin-bottom: 1rem; }
+          .hiw-passbody { min-height: 96px; }
+          .hiw-cta { margin-top: 0.75rem; }
+        }
+        @media (max-height: 740px) {
+          .hiw-stage { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+          .hiw-header h2 { font-size: 1.6rem; line-height: 1.05; }
+          .hiw-sub { display: none; }
+          .hiw-rail { margin-top: 0.6rem; margin-bottom: 0.6rem; }
+          .hiw-pass { padding-top: 1rem; padding-bottom: 1rem; }
+          .hiw-passbody { min-height: 78px; }
+        }
+      `}</style>
+      <div className="hiw-stage sticky top-[var(--nav-h)] flex h-[calc(100svh-var(--nav-h))] flex-col items-center justify-center overflow-hidden px-6 py-6 sm:px-8 sm:py-10">
         {/* compact header */}
-        <div className="max-w-[620px] text-center">
+        <div className="hiw-header max-w-[620px] text-center">
           <p className="m-0 font-body text-[10.5px] font-semibold uppercase tracking-[0.28em] text-secondary">How it works</p>
           <h2 className="mt-3 font-heading text-[clamp(1.9rem,3.6vw,3rem)] font-medium leading-[1.04] tracking-[-0.025em] text-primary" style={{ fontVariationSettings: "'opsz' 144" }}>
             Watch your trip <em className="font-normal italic text-secondary">assemble itself.</em>
           </h2>
-          <p className="mx-auto mt-3 max-w-[460px] text-[14.5px] leading-[1.65] text-muted-foreground">
+          <p className="hiw-sub mx-auto mt-3 max-w-[460px] text-[14.5px] leading-[1.65] text-muted-foreground">
             Keep scrolling — one conversation becomes a fully-booked trip, step by step.
           </p>
         </div>
 
         {/* thin progress rail */}
-        <div className="my-6 w-full max-w-[540px] sm:my-[34px]">
+        <div className="hiw-rail my-6 w-full max-w-[540px] sm:my-[34px]">
           <div className="mb-3.5 flex justify-between">
             {HIW_STEPS.map((s, i) => (
               <button key={s.n} onClick={() => jump(i)} className="flex flex-1 cursor-pointer flex-col items-center gap-[3px]">
@@ -1285,7 +1306,7 @@ function HowItWorksSection() {
 
         {/* boarding pass */}
         <div className="relative flex w-full max-w-[700px] shrink-0 overflow-hidden rounded-[20px] bg-white" style={{ boxShadow: "0 24px 64px rgba(11,20,38,0.14)", border: "1px solid rgba(176,184,196,0.2)" }}>
-          <div className="min-w-0 flex-1 px-5 py-6 sm:px-[26px]">
+          <div className="hiw-pass min-w-0 flex-1 px-5 py-6 sm:px-[26px]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
                 <Image src="/images/brand/logo-emblem.png" alt="" width={45} height={22} />
@@ -1304,7 +1325,7 @@ function HowItWorksSection() {
                 <div className="font-heading text-[26px] font-semibold leading-none" style={{ color: step === 0 ? "var(--silver)" : "var(--primary)", transition: "color .4s" }}>{step === 0 ? "• • •" : "GOA"}</div>
               </div>
             </div>
-            <div key={step} className="fade-up min-h-[120px]">
+            <div key={step} className="hiw-passbody fade-up min-h-[120px]">
               <PassBody step={step} />
             </div>
           </div>
@@ -1321,7 +1342,7 @@ function HowItWorksSection() {
         </div>
 
         {/* scroll hint / CTA */}
-        <div className="mt-5 flex h-11 items-center justify-center sm:mt-7">
+        <div className="hiw-cta mt-5 flex h-11 items-center justify-center sm:mt-7">
           {railT < 1 ? (
             <div className="flex flex-col items-center gap-[5px] text-silver-dark" style={{ animation: "scrollNudge 2.4s cubic-bezier(0.22,1,0.36,1) infinite" }}>
               <span className="font-tech text-[9px] uppercase tracking-[0.28em]">scroll</span>
