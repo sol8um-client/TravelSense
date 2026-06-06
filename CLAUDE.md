@@ -582,6 +582,18 @@ pnpm dev
 
 ---
 
+## Current Status — Redesign LIVE + homepage hero polish (as of June 6, 2026)
+
+**Jun 6 update:** The full-site redesign is **LIVE on travelsense.co.in**. Spent the day on a deep **homepage hero polish + mobile-responsive QA** pass across ~6 client review rounds:
+- **Hero:** cinematic globe (rim, India-centred rotating glow, whitish location pins, globe↔carousel **sync nudge**), borderless **liquid-glass spotlight carousel** with image+globe-hue glow (shorter on mobile), rounded **liquid-glass stats pill** (4 stats one row on mobile / single line desktop), **slim AR/VR ribbon** (gold glow + hairlines removed), bigger haloed title, glass favourite pills.
+- **Mobile fixes:** visa form 1-col, package hero/day-by-day overlap, How-it-works boarding-pass clip, categories goggle overflow, destinations double-nav. **/categories rebuilt** to the redesign language. Logo aspect-ratio fixed.
+- **Deployed** (commits `7ed8be0` pushed/deployed; `054173d` local pending deploy).
+
+**⚠️ Workflow gotchas (IMPORTANT):**
+1. The client reviews on **mobile Safari, which caches HARD** — after a deploy they often still see the OLD version until they clear cache / use a private tab. Verify a deploy is actually live with `curl https://travelsense.co.in/... | grep <class-marker>`, NOT their screenshot.
+2. The Claude-Preview tool renders **mobile viewports full-size but desktop viewports tiny** (~20%) → verify desktop via `preview_inspect`/`getBoundingClientRect`, not screenshots. The `/destinations` page WebGL `Globe3D` freezes the preview renderer (stop+start to recover); homepage uses the static-image globe (fine).
+3. **Outstanding** (need client's eye or a new asset): exact globe pin spots, complete-globe-from-bottom framing on desktop, a higher-res (4K) globe image (current `globe.png` is 1200²), and an animated/motion section-break wave system.
+
 ## Current Status — Phase 1 live; FULL-SITE REDESIGN in progress (as of June 5, 2026)
 
 **Content scale:** **~101 LIVE packages across 47 destinations** (the **Education category was archived** Jun 5 per client request — 30 packages incl. heritage/pilgrimage hidden but kept in code), **25 visa destinations** with fees + documents, **8 blog articles**, all live on travelsense.co.in.

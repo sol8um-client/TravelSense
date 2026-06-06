@@ -534,8 +534,9 @@ function HeroSection() {
         <StaticGlobe
           className="absolute left-1/2 top-[47%] w-[130%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.6]
                      sm:w-[108%] sm:opacity-[0.66]
-                     md:w-[86%] md:opacity-[0.78]
-                     lg:left-0 lg:top-1/2 lg:h-[118%] lg:w-auto lg:-translate-x-[28%] lg:-translate-y-1/2 lg:opacity-100"
+                     md:w-[84%] md:opacity-[0.78]
+                     lg:w-[72%] lg:opacity-[0.82]
+                     xl:left-0 xl:top-1/2 xl:h-[116%] xl:w-auto xl:-translate-x-[28%] xl:-translate-y-1/2 xl:opacity-100"
         />
       </div>
 
@@ -547,7 +548,7 @@ function HeroSection() {
       </div>
 
       {/* Content — text shadow on mobile ensures readability over globe */}
-      <motion.div className="relative z-30 w-full max-w-5xl mx-auto px-6 text-center [text-shadow:0_1px_8px_rgba(255,255,255,0.8)] lg:[text-shadow:none] xl:max-w-[660px] xl:ml-auto xl:mr-[33%]" style={{ y: contentY }}>
+      <motion.div className="relative z-30 w-full max-w-5xl mx-auto px-6 text-center [text-shadow:0_1px_8px_rgba(255,255,255,0.8)] xl:[text-shadow:none] xl:max-w-[660px] xl:ml-auto xl:mr-[33%]" style={{ y: contentY }}>
         {/* Live presence pill — rotating social proof */}
         <LivePresence />
 
@@ -558,7 +559,7 @@ function HeroSection() {
 
         {/* Main headline — "Wake up in <rotating destination>." solid navy Fraunces,
             city in red italic. Destination cycles through heroCities. */}
-        <h1 className="font-heading text-[2.55rem] sm:text-[3.2rem] md:text-[3.8rem] lg:text-[4.3rem] font-medium leading-[1.04] tracking-[-0.025em] text-[#0A1425] [text-shadow:0_2px_18px_rgba(255,255,255,0.95)] lg:[text-shadow:none]">
+        <h1 className="font-heading text-[2.55rem] sm:text-[3.2rem] md:text-[3.8rem] lg:text-[4.3rem] font-medium leading-[1.04] tracking-[-0.025em] text-[#0A1425] [text-shadow:0_2px_18px_rgba(255,255,255,0.95)] xl:[text-shadow:none]">
           <span>Wake up in</span>
           <br />
           <span className="relative inline-block align-baseline">

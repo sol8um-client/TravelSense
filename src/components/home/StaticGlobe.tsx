@@ -37,10 +37,10 @@ type PinDef = {
 /* Anchors verified against the globe art: north-India, south-India, SE-Asia
    mainland, Indonesia — a clean spread across the visible face. */
 const PIN_DEFS: PinDef[] = [
-  { slug: "kashmir", x: 40, y: 35, delay: 0.15 }, // far-north India / Himalaya
-  { slug: "kerala", x: 41, y: 53, delay: 0.4 }, // south-west coast (peninsula tip)
-  { slug: "thailand", x: 57, y: 50, delay: 0.65 }, // Indochina mainland
-  { slug: "bali", x: 68, y: 70, delay: 0.9 }, // Indonesia
+  { slug: "kashmir", x: 40, y: 34, delay: 0.15 }, // far-north India / Himalaya
+  { slug: "kerala", x: 41, y: 57, delay: 0.4 }, // south-west coast (peninsula tip)
+  { slug: "thailand", x: 64, y: 52, delay: 0.65 }, // Indochina mainland (E of Bay of Bengal)
+  { slug: "bali", x: 70, y: 71, delay: 0.9 }, // Indonesia
 ]
 
 type Pin = PinDef & { name: string; image: string }

@@ -378,6 +378,7 @@ function AltitudeProfile({ days }: { days: AltDay[] }) {
             key={p.i}
             onMouseEnter={() => setHover(p.i)}
             onMouseLeave={() => setHover(null)}
+            onClick={() => setHover((h) => (h === p.i ? null : p.i))}
             style={{ cursor: "pointer" }}
           >
             <circle cx={p.x} cy={p.y} r="14" fill="transparent" />
@@ -1023,8 +1024,13 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
 
   // Derived altitude + route data from the REAL itinerary.
   const altDays = buildAltDays(itinerary)
-  const showAltitude = altDays.length >= 2
   const maxAltitude = altDays.length ? Math.max(...altDays.map((a) => a.elev)) : null
+  const minAltitude = altDays.length ? Math.min(...altDays.map((a) => a.elev)) : null
+  // Only show "The Climb" when it's actually meaningful — a real elevation swing
+  // (≥800m) or a genuinely high point (≥2,500m). Flat / leisure trips skip it.
+  const showAltitude =
+    altDays.length >= 2 &&
+    ((maxAltitude ?? 0) - (minAltitude ?? 0) >= 800 || (maxAltitude ?? 0) >= 2500)
   const stops = buildStops(itinerary)
   const showRoute = stops.length >= 2
 
