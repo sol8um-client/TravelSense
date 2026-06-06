@@ -97,14 +97,12 @@ export default function VisaInquiryForm() {
     >
       <form
         onSubmit={onSubmit}
+        className="grid grid-cols-1 gap-4 sm:grid-cols-2"
         style={{
           borderRadius: 22,
           border: "1px solid rgba(255,255,255,0.1)",
           background: "rgba(255,255,255,0.04)",
           padding: "clamp(24px, 3vw, 36px)",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 16,
         }}
       >
         {/* Full name */}
@@ -206,8 +204,8 @@ export default function VisaInquiryForm() {
 
         {/* Message */}
         <label
+          className="sm:col-span-2"
           style={{
-            gridColumn: "span 2",
             display: "flex",
             flexDirection: "column",
             gap: 7,
@@ -234,8 +232,8 @@ export default function VisaInquiryForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="btn btn-primary"
-          style={{ gridColumn: "span 2", justifyContent: "center", padding: "15px" }}
+          className="btn btn-primary sm:col-span-2"
+          style={{ justifyContent: "center", padding: "15px" }}
         >
           {isSubmitting ? (
             <Loader2 size={16} className="animate-spin" />

@@ -42,11 +42,11 @@ export default function ARVRBanner() {
           WebkitMaskImage: "linear-gradient(to left, black 0%, transparent 55%)",
         }}
       />
-      {/* hairline gold top edge */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/45 to-transparent" />
+      {/* soft gold light at the very top — a glow only (no hairline seam) */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-[radial-gradient(60%_100%_at_50%_0%,rgba(212,168,83,0.14),transparent_70%)]" />
 
-      <div className="relative mx-auto max-w-[1180px] px-6 py-7 sm:py-8">
-        <div className="glass-dark flex flex-col items-center gap-5 rounded-[22px] px-6 py-5 text-center sm:flex-row sm:gap-7 sm:px-7 sm:text-left">
+      <div className="relative mx-auto max-w-[1180px] px-4 py-3.5 sm:px-6 sm:py-8">
+        <div className="glass-dark flex flex-row items-center gap-3 rounded-[18px] px-3.5 py-3 text-left sm:gap-7 sm:rounded-[22px] sm:px-7 sm:py-5" style={{ border: "none" }}>
           {/* ── Figure: the face area of the VR traveller, in a glowing ring ── */}
           <div className="relative shrink-0" aria-hidden>
             <span
@@ -54,7 +54,7 @@ export default function ARVRBanner() {
               style={{ background: "radial-gradient(circle, rgba(212,168,83,0.34) 0%, transparent 70%)", filter: "blur(14px)" }}
             />
             <span
-              className="relative block h-[70px] w-[70px] overflow-hidden rounded-full sm:h-[86px] sm:w-[86px]"
+              className="relative block h-[44px] w-[44px] overflow-hidden rounded-full sm:h-[86px] sm:w-[86px]"
               style={{
                 border: "1px solid rgba(212,168,83,0.5)",
                 boxShadow: "inset 0 1px 0 rgba(255,235,190,0.25), 0 10px 26px rgba(0,0,0,0.42)",
@@ -73,18 +73,18 @@ export default function ARVRBanner() {
 
           {/* ── Copy ──────────────────────────────────────────────────────── */}
           <div className="flex-1">
-            <span className="eyebrow justify-center text-accent sm:justify-start" style={{ color: "var(--accent)" }}>
+            <span className="eyebrow justify-start text-accent" style={{ color: "var(--accent)" }}>
               <span className="dot" style={{ background: "var(--accent)" }} />
               Coming soon
             </span>
 
             <p
-              className="mt-2 font-heading text-[23px] font-medium leading-[1.1] tracking-[-0.02em] text-white sm:text-[27px]"
+              className="mt-1 font-heading text-[16px] font-medium leading-[1.15] tracking-[-0.02em] text-white sm:mt-2 sm:text-[27px]"
               style={{ fontVariationSettings: "'opsz' 144" }}
             >
               Preview before you travel.
             </p>
-            <p className="mx-auto mt-2 max-w-xl text-[13.5px] leading-[1.6] text-white/70 sm:mx-0">
+            <p className="mt-2 hidden max-w-xl text-[13.5px] leading-[1.6] text-white/70 sm:mx-0 sm:block">
               Walk through hotels and experience destinations in VR — choose with confidence.
             </p>
           </div>
@@ -93,7 +93,7 @@ export default function ARVRBanner() {
           <div className="shrink-0">
             <Link
               href="/consultation"
-              className="group inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-[13px] font-body font-semibold text-accent transition-all duration-300 hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 text-[12.5px] font-body font-semibold text-accent transition-all duration-300 hover:-translate-y-0.5 sm:px-6 sm:py-3 sm:text-[13px]"
               style={{
                 background: "rgba(212,168,83,0.08)",
                 border: "1px solid rgba(212,168,83,0.5)",
@@ -101,10 +101,10 @@ export default function ARVRBanner() {
               }}
             >
               <Glasses className="h-4 w-4" strokeWidth={1.8} />
-              Explore in VR
+              <span className="hidden sm:inline">Explore in VR</span>
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.8} />
             </Link>
-            <p className="mt-2.5 inline-flex w-full items-center justify-center gap-1.5 text-[10.5px] font-body uppercase tracking-[0.14em] text-white/45 sm:justify-end">
+            <p className="mt-2.5 hidden w-full items-center justify-center gap-1.5 text-[10.5px] font-body uppercase tracking-[0.14em] text-white/45 sm:inline-flex sm:justify-end">
               <Sparkles className="h-3 w-3 text-accent/70" strokeWidth={1.8} />
               In development
             </p>

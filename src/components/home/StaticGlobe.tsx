@@ -21,6 +21,7 @@
  * coordinate-grid overlay); imagery/names come from src/data/destinations.ts.
  */
 
+import { useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { destinations } from "@/data/destinations"
@@ -36,10 +37,10 @@ type PinDef = {
 /* Anchors verified against the globe art: north-India, south-India, SE-Asia
    mainland, Indonesia — a clean spread across the visible face. */
 const PIN_DEFS: PinDef[] = [
-  { slug: "kashmir", x: 40, y: 33, delay: 0.15 }, // far-north India / Himalaya
-  { slug: "kerala", x: 40, y: 53, delay: 0.4 }, // south-west coast
-  { slug: "thailand", x: 61, y: 51, delay: 0.65 }, // Indochina mainland
-  { slug: "bali", x: 73, y: 73, delay: 0.9 }, // Indonesia
+  { slug: "kashmir", x: 42, y: 39, delay: 0.15 }, // far-north India / Himalaya
+  { slug: "kerala", x: 40, y: 58, delay: 0.4 }, // south-west coast
+  { slug: "thailand", x: 59, y: 54, delay: 0.65 }, // Indochina mainland
+  { slug: "bali", x: 71, y: 72, delay: 0.9 }, // Indonesia
 ]
 
 type Pin = PinDef & { name: string; image: string }
@@ -51,54 +52,72 @@ const PINS: Pin[] = PIN_DEFS.flatMap((p) => {
 })
 
 export default function StaticGlobe({ className = "" }: { className?: string }) {
+  // When the spotlight carousel surfaces a new destination it dispatches
+  // `ts:spotlight`; the globe gives a subtle reactive nudge so the two hero
+  // showpieces feel connected — the new card reads as "emerging" from the globe.
+  const stackRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const onPulse = () => {
+      const el = stackRef.current
+      if (!el || typeof el.animate !== "function") return
+      el.animate(
+        [
+          { transform: "translateY(0) rotate(0deg) scale(1)" },
+          { transform: "translateY(-5px) rotate(-1deg) scale(1.015)", offset: 0.32 },
+          { transform: "translateY(1px) rotate(0.55deg) scale(1.006)", offset: 0.62 },
+          { transform: "translateY(0) rotate(0deg) scale(1)" },
+        ],
+        { duration: 950, easing: "cubic-bezier(0.34,1.56,0.64,1)", composite: "add" },
+      )
+    }
+    window.addEventListener("ts:spotlight", onPulse)
+    return () => window.removeEventListener("ts:spotlight", onPulse)
+  }, [])
+
   return (
     <div className={"relative aspect-square " + className} aria-hidden>
-      {/* ── Cinematic atmosphere: large soft glow the rim melts into ─────────── */}
+      {/* ── Cinematic atmosphere — layered soft glows that fade smoothly into the
+          page; deliberately NO bright/hard rim (kills the old "white tube" edge). */}
+      {/* outer deep-space halo */}
       <div
-        className="absolute -inset-[18%] rounded-full"
+        className="absolute -inset-[15%] rounded-full"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(80,128,205,0.26), rgba(80,128,205,0.07) 58%, transparent 78%)",
-          filter: "blur(28px)",
+            "radial-gradient(closest-side, rgba(74,120,205,0.24), rgba(74,120,205,0.06) 60%, transparent 80%)",
+          filter: "blur(36px)",
         }}
       />
+      {/* warm sunrise kiss, upper-left */}
       <div
-        className="absolute -inset-[8%] rounded-full"
+        className="absolute -inset-[5%] rounded-full"
         style={{
           background:
-            "radial-gradient(closest-side at 38% 30%, rgba(224,180,110,0.26), transparent 62%)",
-          filter: "blur(22px)",
+            "radial-gradient(closest-side at 35% 27%, rgba(226,182,112,0.22), transparent 60%)",
+          filter: "blur(26px)",
         }}
       />
-      {/* tight rim halo that hugs the sphere edge for a glowing limb */}
+      {/* thin atmospheric limb that hugs the sphere then fades BOTH ways — a soft
+          cinematic glow, never a solid band */}
       <div
-        className="absolute -inset-[1.5%] rounded-full"
+        className="absolute -inset-[0.5%] rounded-full"
         style={{
-          background: "radial-gradient(closest-side, transparent 92%, rgba(150,190,255,0.35) 99%, transparent 100%)",
-          filter: "blur(4px)",
+          background:
+            "radial-gradient(closest-side, transparent 91%, rgba(150,192,255,0.34) 97%, rgba(150,192,255,0.08) 99.5%, transparent 100%)",
+          filter: "blur(5px)",
+          mixBlendMode: "screen",
         }}
       />
       {/* soft contact shadow under the sphere */}
       <div
-        className="absolute bottom-[2%] left-1/2 h-[7%] w-[62%] -translate-x-1/2 rounded-[50%]"
+        className="absolute bottom-[2%] left-1/2 h-[7%] w-[60%] -translate-x-1/2 rounded-[50%]"
         style={{
-          background: "radial-gradient(closest-side, rgba(10,20,37,0.32), transparent 75%)",
+          background: "radial-gradient(closest-side, rgba(10,20,37,0.30), transparent 75%)",
           filter: "blur(12px)",
         }}
       />
 
       {/* ── Floating stack (globe + rings + pins bob together) ─────────────────── */}
-      <div className="absolute inset-0" style={{ animation: "globeFloat 12s ease-in-out infinite" }}>
-        {/* slow dotted orbital "boundary" rings */}
-        <div
-          className="absolute inset-[-2.5%] rounded-full"
-          style={{ border: "1.5px dotted rgba(212,168,83,0.26)", animation: "spinSlow 100s linear infinite" }}
-        />
-        <div
-          className="absolute inset-[2%] rounded-full"
-          style={{ border: "1px dashed rgba(150,190,255,0.18)", animation: "spinReverse 130s linear infinite" }}
-        />
-
+      <div ref={stackRef} className="absolute inset-0" style={{ animation: "globeFloat 12s ease-in-out infinite" }}>
         {/* the globe — desktop right limb softly dissolves so it never fights the
             centred headline (pins are a sibling layer and stay crisp). */}
         <div
@@ -113,15 +132,39 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
             sizes="(max-width: 1024px) 90vw, 46vw"
             className="select-none object-contain"
             draggable={false}
+            style={{
+              // feather off the asset's baked bright atmosphere limb so the CSS
+              // glow above provides a smooth, cinematic edge instead of a "tube"
+              maskImage: "radial-gradient(circle closest-side at center, #000 93%, transparent 98.5%)",
+              WebkitMaskImage: "radial-gradient(circle closest-side at center, #000 93%, transparent 98.5%)",
+            }}
           />
         </div>
 
-        {/* faint conic rim sweep for life */}
+        {/* rotating radar sweep anchored at the CENTRE OF INDIA (the globe's centre
+            of rotation) — a soft luminous beam that sweeps the whole sphere */}
         <div
           className="absolute inset-0 rounded-full mix-blend-screen"
           style={{
-            background: "conic-gradient(from 210deg, transparent 0deg, rgba(255,238,200,0.09) 24deg, transparent 64deg)",
-            animation: "spinSlow 26s linear infinite",
+            background:
+              "conic-gradient(from 0deg at 47% 49%, transparent 0deg, rgba(255,238,200,0.14) 16deg, rgba(212,168,83,0.07) 42deg, transparent 72deg)",
+            animation: "spinSlow 20s linear infinite",
+            transformOrigin: "47% 49%",
+          }}
+        />
+        {/* warm core glow pinned at India — the heart the beam radiates from */}
+        <div
+          className="absolute rounded-full"
+          style={{
+            left: "47%",
+            top: "49%",
+            width: "34%",
+            height: "34%",
+            transform: "translate(-50%, -50%)",
+            background:
+              "radial-gradient(closest-side, rgba(255,226,172,0.18), rgba(212,168,83,0.06) 55%, transparent 75%)",
+            filter: "blur(16px)",
+            mixBlendMode: "screen",
           }}
         />
 
@@ -151,15 +194,15 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
                 <span
                   className="flex items-center gap-1.5 rounded-full py-1 pl-1 pr-2.5 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-0.5"
                   style={{
-                    background: "rgba(10,18,33,0.42)",
-                    border: "1px solid rgba(255,255,255,0.22)",
-                    boxShadow: "0 8px 22px rgba(5,10,20,0.4), inset 0 1px 0 rgba(255,255,255,0.12)",
+                    background: "rgba(255,255,255,0.74)",
+                    border: "1px solid rgba(255,255,255,0.92)",
+                    boxShadow: "0 10px 24px rgba(5,10,20,0.38), inset 0 1px 0 rgba(255,255,255,0.9)",
                   }}
                 >
-                  <span className="relative block h-7 w-7 overflow-hidden rounded-full ring-1 ring-white/45">
+                  <span className="relative block h-7 w-7 overflow-hidden rounded-full ring-2 ring-white">
                     <Image src={pin.image} alt={pin.name} fill sizes="28px" className="object-cover" draggable={false} />
                   </span>
-                  <span className="text-[10.5px] font-body font-semibold leading-none text-white/95">{pin.name}</span>
+                  <span className="text-[10.5px] font-body font-semibold leading-none text-primary">{pin.name}</span>
                 </span>
                 {/* short connector stalk to the ground dot */}
                 <span className="mt-1 block w-px" style={{ height: "16px", background: "linear-gradient(to bottom, rgba(255,255,255,0.55), rgba(212,168,83,0.6))" }} />

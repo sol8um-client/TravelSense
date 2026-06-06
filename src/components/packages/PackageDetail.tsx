@@ -690,13 +690,24 @@ function DayByDay({ days, fallbackImage }: { days: ItineraryDay[]; fallbackImage
   return (
     <section
       ref={ref}
+      className="pkg-dbd"
       style={{
         position: "relative",
         height: `${days.length * 62}vh`,
         background: "linear-gradient(180deg, #fff, #FAF8F4)",
       }}
     >
+      <style>{`
+        @media (max-width: 768px) {
+          .pkg-dbd-sticky { justify-content: flex-start !important; padding-top: 16px !important; }
+          .pkg-dbd-head { position: static !important; padding: 0 20px !important; }
+          .pkg-dbd-head h2 { font-size: 1.7rem !important; }
+          .pkg-dbd-grid { grid-template-columns: 1fr !important; padding: 16px 20px 0 !important; gap: 16px !important; align-items: start !important; }
+          .pkg-dbd-rail { display: none !important; }
+        }
+      `}</style>
       <div
+        className="pkg-dbd-sticky"
         style={{
           position: "sticky",
           top: "var(--nav-h)",
@@ -707,7 +718,7 @@ function DayByDay({ days, fallbackImage }: { days: ItineraryDay[]; fallbackImage
           justifyContent: "center",
         }}
       >
-        <div style={{ position: "absolute", top: "7vh", left: 0, right: 0, textAlign: "center" }}>
+        <div className="pkg-dbd-head" style={{ position: "absolute", top: "7vh", left: 0, right: 0, textAlign: "center" }}>
           <Eyebrow text={`${days.length} days · scroll to travel`} />
           <h2
             style={{
@@ -728,6 +739,7 @@ function DayByDay({ days, fallbackImage }: { days: ItineraryDay[]; fallbackImage
         </div>
 
         <div
+          className="pkg-dbd-grid"
           style={{
             maxWidth: 1180,
             margin: "0 auto",
@@ -740,7 +752,7 @@ function DayByDay({ days, fallbackImage }: { days: ItineraryDay[]; fallbackImage
           }}
         >
           {/* day rail */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "center" }}>
+          <div className="pkg-dbd-rail" style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "center" }}>
             {days.map((dd, i) => (
               <button
                 key={dd.day}
@@ -1090,7 +1102,18 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
   return (
     <div style={{ background: "#FAF8F4" }}>
       {/* ═══════════ CINEMATIC HERO ═══════════ */}
-      <section ref={heroRef} style={{ position: "relative", height: "92vh", minHeight: 640, overflow: "hidden" }}>
+      <section ref={heroRef} className="pkg-hero" style={{ position: "relative", height: "92vh", minHeight: 640, overflow: "hidden" }}>
+        <style>{`
+          @media (max-width: 768px) {
+            .pkg-hero { height: auto !important; min-height: 0 !important; display: flex; flex-direction: column; }
+            .pkg-hero-inner { height: auto !important; padding: 112px 22px 24px !important; }
+            .pkg-hero-title { font-size: clamp(2.2rem, 9vw, 3.2rem) !important; }
+            .pkg-hero-desc { font-size: 19px !important; max-width: 100% !important; }
+            .pkg-hero-price { position: static !important; right: auto !important; bottom: auto !important; margin: 0 22px 34px !important; text-align: left !important; align-self: stretch; }
+            .pkg-hero-price > div { justify-content: flex-start !important; }
+            .pkg-hero-scroll { display: none !important; }
+          }
+        `}</style>
         {fallbackImage && (
           <Image
             src={fallbackImage}
@@ -1145,6 +1168,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
         />
 
         <div
+          className="pkg-hero-inner"
           style={{
             position: "relative",
             zIndex: 2,
@@ -1167,7 +1191,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
             />
           </div>
           <h1
-            className="fade-up"
+            className="fade-up pkg-hero-title"
             style={{
               margin: 0,
               fontFamily: "var(--font-heading), Fraunces, serif",
@@ -1221,7 +1245,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
             )}
           </div>
           <p
-            className="fade-up"
+            className="fade-up pkg-hero-desc"
             style={{
               margin: "20px 0 0",
               maxWidth: 560,
@@ -1240,7 +1264,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
         {/* floating price chip */}
         {effectivePrice && (
           <div
-            className="fade-up"
+            className="fade-up pkg-hero-price"
             style={{
               position: "absolute",
               right: 40,
@@ -1288,6 +1312,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
         )}
 
         <div
+          className="pkg-hero-scroll"
           style={{
             position: "absolute",
             bottom: 22,

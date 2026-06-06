@@ -362,6 +362,11 @@ export function DestinationGrid({
         @media (max-width: 720px) {
           .dest-bento { grid-template-columns: 1fr !important; }
           .dest-bento > * { grid-column: span 1 !important; }
+          .dest-filter-inner { padding: 9px 14px !important; gap: 10px !important; flex-wrap: nowrap !important; }
+          .dest-filter-pills { flex: 1 1 auto; min-width: 0; flex-wrap: nowrap !important; overflow-x: auto; scrollbar-width: none; }
+          .dest-filter-pills::-webkit-scrollbar { display: none; }
+          .dest-filter-pills > button { flex: 0 0 auto; padding: 7px 14px !important; }
+          .dest-filter-searchbox { display: none !important; }
         }
       `}</style>
 
@@ -372,6 +377,7 @@ export function DestinationGrid({
             style={{ borderRadius: 0, borderLeft: "none", borderRight: "none", borderTop: "none" }}
           >
             <div
+              className="dest-filter-inner"
               style={{
                 maxWidth: 1180,
                 margin: "0 auto",
@@ -383,7 +389,7 @@ export function DestinationGrid({
                 flexWrap: "wrap",
               }}
             >
-              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <div className="dest-filter-pills" style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                 {availableRegions.map((r) => {
                   const active = region === r
                   return (
@@ -414,7 +420,7 @@ export function DestinationGrid({
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
                 <div
-                  className="glass-field"
+                  className="glass-field dest-filter-searchbox"
                   style={{
                     display: "flex",
                     alignItems: "center",

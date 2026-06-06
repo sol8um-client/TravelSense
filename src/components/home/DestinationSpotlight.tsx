@@ -97,6 +97,8 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
   const [saved, setSaved] = useState<Record<string, boolean>>({})
   const count = SLIDES.length
   const timer = useRef<ReturnType<typeof setInterval> | null>(null)
+  const rootRef = useRef<HTMLDivElement>(null)
+  const firstChange = useRef(true)
 
   const goTo = useCallback(
     (next: number, direction: number) => {
@@ -120,6 +122,19 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
     }
   }, [paused, count])
 
+  // Nudge the globe whenever a new destination surfaces — but only from the
+  // VISIBLE carousel instance (offsetParent is null when display:none), so the
+  // hidden desktop/mobile twin doesn't double-fire.
+  useEffect(() => {
+    if (firstChange.current) {
+      firstChange.current = false
+      return
+    }
+    if (typeof window !== "undefined" && rootRef.current && rootRef.current.offsetParent !== null) {
+      window.dispatchEvent(new CustomEvent("ts:spotlight"))
+    }
+  }, [idx])
+
   if (count === 0) return null
   const s = SLIDES[idx]
 
@@ -132,8 +147,9 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
 
   return (
     <div
+      ref={rootRef}
       className={
-        "group/spot relative mx-auto w-full max-w-[420px] sm:max-w-[470px] lg:max-w-none " + className
+        "group/spot relative mx-auto w-full max-w-[394px] sm:max-w-[440px] lg:max-w-none " + className
       }
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -143,26 +159,32 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
       aria-roledescription="carousel"
       aria-label="Featured destinations"
     >
-      {/* soft brand glow behind the card so it melts into the hero (blends with
-          the centre composition rather than reading as a hard-edged box) */}
-      <div
-        className="pointer-events-none absolute -inset-5 -z-10 rounded-[40px] opacity-80"
-        style={{ background: "radial-gradient(60% 60% at 50% 35%, rgba(196,50,74,0.10), transparent 70%), radial-gradient(60% 60% at 60% 85%, rgba(80,128,205,0.12), transparent 72%)", filter: "blur(22px)" }}
-        aria-hidden
-      />
-
-      {/* ── Card — layered liquid glass ───────────────────────────────────── */}
-      <div className="glass-panel relative overflow-hidden rounded-[28px] p-2.5 sm:p-3 shadow-[0_36px_90px_rgba(11,20,38,0.28)] ring-1 ring-white/40 backdrop-blur-xl">
-        {/* thin glass highlight along the top + left edge (reads as liquid glass
-            without washing the photo/controls) */}
-        <div
-          className="pointer-events-none absolute inset-0 z-[25] rounded-[28px]"
-          style={{ background: "linear-gradient(150deg, rgba(255,255,255,0.45), transparent 14%)", mixBlendMode: "soft-light" }}
-          aria-hidden
+      {/* colour glow derived from the CURRENT image — a soft bloom in the photo's
+          own palette so the card melts into the hero (image-coloured boundary glow) */}
+      <div className="pointer-events-none absolute -inset-[10px] -z-10 overflow-hidden rounded-[32px] opacity-70" aria-hidden>
+        <Image
+          key={`glow-${s.slug}`}
+          src={s.image}
+          alt=""
+          fill
+          sizes="520px"
+          className="scale-[1.08] object-cover"
+          style={{ filter: "blur(18px) saturate(1.5)" }}
         />
-        {/* image stage — fixed aspect so there's never a layout jump between slides.
-            taller on mobile (portrait-ish), a touch wider on desktop. */}
-        <div className="relative aspect-[4/5] sm:aspect-[5/6] lg:aspect-[4/5] w-full overflow-hidden rounded-[20px] bg-primary/10">
+      </div>
+
+      {/* ── Card — NO frame band, NO border: the photo sits edge-to-edge, wrapped
+          only in a soft colour-hued atmospheric glow (like the globe — image +
+          glow, no frame). Hue comes from the blurred image behind + the glow. ── */}
+      <div
+        className="relative overflow-hidden rounded-[24px]"
+        style={{
+          boxShadow:
+            "0 22px 54px rgba(11,20,38,0.22), 0 0 18px rgba(74,120,205,0.24), 0 0 32px rgba(226,182,112,0.12)",
+        }}
+      >
+        {/* image stage — fills the card edge-to-edge (no padded frame). */}
+        <div className="relative aspect-[4/5] sm:aspect-[5/6] lg:aspect-[4/5] w-full overflow-hidden rounded-[24px] bg-primary/10">
           <AnimatePresence custom={dir} mode="popLayout" initial={false}>
             <motion.div
               key={s.slug}

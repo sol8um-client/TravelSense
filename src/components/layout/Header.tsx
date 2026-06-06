@@ -82,9 +82,8 @@ export function Header() {
               <Image
                 src="/images/brand/logo-emblem.png"
                 alt="TravelSense"
-                width={120}
-                height={120}
-                className="h-[24px] w-auto"
+                width={49}
+                height={24}
                 priority
               />
               <span className="font-body text-[13.5px] font-semibold uppercase leading-none tracking-[0.18em] text-white">

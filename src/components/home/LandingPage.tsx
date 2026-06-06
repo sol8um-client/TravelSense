@@ -341,7 +341,7 @@ function HeroPlanner() {
     >
       <form
         onSubmit={onSubmit}
-        className="relative flex items-center gap-2 rounded-full border border-silver/15 bg-white p-1.5 pl-4 shadow-[0_8px_30px_rgba(11,20,38,0.10)] transition-shadow duration-300 focus-within:shadow-[0_10px_40px_rgba(11,20,38,0.16)]"
+        className="relative flex items-center gap-2 rounded-full border border-white/60 bg-white/90 p-1.5 pl-4 shadow-[0_8px_30px_rgba(11,20,38,0.12)] backdrop-blur-xl transition-shadow duration-300 focus-within:shadow-[0_10px_40px_rgba(11,20,38,0.18)]"
       >
         <MapPin className="h-4 w-4 shrink-0 text-secondary" />
         <input
@@ -423,13 +423,13 @@ function HeroPlanner() {
         </div>
       )}
 
-      <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-        <span className="script text-[15px] text-foreground/40">or pick a favourite —</span>
+      <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
+        <span className="script mr-0.5 text-[16px] text-foreground/55">or pick a favourite —</span>
         {heroFavourites.map((f) => (
           <Link
             key={f.slug}
             href={`/destinations/${f.slug}`}
-            className="rounded-full border border-silver/15 bg-white/70 px-3.5 py-1.5 text-[12.5px] font-body text-foreground/70 backdrop-blur-sm transition-all hover:border-secondary/30 hover:text-secondary hover:shadow-sm"
+            className="glass-pill rounded-full px-3.5 py-1.5 text-[12.5px] font-body font-medium text-primary transition-all hover:-translate-y-0.5 hover:text-secondary"
           >
             {f.name}
           </Link>
@@ -502,16 +502,18 @@ function HeroSection() {
   const ref = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
   const contentY = useTransform(scrollYProgress, [0, 0.5], [0, -80])
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0])
 
   return (
-    <section ref={ref} className="relative min-h-[100dvh] flex items-center justify-center bg-brand-mesh pt-24 pb-12 overflow-visible">
+    <section ref={ref} className="relative min-h-[100dvh] flex items-start justify-center bg-brand-mesh pt-[84px] pb-10 lg:items-center lg:pt-24 lg:pb-12 overflow-visible">
       {/* 1. Soft brand-color washes — STATIC on purpose. Animating 180–200px blurs
              re-rasterizes the whole layer every frame and was the main hero lag. */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-[10%] right-[5%] h-[500px] w-[500px] rounded-full bg-secondary/[0.04] blur-[110px]" />
-        <div className="absolute bottom-[5%] left-[0%] h-[400px] w-[400px] rounded-full bg-silver/[0.06] blur-[100px]" />
-        <div className="absolute top-[40%] left-[30%] h-[600px] w-[600px] rounded-full bg-primary/[0.02] blur-[120px]" />
+        {/* sunrise aura cradling the globe — warm gold melting into cherry (lower-left) */}
+        <div className="absolute -bottom-[8%] left-[1%] h-[540px] w-[640px] rounded-full" style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.11), rgba(196,50,74,0.05) 52%, transparent 76%)", filter: "blur(95px)" }} />
+        {/* cool atmospheric depth behind the spotlight card (upper-right) */}
+        <div className="absolute -top-[6%] right-[1%] h-[540px] w-[540px] rounded-full" style={{ background: "radial-gradient(closest-side, rgba(74,120,205,0.10), transparent 72%)", filter: "blur(105px)" }} />
+        {/* faint silver lift along the lower centre — grounds the composition */}
+        <div className="absolute bottom-[4%] left-1/2 h-[340px] w-[780px] -translate-x-1/2 rounded-full" style={{ background: "radial-gradient(closest-side, rgba(176,184,196,0.07), transparent 70%)", filter: "blur(115px)" }} />
       </div>
 
       {/* 2. Dot grid pattern — only on right half, faded in with mask so no hard edge */}
@@ -530,22 +532,22 @@ function HeroSection() {
              Desktop (lg+): present on the LEFT with live location image-pins. */}
       <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">
         <StaticGlobe
-          className="absolute left-1/2 top-1/2 w-[155%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.4]
-                     sm:w-[120%] sm:opacity-[0.46]
-                     md:w-[92%] md:opacity-[0.55]
-                     lg:left-0 lg:top-1/2 lg:h-[126%] lg:w-auto lg:-translate-x-[30%] lg:-translate-y-1/2 lg:opacity-100"
+          className="absolute left-1/2 top-[47%] w-[130%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.6]
+                     sm:w-[108%] sm:opacity-[0.66]
+                     md:w-[86%] md:opacity-[0.78]
+                     lg:left-0 lg:top-1/2 lg:h-[118%] lg:w-auto lg:-translate-x-[28%] lg:-translate-y-1/2 lg:opacity-100"
         />
       </div>
 
       {/* 7. Destination spotlight — auto-advancing showcase card in the right
              margin (xl+), vertically centred to complement the globe on the left.
              Below xl it's rendered full-width inside the content flow instead. */}
-      <div className="pointer-events-auto absolute right-[3%] top-1/2 z-20 hidden w-[400px] -translate-y-1/2 xl:block 2xl:right-[5.5%] 2xl:w-[440px]">
+      <div className="pointer-events-auto absolute right-[2%] top-1/2 z-20 hidden w-[414px] -translate-y-1/2 xl:block 2xl:right-[4%] 2xl:w-[452px]">
         <DestinationSpotlight />
       </div>
 
       {/* Content — text shadow on mobile ensures readability over globe */}
-      <motion.div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center [text-shadow:0_1px_8px_rgba(255,255,255,0.8)] lg:[text-shadow:none]" style={{ y: contentY, opacity: contentOpacity }}>
+      <motion.div className="relative z-30 w-full max-w-5xl mx-auto px-6 text-center [text-shadow:0_1px_8px_rgba(255,255,255,0.8)] lg:[text-shadow:none] xl:max-w-[660px] xl:ml-auto xl:mr-[33%]" style={{ y: contentY }}>
         {/* Live presence pill — rotating social proof */}
         <LivePresence />
 
@@ -556,7 +558,7 @@ function HeroSection() {
 
         {/* Main headline — "Wake up in <rotating destination>." solid navy Fraunces,
             city in red italic. Destination cycles through heroCities. */}
-        <h1 className="font-heading text-[2.1rem] sm:text-[2.85rem] md:text-[3.4rem] lg:text-[3.85rem] font-medium leading-[1.04] tracking-[-0.025em] text-[#0A1425]">
+        <h1 className="font-heading text-[2.55rem] sm:text-[3.2rem] md:text-[3.8rem] lg:text-[4.3rem] font-medium leading-[1.04] tracking-[-0.025em] text-[#0A1425] [text-shadow:0_2px_18px_rgba(255,255,255,0.95)] lg:[text-shadow:none]">
           <span>Wake up in</span>
           <br />
           <span className="relative inline-block align-baseline">
@@ -618,61 +620,64 @@ const RECENT_TRIPS: { who: string; trip: string; rating: string }[] = [
 
 function TrustBarSection() {
   return (
-    <section className="bg-white py-[30px] border-t border-b border-silver/[0.18]">
-      <div className="mx-auto max-w-[1180px] px-8 flex flex-wrap items-center justify-between gap-9">
-        {/* stat cluster */}
-        <div className="flex flex-wrap gap-x-[34px] gap-y-4">
-          {TRUST_STATS.map(([n, l], i) => (
-            <motion.div
-              key={l}
-              className="flex flex-col"
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ delay: i * 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <span className="font-heading text-[25px] font-medium leading-none tracking-[-0.02em] text-primary" style={{ fontVariationSettings: "'opsz' 144" }}>{n}</span>
-              <span className="mt-[5px] text-[10.5px] tracking-[0.02em] text-muted-foreground">{l}</span>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* "Recently planned" marquee */}
-        <motion.div
-          className="flex min-w-[280px] flex-1 items-center gap-4"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ delay: 0.1, duration: 0.7 }}
-        >
-          <span className="inline-flex shrink-0 items-center gap-[7px] whitespace-nowrap font-tech text-[8.5px] uppercase tracking-[0.18em] text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#1F8A5B]" style={{ boxShadow: "0 0 0 3px rgba(31,138,91,0.18)" }} />
-            Recently planned
-          </span>
-          <div
-            className="flex-1 overflow-hidden"
-            style={{
-              maskImage: "linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent)",
-              WebkitMaskImage: "linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent)",
-            }}
-          >
-            <div className="flex w-max gap-3" style={{ animation: "marqueeX 32s linear infinite" }}>
-              {[...RECENT_TRIPS, ...RECENT_TRIPS].map((r, i) => (
-                <span
-                  key={i}
-                  className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-silver/25 bg-silver-mist px-[13px] py-[7px]"
-                >
-                  <span className="text-[12.5px] font-semibold text-primary">{r.who}</span>
-                  <span className="text-[12px] text-muted-foreground">{r.trip}</span>
-                  <span className="inline-flex items-center gap-[3px] text-[11px] font-semibold text-secondary">
-                    <Star className="h-[11px] w-[11px] fill-secondary text-secondary" />
-                    {r.rating}
-                  </span>
-                </span>
-              ))}
-            </div>
+    <section className="relative z-20 -mt-[44px] px-4 sm:-mt-[56px] sm:px-6">
+      {/* rounded liquid-glass pill, hovering over the globe's bottom */}
+      <div className="glass-panel mx-auto max-w-[1120px] rounded-[22px] px-5 py-3.5 sm:rounded-[26px] sm:px-9 sm:py-[18px]">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-10">
+          {/* 4 stats — ALWAYS one row (grid on mobile, inline on desktop) */}
+          <div className="grid shrink-0 grid-cols-4 gap-x-2 sm:flex sm:gap-x-[32px]">
+            {TRUST_STATS.map(([n, l], i) => (
+              <motion.div
+                key={l}
+                className="flex flex-col items-center sm:items-start"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ delay: i * 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <span className="font-heading text-[19px] font-medium leading-none tracking-[-0.02em] text-primary sm:text-[24px]" style={{ fontVariationSettings: "'opsz' 144" }}>{n}</span>
+                <span className="mt-[3px] text-center text-[8.5px] leading-tight tracking-[0.01em] text-muted-foreground sm:text-left sm:text-[10.5px]">{l}</span>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+
+          {/* "Recently planned" marquee — own line on mobile, right side on desktop */}
+          <motion.div
+            className="flex min-w-0 flex-1 items-center gap-3"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ delay: 0.1, duration: 0.7 }}
+          >
+            <span className="inline-flex shrink-0 items-center gap-[6px] whitespace-nowrap font-tech text-[8px] uppercase tracking-[0.15em] text-muted-foreground sm:text-[8.5px] sm:tracking-[0.18em]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#1F8A5B]" style={{ boxShadow: "0 0 0 3px rgba(31,138,91,0.18)" }} />
+              Recently planned
+            </span>
+            <div
+              className="flex-1 overflow-hidden"
+              style={{
+                maskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)",
+                WebkitMaskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)",
+              }}
+            >
+              <div className="flex w-max gap-2.5" style={{ animation: "marqueeX 32s linear infinite" }}>
+                {[...RECENT_TRIPS, ...RECENT_TRIPS].map((r, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-white/55 px-[12px] py-[6px]"
+                  >
+                    <span className="text-[12px] font-semibold text-primary">{r.who}</span>
+                    <span className="text-[11.5px] text-muted-foreground">{r.trip}</span>
+                    <span className="inline-flex items-center gap-[3px] text-[10.5px] font-semibold text-secondary">
+                      <Star className="h-[10px] w-[10px] fill-secondary text-secondary" />
+                      {r.rating}
+                    </span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   )
@@ -1244,7 +1249,7 @@ function HowItWorksSection() {
 
   return (
     <section ref={ref} id="how-it-works" className="relative bg-brand-mesh" style={{ height: "460vh" }}>
-      <div className="sticky top-[var(--nav-h)] flex h-[calc(100svh-var(--nav-h))] flex-col items-center justify-center overflow-hidden px-6 py-10 sm:px-8">
+      <div className="sticky top-[var(--nav-h)] flex h-[calc(100svh-var(--nav-h))] flex-col items-center justify-center overflow-hidden px-6 py-6 sm:px-8 sm:py-10">
         {/* compact header */}
         <div className="max-w-[620px] text-center">
           <p className="m-0 font-body text-[10.5px] font-semibold uppercase tracking-[0.28em] text-secondary">How it works</p>
@@ -1257,7 +1262,7 @@ function HowItWorksSection() {
         </div>
 
         {/* thin progress rail */}
-        <div className="my-[34px] w-full max-w-[540px]">
+        <div className="my-6 w-full max-w-[540px] sm:my-[34px]">
           <div className="mb-3.5 flex justify-between">
             {HIW_STEPS.map((s, i) => (
               <button key={s.n} onClick={() => jump(i)} className="flex flex-1 cursor-pointer flex-col items-center gap-[3px]">
@@ -1278,12 +1283,12 @@ function HowItWorksSection() {
         </div>
 
         {/* boarding pass */}
-        <div className="relative flex w-full max-w-[700px] overflow-hidden rounded-[20px] bg-white" style={{ boxShadow: "0 24px 64px rgba(11,20,38,0.14)", border: "1px solid rgba(176,184,196,0.2)" }}>
+        <div className="relative flex w-full max-w-[700px] shrink-0 overflow-hidden rounded-[20px] bg-white" style={{ boxShadow: "0 24px 64px rgba(11,20,38,0.14)", border: "1px solid rgba(176,184,196,0.2)" }}>
           <div className="min-w-0 flex-1 px-5 py-6 sm:px-[26px]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <Image src="/images/brand/logo-emblem.png" alt="" width={22} height={22} className="h-[22px] w-auto" />
-                <span className="font-tech text-[8.5px] uppercase tracking-[0.2em] text-silver-dark">Boarding Pass</span>
+                <Image src="/images/brand/logo-emblem.png" alt="" width={45} height={22} />
+                <span className="font-tech text-[8.5px] uppercase tracking-[0.12em] text-silver-dark sm:tracking-[0.2em]">Boarding Pass</span>
               </div>
               <span className="rounded-full px-2.5 py-[5px] font-tech text-[9px] tracking-[0.14em] text-white" style={{ background: cur.color, transition: "background .4s" }}>{cur.status}</span>
             </div>
@@ -1302,7 +1307,7 @@ function HowItWorksSection() {
               <PassBody step={step} />
             </div>
           </div>
-          <div className="relative flex w-[94px] shrink-0 flex-col items-center justify-between border-l-2 border-dashed py-5" style={{ borderColor: "rgba(176,184,196,0.5)", background: "linear-gradient(180deg, #FAFBFC, #EEF1F5)" }}>
+          <div className="relative flex w-[78px] shrink-0 flex-col items-center justify-between border-l-2 border-dashed py-5 sm:w-[94px]" style={{ borderColor: "rgba(176,184,196,0.5)", background: "linear-gradient(180deg, #FAFBFC, #EEF1F5)" }}>
             <span className="absolute -left-2 -top-2 h-4 w-4 rounded-full" style={{ background: "#F4EFE6" }} />
             <span className="absolute -left-2 -bottom-2 h-4 w-4 rounded-full" style={{ background: "#F4EFE6" }} />
             <div className="text-center">
@@ -1315,7 +1320,7 @@ function HowItWorksSection() {
         </div>
 
         {/* scroll hint / CTA */}
-        <div className="mt-7 flex h-11 items-center justify-center">
+        <div className="mt-5 flex h-11 items-center justify-center sm:mt-7">
           {railT < 1 ? (
             <div className="flex flex-col items-center gap-[5px] text-silver-dark" style={{ animation: "scrollNudge 2.4s cubic-bezier(0.22,1,0.36,1) infinite" }}>
               <span className="font-tech text-[9px] uppercase tracking-[0.28em]">scroll</span>
@@ -1410,8 +1415,11 @@ function CategoriesSection() {
   const idx = Math.min(CATS.length - 1, Math.floor((t / 0.92) * CATS.length))
   const c = CATS[idx]
   const flip = idx % 2 === 1
-  const xpos = idx === 0 ? -22 : idx === CATS.length - 1 ? 22 : 0
-  const goggleW = Math.min(392, Math.round(vw * 0.84))
+  // On phones the goggle is ~84vw wide, so the desktop left/right glide would
+  // push it off-screen — keep it centred below the lg breakpoint.
+  const xShift = vw < 1024 ? 0 : 22
+  const xpos = idx === 0 ? -xShift : idx === CATS.length - 1 ? xShift : 0
+  const goggleW = Math.min(392, Math.round(vw * (vw < 1024 ? 0.74 : 0.84)))
   const jump = (i: number) => {
     const el = ref.current
     if (!el) return
