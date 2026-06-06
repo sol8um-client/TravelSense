@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Fraunces, Outfit, Caveat, Michroma, Exo_2 } from "next/font/google"
+import { Fraunces, Outfit, Caveat, Michroma } from "next/font/google"
 import { Toaster } from "sonner"
 import { LeadModalProvider } from "@/components/shared/LeadCaptureModal"
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics"
@@ -37,13 +37,6 @@ const michroma = Michroma({
   variable: "--font-michroma",
   subsets: ["latin"],
   weight: ["400"],
-  display: "swap",
-})
-
-const exo2 = Exo_2({
-  variable: "--font-exo2",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 })
 
@@ -96,7 +89,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${outfit.variable} ${caveat.variable} ${michroma.variable} ${exo2.variable} grain`}>
+    <html lang="en" className={`${fraunces.variable} ${outfit.variable} ${caveat.variable} ${michroma.variable} grain`}>
       <body className="min-h-screen bg-background font-body text-foreground antialiased">
         <GoogleAnalytics />
         <MetaPixel />

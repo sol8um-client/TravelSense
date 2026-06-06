@@ -70,7 +70,7 @@ export function Footer() {
           <div className="lg:col-span-4">
             <Link href="/" className="group inline-flex items-center gap-2">
               <Image
-                src="/images/brand/logo-blue-bg.png"
+                src="/images/brand/logo-blue-bg.webp"
                 alt="TravelSense"
                 width={160}
                 height={90}

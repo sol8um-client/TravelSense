@@ -89,7 +89,7 @@ export function Header() {
               className="group flex items-center gap-2 transition-opacity hover:opacity-80"
             >
               <Image
-                src="/images/brand/logo-emblem.png"
+                src="/images/brand/logo-emblem.webp"
                 alt="TravelSense"
                 width={49}
                 height={24}

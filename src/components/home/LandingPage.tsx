@@ -1319,7 +1319,7 @@ function HowItWorksSection() {
           <div className="hiw-pass min-w-0 flex-1 px-5 py-6 sm:px-[26px]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <Image src="/images/brand/logo-emblem.png" alt="" width={45} height={22} />
+                <Image src="/images/brand/logo-emblem.webp" alt="" width={45} height={22} />
                 <span className="font-tech text-[8.5px] uppercase tracking-[0.12em] text-silver-dark sm:tracking-[0.2em]">Boarding Pass</span>
               </div>
               <span className="rounded-full px-2.5 py-[5px] font-tech text-[9px] tracking-[0.14em] text-white" style={{ background: cur.color, transition: "background .4s" }}>{cur.status}</span>
