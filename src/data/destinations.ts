@@ -119,12 +119,7 @@ export const destinations: Destination[] = [
       "Ladakh is a realm of extremes — the air is thin, the sun fierce, and the landscape so surreal it feels like another planet. Perched at an average altitude of 11,500 ft, this cold desert is carved by the Indus River and framed by the Karakoram and Zanskar ranges. The stark, mineral-toned mountains shift from ochre to violet as the sun moves across a relentlessly blue sky, and the silence is profound enough to hear your own heartbeat.\n\nThe crown jewel is Pangong Tso, a 134-km-long lake that oscillates between turquoise, sapphire, and emerald depending on the light. Nubra Valley — reached via the legendary Khardung La at 17,982 ft — surprises with sand dunes and rare Bactrian camels. Hemis, Thiksey, and Diskit monasteries dot the landscape, their prayer flags fluttering against impossibly dramatic backdrops. In Leh town itself, whitewashed stupas line bustling bazaars where you can sip butter tea and shop for turquoise jewellery.\n\nAdventure seekers can attempt the Chadar frozen-river trek in winter, raft the Zanskar rapids in summer, or ride a Royal Enfield along the Manali-Leh Highway. Ladakh rewards those who brave its altitude with experiences found nowhere else on earth.",
     heroImage: "/images/generated/leh-ladakh-hero.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1573053985939-81bc1a37a4cb?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1589824783845-94f6f1dd8e23?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600176183920-ff3e18e45321?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1614604689579-1a41395e5009?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1590674668498-9c1e68326e01?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1570543999-74aebc83ca7c?w=800&h=600&fit=crop",
+      "/images/generated/leh-ladakh-hero.webp",
     ],
     bestTimeToVisit: "June to September",
     weather:
@@ -329,12 +324,9 @@ export const destinations: Destination[] = [
       "Varanasi defies easy description. Situated on the banks of the Ganges, it has been a centre of learning, faith, and culture for over 3,000 years. The city's 84 ghats cascade down to the river in a maze of stone steps, each with its own story — Dashashwamedh Ghat hosts the spectacular nightly Ganga Aarti, where priests wield flaming brass lamps in synchronised choreography that draws thousands. At Manikarnika Ghat, funeral pyres burn around the clock, a stark and profound reminder of the Hindu belief that dying here grants moksha — liberation from the cycle of rebirth.\n\nBeyond the ghats, the old city is a labyrinth of narrow lanes (galis) that conceal silk-weaving workshops, centuries-old sweet shops, and temples to every imaginable deity. The Kashi Vishwanath Temple, dedicated to Lord Shiva, is the spiritual anchor of Varanasi. Nearby Sarnath, where the Buddha gave his first sermon, offers serene stupas and a world-class archaeological museum.\n\nUttar Pradesh extends the narrative — the Taj Mahal in Agra stands as humanity's greatest monument to love, Lucknow serves up kebabs and Nawabi architecture, and Prayagraj hosts the Kumbh Mela, the largest gathering of humans on earth. A journey through UP is a journey through the layered soul of India.",
     heroImage: "/images/generated/varanasi-hero.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1570804485046-1d51e3edcbe9?w=800&h=600&fit=crop",
+      "/images/generated/varanasi-hero.webp",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1585135497273-1a86d9d55580?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1602339752474-f77aa7bcdeaa?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "October to March",
     weather:
@@ -402,8 +394,7 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1515091943-9d5c0ad475af?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1585135497273-1a86d9d55580?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1524309307259-7c7d4bf28a1e?w=800&h=600&fit=crop",
+      "/images/generated/golden-triangle-hero.webp",
     ],
     bestTimeToVisit: "October to March",
     weather:
@@ -537,8 +528,7 @@ export const destinations: Destination[] = [
       "Meghalaya — literally 'the abode of clouds' — is northeast India's best-kept secret, a highland of rolling green hills perpetually draped in mist and rain. The state receives some of the highest rainfall on the planet, and this abundance of water has created a landscape of extraordinary beauty: Nohkalikai Falls plunges 340 metres into a turquoise pool, the Dawki River flows so clear that boats appear to float on glass, and underground caverns stretch for kilometres in the Jaintia Hills.\n\nThe most iconic features are the living root bridges of the Khasi and Jaintia tribes — centuries-old bioengineering marvels where the roots of rubber fig trees have been trained across rivers to form sturdy, growing bridges. The double-decker root bridge at Nongriat requires a 3,500-step descent but rewards visitors with a sight found nowhere else on earth. Mawlynnong, often called Asia's cleanest village, demonstrates that eco-conscious living is a tradition here, not a trend.\n\nBeyond adventure, Meghalaya offers cultural richness — the Khasi matrilineal society, where lineage and property pass through the mother, is one of the few such systems in the world. Local markets bustle with smoked meats, Jadoh rice dishes, and fermented bamboo shoot preparations. Whether you are caving in Krem Mawmluh, kayaking on Umngot River, or simply sitting on a cliff edge watching clouds roll in below you, Meghalaya delivers an experience that is raw, unspoiled, and profoundly moving.",
     heroImage: "/images/generated/meghalaya-hero.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1625735765267-7c2bae3f5b9d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1609340667519-3f314bd23c3e?w=800&h=600&fit=crop",
+      "/images/generated/meghalaya-hero.webp",
       "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1586325194227-7625ed95172b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1506038634487-60a69ae4b7b1?w=800&h=600&fit=crop",
@@ -607,10 +597,9 @@ export const destinations: Destination[] = [
     heroImage: "/images/generated/sikkim-and-darjeeling-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1575550959580-76e19e2a5e3e?w=800&h=600&fit=crop",
+      "/images/generated/sikkim-and-darjeeling-hero.webp",
       "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567600700712-470c1e4e3849?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "March to May & October to December",
@@ -675,11 +664,9 @@ export const destinations: Destination[] = [
       "Arunachal Pradesh — the Land of the Dawn-Lit Mountains — is India's wildest and least-visited state, and therein lies its magic. Spanning from the snow-clad eastern Himalayas to the subtropical forests of the Brahmaputra basin, it harbours a biodiversity rivalled only by the Amazon and a cultural richness that has no parallel elsewhere in India. The 26 major tribal groups — including the Monpa, Adi, Apatani, and Nyishi — each maintain distinct languages, festivals, costumes, and architectural styles.\n\nTawang is the jewel of the state: a 400-year-old Buddhist monastery perched at 10,000 ft that is the second-largest in the world after Lhasa's Potala Palace. The drive to Tawang via Sela Pass (13,700 ft) is among the most dramatic in India, passing frozen lakes and prayer-flag-draped ridges. Ziro Valley, a UNESCO World Heritage tentative site, is home to the Apatani tribe and their unique rice-fish farming system, and the annual Ziro Music Festival draws indie bands and travellers from around the globe.\n\nFor adventure seekers, Mechuka offers riverside camping in a valley so remote it feels like Shangri-La, while Namdapha National Park — one of the largest protected areas in Asia — shelters snow leopards, red pandas, and all four big cat species of India. Visiting Arunachal requires patience (permits, rough roads, limited infrastructure), but those who make the effort are rewarded with experiences that feel genuinely untouched by mass tourism.",
     heroImage: "/images/generated/arunachal-pradesh-hero.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=800&h=600&fit=crop",
+      "/images/generated/arunachal-pradesh-hero.webp",
       "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1596627116790-af6f46ddddbc?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1513415564515-763d91423bdd?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "March to October",
@@ -745,11 +732,10 @@ export const destinations: Destination[] = [
     heroImage: "/images/generated/assam-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600071907662-57460e6b1320?w=800&h=600&fit=crop",
+      "/images/generated/assam-hero.webp",
       "https://images.unsplash.com/photo-1589793907316-f94025b46850?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1617824654019-900adea4e457?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "November to April",
     weather:
@@ -814,11 +800,8 @@ export const destinations: Destination[] = [
     heroImage: "/images/generated/kerala-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1584723333016-ee4747be3b29?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1590677880200-f563bdb25e1b?w=800&h=600&fit=crop",
+      "/images/generated/kerala-hero.webp",
       "https://images.unsplash.com/photo-1580281657527-47f249e8f4df?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1609340667519-3f314bd23c3e?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "September to March",
     weather:
@@ -959,8 +942,7 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1586325194227-7625ed95172b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1602339752474-f77aa7bcdeaa?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1580289234369-3bd2e6d3b546?w=800&h=600&fit=crop",
+      "/images/generated/karnataka-hero.webp",
     ],
     bestTimeToVisit: "October to February",
     weather:
@@ -1028,7 +1010,7 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1520454974749-611b7248ffdb?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1540202404-a2f29016b523?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1584723333016-ee4747be3b29?w=800&h=600&fit=crop",
+      "/images/generated/andaman-islands-hero.webp",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "October to May",
@@ -1169,7 +1151,7 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1558500133-66ff3e620849?w=800&h=600&fit=crop",
+      "/images/generated/thailand-hero.webp",
     ],
     bestTimeToVisit: "November to February (Cool & Dry Season)",
     weather:
@@ -1307,7 +1289,7 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=800&h=600&fit=crop",
+      "/images/generated/vietnam-hero.webp",
       "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1513415564515-763d91423bdd?w=800&h=600&fit=crop",
     ],
@@ -1371,9 +1353,9 @@ export const destinations: Destination[] = [
     longDescription:
       "Gujarat is a state of staggering variety — the endless white desert of Kutch during the Rann Utsav, the world's tallest statue at Kevadia, the lions of Gir National Park (the last remaining wild population outside Africa), and the rich trading heritage of Ahmedabad's walled city.\n\nTravellers come for the vibrant folk culture and textile crafts — Patola silk from Patan, Bandhani tie-dye, and the embroidery of Kutchi artisans. The coastal belt offers Diu's Portuguese forts and pristine beaches. Spiritual seekers visit Somnath (one of the 12 Jyotirlingas), Dwarka (birthplace of Lord Krishna), and the Jain temples at Palitana.\n\nGujarati food is legendary — the thali spreads, farsan snacks, and dhoklas represent centuries of plant-based culinary tradition.",
     heroImage:
-      "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=1600&h=900&fit=crop",
+      "/images/destinations/gujarat.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=1600&h=900&fit=crop",
+      "/images/destinations/gujarat.webp",
     ],
     bestTimeToVisit: "November to February (Winter) — ideal for the Rann Utsav",
     weather:
@@ -1749,9 +1731,9 @@ export const destinations: Destination[] = [
     longDescription:
       "Azerbaijan sits at the crossroads of Europe and Asia on the western shore of the Caspian Sea. Its capital Baku is a city of contrasts — the UNESCO-listed medieval Old City (Icheri Sheher) sits just blocks from the ultra-modern Flame Towers and Heydar Aliyev Center (designed by Zaha Hadid).\n\nDay trips from Baku go to Gobustan — a UNESCO site with 6,000-year-old petroglyphs and nearby mud volcanoes (Azerbaijan has more than half the world's total). Yanar Dag, a hillside that has been on fire for over 60 years thanks to natural gas seeps, is a short drive north. The Ateshgah Fire Temple reminds of the country's pre-Islamic Zoroastrian heritage.\n\nThe mountain region around Sheki and Lahij offers Caucasus scenery, coppersmith villages, and traditional baklava. Azerbaijani cuisine — plov, dolma, and qutabs — is a highlight.",
     heroImage:
-      "https://images.unsplash.com/photo-1601130884591-c7dd5a45c3c0?w=1600&h=900&fit=crop",
+      "/images/destinations/azerbaijan.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1601130884591-c7dd5a45c3c0?w=1600&h=900&fit=crop",
+      "/images/destinations/azerbaijan.webp",
     ],
     bestTimeToVisit: "April to June, September to October",
     weather:
@@ -1813,14 +1795,13 @@ export const destinations: Destination[] = [
       "Bodh Gaya, where Buddha attained enlightenment under the Bodhi tree; Nalanda, the world's earliest residential university; Rajgir's hot springs and Jain temples — Bihar is where Indian history, philosophy and spirituality all begin.",
     longDescription:
       "Bihar may be one of India's quietest tourist circuits, but it is one of the most consequential in world history. Bodh Gaya is the most sacred site in Buddhism — the Mahabodhi Temple complex, a UNESCO World Heritage Site, marks the exact spot where Prince Siddhartha became the Buddha. The descendant Bodhi tree still stands in the temple courtyard, and pilgrims from Sri Lanka, Thailand, Japan, Bhutan, and Myanmar fill the small town year-round.\n\nNalanda, just 90 km away, was the world's first great residential university (5th–12th century CE), with 10,000 students and 2,000 teachers at its peak. The vast brick ruins, now a UNESCO site, stretch over 23 hectares. Nearby Rajgir was the capital of the Magadha kingdom — both the Buddha and Mahavira lived and taught here, and its surrounding hills are dotted with Buddhist stupas, Jain temples, and hot springs.\n\nVaishali — believed to be the world's first republic — and Patna (ancient Pataliputra, capital of the Mauryan empire under Ashoka) complete the picture. For Sikh pilgrims, Takht Sri Patna Sahib marks the birthplace of Guru Gobind Singh. A Buddhist Circuit tour through Bihar is one of the most spiritually rewarding journeys in India.",
-    heroImage: "https://images.unsplash.com/photo-1614366833937-30b3a4a5f97c?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/bihar.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1614366833937-30b3a4a5f97c?w=800&h=600&fit=crop",
+      "/images/destinations/bihar.webp",
       "https://images.unsplash.com/photo-1576487248805-cf45f6bcc67f?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1518398046578-8cca57782e17?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1547222530-c01a0d4ef0bd?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "October to March",
     weather:
@@ -1882,14 +1863,13 @@ export const destinations: Destination[] = [
       "Dense sal forests, India's broadest waterfall at Chitrakote, the limestone caves of Kutumsar, and 32 indigenous tribes preserving ancient ways of life — Chhattisgarh is India's most under-discovered nature and culture destination.",
     longDescription:
       "Chhattisgarh — carved out of Madhya Pradesh in 2000 — remains one of India's most pristine wildernesses. The state is 44% forest cover, supports tigers in Indravati and Achanakmar reserves, and is home to 32 tribal groups whose haats (weekly markets), masks, and dances are still entirely living traditions.\n\nChitrakote Falls — often called the 'Niagara of India' — is the country's widest waterfall, particularly spectacular during monsoon when the Indravati river thunders over a 300-metre horseshoe drop. Nearby, the limestone Kutumsar Caves descend 35 metres underground into chambers filled with stalactites and blind cave fish. Tirathgarh Falls cascades down five tiers through deep sal forest. Bastar's tribal villages — Jagdalpur, Kanger, Kondagaon — produce extraordinary metal-cast Dhokra art (a 4,000-year-old technique).\n\nRaipur, the modern capital, gives access to the wildlife reserves and to Sirpur — a 5th-century Buddhist site with rock-cut temples. For those seeking authentic, uncrowded tribal India and waterfalls outside the tourist machine, Chhattisgarh is unmatched.",
-    heroImage: "https://images.unsplash.com/photo-1591105575633-922c8897af9e?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/chhattisgarh.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1591105575633-922c8897af9e?w=800&h=600&fit=crop",
+      "/images/destinations/chhattisgarh.webp",
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1518972559570-7cc1309f3229?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1604608672516-f1b9b1d1f3b8?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "October to March (waterfalls best Aug-Oct)",
     weather:
@@ -1954,9 +1934,7 @@ export const destinations: Destination[] = [
     heroImage: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1623709486403-2a4ce5fe2fa1?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800&h=600&fit=crop",
     ],
@@ -2020,14 +1998,11 @@ export const destinations: Destination[] = [
       "Hyderabad's Charminar and biryani, Srisailam's Mallikarjuna Jyotirlinga, the Somasila pilgrim cruise, Warangal's Kakatiya temples, and the rugged Nallamala forest — Telangana blends Nizami heritage with deep South Indian temple traditions.",
     longDescription:
       "Telangana, India's youngest state (formed in 2014), is anchored by Hyderabad's Nizami grandeur but extends far beyond the capital. The state is dotted with rock-cut temples, Kakatiya-era stepwells, and the Nallamala forest range — one of the oldest in India.\n\nSrisailam, perched above the Krishna river in the Nallamala hills, is home to the Mallikarjuna Jyotirlinga — one of Hinduism's 12 holiest Shiva shrines — and the Bhramaramba Shakti Peetha temple right beside it, a rare combined Shiva-Shakti pilgrimage. The Krishna river here is dammed into the vast Srisailam reservoir, making the site uniquely scenic. Just downstream, Somasila reservoir offers cruise pilgrimages along its quiet waters past forested banks.\n\nWarangal preserves the 12th-century Kakatiya dynasty's masterpieces — the Thousand Pillar Temple, the Warangal Fort gateways, and the Ramappa Temple (a UNESCO World Heritage Site for its 'floating brick' construction). Bhongir's monolithic rock fort, the Bhadrachalam Sita Ramachandraswamy Temple, and Kuntala Falls in Adilabad complete a state with deep historical, spiritual and natural diversity that goes far past the Charminar.",
-    heroImage: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/telangana.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=800&h=600&fit=crop",
+      "/images/destinations/telangana.webp",
       "https://images.unsplash.com/photo-1583309219338-a582f1f9ca6b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567261334392-04abf6c2c4ff?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1572805156329-b9b81e64aab9?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "October to February",
     weather:
@@ -2093,8 +2068,7 @@ export const destinations: Destination[] = [
     galleryImages: [
       "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1565017228812-9f4b65fb0c54?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1563492065-1a5e4a4e8b30?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1591608971362-f08b2a75731a?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
     ],
@@ -2161,10 +2135,9 @@ export const destinations: Destination[] = [
     heroImage: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "October to March",
@@ -2233,7 +2206,7 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1540202404-1b927e27fa8b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "October to March",
@@ -2300,10 +2273,9 @@ export const destinations: Destination[] = [
     galleryImages: [
       "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1601762603339-fd61e28b698a?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1555217851-6141535bd771?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1597000571127-e4e3e3686e88?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "December to April",
     weather:
@@ -2365,14 +2337,11 @@ export const destinations: Destination[] = [
       "From the historic streets of Manila and the Spanish-era charm of Cebu to the powdery white sand of Boracay and the UNESCO underground river of Puerto Princesa — the Philippines is the world's most island-rich beach destination.",
     longDescription:
       "The Philippines is an archipelago of 7,641 islands — beaches, reefs, jungles, volcanoes and three centuries of Spanish colonial heritage that make it Southeast Asia's most culturally distinct destination. Manila, the capital on Luzon island, is anchored by Intramuros — the walled colonial city with Fort Santiago, San Agustin Church (the country's oldest, 1607), and Casa Manila — alongside Rizal Park and the modern Bonifacio Global City skyline.\n\nCebu, the 'Queen City of the South', is where Magellan landed in 1521 and where the country's Christianisation began. Magellan's Cross, Basilica del Santo Niño, Fort San Pedro and the lively Mactan Island resorts mix history with beach access. Cebu is also the launchpad for the Kawasan Falls canyoneering adventure and Oslob whale-shark snorkelling.\n\nBoracay, a tiny 7-km-long island, has been ranked Asia's best beach again and again — White Beach's flour-fine sand stretches 4 km, lined with stations 1-2-3 for kitesurfing, parasailing and island hopping to Crystal Cove and Magic Island. Sunset cocktails at D'Mall and Bulabog Beach kiteboarding round out a perfect three days.\n\nPuerto Princesa on Palawan island is home to the Puerto Princesa Underground River — a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. The 8.2-km cave river runs through limestone karst beneath a mountain. Honda Bay island-hopping, Sabang Beach and the Iwahig Firefly Watching tour are the supporting acts.",
-    heroImage: "https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/philippines.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=800&h=600&fit=crop",
+      "/images/destinations/philippines.webp",
       "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1565073624497-7e91b5cc3843?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1583338917496-7b46b5d8a08c?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1551866442-65523e29b6ee?w=800&h=600&fit=crop",
     ],
     bestTimeToVisit: "December to May",
     weather:
@@ -2436,11 +2405,6 @@ export const destinations: Destination[] = [
       "Bhutan is the world's most carefully managed travel destination — every foreign visitor pays a Sustainable Development Fee that funds free healthcare and education for Bhutanese citizens, and tourism is deliberately kept small-scale. The result: a Himalayan kingdom that has chosen to preserve its Vajrayana Buddhist culture, its 70%-forest cover (constitutionally mandated), and an unhurried pace that disappeared from the rest of Asia decades ago.\n\nParo, where the international airport is, is anchored by the Paro Dzong (Rinpung Dzong) — a 17th-century fortress-monastery — and the National Museum housed in the Ta Dzong watchtower. The signature experience is the hike to Taktsang (Tiger's Nest) Monastery, perched on a cliff 900 m above the Paro valley floor. The 4-5 hour round-trip climb to 3,120 m delivers one of the most photographed sights in the Himalayas.\n\nThimphu, the capital, is the world's only national capital without a single traffic light — police officers in white gloves direct traffic at the main junction. The 51-m bronze Buddha Dordenma overlooking the city, the Memorial Chorten where locals walk meditative circuits, the Tashichho Dzong (seat of government and the King), and the Folk Heritage Museum are essential stops.\n\nPunakha, the former winter capital, has the most beautiful dzong in Bhutan — Punakha Dzong at the confluence of the Pho Chhu and Mo Chhu rivers, with white-water rafting on the Mo Chhu river. The drive to Punakha crosses the Dochu La pass at 3,100 m where 108 chortens (memorial stupas) face the Eastern Himalayas. Longer trips continue to central Bhutan — Trongsa, Bumthang (the spiritual heartland) and the black-necked crane valley of Phobjikha.",
     heroImage: "/images/destinations/bhutan.webp",
     galleryImages: [
-      "/images/destinations/bhutan.webp",
-      "/images/destinations/bhutan.webp",
-      "/images/destinations/bhutan.webp",
-      "/images/destinations/bhutan.webp",
-      "/images/destinations/bhutan.webp",
       "/images/destinations/bhutan.webp",
     ],
     bestTimeToVisit: "March to May, September to November",
@@ -2575,7 +2539,7 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1549366021-9f761d450615?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1503777119540-ec1f0e9c2a52?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1600&h=900&fit=crop",
     ],
     bestTimeToVisit: "July to October (Great Migration) & January-February",
     weather:
@@ -2702,10 +2666,9 @@ export const destinations: Destination[] = [
       "The rose-red rock city of Petra, the Martian desert of Wadi Rum, a float in the Dead Sea and the Roman ruins of Jerash \u2014 Jordan is a compact, safe and spectacular Middle-East journey.",
     longDescription:
       "Jordan is one of the Middle East's most rewarding and welcoming destinations. Its crown jewel is Petra \u2014 the Nabataean city carved into rose-red sandstone, entered through the narrow Siq to the famous Treasury (Al-Khazneh), with the Monastery a climb beyond. South lies Wadi Rum, the Valley of the Moon, where 4x4 jeeps and Bedouin camps sit beneath towering sandstone massifs (the backdrop to many Mars films).\n\nThe Dead Sea, the lowest point on Earth, lets you float effortlessly and coat yourself in mineral mud, while the capital Amman, the vast Roman ruins of Jerash and the mosaics of Madaba and Mount Nebo add history and culture. Distances are short, the country is safe and friendly, and a week covers the highlights comfortably.",
-    heroImage: "https://images.unsplash.com/photo-1563177978-4c5ddccc10da?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/jordan.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1563177978-4c5ddccc10da?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1518630257714-3a3f9bb9c5a3?w=800&h=600&fit=crop",
+      "/images/destinations/jordan.webp",
       "https://images.unsplash.com/photo-1580834341580-8c17a3a630ca?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1605908502724-9093a79a1b39?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1547234935-80c7145ec969?w=800&h=600&fit=crop",
@@ -2772,7 +2735,7 @@ export const destinations: Destination[] = [
     heroImage: "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=1600&h=900&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1531168556467-80aace4d0144?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1476610182048-b716b8518aae?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1490650034439-fd184c3c86a5?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1520769669658-f07657f5a307?w=800&h=600&fit=crop",
@@ -2903,10 +2866,9 @@ export const destinations: Destination[] = [
       "The blue-tiled madrasas of Samarkand's Registan, the ancient lanes of Bukhara and walled Khiva \u2014 Uzbekistan is the living heart of the Silk Road.",
     longDescription:
       "Uzbekistan is the jewel of the Silk Road. Samarkand dazzles with the Registan \u2014 three towering madrasas clad in turquoise and gold mosaic \u2014 plus the Gur-e-Amir tomb of Timur and the Shah-i-Zinda avenue of mausoleums. Bukhara, a vast open-air museum, layers minarets, trading domes and the Ark fortress across a walkable old city, while Khiva's walled Itchan Kala feels like stepping into a frozen medieval caravan town.\n\nThe capital Tashkent adds a modern, metro-served contrast and a moving history. A high-speed train links Tashkent, Samarkand and Bukhara, making the classic Silk Road trio easy and comfortable. With warm hospitality, fine cuisine (the plov, the bread) and easy e-visa access, Uzbekistan is one of Asia's most rewarding cultural journeys.",
-    heroImage: "https://images.unsplash.com/photo-1602523961757-3c4f9d2f6a8c?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/uzbekistan.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1602523961757-3c4f9d2f6a8c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1601921004897-c6e16a3a1c63?w=800&h=600&fit=crop",
+      "/images/destinations/uzbekistan.webp",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&h=600&fit=crop",
@@ -3045,7 +3007,7 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1551867633-194f125695e9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&h=900&fit=crop",
     ],
     bestTimeToVisit: "April to October",
     weather:
@@ -3175,7 +3137,7 @@ export const destinations: Destination[] = [
     heroImage: "https://images.unsplash.com/photo-1469521669194-babb45599def?w=1600&h=900&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1469521669194-babb45599def?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1507097634215-8d5e4b77c5e9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1469521669194-babb45599def?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1578645510447-e20b4311e3ce?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=800&h=600&fit=crop",

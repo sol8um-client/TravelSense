@@ -214,7 +214,7 @@ const allPackages: Package[] = [
         elevation: "4,350m",
         distance: "150 km from Hunder",
         highlight: "First sight of Pangong Lake",
-        image: "https://images.unsplash.com/photo-1619837374214-f9b30e8ac54e?w=600&h=400&fit=crop",
+        image: "/images/generated/leh-ladakh-hero.webp",
       },
       {
         day: 8,
@@ -227,7 +227,7 @@ const allPackages: Package[] = [
         elevation: "5,360m at Chang La",
         distance: "160 km to Leh",
         highlight: "Sunrise over Pangong Lake",
-        image: "https://images.unsplash.com/photo-1619837374214-f9b30e8ac54e?w=600&h=400&fit=crop",
+        image: "/images/generated/leh-ladakh-hero.webp",
       },
       {
         day: 9,
@@ -361,7 +361,7 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1596786232345-2f8b10ec26fb?w=800&h=600&fit=crop",
+      "/images/generated/kerala-hero.webp",
       "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&h=600&fit=crop",
     ],
     duration: { days: 7, nights: 6 },
@@ -432,7 +432,7 @@ const allPackages: Package[] = [
         distance: "130 km from Kochi",
         elevation: "1,532m",
         highlight: "First view of Munnar tea gardens",
-        image: "https://images.unsplash.com/photo-1596786232345-2f8b10ec26fb?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
       {
         day: 4,
@@ -444,7 +444,7 @@ const allPackages: Package[] = [
         accommodation: "Resort in Munnar",
         elevation: "2,100m at Top Station",
         highlight: "Walking through emerald tea estates",
-        image: "https://images.unsplash.com/photo-1564758564468-1bc3381add07?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
       {
         day: 5,
@@ -733,9 +733,9 @@ const allPackages: Package[] = [
     description:
       "Complete the sacred Char Dham pilgrimage in comfort — visit Yamunotri, Gangotri, Kedarnath, and Badrinath by helicopter. This premium yatra eliminates the arduous trekking while preserving the spiritual essence of visiting Hinduism's four holiest mountain shrines in the Garhwal Himalayas.",
     heroImage:
-      "https://images.unsplash.com/photo-1614087435057-d25c18e6dd2f?w=1600&h=900&fit=crop",
+      "/images/generated/uttarakhand-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1614087435057-d25c18e6dd2f?w=800&h=600&fit=crop",
+      "/images/generated/uttarakhand-hero.webp",
       "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
@@ -1755,7 +1755,7 @@ const allPackages: Package[] = [
       "/images/generated/andaman-islands-hero.webp",
       "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=800&h=600&fit=crop",
+      "/images/generated/andaman-islands-hero.webp",
     ],
     duration: { days: 6, nights: 5 },
     price: 36000,
@@ -1834,7 +1834,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Neil Island",
         distance: "Ferry transfer ~1 hr",
         highlight: "Sunset at Laxmanpur Beach",
-        image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&h=400&fit=crop",
+        image: "/images/generated/andaman-islands-hero.webp",
       },
       {
         day: 5,
@@ -1874,7 +1874,7 @@ const allPackages: Package[] = [
       "/images/generated/andaman-islands-hero.webp",
       "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=800&h=600&fit=crop",
+      "/images/generated/andaman-islands-hero.webp",
     ],
     duration: { days: 8, nights: 7 },
     price: 48000,
@@ -1966,7 +1966,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Neil Island",
         distance: "Ferry transfer ~1 hr",
         highlight: "Sunset at Laxmanpur Beach",
-        image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&h=400&fit=crop",
+        image: "/images/generated/andaman-islands-hero.webp",
       },
       {
         day: 6,
@@ -1990,7 +1990,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Port Blair",
         distance: "200 km round trip + ferry",
         highlight: "Mangrove ferry to the limestone caves",
-        image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&h=400&fit=crop",
+        image: "/images/generated/andaman-islands-hero.webp",
       },
       {
         day: 8,
@@ -2017,8 +2017,8 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     ],
     duration: { days: 3, nights: 2 },
     price: 9600,
@@ -2074,7 +2074,7 @@ const allPackages: Package[] = [
         accommodation: "Lodge in Ozar / Junnar",
         distance: "230 km drive",
         highlight: "Girijatmaj in the Buddhist caves at Lenyadri",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
       {
         day: 3,
@@ -2086,7 +2086,7 @@ const allPackages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "130 km drive",
         highlight: "Completing the Ashtavinayak yatra at Ranjangaon",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
     ],
   },
@@ -2098,9 +2098,9 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "Eight days across the Land of Fire — the flame towers and walled Old City of Baku, the fire-temple at Ateshgah and the eternally burning Yanardag hillside, two Caucasus mountain resorts at Gabala (Tufandag) and Shahdag, the high-altitude village of Khinalig, and the UNESCO mud volcanoes and petroglyphs of Gobustan. A clean balance of city, culture and mountain scenery.",
-    heroImage: "https://images.unsplash.com/photo-1601130884591-c7dd5a45c3c0?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/azerbaijan.webp",
     images: [
-      "https://images.unsplash.com/photo-1601130884591-c7dd5a45c3c0?w=800&h=600&fit=crop",
+      "/images/destinations/azerbaijan.webp",
       "https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1558642084-fd07fae5282e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1571406252241-db0280bd36cd?w=800&h=600&fit=crop",
@@ -2152,7 +2152,7 @@ const allPackages: Package[] = [
         meals: "Dinner",
         accommodation: "Hotel in Baku",
         highlight: "Flame Towers over Baku Bay at dusk",
-        image: "https://images.unsplash.com/photo-1601130884591-c7dd5a45c3c0?w=1600&h=900&fit=crop",
+        image: "/images/destinations/azerbaijan.webp",
       },
       {
         day: 2,
@@ -2232,7 +2232,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Two Caucasus mountain resorts in one trip",
-        image: "https://images.unsplash.com/photo-1601130884591-c7dd5a45c3c0?w=1600&h=900&fit=crop",
+        image: "/images/destinations/azerbaijan.webp",
       },
     ],
   },
@@ -2378,10 +2378,10 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A six-day Karnataka-Kerala plantation circuit — Mysore Palace and Brindavan Gardens, Coorg's coffee estates and Dubare elephants, Wayanad's Edakkal Caves and Soochipara Falls. South India's most relaxed forest-and-hills weekend.",
-    heroImage: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/kerala-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
+      "/images/generated/kerala-hero.webp",
+      "/images/generated/kerala-hero.webp",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
     ],
@@ -2428,7 +2428,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Mysore",
         distance: "150 km drive",
         highlight: "Brindavan musical fountain evening",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
       {
         day: 2,
@@ -2451,7 +2451,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Plantation resort in Coorg",
         highlight: "Sunset over Western Ghats from Raja's Seat",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
       {
         day: 4,
@@ -2474,7 +2474,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Resort in Wayanad",
         highlight: "6,000-year-old Edakkal petroglyphs",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
       {
         day: 6,
@@ -2486,7 +2486,7 @@ const allPackages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "275 km drive",
         highlight: "Last green tunnels of the Ghats",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
     ],
   },
@@ -2577,12 +2577,12 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A seven-day Saurashtra circuit covering Gujarat's six most-visited pilgrim and heritage stops — Ahmedabad's Gandhi heritage, the Dwarkadheesh and Nageshwar Jyotirlinga at Dwarka, the seaside Somnath Jyotirlinga, an Asiatic Lion safari at Gir, the forts of Junagadh, and the sacred Jain hill of Palitana.",
-    heroImage: "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/gujarat.webp",
     images: [
-      "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=800&h=600&fit=crop",
+      "/images/destinations/gujarat.webp",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1574183656312-3d8013f59c64?w=800&h=600&fit=crop",
+      "/images/destinations/gujarat.webp",
+      "/images/destinations/gujarat.webp",
     ],
     duration: { days: 7, nights: 6 },
     price: 29000,
@@ -2626,7 +2626,7 @@ const allPackages: Package[] = [
         meals: "Dinner",
         accommodation: "Hotel in Ahmedabad",
         highlight: "Sabarmati Ashram quiet hour",
-        image: "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=1600&h=900&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 2,
@@ -2661,7 +2661,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Somnath",
         distance: "Approx. 230 km / 5 hrs",
         highlight: "Somnath Jyotirlinga seaside aarti",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=1600&h=900&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 5,
@@ -2685,7 +2685,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Palitana",
         distance: "≈260 km total / 6 hrs across two legs",
         highlight: "Mahabat Maqbara's spiral minarets",
-        image: "https://images.unsplash.com/photo-1574183656312-3d8013f59c64?w=1600&h=900&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 7,
@@ -2697,7 +2697,7 @@ const allPackages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "Approx. 215 km / 4-5 hrs to Ahmedabad",
         highlight: "Shatrunjaya — Jainism's holiest summit",
-        image: "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=1600&h=900&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
     ],
   },
@@ -2709,9 +2709,9 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "An eight-day grand Kerala circuit — colonial Fort Kochi, the tea hills of Munnar, the Periyar jungle at Thekkady, an Alleppey backwater houseboat, and the beaches of Kovalam. The most complete Kerala itinerary from coast to hills and back.",
-    heroImage: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/kerala-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=800&h=600&fit=crop",
+      "/images/generated/kerala-hero.webp",
       "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&h=600&fit=crop",
@@ -2757,7 +2757,7 @@ const allPackages: Package[] = [
         meals: "Dinner",
         accommodation: "Hotel in Cochin",
         highlight: "Fort Kochi at golden hour",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
       {
         day: 2,
@@ -2793,7 +2793,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Thekkady",
         distance: "94 km drive",
         highlight: "Periyar Lake wildlife boat",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
       {
         day: 5,
@@ -2817,7 +2817,7 @@ const allPackages: Package[] = [
         accommodation: "Beach hotel in Kovalam",
         distance: "160 km drive",
         highlight: "Sunset on Lighthouse Beach",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
       {
         day: 7,
@@ -2829,7 +2829,7 @@ const allPackages: Package[] = [
         accommodation: "Beach hotel in Kovalam",
         distance: "30 km round trip",
         highlight: "Padmanabhaswamy Temple",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
       {
         day: 8,
@@ -2840,7 +2840,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "A complete Kerala circuit",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
     ],
   },
@@ -2856,7 +2856,7 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
     ],
     duration: { days: 4, nights: 3 },
@@ -2925,7 +2925,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Aurangabad",
         distance: "245 km drive",
         highlight: "The 12th and final Jyotirlinga",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -2953,8 +2953,8 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1574183656312-3d8013f59c64?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     ],
     duration: { days: 5, nights: 4 },
     price: 15000,
@@ -3021,7 +3021,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Nashik",
         distance: "Approx. 120 km",
         highlight: "Trimbakeshwar darshan at the Godavari source",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -3033,7 +3033,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Aurangabad",
         distance: "Approx. 230 km",
         highlight: "Grishneshwar Jyotirlinga — completes Maharashtra's Jyotirlinga trio",
-        image: "https://images.unsplash.com/photo-1574183656312-3d8013f59c64?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
       {
         day: 5,
@@ -3057,10 +3057,10 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A five-day Kutch journey staying at heritage hotels in Bhuj — Aina Mahal, Pragmahal, the Bhujodi and Ajrakhpur craft villages, day-trips into the Banni grasslands and the White Rann at full moon, sunset at Kalo Dungar. Standard package is based on Bhuj accommodation; a premium tent-stay-at-Dhordo upgrade is available for full-moon dates on request (₹50,000+).",
-    heroImage: "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/gujarat.webp",
     images: [
-      "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1572805156329-b9b81e64aab9?w=800&h=600&fit=crop",
+      "/images/destinations/gujarat.webp",
+      "/images/destinations/gujarat.webp",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
     ],
@@ -3107,7 +3107,7 @@ const allPackages: Package[] = [
         meals: "Dinner",
         accommodation: "Heritage hotel in Bhuj",
         highlight: "Mirror palace of the Maharaos",
-        image: "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=600&h=400&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 2,
@@ -3119,7 +3119,7 @@ const allPackages: Package[] = [
         accommodation: "Heritage hotel in Bhuj",
         distance: "70 km round trip",
         highlight: "Hand-block Ajrakh printing live",
-        image: "https://images.unsplash.com/photo-1572805156329-b9b81e64aab9?w=600&h=400&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 3,
@@ -3143,7 +3143,7 @@ const allPackages: Package[] = [
         accommodation: "Heritage hotel in Bhuj",
         distance: "200 km round trip",
         highlight: "Sunset on the salt desert",
-        image: "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=600&h=400&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 5,
@@ -3412,12 +3412,12 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A nineteen-day grand circuit across all seven sister states of the Indian Northeast — Tripura's Ujjayanta Palace, Mizoram's Aizawl, Manipur's floating Loktak Lake, Nagaland's Kohima and Khonoma, Assam's Kaziranga rhinos, Arunachal's Tawang Monastery, and Meghalaya's Mawlynnong and Dawki — the most ambitious Northeast itinerary in the country.",
-    heroImage: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/meghalaya-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=800&h=600&fit=crop",
+      "/images/generated/meghalaya-hero.webp",
       "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1596786232345-2f8b10ec26fb?w=800&h=600&fit=crop",
+      "/images/generated/meghalaya-hero.webp",
     ],
     duration: { days: 19, nights: 18 },
     price: 95000,
@@ -3465,7 +3465,7 @@ const allPackages: Package[] = [
         meals: "Dinner",
         accommodation: "Hotel in Agartala",
         highlight: "Ujjayanta Palace — Tripura's royal museum",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 2,
@@ -3476,7 +3476,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Agartala",
         highlight: "Sunset border parade at Akhaura",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 3,
@@ -3501,7 +3501,7 @@ const allPackages: Package[] = [
         distance: "180 km drive",
         elevation: "1,132 m at Aizawl",
         highlight: "Aizawl ridge-top arrival",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 5,
@@ -3513,7 +3513,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Silchar",
         distance: "180 km drive",
         highlight: "Solomon's Temple — Mizoram's biggest church",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 6,
@@ -3526,7 +3526,7 @@ const allPackages: Package[] = [
         distance: "215 km drive (long mountain day)",
         elevation: "780 m at Imphal",
         highlight: "First night in the Manipur valley",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 7,
@@ -3537,7 +3537,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Imphal",
         highlight: "Loktak Lake floating phumdis",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 8,
@@ -3550,7 +3550,7 @@ const allPackages: Package[] = [
         distance: "150 km drive",
         elevation: "1,444 m at Kohima",
         highlight: "Kohima WW2 War Cemetery",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 9,
@@ -3561,7 +3561,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Kohima",
         highlight: "Asia's First Green Village",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 10,
@@ -3597,7 +3597,7 @@ const allPackages: Package[] = [
         distance: "280 km drive",
         elevation: "2,415 m at Bomdila",
         highlight: "First night in Arunachal",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 13,
@@ -3610,7 +3610,7 @@ const allPackages: Package[] = [
         distance: "170 km drive",
         elevation: "13,700 ft at Sela Pass",
         highlight: "Crossing Sela Pass at 13,700 ft",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 14,
@@ -3622,7 +3622,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Tawang",
         elevation: "15,200 ft at Bum La",
         highlight: "Indo-China border at Bum La",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 15,
@@ -3634,7 +3634,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Bomdila",
         distance: "170 km drive",
         highlight: "Tawang Monastery — Asia's 2nd largest",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 16,
@@ -3671,7 +3671,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Shillong",
         distance: "180 km round trip",
         highlight: "Crystal-clear Umngot river boating",
-        image: "https://images.unsplash.com/photo-1596786232345-2f8b10ec26fb?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 19,
@@ -3683,7 +3683,7 @@ const allPackages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "100 km drive",
         highlight: "Closing the seven-sister circuit",
-        image: "https://images.unsplash.com/photo-1596786232345-2f8b10ec26fb?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
     ],
   },
@@ -6364,8 +6364,8 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
     ],
     duration: { days: 15, nights: 14 },
@@ -6427,7 +6427,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Omkareshwar",
         distance: "77 km / 2.5 hrs",
         highlight: "Parikrama sankalp at Omkareshwar",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
       },
       {
         day: 3,
@@ -6451,7 +6451,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Ankaleshwar",
         distance: "280 km / 6 hrs",
         highlight: "Prakasha twin temples darshan",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
       },
       {
         day: 5,
@@ -6487,7 +6487,7 @@ const allPackages: Package[] = [
         accommodation: "Heritage hotel in Maheshwar",
         distance: "250 km drive",
         highlight: "Back into Madhya Pradesh",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
       },
       {
         day: 8,
@@ -6499,7 +6499,7 @@ const allPackages: Package[] = [
         accommodation: "Heritage hotel in Maheshwar",
         distance: "120 km round trip",
         highlight: "Maheshwari handloom workshop visit",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
       },
       {
         day: 9,
@@ -6511,7 +6511,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Nemawar",
         distance: "130 km drive",
         highlight: "Midpoint of the Narmada",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
       },
       {
         day: 10,
@@ -6536,7 +6536,7 @@ const allPackages: Package[] = [
         distance: "245 km drive",
         elevation: "1,065 m at Amarkantak",
         highlight: "Pilgrimage at the river's source",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
       },
       {
         day: 12,
@@ -6560,7 +6560,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Hoshangabad",
         distance: "180 km drive",
         highlight: "Sethani Ghat Narmada aarti",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
       },
       {
         day: 14,
@@ -6701,7 +6701,7 @@ const allPackages: Package[] = [
         elevation: "1,065 m at Amarkantak",
         distance: "230 km drive",
         highlight: "Tiger safari + Narmada source",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
       },
       {
         day: 7,
@@ -6850,12 +6850,12 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A three-day weekend trip to the Statue of Unity — the world's tallest statue at 182 m — and the Narmada Valley around Kevadia. Includes Nilkanteshwar Mahadev temple and the lesser-known Dhan Kuber temple.",
-    heroImage: "https://images.unsplash.com/photo-1574183656312-3d8013f59c64?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/gujarat.webp",
     images: [
-      "https://images.unsplash.com/photo-1574183656312-3d8013f59c64?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=800&h=600&fit=crop",
+      "/images/destinations/gujarat.webp",
+      "/images/destinations/gujarat.webp",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+      "/images/destinations/gujarat.webp",
     ],
     duration: { days: 3, nights: 2 },
     price: 21000,
@@ -6897,7 +6897,7 @@ const allPackages: Package[] = [
         accommodation: "Resort in Kevadia",
         distance: "90 km drive",
         highlight: "Statue of Unity at night",
-        image: "https://images.unsplash.com/photo-1574183656312-3d8013f59c64?w=600&h=400&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 2,
@@ -6907,7 +6907,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Resort in Kevadia",
         highlight: "View from 153 m up the Statue",
-        image: "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=600&h=400&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 3,
@@ -6930,10 +6930,10 @@ const allPackages: Package[] = [
     category: "educational",
     description:
       "Fifteen days through Gujarat's most ambitious circuit — the Little Rann of Kutch's wild ass, Bhuj's mirror-work palaces, Mandvi's beaches, Dwarka and Somnath's Jyotirlingas, Diu's Portuguese churches, Gir's Asiatic lions and Junagadh's hill forts.",
-    heroImage: "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/gujarat.webp",
     images: [
-      "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1572805156329-b9b81e64aab9?w=800&h=600&fit=crop",
+      "/images/destinations/gujarat.webp",
+      "/images/destinations/gujarat.webp",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
     ],
@@ -6995,7 +6995,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Bhuj",
         distance: "260 km drive",
         highlight: "Mirror palace of the Maharaos",
-        image: "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=600&h=400&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 3,
@@ -7017,7 +7017,7 @@ const allPackages: Package[] = [
         accommodation: "Bhunga resort, Hodka",
         distance: "200 km loop",
         highlight: "White Rann under the full moon",
-        image: "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=600&h=400&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 5,
@@ -7028,7 +7028,7 @@ const allPackages: Package[] = [
         accommodation: "Beach resort in Mandvi",
         distance: "150 km drive",
         highlight: "Sunset on Mandvi beach",
-        image: "https://images.unsplash.com/photo-1572805156329-b9b81e64aab9?w=600&h=400&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 6,
@@ -7038,7 +7038,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Beach resort in Mandvi",
         highlight: "Hand-built dhows at the shipyard",
-        image: "https://images.unsplash.com/photo-1572805156329-b9b81e64aab9?w=600&h=400&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 7,
@@ -7082,7 +7082,7 @@ const allPackages: Package[] = [
         accommodation: "Beach hotel in Diu",
         distance: "90 km drive",
         highlight: "Portuguese coastal calm",
-        image: "https://images.unsplash.com/photo-1572805156329-b9b81e64aab9?w=600&h=400&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 11,
@@ -7092,7 +7092,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Beach hotel in Diu",
         highlight: "Portuguese fortress on the sea",
-        image: "https://images.unsplash.com/photo-1572805156329-b9b81e64aab9?w=600&h=400&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 12,
@@ -7125,7 +7125,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Ahmedabad",
         distance: "225 km drive",
         highlight: "Adalaj Stepwell at golden hour",
-        image: "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=600&h=400&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
       {
         day: 15,
@@ -7135,7 +7135,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "A complete Gujarat circuit done",
-        image: "https://images.unsplash.com/photo-1609608700147-2ccfdebe05f5?w=600&h=400&fit=crop",
+        image: "/images/destinations/gujarat.webp",
       },
     ],
   },
@@ -7149,12 +7149,12 @@ const allPackages: Package[] = [
     category: "educational",
     description:
       "A seven-day pilgrimage extending the Maharashtra circuit to cover five of the twelve Jyotirlingas — all three of Maharashtra (Bhimashankar, Trimbakeshwar, Grishneshwar) plus Mallikarjuna in Andhra Pradesh (one of Hinduism's holiest combined Shiva-Shakti shrines, above the Krishna river) and Omkareshwar on the Narmada in Madhya Pradesh.",
-    heroImage: "https://images.unsplash.com/photo-1567772015384-66bef0d61b22?w=1600&h=900&fit=crop",
+    heroImage: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     ],
     duration: { days: 7, nights: 6 },
     price: 17000,
@@ -7209,7 +7209,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel near Trimbakeshwar",
         distance: "210 km drive",
         highlight: "The three-faced Jyotirlinga",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
       {
         day: 3,
@@ -7231,7 +7231,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Hyderabad",
         distance: "560 km (rail / road)",
         highlight: "Transition night before Mallikarjuna",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
       {
         day: 5,
@@ -7242,7 +7242,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Srisailam",
         distance: "215 km drive",
         highlight: "Combined Jyotirlinga + Shakti Peetha darshan",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
       {
         day: 6,
@@ -7264,7 +7264,7 @@ const allPackages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "80 km drive",
         highlight: "Closing the 5-Jyotirlinga yatra",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
     ],
   },
@@ -7276,11 +7276,11 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A three-day Sahyadri weekend escape — Mahabaleshwar's strawberry farms and Pratapgad fort, plus Lonavala's misty viewpoints and the Karla Caves. Pune & Mumbai's favourite quick getaway.",
-    heroImage: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=1600&h=900&fit=crop",
+    heroImage: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
     ],
     duration: { days: 3, nights: 2 },
@@ -7336,7 +7336,7 @@ const allPackages: Package[] = [
         elevation: "624 m at Lonavala",
         distance: "210 km drive",
         highlight: "Pratapgad fort battle site",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
       {
         day: 3,
@@ -7347,7 +7347,7 @@ const allPackages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "65 km drive",
         highlight: "2,000-year-old Karla Caves",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
     ],
   },
@@ -7362,9 +7362,9 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     ],
     duration: { days: 2, nights: 1 },
     price: 7500,
@@ -7408,7 +7408,7 @@ const allPackages: Package[] = [
         elevation: "800 m",
         distance: "100 km drive + train",
         highlight: "Toy train through the Sahyadris",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
       {
         day: 2,
@@ -7434,9 +7434,9 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1518972559570-7cc1309f3229?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     ],
     duration: { days: 3, nights: 2 },
     price: 11000,
@@ -7500,7 +7500,7 @@ const allPackages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "175 km drive",
         highlight: "Sula vineyard wine tasting",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
     ],
   },
@@ -7512,10 +7512,10 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A five-day Konkan coast circuit — Tarkarli's turquoise scuba waters, Sindhudurg's sea fort, Ganpatipule's Ashtavinayak temple, the Devbagh sangam, and seafood that you will dream about for months.",
-    heroImage: "https://images.unsplash.com/photo-1572805156329-b9b81e64aab9?w=1600&h=900&fit=crop",
+    heroImage: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1572805156329-b9b81e64aab9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
     ],
@@ -7572,7 +7572,7 @@ const allPackages: Package[] = [
         accommodation: "Beach resort in Tarkarli",
         distance: "165 km drive",
         highlight: "Dolphin sightings at sunset",
-        image: "https://images.unsplash.com/photo-1572805156329-b9b81e64aab9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
       {
         day: 3,
@@ -7582,7 +7582,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Beach resort in Tarkarli",
         highlight: "Sindhudurg sea fort",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -7604,7 +7604,7 @@ const allPackages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "460 km drive (long day)",
         highlight: "Final glimpse of the Konkan",
-        image: "https://images.unsplash.com/photo-1572805156329-b9b81e64aab9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
       },
     ],
   },
@@ -7618,9 +7618,9 @@ const allPackages: Package[] = [
     category: "educational",
     description:
       "A six-day pilgrimage through Buddhism's most sacred sites in India — Bodh Gaya's Mahabodhi Temple where Buddha attained enlightenment, Rajgir's Vulture Peak, Nalanda's ancient university, Vaishali's first Buddhist republic, and Kushinagar's parinirvana site.",
-    heroImage: "https://images.unsplash.com/photo-1614366833937-30b3a4a5f97c?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/bihar.webp",
     images: [
-      "https://images.unsplash.com/photo-1614366833937-30b3a4a5f97c?w=800&h=600&fit=crop",
+      "/images/destinations/bihar.webp",
       "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1576487248805-cf45f6bcc67f?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
@@ -7667,7 +7667,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Bodh Gaya",
         distance: "12 km transfer",
         highlight: "Meditation under the Bodhi Tree",
-        image: "https://images.unsplash.com/photo-1614366833937-30b3a4a5f97c?w=600&h=400&fit=crop",
+        image: "/images/destinations/bihar.webp",
       },
       {
         day: 2,
@@ -7710,7 +7710,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Kushinagar",
         distance: "265 km drive",
         highlight: "Reclining Buddha at Kushinagar",
-        image: "https://images.unsplash.com/photo-1547222530-c01a0d4ef0bd?w=600&h=400&fit=crop",
+        image: "/images/destinations/bihar.webp",
       },
       {
         day: 6,
@@ -7738,8 +7738,8 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=800&h=600&fit=crop",
     ],
     duration: { days: 6, nights: 5 },
@@ -7785,7 +7785,7 @@ const allPackages: Package[] = [
         elevation: "2,150 m",
         distance: "150 km drive",
         highlight: "First sight of Kanchenjunga",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       },
       {
         day: 2,
@@ -7795,7 +7795,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Pelling",
         highlight: "Kanchenjunga sunrise",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       },
       {
         day: 3,
@@ -7807,7 +7807,7 @@ const allPackages: Package[] = [
         elevation: "2,100 m",
         distance: "120 km drive",
         highlight: "130-ft Buddha at Tathagata Tsal",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -7831,7 +7831,7 @@ const allPackages: Package[] = [
         elevation: "3,750 m at Tsomgo",
         distance: "90 km round trip",
         highlight: "Tsomgo glacial lake",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       },
       {
         day: 6,
@@ -7854,11 +7854,11 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A six-day offbeat tea-village circuit in the Darjeeling hills — Lamahatta's pine forests, Tinchuley's orange orchards, Chatakpur eco-village inside Senchal forest, and a finale in colonial Darjeeling.",
-    heroImage: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=1600&h=900&fit=crop",
+    heroImage: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1623709486403-2a4ce5fe2fa1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=800&h=600&fit=crop",
     ],
     duration: { days: 6, nights: 5 },
@@ -7904,7 +7904,7 @@ const allPackages: Package[] = [
         elevation: "1,675 m",
         distance: "120 km drive",
         highlight: "First evening in the pine forest",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       },
       {
         day: 2,
@@ -7928,7 +7928,7 @@ const allPackages: Package[] = [
         elevation: "2,400 m",
         distance: "55 km drive",
         highlight: "Kanchenjunga from inside the forest",
-        image: "https://images.unsplash.com/photo-1623709486403-2a4ce5fe2fa1?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -7951,7 +7951,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Darjeeling",
         elevation: "2,590 m at Tiger Hill",
         highlight: "Sunrise from Tiger Hill",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       },
       {
         day: 6,
@@ -7974,10 +7974,10 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A seven-day classic Darjeeling and Gangtok itinerary with three nights in each — perfect for travellers who want to slow down and soak up both hill stations rather than rush.",
-    heroImage: "https://images.unsplash.com/photo-1623709486403-2a4ce5fe2fa1?w=1600&h=900&fit=crop",
+    heroImage: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1623709486403-2a4ce5fe2fa1?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&h=600&fit=crop",
     ],
@@ -8025,7 +8025,7 @@ const allPackages: Package[] = [
         elevation: "2,050 m",
         distance: "70 km drive",
         highlight: "First evening on the Mall",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       },
       {
         day: 2,
@@ -8035,7 +8035,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Darjeeling",
         highlight: "Sunrise + toy train in one day",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       },
       {
         day: 3,
@@ -8057,7 +8057,7 @@ const allPackages: Package[] = [
         elevation: "1,650 m",
         distance: "100 km drive",
         highlight: "Rumtek Monastery",
-        image: "https://images.unsplash.com/photo-1623709486403-2a4ce5fe2fa1?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       },
       {
         day: 5,
@@ -8069,7 +8069,7 @@ const allPackages: Package[] = [
         elevation: "3,750 m at Tsomgo",
         distance: "90 km round trip",
         highlight: "Tsomgo glacial lake",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       },
       {
         day: 6,
@@ -8106,7 +8106,7 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800&h=600&fit=crop",
     ],
     duration: { days: 6, nights: 5 },
@@ -8205,7 +8205,7 @@ const allPackages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "85 km drive",
         highlight: "Last glimpse of the Dooars",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
       },
     ],
   },
@@ -8223,7 +8223,7 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1565017228812-9f4b65fb0c54?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1591608971362-f08b2a75731a?w=800&h=600&fit=crop",
     ],
     duration: { days: 7, nights: 6 },
@@ -8287,7 +8287,7 @@ const allPackages: Package[] = [
         accommodation: "Panthanivas Gopalpur",
         distance: "180 km drive",
         highlight: "Sunset on Gopalpur beach",
-        image: "https://images.unsplash.com/photo-1565017228812-9f4b65fb0c54?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -8331,7 +8331,7 @@ const allPackages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "85 km drive",
         highlight: "White tigers at Nandankanan",
-        image: "https://images.unsplash.com/photo-1565017228812-9f4b65fb0c54?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1600&h=900&fit=crop",
       },
     ],
   },
@@ -8478,11 +8478,11 @@ const allPackages: Package[] = [
     category: "educational",
     description:
       "A six-day Telangana circuit combining Hyderabad's Nizami heritage with Srisailam's Mallikarjuna Jyotirlinga — one of the 12 holiest Shiva shrines, perched above the Krishna river in the Nallamala hills.",
-    heroImage: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/telangana.webp",
     images: [
-      "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=800&h=600&fit=crop",
+      "/images/destinations/telangana.webp",
       "https://images.unsplash.com/photo-1583309219338-a582f1f9ca6b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+      "/images/destinations/telangana.webp",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
     ],
     duration: { days: 6, nights: 5 },
@@ -8526,7 +8526,7 @@ const allPackages: Package[] = [
         meals: "Dinner",
         accommodation: "Hotel in Hyderabad",
         highlight: "Charminar at golden hour",
-        image: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=600&h=400&fit=crop",
+        image: "/images/destinations/telangana.webp",
       },
       {
         day: 2,
@@ -8546,7 +8546,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Hyderabad",
         highlight: "World's largest film studio",
-        image: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=600&h=400&fit=crop",
+        image: "/images/destinations/telangana.webp",
       },
       {
         day: 4,
@@ -8567,7 +8567,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Srisailam",
         highlight: "Boat ride to Akkamahadevi caves",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "/images/destinations/telangana.webp",
       },
       {
         day: 6,
@@ -8578,7 +8578,7 @@ const allPackages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "215 km drive",
         highlight: "Last view of the Nallamala",
-        image: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=600&h=400&fit=crop",
+        image: "/images/destinations/telangana.webp",
       },
     ],
   },
@@ -8590,10 +8590,10 @@ const allPackages: Package[] = [
     category: "educational",
     description:
       "A six-day Krishna river pilgrim circuit — Hyderabad's Nizami heritage, Srisailam's Mallikarjuna Jyotirlinga, and a unique river cruise from Srisailam reservoir down to Somasila. Pilgrimage with a side of houseboat.",
-    heroImage: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/telangana.webp",
     images: [
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=800&h=600&fit=crop",
+      "/images/destinations/telangana.webp",
+      "/images/destinations/telangana.webp",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1583309219338-a582f1f9ca6b?w=800&h=600&fit=crop",
     ],
@@ -8638,7 +8638,7 @@ const allPackages: Package[] = [
         meals: "Dinner",
         accommodation: "Hotel in Hyderabad",
         highlight: "Charminar evening",
-        image: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=600&h=400&fit=crop",
+        image: "/images/destinations/telangana.webp",
       },
       {
         day: 2,
@@ -8669,7 +8669,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Cruise boat (sleeper cabin)",
         highlight: "Sunset cruise on the Krishna",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "/images/destinations/telangana.webp",
       },
       {
         day: 5,
@@ -8680,7 +8680,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Hyderabad",
         distance: "230 km drive",
         highlight: "Pilgrim cruise complete",
-        image: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=600&h=400&fit=crop",
+        image: "/images/destinations/telangana.webp",
       },
       {
         day: 6,
@@ -8690,7 +8690,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Last view of Hyderabad",
-        image: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=600&h=400&fit=crop",
+        image: "/images/destinations/telangana.webp",
       },
     ],
   },
@@ -8702,11 +8702,11 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A focused 4-night Hyderabad city break — the Charminar and old-city bazaars, Golconda Fort's whispering acoustics, Chowmahalla and Falaknuma palaces, Salar Jung museum, and a full day at Ramoji Film City. The complete Hyderabad sampler for first-time visitors.",
-    heroImage: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/telangana.webp",
     images: [
-      "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=800&h=600&fit=crop",
+      "/images/destinations/telangana.webp",
       "https://images.unsplash.com/photo-1583309219338-a582f1f9ca6b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567261334392-04abf6c2c4ff?w=800&h=600&fit=crop",
+      "/images/destinations/telangana.webp",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
     ],
     duration: { days: 5, nights: 4 },
@@ -8750,7 +8750,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Hyderabad",
         highlight: "Charminar at sunset",
-        image: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/telangana.webp",
       },
       {
         day: 2,
@@ -8773,7 +8773,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Hyderabad",
         distance: "Approx. 50 km round trip",
         highlight: "Ramoji — world's largest film studio",
-        image: "https://images.unsplash.com/photo-1567261334392-04abf6c2c4ff?w=1600&h=900&fit=crop",
+        image: "/images/destinations/telangana.webp",
       },
       {
         day: 4,
@@ -8784,7 +8784,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Hyderabad",
         highlight: "Falaknuma Palace high-tea (optional)",
-        image: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/telangana.webp",
       },
       {
         day: 5,
@@ -8795,7 +8795,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Pearl pickup",
-        image: "https://images.unsplash.com/photo-1672997317502-9dc18f4d8a6f?w=1600&h=900&fit=crop",
+        image: "/images/destinations/telangana.webp",
       },
     ],
   },
@@ -8813,8 +8813,8 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1596786232345-2f8b10ec26fb?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=800&h=600&fit=crop",
+      "/images/generated/meghalaya-hero.webp",
+      "/images/generated/meghalaya-hero.webp",
     ],
     duration: { days: 7, nights: 6 },
     price: 32000,
@@ -8885,7 +8885,7 @@ const allPackages: Package[] = [
         elevation: "1,430 m",
         distance: "55 km drive",
         highlight: "India's tallest plunge waterfall at Nohkalikai",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 4,
@@ -8909,7 +8909,7 @@ const allPackages: Package[] = [
         accommodation: "Riverside camp Shnongpdeng / Dawki",
         distance: "115 km drive",
         highlight: "Crystal-clear Umngot river boating",
-        image: "https://images.unsplash.com/photo-1596786232345-2f8b10ec26fb?w=600&h=400&fit=crop",
+        image: "/images/generated/meghalaya-hero.webp",
       },
       {
         day: 6,
@@ -8947,12 +8947,12 @@ const allPackages: Package[] = [
     category: "adventure",
     description:
       "An eight-day deep-Sikkim circuit — Gangtok's monasteries, the sacred Tsomgo Lake and Baba Mandir, Lachen's frozen Gurudongmar Lake at 17,800 ft, Lachung's Yumthang 'Valley of Flowers' and the dramatic Zero Point at the China border. The complete North Sikkim itinerary.",
-    heroImage: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/sikkim-and-darjeeling-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=800&h=600&fit=crop",
+      "/images/generated/sikkim-and-darjeeling-hero.webp",
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1623709486403-2a4ce5fe2fa1?w=800&h=600&fit=crop",
+      "/images/generated/sikkim-and-darjeeling-hero.webp",
     ],
     duration: { days: 8, nights: 7 },
     price: 36000,
@@ -8998,7 +8998,7 @@ const allPackages: Package[] = [
         elevation: "1,650 m",
         distance: "125 km drive",
         highlight: "First evening in the Sikkim capital",
-        image: "https://images.unsplash.com/photo-1623709486403-2a4ce5fe2fa1?w=600&h=400&fit=crop",
+        image: "/images/generated/sikkim-and-darjeeling-hero.webp",
       },
       {
         day: 2,
@@ -9010,7 +9010,7 @@ const allPackages: Package[] = [
         elevation: "3,750 m at Tsomgo",
         distance: "90 km round trip",
         highlight: "Sacred Tsomgo Lake & Baba Mandir",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "/images/generated/sikkim-and-darjeeling-hero.webp",
       },
       {
         day: 3,
@@ -9032,7 +9032,7 @@ const allPackages: Package[] = [
         elevation: "2,750 m",
         distance: "125 km drive",
         highlight: "First night in the North",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "/images/generated/sikkim-and-darjeeling-hero.webp",
       },
       {
         day: 5,
@@ -9044,7 +9044,7 @@ const allPackages: Package[] = [
         elevation: "17,800 ft at Gurudongmar",
         distance: "200 km round trip",
         highlight: "Gurudongmar at 17,800 ft",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "/images/generated/sikkim-and-darjeeling-hero.webp",
       },
       {
         day: 6,
@@ -9056,7 +9056,7 @@ const allPackages: Package[] = [
         elevation: "15,300 ft at Zero Point",
         distance: "100 km round trip",
         highlight: "Zero Point at the China border",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "/images/generated/sikkim-and-darjeeling-hero.webp",
       },
       {
         day: 7,
@@ -9067,7 +9067,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Gangtok",
         distance: "115 km drive",
         highlight: "Back to the warmth of Gangtok",
-        image: "https://images.unsplash.com/photo-1623709486403-2a4ce5fe2fa1?w=600&h=400&fit=crop",
+        image: "/images/generated/sikkim-and-darjeeling-hero.webp",
       },
       {
         day: 8,
@@ -9093,9 +9093,9 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=800&h=600&fit=crop",
+      "/images/generated/sikkim-and-darjeeling-hero.webp",
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1623709486403-2a4ce5fe2fa1?w=800&h=600&fit=crop",
+      "/images/generated/sikkim-and-darjeeling-hero.webp",
     ],
     duration: { days: 8, nights: 7 },
     price: 32000,
@@ -9140,7 +9140,7 @@ const allPackages: Package[] = [
         elevation: "1,650 m",
         distance: "125 km drive",
         highlight: "First evening in Gangtok",
-        image: "https://images.unsplash.com/photo-1623709486403-2a4ce5fe2fa1?w=600&h=400&fit=crop",
+        image: "/images/generated/sikkim-and-darjeeling-hero.webp",
       },
       {
         day: 2,
@@ -9162,7 +9162,7 @@ const allPackages: Package[] = [
         elevation: "3,750 m at Tsomgo",
         distance: "90 km round trip",
         highlight: "Glacial Tsomgo Lake",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "/images/generated/sikkim-and-darjeeling-hero.webp",
       },
       {
         day: 4,
@@ -9174,7 +9174,7 @@ const allPackages: Package[] = [
         elevation: "2,150 m",
         distance: "120 km drive",
         highlight: "First sight of Kanchenjunga",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "/images/generated/sikkim-and-darjeeling-hero.webp",
       },
       {
         day: 5,
@@ -9184,7 +9184,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Pelling",
         highlight: "Sunrise on Kanchenjunga",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "/images/generated/sikkim-and-darjeeling-hero.webp",
       },
       {
         day: 6,
@@ -9218,7 +9218,7 @@ const allPackages: Package[] = [
         accommodation: "N/A — Departure",
         distance: "95 km drive",
         highlight: "Final Tiger Hill sunrise",
-        image: "https://images.unsplash.com/photo-1574722772515-1cf04a3a6464?w=600&h=400&fit=crop",
+        image: "/images/generated/sikkim-and-darjeeling-hero.webp",
       },
     ],
   },
@@ -9233,12 +9233,12 @@ const allPackages: Package[] = [
     category: "adventure",
     description:
       "A six-day journey into Chhattisgarh's Bastar region — the thundering Chitrakote Falls (India's widest), the limestone Kutumsar Caves, tribal weekly markets, Dhokra metalcraft villages, and the deep sal forests of Kanger Valley National Park.",
-    heroImage: "https://images.unsplash.com/photo-1591105575633-922c8897af9e?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/chhattisgarh.webp",
     images: [
-      "https://images.unsplash.com/photo-1591105575633-922c8897af9e?w=800&h=600&fit=crop",
+      "/images/destinations/chhattisgarh.webp",
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1518972559570-7cc1309f3229?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1604608672516-f1b9b1d1f3b8?w=800&h=600&fit=crop",
+      "/images/destinations/chhattisgarh.webp",
     ],
     duration: { days: 6, nights: 5 },
     price: 24000,
@@ -9283,7 +9283,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Jagdalpur",
         distance: "300 km drive",
         highlight: "Into the Bastar heartland",
-        image: "https://images.unsplash.com/photo-1591105575633-922c8897af9e?w=600&h=400&fit=crop",
+        image: "/images/destinations/chhattisgarh.webp",
       },
       {
         day: 2,
@@ -9295,7 +9295,7 @@ const allPackages: Package[] = [
         accommodation: "Resort near Chitrakote",
         distance: "40 km drive",
         highlight: "Boat ride below the horseshoe falls",
-        image: "https://images.unsplash.com/photo-1591105575633-922c8897af9e?w=600&h=400&fit=crop",
+        image: "/images/destinations/chhattisgarh.webp",
       },
       {
         day: 3,
@@ -9319,7 +9319,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Jagdalpur",
         distance: "50 km drive",
         highlight: "A living tribal weekly market",
-        image: "https://images.unsplash.com/photo-1604608672516-f1b9b1d1f3b8?w=600&h=400&fit=crop",
+        image: "/images/destinations/chhattisgarh.webp",
       },
       {
         day: 5,
@@ -9342,7 +9342,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Closing the Bastar circuit",
-        image: "https://images.unsplash.com/photo-1591105575633-922c8897af9e?w=600&h=400&fit=crop",
+        image: "/images/destinations/chhattisgarh.webp",
       },
     ],
   },
@@ -9357,7 +9357,7 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1591105575633-922c8897af9e?w=800&h=600&fit=crop",
+      "/images/destinations/chhattisgarh.webp",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1518972559570-7cc1309f3229?w=800&h=600&fit=crop",
     ],
@@ -9427,7 +9427,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Raipur",
         distance: "130 km drive",
         highlight: "Sirpur's 1,400-year-old brick temple",
-        image: "https://images.unsplash.com/photo-1591105575633-922c8897af9e?w=600&h=400&fit=crop",
+        image: "/images/destinations/chhattisgarh.webp",
       },
       {
         day: 4,
@@ -9455,9 +9455,9 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=800&h=600&fit=crop",
+      "/images/generated/arunachal-pradesh-hero.webp",
       "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=800&h=600&fit=crop",
+      "/images/generated/arunachal-pradesh-hero.webp",
     ],
     duration: { days: 8, nights: 7 },
     price: 42000,
@@ -9529,7 +9529,7 @@ const allPackages: Package[] = [
         elevation: "13,700 ft at Sela Pass",
         distance: "135 km drive",
         highlight: "Crossing Sela Pass",
-        image: "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=600&h=400&fit=crop",
+        image: "/images/generated/arunachal-pradesh-hero.webp",
       },
       {
         day: 4,
@@ -9541,7 +9541,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Tawang",
         elevation: "15,200 ft at Bum La",
         highlight: "Tawang Monastery & the Indo-China border",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/arunachal-pradesh-hero.webp",
       },
       {
         day: 5,
@@ -9578,7 +9578,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Guwahati",
         distance: "210 km drive",
         highlight: "Birdwatching at Nameri",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/arunachal-pradesh-hero.webp",
       },
       {
         day: 8,
@@ -9589,7 +9589,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Closing the Tawang circuit",
-        image: "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=600&h=400&fit=crop",
+        image: "/images/generated/arunachal-pradesh-hero.webp",
       },
     ],
   },
@@ -9601,12 +9601,12 @@ const allPackages: Package[] = [
     category: "adventure",
     description:
       "A nine-day unhurried Arunachal circuit — two nights in Guwahati, the Brahmaputra town of Tezpur, the Dirang valley, and three full nights at Tawang to properly explore its monastery, lakes and the Bum La border, with a Bomdila finale.",
-    heroImage: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/arunachal-pradesh-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=800&h=600&fit=crop",
+      "/images/generated/arunachal-pradesh-hero.webp",
       "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=800&h=600&fit=crop",
+      "/images/generated/arunachal-pradesh-hero.webp",
     ],
     duration: { days: 9, nights: 8 },
     price: 48000,
@@ -9651,7 +9651,7 @@ const allPackages: Package[] = [
         meals: "Dinner",
         accommodation: "Hotel in Guwahati",
         highlight: "Kamakhya Temple Shakti Peetha",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/arunachal-pradesh-hero.webp",
       },
       {
         day: 2,
@@ -9689,7 +9689,7 @@ const allPackages: Package[] = [
         elevation: "13,700 ft at Sela Pass",
         distance: "135 km drive",
         highlight: "Crossing Sela Pass",
-        image: "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=600&h=400&fit=crop",
+        image: "/images/generated/arunachal-pradesh-hero.webp",
       },
       {
         day: 5,
@@ -9700,7 +9700,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Tawang",
         highlight: "Asia's 2nd largest monastery",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/arunachal-pradesh-hero.webp",
       },
       {
         day: 6,
@@ -9712,7 +9712,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Tawang",
         elevation: "15,200 ft at Bum La",
         highlight: "The Indo-China border at Bum La",
-        image: "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=600&h=400&fit=crop",
+        image: "/images/generated/arunachal-pradesh-hero.webp",
       },
       {
         day: 7,
@@ -9748,7 +9748,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Closing the Tawang circuit",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/arunachal-pradesh-hero.webp",
       },
     ],
   },
@@ -9763,7 +9763,7 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=800&h=600&fit=crop",
+      "/images/generated/arunachal-pradesh-hero.webp",
       "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=800&h=600&fit=crop",
     ],
@@ -9849,7 +9849,7 @@ const allPackages: Package[] = [
         elevation: "13,700 ft at Sela Pass",
         distance: "135 km drive",
         highlight: "Crossing Sela Pass",
-        image: "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=600&h=400&fit=crop",
+        image: "/images/generated/arunachal-pradesh-hero.webp",
       },
       {
         day: 5,
@@ -9860,7 +9860,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Hotel in Tawang",
         highlight: "Asia's 2nd largest monastery",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/arunachal-pradesh-hero.webp",
       },
       {
         day: 6,
@@ -9872,7 +9872,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Tawang",
         elevation: "15,200 ft at Bum La",
         highlight: "The Indo-China border at Bum La",
-        image: "https://images.unsplash.com/photo-1571536802086-159e4c3eb207?w=600&h=400&fit=crop",
+        image: "/images/generated/arunachal-pradesh-hero.webp",
       },
       {
         day: 7,
@@ -9920,7 +9920,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Guwahati",
         distance: "215 km drive",
         highlight: "Kamakhya Temple",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/arunachal-pradesh-hero.webp",
       },
       {
         day: 11,
@@ -9959,7 +9959,7 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=800&h=600&fit=crop",
+      "/images/generated/assam-hero.webp",
       "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=800&h=600&fit=crop",
     ],
@@ -10042,7 +10042,7 @@ const allPackages: Package[] = [
         accommodation: "Tea bungalow in Dibrugarh",
         distance: "130 km drive",
         highlight: "Ahom monuments at Sivasagar",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/assam-hero.webp",
       },
       {
         day: 5,
@@ -10076,9 +10076,9 @@ const allPackages: Package[] = [
     category: "adventure",
     description:
       "An eight-day Assam wildlife circuit through three national parks — Manas on the Bhutan border, the birding reserve of Nameri, and Kaziranga's rhino grasslands — finishing with a night in Guwahati.",
-    heroImage: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/assam-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=800&h=600&fit=crop",
+      "/images/generated/assam-hero.webp",
       "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=800&h=600&fit=crop",
@@ -10149,7 +10149,7 @@ const allPackages: Package[] = [
         accommodation: "Eco-camp in Nameri",
         distance: "230 km drive",
         highlight: "Riverside calm at Nameri",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/assam-hero.webp",
       },
       {
         day: 4,
@@ -10160,7 +10160,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Eco-camp in Nameri",
         highlight: "Rafting the Jia Bhoroli",
-        image: "https://images.unsplash.com/photo-1611911813383-67d01a3a7a73?w=600&h=400&fit=crop",
+        image: "/images/generated/assam-hero.webp",
       },
       {
         day: 5,
@@ -10220,11 +10220,11 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A five-day Karnataka circuit from Bengaluru — the royal city of Mysore with its illuminated palace and Chamundi Hill, and the coffee-scented hills of Coorg with Abbey Falls and the Dubare Elephant Camp.",
-    heroImage: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/karnataka-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=800&h=600&fit=crop",
+      "/images/generated/karnataka-hero.webp",
+      "/images/generated/karnataka-hero.webp",
+      "/images/generated/karnataka-hero.webp",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
     ],
     duration: { days: 5, nights: 4 },
@@ -10267,7 +10267,7 @@ const allPackages: Package[] = [
         activities: ["Pickup at Bengaluru", "Drive to Mysore", "Mysore Palace", "Chamundi Hill", "Devaraja Market"],
         meals: "Breakfast",
         accommodation: "Hotel in Mysore",
-        image: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 2,
@@ -10277,7 +10277,7 @@ const allPackages: Package[] = [
         activities: ["Drive to Coorg", "Namdroling Monastery", "Raja's Seat sunset"],
         meals: "Breakfast",
         accommodation: "Resort in Coorg",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 3,
@@ -10287,7 +10287,7 @@ const allPackages: Package[] = [
         activities: ["Abbey Falls", "Coffee plantation walk", "Dubare Elephant Camp"],
         meals: "Breakfast",
         accommodation: "Resort in Coorg",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 4,
@@ -10307,7 +10307,7 @@ const allPackages: Package[] = [
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
-        image: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
     ],
     vehiclePricing: {
@@ -10330,9 +10330,9 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A five-day Kerala escape through 'God's Own Country' — the misty tea hills of Munnar, the Periyar wildlife of Thekkady, and a backwater finale at Alleppey, the Venice of the East.",
-    heroImage: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/kerala-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=800&h=600&fit=crop",
+      "/images/generated/kerala-hero.webp",
       "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&h=600&fit=crop",
@@ -10397,7 +10397,7 @@ const allPackages: Package[] = [
         activities: ["Drive to Thekkady", "Periyar Lake boat ride", "Optional spice plantation / Kathakali"],
         meals: "Breakfast",
         accommodation: "Hotel in Thekkady",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
       {
         day: 4,
@@ -10417,7 +10417,7 @@ const allPackages: Package[] = [
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
     ],
     vehiclePricing: {
@@ -10444,8 +10444,8 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
     ],
     duration: { days: 5, nights: 4 },
     price: 19000,
@@ -10507,7 +10507,7 @@ const allPackages: Package[] = [
         activities: ["Abdul Kalam Memorial", "Dhanushkodi ghost town", "Pamban Island", "Rama Setu viewpoint"],
         meals: "Breakfast",
         accommodation: "Hotel in Rameswaram",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -10517,7 +10517,7 @@ const allPackages: Package[] = [
         activities: ["Drive to Kanyakumari", "Vivekananda Rock Memorial", "Thiruvalluvar Statue", "Three-sea sunset"],
         meals: "Breakfast",
         accommodation: "Hotel in Kanyakumari",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
       },
       {
         day: 5,
@@ -10554,8 +10554,8 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
     ],
     duration: { days: 5, nights: 4 },
     price: 23000,
@@ -10597,7 +10597,7 @@ const allPackages: Package[] = [
         activities: ["Pickup at Chennai", "Drive to Tirupati", "Sri Venkateswara Temple"],
         meals: "Breakfast",
         accommodation: "Hotel in Tirupati",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
       },
       {
         day: 2,
@@ -10617,7 +10617,7 @@ const allPackages: Package[] = [
         activities: ["Auroville", "Matrimandir viewpoint", "Paradise Beach", "French cafes"],
         meals: "Breakfast",
         accommodation: "Hotel in Pondicherry",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -10660,9 +10660,9 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A six-day Kerala journey opening with colonial Fort Kochi, then the tea hills of Munnar, the Periyar jungle at Thekkady and a backwater finale at Alleppey.",
-    heroImage: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/kerala-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=800&h=600&fit=crop",
+      "/images/generated/kerala-hero.webp",
       "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&h=600&fit=crop",
@@ -10737,7 +10737,7 @@ const allPackages: Package[] = [
         activities: ["Drive to Thekkady", "Periyar Lake boat ride", "Optional spice plantation / Kathakali"],
         meals: "Breakfast",
         accommodation: "Hotel in Thekkady",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
       {
         day: 5,
@@ -10780,11 +10780,11 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A seven-day Karnataka-Kerala circuit from Bengaluru — royal Mysore, the coffee hills of Coorg, and the prehistoric caves and waterfalls of Wayanad.",
-    heroImage: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/karnataka-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=800&h=600&fit=crop",
+      "/images/generated/karnataka-hero.webp",
+      "/images/generated/karnataka-hero.webp",
+      "/images/generated/karnataka-hero.webp",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
     ],
     duration: { days: 7, nights: 6 },
@@ -10827,7 +10827,7 @@ const allPackages: Package[] = [
         activities: ["Pickup at Bengaluru", "Mysore Palace", "Chamundi Hill", "Devaraja Market"],
         meals: "Breakfast",
         accommodation: "Hotel in Mysore",
-        image: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 2,
@@ -10837,7 +10837,7 @@ const allPackages: Package[] = [
         activities: ["Drive to Coorg", "Namdroling Monastery", "Raja's Seat sunset"],
         meals: "Breakfast",
         accommodation: "Resort in Coorg",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 3,
@@ -10847,7 +10847,7 @@ const allPackages: Package[] = [
         activities: ["Abbey Falls", "Coffee plantation walk", "Dubare Elephant Camp"],
         meals: "Breakfast",
         accommodation: "Resort in Coorg",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 4,
@@ -10857,7 +10857,7 @@ const allPackages: Package[] = [
         activities: ["Drive to Wayanad", "Resort check-in"],
         meals: "Breakfast",
         accommodation: "Resort in Wayanad",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 5,
@@ -10887,7 +10887,7 @@ const allPackages: Package[] = [
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
-        image: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
     ],
     vehiclePricing: {
@@ -10910,11 +10910,11 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A seven-day circuit from Bengaluru — royal Mysore, the coffee hills of Coorg, and Ooty, the Queen of Hill Stations in the Nilgiris.",
-    heroImage: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/karnataka-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=800&h=600&fit=crop",
+      "/images/generated/karnataka-hero.webp",
+      "/images/generated/karnataka-hero.webp",
+      "/images/generated/karnataka-hero.webp",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
     ],
     duration: { days: 7, nights: 6 },
@@ -10957,7 +10957,7 @@ const allPackages: Package[] = [
         activities: ["Pickup at Bengaluru", "Mysore Palace", "Chamundi Hill", "Devaraja Market"],
         meals: "Breakfast",
         accommodation: "Hotel in Mysore",
-        image: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 2,
@@ -10967,7 +10967,7 @@ const allPackages: Package[] = [
         activities: ["Drive to Coorg", "Namdroling Monastery", "Raja's Seat sunset"],
         meals: "Breakfast",
         accommodation: "Resort in Coorg",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 3,
@@ -10977,7 +10977,7 @@ const allPackages: Package[] = [
         activities: ["Abbey Falls", "Coffee plantation walk", "Dubare Elephant Camp"],
         meals: "Breakfast",
         accommodation: "Resort in Coorg",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 4,
@@ -10987,7 +10987,7 @@ const allPackages: Package[] = [
         activities: ["Drive to Ooty", "Resort check-in"],
         meals: "Breakfast",
         accommodation: "Hotel in Ooty",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 5,
@@ -10997,7 +10997,7 @@ const allPackages: Package[] = [
         activities: ["Botanical Gardens", "Ooty Lake boat", "Doddabetta Peak"],
         meals: "Breakfast",
         accommodation: "Hotel in Ooty",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 6,
@@ -11017,7 +11017,7 @@ const allPackages: Package[] = [
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
-        image: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
     ],
     vehiclePricing: {
@@ -11040,11 +11040,11 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A seven-day southern hills circuit from Bengaluru — royal Mysore, then the twin hill stations of Ooty (Queen of Hill Stations) and Kodaikanal (Princess of Hill Stations).",
-    heroImage: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/karnataka-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=800&h=600&fit=crop",
+      "/images/generated/karnataka-hero.webp",
+      "/images/generated/karnataka-hero.webp",
+      "/images/generated/karnataka-hero.webp",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
     ],
     duration: { days: 7, nights: 6 },
@@ -11087,7 +11087,7 @@ const allPackages: Package[] = [
         activities: ["Pickup at Bengaluru", "Mysore Palace", "Chamundi Hill", "Devaraja Market"],
         meals: "Breakfast",
         accommodation: "Hotel in Mysore",
-        image: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 2,
@@ -11097,7 +11097,7 @@ const allPackages: Package[] = [
         activities: ["Drive to Ooty", "Resort check-in"],
         meals: "Breakfast",
         accommodation: "Hotel in Ooty",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 3,
@@ -11107,7 +11107,7 @@ const allPackages: Package[] = [
         activities: ["Botanical Gardens", "Ooty Lake boat", "Doddabetta Peak"],
         meals: "Breakfast",
         accommodation: "Hotel in Ooty",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 4,
@@ -11117,7 +11117,7 @@ const allPackages: Package[] = [
         activities: ["Drive to Kodaikanal", "Resort check-in"],
         meals: "Breakfast",
         accommodation: "Hotel in Kodaikanal",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 5,
@@ -11127,7 +11127,7 @@ const allPackages: Package[] = [
         activities: ["Coaker's Walk", "Bryant Park", "Kodaikanal Lake boat"],
         meals: "Breakfast",
         accommodation: "Hotel in Kodaikanal",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 6,
@@ -11147,7 +11147,7 @@ const allPackages: Package[] = [
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
-        image: "https://images.unsplash.com/photo-1600100397608-f010e7f6d76a?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
     ],
     vehiclePricing: {
@@ -11170,9 +11170,9 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "A seven-day Kerala journey from the tea hills of Munnar through the Periyar jungle and the Alleppey backwaters to the beaches of Kovalam, ending with a Trivandrum city day.",
-    heroImage: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/kerala-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=800&h=600&fit=crop",
+      "/images/generated/kerala-hero.webp",
       "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&h=600&fit=crop",
@@ -11237,7 +11237,7 @@ const allPackages: Package[] = [
         activities: ["Drive to Thekkady", "Periyar Lake boat ride", "Optional spice plantation / Kathakali"],
         meals: "Breakfast",
         accommodation: "Hotel in Thekkady",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
       {
         day: 4,
@@ -11277,7 +11277,7 @@ const allPackages: Package[] = [
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
     ],
     vehiclePricing: {
@@ -11304,8 +11304,8 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
     ],
     duration: { days: 7, nights: 6 },
     price: 28000,
@@ -11347,7 +11347,7 @@ const allPackages: Package[] = [
         activities: ["Pickup at Madurai", "Drive to Kodaikanal", "Resort check-in"],
         meals: "Breakfast",
         accommodation: "Hotel in Kodaikanal",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
       },
       {
         day: 2,
@@ -11357,7 +11357,7 @@ const allPackages: Package[] = [
         activities: ["Coaker's Walk", "Bryant Park", "Kodaikanal Lake boat"],
         meals: "Breakfast",
         accommodation: "Hotel in Kodaikanal",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
       },
       {
         day: 3,
@@ -11387,7 +11387,7 @@ const allPackages: Package[] = [
         activities: ["Drive to Kanyakumari", "Vivekananda Rock Memorial", "Thiruvalluvar Statue", "Three-sea sunset"],
         meals: "Breakfast",
         accommodation: "Hotel in Kanyakumari",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
       },
       {
         day: 6,
@@ -11407,7 +11407,7 @@ const allPackages: Package[] = [
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
       },
     ],
     vehiclePricing: {
@@ -11430,9 +11430,9 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "An eight-day grand Kerala circuit — colonial Fort Kochi, the tea hills of Munnar, the Periyar jungle at Thekkady, the Alleppey backwaters and the beaches of Kovalam, with a Trivandrum city day.",
-    heroImage: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/kerala-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=800&h=600&fit=crop",
+      "/images/generated/kerala-hero.webp",
       "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&h=600&fit=crop",
@@ -11507,7 +11507,7 @@ const allPackages: Package[] = [
         activities: ["Drive to Thekkady", "Periyar Lake boat ride", "Optional spice plantation / Kathakali"],
         meals: "Breakfast",
         accommodation: "Hotel in Thekkady",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
       {
         day: 5,
@@ -11547,7 +11547,7 @@ const allPackages: Package[] = [
         activities: ["Morning at leisure", "Departure transfer"],
         meals: "Breakfast",
         accommodation: "N/A — Departure",
-        image: "https://images.unsplash.com/photo-1602642458516-ff44e053ec36?w=600&h=400&fit=crop",
+        image: "/images/generated/kerala-hero.webp",
       },
     ],
     vehiclePricing: {
@@ -11577,7 +11577,7 @@ const allPackages: Package[] = [
       "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=1600&h=900&fit=crop",
     ],
     duration: { days: 7, nights: 6 },
     price: 55000,
@@ -11658,7 +11658,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Kadmat Beach Resort",
         highlight: "First scuba dive at 12m",
-        image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&h=400&fit=crop",
+        image: "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=1600&h=900&fit=crop",
       },
       {
         day: 5,
@@ -11710,8 +11710,8 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=800&h=600&fit=crop",
+      "/images/generated/karnataka-hero.webp",
+      "/images/generated/karnataka-hero.webp",
       "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=800&h=600&fit=crop",
     ],
     duration: { days: 5, nights: 4 },
@@ -11770,7 +11770,7 @@ const allPackages: Package[] = [
         accommodation: "Beach hotel in Murudeshwar",
         distance: "115 km drive",
         highlight: "World's second-tallest Shiva statue",
-        image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 3,
@@ -11782,7 +11782,7 @@ const allPackages: Package[] = [
         accommodation: "Beach resort in Gokarna",
         distance: "85 km drive",
         highlight: "Atma Linga darshan at Gokarna",
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e13?w=600&h=400&fit=crop",
+        image: "/images/generated/karnataka-hero.webp",
       },
       {
         day: 4,
@@ -11822,7 +11822,7 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=800&h=600&fit=crop",
+      "/images/generated/vietnam-hero.webp",
       "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&h=600&fit=crop",
     ],
     duration: { days: 7, nights: 6 },
@@ -11915,7 +11915,7 @@ const allPackages: Package[] = [
         accommodation: "Beach hotel in Da Nang",
         distance: "320 km drive + flight",
         highlight: "Sapa market morning",
-        image: "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=1600&h=900&fit=crop",
+        image: "/images/generated/vietnam-hero.webp",
       },
       {
         day: 6,
@@ -11927,7 +11927,7 @@ const allPackages: Package[] = [
         accommodation: "Beach hotel in Da Nang",
         distance: "30 km each way",
         highlight: "Hoi An lantern evening",
-        image: "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=1600&h=900&fit=crop",
+        image: "/images/generated/vietnam-hero.webp",
       },
       {
         day: 7,
@@ -11950,9 +11950,9 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "Four nights on Phu Quoc — Vietnam's largest island in the Gulf of Thailand. White-sand beaches, snorkelling at the An Thoi archipelago, the world's longest sea cable car to Hon Thom, sunset cocktails at Long Beach, and Vinpearl Safari for the kids.",
-    heroImage: "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/vietnam-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=800&h=600&fit=crop",
+      "/images/generated/vietnam-hero.webp",
       "https://images.unsplash.com/photo-1528127269322-539801943592?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&h=600&fit=crop",
@@ -11998,7 +11998,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "4-star resort on Long Beach",
         highlight: "Long Beach sunset",
-        image: "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=1600&h=900&fit=crop",
+        image: "/images/generated/vietnam-hero.webp",
       },
       {
         day: 2,
@@ -12042,7 +12042,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "A final morning on Long Beach",
-        image: "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=1600&h=900&fit=crop",
+        image: "/images/generated/vietnam-hero.webp",
       },
     ],
   },
@@ -12158,7 +12158,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Beach hotel in Da Nang",
         highlight: "Tam Coc sampan ride",
-        image: "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=1600&h=900&fit=crop",
+        image: "/images/generated/vietnam-hero.webp",
       },
       {
         day: 7,
@@ -12169,7 +12169,7 @@ const allPackages: Package[] = [
         accommodation: "Beach hotel in Da Nang",
         distance: "30 km each way",
         highlight: "Hoi An lantern-boat sunset",
-        image: "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=1600&h=900&fit=crop",
+        image: "/images/generated/vietnam-hero.webp",
       },
       {
         day: 8,
@@ -12215,7 +12215,7 @@ const allPackages: Package[] = [
     heroImage: "/images/generated/vietnam-hero.webp",
     images: [
       "https://images.unsplash.com/photo-1528127269322-539801943592?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=800&h=600&fit=crop",
+      "/images/generated/vietnam-hero.webp",
       "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&h=600&fit=crop",
     ],
@@ -12306,7 +12306,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Brunch, Dinner",
         accommodation: "Sepon Blue Da Nang or similar (3★) / Yarra Ocean Suite (4★)",
         highlight: "Kayaking into Luon Cave",
-        image: "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=1600&h=900&fit=crop",
+        image: "/images/generated/vietnam-hero.webp",
       },
       {
         day: 5,
@@ -12317,7 +12317,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Da Nang",
         highlight: "Hoi An's lantern-lit night market",
-        image: "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=1600&h=900&fit=crop",
+        image: "/images/generated/vietnam-hero.webp",
       },
       {
         day: 6,
@@ -12362,7 +12362,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Phu Quoc",
         highlight: "VinWonders rides and themed zones",
-        image: "https://images.unsplash.com/photo-1540611025311-01df3cee54b5?w=1600&h=900&fit=crop",
+        image: "/images/generated/vietnam-hero.webp",
       },
       {
         day: 10,
@@ -12426,7 +12426,7 @@ const allPackages: Package[] = [
       "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1558500133-66ff3e620849?w=800&h=600&fit=crop",
+      "/images/generated/thailand-hero.webp",
     ],
     duration: { days: 5, nights: 4 },
     price: 42000,
@@ -12504,7 +12504,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Beach hotel in Pattaya",
         highlight: "Sanctuary of Truth woodwork",
-        image: "https://images.unsplash.com/photo-1558500133-66ff3e620849?w=1600&h=900&fit=crop",
+        image: "/images/generated/thailand-hero.webp",
       },
       {
         day: 5,
@@ -12533,7 +12533,7 @@ const allPackages: Package[] = [
       "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1558500133-66ff3e620849?w=800&h=600&fit=crop",
+      "/images/generated/thailand-hero.webp",
     ],
     duration: { days: 9, nights: 8 },
     price: 85000,
@@ -12629,7 +12629,7 @@ const allPackages: Package[] = [
         accommodation: "Beach hotel in Ao Nang, Krabi",
         distance: "Ferry 2 hrs",
         highlight: "Krabi's limestone karsts",
-        image: "https://images.unsplash.com/photo-1558500133-66ff3e620849?w=1600&h=900&fit=crop",
+        image: "/images/generated/thailand-hero.webp",
       },
       {
         day: 7,
@@ -12649,7 +12649,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Beach hotel in Krabi",
         highlight: "Emerald Pool jungle hike",
-        image: "https://images.unsplash.com/photo-1558500133-66ff3e620849?w=1600&h=900&fit=crop",
+        image: "/images/generated/thailand-hero.webp",
       },
       {
         day: 9,
@@ -12796,9 +12796,9 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1536599524557-5f784dd0a5a6?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1576156738025-cdf1290f2eba?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1599639668273-d62aceb37b96?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
     ],
     duration: { days: 5, nights: 4 },
     price: 75000,
@@ -12851,7 +12851,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Tsim Sha Tsui, Kowloon",
         highlight: "Peak Tram panoramic views",
-        image: "https://images.unsplash.com/photo-1536599524557-5f784dd0a5a6?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
       },
       {
         day: 3,
@@ -12861,7 +12861,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Tsim Sha Tsui, Kowloon",
         highlight: "Disney fireworks finale",
-        image: "https://images.unsplash.com/photo-1599639668273-d62aceb37b96?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -12871,7 +12871,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Tsim Sha Tsui, Kowloon",
         highlight: "Big Buddha at Ngong Ping",
-        image: "https://images.unsplash.com/photo-1576156738025-cdf1290f2eba?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
       },
       {
         day: 5,
@@ -12896,9 +12896,9 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1536599524557-5f784dd0a5a6?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1576156738025-cdf1290f2eba?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1599639668273-d62aceb37b96?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
     ],
     duration: { days: 7, nights: 6 },
     price: 95000,
@@ -12953,7 +12953,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Tsim Sha Tsui, Kowloon",
         highlight: "Peak Tram views",
-        image: "https://images.unsplash.com/photo-1536599524557-5f784dd0a5a6?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
       },
       {
         day: 3,
@@ -12963,7 +12963,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Tsim Sha Tsui, Kowloon",
         highlight: "Castle of Magical Dreams",
-        image: "https://images.unsplash.com/photo-1599639668273-d62aceb37b96?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -12973,7 +12973,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Tsim Sha Tsui, Kowloon",
         highlight: "5.7 km cable car ride",
-        image: "https://images.unsplash.com/photo-1576156738025-cdf1290f2eba?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
       },
       {
         day: 5,
@@ -12984,7 +12984,7 @@ const allPackages: Package[] = [
         accommodation: "Resort in Macau",
         distance: "Ferry 1 hr",
         highlight: "Senado Square (UNESCO)",
-        image: "https://images.unsplash.com/photo-1599639668273-d62aceb37b96?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
       },
       {
         day: 6,
@@ -12994,7 +12994,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Resort in Macau",
         highlight: "The Venetian gondola",
-        image: "https://images.unsplash.com/photo-1576156738025-cdf1290f2eba?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
       },
       {
         day: 7,
@@ -13297,7 +13297,7 @@ const allPackages: Package[] = [
       "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1496939376851-89342e90adcd?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1546412414-e1885259563a?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1599644076283-4d5e6f73c5f5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
     ],
     duration: { days: 5, nights: 4 },
     price: 65000,
@@ -13362,7 +13362,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Singapore",
         highlight: "USS Battlestar Galactica",
-        image: "https://images.unsplash.com/photo-1599644076283-4d5e6f73c5f5?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -13461,7 +13461,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Singapore",
         highlight: "USS rides",
-        image: "https://images.unsplash.com/photo-1599644076283-4d5e6f73c5f5?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -13518,7 +13518,7 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1546412414-e1885259563a?w=800&h=600&fit=crop",
     ],
     duration: { days: 7, nights: 6 },
@@ -13582,7 +13582,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Singapore",
         highlight: "USS",
-        image: "https://images.unsplash.com/photo-1599644076283-4d5e6f73c5f5?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -13612,7 +13612,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Kuala Lumpur",
         highlight: "Genting Highlands cable car",
-        image: "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
       },
       {
         day: 7,
@@ -13638,7 +13638,7 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1554552340-5d75d1eb1ec5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1546412414-e1885259563a?w=800&h=600&fit=crop",
     ],
     duration: { days: 9, nights: 8 },
@@ -13702,7 +13702,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Singapore",
         highlight: "USS rides",
-        image: "https://images.unsplash.com/photo-1599644076283-4d5e6f73c5f5?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
       },
       {
         day: 4,
@@ -13712,7 +13712,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Cruise inside cabin",
         highlight: "Cruise embarkation",
-        image: "https://images.unsplash.com/photo-1554552340-5d75d1eb1ec5?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
       },
       {
         day: 5,
@@ -13722,7 +13722,7 @@ const allPackages: Package[] = [
         meals: "All meals on board",
         accommodation: "Cruise inside cabin",
         highlight: "Sea day relaxation",
-        image: "https://images.unsplash.com/photo-1554552340-5d75d1eb1ec5?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
       },
       {
         day: 6,
@@ -13752,7 +13752,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Kuala Lumpur",
         highlight: "Genting cable car",
-        image: "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
       },
       {
         day: 9,
@@ -13780,7 +13780,7 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1601762603339-fd61e28b698a?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1555217851-6141535bd771?w=800&h=600&fit=crop",
     ],
     duration: { days: 8, nights: 7 },
@@ -13866,7 +13866,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Beach resort on Cenang Beach, Langkawi",
         highlight: "Cenang Beach sunset",
-        image: "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1600&h=900&fit=crop",
       },
       {
         day: 6,
@@ -13886,7 +13886,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Beach resort on Cenang Beach, Langkawi",
         highlight: "Eagle feeding in the mangroves",
-        image: "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1600&h=900&fit=crop",
       },
       {
         day: 8,
@@ -13910,12 +13910,12 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "Nine days across four Philippine islands — two nights of colonial heritage in Manila, two nights of beaches and history in Cebu, two nights at Asia's best beach Boracay, and two nights at the Puerto Princesa Underground River (UNESCO).",
-    heroImage: "https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/philippines.webp",
     images: [
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=800&h=600&fit=crop",
+      "/images/destinations/philippines.webp",
       "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1565073624497-7e91b5cc3843?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1583338917496-7b46b5d8a08c?w=800&h=600&fit=crop",
+      "/images/destinations/philippines.webp",
+      "/images/destinations/philippines.webp",
     ],
     duration: { days: 9, nights: 8 },
     price: 105000,
@@ -13961,7 +13961,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Manila",
         highlight: "Fort Santiago at sunset",
-        image: "https://images.unsplash.com/photo-1583338917496-7b46b5d8a08c?w=1600&h=900&fit=crop",
+        image: "/images/destinations/philippines.webp",
       },
       {
         day: 2,
@@ -13971,7 +13971,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Manila",
         highlight: "Bay walk Manila",
-        image: "https://images.unsplash.com/photo-1583338917496-7b46b5d8a08c?w=1600&h=900&fit=crop",
+        image: "/images/destinations/philippines.webp",
       },
       {
         day: 3,
@@ -14001,7 +14001,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel near White Beach, Boracay",
         highlight: "White Beach sunset",
-        image: "https://images.unsplash.com/photo-1565073624497-7e91b5cc3843?w=1600&h=900&fit=crop",
+        image: "/images/destinations/philippines.webp",
       },
       {
         day: 6,
@@ -14011,7 +14011,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch",
         accommodation: "Hotel near White Beach, Boracay",
         highlight: "Crystal Cove + Puka Beach",
-        image: "https://images.unsplash.com/photo-1565073624497-7e91b5cc3843?w=1600&h=900&fit=crop",
+        image: "/images/destinations/philippines.webp",
       },
       {
         day: 7,
@@ -14042,7 +14042,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "Four Philippine islands in 9 days",
-        image: "https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=1600&h=900&fit=crop",
+        image: "/images/destinations/philippines.webp",
       },
     ],
   },
@@ -14174,7 +14174,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Paro",
         highlight: "Kyichu Lhakhang (7th-century temple)",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 8,
@@ -14201,7 +14201,7 @@ const allPackages: Package[] = [
       "/images/destinations/bhutan.webp",
       "/images/destinations/bhutan.webp",
       "/images/destinations/bhutan.webp",
-      "https://images.unsplash.com/photo-1543874746-b7e36e8a2b3e?w=800&h=600&fit=crop",
+      "/images/destinations/bhutan.webp",
     ],
     duration: { days: 11, nights: 10 },
     price: 195000,
@@ -14287,7 +14287,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Trongsa",
         distance: "200 km Punakha→Trongsa",
         highlight: "Trongsa Dzong",
-        image: "https://images.unsplash.com/photo-1543874746-b7e36e8a2b3e?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 6,
@@ -14298,7 +14298,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Jakar, Bumthang",
         distance: "75 km Trongsa→Bumthang",
         highlight: "Bumthang valley arrival",
-        image: "https://images.unsplash.com/photo-1543874746-b7e36e8a2b3e?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 7,
@@ -14339,7 +14339,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Paro",
         highlight: "Kyichu Lhakhang",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 11,
@@ -14366,7 +14366,7 @@ const allPackages: Package[] = [
       "/images/destinations/bhutan.webp",
       "/images/destinations/bhutan.webp",
       "/images/destinations/bhutan.webp",
-      "https://images.unsplash.com/photo-1543874746-b7e36e8a2b3e?w=800&h=600&fit=crop",
+      "/images/destinations/bhutan.webp",
     ],
     duration: { days: 13, nights: 12 },
     price: 235000,
@@ -14452,7 +14452,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Phobjikha (3,000 m)",
         distance: "150 km",
         highlight: "Phobjikha glacial valley",
-        image: "https://images.unsplash.com/photo-1543874746-b7e36e8a2b3e?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 6,
@@ -14462,7 +14462,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Phobjikha",
         highlight: "Black-necked cranes (Oct-Mar)",
-        image: "https://images.unsplash.com/photo-1543874746-b7e36e8a2b3e?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 7,
@@ -14473,7 +14473,7 @@ const allPackages: Package[] = [
         accommodation: "Hotel in Jakar, Bumthang",
         distance: "220 km",
         highlight: "Trongsa Dzong from Pele La",
-        image: "https://images.unsplash.com/photo-1543874746-b7e36e8a2b3e?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 8,
@@ -14523,7 +14523,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Hotel in Paro",
         highlight: "Farmhouse lunch with locals",
-        image: "https://images.unsplash.com/photo-1545158539-4e6d35bb84a9?w=1600&h=900&fit=crop",
+        image: "/images/destinations/bhutan.webp",
       },
       {
         day: 13,
@@ -14835,10 +14835,10 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "Six days through Jordan's greatest hits — the rose-red rock city of Petra, the desert of Wadi Rum, a float in the Dead Sea, and the Roman ruins of Jerash near Amman.",
-    heroImage: "https://images.unsplash.com/photo-1563177978-4c5ddccc10da?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/jordan.webp",
     images: [
-      "https://images.unsplash.com/photo-1563177978-4c5ddccc10da?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1518630257714-3a3f9bb9c5a3?w=800&h=600&fit=crop",
+      "/images/destinations/jordan.webp",
+      "/images/destinations/jordan.webp",
       "https://images.unsplash.com/photo-1580834341580-8c17a3a630ca?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1605908502724-9093a79a1b39?w=800&h=600&fit=crop",
     ],
@@ -14905,7 +14905,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Petra",
         highlight: "The Treasury reveal",
-        image: "https://images.unsplash.com/photo-1563177978-4c5ddccc10da?w=1600&h=900&fit=crop",
+        image: "/images/destinations/jordan.webp",
       },
       {
         day: 4,
@@ -14916,7 +14916,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Dinner",
         accommodation: "Desert camp, Wadi Rum",
         highlight: "Stars over the Valley of the Moon",
-        image: "https://images.unsplash.com/photo-1518630257714-3a3f9bb9c5a3?w=1600&h=900&fit=crop",
+        image: "/images/destinations/jordan.webp",
       },
       {
         day: 5,
@@ -14938,7 +14938,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "A complete Jordan in 6 days",
-        image: "https://images.unsplash.com/photo-1563177978-4c5ddccc10da?w=1600&h=900&fit=crop",
+        image: "/images/destinations/jordan.webp",
       },
     ],
   },
@@ -14953,7 +14953,7 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1531168556467-80aace4d0144?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1476610182048-b716b8518aae?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1490650034439-fd184c3c86a5?w=800&h=600&fit=crop",
     ],
@@ -15011,7 +15011,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Reykjavik",
         highlight: "Gullfoss in full flow",
-        image: "https://images.unsplash.com/photo-1531168556467-80aace4d0144?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=1600&h=900&fit=crop",
       },
       {
         day: 3,
@@ -15384,7 +15384,7 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1551867633-194f125695e9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1565426873118-a17ed65d74b9?w=800&h=600&fit=crop",
     ],
     duration: { days: 8, nights: 7 },
@@ -15475,7 +15475,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Budapest",
         highlight: "The Danube light show",
-        image: "https://images.unsplash.com/photo-1551867633-194f125695e9?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&h=900&fit=crop",
       },
       {
         day: 6,
@@ -15497,7 +15497,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Budapest",
         highlight: "Soaking in the Szechenyi baths",
-        image: "https://images.unsplash.com/photo-1551867633-194f125695e9?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&h=900&fit=crop",
       },
       {
         day: 8,
@@ -15673,7 +15673,7 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1469521669194-babb45599def?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1469521669194-babb45599def?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1507097634215-8d5e4b77c5e9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1469521669194-babb45599def?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1578645510447-e20b4311e3ce?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&h=600&fit=crop",
     ],
@@ -15719,7 +15719,7 @@ const allPackages: Package[] = [
         meals: "Dinner",
         accommodation: "Hotel in Auckland",
         highlight: "City of Sails skyline",
-        image: "https://images.unsplash.com/photo-1507097634215-8d5e4b77c5e9?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1469521669194-babb45599def?w=1600&h=900&fit=crop",
       },
       {
         day: 2,
@@ -15785,7 +15785,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch",
         accommodation: "Hotel in Queenstown",
         highlight: "Mitre Peak over the fiord",
-        image: "https://images.unsplash.com/photo-1507097634215-8d5e4b77c5e9?w=1600&h=900&fit=crop",
+        image: "https://images.unsplash.com/photo-1469521669194-babb45599def?w=1600&h=900&fit=crop",
       },
       {
         day: 8,
@@ -15933,10 +15933,10 @@ const allPackages: Package[] = [
     category: "leisure",
     description:
       "Eight days along the Silk Road — Tashkent's metro and bazaars, the mosaic madrasas of Samarkand's Registan, the ancient lanes of Bukhara and the walled medieval town of Khiva.",
-    heroImage: "https://images.unsplash.com/photo-1602523961757-3c4f9d2f6a8c?w=1600&h=900&fit=crop",
+    heroImage: "/images/destinations/uzbekistan.webp",
     images: [
-      "https://images.unsplash.com/photo-1602523961757-3c4f9d2f6a8c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1601921004897-c6e16a3a1c63?w=800&h=600&fit=crop",
+      "/images/destinations/uzbekistan.webp",
+      "/images/destinations/uzbekistan.webp",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&h=600&fit=crop",
     ],
@@ -16004,7 +16004,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Samarkand",
         highlight: "The Registan at golden hour",
-        image: "https://images.unsplash.com/photo-1602523961757-3c4f9d2f6a8c?w=1600&h=900&fit=crop",
+        image: "/images/destinations/uzbekistan.webp",
       },
       {
         day: 4,
@@ -16015,7 +16015,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Bukhara",
         highlight: "Tiled tombs of Shah-i-Zinda",
-        image: "https://images.unsplash.com/photo-1601921004897-c6e16a3a1c63?w=1600&h=900&fit=crop",
+        image: "/images/destinations/uzbekistan.webp",
       },
       {
         day: 5,
@@ -16026,7 +16026,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "Hotel in Bukhara",
         highlight: "The Kalyan Minaret",
-        image: "https://images.unsplash.com/photo-1601921004897-c6e16a3a1c63?w=1600&h=900&fit=crop",
+        image: "/images/destinations/uzbekistan.webp",
       },
       {
         day: 6,
@@ -16059,7 +16059,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "The full Silk Road",
-        image: "https://images.unsplash.com/photo-1602523961757-3c4f9d2f6a8c?w=1600&h=900&fit=crop",
+        image: "/images/destinations/uzbekistan.webp",
       },
     ],
   },
@@ -16341,8 +16341,8 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=800&h=600&fit=crop",
+      "/images/generated/himachal-pradesh-hero.webp",
+      "/images/generated/himachal-pradesh-hero.webp",
       "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
     ],
     duration: { days: 5, nights: 4 },
@@ -16400,7 +16400,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Student hotel in Shimla",
         highlight: "Himalayan views from Kufri",
-        image: "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=1600&h=900&fit=crop",
+        image: "/images/generated/himachal-pradesh-hero.webp",
       },
       {
         day: 3,
@@ -16411,7 +16411,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Student hotel in Manali",
         highlight: "Following the Beas to Manali",
-        image: "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=1600&h=900&fit=crop",
+        image: "/images/generated/himachal-pradesh-hero.webp",
       },
       {
         day: 4,
@@ -16448,9 +16448,9 @@ const allPackages: Package[] = [
     heroImage: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=800&h=600&fit=crop",
+      "/images/generated/uttarakhand-hero.webp",
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=800&h=600&fit=crop",
+      "/images/generated/uttarakhand-hero.webp",
     ],
     duration: { days: 4, nights: 3 },
     price: 8000,
@@ -16518,7 +16518,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Student hotel in Nainital",
         highlight: "Birding in the oak forest",
-        image: "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=1600&h=900&fit=crop",
+        image: "/images/generated/uttarakhand-hero.webp",
       },
       {
         day: 4,
@@ -16529,7 +16529,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "A lesson in lake ecology",
-        image: "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=1600&h=900&fit=crop",
+        image: "/images/generated/uttarakhand-hero.webp",
       },
     ],
   },
@@ -16541,12 +16541,12 @@ const allPackages: Package[] = [
     category: "educational",
     description:
       "A three-day Ganga tour for students — the grand Har ki Pauri aarti at Haridwar, river ecology and white-water rafting at Rishikesh, and an introduction to yoga, blending culture, environment and adventure.",
-    heroImage: "https://images.unsplash.com/photo-1591018533274-7986e34c5f9c?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/uttarakhand-hero.webp",
     images: [
-      "https://images.unsplash.com/photo-1591018533274-7986e34c5f9c?w=800&h=600&fit=crop",
+      "/images/generated/uttarakhand-hero.webp",
       "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=800&h=600&fit=crop",
+      "/images/generated/uttarakhand-hero.webp",
     ],
     duration: { days: 3, nights: 2 },
     price: 4000,
@@ -16592,7 +16592,7 @@ const allPackages: Package[] = [
         meals: "Lunch, Dinner",
         accommodation: "Student hotel in Haridwar",
         highlight: "Diyas on the Ganga at dusk",
-        image: "https://images.unsplash.com/photo-1591018533274-7986e34c5f9c?w=1600&h=900&fit=crop",
+        image: "/images/generated/uttarakhand-hero.webp",
       },
       {
         day: 2,
@@ -16630,8 +16630,8 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1544233726-9f1d2b27be8b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1622308644420-b20142dc993c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=800&h=600&fit=crop",
+      "/images/generated/sikkim-and-darjeeling-hero.webp",
+      "/images/generated/sikkim-and-darjeeling-hero.webp",
     ],
     duration: { days: 5, nights: 4 },
     price: 9000,
@@ -16699,7 +16699,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Student hotel in Darjeeling",
         highlight: "Arriving in tea country",
-        image: "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=1600&h=900&fit=crop",
+        image: "/images/generated/sikkim-and-darjeeling-hero.webp",
       },
       {
         day: 4,
@@ -16710,7 +16710,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Student hotel in Darjeeling",
         highlight: "Sunrise on Kanchenjunga",
-        image: "https://images.unsplash.com/photo-1571536802807-30451a456b58?w=1600&h=900&fit=crop",
+        image: "/images/generated/sikkim-and-darjeeling-hero.webp",
       },
       {
         day: 5,
@@ -16737,8 +16737,8 @@ const allPackages: Package[] = [
     images: [
       "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1587922546307-776227941871?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1559677201-2c0e6d38b1e9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=800&h=600&fit=crop",
+      "/images/generated/goa-hero.webp",
+      "/images/generated/goa-hero.webp",
     ],
     duration: { days: 4, nights: 3 },
     price: 5500,
@@ -16806,7 +16806,7 @@ const allPackages: Package[] = [
         meals: "Breakfast, Lunch, Dinner",
         accommodation: "Student hotel in Goa",
         highlight: "Tide pools and coastal ecology",
-        image: "https://images.unsplash.com/photo-1559677201-2c0e6d38b1e9?w=1600&h=900&fit=crop",
+        image: "/images/generated/goa-hero.webp",
       },
       {
         day: 4,
@@ -16817,7 +16817,7 @@ const allPackages: Package[] = [
         meals: "Breakfast",
         accommodation: "N/A — Departure",
         highlight: "History and ecology by the sea",
-        image: "https://images.unsplash.com/photo-1605649461784-ee5eb326f1d3?w=1600&h=900&fit=crop",
+        image: "/images/generated/goa-hero.webp",
       },
     ],
   },
