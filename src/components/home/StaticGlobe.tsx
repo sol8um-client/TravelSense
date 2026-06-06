@@ -37,10 +37,10 @@ type PinDef = {
 /* Anchors verified against the globe art: north-India, south-India, SE-Asia
    mainland, Indonesia — a clean spread across the visible face. */
 const PIN_DEFS: PinDef[] = [
-  { slug: "kashmir", x: 42, y: 39, delay: 0.15 }, // far-north India / Himalaya
-  { slug: "kerala", x: 40, y: 58, delay: 0.4 }, // south-west coast
-  { slug: "thailand", x: 59, y: 54, delay: 0.65 }, // Indochina mainland
-  { slug: "bali", x: 71, y: 72, delay: 0.9 }, // Indonesia
+  { slug: "kashmir", x: 40, y: 35, delay: 0.15 }, // far-north India / Himalaya
+  { slug: "kerala", x: 41, y: 53, delay: 0.4 }, // south-west coast (peninsula tip)
+  { slug: "thailand", x: 57, y: 50, delay: 0.65 }, // Indochina mainland
+  { slug: "bali", x: 68, y: 70, delay: 0.9 }, // Indonesia
 ]
 
 type Pin = PinDef & { name: string; image: string }
@@ -94,25 +94,6 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
           background:
             "radial-gradient(closest-side at 35% 27%, rgba(226,182,112,0.22), transparent 60%)",
           filter: "blur(26px)",
-        }}
-      />
-      {/* thin atmospheric limb that hugs the sphere then fades BOTH ways — a soft
-          cinematic glow, never a solid band */}
-      <div
-        className="absolute -inset-[0.5%] rounded-full"
-        style={{
-          background:
-            "radial-gradient(closest-side, transparent 91%, rgba(150,192,255,0.34) 97%, rgba(150,192,255,0.08) 99.5%, transparent 100%)",
-          filter: "blur(5px)",
-          mixBlendMode: "screen",
-        }}
-      />
-      {/* soft contact shadow under the sphere */}
-      <div
-        className="absolute bottom-[2%] left-1/2 h-[7%] w-[60%] -translate-x-1/2 rounded-[50%]"
-        style={{
-          background: "radial-gradient(closest-side, rgba(10,20,37,0.30), transparent 75%)",
-          filter: "blur(12px)",
         }}
       />
 

@@ -517,7 +517,7 @@ function HeroSection() {
       </div>
 
       {/* 2. Dot grid pattern — only on right half, faded in with mask so no hard edge */}
-      <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "radial-gradient(circle, #B0B8C4 1px, transparent 1px)", backgroundSize: "32px 32px", maskImage: "linear-gradient(to right, transparent 35%, black 55%)", WebkitMaskImage: "linear-gradient(to right, transparent 35%, black 55%)" }} />
+      <div className="absolute inset-0 hidden opacity-[0.025] lg:block" style={{ backgroundImage: "radial-gradient(circle, #B0B8C4 1px, transparent 1px)", backgroundSize: "32px 32px", maskImage: "linear-gradient(to right, transparent 35%, black 55%)", WebkitMaskImage: "linear-gradient(to right, transparent 35%, black 55%)" }} />
 
       {/* 3. Constellation star field — only on right/content side, faded */}
       <div style={{ maskImage: "linear-gradient(to right, transparent 30%, black 50%)", WebkitMaskImage: "linear-gradient(to right, transparent 30%, black 50%)" }}>

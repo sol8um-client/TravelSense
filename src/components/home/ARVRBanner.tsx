@@ -42,9 +42,6 @@ export default function ARVRBanner() {
           WebkitMaskImage: "linear-gradient(to left, black 0%, transparent 55%)",
         }}
       />
-      {/* soft gold light at the very top — a glow only (no hairline seam) */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-[radial-gradient(60%_100%_at_50%_0%,rgba(212,168,83,0.14),transparent_70%)]" />
-
       <div className="relative mx-auto max-w-[1180px] px-4 py-3.5 sm:px-6 sm:py-8">
         <div className="glass-dark flex flex-row items-center gap-3 rounded-[18px] px-3.5 py-3 text-left sm:gap-7 sm:rounded-[22px] sm:px-7 sm:py-5" style={{ border: "none" }}>
           {/* ── Figure: the face area of the VR traveller, in a glowing ring ── */}

@@ -184,7 +184,7 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
         }}
       >
         {/* image stage — fills the card edge-to-edge (no padded frame). */}
-        <div className="relative aspect-[4/5] sm:aspect-[5/6] lg:aspect-[4/5] w-full overflow-hidden rounded-[24px] bg-primary/10">
+        <div className="relative aspect-[10/9] sm:aspect-[5/6] lg:aspect-[4/5] w-full overflow-hidden rounded-[24px] bg-primary/10">
           <AnimatePresence custom={dir} mode="popLayout" initial={false}>
             <motion.div
               key={s.slug}
