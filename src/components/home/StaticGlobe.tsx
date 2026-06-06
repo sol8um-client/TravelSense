@@ -37,7 +37,7 @@ type PinDef = {
 /* Anchors verified against the globe art: north-India, south-India, SE-Asia
    mainland, Indonesia - a clean spread across the visible face. */
 const PIN_DEFS: PinDef[] = [
-  { slug: "kashmir", x: 37, y: 32, delay: 0.15 }, // far-north India / NW Himalaya
+  { slug: "kashmir", x: 43, y: 29, delay: 0.15 }, // Kashmir valley / NW Himalaya (E of Pakistan)
   { slug: "kerala", x: 45, y: 55, delay: 0.4 }, // south-west coast of the peninsula
   { slug: "thailand", x: 67, y: 51, delay: 0.65 }, // Bangkok / Indochina mainland (on the city lights)
   { slug: "bali", x: 73, y: 69, delay: 0.9 }, // Indonesia (Java/Bali island chain)
