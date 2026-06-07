@@ -532,11 +532,11 @@ function HeroSection() {
              Desktop (lg+): present on the LEFT with live location image-pins. */}
       <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">
         <StaticGlobe
-          className="absolute left-1/2 top-[47%] w-[130%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.6]
-                     sm:w-[108%] sm:opacity-[0.66]
-                     md:w-[78%] md:opacity-[0.62]
-                     lg:w-[66%] lg:opacity-[0.64]
-                     xl:left-0 xl:top-1/2 xl:h-[116%] xl:w-auto xl:-translate-x-[28%] xl:-translate-y-1/2 xl:opacity-100"
+          className="absolute left-1/2 top-[47%] w-[104%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.6]
+                     sm:w-[86%] sm:opacity-[0.66]
+                     md:w-[62%] md:opacity-[0.62]
+                     lg:w-[53%] lg:opacity-[0.64]
+                     xl:left-0 xl:top-1/2 xl:h-[93%] xl:w-auto xl:-translate-x-[28%] xl:-translate-y-1/2 xl:opacity-100"
         />
       </div>
 
@@ -1912,8 +1912,11 @@ function TestimonialsSection() {
                 {/* bottom scrim + coordinate micro-label */}
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-primary/80 via-primary/25 to-transparent" />
                 <span className="absolute bottom-2.5 left-3.5 font-tech text-[8px] uppercase tracking-[0.18em] text-white/90">{t.coord}</span>
-                {/* trip tag */}
-                <span className="absolute left-3.5 top-3.5 rounded-full bg-white/[0.92] px-2.5 py-1 font-tech text-[8px] uppercase tracking-[0.12em] text-primary backdrop-blur-sm">{t.trip}</span>
+                {/* location travelled - prominent on top of the testimonial */}
+                <span className="absolute left-3.5 top-3.5 inline-flex max-w-[calc(100%-28px)] items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 font-body text-[11px] font-semibold text-primary shadow-[0_4px_14px_rgba(11,20,38,0.18)] backdrop-blur-sm">
+                  <MapPin className="h-3 w-3 shrink-0 text-secondary" strokeWidth={2.2} />
+                  <span className="truncate">{t.trip}</span>
+                </span>
                 {/* verified franking stamp */}
                 <div className="absolute right-3.5 top-3.5 flex h-9 w-9 rotate-[9deg] items-center justify-center rounded-full border border-dashed border-white/70 bg-white/15 backdrop-blur-sm" title="Verified traveller">
                   <Check className="h-4 w-4 text-white" strokeWidth={2.6} />
@@ -1936,7 +1939,7 @@ function TestimonialsSection() {
                   </div>
                   <div className="min-w-0">
                     <p className="truncate text-[13px] font-semibold text-primary">{t.name}</p>
-                    <p className="truncate text-[11px] text-muted-foreground">{t.trip}{t.location ? ` · ${t.location}` : ""}</p>
+                    <p className="truncate text-[11px] text-muted-foreground">{t.location ? `From ${t.location}` : "Verified traveller"}</p>
                   </div>
                 </div>
               </div>

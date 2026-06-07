@@ -118,7 +118,9 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
             draggable={false}
             style={{
               // feather off the asset's baked bright atmosphere limb so the CSS
-              // glow above provides a smooth, cinematic edge instead of a "tube"
+              // glow above provides a smooth, cinematic edge instead of a "tube".
+              // brightness lifts the night-side ~18% lighter (client request).
+              filter: "brightness(1.18) saturate(1.04)",
               maskImage: "radial-gradient(circle closest-side at center, #000 93%, transparent 98.5%)",
               WebkitMaskImage: "radial-gradient(circle closest-side at center, #000 93%, transparent 98.5%)",
             }}
@@ -151,6 +153,30 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
             mixBlendMode: "screen",
           }}
         />
+
+        {/* twinkling night-side city lights - small pulsing glints over the baked
+            city clusters (India + SE Asia) so the globe reads as a LIVE element. */}
+        <div className="pointer-events-none absolute inset-0">
+          {([
+            [48, 40, 0], [54, 44, 0.7], [60, 38, 1.3], [64, 49, 0.4],
+            [69, 52, 1.8], [58, 47, 1.1], [51, 36, 2.2], [66, 43, 0.9],
+          ] as [number, number, number][]).map(([x, y, d], i) => (
+            <span
+              key={i}
+              className="absolute block rounded-full"
+              style={{
+                left: `${x}%`,
+                top: `${y}%`,
+                width: 3,
+                height: 3,
+                background: "rgba(255,240,205,0.95)",
+                boxShadow: "0 0 6px 1px rgba(255,222,158,0.85)",
+                animation: `globeTwinkle 3.4s ease-in-out ${d}s infinite`,
+              }}
+            />
+          ))}
+        </div>
+        <style>{`@keyframes globeTwinkle{0%,100%{opacity:.12;transform:scale(.6)}50%{opacity:1;transform:scale(1.15)}}`}</style>
 
         {/* ── Location image-pins (desktop only) - frosted glass chips ────────── */}
         <div className="pointer-events-none absolute inset-0 hidden lg:block">

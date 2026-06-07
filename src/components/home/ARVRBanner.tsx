@@ -24,11 +24,11 @@ export default function ARVRBanner() {
   return (
     <section
       aria-label="Coming soon: AR/VR destination preview"
-      className="relative overflow-hidden"
+      className="relative overflow-visible"
       style={{ background: "#0A1425" }}
     >
-      {/* soft navy glow for depth (sibling - no filter on clipped kids) */}
-      <div className="pointer-events-none absolute inset-0">
+      {/* soft navy glow for depth (clipped so it can't spill now overflow is visible) */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute right-[8%] top-[10%] h-[240px] w-[240px] rounded-full bg-primary-light/30 blur-[80px]" />
       </div>
       {/* faint dot grid (right side) */}
@@ -41,22 +41,26 @@ export default function ARVRBanner() {
           WebkitMaskImage: "linear-gradient(to left, black 0%, transparent 55%)",
         }}
       />
-      <div className="relative mx-auto max-w-[1180px] px-4 py-3.5 sm:px-6 sm:py-8">
-        <div className="glass-dark flex flex-row items-center gap-3 rounded-[18px] px-3.5 py-3 text-left sm:gap-7 sm:rounded-[22px] sm:px-7 sm:py-5" style={{ border: "none" }}>
-          {/* ── Figure: the face area of the VR traveller, in a clean ring ── */}
-          <div className="relative shrink-0" aria-hidden>
+      {/* The bar is pulled UP so it straddles the white -> navy wave line, i.e. it
+          "stands on" the section break; the VR face then emerges up & out of it. */}
+      <div className="relative z-30 mx-auto -mt-[50px] max-w-[1180px] px-4 pb-6 sm:-mt-[76px] sm:px-6 sm:pb-10">
+        <div className="glass-dark relative flex flex-row items-center gap-3 overflow-visible rounded-[18px] py-3 pl-[70px] pr-3.5 text-left sm:gap-7 sm:rounded-[22px] sm:py-5 sm:pl-[156px] sm:pr-7" style={{ border: "none" }}>
+          {/* ── VR traveller's face - rises UP & OUT of the bar (3D pop-out) ── */}
+          <div className="absolute bottom-0 left-3 sm:left-7" aria-hidden>
+            {/* soft ground shadow so the head reads as standing out of the bar */}
+            <span className="absolute bottom-1 left-1/2 h-3 w-[78%] -translate-x-1/2 rounded-[50%] bg-black/50 blur-md" />
             <span
-              className="relative block h-[44px] w-[44px] overflow-hidden rounded-full sm:h-[86px] sm:w-[86px]"
+              className="relative block h-[58px] w-[58px] overflow-hidden rounded-full sm:h-[120px] sm:w-[120px]"
               style={{
-                border: "1px solid rgba(212,168,83,0.5)",
-                boxShadow: "inset 0 1px 0 rgba(255,235,190,0.25), 0 10px 26px rgba(0,0,0,0.42)",
+                border: "1px solid rgba(212,168,83,0.55)",
+                boxShadow: "inset 0 1px 0 rgba(255,235,190,0.3), 0 22px 36px rgba(0,0,0,0.55)",
               }}
             >
               <Image
                 src="/images/hero/vr-face.png"
                 alt="A traveller previewing a destination in virtual reality"
                 fill
-                sizes="86px"
+                sizes="120px"
                 className="object-cover"
                 loading="lazy"
               />
