@@ -117,15 +117,28 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
             className="select-none object-contain"
             draggable={false}
             style={{
-              // feather off the asset's baked bright atmosphere limb so the CSS
-              // glow above provides a smooth, cinematic edge instead of a "tube".
-              // brightness lifts the night-side ~18% lighter (client request).
-              filter: "brightness(1.18) saturate(1.04)",
-              maskImage: "radial-gradient(circle closest-side at center, #000 93%, transparent 98.5%)",
-              WebkitMaskImage: "radial-gradient(circle closest-side at center, #000 93%, transparent 98.5%)",
+              // Feather the globe edge well inside the square so NO square/box
+              // edge ever shows next to the glow (client: kill the square corners
+              // top & bottom). Lightening is done by a screen overlay below, not a
+              // brightness filter (which was lifting the image's square box).
+              maskImage: "radial-gradient(circle closest-side at center, #000 90%, transparent 99.5%)",
+              WebkitMaskImage: "radial-gradient(circle closest-side at center, #000 90%, transparent 99.5%)",
             }}
           />
         </div>
+
+        {/* lighten the globe overall + EXTRA on the dark lower (ocean) half;
+            circular-masked + screen-blended so it only lifts the dark pixels and
+            never shows a square edge (client: brighter + lighten the bottom). */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            maskImage: "radial-gradient(circle closest-side at center, #000 90%, transparent 99.5%)",
+            WebkitMaskImage: "radial-gradient(circle closest-side at center, #000 90%, transparent 99.5%)",
+            background: "linear-gradient(to bottom, rgba(255,255,255,0.05) 0%, rgba(214,228,250,0.12) 42%, rgba(152,184,230,0.5) 100%)",
+            mixBlendMode: "screen",
+          }}
+        />
 
         {/* rotating radar sweep anchored at the CENTRE OF INDIA (the globe's centre
             of rotation) - a soft luminous beam that sweeps the whole sphere */}
@@ -133,7 +146,7 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
           className="absolute inset-0 rounded-full mix-blend-screen"
           style={{
             background:
-              "conic-gradient(from 0deg at 47% 49%, transparent 0deg, rgba(255,238,200,0.14) 16deg, rgba(212,168,83,0.07) 42deg, transparent 72deg)",
+              "conic-gradient(from 0deg at 47% 49%, transparent 0deg, rgba(255,240,205,0.26) 14deg, rgba(212,168,83,0.13) 42deg, transparent 74deg)",
             animation: "spinSlow 20s linear infinite",
             transformOrigin: "47% 49%",
           }}
@@ -160,6 +173,8 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
           {([
             [48, 40, 0], [54, 44, 0.7], [60, 38, 1.3], [64, 49, 0.4],
             [69, 52, 1.8], [58, 47, 1.1], [51, 36, 2.2], [66, 43, 0.9],
+            [44, 46, 1.5], [62, 55, 0.3], [56, 33, 2.0], [70, 45, 1.2],
+            [47, 52, 0.6], [52, 39, 2.5], [63, 35, 1.0], [59, 51, 1.9],
           ] as [number, number, number][]).map(([x, y, d], i) => (
             <span
               key={i}
@@ -167,11 +182,11 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
               style={{
                 left: `${x}%`,
                 top: `${y}%`,
-                width: 3,
-                height: 3,
-                background: "rgba(255,240,205,0.95)",
-                boxShadow: "0 0 6px 1px rgba(255,222,158,0.85)",
-                animation: `globeTwinkle 3.4s ease-in-out ${d}s infinite`,
+                width: i % 3 === 0 ? 4 : 3,
+                height: i % 3 === 0 ? 4 : 3,
+                background: "rgba(255,244,214,1)",
+                boxShadow: "0 0 8px 1.5px rgba(255,220,150,0.95)",
+                animation: `globeTwinkle 3s ease-in-out ${d}s infinite`,
               }}
             />
           ))}
