@@ -43,7 +43,7 @@ export default function ARVRBanner() {
       />
       {/* The bar is pulled UP so it straddles the white -> navy wave line, i.e. it
           "stands on" the section break; the VR face then emerges up & out of it. */}
-      <div className="relative z-30 mx-auto -mt-[50px] max-w-[1180px] px-4 pb-6 sm:-mt-[76px] sm:px-6 sm:pb-10">
+      <div className="relative z-30 mx-auto -mt-[118px] max-w-[1180px] px-4 pb-6 sm:-mt-[156px] sm:px-6 sm:pb-10">
         <div className="glass-dark relative flex flex-row items-center gap-3 overflow-visible rounded-[18px] py-3 pl-[70px] pr-3.5 text-left sm:gap-7 sm:rounded-[22px] sm:py-5 sm:pl-[156px] sm:pr-7" style={{ border: "none" }}>
           {/* ── VR traveller's face - rises UP & OUT of the bar (3D pop-out) ── */}
           <div className="absolute bottom-0 left-3 sm:left-7" aria-hidden>

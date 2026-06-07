@@ -631,7 +631,7 @@ const RECENT_TRIPS: { who: string; trip: string; rating: string }[] = [
 
 function TrustBarSection() {
   return (
-    <section className="relative z-20 -mt-[44px] px-4 sm:-mt-[56px] sm:px-6">
+    <section className="relative z-20 -mt-[44px] px-4 pb-[80px] sm:-mt-[56px] sm:px-6 sm:pb-[118px]">
       {/* rounded liquid-glass pill, hovering over the globe's bottom */}
       <div className="glass-panel mx-auto max-w-[1120px] rounded-[22px] px-5 py-3.5 sm:rounded-[26px] sm:px-9 sm:py-[18px]">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-10">
