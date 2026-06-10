@@ -71,7 +71,7 @@ export function DestinationsExplorer({ destinations }: DestinationsExplorerProps
              search field (bound to the same query state) so the visitor can edit
              or clear their term, then a centered capture block + WhatsApp CTA. */
           <div>
-            <div style={{ position: "sticky", top: "var(--nav-h)", zIndex: 30 }}>
+            <div style={{ position: "sticky", top: 66, zIndex: 30 }}>
               <div
                 className="glass-panel"
                 style={{ borderRadius: 0, borderLeft: "none", borderRight: "none", borderTop: "none" }}
