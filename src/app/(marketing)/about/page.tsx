@@ -8,9 +8,9 @@ import { JsonLd } from "@/components/shared/JsonLd"
 import AboutContent from "@/components/about/AboutContent"
 
 export const metadata = generatePageMetadata({
-  title: "About TravelSense - Our Story, Mission & Values",
+  title: "About TravelSense - Travel, the Human Way",
   description:
-    "Learn about TravelSense, founded by Jayshree Lakhotiya with 15+ years of travel expertise. Discover our mission to make curated, stress-free travel accessible to every working professional.",
+    "Booking is easy; genuine human support is rare. TravelSense brings it back - every journey starts with a conversation and a real person who stands behind every booking. Read the moments that define us.",
   path: "/about",
 })
 

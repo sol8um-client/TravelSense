@@ -5,22 +5,19 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import {
   Heart,
-  Eye,
-  ShieldCheck,
-  Star,
-  Lightbulb,
-  Users,
-  Award,
-  BadgeCheck,
-  HeadphonesIcon,
   Compass,
   MapPin,
-  Globe,
-  Rocket,
-  Plane,
-  Monitor,
+  Star,
+  Users,
+  PlaneTakeoff,
+  PhoneCall,
+  Cake,
+  Hotel,
   ArrowRight,
   Phone,
+  Quote,
+  Check,
+  Sparkles,
 } from "lucide-react"
 import { useLeadModal } from "@/components/shared/LeadCaptureModal"
 import PageHero from "@/components/shared/PageHero"
@@ -38,109 +35,81 @@ const fadeUp = {
   }),
 }
 
-/* ─── Data (content preserved verbatim from the original page) ─────── */
+/* ─── Content ────────────────────────────────────────────────────── */
 
-const values = [
+// "Travel is about ___" - the human stakes, shown as a quiet pill row.
+const stakes = ["Dreams", "Celebrations", "Family time", "Once-in-a-lifetime moments"]
+
+// The team behind every itinerary, shown as role chips.
+const roles = [
+  "Travel experts",
+  "Destination specialists",
+  "Visa consultants",
+  "Customer support",
+  "Holiday planners",
+]
+
+// The four real moments that define TravelSense (lightly tightened for web pace).
+const moments: {
+  icon: typeof PlaneTakeoff
+  title: string
+  place: string
+  body: string[]
+  takeaway: string
+}[] = [
   {
-    icon: Heart,
-    title: "Personalization",
-    description:
-      "Two travelers are never the same. We listen first, plan second, and deliver experiences that feel uniquely yours. Every itinerary is a reflection of your interests, pace, and travel style.",
-    numeral: "01",
+    icon: PlaneTakeoff,
+    title: "The 1:00 AM airport call",
+    place: "A cancelled flight, past midnight",
+    body: [
+      "One night, a traveller reached the airport ready to begin a long-awaited trip. Everything was planned, confirmed, on schedule. Then, minutes before departure, the flight was cancelled.",
+      "It was already past midnight. The queues were growing, the options were thin - and at around 1:00 AM, our phone rang.",
+      "There was never a question of waiting until morning. While the traveller waited, we worked the phones - airline desks, alternate routes, every schedule we could find. Within a short while a new arrangement was secured, and the journey was back on track.",
+    ],
+    takeaway: "Our work doesn't end when a ticket is issued. Sometimes, that's exactly when it begins.",
   },
   {
-    icon: ShieldCheck,
-    title: "Trust",
-    description:
-      "No hidden fees, no surprise charges. What we quote is what you pay. We believe trust is built through transparency, honest communication, and delivering on every promise we make.",
-    numeral: "02",
+    icon: PhoneCall,
+    title: "A crisis solved from another country",
+    place: "Leading a group in Nepal, on WhatsApp calls",
+    body: [
+      "One of the hardest situations we've handled came while we were leading a tour group in Nepal. It had already been a long day of sightseeing, transfers and check-ins - and our international roaming had stopped working. A WhatsApp call was our only reliable line.",
+      "Late that evening, a traveller messaged with urgent news: their flight to Himachal Pradesh had been cancelled. We were in another country, on patchy connectivity - but our responsibility hadn't changed.",
+      "Over those WhatsApp calls we coordinated alternatives, explored routes and kept communicating until arrangements were made. The traveller continued their journey without major disruption. Most never saw the scramble behind the scenes.",
+    ],
+    takeaway: "Great support is often invisible. Travellers simply remember that someone was there.",
   },
   {
-    icon: Star,
-    title: "Quality",
-    description:
-      "Every hotel, every route, every detail is vetted by our team. We personally inspect accommodations and experiences to ensure they meet our standards before recommending them to you.",
-    numeral: "03",
+    icon: Cake,
+    title: "A celebration to remember in Andaman",
+    place: "A wedding anniversary, quietly arranged",
+    body: [
+      "Not every moment we treasure comes from solving a problem. Some come from creating joy.",
+      "A couple travelling with us were celebrating their wedding anniversary in the Andaman Islands. Quietly, without telling them, our team coordinated with the hotel to arrange a cake and a small celebration - the timing, the presentation, the surprise.",
+      "When they returned that evening and discovered it, their reaction was priceless. It wasn't grand. It wasn't expensive. But it was thoughtful.",
+    ],
+    takeaway: "Years later, travellers forget room numbers and flight times. They never forget how someone made them feel.",
   },
   {
-    icon: Lightbulb,
-    title: "Innovation",
-    description:
-      "We combine decades of on-ground travel expertise with modern technology to create a smarter, faster, and more enjoyable way to plan your trips. The future of travel is here.",
-    numeral: "04",
+    icon: Hotel,
+    title: "When we stepped in, in person",
+    place: "Srinagar - taking ownership, not forwarding it",
+    body: [
+      "A traveller was staying at a beautiful hotel in Srinagar, but kept facing slow service and delayed responses. When they told us, we had two choices: forward the complaint and wait - or take ownership.",
+      "We chose to take ownership. Our local representative visited the hotel in person, met the management, explained the concerns in detail, and followed up until things changed.",
+      "The difference was immediate - prompt service and personal attention for the rest of the stay.",
+    ],
+    takeaway: "What mattered most wasn't just fixing the issue. It was showing the traveller that someone would stand beside them.",
   },
 ]
 
-const features = [
-  {
-    icon: Users,
-    title: "Personal Curation",
-    description:
-      "Every trip is handcrafted to your preferences. No cookie-cutter packages - just experiences tailored to the way you travel.",
-  },
-  {
-    icon: Award,
-    title: "Expert Knowledge",
-    description:
-      "With 15+ years of industry experience, we know the destinations, the hidden gems, and the perfect timing for every trip.",
-  },
-  {
-    icon: HeadphonesIcon,
-    title: "End-to-End Support",
-    description:
-      "From the first call to the last day of your trip, our team is always one message away. No bots, no hold music.",
-  },
-  {
-    icon: BadgeCheck,
-    title: "Best Value Guarantee",
-    description:
-      "Premium experiences at fair prices. We negotiate directly with partners to pass on the best rates without compromising quality.",
-  },
-]
-
-const stats = [
-  { number: "500+", label: "Trips Planned", icon: Compass },
-  { number: "2,000+", label: "Happy Travelers", icon: Users },
-  { number: "50+", label: "Destinations", icon: MapPin },
-  { number: "4", label: "Travel Categories", icon: Globe },
-]
-
-const milestones = [
-  {
-    year: "2010",
-    title: "The Journey Begins",
-    description:
-      "Jayshree Lakhotiya started a boutique travel practice in Maharashtra, driven by a passion for creating unforgettable travel experiences for families and working professionals.",
-    icon: Rocket,
-  },
-  {
-    year: "2014",
-    title: "Expanding Horizons",
-    description:
-      "Crossed 100 trips planned. Expanded beyond leisure into adventure travel, with treks across the Himalayas and expeditions to Southeast Asia becoming client favourites.",
-    icon: Compass,
-  },
-  {
-    year: "2018",
-    title: "New Categories Launch",
-    description:
-      "Expanded into specialised group travel for families and corporates, broadening beyond pure leisure. Distinct travel experiences now under one roof.",
-    icon: Star,
-  },
-  {
-    year: "2022",
-    title: "500 Trips Milestone",
-    description:
-      "Surpassed 500 curated trips and 2,000 happy travellers. Built a loyal community of repeat clients who trust the team with every family vacation and group expedition.",
-    icon: Plane,
-  },
-  {
-    year: "2026",
-    title: "TravelSense Goes Digital",
-    description:
-      "Incorporated TravelSense Private Limited and launched the digital platform - combining 15+ years of curation expertise with AI-powered personalisation and 24/7 human support.",
-    icon: Monitor,
-  },
+// "Our promise" - what you actually get with TravelSense.
+const promises = [
+  "Celebrates your milestones",
+  "Solves the unexpected",
+  "Answers the late-night calls",
+  "Stands behind every booking",
+  "Treats your trip as their own",
 ]
 
 /* ─── Component ──────────────────────────────────────────────────── */
@@ -151,24 +120,22 @@ export default function AboutContent() {
 
   return (
     <>
-      {/* ═══════════════════════════════════════════════════════════
-          HERO - shared PageHero, trust chips kept as children
-         ═══════════════════════════════════════════════════════════ */}
+      {/* ═══════════ HERO ═══════════ */}
       <PageHero
-        eyebrow="Who we are"
+        eyebrow="About TravelSense"
         title={
           <>
             Travel, the{" "}
             <span className="italic font-normal text-secondary">human</span> way.
           </>
         }
-        subtitle="Founded by Jayshree Lakhotiya, TravelSense pairs 15+ years of on-ground travel expertise with modern technology - so every journey feels personal, effortless and unmistakably yours."
+        subtitle="Booking a flight or a hotel takes only a few clicks today. The one thing all that technology made harder to find is genuine human support - and that is exactly what TravelSense exists to bring back."
         crumb="About"
       >
         {[
           { icon: Compass, label: "500+ trips planned" },
           { icon: MapPin, label: "50+ destinations" },
-          { icon: Star, label: "15+ years of craft" },
+          { icon: Star, label: "Real humans, 24/7" },
         ].map((c) => (
           <span
             key={c.label}
@@ -180,80 +147,95 @@ export default function AboutContent() {
         ))}
       </PageHero>
 
-      {/* ═══════════════════════════════════════════════════════════
-          STORY - light band, glass card copy + founder portrait
-         ═══════════════════════════════════════════════════════════ */}
+      {/* ═══════════ WHY WE EXIST - the belief ═══════════ */}
       <section className="bg-[#F4F6F9] px-4 py-16 sm:px-6 sm:py-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-          {/* Copy */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+        <div className="mx-auto max-w-3xl text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
+            className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-secondary"
           >
-            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-secondary">
-              Our story
+            Why we exist
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="mt-3 font-heading text-[1.9rem] font-medium leading-[1.12] tracking-[-0.02em] text-primary sm:text-[2.5rem]"
+            style={{ fontVariationSettings: "'opsz' 144" }}
+          >
+            Travel is never just flights and{" "}
+            <span className="italic font-normal text-secondary">hotels.</span>
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: 0.12 }}
+            className="mx-auto mt-6 max-w-2xl space-y-4 font-body text-[15px] leading-[1.8] text-muted-foreground sm:text-[16px]"
+          >
+            <p>
+              Travel has changed dramatically. Endless websites, endless reviews, thousands of
+              options at our fingertips. Yet despite all of it, one thing has quietly become hard to
+              find: genuine human support.
             </p>
-            <h2
-              className="mt-3 font-heading text-[1.9rem] font-medium leading-[1.1] tracking-[-0.02em] text-primary sm:text-[2.4rem]"
-              style={{ fontVariationSettings: "'opsz' 144" }}
-            >
-              The story behind{" "}
-              <span className="italic font-normal text-secondary">TravelSense.</span>
-            </h2>
-            <div className="mt-6 space-y-4 font-body text-[14.5px] leading-[1.75] text-muted-foreground sm:text-[15px]">
-              <p>
-                For Jayshree Lakhotiya, travel was never just a business - it was a calling.
-                Growing up in Pune, she was captivated by the idea that a single trip could change
-                a person&apos;s perspective, strengthen a family&apos;s bond, and create memories
-                that last a lifetime.
-              </p>
-              <p>
-                In 2010, she turned that passion into a boutique travel practice built on a simple
-                promise: every trip should feel personal. While the industry pushed cookie-cutter
-                packages, Jayshree spent hours understanding what each traveller truly wanted. A
-                honeymooning couple looking for seclusion in Bali. A school group eager to explore
-                European history. A family of cricket fans chasing the World Cup across continents.
-                Each trip was different, and that was the point.
-              </p>
-              <p>
-                Over 15 years and 500+ trips later, she noticed something: India&apos;s working
-                professionals desperately wanted great vacations but didn&apos;t have the time or
-                patience to plan them. The big platforms offered endless options but zero curation.
-                The local agents offered personal touch but lacked technology.
-              </p>
-              <p>
-                TravelSense was born to bridge that gap - a digital platform that combines
-                Jayshree&apos;s decades of on-ground expertise with modern technology. A place where
-                AI helps you discover your perfect trip, but a real human ensures every detail is
-                right.
-              </p>
-            </div>
+            <p>
+              We believe a journey is about dreams, about celebrations, about family time, about
+              once-in-a-lifetime moments - and when something unexpected happens, it is about knowing
+              there is someone you can trust. That belief is what inspired TravelSense: a place where
+              no traveller is ever a booking reference number, where every journey begins with a
+              conversation, and a real person is always ready to help.
+            </p>
           </motion.div>
 
-          {/* Founder portrait (glass-framed) with graceful fallback */}
+          {/* the human stakes, as a quiet pill row */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-9 flex flex-wrap items-center justify-center gap-2.5"
+          >
+            {stakes.map((s) => (
+              <span
+                key={s}
+                className="glass-panel inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-body text-[13px] font-medium text-primary"
+              >
+                <Sparkles className="h-3.5 w-3.5 text-accent" strokeWidth={1.8} />
+                {s}
+              </span>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════ MEET THE PEOPLE ═══════════ */}
+      <section className="bg-brand-mesh px-4 py-16 sm:px-6 sm:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
+          {/* Team / founder portrait (glass-framed) with graceful fallback */}
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative"
+            transition={{ duration: 0.6 }}
+            className="relative order-2 lg:order-1"
           >
             <div className="glass-panel relative overflow-hidden rounded-[28px] p-2.5 shadow-[0_30px_80px_rgba(11,20,38,0.18)]">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] bg-primary/10">
+              <div className="relative aspect-[5/4] overflow-hidden rounded-[20px] bg-primary/10">
                 {!imgError ? (
                   <Image
-                    src="/images/about/founder.jpg"
-                    alt="Jayshree Lakhotiya, Founder of TravelSense"
+                    src="/images/about/team.jpg"
+                    alt="The TravelSense team"
                     fill
                     className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(max-width: 1024px) 100vw, 48vw"
                     onError={() => setImgError(true)}
                   />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#0A1425] via-[#122040] to-[#0A1425]">
-                    {/* Decorative glows */}
                     <div
                       className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
                       style={{
@@ -261,206 +243,93 @@ export default function AboutContent() {
                           "radial-gradient(closest-side, rgba(196,50,74,0.18), rgba(212,168,83,0.12) 60%, transparent)",
                       }}
                     />
-                    <div className="pointer-events-none absolute right-1/4 top-1/4 h-32 w-32 rounded-full bg-accent/10 blur-2xl" />
-
                     <div className="relative px-6 text-center">
-                      <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-secondary/20 to-accent/20 ring-1 ring-white/15">
-                        <Globe className="h-12 w-12 text-accent/70" strokeWidth={1.4} />
+                      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-secondary/20 to-accent/20 ring-1 ring-white/15">
+                        <Users className="h-9 w-9 text-accent/75" strokeWidth={1.4} />
                       </div>
-                      <h3 className="mt-6 font-heading text-lg font-medium tracking-[-0.015em] text-white">
-                        Jayshree Lakhotiya
+                      <h3 className="mt-5 font-heading text-lg font-medium tracking-[-0.015em] text-white">
+                        The people behind TravelSense
                       </h3>
-                      <p className="mt-2 font-body text-sm tracking-wide text-accent/85">
-                        Founder &amp; Lead Travel Curator
-                      </p>
-                      <div className="mx-auto mt-4 h-px w-16 bg-gradient-to-r from-transparent via-secondary/40 to-transparent" />
-                      <p className="mx-auto mt-4 max-w-[240px] font-body text-xs leading-relaxed text-white/40">
-                        15+ years of crafting unforgettable journeys across 50+ destinations
+                      <p className="mx-auto mt-3 max-w-[260px] font-body text-xs leading-relaxed text-white/45">
+                        A team photo lives here - real faces, ready to help.
                       </p>
                     </div>
                   </div>
                 )}
               </div>
             </div>
-            {/* floating accent chip */}
             <div className="absolute -bottom-4 -left-4 hidden rounded-2xl glass-pill px-4 py-3 sm:block">
-              <p className="font-heading text-xl font-medium leading-none text-primary">15+</p>
+              <p className="font-heading text-xl font-medium leading-none text-primary">Real</p>
               <p className="mt-1 font-body text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-                Years of craft
+                People, not bots
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Copy */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="order-1 lg:order-2"
+          >
+            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-secondary">
+              Meet the people
+            </p>
+            <h2
+              className="mt-3 font-heading text-[1.9rem] font-medium leading-[1.1] tracking-[-0.02em] text-primary sm:text-[2.4rem]"
+              style={{ fontVariationSettings: "'opsz' 144" }}
+            >
+              The people behind your{" "}
+              <span className="italic font-normal text-secondary">journey.</span>
+            </h2>
+            <div className="mt-6 space-y-4 font-body text-[14.5px] leading-[1.75] text-muted-foreground sm:text-[15px]">
+              <p>
+                Behind every itinerary is a team that genuinely cares about creating exceptional
+                experiences. Destinations may change - our mission never does: to make every
+                traveller feel supported, valued and cared for, from the first conversation to the
+                last sunset.
+              </p>
+            </div>
+
+            {/* role chips */}
+            <div className="mt-6 flex flex-wrap gap-2">
+              {roles.map((r) => (
+                <span
+                  key={r}
+                  className="inline-flex items-center rounded-full border border-secondary/20 bg-white/70 px-3 py-1.5 font-body text-[12.5px] font-medium text-primary backdrop-blur-md"
+                >
+                  {r}
+                </span>
+              ))}
+            </div>
+
+            {/* pull quote */}
+            <div className="mt-7 flex gap-3 rounded-2xl border-l-2 border-secondary/50 bg-white/55 p-5 backdrop-blur-md">
+              <Quote className="h-5 w-5 shrink-0 text-secondary/70" strokeWidth={1.8} />
+              <p className="font-heading text-[17px] font-medium leading-[1.4] tracking-[-0.01em] text-primary sm:text-[19px]">
+                For us, travel planning is not a transaction. It is a{" "}
+                <span className="italic font-normal text-secondary">responsibility.</span>
               </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          MISSION & VISION - light band, two glass plaques
-         ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-brand-mesh px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6 }}
-            className="mx-auto max-w-2xl text-center"
-          >
-            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-secondary">
-              What drives us
-            </p>
-            <h2
-              className="mt-3 font-heading text-[1.9rem] font-medium tracking-[-0.02em] text-primary sm:text-[2.4rem]"
-              style={{ fontVariationSettings: "'opsz' 144" }}
-            >
-              Purpose, made <span className="italic font-normal text-secondary">clear.</span>
-            </h2>
-          </motion.div>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {/* Mission */}
-            <motion.div
-              custom={0}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              className="glass-panel group relative overflow-hidden rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1 sm:p-10"
-            >
-              <span
-                aria-hidden
-                className="pointer-events-none absolute -right-2 -top-6 select-none font-heading text-[8rem] italic font-normal leading-none text-primary/[0.05]"
-              >
-                01
-              </span>
-              <div className="relative">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/10 text-secondary transition-colors duration-300 group-hover:bg-secondary group-hover:text-white">
-                  <Heart className="h-6 w-6" strokeWidth={1.6} />
-                </div>
-                <h3 className="mt-6 font-heading text-[1.5rem] font-medium tracking-[-0.02em] text-primary">
-                  Our <span className="italic font-normal text-secondary">mission.</span>
-                </h3>
-                <p className="mt-4 font-body text-[15.5px] font-medium leading-[1.6] text-primary/85">
-                  Making extraordinary travel experiences accessible to every Indian family.
-                </p>
-                <p className="mt-3 font-body text-[14px] leading-relaxed text-muted-foreground">
-                  We believe every working professional, every family, and every group of friends
-                  deserves a vacation that feels effortless from the first inquiry to the last
-                  sunset. Travel should be a joy to plan, not a chore to endure.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Vision */}
-            <motion.div
-              custom={1}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              className="glass-panel group relative overflow-hidden rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1 sm:p-10"
-            >
-              <span
-                aria-hidden
-                className="pointer-events-none absolute -right-2 -top-6 select-none font-heading text-[8rem] italic font-normal leading-none text-primary/[0.05]"
-              >
-                02
-              </span>
-              <div className="relative">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/15 text-accent-dark transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
-                  <Eye className="h-6 w-6" strokeWidth={1.6} />
-                </div>
-                <h3 className="mt-6 font-heading text-[1.5rem] font-medium tracking-[-0.02em] text-primary">
-                  Our <span className="italic font-normal text-secondary">vision.</span>
-                </h3>
-                <p className="mt-4 font-body text-[15.5px] font-medium leading-[1.6] text-primary/85">
-                  India&apos;s most trusted personalized travel platform.
-                </p>
-                <p className="mt-3 font-body text-[14px] leading-relaxed text-muted-foreground">
-                  A place where technology amplifies human expertise, where AI helps you discover
-                  possibilities and a real travel curator ensures every detail is perfect. Every
-                  journey as unique as the traveler.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          VALUES - light band, glass-panel grid with icons
-         ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F4F6F9] px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6 }}
-            className="mx-auto max-w-2xl text-center"
-          >
-            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-secondary">
-              Our values
-            </p>
-            <h2
-              className="mt-3 font-heading text-[1.9rem] font-medium tracking-[-0.02em] text-primary sm:text-[2.4rem]"
-              style={{ fontVariationSettings: "'opsz' 144" }}
-            >
-              What we <span className="italic font-normal text-secondary">stand for.</span>
-            </h2>
-            <p className="mx-auto mt-3 max-w-lg font-body text-[14.5px] leading-[1.65] text-muted-foreground">
-              These four principles guide every trip we plan and every relationship we build.
-            </p>
-          </motion.div>
-
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((value, i) => (
-              <motion.div
-                key={value.title}
-                custom={i}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                className="glass-panel group relative overflow-hidden rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1"
-              >
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute -right-1 -top-4 select-none font-heading text-[5.5rem] italic font-normal leading-none text-primary/[0.05]"
-                >
-                  {value.numeral}
-                </span>
-                <div className="relative">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary transition-colors duration-300 group-hover:bg-secondary group-hover:text-white">
-                    <value.icon className="h-6 w-6" strokeWidth={1.7} />
-                  </div>
-                  <h3 className="mt-4 font-heading text-[17px] font-semibold tracking-[-0.01em] text-primary">
-                    {value.title}
-                  </h3>
-                  <p className="mt-2 font-body text-[13.5px] leading-relaxed text-muted-foreground">
-                    {value.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <SectionWave from="#F4F6F9" to="#0A1425" />
 
-      {/* ═══════════════════════════════════════════════════════════
-          STATS - navy band, glass-dark stat cards
-         ═══════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-[#0A1425] px-4 py-16 sm:px-6 sm:py-20">
+      {/* ═══════════ MOMENTS THAT DEFINE TRAVELSENSE ═══════════ */}
+      <section className="relative overflow-hidden bg-[#0A1425] px-4 py-16 sm:px-6 sm:py-24">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
-          <div className="absolute right-[6%] top-[10%] h-[300px] w-[300px] rounded-full bg-primary-light/20 blur-[90px]" />
+          <div className="absolute right-[6%] top-[8%] h-[320px] w-[320px] rounded-full bg-primary-light/20 blur-[100px]" />
           <div
-            className="absolute -left-[4%] bottom-[6%] h-[280px] w-[280px] rounded-full"
+            className="absolute -left-[4%] bottom-[6%] h-[300px] w-[300px] rounded-full"
             style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.10), transparent 70%)", filter: "blur(80px)" }}
           />
         </div>
 
-        <div className="relative mx-auto max-w-6xl">
+        <div className="relative mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -469,122 +338,79 @@ export default function AboutContent() {
             className="mx-auto max-w-2xl text-center"
           >
             <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">
-              By the numbers
+              Moments that define us
             </p>
             <h2
-              className="mt-3 font-heading text-[1.9rem] font-medium tracking-[-0.02em] text-white sm:text-[2.4rem]"
+              className="mt-3 font-heading text-[1.9rem] font-medium leading-[1.1] tracking-[-0.02em] text-white sm:text-[2.5rem]"
               style={{ fontVariationSettings: "'opsz' 144" }}
             >
-              Fifteen years, <span className="italic font-normal text-accent">measured.</span>
+              Anyone can promise good{" "}
+              <span className="italic font-normal text-accent">service.</span>
             </h2>
+            <p className="mx-auto mt-3 max-w-lg font-body text-[14.5px] leading-[1.65] text-white/55">
+              These are the moments that show who we really are - real travellers, real situations,
+              real people behind the scenes.
+            </p>
           </motion.div>
 
-          <div className="mt-12 grid grid-cols-2 gap-5 md:grid-cols-4">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
+          {/* story cards */}
+          <div className="mt-14 space-y-6">
+            {moments.map((m, i) => (
+              <motion.article
+                key={m.title}
                 custom={i}
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                className="glass-dark group rounded-2xl p-6 text-center transition-transform duration-300 hover:-translate-y-1 md:p-8"
+                viewport={{ once: true, margin: "-60px" }}
+                className="glass-dark group relative overflow-hidden rounded-[22px] p-6 transition-transform duration-500 hover:-translate-y-1 sm:p-8"
               >
-                <stat.icon className="mx-auto mb-3 h-6 w-6 text-accent/80" strokeWidth={1.6} />
-                <p
-                  className="font-heading text-[2rem] font-medium tracking-[-0.02em] text-white sm:text-[2.4rem]"
-                  style={{ fontVariationSettings: "'opsz' 144" }}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute -right-3 -top-6 select-none font-heading text-[7rem] italic font-normal leading-none text-white/[0.04] sm:text-[9rem]"
                 >
-                  {stat.number}
-                </p>
-                <p className="mt-1 font-body text-[13.5px] text-white/60">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          JOURNEY / TIMELINE - navy band, glass-dark milestone rail
-         ═══════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-[#0A1425] px-4 pb-16 sm:px-6 sm:pb-24">
-        <div className="relative mx-auto max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6 }}
-            className="mx-auto max-w-2xl text-center"
-          >
-            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">
-              Our journey
-            </p>
-            <h2
-              className="mt-3 font-heading text-[1.9rem] font-medium tracking-[-0.02em] text-white sm:text-[2.4rem]"
-              style={{ fontVariationSettings: "'opsz' 144" }}
-            >
-              From a single office to{" "}
-              <span className="italic font-normal text-accent">all of India.</span>
-            </h2>
-            <p className="mx-auto mt-3 max-w-lg font-body text-[14.5px] leading-[1.65] text-white/55">
-              From a small practice in Pune to a digital travel platform serving families across
-              India.
-            </p>
-          </motion.div>
-
-          {/* Timeline rail */}
-          <div className="relative mt-14 pl-2">
-            {/* vertical line */}
-            <div
-              className="absolute left-[26px] top-2 bottom-2 w-px"
-              style={{
-                background:
-                  "linear-gradient(to bottom, rgba(196,50,74,0.45), rgba(212,168,83,0.30), transparent)",
-              }}
-              aria-hidden
-            />
-
-            <div className="space-y-7">
-              {milestones.map((milestone, i) => (
-                <motion.div
-                  key={milestone.year}
-                  custom={i}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-50px" }}
-                  className="relative flex gap-5"
-                >
-                  {/* node */}
-                  <div className="relative z-10 flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full glass-dark">
-                    <milestone.icon className="h-5 w-5 text-secondary-glow" strokeWidth={1.7} />
+                  {`0${i + 1}`}
+                </span>
+                <div className="relative flex flex-col gap-5 sm:flex-row sm:gap-7">
+                  {/* icon column */}
+                  <div className="shrink-0">
+                    <div
+                      className="flex h-14 w-14 items-center justify-center rounded-2xl text-accent transition-transform duration-500 group-hover:scale-105"
+                      style={{ background: "rgba(212,168,83,0.12)", border: "1px solid rgba(212,168,83,0.24)", boxShadow: "inset 0 1px 0 rgba(255,235,190,0.18)" }}
+                    >
+                      <m.icon className="h-6 w-6" strokeWidth={1.6} />
+                    </div>
                   </div>
-                  {/* content card */}
-                  <div className="glass-dark flex-1 rounded-2xl p-5 sm:p-6">
-                    <span className="font-body text-[12px] font-semibold uppercase tracking-[0.18em] text-accent/80">
-                      {milestone.year}
+                  {/* text */}
+                  <div className="min-w-0">
+                    <span className="font-body text-[11.5px] font-semibold uppercase tracking-[0.16em] text-accent/80">
+                      {m.place}
                     </span>
-                    <h3 className="mt-1.5 font-heading text-[17px] font-medium tracking-[-0.015em] text-white">
-                      {milestone.title}
+                    <h3 className="mt-1.5 font-heading text-[20px] font-medium tracking-[-0.015em] text-white sm:text-[24px]">
+                      {m.title}
                     </h3>
-                    <p className="mt-2 font-body text-[13.5px] leading-relaxed text-white/60">
-                      {milestone.description}
+                    <div className="mt-3 space-y-3 font-body text-[13.5px] leading-[1.75] text-white/65 sm:text-[14.5px]">
+                      {m.body.map((p, j) => (
+                        <p key={j}>{p}</p>
+                      ))}
+                    </div>
+                    {/* takeaway */}
+                    <p className="mt-5 border-t border-white/10 pt-4 font-heading text-[15px] font-medium italic leading-[1.5] text-accent-light sm:text-[16.5px]">
+                      {m.takeaway}
                     </p>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+              </motion.article>
+            ))}
           </div>
         </div>
       </section>
 
       <SectionWave from="#0A1425" to="#F4F6F9" flip />
 
-      {/* ═══════════════════════════════════════════════════════════
-          WHY CHOOSE US - light band, glass-panel feature grid
-         ═══════════════════════════════════════════════════════════ */}
+      {/* ═══════════ OUR PROMISE ═══════════ */}
       <section className="bg-[#F4F6F9] px-4 py-16 sm:px-6 sm:py-24">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -593,52 +419,62 @@ export default function AboutContent() {
             className="mx-auto max-w-2xl text-center"
           >
             <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-secondary">
-              Why choose us
+              Our promise
             </p>
             <h2
-              className="mt-3 font-heading text-[1.9rem] font-medium tracking-[-0.02em] text-primary sm:text-[2.4rem]"
+              className="mt-3 font-heading text-[1.9rem] font-medium leading-[1.1] tracking-[-0.02em] text-primary sm:text-[2.5rem]"
               style={{ fontVariationSettings: "'opsz' 144" }}
             >
-              Why travellers choose{" "}
-              <span className="italic font-normal text-secondary">TravelSense.</span>
+              More than an itinerary. A team that{" "}
+              <span className="italic font-normal text-secondary">shows up.</span>
             </h2>
-            <p className="mx-auto mt-3 max-w-lg font-body text-[14.5px] leading-[1.65] text-muted-foreground">
-              We combine decades of travel expertise with a modern, technology-driven approach to
-              deliver experiences you can trust.
+            <p className="mx-auto mt-3 max-w-xl font-body text-[14.5px] leading-[1.65] text-muted-foreground">
+              When you choose TravelSense, you get a dedicated team that genuinely cares about your
+              journey - and treats your trip as if it were their own.
             </p>
           </motion.div>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {features.map((feature, i) => (
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {promises.map((p, i) => (
               <motion.div
-                key={feature.title}
+                key={p}
                 custom={i}
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="glass-panel group rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1"
+                className="glass-panel flex items-center gap-3 rounded-2xl p-5 transition-transform duration-300 hover:-translate-y-1"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary transition-colors duration-300 group-hover:bg-secondary group-hover:text-white">
-                  <feature.icon className="h-6 w-6" strokeWidth={1.7} />
-                </div>
-                <h3 className="mt-4 font-heading text-[16px] font-semibold tracking-[-0.01em] text-primary">
-                  {feature.title}
-                </h3>
-                <p className="mt-2 font-body text-[13.5px] leading-relaxed text-muted-foreground">
-                  {feature.description}
-                </p>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary">
+                  <Check className="h-4 w-4" strokeWidth={2.6} />
+                </span>
+                <p className="font-body text-[14.5px] font-medium leading-snug text-primary">{p}</p>
               </motion.div>
             ))}
+
+            {/* closing promise tile */}
+            <motion.div
+              custom={promises.length}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              className="relative overflow-hidden rounded-2xl p-5 text-white sm:col-span-2 lg:col-span-1"
+              style={{ background: "linear-gradient(135deg, #122040, #0A1425)" }}
+            >
+              <Heart className="h-5 w-5 text-secondary-glow" strokeWidth={1.8} />
+              <p className="mt-3 font-body text-[14px] leading-[1.6] text-white/80">
+                Leisure, adventure, a celebration, business or family - our promise stays the same:
+                smooth, memorable and worry-free.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
 
       <SectionWave from="#F4F6F9" to="#0A1425" />
 
-      {/* ═══════════════════════════════════════════════════════════
-          CTA - navy band, founder closing line + actions
-         ═══════════════════════════════════════════════════════════ */}
+      {/* ═══════════ CTA ═══════════ */}
       <section className="relative overflow-hidden bg-[#0A1425] px-4 py-20 sm:px-6 sm:py-24">
         <div
           aria-hidden
@@ -648,7 +484,6 @@ export default function AboutContent() {
               "radial-gradient(ellipse 600px 400px at 20% 20%, rgba(196,50,74,0.16), transparent 60%), radial-gradient(ellipse 600px 400px at 85% 90%, rgba(27,45,78,0.6), transparent 60%)",
           }}
         />
-
         <div className="relative mx-auto max-w-2xl text-center">
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -657,7 +492,7 @@ export default function AboutContent() {
             transition={{ duration: 0.5 }}
             className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-accent"
           >
-            Let&apos;s begin
+            Let&apos;s plan your next journey
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 18 }}
@@ -667,8 +502,8 @@ export default function AboutContent() {
             className="mt-3 font-heading text-[1.9rem] font-medium leading-[1.1] tracking-[-0.025em] text-white sm:text-[2.9rem]"
             style={{ fontVariationSettings: "'opsz' 144" }}
           >
-            Ready to plan your next{" "}
-            <span className="italic font-normal text-secondary-glow">adventure?</span>
+            One conversation. One seamless{" "}
+            <span className="italic font-normal text-secondary-glow">journey.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -677,8 +512,8 @@ export default function AboutContent() {
             transition={{ duration: 0.6, delay: 0.12 }}
             className="mx-auto mt-4 max-w-xl font-body text-[15px] leading-[1.7] text-white/65 sm:text-[16px]"
           >
-            Let our travel experts craft the perfect trip for you. No commitment, no pressure - just
-            a friendly conversation about where you want to go.
+            The world is full of extraordinary places. Our job is to help you experience them with
+            confidence - with one dedicated travel expert beside you the whole way.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -702,9 +537,10 @@ export default function AboutContent() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-8 font-body text-[12.5px] text-white/40"
+            className="mt-9 font-heading text-[15px] font-medium tracking-[0.04em] text-white/80"
           >
-            TravelSense Private Limited &middot; Founded by Jayshree Lakhotiya, Pune
+            TravelSense <span className="text-white/35">&mdash;</span>{" "}
+            <span className="text-accent">Human. Personal. Everywhere.</span>
           </motion.p>
         </div>
       </section>
