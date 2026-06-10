@@ -38,7 +38,7 @@ type PinDef = {
    mainland, Indonesia - a clean spread across the visible face. */
 const PIN_DEFS: PinDef[] = [
   { slug: "kashmir", x: 43, y: 29, delay: 0.15 }, // Kashmir valley / NW Himalaya (E of Pakistan)
-  { slug: "kerala", x: 41, y: 54, delay: 0.4 }, // SW coast - on the west-coast line of the peninsula
+  { slug: "kerala", x: 43, y: 54, delay: 0.4 }, // SW coast - on the west-coast line of the peninsula
   { slug: "thailand", x: 67, y: 51, delay: 0.65 }, // Bangkok / Indochina mainland (on the city lights)
   { slug: "bali", x: 73, y: 69, delay: 0.9 }, // Indonesia (Java/Bali island chain)
 ]
@@ -105,10 +105,10 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
         {/* the globe - desktop right limb softly dissolves so it never fights the
             centred headline (pins are a sibling layer and stay crisp). */}
         <div
-          className="absolute inset-0 lg:[mask-image:linear-gradient(to_right,black_50%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_50%,transparent_100%)]"
-          // Softer, less-offset shadow so it doesn't read as a defined dark band /
-          // "line" below the globe (it pooled under the sphere before).
-          style={{ filter: "drop-shadow(0 14px 44px rgba(10,20,37,0.18))" }}
+          className="absolute inset-0 lg:[mask-image:linear-gradient(to_right,black_68%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_68%,transparent_100%)]"
+          // NO downward drop-shadow - it pooled into a dark band/"line" under the
+          // globe. A faint centred glow only, so the sphere melts into white.
+          style={{ filter: "drop-shadow(0 0 28px rgba(10,20,37,0.10))" }}
         >
           <Image
             src="/images/hero/globe.webp"

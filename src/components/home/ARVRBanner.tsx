@@ -103,8 +103,12 @@ export default function ARVRBanner() {
               </p>
             </div>
 
-            {/* ── CTA (ghost / gold) ── */}
-            <div className="shrink-0">
+            {/* ── "In development" + CTA on ONE line (not stacked) ── */}
+            <div className="flex shrink-0 items-center gap-3 sm:gap-4">
+              <p className="hidden items-center gap-1.5 whitespace-nowrap text-[10.5px] font-body uppercase tracking-[0.14em] text-white/45 sm:inline-flex">
+                <Cog className="h-3 w-3 animate-spin text-accent/70" strokeWidth={1.8} style={{ animationDuration: "4s" }} />
+                In development
+              </p>
               <Link
                 href="/consultation"
                 className="inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 text-[12.5px] font-body font-semibold text-accent transition-all duration-300 group-hover:bg-[rgba(212,168,83,0.16)] sm:px-6 sm:py-3 sm:text-[13px]"
@@ -118,10 +122,6 @@ export default function ARVRBanner() {
                 <span className="hidden sm:inline">Explore in VR</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.8} />
               </Link>
-              <p className="mt-2.5 hidden w-full items-center justify-center gap-1.5 text-[10.5px] font-body uppercase tracking-[0.14em] text-white/45 sm:inline-flex sm:justify-end">
-                <Cog className="h-3 w-3 animate-spin text-accent/70" strokeWidth={1.8} style={{ animationDuration: "4s" }} />
-                In development
-              </p>
             </div>
           </div>
         </div>

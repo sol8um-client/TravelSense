@@ -536,9 +536,9 @@ function HeroSection() {
           into straight top/bottom edges (the "square border" around the globe). */}
       <div className="pointer-events-none absolute inset-0 z-[1] overflow-x-clip">
         <StaticGlobe
-          className="absolute left-1/2 top-[47%] w-[104%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.6]
-                     sm:w-[86%] sm:opacity-[0.66]
-                     md:w-[62%] md:opacity-[0.62]
+          className="absolute left-1/2 top-[47%] w-[104%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.82]
+                     sm:w-[86%] sm:opacity-[0.8]
+                     md:w-[62%] md:opacity-[0.7]
                      lg:w-[53%] lg:opacity-[0.64]
                      xl:left-0 xl:top-1/2 xl:h-[110%] xl:w-auto xl:-translate-x-[32%] xl:-translate-y-1/2 xl:opacity-100"
         />
@@ -1834,25 +1834,32 @@ function USPSection() {
           </div>
         </div>
 
-        {/* Differentiator strip - 4-up, above a hairline top border (trimmed from flip-cards) */}
+        {/* Differentiator strip - 4-up LIQUID-GLASS cards (matches the site's
+            frosted-glass system instead of a plain icon + text row). */}
         <div className="mt-20 sm:mt-24 pb-24 sm:pb-28">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 border-t border-white/[0.07] pt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {differentiators.map((d, i) => (
               <motion.div
                 key={d.title}
-                className="flex flex-col gap-3"
+                className="group glass-dark relative overflow-hidden rounded-[18px] p-5 transition-all duration-500 hover:-translate-y-1"
                 initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: i * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-[13px]" style={{ background: "rgba(196,50,74,0.10)", border: "1px solid rgba(196,50,74,0.16)" }}>
-                  <d.Icon className="h-5 w-5 text-secondary-light/90" strokeWidth={1.4} />
+                {/* gold corner bloom on hover */}
+                <span
+                  className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.12), transparent)" }}
+                />
+                <div
+                  className="flex h-12 w-12 items-center justify-center rounded-[14px] transition-transform duration-500 group-hover:scale-105"
+                  style={{ background: "rgba(196,50,74,0.12)", border: "1px solid rgba(196,50,74,0.20)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.10)" }}
+                >
+                  <d.Icon className="h-5 w-5 text-secondary-light" strokeWidth={1.5} />
                 </div>
-                <div>
-                  <h4 className="font-heading text-[15.5px] font-medium tracking-[-0.01em] text-[#F4F6F9]">{d.title}</h4>
-                  <p className="mt-1.5 text-[12.5px] leading-relaxed text-silver/45">{d.desc}</p>
-                </div>
+                <h4 className="mt-4 font-heading text-[16px] font-medium tracking-[-0.01em] text-white">{d.title}</h4>
+                <p className="mt-1.5 text-[12.5px] leading-relaxed text-white/50">{d.desc}</p>
               </motion.div>
             ))}
           </div>
