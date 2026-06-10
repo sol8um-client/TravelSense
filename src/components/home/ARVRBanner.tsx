@@ -60,7 +60,9 @@ export default function ARVRBanner() {
                  submerged, ~50% emerging). NO ring/circle: a soft feathered mask
                  melts the image edges into the navy so the person reads as part of
                  the bar rather than a framed circle sitting on top of it. ── */}
-            <div className="absolute left-3.5 top-0 z-20 -translate-y-1/2 sm:left-6" aria-hidden>
+            {/* Mobile: centre the portrait in the bar so it FILLS the left column
+                (no empty navy gap under him). Desktop (sm+): straddle the top edge. */}
+            <div className="absolute left-3.5 top-1/2 z-20 -translate-y-1/2 sm:left-6 sm:top-0" aria-hidden>
               <div className="relative" style={{ animation: "vrBob 5s ease-in-out infinite" }}>
                 <span
                   className="relative block h-[58px] w-[58px] overflow-hidden transition-transform duration-300 group-hover:scale-[1.04] sm:h-[104px] sm:w-[104px]"

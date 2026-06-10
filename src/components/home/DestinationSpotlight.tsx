@@ -196,6 +196,10 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="absolute inset-0"
             >
+              {/* on-brand placeholder behind the photo - a slow OR missing image
+                  (e.g. a not-yet-generated destination) never flashes stark white;
+                  it shows this navy wash until the real photo paints in. */}
+              <div className="absolute inset-0" style={{ background: "linear-gradient(150deg, #1d3055, #0A1425)" }} />
               <div className="absolute inset-0" style={{ animation: "kenburns 9s ease-out alternate infinite" }}>
                 <Image
                   src={s.image}
