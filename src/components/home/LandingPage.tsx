@@ -540,7 +540,7 @@ function HeroSection() {
                      sm:w-[86%] sm:opacity-[0.66]
                      md:w-[62%] md:opacity-[0.62]
                      lg:w-[53%] lg:opacity-[0.64]
-                     xl:left-0 xl:top-1/2 xl:h-[102%] xl:w-auto xl:-translate-x-[34%] xl:-translate-y-1/2 xl:opacity-100"
+                     xl:left-0 xl:top-1/2 xl:h-[110%] xl:w-auto xl:-translate-x-[38%] xl:-translate-y-1/2 xl:opacity-100"
         />
       </div>
 
@@ -641,15 +641,25 @@ function TrustBarSection() {
           longer sits fully behind the bar, which left the glass reading flat-white;
           this gives it back its liquid-glass depth without enlarging the globe. */}
       <div
-        className="pointer-events-none absolute left-1/2 top-[-14px] z-0 h-[122px] w-[min(1120px,94%)] -translate-x-1/2 rounded-[40px] sm:top-[-18px] sm:h-[152px]"
+        className="pointer-events-none absolute left-1/2 top-[-16px] z-0 h-[130px] w-[min(1140px,96%)] -translate-x-1/2 rounded-[44px] sm:top-[-20px] sm:h-[160px]"
         style={{
           background:
-            "radial-gradient(ellipse 66% 128% at 30% 50%, rgba(96,132,206,0.26), rgba(150,182,228,0.11) 48%, transparent 78%)",
-          filter: "blur(32px)",
+            "radial-gradient(ellipse 82% 150% at 50% 64%, rgba(58,92,166,0.44), rgba(40,64,120,0.24) 48%, transparent 80%)",
+          filter: "blur(26px)",
         }}
       />
       {/* rounded liquid-glass pill, hovering over the globe's bottom */}
-      <div className="glass-panel relative z-10 mx-auto max-w-[1120px] rounded-[22px] px-5 py-3.5 sm:rounded-[26px] sm:px-9 sm:py-[18px]">
+      <div className="glass-panel relative z-10 mx-auto max-w-[1120px] overflow-hidden rounded-[22px] px-5 py-3.5 sm:rounded-[26px] sm:px-9 sm:py-[18px]">
+        {/* liquid-glass sheen - a diagonal light streak (top-left) + a faint cool
+            tint (lower-right) so the panel reads as refractive glass even over white */}
+        <span
+          className="pointer-events-none absolute inset-0 rounded-[22px] sm:rounded-[26px]"
+          style={{
+            background:
+              "linear-gradient(116deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.12) 24%, transparent 44%, transparent 62%, rgba(120,150,210,0.14) 100%)",
+            mixBlendMode: "screen",
+          }}
+        />
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-10">
           {/* 4 stats - ALWAYS one row (grid on mobile, inline on desktop) */}
           <div className="grid shrink-0 grid-cols-4 gap-x-2 sm:flex sm:gap-x-[32px]">

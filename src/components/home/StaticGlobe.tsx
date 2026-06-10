@@ -106,7 +106,9 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
             centred headline (pins are a sibling layer and stay crisp). */}
         <div
           className="absolute inset-0 lg:[mask-image:linear-gradient(to_right,black_78%,transparent_99%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_78%,transparent_99%)]"
-          style={{ filter: "drop-shadow(0 26px 64px rgba(10,20,37,0.36))" }}
+          // Softer, less-offset shadow so it doesn't read as a defined dark band /
+          // "line" below the globe (it pooled under the sphere before).
+          style={{ filter: "drop-shadow(0 14px 44px rgba(10,20,37,0.18))" }}
         >
           <Image
             src="/images/hero/globe.webp"
@@ -145,10 +147,15 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
         {/* rotating radar sweep anchored at the CENTRE OF INDIA (the globe's centre
             of rotation) - a soft luminous beam that sweeps the whole sphere */}
         <div
-          className="absolute inset-0 rounded-full mix-blend-screen"
+          className="absolute inset-0 mix-blend-screen"
           style={{
             background:
               "conic-gradient(from 0deg at 47% 49%, transparent 0deg, rgba(255,240,205,0.26) 14deg, rgba(212,168,83,0.13) 42deg, transparent 74deg)",
+            // Radially fade the sweep so its beam dies out well BEFORE the globe's
+            // rim - otherwise the old `rounded-full` hard-clipped it into a sharp
+            // rotating arc at the boundary (a "sharp line" on the edge).
+            maskImage: "radial-gradient(circle closest-side at center, #000 52%, transparent 88%)",
+            WebkitMaskImage: "radial-gradient(circle closest-side at center, #000 52%, transparent 88%)",
             animation: "spinSlow 20s linear infinite",
             transformOrigin: "47% 49%",
           }}

@@ -49,39 +49,40 @@ export default function ARVRBanner() {
       <div className="relative z-30 mx-auto max-w-[1040px] px-4 sm:px-6">
         <div className="relative h-0">
           <div
-            className="group absolute inset-x-0 flex flex-row items-center gap-3.5 overflow-visible rounded-[18px] py-3.5 pl-[58px] pr-3.5 text-left backdrop-blur-md -mt-[18px] -translate-y-1/2 sm:gap-6 sm:rounded-[22px] sm:py-[17px] sm:pl-[112px] sm:pr-6 sm:-mt-[25px] lg:-mt-[30px]"
+            className="group absolute inset-x-0 flex flex-row items-center gap-3.5 overflow-visible rounded-[18px] py-3.5 pl-[72px] pr-3.5 text-left backdrop-blur-md -mt-[18px] -translate-y-1/2 sm:gap-6 sm:rounded-[22px] sm:py-[17px] sm:pl-[128px] sm:pr-6 sm:-mt-[25px] lg:-mt-[30px]"
             style={{
               background: "rgba(13,21,42,0.97)",
               border: "1px solid rgba(120,150,210,0.22)",
               boxShadow: "0 16px 40px rgba(3,8,16,0.42), inset 0 1px 0 rgba(255,255,255,0.12)",
             }}
           >
-            {/* ── VR traveller's HEAD - emerges up out of the bar's TOP border ── */}
-            <div className="absolute bottom-full left-3.5 z-20 -mb-2 sm:left-6" aria-hidden>
-              {/* gold halo behind the head (brightens on hover) */}
-              <span className="absolute -inset-2 rounded-full bg-[radial-gradient(closest-side,rgba(212,168,83,0.38),transparent_72%)] opacity-70 blur-[6px] transition-opacity duration-300 group-hover:opacity-100" />
-              {/* above-neck crop, sits on the top border, gentle idle bob + hover lift */}
-              <span
-                className="relative block h-[50px] w-[46px] overflow-hidden transition-transform duration-300 group-hover:-translate-y-[3px] sm:h-[90px] sm:w-[82px]"
-                style={{
-                  borderRadius: "50% 50% 40% 40% / 60% 60% 26% 26%",
-                  border: "1px solid rgba(212,168,83,0.55)",
-                  boxShadow: "inset 0 1px 0 rgba(255,235,190,0.3), 0 14px 26px rgba(0,0,0,0.5)",
-                  animation: "vrBob 5s ease-in-out infinite",
-                }}
-              >
-                <Image
-                  src="/images/hero/vr-face.png"
-                  alt="A traveller previewing a destination in virtual reality"
-                  fill
-                  sizes="90px"
-                  className="object-cover"
-                  style={{ objectPosition: "50% 14%" }}
-                  loading="lazy"
+            {/* ── VR traveller - the circular portrait STRADDLES the bar's top edge:
+                 ~50% submerged in the navy bar, ~50% emerging out the top. ── */}
+            <div className="absolute left-4 top-0 z-20 -translate-y-1/2 sm:left-7" aria-hidden>
+              <div className="relative" style={{ animation: "vrBob 5s ease-in-out infinite" }}>
+                {/* gold halo (brightens on hover) */}
+                <span
+                  className="pointer-events-none absolute -inset-1.5 rounded-full opacity-75 blur-[6px] transition-opacity duration-300 group-hover:opacity-100"
+                  style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.42), transparent 72%)" }}
                 />
-              </span>
-              {/* soft contact shadow where the head meets the bar's top edge */}
-              <span className="absolute -bottom-1 left-1/2 h-2 w-[78%] -translate-x-1/2 rounded-[50%] bg-black/45 blur-md" />
+                <span
+                  className="relative block h-[56px] w-[56px] overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-[1.04] sm:h-[94px] sm:w-[94px]"
+                  style={{
+                    border: "1px solid rgba(212,168,83,0.55)",
+                    boxShadow: "inset 0 1px 0 rgba(255,235,190,0.3), 0 16px 30px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  <Image
+                    src="/images/hero/vr-face.png"
+                    alt="A traveller previewing a destination in virtual reality"
+                    fill
+                    sizes="94px"
+                    className="object-cover"
+                    style={{ objectPosition: "50% 28%" }}
+                    loading="lazy"
+                  />
+                </span>
+              </div>
             </div>
 
             {/* ── Copy ── */}
