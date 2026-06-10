@@ -17,7 +17,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Glasses, ArrowRight, Sparkles } from "lucide-react"
+import { Glasses, ArrowRight, Cog } from "lucide-react"
 
 export default function ARVRBanner() {
   return (
@@ -56,29 +56,27 @@ export default function ARVRBanner() {
               boxShadow: "0 16px 40px rgba(3,8,16,0.42), inset 0 1px 0 rgba(255,255,255,0.12)",
             }}
           >
-            {/* ── VR traveller - the circular portrait STRADDLES the bar's top edge:
-                 ~50% submerged in the navy bar, ~50% emerging out the top. ── */}
-            <div className="absolute left-4 top-0 z-20 -translate-y-1/2 sm:left-7" aria-hidden>
+            {/* ── VR traveller - the portrait STRADDLES the bar's top edge (~50%
+                 submerged, ~50% emerging). NO ring/circle: a soft feathered mask
+                 melts the image edges into the navy so the person reads as part of
+                 the bar rather than a framed circle sitting on top of it. ── */}
+            <div className="absolute left-3.5 top-0 z-20 -translate-y-1/2 sm:left-6" aria-hidden>
               <div className="relative" style={{ animation: "vrBob 5s ease-in-out infinite" }}>
-                {/* gold halo (brightens on hover) */}
                 <span
-                  className="pointer-events-none absolute -inset-1.5 rounded-full opacity-75 blur-[6px] transition-opacity duration-300 group-hover:opacity-100"
-                  style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.42), transparent 72%)" }}
-                />
-                <span
-                  className="relative block h-[56px] w-[56px] overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-[1.04] sm:h-[94px] sm:w-[94px]"
+                  className="relative block h-[58px] w-[58px] overflow-hidden transition-transform duration-300 group-hover:scale-[1.04] sm:h-[104px] sm:w-[104px]"
                   style={{
-                    border: "1px solid rgba(212,168,83,0.55)",
-                    boxShadow: "inset 0 1px 0 rgba(255,235,190,0.3), 0 16px 30px rgba(0,0,0,0.5)",
+                    maskImage: "radial-gradient(circle closest-side at 50% 44%, #000 58%, transparent 100%)",
+                    WebkitMaskImage: "radial-gradient(circle closest-side at 50% 44%, #000 58%, transparent 100%)",
+                    filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.4))",
                   }}
                 >
                   <Image
                     src="/images/hero/vr-face.png"
                     alt="A traveller previewing a destination in virtual reality"
                     fill
-                    sizes="94px"
+                    sizes="104px"
                     className="object-cover"
-                    style={{ objectPosition: "50% 28%" }}
+                    style={{ objectPosition: "50% 30%" }}
                     loading="lazy"
                   />
                 </span>
@@ -118,7 +116,7 @@ export default function ARVRBanner() {
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.8} />
               </Link>
               <p className="mt-2.5 hidden w-full items-center justify-center gap-1.5 text-[10.5px] font-body uppercase tracking-[0.14em] text-white/45 sm:inline-flex sm:justify-end">
-                <Sparkles className="h-3 w-3 text-accent/70" strokeWidth={1.8} />
+                <Cog className="h-3 w-3 animate-spin text-accent/70" strokeWidth={1.8} style={{ animationDuration: "4s" }} />
                 In development
               </p>
             </div>

@@ -540,7 +540,7 @@ function HeroSection() {
                      sm:w-[86%] sm:opacity-[0.66]
                      md:w-[62%] md:opacity-[0.62]
                      lg:w-[53%] lg:opacity-[0.64]
-                     xl:left-0 xl:top-1/2 xl:h-[110%] xl:w-auto xl:-translate-x-[38%] xl:-translate-y-1/2 xl:opacity-100"
+                     xl:left-0 xl:top-1/2 xl:h-[110%] xl:w-auto xl:-translate-x-[32%] xl:-translate-y-1/2 xl:opacity-100"
         />
       </div>
 
@@ -644,12 +644,17 @@ function TrustBarSection() {
         className="pointer-events-none absolute left-1/2 top-[-16px] z-0 h-[130px] w-[min(1140px,96%)] -translate-x-1/2 rounded-[44px] sm:top-[-20px] sm:h-[160px]"
         style={{
           background:
-            "radial-gradient(ellipse 82% 150% at 50% 64%, rgba(58,92,166,0.44), rgba(40,64,120,0.24) 48%, transparent 80%)",
-          filter: "blur(26px)",
+            "radial-gradient(ellipse 90% 150% at 50% 82%, rgba(120,150,210,0.15), rgba(120,150,210,0.05) 54%, transparent 82%)",
+          filter: "blur(30px)",
         }}
       />
-      {/* rounded liquid-glass pill, hovering over the globe's bottom */}
-      <div className="glass-panel relative z-10 mx-auto max-w-[1120px] overflow-hidden rounded-[22px] px-5 py-3.5 sm:rounded-[26px] sm:px-9 sm:py-[18px]">
+      {/* rounded liquid-glass pill, hovering over the globe's bottom. A fairly
+          opaque cool-white frost keeps the dark stats crisp (even where the globe
+          sits behind the bar), while the sheen + edge highlights read as glass. */}
+      <div
+        className="glass-panel relative z-10 mx-auto max-w-[1120px] overflow-hidden rounded-[22px] px-5 py-3.5 sm:rounded-[26px] sm:px-9 sm:py-[18px]"
+        style={{ background: "rgba(247,250,253,0.64)" }}
+      >
         {/* liquid-glass sheen - a diagonal light streak (top-left) + a faint cool
             tint (lower-right) so the panel reads as refractive glass even over white */}
         <span
@@ -672,7 +677,7 @@ function TrustBarSection() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: i * 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
-                <span className="font-heading text-[19px] font-medium leading-none tracking-[-0.02em] text-primary sm:text-[24px]" style={{ fontVariationSettings: "'opsz' 144" }}>{n}</span>
+                <span className="font-heading text-[19px] font-medium leading-none tracking-[-0.02em] text-primary sm:text-[24px]" style={{ fontVariationSettings: "'opsz' 144", textShadow: "0 1px 12px rgba(255,255,255,0.6)" }}>{n}</span>
                 <span className="mt-[3px] text-center text-[8.5px] leading-tight tracking-[0.01em] text-muted-foreground sm:text-left sm:text-[10.5px]">{l}</span>
               </motion.div>
             ))}

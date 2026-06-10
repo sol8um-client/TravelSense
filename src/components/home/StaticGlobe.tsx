@@ -135,11 +135,12 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
         <div
           className="pointer-events-none absolute inset-0"
           style={{
-            // Softer/earlier feather + the lightening itself fades out before the
-            // rim, so it can't leave a bright crescent edge at the globe's bottom.
-            maskImage: "radial-gradient(circle closest-side at center, #000 80%, transparent 98%)",
-            WebkitMaskImage: "radial-gradient(circle closest-side at center, #000 80%, transparent 98%)",
-            background: "linear-gradient(to bottom, transparent 42%, rgba(150,182,228,0.16) 68%, rgba(150,182,228,0.26) 88%, transparent 100%)",
+            // Lower peak + a long, multi-stop fade that dies WELL inside the rim
+            // (mask 60% -> 95%), so the lower hue has no defined lower boundary -
+            // i.e. no "line" under the globe where the lightening used to stop.
+            maskImage: "radial-gradient(circle closest-side at center, #000 60%, transparent 95%)",
+            WebkitMaskImage: "radial-gradient(circle closest-side at center, #000 60%, transparent 95%)",
+            background: "linear-gradient(to bottom, transparent 44%, rgba(150,182,228,0.10) 64%, rgba(150,182,228,0.15) 80%, rgba(150,182,228,0.06) 91%, transparent 100%)",
             mixBlendMode: "screen",
           }}
         />
