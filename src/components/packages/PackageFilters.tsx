@@ -2,13 +2,14 @@
 
 import { useState, useMemo, useCallback, type ReactNode } from "react"
 import { motion } from "framer-motion"
-import { Search, SlidersHorizontal, X, ChevronDown, Plane, MapPin } from "lucide-react"
+import { Search, SlidersHorizontal, X, ChevronDown, Plane, MapPin, Tag } from "lucide-react"
 import {
   DURATION_OPTIONS,
   DIFFICULTY_LEVELS,
   ITEMS_PER_PAGE,
 } from "@/lib/constants"
 import { travelCategories } from "@/config/categories"
+import { packageTags } from "@/data/packageTags"
 import { PackageCard, type PackageCardData } from "./PackageCard"
 
 interface PackageFiltersProps {
@@ -30,6 +31,20 @@ const CATS: { slug: string; label: string }[] = [
     label: c.title.replace(" Travel", ""),
   })),
 ]
+
+/* Contextual "explore" tags - a package's activities + vibes merged into one
+   clean pool. We drop auto-tag junk (any lowercase stray like "tadoba") and any
+   value that just duplicates a category chip, so the tag row only ever adds NEW
+   ways to slice the list (Trek, Beach, Snow & Winter, Backwaters, Islands...). */
+const CATEGORY_LABELS = new Set(CATS.map((c) => c.label.toLowerCase()))
+function tagsOf(slug: string): string[] {
+  const t = packageTags[slug]
+  if (!t) return []
+  const merged = [...(t.activities ?? []), ...(t.vibes ?? [])]
+  return Array.from(new Set(merged)).filter(
+    (x) => /^[A-Z]/.test(x) && !CATEGORY_LABELS.has(x.toLowerCase())
+  )
+}
 
 /* Sort segmented control - maps the design's 3 segments onto the real
    SORT_OPTIONS values so the existing sort logic stays untouched. */
@@ -77,6 +92,7 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
   const [sortBy, setSortBy] = useState("recommended")
   const [currentPage, setCurrentPage] = useState(1)
   const [showFilters, setShowFilters] = useState(false)
+  const [activeTags, setActiveTags] = useState<string[]>([])
 
   // Pre-compute region counts for the toggle pills
   const counts = useMemo(() => {
@@ -89,7 +105,9 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
     return { all: packages.length, domestic, international }
   }, [packages])
 
-  const filtered = useMemo(() => {
+  // Everything EXCEPT the contextual tags + sort. The tag chips drill into THIS
+  // set, and the still-relevant tags are derived from it.
+  const baseFiltered = useMemo(() => {
     let result = packages
 
     // Region scope (Domestic / International)
@@ -137,8 +155,44 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
       result = result.filter((p) => p.difficulty === activeDifficulty)
     }
 
-    // Sort
-    result = [...result].sort((a, b) => {
+    return result
+  }, [
+    packages,
+    regionScope,
+    searchQuery,
+    activeCategory,
+    activeDuration,
+    activeDifficulty,
+  ])
+
+  // Apply the picked contextual tags (a package must carry ALL active tags).
+  const tagMatched = useMemo(() => {
+    if (activeTags.length === 0) return baseFiltered
+    return baseFiltered.filter((p) => {
+      const pt = tagsOf(p.slug)
+      return activeTags.every((t) => pt.includes(t))
+    })
+  }, [baseFiltered, activeTags])
+
+  // The tags still worth offering: those co-occurring in the current results
+  // (minus the ones already picked), most common first. This is what makes the
+  // row dynamic - each pick narrows the next set of tags as you drill in.
+  const availableTags = useMemo(() => {
+    const counts = new Map<string, number>()
+    for (const p of tagMatched) {
+      for (const tag of tagsOf(p.slug)) {
+        if (activeTags.includes(tag)) continue
+        counts.set(tag, (counts.get(tag) ?? 0) + 1)
+      }
+    }
+    return Array.from(counts.entries())
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .slice(0, 12)
+      .map(([tag]) => tag)
+  }, [tagMatched, activeTags])
+
+  const filtered = useMemo(() => {
+    return [...tagMatched].sort((a, b) => {
       switch (sortBy) {
         case "price_asc":
           return (
@@ -166,17 +220,14 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
           return (b.rating || 0) - (a.rating || 0)
       }
     })
+  }, [tagMatched, sortBy])
 
-    return result
-  }, [
-    packages,
-    regionScope,
-    searchQuery,
-    activeCategory,
-    activeDuration,
-    activeDifficulty,
-    sortBy,
-  ])
+  const toggleTag = useCallback((tag: string) => {
+    setActiveTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+    )
+    setCurrentPage(1)
+  }, [])
 
   // Pagination
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE)
@@ -211,6 +262,7 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
     setActiveCategory("")
     setActiveDuration("")
     setActiveDifficulty("")
+    setActiveTags([])
     setSortBy("recommended")
     setCurrentPage(1)
   }
@@ -221,6 +273,7 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
     Boolean(activeCategory) ||
     Boolean(activeDuration) ||
     Boolean(activeDifficulty) ||
+    activeTags.length > 0 ||
     sortBy !== "recommended"
 
   /* The advanced controls (region toggle + search + duration/difficulty/sort)
@@ -374,6 +427,79 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
             </button>
           </div>
         </div>
+
+        {/* ── Dynamic "explore" tags - drill into the current results by activity
+            / vibe; the row narrows to the still-relevant tags as you pick. Sits
+            right along the category + sort controls, no UX upheaval. ── */}
+        {(activeTags.length > 0 || availableTags.length > 0) && (
+          <div style={{ borderTop: "1px solid rgba(176,184,196,0.16)" }}>
+            <div
+              className="mx-auto flex flex-wrap items-center"
+              style={{ maxWidth: 1180, gap: 8, padding: "11px 32px" }}
+            >
+              <span
+                className="font-tech inline-flex items-center"
+                style={{
+                  gap: 6,
+                  fontSize: 9.5,
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  color: "var(--silver-dark)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                <Tag className="h-3 w-3" />
+                Explore
+              </span>
+
+              {activeTags.map((tag) => (
+                <button
+                  key={tag}
+                  onClick={() => toggleTag(tag)}
+                  className="font-body inline-flex items-center"
+                  aria-pressed
+                  style={{
+                    gap: 6,
+                    cursor: "pointer",
+                    borderRadius: 9999,
+                    padding: "6px 10px 6px 13px",
+                    fontSize: 11.5,
+                    fontWeight: 600,
+                    border: "1px solid transparent",
+                    background: "var(--primary)",
+                    color: "#fff",
+                    boxShadow: "0 4px 12px rgba(10,20,37,0.18)",
+                    transition: `all .2s ${EASE}`,
+                  }}
+                >
+                  {tag}
+                  <X className="h-3 w-3" style={{ opacity: 0.85 }} />
+                </button>
+              ))}
+
+              {availableTags.map((tag) => (
+                <button
+                  key={tag}
+                  onClick={() => toggleTag(tag)}
+                  className="font-body"
+                  style={{
+                    cursor: "pointer",
+                    borderRadius: 9999,
+                    padding: "6px 13px",
+                    fontSize: 11.5,
+                    fontWeight: 500,
+                    border: "1px solid rgba(176,184,196,0.35)",
+                    background: "#fff",
+                    color: "var(--muted-foreground)",
+                    transition: `all .2s ${EASE}`,
+                  }}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* ── Collapsible advanced controls (real filters preserved) ── */}
         {showFilters && (

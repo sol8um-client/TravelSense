@@ -25,7 +25,13 @@ export default function ARVRBanner() {
     <section
       aria-label="Coming soon: AR/VR destination preview"
       className="relative overflow-visible"
-      style={{ background: "#0A1425" }}
+      // The preceding <Wave> has z-index:2 and the `.wave-divider + *` rule pins
+      // THIS section to z-index:0 - which trapped the lifted bar + the VR face
+      // BEHIND the wave (the "white line", the cut-off bottom, the missing 3D
+      // face). Lift the whole banner above the wave so the bar sits ON the
+      // section break: top half in the white area, bottom half submerged in navy,
+      // the face popping cleanly out of the top.
+      style={{ background: "#0A1425", position: "relative", zIndex: 40 }}
     >
       {/* soft navy glow for depth (clipped so it can't spill now overflow is visible) */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -44,7 +50,7 @@ export default function ARVRBanner() {
       {/* The bar is pulled UP so it straddles the white -> navy wave line, i.e. it
           "stands on" the section break; the VR face then emerges up & out of it. */}
       <div className="relative z-30 mx-auto -mt-[78px] max-w-[1180px] px-4 pb-6 sm:-mt-[104px] sm:px-6 sm:pb-10">
-        <div className="glass-dark relative flex flex-row items-center gap-3 overflow-visible rounded-[18px] py-3 pl-[70px] pr-3.5 text-left sm:gap-7 sm:rounded-[22px] sm:py-5 sm:pl-[156px] sm:pr-7" style={{ border: "none" }}>
+        <div className="relative flex flex-row items-center gap-3 overflow-visible rounded-[18px] py-3 pl-[70px] pr-3.5 text-left backdrop-blur-md sm:gap-7 sm:rounded-[22px] sm:py-5 sm:pl-[156px] sm:pr-7" style={{ background: "rgba(13,21,42,0.97)", border: "1px solid rgba(120,150,210,0.22)", boxShadow: "0 22px 54px rgba(3,8,16,0.5), inset 0 1px 0 rgba(255,255,255,0.12)" }}>
           {/* ── VR traveller's face - rises UP & OUT of the bar (3D pop-out) ── */}
           <div className="absolute bottom-0 left-3 sm:left-7" aria-hidden>
             {/* soft ground shadow so the head reads as standing out of the bar */}

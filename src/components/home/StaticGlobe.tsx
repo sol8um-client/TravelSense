@@ -117,10 +117,9 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
             className="select-none object-contain"
             draggable={false}
             style={{
-              // Feather the globe edge well inside the square so NO square/box
-              // edge ever shows next to the glow (client: kill the square corners
-              // top & bottom). Lightening is done by a screen overlay below, not a
-              // brightness filter (which was lifting the image's square box).
+              // Modest brightness for an overall lift; the feathered mask below
+              // (90%) keeps the image's square box hidden so no square edge shows.
+              filter: "brightness(1.08)",
               maskImage: "radial-gradient(circle closest-side at center, #000 90%, transparent 99.5%)",
               WebkitMaskImage: "radial-gradient(circle closest-side at center, #000 90%, transparent 99.5%)",
             }}
@@ -135,7 +134,7 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
           style={{
             maskImage: "radial-gradient(circle closest-side at center, #000 90%, transparent 99.5%)",
             WebkitMaskImage: "radial-gradient(circle closest-side at center, #000 90%, transparent 99.5%)",
-            background: "linear-gradient(to bottom, rgba(255,255,255,0.05) 0%, rgba(214,228,250,0.12) 42%, rgba(152,184,230,0.5) 100%)",
+            background: "linear-gradient(to bottom, transparent 42%, rgba(150,182,228,0.16) 70%, rgba(150,182,228,0.30) 100%)",
             mixBlendMode: "screen",
           }}
         />
