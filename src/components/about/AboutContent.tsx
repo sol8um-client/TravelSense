@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import {
@@ -288,6 +288,135 @@ function MomentVisual({ i }: { i: number }) {
   )
 }
 
+/* Condensed leads for the scroll stage (the scenes carry the emotion). */
+const momentLeads = [
+  "A traveller reached the airport for a long-awaited trip - and minutes before departure, the flight was cancelled. Past midnight our phone rang, and we worked every desk and route until a new arrangement was secured.",
+  "Leading a group in Nepal with roaming dead and only a WhatsApp call working, we learned a traveller's onward flight to Himachal had been cancelled. From another country, on patchy signal, we found them a way through.",
+  "A couple were marking their wedding anniversary in the Andamans. Quietly, without telling them, we arranged a cake and a small celebration with their hotel - and their reaction when they walked in was priceless.",
+  "At a beautiful Srinagar hotel, a traveller kept hitting slow service. We could forward the complaint and wait - or take ownership. Our local rep went in person and stayed on it until everything changed.",
+]
+
+/* ─── Moments, SCROLL-DRIVEN - the four stories advance one at a time as you
+   scroll, on the same pinned-stage mechanism as the homepage "How it works". ─── */
+function MomentsScroll() {
+  const ref = useRef<HTMLElement>(null)
+  const [t, setT] = useState(0)
+  useEffect(() => {
+    const onScroll = () => {
+      const el = ref.current
+      if (!el) return
+      const total = Math.max(1, el.offsetHeight - window.innerHeight)
+      const scrolled = Math.min(Math.max(-el.getBoundingClientRect().top, 0), total)
+      setT(scrolled / total)
+    }
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", onScroll)
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onScroll)
+    }
+  }, [])
+  const active = Math.min(moments.length - 1, Math.floor(t * 0.999 * moments.length))
+  const jump = (i: number) => {
+    const el = ref.current
+    if (!el) return
+    const total = Math.max(1, el.offsetHeight - window.innerHeight)
+    window.scrollTo({ top: el.offsetTop + ((i + 0.5) / moments.length) * total, behavior: "smooth" })
+  }
+
+  return (
+    <section ref={ref} className="relative bg-[#0A1425]" style={{ height: "420vh" }}>
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div className="absolute right-[6%] top-[14%] h-[320px] w-[320px] rounded-full bg-primary-light/20 blur-[100px]" />
+        <div
+          className="absolute -left-[4%] bottom-[14%] h-[300px] w-[300px] rounded-full"
+          style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.10), transparent 70%)", filter: "blur(80px)" }}
+        />
+      </div>
+
+      <div className="sticky top-[var(--nav-h)] flex h-[calc(100svh-var(--nav-h))] flex-col overflow-hidden px-4 py-5 sm:px-6 sm:py-7">
+        {/* header */}
+        <div className="mx-auto w-full max-w-5xl shrink-0 text-center">
+          <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">Moments that define us</p>
+          <h2
+            className="mt-2 font-heading text-[1.55rem] font-medium leading-[1.08] tracking-[-0.02em] text-white sm:text-[2.3rem]"
+            style={{ fontVariationSettings: "'opsz' 144" }}
+          >
+            Anyone can promise good <span className="italic font-normal text-accent">service.</span>
+          </h2>
+        </div>
+
+        {/* progress rail (clickable) */}
+        <div className="mx-auto mt-4 flex w-full max-w-md shrink-0 items-center sm:mt-5">
+          {moments.map((m, i) => (
+            <button key={m.title} type="button" onClick={() => jump(i)} aria-label={m.title} className="flex flex-1 items-center last:flex-none">
+              <span
+                className={
+                  "flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-body text-[11px] font-semibold transition-all duration-300 " +
+                  (i <= active ? "bg-accent text-[#0A1425]" : "bg-white/[0.08] text-white/45")
+                }
+              >
+                {`0${i + 1}`}
+              </span>
+              {i < moments.length - 1 && (
+                <span className="mx-1.5 h-px flex-1 overflow-hidden rounded bg-white/12 sm:mx-2.5">
+                  <span className="block h-full bg-accent transition-all duration-500" style={{ width: i < active ? "100%" : "0%" }} />
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
+
+        {/* stage - the active story crossfades in */}
+        <div className="relative mx-auto mt-5 w-full max-w-5xl flex-1 sm:mt-6">
+          {moments.map((m, i) => {
+            const on = i === active
+            return (
+              <div
+                key={m.title}
+                aria-hidden={!on}
+                className="absolute inset-0 flex items-center transition-all duration-[600ms]"
+                style={{ opacity: on ? 1 : 0, transform: on ? "none" : "translateY(18px) scale(0.99)", pointerEvents: on ? "auto" : "none" }}
+              >
+                <div className="grid w-full items-center gap-5 lg:grid-cols-[1.05fr_1fr] lg:gap-10">
+                  <div><MomentVisual i={i} /></div>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-accent"
+                        style={{ background: "rgba(212,168,83,0.12)", border: "1px solid rgba(212,168,83,0.24)", boxShadow: "inset 0 1px 0 rgba(255,235,190,0.18)" }}
+                      >
+                        <m.icon className="h-5 w-5" strokeWidth={1.6} />
+                      </div>
+                      <span className="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-accent/80">{m.place}</span>
+                    </div>
+                    <h3 className="mt-3.5 font-heading text-[22px] font-medium tracking-[-0.015em] text-white sm:text-[27px]">{m.title}</h3>
+                    <p className="mt-3 font-body text-[14px] leading-[1.72] text-white/70 sm:text-[15.5px]">{momentLeads[i]}</p>
+                    <p className="mt-5 border-t border-white/10 pt-4 font-heading text-[15px] font-medium italic leading-[1.5] text-accent-light sm:text-[17px]">
+                      {m.takeaway}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        <p className="mx-auto mt-3 shrink-0 text-center font-body text-[10px] uppercase tracking-[0.2em] text-white/30">
+          Scroll to live each moment
+        </p>
+      </div>
+
+      <style>{`
+        @keyframes aboutFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+        @keyframes aboutFlame { 0%,100%{transform:translateX(-50%) scaleY(1);opacity:.95} 50%{transform:translateX(-50%) scaleY(.82) translateX(.5px);opacity:.7} }
+        @keyframes aboutConfetti { 0%{transform:translateY(0) rotate(0);opacity:0} 12%{opacity:1} 100%{transform:translateY(26px) rotate(220deg);opacity:0} }
+      `}</style>
+    </section>
+  )
+}
+
 /* ─── Component ──────────────────────────────────────────────────── */
 
 export default function AboutContent() {
@@ -495,104 +624,8 @@ export default function AboutContent() {
 
       <SectionWave from="#F4F6F9" to="#0A1425" />
 
-      {/* ═══════════ MOMENTS THAT DEFINE TRAVELSENSE ═══════════ */}
-      <section className="relative overflow-hidden bg-[#0A1425] px-4 py-16 sm:px-6 sm:py-24">
-        <div className="pointer-events-none absolute inset-0" aria-hidden>
-          <div className="absolute right-[6%] top-[8%] h-[320px] w-[320px] rounded-full bg-primary-light/20 blur-[100px]" />
-          <div
-            className="absolute -left-[4%] bottom-[6%] h-[300px] w-[300px] rounded-full"
-            style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.10), transparent 70%)", filter: "blur(80px)" }}
-          />
-        </div>
-
-        <div className="relative mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6 }}
-            className="mx-auto max-w-2xl text-center"
-          >
-            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">
-              Moments that define us
-            </p>
-            <h2
-              className="mt-3 font-heading text-[1.9rem] font-medium leading-[1.1] tracking-[-0.02em] text-white sm:text-[2.5rem]"
-              style={{ fontVariationSettings: "'opsz' 144" }}
-            >
-              Anyone can promise good{" "}
-              <span className="italic font-normal text-accent">service.</span>
-            </h2>
-            <p className="mx-auto mt-3 max-w-lg font-body text-[14.5px] leading-[1.65] text-white/55">
-              These are the moments that show who we really are - real travellers, real situations,
-              real people behind the scenes.
-            </p>
-          </motion.div>
-
-          {/* story cards - each a little SCENE + the telling, alternating sides */}
-          <div className="mt-14 space-y-7 sm:space-y-9">
-            {moments.map((m, i) => {
-              const flip = i % 2 === 1
-              return (
-                <motion.article
-                  key={m.title}
-                  custom={i}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-60px" }}
-                  className="glass-dark group relative overflow-hidden rounded-[24px] p-5 transition-transform duration-500 hover:-translate-y-1 sm:p-6"
-                >
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute -right-3 -top-7 select-none font-heading text-[7rem] italic font-normal leading-none text-white/[0.045] sm:text-[9rem]"
-                  >
-                    {`0${i + 1}`}
-                  </span>
-                  <div className="relative grid items-center gap-6 lg:grid-cols-2 lg:gap-9">
-                    {/* the scene */}
-                    <div className={flip ? "lg:order-2" : "lg:order-1"}>
-                      <MomentVisual i={i} />
-                    </div>
-                    {/* the telling */}
-                    <div className={(flip ? "lg:order-1" : "lg:order-2") + " min-w-0"}>
-                      <div className="flex items-center gap-3">
-                        <div
-                          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-accent transition-transform duration-500 group-hover:scale-105"
-                          style={{ background: "rgba(212,168,83,0.12)", border: "1px solid rgba(212,168,83,0.24)", boxShadow: "inset 0 1px 0 rgba(255,235,190,0.18)" }}
-                        >
-                          <m.icon className="h-5 w-5" strokeWidth={1.6} />
-                        </div>
-                        <span className="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-accent/80">
-                          {m.place}
-                        </span>
-                      </div>
-                      <h3 className="mt-3.5 font-heading text-[21px] font-medium tracking-[-0.015em] text-white sm:text-[25px]">
-                        {m.title}
-                      </h3>
-                      <div className="mt-3 space-y-3 font-body text-[13.5px] leading-[1.75] text-white/65 sm:text-[14.5px]">
-                        {m.body.map((p, j) => (
-                          <p key={j}>{p}</p>
-                        ))}
-                      </div>
-                      <p className="mt-5 border-t border-white/10 pt-4 font-heading text-[15px] font-medium italic leading-[1.5] text-accent-light sm:text-[16.5px]">
-                        {m.takeaway}
-                      </p>
-                    </div>
-                  </div>
-                </motion.article>
-              )
-            })}
-          </div>
-
-          {/* scene keyframes */}
-          <style>{`
-            @keyframes aboutFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
-            @keyframes aboutFlame { 0%,100%{transform:translateX(-50%) scaleY(1);opacity:.95} 50%{transform:translateX(-50%) scaleY(.82) translateX(.5px);opacity:.7} }
-            @keyframes aboutConfetti { 0%{transform:translateY(0) rotate(0);opacity:0} 12%{opacity:1} 100%{transform:translateY(26px) rotate(220deg);opacity:0} }
-          `}</style>
-        </div>
-      </section>
+      {/* ═══════════ MOMENTS THAT DEFINE TRAVELSENSE - scroll-driven ═══════════ */}
+      <MomentsScroll />
 
       {/* navy -> light: NOT flipped, so the navy continues seamlessly into the wave
           (the flip left a light strip against the navy section = the "white line"). */}

@@ -603,7 +603,14 @@ function HeroSection() {
 
         {/* Mobile/tablet only: the spotlight as a clean full-width card below the
             headline (desktop gets the right-margin version, hidden below xl). */}
-        <div className="mx-auto mt-10 w-full max-w-[470px] xl:hidden">
+        <div className="relative mx-auto mt-10 w-full max-w-[470px] xl:hidden">
+          {/* Soft light scrim - the SAME effect that fades the globe behind the
+              headline, mirrored here so the globe's bottom melts away where the
+              carousel comes up over it (no hard globe edge under the card). */}
+          <div
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[160%] w-[164%] -translate-x-1/2 -translate-y-1/2"
+            style={{ background: "radial-gradient(ellipse 60% 56% at 50% 44%, rgba(247,249,251,0.92) 0%, rgba(247,249,251,0.55) 42%, transparent 74%)" }}
+          />
           <DestinationSpotlight />
         </div>
       </motion.div>
