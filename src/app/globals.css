@@ -150,17 +150,22 @@ h1 em, h2 em, h3 em, h4 em, .hx em {
   opacity: 0.5;
 }
 
-/* Tech/Michroma escape hatch - kept for stats, timestamps, legacy micro-labels */
+/* Micro-label style - uppercase + tracked, but in the BODY font (Outfit) so the
+   whole site uses only the 3 core typefaces (Fraunces / Outfit / Caveat). Michroma
+   was the odd one out (e.g. the stats "RECENTLY PLANNED" looked off-system). */
 .font-tech,
 .caps-michroma {
-  font-family: var(--font-mono-tech, "Michroma", sans-serif);
-  letter-spacing: 0.15em;
+  font-family: var(--font-outfit, "Outfit", system-ui, sans-serif);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  /* Belt-and-braces with body's clip: stops a stray right-hand gap appearing
+     after a pinch zoom-in/out on mobile (visual- vs layout-viewport drift). */
+  overflow-x: clip;
 }
 
 /* Focus styles for accessibility */

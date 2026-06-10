@@ -53,7 +53,7 @@ export default function ARVRBanner() {
             style={{
               background: "rgba(13,21,42,0.97)",
               border: "1px solid rgba(120,150,210,0.22)",
-              boxShadow: "0 16px 40px rgba(3,8,16,0.42), inset 0 1px 0 rgba(255,255,255,0.12)",
+              boxShadow: "0 10px 26px rgba(3,8,16,0.24), inset 0 1px 0 rgba(255,255,255,0.12)",
             }}
           >
             {/* ── VR traveller - the portrait STRADDLES the bar's top edge (~50%
@@ -68,9 +68,9 @@ export default function ARVRBanner() {
                     // Asymmetric feather: keep the face (upper-centre) crisp but
                     // fade the LOWER-LEFT hard (his hand/fingers + blue shirt) so it
                     // dissolves into the navy bar instead of reading as a cut-out.
-                    maskImage: "radial-gradient(ellipse 74% 66% at 60% 38%, #000 36%, rgba(0,0,0,0) 96%)",
-                    WebkitMaskImage: "radial-gradient(ellipse 74% 66% at 60% 38%, #000 36%, rgba(0,0,0,0) 96%)",
-                    filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.4))",
+                    // NO drop-shadow - it ringed the feathered edge with a line.
+                    maskImage: "radial-gradient(ellipse 76% 68% at 60% 38%, #000 32%, rgba(0,0,0,0) 97%)",
+                    WebkitMaskImage: "radial-gradient(ellipse 76% 68% at 60% 38%, #000 32%, rgba(0,0,0,0) 97%)",
                   }}
                 >
                   <Image
