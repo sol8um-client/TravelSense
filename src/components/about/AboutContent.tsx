@@ -177,12 +177,9 @@ function MomentVisual({ i }: { i: number }) {
   if (i === 1) {
     // Crisis from Nepal - WhatsApp chat on a weak signal
     return (
-      <div className={shell} style={{ background: "linear-gradient(155deg, #0e1c1a 0%, #07100f 100%)" }}>
-        <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-25" viewBox="0 0 300 250" fill="none" aria-hidden>
-          <path d="M40 60 C120 40 180 120 260 90" stroke="rgba(255,255,255,0.4)" strokeWidth="1.4" strokeDasharray="4 6" />
-          <circle cx="40" cy="60" r="4" fill="#34d399" />
-          <circle cx="260" cy="90" r="4" fill="#D4A853" />
-        </svg>
+      <div className={shell}>
+        <Image src="/images/generated/leh-ladakh-hero.webp" alt="" fill sizes="(max-width: 1024px) 100vw, 520px" className="object-cover" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(150deg, rgba(7,16,15,0.40) 0%, rgba(6,13,12,0.86) 100%)" }} />
         <div className="absolute inset-x-5 top-6 space-y-2.5">
           <div className="max-w-[82%] rounded-2xl rounded-tl-md bg-white/92 px-3.5 py-2 shadow-[0_10px_24px_rgba(0,0,0,0.35)]">
             <p className="font-body text-[11.5px] leading-snug text-primary">Our flight to Himachal just got cancelled.</p>
@@ -207,7 +204,9 @@ function MomentVisual({ i }: { i: number }) {
   if (i === 2) {
     // Andaman anniversary - a quietly arranged cake by the sea
     return (
-      <div className={shell} style={{ background: "linear-gradient(165deg, #f3b079 0%, #db6f8b 46%, #574a8c 100%)" }}>
+      <div className={shell}>
+        <Image src="/images/generated/andaman-islands-hero.webp" alt="" fill sizes="(max-width: 1024px) 100vw, 520px" className="object-cover" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(243,176,121,0.24) 0%, rgba(120,60,100,0.32) 50%, rgba(28,20,55,0.6) 100%)" }} />
         {[14, 30, 50, 68, 84].map((l, k) => (
           <span
             key={k}
@@ -252,23 +251,9 @@ function MomentVisual({ i }: { i: number }) {
 
   // i === 3 - Srinagar - taking ownership in person
   return (
-    <div className={shell} style={{ background: "linear-gradient(165deg, #34507a 0%, #16233a 58%, #0b1322 100%)" }}>
-      {/* sun haze */}
-      <div className="absolute right-[14%] top-[14%] h-16 w-16 rounded-full" style={{ background: "radial-gradient(closest-side, rgba(255,225,170,0.6), transparent)" }} />
-      {/* lake */}
-      <div className="absolute inset-x-0 bottom-0 h-[42%]" style={{ background: "linear-gradient(to top, #0a1322, rgba(20,40,70,0.4))" }} />
-      {/* houseboat + reflection */}
-      <svg className="absolute bottom-[30%] left-1/2 w-[64%] max-w-[200px] -translate-x-1/2" viewBox="0 0 200 70" fill="none" aria-hidden style={{ animation: "aboutFloat 7s ease-in-out infinite" }}>
-        <rect x="20" y="30" width="160" height="20" rx="3" fill="#7C5A3A" />
-        <rect x="34" y="12" width="132" height="20" rx="3" fill="#8C6A46" />
-        <path d="M28 12 L172 12 L160 4 L40 4 Z" fill="#A57C50" />
-        {[48, 78, 108, 138].map((x) => (
-          <rect key={x} x={x} y="18" width="14" height="9" rx="1.5" fill="#FCE8B5" opacity="0.9" />
-        ))}
-        <g opacity="0.18">
-          <rect x="20" y="52" width="160" height="16" rx="3" fill="#7C5A3A" transform="scale(1,-1) translate(0,-120)" />
-        </g>
-      </svg>
+    <div className={shell}>
+      <Image src="/images/generated/kashmir-shikara-dal-lake.webp" alt="" fill sizes="(max-width: 1024px) 100vw, 520px" className="object-cover" />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(12,20,36,0.20) 0%, rgba(11,19,34,0.74) 100%)" }} />
       {/* service-resolved card */}
       <div className="absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-2xl border border-white/12 bg-white/[0.08] px-3.5 py-2.5 backdrop-blur-md">
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300">
