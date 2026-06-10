@@ -530,7 +530,11 @@ function HeroSection() {
       {/* 5. Static globe (Nano-Banana art + CSS motion, no WebGL) - all sizes.
              Mobile/tablet: a calm, glowing backdrop centred behind the text.
              Desktop (lg+): present on the LEFT with live location image-pins. */}
-      <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">
+      {/* overflow-X-CLIP (not hidden): stops the wide globe causing a sideways
+          scrollbar, but lets the round atmosphere glow bleed past the hero top &
+          bottom and fade out naturally - `overflow-hidden` was slicing that glow
+          into straight top/bottom edges (the "square border" around the globe). */}
+      <div className="pointer-events-none absolute inset-0 z-[1] overflow-x-clip">
         <StaticGlobe
           className="absolute left-1/2 top-[47%] w-[104%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.6]
                      sm:w-[86%] sm:opacity-[0.66]
@@ -632,8 +636,20 @@ const RECENT_TRIPS: { who: string; trip: string; rating: string }[] = [
 function TrustBarSection() {
   return (
     <section className="relative z-20 -mt-[44px] px-4 pb-[58px] sm:-mt-[56px] sm:px-6 sm:pb-[92px]">
+      {/* Soft brand-blue glow cradling the pill so the frosted glass has light to
+          refract. The globe was scaled down (per the "20% smaller" request) and no
+          longer sits fully behind the bar, which left the glass reading flat-white;
+          this gives it back its liquid-glass depth without enlarging the globe. */}
+      <div
+        className="pointer-events-none absolute left-1/2 top-[-14px] z-0 h-[122px] w-[min(1120px,94%)] -translate-x-1/2 rounded-[40px] sm:top-[-18px] sm:h-[152px]"
+        style={{
+          background:
+            "radial-gradient(ellipse 66% 128% at 30% 50%, rgba(96,132,206,0.26), rgba(150,182,228,0.11) 48%, transparent 78%)",
+          filter: "blur(32px)",
+        }}
+      />
       {/* rounded liquid-glass pill, hovering over the globe's bottom */}
-      <div className="glass-panel mx-auto max-w-[1120px] rounded-[22px] px-5 py-3.5 sm:rounded-[26px] sm:px-9 sm:py-[18px]">
+      <div className="glass-panel relative z-10 mx-auto max-w-[1120px] rounded-[22px] px-5 py-3.5 sm:rounded-[26px] sm:px-9 sm:py-[18px]">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-10">
           {/* 4 stats - ALWAYS one row (grid on mobile, inline on desktop) */}
           <div className="grid shrink-0 grid-cols-4 gap-x-2 sm:flex sm:gap-x-[32px]">

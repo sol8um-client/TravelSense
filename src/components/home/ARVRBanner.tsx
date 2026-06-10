@@ -49,8 +49,13 @@ export default function ARVRBanner() {
       />
       {/* The bar is pulled UP so it straddles the white -> navy wave line, i.e. it
           "stands on" the section break; the VR face then emerges up & out of it. */}
-      <div className="relative z-30 mx-auto -mt-[78px] max-w-[1180px] px-4 pb-6 sm:-mt-[104px] sm:px-6 sm:pb-10">
-        <div className="relative flex flex-row items-center gap-3 overflow-visible rounded-[18px] py-3 pl-[70px] pr-3.5 text-left backdrop-blur-md sm:gap-7 sm:rounded-[22px] sm:py-5 sm:pl-[156px] sm:pr-7" style={{ background: "rgba(13,21,42,0.97)", border: "1px solid rgba(120,150,210,0.22)", boxShadow: "0 22px 54px rgba(3,8,16,0.5), inset 0 1px 0 rgba(255,255,255,0.12)" }}>
+      <div className="relative z-30 mx-auto max-w-[1180px] px-4 pb-8 sm:px-6 sm:pb-14">
+        {/* The bar straddles the white -> navy line EXACTLY 50/50: `-translate-y-1/2`
+            pulls it up by half its OWN height (whatever that is), so its visual
+            centre lands on its layout-top; the small `-mt` raises that pivot onto
+            the wave's midline (= where the solid navy begins). Half sits in the
+            white area, half submerged in the blue - robust to the bar's height. */}
+        <div className="relative flex flex-row items-center gap-3 overflow-visible rounded-[18px] py-3 pl-[70px] pr-3.5 text-left backdrop-blur-md -mt-[18px] -translate-y-1/2 sm:gap-7 sm:rounded-[22px] sm:py-5 sm:pl-[156px] sm:pr-7 sm:-mt-[25px] lg:-mt-[30px]" style={{ background: "rgba(13,21,42,0.97)", border: "1px solid rgba(120,150,210,0.22)", boxShadow: "0 22px 54px rgba(3,8,16,0.5), inset 0 1px 0 rgba(255,255,255,0.12)" }}>
           {/* ── VR traveller's face - rises UP & OUT of the bar (3D pop-out) ── */}
           <div className="absolute bottom-0 left-3 sm:left-7" aria-hidden>
             {/* soft ground shadow so the head reads as standing out of the bar */}

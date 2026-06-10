@@ -166,14 +166,44 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
           }}
         />
 
+        {/* Slow terminator-style LIGHT SWEEP - a real spin isn't possible with a
+            baked sphere image, so a soft light band drifts across the globe to fake
+            the planet slowly turning. Masked + clipped to the circle (no square),
+            screen-blended so it only lifts, looping seamlessly (off-globe at both
+            ends). This is the main "make it feel alive / revolving" motion. */}
+        <div
+          className="pointer-events-none absolute inset-0 overflow-hidden"
+          style={{
+            maskImage: "radial-gradient(circle closest-side at center, #000 86%, transparent 99%)",
+            WebkitMaskImage: "radial-gradient(circle closest-side at center, #000 86%, transparent 99%)",
+          }}
+        >
+          <div
+            className="absolute inset-y-0 left-0 w-[55%]"
+            style={{
+              background:
+                "linear-gradient(100deg, transparent 0%, rgba(205,224,255,0.05) 36%, rgba(255,244,220,0.09) 50%, rgba(205,224,255,0.05) 64%, transparent 100%)",
+              mixBlendMode: "screen",
+              animation: "globeSweep 17s linear infinite",
+            }}
+          />
+        </div>
+
         {/* twinkling night-side city lights - small pulsing glints over the baked
             city clusters (India + SE Asia) so the globe reads as a LIVE element. */}
         <div className="pointer-events-none absolute inset-0">
           {([
-            [48, 40, 0], [54, 44, 0.7], [60, 38, 1.3], [64, 49, 0.4],
-            [69, 52, 1.8], [58, 47, 1.1], [51, 36, 2.2], [66, 43, 0.9],
-            [44, 46, 1.5], [62, 55, 0.3], [56, 33, 2.0], [70, 45, 1.2],
-            [47, 52, 0.6], [52, 39, 2.5], [63, 35, 1.0], [59, 51, 1.9],
+            // Aligned to the globe art's REAL baked city-lights (not random):
+            // north-India / Gangetic plain
+            [45, 36, 0.2], [48, 34, 1.4], [51, 39, 2.2],
+            // eastern China + the bright SE-Asia border cluster
+            [66, 40, 0.5], [70, 37, 1.7], [73, 43, 1.0], [68, 46, 2.4],
+            // Japan / Korea
+            [79, 35, 0.8], [82, 41, 1.9],
+            // SE-Asia mainland (Thailand / Indochina)
+            [63, 51, 0.4], [67, 54, 1.3], [61, 49, 2.1],
+            // Indonesia / Java
+            [74, 63, 0.9], [77, 60, 1.6],
           ] as [number, number, number][]).map(([x, y, d], i) => (
             <span
               key={i}
@@ -190,7 +220,7 @@ export default function StaticGlobe({ className = "" }: { className?: string }) 
             />
           ))}
         </div>
-        <style>{`@keyframes globeTwinkle{0%,100%{opacity:.12;transform:scale(.6)}50%{opacity:1;transform:scale(1.15)}}`}</style>
+        <style>{`@keyframes globeTwinkle{0%,100%{opacity:.12;transform:scale(.6)}50%{opacity:1;transform:scale(1.15)}}@keyframes globeSweep{0%{transform:translateX(-100%)}100%{transform:translateX(185%)}}`}</style>
 
         {/* ── Location image-pins (desktop only) - frosted glass chips ────────── */}
         <div className="pointer-events-none absolute inset-0 hidden lg:block">
