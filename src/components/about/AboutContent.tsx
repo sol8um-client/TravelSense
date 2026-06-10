@@ -18,6 +18,8 @@ import {
   Quote,
   Check,
   Sparkles,
+  CheckCheck,
+  Wifi,
 } from "lucide-react"
 import { useLeadModal } from "@/components/shared/LeadCaptureModal"
 import PageHero from "@/components/shared/PageHero"
@@ -111,6 +113,180 @@ const promises = [
   "Stands behind every booking",
   "Treats your trip as their own",
 ]
+
+/* ─── Story visuals - a distinct little scene that brings each defining moment
+   to life (0 airport · 1 WhatsApp · 2 Andaman cake · 3 Srinagar houseboat). ─── */
+function MomentVisual({ i }: { i: number }) {
+  const shell =
+    "relative h-[250px] w-full overflow-hidden rounded-[20px] border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:h-full sm:min-h-[300px]"
+
+  if (i === 0) {
+    // The 1:00 AM airport call - boarding pass stamped CANCELLED + live call chip
+    return (
+      <div className={shell} style={{ background: "linear-gradient(155deg, #0e1a36 0%, #060b18 100%)" }}>
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.16]"
+          style={{
+            backgroundImage: "radial-gradient(circle, rgba(212,168,83,0.7) 1px, transparent 1.4px)",
+            backgroundSize: "20px 20px",
+            maskImage: "linear-gradient(to bottom, #000, transparent 85%)",
+            WebkitMaskImage: "linear-gradient(to bottom, #000, transparent 85%)",
+          }}
+        />
+        <div
+          className="absolute left-1/2 top-[44%] w-[80%] max-w-[262px] -translate-x-1/2 -translate-y-1/2 -rotate-[5deg]"
+          style={{ animation: "aboutFloat 6s ease-in-out infinite" }}
+        >
+          <div className="overflow-hidden rounded-[14px] bg-[#FBF7EF] shadow-[0_24px_50px_rgba(0,0,0,0.5)]">
+            <div className="flex items-center justify-between bg-[#0A1425] px-3.5 py-2">
+              <span className="font-body text-[8px] font-semibold uppercase tracking-[0.2em] text-white/70">Boarding pass</span>
+              <span className="font-body text-[8px] font-semibold tracking-[0.16em] text-accent">6E 204</span>
+            </div>
+            <div className="flex items-center justify-between px-3.5 py-3">
+              <div className="text-left">
+                <p className="font-heading text-[19px] font-medium leading-none text-primary">DEL</p>
+                <p className="mt-1 font-body text-[8px] uppercase tracking-[0.12em] text-muted-foreground">Delhi · 12:40 AM</p>
+              </div>
+              <PlaneTakeoff className="h-4 w-4 text-secondary" strokeWidth={1.8} />
+              <div className="text-right">
+                <p className="font-heading text-[19px] font-medium leading-none text-primary/25">— —</p>
+                <p className="mt-1 font-body text-[8px] uppercase tracking-[0.12em] text-muted-foreground">Seat 14A</p>
+              </div>
+            </div>
+          </div>
+          <span
+            className="absolute -right-1.5 -top-2 rotate-[13deg] rounded-md border-2 border-secondary/80 px-2 py-0.5 font-body text-[10px] font-bold uppercase tracking-[0.1em] text-secondary"
+            style={{ background: "rgba(196,50,74,0.12)" }}
+          >
+            Cancelled
+          </span>
+        </div>
+        <div className="absolute inset-x-4 bottom-4 flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.07] px-3.5 py-2 backdrop-blur-md">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+          </span>
+          <Phone className="h-3.5 w-3.5 text-white/80" strokeWidth={1.8} />
+          <span className="font-body text-[11.5px] font-medium text-white/85">Incoming call</span>
+          <span className="ml-auto font-body text-[10px] font-semibold tracking-[0.12em] text-accent">1:00 AM</span>
+        </div>
+      </div>
+    )
+  }
+
+  if (i === 1) {
+    // Crisis from Nepal - WhatsApp chat on a weak signal
+    return (
+      <div className={shell} style={{ background: "linear-gradient(155deg, #0e1c1a 0%, #07100f 100%)" }}>
+        <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-25" viewBox="0 0 300 250" fill="none" aria-hidden>
+          <path d="M40 60 C120 40 180 120 260 90" stroke="rgba(255,255,255,0.4)" strokeWidth="1.4" strokeDasharray="4 6" />
+          <circle cx="40" cy="60" r="4" fill="#34d399" />
+          <circle cx="260" cy="90" r="4" fill="#D4A853" />
+        </svg>
+        <div className="absolute inset-x-5 top-6 space-y-2.5">
+          <div className="max-w-[82%] rounded-2xl rounded-tl-md bg-white/92 px-3.5 py-2 shadow-[0_10px_24px_rgba(0,0,0,0.35)]">
+            <p className="font-body text-[11.5px] leading-snug text-primary">Our flight to Himachal just got cancelled.</p>
+            <p className="mt-0.5 text-right font-body text-[8px] text-muted-foreground">11:58 PM</p>
+          </div>
+          <div className="ml-auto max-w-[84%] rounded-2xl rounded-tr-md px-3.5 py-2 shadow-[0_10px_24px_rgba(0,0,0,0.35)]" style={{ background: "#1f3d2f" }}>
+            <p className="font-body text-[11.5px] leading-snug text-white/92">On it — finding you another route right now.</p>
+            <p className="mt-0.5 flex items-center justify-end gap-1 font-body text-[8px] text-emerald-300/85">
+              12:01 AM <CheckCheck className="h-2.5 w-2.5" strokeWidth={2.4} />
+            </p>
+          </div>
+        </div>
+        <div className="absolute inset-x-4 bottom-4 flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.07] px-3.5 py-2 backdrop-blur-md">
+          <Wifi className="h-3.5 w-3.5 text-amber-300/80" strokeWidth={1.8} />
+          <span className="font-body text-[11px] font-medium text-white/85">WhatsApp call · Nepal</span>
+          <span className="ml-auto font-body text-[9.5px] font-semibold uppercase tracking-[0.12em] text-amber-300/90">Weak signal</span>
+        </div>
+      </div>
+    )
+  }
+
+  if (i === 2) {
+    // Andaman anniversary - a quietly arranged cake by the sea
+    return (
+      <div className={shell} style={{ background: "linear-gradient(165deg, #f3b079 0%, #db6f8b 46%, #574a8c 100%)" }}>
+        {[14, 30, 50, 68, 84].map((l, k) => (
+          <span
+            key={k}
+            className="absolute block h-1.5 w-1.5 rounded-[2px]"
+            style={{
+              left: `${l}%`,
+              top: `${10 + (k % 3) * 7}%`,
+              background: ["#fff", "#FCE8B5", "#C4324A", "#fff", "#FCE8B5"][k],
+              transform: `rotate(${k * 24}deg)`,
+              animation: `aboutConfetti 3.6s ease-in-out ${k * 0.4}s infinite`,
+            }}
+          />
+        ))}
+        {/* sea band */}
+        <div className="absolute inset-x-0 bottom-0 h-[34%]" style={{ background: "linear-gradient(to top, rgba(12,20,40,0.5), transparent)" }} />
+        {/* cake */}
+        <div className="absolute bottom-[26%] left-1/2 -translate-x-1/2" style={{ animation: "aboutFloat 6.5s ease-in-out infinite" }}>
+          {/* candles + flames */}
+          <div className="mb-1 flex items-end justify-center gap-3">
+            {[0, 1, 2].map((c) => (
+              <span key={c} className="relative block">
+                <span className="block h-5 w-1 rounded-sm" style={{ background: "linear-gradient(#fff, #f1d9b3)" }} />
+                <span
+                  className="absolute -top-2 left-1/2 h-2.5 w-2 -translate-x-1/2 rounded-full"
+                  style={{ background: "radial-gradient(circle at 50% 30%, #FFF6D6, #F5A623 70%, transparent)", animation: `aboutFlame 1.4s ease-in-out ${c * 0.25}s infinite` }}
+                />
+              </span>
+            ))}
+          </div>
+          <div className="h-7 w-[92px] rounded-t-md bg-[#FBEFD8] shadow-[0_14px_30px_rgba(0,0,0,0.35)]" style={{ borderBottom: "3px solid #E8B4C4" }} />
+          <div className="mx-auto h-9 w-[112px] rounded-b-md rounded-t-sm bg-[#F7E2C8]" style={{ borderTop: "3px solid #E8B4C4" }} />
+        </div>
+        {/* ribbon */}
+        <div className="absolute left-1/2 top-5 -translate-x-1/2 rounded-full bg-white/90 px-3.5 py-1.5 shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
+          <span className="flex items-center gap-1.5 font-body text-[10.5px] font-semibold uppercase tracking-[0.1em] text-secondary">
+            <Cake className="h-3.5 w-3.5" strokeWidth={1.8} /> Happy anniversary
+          </span>
+        </div>
+      </div>
+    )
+  }
+
+  // i === 3 - Srinagar - taking ownership in person
+  return (
+    <div className={shell} style={{ background: "linear-gradient(165deg, #34507a 0%, #16233a 58%, #0b1322 100%)" }}>
+      {/* sun haze */}
+      <div className="absolute right-[14%] top-[14%] h-16 w-16 rounded-full" style={{ background: "radial-gradient(closest-side, rgba(255,225,170,0.6), transparent)" }} />
+      {/* lake */}
+      <div className="absolute inset-x-0 bottom-0 h-[42%]" style={{ background: "linear-gradient(to top, #0a1322, rgba(20,40,70,0.4))" }} />
+      {/* houseboat + reflection */}
+      <svg className="absolute bottom-[30%] left-1/2 w-[64%] max-w-[200px] -translate-x-1/2" viewBox="0 0 200 70" fill="none" aria-hidden style={{ animation: "aboutFloat 7s ease-in-out infinite" }}>
+        <rect x="20" y="30" width="160" height="20" rx="3" fill="#7C5A3A" />
+        <rect x="34" y="12" width="132" height="20" rx="3" fill="#8C6A46" />
+        <path d="M28 12 L172 12 L160 4 L40 4 Z" fill="#A57C50" />
+        {[48, 78, 108, 138].map((x) => (
+          <rect key={x} x={x} y="18" width="14" height="9" rx="1.5" fill="#FCE8B5" opacity="0.9" />
+        ))}
+        <g opacity="0.18">
+          <rect x="20" y="52" width="160" height="16" rx="3" fill="#7C5A3A" transform="scale(1,-1) translate(0,-120)" />
+        </g>
+      </svg>
+      {/* service-resolved card */}
+      <div className="absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-2xl border border-white/12 bg-white/[0.08] px-3.5 py-2.5 backdrop-blur-md">
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300">
+          <Check className="h-4 w-4" strokeWidth={2.6} />
+        </span>
+        <div className="min-w-0">
+          <p className="font-body text-[11.5px] font-semibold text-white">Handled in person</p>
+          <p className="font-body text-[9px] text-white/55">Our rep visited the hotel</p>
+        </div>
+        <span className="ml-auto flex items-center gap-0.5">
+          {[0, 1, 2, 3, 4].map((s) => (
+            <Star key={s} className="h-3 w-3 text-accent" strokeWidth={1.4} fill="currentColor" />
+          ))}
+        </span>
+      </div>
+    </div>
+  )
+}
 
 /* ─── Component ──────────────────────────────────────────────────── */
 
@@ -353,60 +529,74 @@ export default function AboutContent() {
             </p>
           </motion.div>
 
-          {/* story cards */}
-          <div className="mt-14 space-y-6">
-            {moments.map((m, i) => (
-              <motion.article
-                key={m.title}
-                custom={i}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
-                className="glass-dark group relative overflow-hidden rounded-[22px] p-6 transition-transform duration-500 hover:-translate-y-1 sm:p-8"
-              >
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute -right-3 -top-6 select-none font-heading text-[7rem] italic font-normal leading-none text-white/[0.04] sm:text-[9rem]"
+          {/* story cards - each a little SCENE + the telling, alternating sides */}
+          <div className="mt-14 space-y-7 sm:space-y-9">
+            {moments.map((m, i) => {
+              const flip = i % 2 === 1
+              return (
+                <motion.article
+                  key={m.title}
+                  custom={i}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-60px" }}
+                  className="glass-dark group relative overflow-hidden rounded-[24px] p-5 transition-transform duration-500 hover:-translate-y-1 sm:p-6"
                 >
-                  {`0${i + 1}`}
-                </span>
-                <div className="relative flex flex-col gap-5 sm:flex-row sm:gap-7">
-                  {/* icon column */}
-                  <div className="shrink-0">
-                    <div
-                      className="flex h-14 w-14 items-center justify-center rounded-2xl text-accent transition-transform duration-500 group-hover:scale-105"
-                      style={{ background: "rgba(212,168,83,0.12)", border: "1px solid rgba(212,168,83,0.24)", boxShadow: "inset 0 1px 0 rgba(255,235,190,0.18)" }}
-                    >
-                      <m.icon className="h-6 w-6" strokeWidth={1.6} />
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -right-3 -top-7 select-none font-heading text-[7rem] italic font-normal leading-none text-white/[0.045] sm:text-[9rem]"
+                  >
+                    {`0${i + 1}`}
+                  </span>
+                  <div className="relative grid items-center gap-6 lg:grid-cols-2 lg:gap-9">
+                    {/* the scene */}
+                    <div className={flip ? "lg:order-2" : "lg:order-1"}>
+                      <MomentVisual i={i} />
+                    </div>
+                    {/* the telling */}
+                    <div className={(flip ? "lg:order-1" : "lg:order-2") + " min-w-0"}>
+                      <div className="flex items-center gap-3">
+                        <div
+                          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-accent transition-transform duration-500 group-hover:scale-105"
+                          style={{ background: "rgba(212,168,83,0.12)", border: "1px solid rgba(212,168,83,0.24)", boxShadow: "inset 0 1px 0 rgba(255,235,190,0.18)" }}
+                        >
+                          <m.icon className="h-5 w-5" strokeWidth={1.6} />
+                        </div>
+                        <span className="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-accent/80">
+                          {m.place}
+                        </span>
+                      </div>
+                      <h3 className="mt-3.5 font-heading text-[21px] font-medium tracking-[-0.015em] text-white sm:text-[25px]">
+                        {m.title}
+                      </h3>
+                      <div className="mt-3 space-y-3 font-body text-[13.5px] leading-[1.75] text-white/65 sm:text-[14.5px]">
+                        {m.body.map((p, j) => (
+                          <p key={j}>{p}</p>
+                        ))}
+                      </div>
+                      <p className="mt-5 border-t border-white/10 pt-4 font-heading text-[15px] font-medium italic leading-[1.5] text-accent-light sm:text-[16.5px]">
+                        {m.takeaway}
+                      </p>
                     </div>
                   </div>
-                  {/* text */}
-                  <div className="min-w-0">
-                    <span className="font-body text-[11.5px] font-semibold uppercase tracking-[0.16em] text-accent/80">
-                      {m.place}
-                    </span>
-                    <h3 className="mt-1.5 font-heading text-[20px] font-medium tracking-[-0.015em] text-white sm:text-[24px]">
-                      {m.title}
-                    </h3>
-                    <div className="mt-3 space-y-3 font-body text-[13.5px] leading-[1.75] text-white/65 sm:text-[14.5px]">
-                      {m.body.map((p, j) => (
-                        <p key={j}>{p}</p>
-                      ))}
-                    </div>
-                    {/* takeaway */}
-                    <p className="mt-5 border-t border-white/10 pt-4 font-heading text-[15px] font-medium italic leading-[1.5] text-accent-light sm:text-[16.5px]">
-                      {m.takeaway}
-                    </p>
-                  </div>
-                </div>
-              </motion.article>
-            ))}
+                </motion.article>
+              )
+            })}
           </div>
+
+          {/* scene keyframes */}
+          <style>{`
+            @keyframes aboutFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+            @keyframes aboutFlame { 0%,100%{transform:translateX(-50%) scaleY(1);opacity:.95} 50%{transform:translateX(-50%) scaleY(.82) translateX(.5px);opacity:.7} }
+            @keyframes aboutConfetti { 0%{transform:translateY(0) rotate(0);opacity:0} 12%{opacity:1} 100%{transform:translateY(26px) rotate(220deg);opacity:0} }
+          `}</style>
         </div>
       </section>
 
-      <SectionWave from="#0A1425" to="#F4F6F9" flip />
+      {/* navy -> light: NOT flipped, so the navy continues seamlessly into the wave
+          (the flip left a light strip against the navy section = the "white line"). */}
+      <SectionWave from="#0A1425" to="#F4F6F9" />
 
       {/* ═══════════ OUR PROMISE ═══════════ */}
       <section className="bg-[#F4F6F9] px-4 py-16 sm:px-6 sm:py-24">
