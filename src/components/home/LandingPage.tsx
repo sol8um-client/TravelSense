@@ -540,7 +540,7 @@ function HeroSection() {
                      sm:w-[86%] sm:opacity-[0.66]
                      md:w-[62%] md:opacity-[0.62]
                      lg:w-[53%] lg:opacity-[0.64]
-                     xl:left-0 xl:top-1/2 xl:h-[93%] xl:w-auto xl:-translate-x-[28%] xl:-translate-y-1/2 xl:opacity-100"
+                     xl:left-0 xl:top-1/2 xl:h-[102%] xl:w-auto xl:-translate-x-[34%] xl:-translate-y-1/2 xl:opacity-100"
         />
       </div>
 
@@ -1089,7 +1089,7 @@ function ProblemSection() {
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden bg-brand-topo">
-      <div className="relative max-w-6xl mx-auto px-6 py-20 sm:py-28">
+      <div className="relative max-w-6xl mx-auto px-6 pt-12 pb-20 sm:pt-14 sm:pb-28">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-[72px] items-center">
 
           {/* LEFT - draggable chaos canvas */}
