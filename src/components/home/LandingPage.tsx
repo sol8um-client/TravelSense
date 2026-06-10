@@ -644,8 +644,8 @@ function TrustBarSection() {
         className="pointer-events-none absolute left-1/2 top-[-16px] z-0 h-[130px] w-[min(1140px,96%)] -translate-x-1/2 rounded-[44px] sm:top-[-20px] sm:h-[160px]"
         style={{
           background:
-            "radial-gradient(ellipse 90% 150% at 50% 82%, rgba(120,150,210,0.15), rgba(120,150,210,0.05) 54%, transparent 82%)",
-          filter: "blur(30px)",
+            "radial-gradient(ellipse 78% 168% at 27% 52%, rgba(255,255,255,0.66), rgba(255,255,255,0.28) 44%, transparent 76%)",
+          filter: "blur(24px)",
         }}
       />
       {/* rounded liquid-glass pill, hovering over the globe's bottom. A fairly
@@ -653,7 +653,7 @@ function TrustBarSection() {
           sits behind the bar), while the sheen + edge highlights read as glass. */}
       <div
         className="glass-panel relative z-10 mx-auto max-w-[1120px] overflow-hidden rounded-[22px] px-5 py-3.5 sm:rounded-[26px] sm:px-9 sm:py-[18px]"
-        style={{ background: "rgba(247,250,253,0.64)" }}
+        style={{ background: "rgba(252,253,255,0.34)" }}
       >
         {/* liquid-glass sheen - a diagonal light streak (top-left) + a faint cool
             tint (lower-right) so the panel reads as refractive glass even over white */}
@@ -677,7 +677,7 @@ function TrustBarSection() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: i * 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
-                <span className="font-heading text-[19px] font-medium leading-none tracking-[-0.02em] text-primary sm:text-[24px]" style={{ fontVariationSettings: "'opsz' 144", textShadow: "0 1px 12px rgba(255,255,255,0.6)" }}>{n}</span>
+                <span className="font-heading text-[19px] font-medium leading-none tracking-[-0.02em] text-primary sm:text-[24px]" style={{ fontVariationSettings: "'opsz' 144", textShadow: "0 1px 10px rgba(255,255,255,0.92), 0 0 3px rgba(255,255,255,0.7)" }}>{n}</span>
                 <span className="mt-[3px] text-center text-[8.5px] leading-tight tracking-[0.01em] text-muted-foreground sm:text-left sm:text-[10.5px]">{l}</span>
               </motion.div>
             ))}
@@ -937,7 +937,11 @@ function LuggageTag({ destination, image }: { destination: string; image: string
 
 function ChaosCanvas() {
   return (
-    <div className="relative w-full h-[520px] overflow-visible">
+    <div className="relative w-full h-[336px] overflow-hidden sm:h-[520px] sm:overflow-visible">
+      {/* Mobile: the cards use fixed pixel positions tuned for a wide column, so
+          they spilled past both screen edges on a phone. Scale the whole cluster
+          down to fit; full size from sm up. */}
+      <div className="absolute left-1/2 top-0 h-[520px] w-[544px] origin-top -translate-x-1/2 scale-[0.58] sm:relative sm:left-0 sm:h-[520px] sm:w-full sm:translate-x-0 sm:scale-100">
       {/* Boarding passes - overbooked / delayed */}
       <DraggablePiece initial={{ x: 30, y: 50 }} rotation={-7}>
         <BoardingPass tag="AA 1247" route={["DEL", "GOA"]} date="12 Dec" seat="14A" status={{ label: "Overbooked", color: "#C4324A" }} />
@@ -985,6 +989,7 @@ function ChaosCanvas() {
       {/* Drag hint - meaningful caption (per design) */}
       <div className="pointer-events-none absolute bottom-1 left-1/2 -translate-x-1/2 whitespace-nowrap font-tech text-[8.5px] uppercase tracking-[0.18em] text-silver/45">
         ↕ this is planning a trip yourself - drag to feel the mess
+      </div>
       </div>
     </div>
   )

@@ -65,8 +65,11 @@ export default function ARVRBanner() {
                 <span
                   className="relative block h-[58px] w-[58px] overflow-hidden transition-transform duration-300 group-hover:scale-[1.04] sm:h-[104px] sm:w-[104px]"
                   style={{
-                    maskImage: "radial-gradient(circle closest-side at 50% 44%, #000 58%, transparent 100%)",
-                    WebkitMaskImage: "radial-gradient(circle closest-side at 50% 44%, #000 58%, transparent 100%)",
+                    // Asymmetric feather: keep the face (upper-centre) crisp but
+                    // fade the LOWER-LEFT hard (his hand/fingers + blue shirt) so it
+                    // dissolves into the navy bar instead of reading as a cut-out.
+                    maskImage: "radial-gradient(ellipse 74% 66% at 60% 38%, #000 36%, rgba(0,0,0,0) 96%)",
+                    WebkitMaskImage: "radial-gradient(ellipse 74% 66% at 60% 38%, #000 36%, rgba(0,0,0,0) 96%)",
                     filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.4))",
                   }}
                 >
