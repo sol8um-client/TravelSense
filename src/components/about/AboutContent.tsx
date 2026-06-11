@@ -439,67 +439,63 @@ export default function AboutContent() {
 
       {/* ═══════════ WHY WE EXIST - the belief ═══════════ */}
       <section className="bg-[#F4F6F9] px-4 py-16 sm:px-6 sm:py-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5 }}
-            className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-secondary"
-          >
-            Why we exist
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="mt-3 font-heading text-[1.9rem] font-medium leading-[1.12] tracking-[-0.02em] text-primary sm:text-[2.5rem]"
-            style={{ fontVariationSettings: "'opsz' 144" }}
-          >
-            Travel is never just flights and{" "}
-            <span className="italic font-normal text-secondary">hotels.</span>
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, delay: 0.12 }}
-            className="mx-auto mt-6 max-w-2xl space-y-4 font-body text-[15px] leading-[1.8] text-muted-foreground sm:text-[16px]"
-          >
-            <p>
-              Travel has changed dramatically. Endless websites, endless reviews, thousands of
-              options at our fingertips. Yet despite all of it, one thing has quietly become hard to
-              find: genuine human support.
-            </p>
-            <p>
-              We believe a journey is about dreams, about celebrations, about family time, about
-              once-in-a-lifetime moments - and when something unexpected happens, it is about knowing
-              there is someone you can trust. That belief is what inspired TravelSense: a place where
-              no traveller is ever a booking reference number, where every journey begins with a
-              conversation, and a real person is always ready to help.
-            </p>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto max-w-4xl overflow-hidden rounded-[32px] px-6 py-12 text-center shadow-[0_44px_100px_rgba(11,20,38,0.32)] sm:px-14 sm:py-16"
+          style={{ background: "linear-gradient(150deg, #16243f 0%, #0A1425 72%)" }}
+        >
+          {/* ambient brand glows so the dark panel reads premium, not flat */}
+          <div className="pointer-events-none absolute inset-0" aria-hidden>
+            <div className="absolute -right-[6%] -top-[14%] h-[280px] w-[280px] rounded-full bg-primary-light/25 blur-[90px]" />
+            <div
+              className="absolute -left-[6%] bottom-[-14%] h-[260px] w-[260px] rounded-full"
+              style={{ background: "radial-gradient(closest-side, rgba(196,50,74,0.16), transparent 70%)", filter: "blur(70px)" }}
+            />
+          </div>
 
-          {/* the human stakes, as a quiet pill row */}
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-9 flex flex-wrap items-center justify-center gap-2.5"
-          >
-            {stakes.map((s) => (
-              <span
-                key={s}
-                className="glass-panel inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-body text-[13px] font-medium text-primary"
-              >
-                <Sparkles className="h-3.5 w-3.5 text-accent" strokeWidth={1.8} />
-                {s}
-              </span>
-            ))}
-          </motion.div>
-        </div>
+          <div className="relative">
+            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">
+              Why we exist
+            </p>
+            <h2
+              className="mt-3 font-heading text-[1.9rem] font-medium leading-[1.12] tracking-[-0.02em] text-white sm:text-[2.5rem]"
+              style={{ fontVariationSettings: "'opsz' 144" }}
+            >
+              Travel is never just flights and{" "}
+              <span className="italic font-normal text-secondary-light">hotels.</span>
+            </h2>
+            <div className="mx-auto mt-6 max-w-2xl space-y-4 font-body text-[15px] leading-[1.8] text-white/65 sm:text-[16px]">
+              <p>
+                Travel has changed dramatically. Endless websites, endless reviews, thousands of
+                options at our fingertips. Yet despite all of it, one thing has quietly become hard to
+                find: genuine human support.
+              </p>
+              <p>
+                We believe a journey is about dreams, about celebrations, about family time, about
+                once-in-a-lifetime moments - and when something unexpected happens, it is about knowing
+                there is someone you can trust. That belief is what inspired TravelSense: a place where
+                no traveller is ever a booking reference number, where every journey begins with a
+                conversation, and a real person is always ready to help.
+              </p>
+            </div>
+
+            {/* the human stakes */}
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-2.5">
+              {stakes.map((s) => (
+                <span
+                  key={s}
+                  className="glass-dark inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-body text-[13px] font-medium text-white"
+                >
+                  <Sparkles className="h-3.5 w-3.5 text-accent" strokeWidth={1.8} />
+                  {s}
+                </span>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* ═══════════ MEET THE PEOPLE ═══════════ */}
