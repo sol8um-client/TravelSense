@@ -23,6 +23,8 @@ export interface DestinationCardData {
   tag?: string
   /** Number of live packages ("N experiences") for this destination. */
   experienceCount?: number
+  /** Activity/vibe tags = the union of this destination's packages' tags. */
+  tags?: string[]
   /** If the destination has exactly one package, deep-link straight to it. */
   directPackageSlug?: string
 }

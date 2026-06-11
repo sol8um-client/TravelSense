@@ -4,7 +4,7 @@ import { useState, useMemo, useRef, type CSSProperties } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useInView } from "framer-motion"
-import { ArrowRight, MapPin, Search } from "lucide-react"
+import { ArrowRight, MapPin, Search, Tag, X } from "lucide-react"
 import { formatCurrency } from "@/lib/utils"
 import type { DestinationCardData } from "./DestinationCard"
 
@@ -332,13 +332,18 @@ export function DestinationGrid({
   const setRegion = (r: RegionTab) => (onRegionChange ? onRegionChange(r) : setRegionState(r))
   const setQ = (v: string) => (onQueryChange ? onQueryChange(v) : setQState(v))
 
+  const [sortBy, setSortBy] = useState<"featured" | "az" | "price">("featured")
+  const [activeTags, setActiveTags] = useState<string[]>([])
+  const [pageSize, setPageSize] = useState(25) // 0 = show all
+  const [page, setPage] = useState(1)
+
   // Only surface region tabs that actually have destinations in this set.
   const availableRegions = useMemo(
     () => REGIONS.filter((r) => r === "All" || destinations.some((d) => d.region === r)),
     [destinations]
   )
 
-  const filtered = useMemo(() => {
+  const baseFiltered = useMemo(() => {
     const query = q.trim().toLowerCase()
     return destinations.filter(
       (d) =>
@@ -350,6 +355,52 @@ export function DestinationGrid({
           d.description.toLowerCase().includes(query))
     )
   }, [destinations, region, q])
+
+  // Picked tags - a destination must carry ALL of them.
+  const tagMatched = useMemo(() => {
+    if (activeTags.length === 0) return baseFiltered
+    return baseFiltered.filter((d) => {
+      const dt = d.tags ?? []
+      return activeTags.every((t) => dt.includes(t))
+    })
+  }, [baseFiltered, activeTags])
+
+  // Still-relevant tags (co-occurring in the current set, minus the picked ones),
+  // most common first - this is what makes the chip row dynamically narrow.
+  const availableTags = useMemo(() => {
+    const counts = new Map<string, number>()
+    for (const d of tagMatched)
+      for (const tag of d.tags ?? [])
+        if (!activeTags.includes(tag)) counts.set(tag, (counts.get(tag) ?? 0) + 1)
+    return Array.from(counts.entries())
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .slice(0, 14)
+      .map(([t]) => t)
+  }, [tagMatched, activeTags])
+
+  const filtered = useMemo(() => {
+    const arr = [...tagMatched]
+    if (sortBy === "az") arr.sort((a, b) => a.name.localeCompare(b.name))
+    else if (sortBy === "price")
+      arr.sort((a, b) => (a.startingPrice ?? Infinity) - (b.startingPrice ?? Infinity))
+    else
+      arr.sort(
+        (a, b) =>
+          (b.featured ? 1 : 0) - (a.featured ? 1 : 0) ||
+          (b.experienceCount ?? 0) - (a.experienceCount ?? 0)
+      )
+    return arr
+  }, [tagMatched, sortBy])
+
+  const effSize = pageSize === 0 ? Math.max(filtered.length, 1) : pageSize
+  const totalPages = Math.ceil(filtered.length / effSize)
+  const safePage = Math.min(page, Math.max(1, totalPages))
+  const paginated = filtered.slice((safePage - 1) * effSize, safePage * effSize)
+
+  const toggleTag = (tag: string) => {
+    setActiveTags((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]))
+    setPage(1)
+  }
 
   return (
     <div>
@@ -460,8 +511,65 @@ export function DestinationGrid({
                 >
                   {filtered.length} {filtered.length === 1 ? "place" : "places"}
                 </span>
+
+                {/* sort */}
+                <div style={{ display: "flex", gap: 4, background: "#fff", borderRadius: 9999, padding: 4, border: "1px solid rgba(176,184,196,0.3)" }}>
+                  {([{ v: "featured", l: "Featured" }, { v: "az", l: "A–Z" }, { v: "price", l: "Price" }] as const).map((s) => {
+                    const active = sortBy === s.v
+                    return (
+                      <button
+                        key={s.v}
+                        onClick={() => { setSortBy(s.v); setPage(1) }}
+                        className="font-body"
+                        style={{ cursor: "pointer", borderRadius: 9999, padding: "6px 12px", fontSize: 11.5, fontWeight: 600, border: "none", background: active ? "var(--primary)" : "transparent", color: active ? "#fff" : "var(--silver-dark)", transition: "all .2s" }}
+                      >
+                        {s.l}
+                      </button>
+                    )
+                  })}
+                </div>
+
+                {/* per page - 25 / 50 / all */}
+                <div className="hidden sm:flex" style={{ gap: 4, background: "#fff", borderRadius: 9999, padding: 4, border: "1px solid rgba(176,184,196,0.3)" }}>
+                  {[{ v: 25, l: "25" }, { v: 50, l: "50" }, { v: 0, l: "All" }].map((p) => {
+                    const active = pageSize === p.v
+                    return (
+                      <button
+                        key={p.l}
+                        onClick={() => { setPageSize(p.v); setPage(1) }}
+                        title={p.v === 0 ? "Show all on one page" : `Show ${p.l} per page`}
+                        className="font-body"
+                        style={{ cursor: "pointer", borderRadius: 9999, padding: "6px 11px", fontSize: 11.5, fontWeight: 600, border: "none", background: active ? "var(--primary)" : "transparent", color: active ? "#fff" : "var(--silver-dark)", transition: "all .2s" }}
+                      >
+                        {p.l}
+                      </button>
+                    )
+                  })}
+                </div>
               </div>
             </div>
+
+            {/* Dynamic "explore" tag chips - drill into the current results by
+                activity/vibe; the row narrows to still-relevant tags as you pick. */}
+            {(activeTags.length > 0 || availableTags.length > 0) && (
+              <div style={{ borderTop: "1px solid rgba(176,184,196,0.16)" }}>
+                <div style={{ maxWidth: 1180, margin: "0 auto", padding: "11px 32px", display: "flex", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
+                  <span className="font-body" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 10, fontWeight: 600, letterSpacing: "0.14em", color: "var(--silver-dark)", textTransform: "uppercase", whiteSpace: "nowrap" }}>
+                    <Tag size={12} strokeWidth={1.8} /> Explore
+                  </span>
+                  {activeTags.map((tag) => (
+                    <button key={tag} onClick={() => toggleTag(tag)} className="font-body" style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer", borderRadius: 9999, padding: "6px 10px 6px 13px", fontSize: 11.5, fontWeight: 600, border: "1px solid transparent", background: "var(--primary)", color: "#fff", boxShadow: "0 4px 12px rgba(10,20,37,0.18)", transition: "all .2s" }}>
+                      {tag} <X size={12} style={{ opacity: 0.85 }} />
+                    </button>
+                  ))}
+                  {availableTags.map((tag) => (
+                    <button key={tag} onClick={() => toggleTag(tag)} className="font-body" style={{ cursor: "pointer", borderRadius: 9999, padding: "6px 13px", fontSize: 11.5, fontWeight: 500, border: "1px solid rgba(176,184,196,0.35)", background: "#fff", color: "var(--muted-foreground)", transition: "all .2s" }}>
+                      {tag}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -495,9 +603,33 @@ export function DestinationGrid({
               gap: 20,
             }}
           >
-            {filtered.map((d, i) => (
+            {paginated.map((d, i) => (
               <DestCard key={d._id} d={d} i={i} />
             ))}
+          </div>
+        )}
+
+        {totalPages > 1 && (
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 10, marginTop: 44 }}>
+            <button
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={safePage <= 1}
+              className="font-body"
+              style={{ cursor: safePage <= 1 ? "default" : "pointer", borderRadius: 10, padding: "8px 16px", fontSize: 13, fontWeight: 600, border: "1px solid rgba(176,184,196,0.4)", background: "#fff", color: "var(--muted-foreground)", opacity: safePage <= 1 ? 0.4 : 1 }}
+            >
+              ‹ Prev
+            </button>
+            <span className="font-body" style={{ fontSize: 12.5, color: "var(--silver-dark)" }}>
+              Page {safePage} of {totalPages}
+            </span>
+            <button
+              onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+              disabled={safePage >= totalPages}
+              className="font-body"
+              style={{ cursor: safePage >= totalPages ? "default" : "pointer", borderRadius: 10, padding: "8px 16px", fontSize: 13, fontWeight: 600, border: "1px solid rgba(176,184,196,0.4)", background: "#fff", color: "var(--muted-foreground)", opacity: safePage >= totalPages ? 0.4 : 1 }}
+            >
+              Next ›
+            </button>
           </div>
         )}
       </div>

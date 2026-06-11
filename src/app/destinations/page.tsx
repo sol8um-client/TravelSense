@@ -8,6 +8,7 @@ import type { DestinationCardData } from "@/components/destinations/DestinationC
 import { coordFor } from "@/components/destinations/destinationCoords"
 import { destinations, comingSoonDestinations } from "@/data/destinations"
 import { packages } from "@/data/packages"
+import { packageTags } from "@/data/packageTags"
 
 export const dynamic = "force-static"
 
@@ -26,6 +27,22 @@ const packageCounts: Record<string, number> = packages.reduce<Record<string, num
   return acc
 }, {})
 
+// Each destination's tag set = the UNION of its packages' activity + vibe tags,
+// reusing the same packageTags taxonomy as the /packages drill-down. Drop the
+// lowercase auto-tag junk + the over-broad Leisure/Adventure so chips stay
+// meaningful (Trek, Beach, Snow & Winter, Backwaters, Islands...).
+const destTags: Record<string, string[]> = {}
+for (const p of packages) {
+  const t = packageTags[p.slug]
+  if (!t) continue
+  const set = (destTags[p.destinationSlug] ??= [])
+  for (const tag of [...(t.activities ?? []), ...(t.vibes ?? [])]) {
+    if (/^[A-Z]/.test(tag) && tag !== "Leisure" && tag !== "Adventure" && !set.includes(tag)) {
+      set.push(tag)
+    }
+  }
+}
+
 const destinationCards: DestinationCardData[] = destinations.map((d, i) => {
   const count = packageCounts[d.slug] ?? 0
   return {
@@ -42,6 +59,7 @@ const destinationCards: DestinationCardData[] = destinations.map((d, i) => {
     coord: coordFor(d.slug),
     tag: d.tagline,
     experienceCount: count,
+    tags: destTags[d.slug] ?? [],
     // If the destination has exactly one package, deep-link straight to it.
     directPackageSlug: count === 1 ? packages.find((p) => p.destinationSlug === d.slug)?.slug : undefined,
   }
