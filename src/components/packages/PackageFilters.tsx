@@ -6,7 +6,6 @@ import { Search, SlidersHorizontal, X, ChevronDown, Plane, MapPin, Tag } from "l
 import {
   DURATION_OPTIONS,
   DIFFICULTY_LEVELS,
-  ITEMS_PER_PAGE,
 } from "@/lib/constants"
 import { travelCategories } from "@/config/categories"
 import { packageTags } from "@/data/packageTags"
@@ -93,6 +92,7 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
   const [currentPage, setCurrentPage] = useState(1)
   const [showFilters, setShowFilters] = useState(false)
   const [activeTags, setActiveTags] = useState<string[]>([])
+  const [pageSize, setPageSize] = useState(25) // 0 = show all on one page
 
   // Pre-compute region counts for the toggle pills
   const counts = useMemo(() => {
@@ -229,12 +229,13 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
     setCurrentPage(1)
   }, [])
 
-  // Pagination
-  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE)
+  // Pagination - pageSize 0 means "show all on a single page".
+  const effectiveSize = pageSize === 0 ? Math.max(filtered.length, 1) : pageSize
+  const totalPages = Math.ceil(filtered.length / effectiveSize)
   const safePage = Math.min(currentPage, Math.max(1, totalPages))
   const paginated = filtered.slice(
-    (safePage - 1) * ITEMS_PER_PAGE,
-    safePage * ITEMS_PER_PAGE
+    (safePage - 1) * effectiveSize,
+    safePage * effectiveSize
   )
 
   /* "Featured packages span 2 columns" - keep it a deliberate accent (like the
@@ -384,6 +385,24 @@ export function PackageFilters({ packages }: PackageFiltersProps) {
             >
               {filtered.length} trips
             </span>
+
+            {/* per-page size - 25 / 50 / show all */}
+            <div className="hidden sm:flex" style={{ gap: 4, background: "#fff", borderRadius: 9999, padding: 4, border: "1px solid rgba(176,184,196,0.3)" }}>
+              {[{ v: 25, l: "25" }, { v: 50, l: "50" }, { v: 0, l: "All" }].map((p) => {
+                const active = pageSize === p.v
+                return (
+                  <button
+                    key={p.l}
+                    onClick={() => { setPageSize(p.v); setCurrentPage(1) }}
+                    title={p.v === 0 ? "Show all on one page" : `Show ${p.l} per page`}
+                    className="font-body"
+                    style={{ cursor: "pointer", borderRadius: 9999, padding: "6px 11px", fontSize: 11.5, fontWeight: 600, border: "none", background: active ? "var(--primary)" : "transparent", color: active ? "#fff" : "var(--silver-dark)", transition: "all .2s" }}
+                  >
+                    {p.l}
+                  </button>
+                )
+              })}
+            </div>
 
             <button
               onClick={() => setShowFilters((s) => !s)}

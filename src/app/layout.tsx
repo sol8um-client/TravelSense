@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Fraunces, Outfit, Caveat, Michroma } from "next/font/google"
 import { Toaster } from "sonner"
 import { LeadModalProvider } from "@/components/shared/LeadCaptureModal"
@@ -81,6 +81,19 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+}
+
+// Lock the layout to device width and STOP pinch-zoom from going below the
+// natural fit (minimumScale 1) - zooming out past 100% was what exposed the
+// device-width layout's right edge as a persistent "gap" on every page after a
+// pinch in/out. Zoom-IN stays fully allowed (accessibility), and viewport-fit
+// cover keeps it edge-to-edge on notched phones.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  minimumScale: 1,
+  viewportFit: "cover",
+  themeColor: "#0A1425",
 }
 
 export default function RootLayout({
