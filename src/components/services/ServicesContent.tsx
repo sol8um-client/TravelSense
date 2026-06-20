@@ -71,10 +71,10 @@ const coreServices: CoreService[] = [
   },
   {
     icon: Users,
-    title: "Group & Corporate Travel",
+    title: "MICE & Corporate Travel",
     description:
-      "Tailored packages for corporate offsites, team outings, and large group getaways.",
-    href: "/contact",
+      "Meetings, incentives, conferences and events - venues, group air, logistics and on-ground teams, end to end.",
+    href: "/mice",
   },
 ]
 

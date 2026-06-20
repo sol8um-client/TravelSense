@@ -4,20 +4,22 @@ import { useState, useMemo, useRef, type CSSProperties } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useInView } from "framer-motion"
-import { ArrowRight, MapPin, Search, Tag, X } from "lucide-react"
+import { ArrowRight, MapPin, Plane, Search } from "lucide-react"
 import { formatCurrency } from "@/lib/utils"
+import { useHideOnScrollDown } from "@/hooks/useHideOnScrollDown"
+import {
+  CONTINENT_ORDER,
+  INDIA_REGION_ORDER,
+  groupOfDestination,
+  isInternational,
+} from "@/lib/geo"
 import type { DestinationCardData } from "./DestinationCard"
 
 /* ─── Shared tokens (mirror prototype) ────────────────────────────────────── */
 const EASE = "cubic-bezier(0.22,1,0.36,1)"
-const REGIONS = [
-  "All",
-  "North India",
-  "Northeast India",
-  "South India",
-  "West India",
-  "International",
-] as const
+
+/** Top-level cascade scope. */
+export type Scope = "all" | "domestic" | "international"
 
 const fmt = (n: number): string => formatCurrency(n)
 
@@ -301,16 +303,17 @@ function DestCard({ d, i }: DestCardProps) {
   )
 }
 
-/* ─── Public grid: sticky region board + search + bento ───────────────────── */
-export type RegionTab = (typeof REGIONS)[number]
-
+/* ─── Public grid: sticky cascade board + search + bento ──────────────────── */
 interface DestinationGridProps {
   destinations: DestinationCardData[]
-  /** Hide the sticky region board/search (used for the small Coming-Soon grid). */
+  /** Hide the sticky filter board/search (used for the small Coming-Soon grid). */
   showFilters?: boolean
-  /** Controlled region - when provided, the grid reflects this value. */
-  region?: RegionTab
-  onRegionChange?: (region: RegionTab) => void
+  /** Controlled cascade scope - when provided, the grid reflects this value. */
+  scope?: Scope
+  onScopeChange?: (s: Scope) => void
+  /** Controlled group (India region OR continent). */
+  group?: string
+  onGroupChange?: (g: string) => void
   /** Controlled search query - when provided, the grid reflects this value. */
   query?: string
   onQueryChange?: (query: string) => void
@@ -319,42 +322,93 @@ interface DestinationGridProps {
 export function DestinationGrid({
   destinations,
   showFilters = true,
-  region: regionProp,
-  onRegionChange,
+  scope: scopeProp,
+  onScopeChange,
+  group: groupProp,
+  onGroupChange,
   query: queryProp,
   onQueryChange,
 }: DestinationGridProps) {
-  const [regionState, setRegionState] = useState<RegionTab>("All")
+  const [scopeState, setScopeState] = useState<Scope>("all")
+  const [groupState, setGroupState] = useState("")
   const [qState, setQState] = useState("")
 
-  const region = regionProp ?? regionState
+  const scope = scopeProp ?? scopeState
+  const group = groupProp ?? groupState
   const q = queryProp ?? qState
-  const setRegion = (r: RegionTab) => (onRegionChange ? onRegionChange(r) : setRegionState(r))
   const setQ = (v: string) => (onQueryChange ? onQueryChange(v) : setQState(v))
 
   const [sortBy, setSortBy] = useState<"featured" | "az" | "price">("featured")
   const [activeTags, setActiveTags] = useState<string[]>([])
   const [pageSize, setPageSize] = useState(25) // 0 = show all
   const [page, setPage] = useState(1)
+  // Auto-hide the sticky board on scroll-down, reveal it on scroll-up.
+  const barHidden = useHideOnScrollDown()
 
-  // Only surface region tabs that actually have destinations in this set.
-  const availableRegions = useMemo(
-    () => REGIONS.filter((r) => r === "All" || destinations.some((d) => d.region === r)),
-    [destinations]
+  // ── Cascade selections (picking a scope resets the group below it) ──
+  const pickScope = (s: Scope) => {
+    if (onScopeChange) onScopeChange(s)
+    else setScopeState(s)
+    if (onGroupChange) onGroupChange("")
+    else setGroupState("")
+    setActiveTags([])
+    setPage(1)
+  }
+  const pickGroup = (g: string) => {
+    const next = group === g ? "" : g
+    if (onGroupChange) onGroupChange(next)
+    else setGroupState(next)
+    setActiveTags([])
+    setPage(1)
+  }
+
+  // Domestic / International counts for the level-1 chips.
+  const counts = useMemo(() => {
+    let domestic = 0
+    let international = 0
+    for (const d of destinations) {
+      if (isInternational(d.region)) international++
+      else domestic++
+    }
+    return { all: destinations.length, domestic, international }
+  }, [destinations])
+
+  const byScope = useMemo(() => {
+    if (scope === "domestic") return destinations.filter((d) => !isInternational(d.region))
+    if (scope === "international") return destinations.filter((d) => isInternational(d.region))
+    return destinations
+  }, [destinations, scope])
+
+  // Level 2: India regions (domestic) or continents (international).
+  const groupOptions = useMemo(() => {
+    if (scope === "all") return []
+    const c = new Map<string, number>()
+    for (const d of byScope) {
+      const g = groupOfDestination(d.region, d.slug)
+      if (g) c.set(g, (c.get(g) ?? 0) + 1)
+    }
+    const order = scope === "international" ? CONTINENT_ORDER : INDIA_REGION_ORDER
+    const inOrder = order.filter((g) => c.has(g)).map((g) => ({ g, n: c.get(g)! }))
+    const extra = [...c.keys()].filter((g) => !order.includes(g)).map((g) => ({ g, n: c.get(g)! }))
+    return [...inOrder, ...extra]
+  }, [byScope, scope])
+
+  const byGroup = useMemo(
+    () => (group ? byScope.filter((d) => groupOfDestination(d.region, d.slug) === group) : byScope),
+    [byScope, group],
   )
 
   const baseFiltered = useMemo(() => {
     const query = q.trim().toLowerCase()
-    return destinations.filter(
+    if (!query) return byGroup
+    return byGroup.filter(
       (d) =>
-        (region === "All" || d.region === region) &&
-        (!query ||
-          d.name.toLowerCase().includes(query) ||
-          (d.country ?? "").toLowerCase().includes(query) ||
-          d.region.toLowerCase().includes(query) ||
-          d.description.toLowerCase().includes(query))
+        d.name.toLowerCase().includes(query) ||
+        (d.country ?? "").toLowerCase().includes(query) ||
+        d.region.toLowerCase().includes(query) ||
+        d.description.toLowerCase().includes(query),
     )
-  }, [destinations, region, q])
+  }, [byGroup, q])
 
   // Picked tags - a destination must carry ALL of them.
   const tagMatched = useMemo(() => {
@@ -364,19 +418,6 @@ export function DestinationGrid({
       return activeTags.every((t) => dt.includes(t))
     })
   }, [baseFiltered, activeTags])
-
-  // Still-relevant tags (co-occurring in the current set, minus the picked ones),
-  // most common first - this is what makes the chip row dynamically narrow.
-  const availableTags = useMemo(() => {
-    const counts = new Map<string, number>()
-    for (const d of tagMatched)
-      for (const tag of d.tags ?? [])
-        if (!activeTags.includes(tag)) counts.set(tag, (counts.get(tag) ?? 0) + 1)
-    return Array.from(counts.entries())
-      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-      .slice(0, 14)
-      .map(([t]) => t)
-  }, [tagMatched, activeTags])
 
   const filtered = useMemo(() => {
     const arr = [...tagMatched]
@@ -396,11 +437,6 @@ export function DestinationGrid({
   const totalPages = Math.ceil(filtered.length / effSize)
   const safePage = Math.min(page, Math.max(1, totalPages))
   const paginated = filtered.slice((safePage - 1) * effSize, safePage * effSize)
-
-  const toggleTag = (tag: string) => {
-    setActiveTags((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]))
-    setPage(1)
-  }
 
   return (
     <div>
@@ -422,7 +458,18 @@ export function DestinationGrid({
       `}</style>
 
       {showFilters && (
-        <div id="dest-grid" style={{ position: "sticky", top: 66, zIndex: 30 }}>
+        // Sticky, but auto-hides on scroll-down and slides back in on scroll-up so
+        // it's there when you reach for it but never eats space while browsing.
+        <div
+          id="dest-grid"
+          style={{
+            position: "sticky",
+            top: 66,
+            zIndex: 30,
+            transform: barHidden ? "translateY(-130%)" : "translateY(0)",
+            transition: "transform .35s cubic-bezier(0.22,1,0.36,1)",
+          }}
+        >
           <div
             className="glass-panel"
             style={{ borderRadius: 0, borderLeft: "none", borderRight: "none", borderTop: "none" }}
@@ -432,29 +479,37 @@ export function DestinationGrid({
               style={{
                 maxWidth: 1180,
                 margin: "0 auto",
-                padding: "14px 32px",
+                padding: "9px 32px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                gap: 16,
-                flexWrap: "wrap",
+                gap: 10,
+                flexWrap: "nowrap",
               }}
             >
-              <div className="dest-filter-pills" style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                {availableRegions.map((r) => {
-                  const active = region === r
+              <div className="dest-filter-pills" style={{ display: "flex", gap: 7, flexWrap: "nowrap", minWidth: 0, overflowX: "auto", scrollbarWidth: "none" }}>
+                {([
+                  { v: "all", l: "All", n: counts.all, icon: null },
+                  { v: "domestic", l: "Domestic", n: counts.domestic, icon: "pin" },
+                  { v: "international", l: "International", n: counts.international, icon: "plane" },
+                ] as const).map((s) => {
+                  const active = scope === s.v
                   return (
                     <button
-                      key={r}
-                      onClick={() => setRegion(r)}
+                      key={s.v}
+                      onClick={() => pickScope(s.v)}
                       style={{
                         cursor: "pointer",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 5,
                         borderRadius: 9999,
-                        padding: "9px 17px",
+                        padding: "6px 12px",
                         fontFamily: "var(--font-body)",
-                        fontSize: 12.5,
+                        fontSize: 11.5,
                         fontWeight: 600,
-                        letterSpacing: "0.02em",
+                        letterSpacing: "0.01em",
+                        whiteSpace: "nowrap",
                         transition: `all .25s ${EASE}`,
                         border: `1px solid ${active ? "transparent" : "rgba(176,184,196,0.45)"}`,
                         background: active
@@ -464,21 +519,23 @@ export function DestinationGrid({
                         boxShadow: active ? "0 6px 16px rgba(196,50,74,0.25)" : "none",
                       }}
                     >
-                      {r}
+                      {s.icon === "pin" && <MapPin size={13} strokeWidth={1.8} />}
+                      {s.icon === "plane" && <Plane size={13} strokeWidth={1.8} />}
+                      {s.l} <span style={{ opacity: 0.6, fontWeight: 500 }}>{s.n}</span>
                     </button>
                   )
                 })}
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                 <div
                   className="glass-field dest-filter-searchbox"
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 8,
+                    gap: 7,
                     borderRadius: 9999,
-                    padding: "8px 14px",
-                    minWidth: 210,
+                    padding: "6px 11px",
+                    minWidth: 110,
                   }}
                 >
                   <Search size={15} stroke="var(--silver-dark)" strokeWidth={1.5} />
@@ -521,7 +578,7 @@ export function DestinationGrid({
                         key={s.v}
                         onClick={() => { setSortBy(s.v); setPage(1) }}
                         className="font-body"
-                        style={{ cursor: "pointer", borderRadius: 9999, padding: "6px 12px", fontSize: 11.5, fontWeight: 600, border: "none", background: active ? "var(--primary)" : "transparent", color: active ? "#fff" : "var(--silver-dark)", transition: "all .2s" }}
+                        style={{ cursor: "pointer", borderRadius: 9999, padding: "5px 10px", fontSize: 11, fontWeight: 600, border: "none", background: active ? "var(--primary)" : "transparent", color: active ? "#fff" : "var(--silver-dark)", transition: "all .2s" }}
                       >
                         {s.l}
                       </button>
@@ -539,7 +596,7 @@ export function DestinationGrid({
                         onClick={() => { setPageSize(p.v); setPage(1) }}
                         title={p.v === 0 ? "Show all on one page" : `Show ${p.l} per page`}
                         className="font-body"
-                        style={{ cursor: "pointer", borderRadius: 9999, padding: "6px 11px", fontSize: 11.5, fontWeight: 600, border: "none", background: active ? "var(--primary)" : "transparent", color: active ? "#fff" : "var(--silver-dark)", transition: "all .2s" }}
+                        style={{ cursor: "pointer", borderRadius: 9999, padding: "5px 9px", fontSize: 11, fontWeight: 600, border: "none", background: active ? "var(--primary)" : "transparent", color: active ? "#fff" : "var(--silver-dark)", transition: "all .2s" }}
                       >
                         {p.l}
                       </button>
@@ -549,27 +606,42 @@ export function DestinationGrid({
               </div>
             </div>
 
-            {/* Dynamic "explore" tag chips - drill into the current results by
-                activity/vibe; the row narrows to still-relevant tags as you pick. */}
-            {(activeTags.length > 0 || availableTags.length > 0) && (
+            {/* Level 2: India region (domestic) or continent (international). */}
+            {scope !== "all" && groupOptions.length > 0 && (
               <div style={{ borderTop: "1px solid rgba(176,184,196,0.16)" }}>
-                <div style={{ maxWidth: 1180, margin: "0 auto", padding: "11px 32px", display: "flex", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
-                  <span className="font-body" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 10, fontWeight: 600, letterSpacing: "0.14em", color: "var(--silver-dark)", textTransform: "uppercase", whiteSpace: "nowrap" }}>
-                    <Tag size={12} strokeWidth={1.8} /> Explore
+                <div style={{ maxWidth: 1180, margin: "0 auto", padding: "7px 32px", display: "flex", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
+                  <span className="font-tech" style={{ fontSize: 9.5, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--silver-dark)", whiteSpace: "nowrap" }}>
+                    {scope === "international" ? "Continent" : "Region"}
                   </span>
-                  {activeTags.map((tag) => (
-                    <button key={tag} onClick={() => toggleTag(tag)} className="font-body" style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer", borderRadius: 9999, padding: "6px 10px 6px 13px", fontSize: 11.5, fontWeight: 600, border: "1px solid transparent", background: "var(--primary)", color: "#fff", boxShadow: "0 4px 12px rgba(10,20,37,0.18)", transition: "all .2s" }}>
-                      {tag} <X size={12} style={{ opacity: 0.85 }} />
-                    </button>
-                  ))}
-                  {availableTags.map((tag) => (
-                    <button key={tag} onClick={() => toggleTag(tag)} className="font-body" style={{ cursor: "pointer", borderRadius: 9999, padding: "6px 13px", fontSize: 11.5, fontWeight: 500, border: "1px solid rgba(176,184,196,0.35)", background: "#fff", color: "var(--muted-foreground)", transition: "all .2s" }}>
-                      {tag}
-                    </button>
-                  ))}
+                  {groupOptions.map(({ g, n }) => {
+                    const active = group === g
+                    return (
+                      <button
+                        key={g}
+                        onClick={() => pickGroup(g)}
+                        className="font-body"
+                        style={{
+                          cursor: "pointer",
+                          borderRadius: 9999,
+                          padding: "6px 13px",
+                          fontSize: 11.5,
+                          fontWeight: 600,
+                          whiteSpace: "nowrap",
+                          transition: `all .2s ${EASE}`,
+                          border: `1px solid ${active ? "transparent" : "rgba(176,184,196,0.4)"}`,
+                          background: active ? "var(--primary)" : "rgba(255,255,255,0.7)",
+                          color: active ? "#fff" : "var(--muted-foreground)",
+                          boxShadow: active ? "0 4px 12px rgba(10,20,37,0.18)" : "none",
+                        }}
+                      >
+                        {g} <span style={{ opacity: 0.6, fontWeight: 500 }}>{n}</span>
+                      </button>
+                    )
+                  })}
                 </div>
               </div>
             )}
+
           </div>
         </div>
       )}

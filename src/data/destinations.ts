@@ -327,6 +327,16 @@ export const destinations: Destination[] = [
       "/images/generated/varanasi-hero.webp",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&h=600&fit=crop",
+      "/images/generated/lm/dashashwamedh-ghat.webp",
+      "/images/generated/lm/kashi-vishwanath-temple.webp",
+      "/images/generated/lm/sarnath.webp",
+      "/images/generated/lm/assi-ghat.webp",
+      "/images/generated/lm/manikarnika-ghat.webp",
+      "/images/generated/lm/taj-mahal.webp",
+      "/images/generated/lm/agra-fort.webp",
+      "/images/generated/lm/fatehpur-sikri.webp",
+      "/images/generated/lm/ram-mandir-ayodhya.webp",
+      "/images/generated/lm/prem-mandir-vrindavan.webp",
     ],
     bestTimeToVisit: "October to March",
     weather:
@@ -533,6 +543,21 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1586325194227-7625ed95172b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1506038634487-60a69ae4b7b1?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1558862107-d49ef2a04d72?w=800&h=600&fit=crop",
+      "/images/generated/lm/nohkalikai-falls.webp",
+      "/images/generated/lm/umiam-lake.webp",
+      "/images/generated/lm/dawki.webp",
+      "/images/generated/lm/elephant-falls-shillong.webp",
+      "/images/generated/lm/seven-sisters-falls-meghalaya.webp",
+      "/images/generated/lm/laitlum-canyons.webp",
+      "/images/generated/lm/krang-suri-falls.webp",
+      "/images/generated/lm/cherrapunji.webp",
+      "/images/generated/lm/mawphlang-sacred-forest.webp",
+      "/images/generated/lm/shillong-peak.webp",
+      "/images/generated/lm/wards-lake-shillong.webp",
+      "/images/generated/lm/phe-phe-falls.webp",
+      "/images/generated/lm/wei-sawdong-falls.webp",
+      "/images/generated/lm/dainthlen-falls.webp",
+      "/images/generated/lm/kynrem-falls.webp",
     ],
     bestTimeToVisit: "October to May",
     weather:
@@ -668,6 +693,18 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1513415564515-763d91423bdd?w=800&h=600&fit=crop",
+      "/images/generated/lm/tawang-monastery.webp",
+      "/images/generated/lm/sela-pass.webp",
+      "/images/generated/lm/sangetsar-lake.webp",
+      "/images/generated/lm/bum-la-pass.webp",
+      "/images/generated/lm/nuranang-falls.webp",
+      "/images/generated/lm/ziro-valley.webp",
+      "/images/generated/lm/dirang.webp",
+      "/images/generated/lm/bomdila.webp",
+      "/images/generated/lm/namdapha-national-park.webp",
+      "/images/generated/lm/mechuka.webp",
+      "/images/generated/lm/pasighat.webp",
+      "/images/generated/lm/tipi-orchid-sanctuary.webp",
     ],
     bestTimeToVisit: "March to October",
     weather:
@@ -736,6 +773,16 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1589793907316-f94025b46850?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop",
+      "/images/generated/lm/kaziranga-national-park.webp",
+      "/images/generated/lm/kamakhya-temple.webp",
+      "/images/generated/lm/majuli.webp",
+      "/images/generated/lm/rang-ghar.webp",
+      "/images/generated/lm/manas-national-park.webp",
+      "/images/generated/lm/umananda-temple.webp",
+      "/images/generated/lm/agnigarh.webp",
+      "/images/generated/lm/hajo.webp",
+      "/images/generated/lm/nameri-national-park.webp",
+      "/images/generated/lm/sivasagar.webp",
     ],
     bestTimeToVisit: "November to April",
     weather:
@@ -1012,6 +1059,12 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1540202404-a2f29016b523?w=800&h=600&fit=crop",
       "/images/generated/andaman-islands-hero.webp",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "/images/generated/lm/radhanagar-beach.webp",
+      "/images/generated/lm/ross-island-andaman.webp",
+      "/images/generated/lm/neil-island.webp",
+      "/images/generated/lm/elephant-beach-havelock.webp",
+      "/images/generated/lm/north-bay-island.webp",
+      "/images/generated/lm/mahatma-gandhi-marine-national-park.webp",
     ],
     bestTimeToVisit: "October to May",
     weather:
@@ -1356,6 +1409,18 @@ export const destinations: Destination[] = [
       "/images/destinations/gujarat.webp",
     galleryImages: [
       "/images/destinations/gujarat.webp",
+      "/images/generated/lm/statue-of-unity.webp",
+      "/images/generated/lm/somnath-temple.webp",
+      "/images/generated/lm/dwarkadhish-temple.webp",
+      "/images/generated/lm/gir-national-park.webp",
+      "/images/generated/lm/rani-ki-vav.webp",
+      "/images/generated/lm/sun-temple-modhera.webp",
+      "/images/generated/lm/laxmi-vilas-palace-vadodara.webp",
+      "/images/generated/lm/akshardham-gandhinagar.webp",
+      "/images/generated/lm/champaner-pavagadh.webp",
+      "/images/generated/lm/saputara.webp",
+      "/images/generated/lm/dholavira.webp",
+      "/images/generated/lm/kankaria-lake.webp",
     ],
     bestTimeToVisit: "November to February (Winter) - ideal for the Rann Utsav",
     weather:
@@ -1416,7 +1481,7 @@ export const destinations: Destination[] = [
     longDescription:
       "Maharashtra is deeply religious and naturally varied. The Ashtavinayak circuit covers eight ancient Ganesh temples around Pune, considered obligatory for devout Maharashtrians. Three of the twelve Jyotirlingas - Bhimashankar, Trimbakeshwar (near Nashik), and Grishneshwar (at Ellora) - make the state a pilgrim's essential.\n\nFor wildlife, Tadoba-Andhari Tiger Reserve offers some of India's most reliable tiger sightings. The hill stations of Mahabaleshwar, Panchgani, and Matheran provide cool weekend retreats. The Konkan coast's Ganapatipule and Tarkarli beaches rival Goa without the crowds.\n\nShivaji's forts - Raigad, Sinhagad, Rajgad, and Pratapgad - crown hilltops across the state. Ajanta and Ellora caves near Aurangabad hold 2,000-year-old Buddhist, Hindu, and Jain rock-cut masterpieces recognised by UNESCO.",
     heroImage:
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
+      "/images/generated/maharashtra-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&h=900&fit=crop",
     ],
@@ -1479,7 +1544,7 @@ export const destinations: Destination[] = [
     longDescription:
       "Madhya Pradesh sits at the geographic heart of India and packs in more diversity than most entire countries. Kanha and Bandhavgarh National Parks offer India's best tiger sightings. Khajuraho's UNESCO-listed 10th-century temples are masterworks of sandstone erotic sculpture.\n\nUjjain is one of the seven holiest cities of Hinduism and home to the Mahakaleshwar Jyotirlinga - one of only 12 in the world. Omkareshwar (also a Jyotirlinga) sits on an island in the Narmada river shaped like the sacred syllable Om. Orchha's Mughal-era palaces perch dramatically over the Betwa river.\n\nOther gems include the marble cliffs of Bhedaghat, the Buddhist stupas of Sanchi (another UNESCO site), the colonial-era hill station of Pachmarhi, and Indore's famous street food scene centred around Sarafa Bazaar.",
     heroImage:
-      "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
+      "/images/generated/madhya-pradesh-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1600&h=900&fit=crop",
     ],
@@ -1542,7 +1607,7 @@ export const destinations: Destination[] = [
     longDescription:
       "Singapore is a city-state that runs like a Swiss watch - clean, safe, multicultural, and relentlessly forward-looking. Yet underneath its future-facing skyline lies centuries of trading history in Chinatown, Little India, and Kampong Glam.\n\nMarina Bay's trinity - Gardens by the Bay's Supertree Grove, the ArtScience Museum, and Marina Bay Sands with its iconic rooftop infinity pool - defines the modern skyline. Sentosa island offers Universal Studios, the S.E.A. Aquarium, and beaches. The Singapore Zoo and Night Safari are consistently ranked among the world's best.\n\nFood is a national obsession - hawker centres (Maxwell, Lau Pa Sat, Newton) serve Michelin-recognised chicken rice, laksa, satay, and char kway teow for a few dollars. Orchard Road is Asia's premier shopping strip.",
     heroImage:
-      "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
+      "/images/generated/singapore-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1600&h=900&fit=crop",
     ],
@@ -1605,7 +1670,7 @@ export const destinations: Destination[] = [
     longDescription:
       "Sri Lanka packs eight UNESCO World Heritage sites, 26 national parks, and a thousand beaches into a teardrop-shaped island you can drive across in a day. The cultural triangle - Sigiriya's 5th-century rock fortress, Dambulla's cave temples, Polonnaruwa and Anuradhapura's ancient ruins, and Kandy's Temple of the Tooth - covers 2,500 years of Buddhist and royal history.\n\nThe hill country around Nuwara Eliya and Ella is Sri Lanka's tea heartland - ride the famous train between Kandy and Ella for some of the world's most scenic rail views. The south coast offers beaches for every mood: Unawatuna and Mirissa for swimming, Weligama and Hikkaduwa for surfing, Bentota for resorts.\n\nWildlife is exceptional - Yala National Park has the highest leopard density in the world, Udawalawe is excellent for elephants, and whales are spotted off Mirissa from November to April.",
     heroImage:
-      "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
+      "/images/generated/sri-lanka-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1600&h=900&fit=crop",
     ],
@@ -1668,9 +1733,13 @@ export const destinations: Destination[] = [
     longDescription:
       "Hong Kong is a special administrative region of China with a personality all its own - ex-British colonial architecture meeting Cantonese tradition meeting vertical modernity. Victoria Peak's tram delivers the most photographed skyline in Asia. The Star Ferry between Central and Tsim Sha Tsui remains one of the world's most affordable great city experiences.\n\nHong Kong Disneyland on Lantau Island - smaller than its American cousins but uniquely charming - is often combined with a trip to Macau (the Las Vegas of Asia) and Ngong Ping's Big Buddha statue. Ocean Park offers pandas and thrill rides. Shoppers love Central's luxury boutiques and Temple Street Night Market.\n\nFood is an obsession - Michelin-starred dim sum at Tim Ho Wan, egg tarts at Tai Cheong Bakery, roast goose, cha chaan teng diners, and milk tea by the bucket. The outlying islands (Cheung Chau, Lamma) offer car-free beach days.",
     heroImage:
-      "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
+      "/images/generated/hong-kong-w1.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=1600&h=900&fit=crop",
+      "/images/generated/hong-kong-w1.webp",
+      "/images/generated/hong-kong-w2.webp",
+      "/images/generated/hong-kong-w3.webp",
+      "/images/generated/hong-kong-w4.webp",
     ],
     bestTimeToVisit: "October to December",
     weather:
@@ -1802,6 +1871,11 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1518398046578-8cca57782e17?w=800&h=600&fit=crop",
+      "/images/generated/lm/mahabodhi-temple.webp",
+      "/images/generated/lm/rajgir.webp",
+      "/images/generated/lm/golghar.webp",
+      "/images/generated/lm/barabar-caves.webp",
+      "/images/generated/lm/tomb-of-sher-shah-suri.webp",
     ],
     bestTimeToVisit: "October to March",
     weather:
@@ -1931,7 +2005,7 @@ export const destinations: Destination[] = [
       "Darjeeling's misty tea slopes, Kalimpong's old-world bungalows, the Dooars' wildlife reserves, Sundarbans' Royal Bengal tigers, and Kolkata's literary lanes - West Bengal packs Himalayas, forests, deltas and high culture into one state.",
     longDescription:
       "West Bengal is India's most culturally dense state - home of Tagore, Ray, the Bengali Renaissance, and the country's intellectual heart. Kolkata, the City of Joy, juxtaposes British-era grandeur (Victoria Memorial, Howrah Bridge) with the chaotic colour of its bazaars, the spiritual intensity of Kalighat Kali Temple, and the literary cafés of College Street.\n\nNorth Bengal is a different world entirely - the toy-train towns of Darjeeling and Kalimpong perch on the lower Himalayas with stunning Kanchenjunga views, working tea estates, and old planters' bungalows now run as homestays. The lesser-visited Dooars region (Buxa, Jaldapara, Gorumara national parks) shelters one-horned rhinos, elephants, and over 240 bird species. Tinchuley, Lamahatta, and Chatakpur are offbeat tea-garden villages where you can stay with farming families and walk through cloud forests at dawn.\n\nSouth, the Sundarbans - a UNESCO-listed mangrove delta - is home to the elusive Royal Bengal Tiger, saltwater crocodiles, and the world's most extensive mangrove ecosystem. Cruises through the narrow tidal creeks are a haunting reminder of how forest, river, and sea can blur into one. From Himalayas to the Bay of Bengal, no Indian state covers as much ground as West Bengal.",
-    heroImage: "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/west-bengal-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&h=900&fit=crop",
@@ -2064,7 +2138,7 @@ export const destinations: Destination[] = [
       "The 13th-century Sun Temple at Konark, Puri's Jagannath Dham, Bhubaneswar's 600 ancient temples, Chilika's flamingo lagoon, and tribal Koraput - Odisha is India's most underrated coastal temple state.",
     longDescription:
       "Odisha quietly holds some of India's most extraordinary architectural and natural treasures. Bhubaneswar, the capital, has been called the 'Temple City of India' - over 600 ancient temples spanning a thousand years, with the 11th-century Lingaraj Temple as its anchor. The Mukteshwar, Rajarani and Brahmeshwar temples nearby are masterpieces of Kalinga-style sandstone carving.\n\nKonark's 13th-century Sun Temple - a UNESCO World Heritage Site - is conceived as a colossal chariot of the sun god Surya, with 24 intricately carved wheels and seven horses pulling it across the sky. Puri, just down the coast, houses one of Hinduism's four char dhams - the Jagannath Dham - and hosts the annual Rath Yatra, where massive wooden chariots are pulled through the streets by hundreds of thousands of devotees.\n\nChilika Lake - Asia's largest brackish water lagoon - hosts over a million migratory birds in winter, including flamingos. Gopalpur's quiet beaches contrast with the bustle of Puri. Inland, the tribal Koraput and Kotpad regions are home to over 60 indigenous groups producing some of India's finest natural-dye textiles. With Buddhist Lalitgiri and Ratnagiri ruins and the rugged Eastern Ghats hill stations of Daringbadi (the 'Kashmir of Odisha'), the state delivers history, wildlife, beaches and culture in equal measure.",
-    heroImage: "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/odisha-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800&h=600&fit=crop",
@@ -2132,7 +2206,7 @@ export const destinations: Destination[] = [
       "Madurai's towering Meenakshi temple, Rameswaram's island shrine, the sunrise-and-sunset cape at Kanyakumari, the misty hill stations of Ooty and Kodaikanal, French-quarter Pondicherry and Chennai's Marina Beach - Tamil Nadu is the deepest, most living temple culture in India.",
     longDescription:
       "Tamil Nadu holds India's oldest continuous civilisation and its grandest temple architecture. Madurai - over 2,500 years old - is anchored by the Meenakshi Amman Temple, a riot of 14 gopuram towers covered in thousands of painted sculptures, with a nightly ceremony carrying the god to the goddess's chamber. South-east, the holy island of Rameswaram holds the Ramanathaswamy Temple (one of the 12 Jyotirlingas) with the longest temple corridor in India, and the haunting ghost town of Dhanushkodi at the very tip of Pamban Island.\n\nAt Kanyakumari, the subcontinent ends - three seas meet, and you can watch the sun rise and set over the ocean from the same spot, with the Vivekananda Rock Memorial and the 133-foot Thiruvalluvar statue offshore. Inland, the Western Ghats lift into the cool hill stations of Ooty - the 'Queen of Hill Stations' with its botanical gardens and toy train - and Kodaikanal, the 'Princess of Hill Stations', set around a star-shaped lake.\n\nThe coast tells a different story. Pondicherry preserves a French Quarter of mustard-yellow villas, boulevards and seaside cafés, alongside the experimental township of Auroville. Chennai, the state capital, balances the colonial Fort St. George, the 12th-century Kapaleeshwarar Temple and the long sweep of Marina Beach. Tamil Nadu rewards the traveller who wants culture with depth - temples that have never stopped functioning, and hills and coastline that frame them.",
-    heroImage: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/tamil-nadu-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&h=900&fit=crop",
@@ -2200,7 +2274,7 @@ export const destinations: Destination[] = [
       "36 coral islands scattered across the Arabian Sea - turquoise lagoons, white-sand atolls, world-class scuba diving, and a slower pace of life than anywhere else in India. Permit-controlled, blissfully uncrowded.",
     longDescription:
       "Lakshadweep is India's smallest Union Territory and its quietest beach destination - 36 coral islands, only 10 inhabited, all of them ringed by translucent lagoons and protected coral reefs. The gateway is Agatti, the only island with an airstrip; from there, ships and speedboats fan out to Bangaram (the luxury resort island), Kadmat (the diving hub), Kavaratti (the administrative capital), and Minicoy (the southernmost, with a distinct Maldivian-Mahl culture).\n\nWhat makes Lakshadweep unlike Maldives or Andaman: permits are mandatory and tightly controlled, the reefs are still in pristine condition, alcohol is restricted (it is a dry territory outside Bangaram), and the experience is genuinely off-grid. There are no rooftop bars, no malls, no busy harbours - just lagoons that grade from turquoise to deep blue, dhonis returning at sunset, and PADI dive instructors who have spent decades on the same reef wall.\n\nMost visitors come for the watersports - scuba diving over 5,000-year-old coral, snorkeling with reef sharks and turtles, glass-bottom boat rides through the lagoon, kayaking at dawn - and stay for the silence. A typical 6-night trip combines an arrival/departure stop at Agatti with extended stays at Bangaram and/or Kadmat. With both Vembanad and Kerala backwaters as the natural pre/post-trip pairing, Lakshadweep is the quiet bookend to an Indian beach holiday.",
-    heroImage: "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/lakshadweep-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?w=800&h=600&fit=crop",
@@ -2208,6 +2282,9 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1540202404-1b927e27fa8b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800&h=600&fit=crop",
+      "/images/generated/lm/agatti-island.webp",
+      "/images/generated/lm/kalpeni.webp",
+      "/images/generated/lm/thinnakara.webp",
     ],
     bestTimeToVisit: "October to March",
     weather:
@@ -2269,7 +2346,7 @@ export const destinations: Destination[] = [
       "From the gleaming Petronas Twin Towers of Kuala Lumpur to the UNESCO heritage streets of Georgetown Penang and the white-sand cable-car beaches of Langkawi - Malaysia is Southeast Asia's most balanced multi-culture, multi-island destination.",
     longDescription:
       "Malaysia packs three distinct holidays into one trip. Kuala Lumpur is a cosmopolitan capital where the 452-metre Petronas Twin Towers (the world's tallest twin buildings until 2004) anchor a skyline of glass and steel - Sky Bridge views, Suria KLCC shopping, and Jalan Alor street-food nights are the must-do trio. Batu Caves and the Genting Highlands cable car make for great day trips from KL.\n\nPenang's Georgetown - a UNESCO World Heritage city - is the cultural and culinary heart. Trishaw rides past Chinese clan jetties, century-old Peranakan mansions, Cheong Fatt Tze (the Blue Mansion), Khoo Kongsi temple, and a street-art trail that turned Penang into Asia's coolest art city. Penang's hawker food - char kway teow, asam laksa, hokkien mee - is widely regarded as the best in Southeast Asia.\n\nLangkawi is the beach finale: 99 jewel-green islands off Malaysia's northwest coast, dominated by Pulau Langkawi where Cenang Beach's water sports and the SkyCab - the world's steepest cable-car at 42 degrees - to the Sky Bridge are headline attractions. Mangrove tours, Eagle Square, the night market, and a duty-free shopping scene round out the experience.",
-    heroImage: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/malaysia-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1601762603339-fd61e28b698a?w=800&h=600&fit=crop",
@@ -2342,6 +2419,10 @@ export const destinations: Destination[] = [
       "/images/destinations/philippines.webp",
       "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&h=600&fit=crop",
+      "/images/generated/philippines-w1.webp",
+      "/images/generated/philippines-w2.webp",
+      "/images/generated/philippines-w3.webp",
+      "/images/generated/philippines-w4.webp",
     ],
     bestTimeToVisit: "December to May",
     weather:
@@ -2406,6 +2487,10 @@ export const destinations: Destination[] = [
     heroImage: "/images/destinations/bhutan.webp",
     galleryImages: [
       "/images/destinations/bhutan.webp",
+      "/images/generated/bhutan-w1.webp",
+      "/images/generated/bhutan-w2.webp",
+      "/images/generated/bhutan-w3.webp",
+      "/images/generated/bhutan-w4.webp",
     ],
     bestTimeToVisit: "March to May, September to November",
     weather:
@@ -2465,7 +2550,7 @@ export const destinations: Destination[] = [
       "From the flat top of Table Mountain and the penguins of Boulders Beach to Big Five game drives in Kruger and the wine estates of Stellenbosch \u2014 South Africa is the world's most complete safari-and-city destination.",
     longDescription:
       "South Africa packs a continent into one country. Cape Town sits beneath the cable-car-topped Table Mountain, with Cape Point, the Cape of Good Hope, the penguin colony at Boulders Beach and the colourful Bo-Kaap quarter all within reach, plus the winelands of Stellenbosch and Franschhoek an hour away. The Garden Route then unfurls east along the Indian Ocean through Knysna, Plettenberg Bay and Tsitsikamma's forests and gorges.\n\nInland, the Greater Kruger ecosystem delivers world-class Big Five safaris \u2014 lion, leopard, elephant, rhino and buffalo \u2014 from open 4x4 game vehicles at dawn and dusk. Johannesburg, the Apartheid Museum and Soweto add the historical layer, and Sun City offers a resort finale. It is a destination that works for first-time safari-goers and repeat travellers alike.",
-    heroImage: "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/south-africa-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&h=600&fit=crop",
@@ -2532,7 +2617,7 @@ export const destinations: Destination[] = [
       "Big-cat country \u2014 the rolling savannah of the Masai Mara, the flamingo lakes of the Rift Valley and the elephants of Amboseli beneath Kilimanjaro, the original African safari.",
     longDescription:
       "Kenya is where the safari was born. The Masai Mara \u2014 the northern extension of the Serengeti \u2014 is the stage for the Great Migration (roughly July to October), when over a million wildebeest and zebra cross the Mara River past waiting crocodiles, with lion, cheetah and leopard never far behind. Amboseli, in the south, frames its big elephant herds against the snows of Mount Kilimanjaro across the Tanzanian border.\n\nThe Great Rift Valley adds Lake Nakuru's flamingo flocks and rhino sanctuary, while Lake Naivasha offers boat safaris and walking at Crescent Island. Encounters with the Maasai people, hot-air balloon flights over the Mara at dawn and a finish in Nairobi (with its elephant orphanage and giraffe centre) complete a classic Kenyan circuit.",
-    heroImage: "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/kenya-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=800&h=600&fit=crop",
@@ -2540,6 +2625,15 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1549366021-9f761d450615?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1600&h=900&fit=crop",
+      "/images/generated/lm/maasai-mara.webp",
+      "/images/generated/lm/lake-nakuru.webp",
+      "/images/generated/lm/mount-kenya.webp",
+      "/images/generated/lm/diani-beach.webp",
+      "/images/generated/lm/fort-jesus.webp",
+      "/images/generated/lm/hells-gate-national-park.webp",
+      "/images/generated/lm/lake-naivasha.webp",
+      "/images/generated/lm/samburu-national-reserve.webp",
+      "/images/generated/lm/nairobi-national-park.webp",
     ],
     bestTimeToVisit: "July to October (Great Migration) & January-February",
     weather:
@@ -2599,7 +2693,7 @@ export const destinations: Destination[] = [
       "Bullet trains and bamboo groves, neon Tokyo and the thousand torii of Kyoto, cherry blossom in spring and snow monkeys in winter \u2014 Japan blends the hyper-modern with the deeply traditional.",
     longDescription:
       "Japan is a study in contrasts. Tokyo dazzles with Shibuya's scramble crossing, the temples of Asakusa, the electronics of Akihabara and the views from the Skytree, while a day trip reaches Mount Fuji and the lakes of Hakone. The shinkansen bullet train then whisks you west to Kyoto, the old imperial capital \u2014 the golden Kinkaku-ji, the thousand vermilion torii of Fushimi Inari, the bamboo grove of Arashiyama and the geisha lanes of Gion.\n\nNearby Nara adds its bowing deer and giant bronze Buddha, and Osaka brings the street food of Dotonbori and Osaka Castle. Spring (cherry blossom) and autumn (maple colours) are the headline seasons, but Japan rewards in every season \u2014 from summer festivals to winter snow and onsen hot springs.",
-    heroImage: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/japan-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&h=600&fit=crop",
@@ -2673,6 +2767,12 @@ export const destinations: Destination[] = [
       "https://images.unsplash.com/photo-1605908502724-9093a79a1b39?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1547234935-80c7145ec969?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&h=600&fit=crop",
+      "/images/generated/lm/wadi-rum.webp",
+      "/images/generated/lm/jerash.webp",
+      "/images/generated/lm/mount-nebo.webp",
+      "/images/generated/lm/aqaba.webp",
+      "/images/generated/lm/kerak-castle.webp",
+      "/images/generated/lm/madaba.webp",
     ],
     bestTimeToVisit: "March to May & September to November",
     weather:
@@ -2732,7 +2832,7 @@ export const destinations: Destination[] = [
       "Waterfalls and geysers, black-sand beaches and glacier lagoons, the Blue Lagoon and \u2014 in winter \u2014 the aurora dancing overhead. Iceland is raw nature at its most dramatic.",
     longDescription:
       "Iceland is a land of fire and ice. The Golden Circle loops from Reykjavik to the erupting Strokkur geyser, the thundering Gullfoss waterfall and Thingvellir, where you can walk between the North American and Eurasian tectonic plates. The south coast strings together the Seljalandsfoss and Skogafoss waterfalls, the black-sand beach of Reynisfjara and the surreal Jokulsarlon glacier lagoon with its drifting icebergs and Diamond Beach.\n\nIn winter (roughly September to March), the long dark nights bring the chance to chase the Northern Lights across the countryside, while the geothermal Blue Lagoon offers a warm soak any time of year. Summer brings the midnight sun, puffins and highland access. Compact and safe, Iceland delivers a new wonder around almost every bend.",
-    heroImage: "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/iceland-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=1600&h=900&fit=crop",
@@ -2799,7 +2899,7 @@ export const destinations: Destination[] = [
       "Snow peaks above a green city, the turquoise Big Almaty Lake, Charyn Canyon's red cliffs and the futuristic capital Astana \u2014 Central Asia's most accessible adventure.",
     longDescription:
       "Kazakhstan, the world's largest landlocked country, has become a favourite short-haul escape from India. Almaty, the leafy former capital, sits at the foot of the Tien Shan mountains \u2014 the Shymbulak ski resort and Kok-Tobe hill are a cable-car ride away, and the glacial Big Almaty Lake glows turquoise in an alpine bowl just outside the city. A day trip reaches Charyn Canyon, a miniature Grand Canyon of red rock often called the Valley of Castles.\n\nThe modern capital Astana (Nur-Sultan) showcases futuristic architecture \u2014 the Bayterek Tower, the Khan Shatyr tent and gleaming ministries. With visa-free or easy e-visa access, short flight times and a mix of mountains, lakes and cities, Kazakhstan offers a fresh, uncrowded destination.",
-    heroImage: "https://images.unsplash.com/photo-1596306499317-8490232098fa?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/kazakhstan-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1596306499317-8490232098fa?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=800&h=600&fit=crop",
@@ -2933,7 +3033,7 @@ export const destinations: Destination[] = [
       "Glass igloos under the Northern Lights, husky and reindeer sleds across the snow, and Santa Claus Village on the Arctic Circle \u2014 Finnish Lapland is the ultimate winter-wonderland.",
     longDescription:
       "Finland's far north, Lapland, is the storybook Arctic. Rovaniemi, on the Arctic Circle, is the official home of Santa Claus, where you can cross the magic line, meet Santa and post a letter from his post office. Beyond the town, the snow-blanketed wilderness is the stage for husky-sled and reindeer-sleigh rides, snowmobile safaris and nights spent watching the Northern Lights from glass igloos and aurora cabins.\n\nHelsinki, the design-led seaside capital, makes a cultured start or finish with its cathedral, market square and island fortress of Suomenlinna. From late September to March the aurora is the headline act, while the deep winter adds frozen lakes, ice-fishing and the genuine Finnish sauna culture \u2014 making Lapland one of the world's most magical cold-weather escapes.",
-    heroImage: "https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/finland-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1518562180175-34a163b1a9a6?w=800&h=600&fit=crop",
@@ -3000,7 +3100,7 @@ export const destinations: Destination[] = [
       "London to Paris to the Swiss Alps and Italy, or the imperial trio of Prague, Vienna and Budapest \u2014 our Europe tours string the continent's icons into one seamless journey.",
     longDescription:
       "Europe rewards the multi-country traveller. Our Western Europe circuit links the headline capitals \u2014 London's Tower Bridge and Buckingham Palace, Paris's Eiffel Tower and Louvre, the Swiss Alps with cogwheel trains up Jungfrau or Mt Titlis, and Italy's Rome, Venice and Florence \u2014 connected by fast trains and scenic coaches. It is the classic first-timer's grand tour of the continent.\n\nOur Eastern Europe circuit takes a more atmospheric route through the old Habsburg heart \u2014 fairy-tale Prague with its astronomical clock and castle, imperial Vienna of Schonbrunn and the coffee houses, and Budapest straddling the Danube with its thermal baths and parliament. Both can be tailored from 7 to 16 nights, and combined for the ultimate cross-continent journey.",
-    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/europe-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=600&fit=crop",
@@ -3067,7 +3167,7 @@ export const destinations: Destination[] = [
       "The Sydney Opera House, snorkelling the Great Barrier Reef, the Great Ocean Road and koalas in the bush \u2014 Australia is a sun-drenched mix of cities, reef and outback.",
     longDescription:
       "Australia is a country-sized adventure. Sydney opens with its iconic Opera House and Harbour Bridge, Bondi Beach and a harbour cruise, with the Blue Mountains a day trip away. North, in tropical Queensland, Cairns is the gateway to the Great Barrier Reef \u2014 the world's largest living structure \u2014 for snorkelling and diving over coral gardens, plus the ancient Daintree Rainforest.\n\nMelbourne adds laneway coffee culture, the Great Ocean Road and the Twelve Apostles sea stacks, while wildlife parks bring koalas, kangaroos and wombats up close. Whether it's three cities or a reef-and-rainforest focus, Australia delivers big landscapes, easy English-speaking travel and some of the friendliest people anywhere.",
-    heroImage: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/australia-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800&h=600&fit=crop",
@@ -3134,7 +3234,7 @@ export const destinations: Destination[] = [
       "Milford Sound's fiords, Queenstown's bungy and jetboats, glow-worm caves and Hobbiton \u2014 New Zealand packs the planet's scenery into two spectacular islands.",
     longDescription:
       "New Zealand is scenery turned up to eleven. The North Island offers Auckland's harbour, the Waitomo glow-worm caves, the geothermal geysers and Maori culture of Rotorua, and the green hills of Hobbiton from the Lord of the Rings films. The South Island raises the drama \u2014 Christchurch and the Canterbury plains, the turquoise lakes of Tekapo and Pukaki beneath Aoraki/Mount Cook, the glaciers of the West Coast, and the fiords of Milford Sound.\n\nAt the heart of the South Island is Queenstown, the adventure capital of the world \u2014 bungy jumping, jetboating, skydiving and gondola luge, ringed by the Remarkables and Lake Wakatipu. Easy English-speaking travel, superb road-tripping and warm Kiwi hospitality make it a bucket-list journey.",
-    heroImage: "https://images.unsplash.com/photo-1469521669194-babb45599def?w=1600&h=900&fit=crop",
+    heroImage: "/images/generated/new-zealand-hero.webp",
     galleryImages: [
       "https://images.unsplash.com/photo-1469521669194-babb45599def?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1469521669194-babb45599def?w=1600&h=900&fit=crop",
@@ -3191,6 +3291,641 @@ export const destinations: Destination[] = [
     featured: false,
   },
 
+  /* ──────────────────────── Mauritius ──────────────────────── */
+  {
+    name: "Mauritius",
+    slug: "mauritius",
+    region: "International",
+    country: "Mauritius",
+    category: "leisure",
+    tagline: "Lagoon Blues, Volcanic Peaks & Island Calm",
+    description:
+      "Turquoise lagoons ringed by coral reef, sugar-cane hills and dormant volcanoes, and some of the Indian Ocean's most relaxed beach resorts - Mauritius is the classic honeymoon and family island escape.",
+    longDescription:
+      "Mauritius sits in the Indian Ocean east of Madagascar, a volcanic island fringed almost entirely by a coral reef that turns the surrounding sea into a calm, swimmable lagoon. The north (Grand Baie, Trou aux Biches) is the resort and nightlife hub; the wilder west and south (Le Morne, Tamarin) draw surfers, kitesurfers and those after dramatic clifftop sunsets; and the centre rises into tea-green highlands, crater lakes and the strange seven-coloured earths of Chamarel.\n\nBeyond the beach, the island rewards the curious - the UNESCO-listed Le Morne Brabant peninsula, the sacred crater lake of Grand Bassin with its towering Hindu statues, the colonial capital of Port Louis and its Central Market, swimming with dolphins off Tamarin Bay, and underwater walks or catamaran cruises out to Île aux Cerfs. Mauritian culture is a warm blend of Indian, Creole, French, Chinese and African influences, and that mix shows up everywhere - especially on the plate.",
+    heroImage: "/images/generated/mauritius-hero.webp",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1513415563383-4e580ed27a46?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1537640685236-a9df2496e232?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507187632231-5beb21a654a2?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1513415277900-a62401e19be4?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1513415563383-4e580ed27a46?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "May to December (cooler, drier season)",
+    weather:
+      "Warm and tropical year-round (20-30 °C). May-Dec is cooler and drier; the summer (Dec-Apr) is hotter and more humid and is also the cyclone window. Sea temperatures stay pleasant all year.",
+    startingPrice: 89000,
+    highlights: [
+      "Calm reef-protected lagoons",
+      "Le Morne Brabant (UNESCO)",
+      "Seven-Coloured Earths, Chamarel",
+      "Grand Bassin sacred lake",
+      "Île aux Cerfs catamaran day",
+      "Dolphin swim at Tamarin",
+      "Port Louis Central Market",
+      "Creole & Indian island cuisine",
+    ],
+    thingsToKnow: [
+      "Indian passport holders get visa-free entry to Mauritius for tourism (up to 60 days) - carry confirmed return tickets and hotel bookings.",
+      "Currency is the Mauritian Rupee (MUR); cards are widely accepted at hotels and larger restaurants.",
+      "Drive is on the left; most visitors use hotel transfers, taxis or a hired car with driver.",
+      "Reef shoes help on rocky entries; strong sun calls for reef-safe sunscreen and a hat.",
+      "Avoid the Jan-Mar cyclone peak if you want guaranteed calm beach weather.",
+    ],
+    popularExperiences: [
+      {
+        title: "Île aux Cerfs Catamaran",
+        description:
+          "Sail the east-coast lagoon to a palm-fringed island for snorkelling, a barbecue lunch and that postcard sandbar.",
+        icon: "⛵",
+      },
+      {
+        title: "Chamarel & the South",
+        description:
+          "Tour the seven-coloured earths, Chamarel waterfall and the Black River Gorges rainforest in the volcanic interior.",
+        icon: "🌋",
+      },
+      {
+        title: "Dolphin Swim at Tamarin",
+        description:
+          "Head out at dawn to snorkel alongside wild spinner and bottlenose dolphins off the calm west coast.",
+        icon: "🐬",
+      },
+      {
+        title: "Grand Bassin Pilgrimage",
+        description:
+          "Visit the sacred crater lake ringed by towering statues of Shiva and Durga, the island's spiritual heart.",
+        icon: "🕉️",
+      },
+    ],
+    featured: true,
+  },
+
+  /* ──────────────────────── Seychelles ──────────────────────── */
+  {
+    name: "Seychelles",
+    slug: "seychelles",
+    region: "International",
+    country: "Seychelles",
+    category: "leisure",
+    tagline: "Granite Boulders, Powder Sand & Rare Wild Islands",
+    description:
+      "The most photogenic beaches on Earth - sculpted granite boulders, flour-soft sand and glass-clear water across Mahé, Praslin and La Digue, plus giant tortoises and rare island wildlife.",
+    longDescription:
+      "The Seychelles is an archipelago of 115 islands scattered across the western Indian Ocean, and its inner islands are unlike anywhere else - ancient granite outcrops worn into smooth sculptural boulders that frame impossibly clear, shallow water. Mahé, the main island, holds the tiny capital Victoria, lush jungle trails and beaches like Beau Vallon; Praslin is home to the Vallée de Mai, a UNESCO palm forest where the famous coco de mer grows; and sleepy La Digue, where ox-carts and bicycles still outnumber cars, has Anse Source d'Argent - routinely voted the most beautiful beach in the world.\n\nThis is a destination for slow days and rare nature: giant Aldabra tortoises roam freely, the snorkelling and diving over coral and granite is superb, and protected reserves like Curieuse and Cousin shelter birdlife found nowhere else. It is a premium, low-key luxury escape - more barefoot-elegant than party island - and ideal for honeymooners and divers who want the islands largely to themselves.",
+    heroImage: "/images/generated/seychelles-hero.webp",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1624964651025-5bf433458ca8?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1617362985992-d0b6814cacef?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1577353716826-9151912dcdd1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1596250470244-d172e7eb4054?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1553829176-61484f865ac3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1624964651025-5bf433458ca8?w=800&h=600&fit=crop",
+    ],
+    bestTimeToVisit: "April-May and October-November (calm shoulder seasons)",
+    weather:
+      "Warm and tropical all year (24-32 °C). The southeast trade winds (May-Sep) are breezier and good for sailing; the northwest season (Nov-Mar) is calmer and more humid. April and October are calm transition months.",
+    startingPrice: 125000,
+    highlights: [
+      "Anse Source d'Argent, La Digue",
+      "Granite-boulder beaches",
+      "Vallée de Mai & coco de mer (UNESCO)",
+      "Giant Aldabra tortoises",
+      "Island hopping Mahé-Praslin-La Digue",
+      "World-class snorkelling & diving",
+      "Victoria & Sir Selwyn Clarke Market",
+      "Inter-island ferries by catamaran",
+    ],
+    thingsToKnow: [
+      "Indian passport holders do not need a prior visa - a free Visitor's Permit is issued on arrival (carry confirmed accommodation, return tickets and a valid Travel Authorisation if required at the time of travel).",
+      "Seychelles is a premium destination - food, drinks and transfers cost more than most beach destinations; budget accordingly.",
+      "Inter-island travel is by fast catamaran ferry (Mahé-Praslin-La Digue) or short domestic flights - book ferries ahead in peak season.",
+      "Currency is the Seychellois Rupee (SCR); cards are widely accepted but carry some cash for La Digue.",
+      "Reef-safe sunscreen is encouraged to protect the coral; many beaches have no shops, so carry water.",
+    ],
+    popularExperiences: [
+      {
+        title: "La Digue by Bicycle",
+        description:
+          "Cycle the car-free island to Anse Source d'Argent, weaving between giant granite boulders to the world's most photographed beach.",
+        icon: "🚲",
+      },
+      {
+        title: "Vallée de Mai Walk",
+        description:
+          "Wander the prehistoric palm forest where the legendary coco de mer grows, in a UNESCO World Heritage reserve on Praslin.",
+        icon: "🌴",
+      },
+      {
+        title: "Island-Hop by Catamaran",
+        description:
+          "Ferry between Mahé, Praslin and La Digue, snorkelling reefs and beach-hopping the inner islands.",
+        icon: "⛴️",
+      },
+      {
+        title: "Meet the Giant Tortoises",
+        description:
+          "Get close to free-roaming Aldabra giant tortoises on Curieuse Island, some over a century old.",
+        icon: "🐢",
+      },
+    ],
+    featured: true,
+  },
+
+  /* ──────────────────────── Fiji ──────────────────────── */
+  {
+    name: "Fiji",
+    slug: "fiji",
+    region: "International",
+    country: "Fiji",
+    category: "leisure",
+    tagline: "South Pacific Reefs, Bure Resorts & Bula Warmth",
+    description:
+      "More than 300 South Pacific islands of soft white sand, vivid coral reefs and overwater bures - Fiji pairs world-class diving and snorkelling with some of the friendliest island hospitality anywhere.",
+    longDescription:
+      "Fiji is an archipelago of over 330 islands in the South Pacific, with the bulk of travel built around the two big islands - Viti Levu (home to the airport hub of Nadi) and Vanua Levu - and the dreamy smaller groups offshore: the Mamanuca and Yasawa islands, easily reached by catamaran for resort stays and day trips. The reefs here are extraordinary, from the soft corals of the Somosomo Strait to gentle lagoon snorkelling straight off the beach, making it a bucket-list destination for divers and first-time snorkellers alike.\n\nWhat people remember most, though, is the warmth - 'Bula!' greets you everywhere - and the rhythm of island life: a kava ceremony in a village, a lovo feast cooked in the earth, and beaches where the only schedule is the tide. It suits honeymooners after an overwater bure, families wanting safe lagoon swimming, and adventurers chasing manta rays, surf breaks and waterfalls in the lush interior.",
+    heroImage: "/images/generated/fiji-hero.webp",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1579264670959-286d7b06f1ae?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1541292426587-b6ca8230532b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1530736822234-c8562cb0a710?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1487252333087-c353573e2b7c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1655719647300-5142977bfa79?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1579264670959-286d7b06f1ae?w=800&h=600&fit=crop",
+      "/images/generated/lm/mamanuca-islands.webp",
+      "/images/generated/lm/yasawa-islands.webp",
+      "/images/generated/lm/denarau-island.webp",
+      "/images/generated/lm/suva.webp",
+      "/images/generated/lm/taveuni.webp",
+      "/images/generated/lm/beqa-lagoon.webp",
+      "/images/generated/lm/pacific-harbour.webp",
+      "/images/generated/lm/rakiraki.webp",
+    ],
+    bestTimeToVisit: "May to October (dry season)",
+    weather:
+      "Tropical and warm year-round (24-31 °C). The dry season (May-Oct) brings cooler, less humid, blue-sky days - the best time to visit. The wetter, more humid season (Nov-Apr) is also the cyclone window.",
+    startingPrice: 145000,
+    highlights: [
+      "Mamanuca & Yasawa islands",
+      "Soft-coral diving & snorkelling",
+      "Overwater & beachfront bures",
+      "Manta ray season (Yasawas)",
+      "Village kava ceremony",
+      "Traditional lovo earth-oven feast",
+      "Sabeto mud pools & hot springs",
+      "Catamaran island transfers",
+    ],
+    thingsToKnow: [
+      "Indian passport holders need a visa for Fiji - a tourist visa is typically granted on arrival for eligible travellers, but confirm current requirements before booking and carry return tickets and hotel bookings.",
+      "Fiji is a long-haul trip from India (usually via a hub such as Singapore, Hong Kong or Auckland) - allow for connection time and jet lag.",
+      "Island resorts are reached by catamaran or seaplane from Nadi/Denarau - transfer times and last-boat schedules matter when planning arrival flights.",
+      "Currency is the Fijian Dollar (FJD); cards work at resorts, but carry cash for villages and smaller islands.",
+      "Dress modestly when visiting a village, and only drink kava when offered as part of the welcome ceremony.",
+    ],
+    popularExperiences: [
+      {
+        title: "Mamanuca Island Day",
+        description:
+          "Catamaran out to a tiny Mamanuca island for snorkelling over coral gardens and a barefoot beach lunch.",
+        icon: "🏝️",
+      },
+      {
+        title: "Soft-Coral Snorkel & Dive",
+        description:
+          "Drift over Fiji's famous soft corals and reef fish - gentle lagoon snorkelling or guided dives for all levels.",
+        icon: "🤿",
+      },
+      {
+        title: "Village & Kava Ceremony",
+        description:
+          "Visit a Fijian village for a traditional welcome, a kava ceremony and a lovo feast cooked in the earth.",
+        icon: "🥥",
+      },
+      {
+        title: "Sabeto Mud Pools",
+        description:
+          "Soak in warm volcanic mud pools and hot springs in the hills behind Nadi - messy, fun and good for the skin.",
+        icon: "♨️",
+      },
+    ],
+    featured: false,
+  },
+
+  /* ──────────────────────── Réunion Island ──────────────────────── */
+  {
+    name: "Réunion Island",
+    slug: "reunion-island",
+    region: "International",
+    country: "Réunion (France)",
+    category: "adventure",
+    tagline: "Active Volcano, Soaring Cirques & Wild Trails",
+    description:
+      "A dramatic French island in the Indian Ocean - one of the world's most active volcanoes, three vast amphitheatre 'cirques', plunging waterfalls and a UNESCO-listed interior that is a paradise for hikers.",
+    longDescription:
+      "Réunion is an overseas region of France in the Indian Ocean, near Mauritius, and it is the adventurous counterpoint to the region's beach islands. Its interior is staggering: the shield volcano Piton de la Fournaise is among the most active on Earth and frequently erupts in spectacular, safely-viewable fashion, while the three cirques - Mafate, Cilaos and Salazie - are immense collapsed-caldera amphitheatres ringed by jagged peaks and laced with waterfalls. The whole highland core is a UNESCO World Heritage Site and one of the great trekking destinations of the world (the GR R2 traverse is legendary).\n\nThe coast adds lagoon beaches around Saint-Gilles and Hermitage, a creole culture and cuisine that blends French, African, Indian and Chinese roots, and a capital, Saint-Denis, with elegant colonial architecture. Activities run from helicopter flights over the volcano and cirques to canyoning, paragliding above Saint-Leu and whale-watching in winter. It is France in the tropics - euros, baguettes and all - wrapped around a wild volcanic heart.",
+    heroImage: "/images/generated/reunion-island-hero.webp",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1585697386654-e025feaa654a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1665422276005-18116a1e6225?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1556942769-8905a2d7ef28?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1683020370706-adf53c10d5ea?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1580910727537-e4c80c6a6a29?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1585697386654-e025feaa654a?w=800&h=600&fit=crop",
+      "/images/generated/lm/piton-de-la-fournaise.webp",
+      "/images/generated/lm/cirque-de-mafate.webp",
+      "/images/generated/lm/cirque-de-cilaos.webp",
+      "/images/generated/lm/cirque-de-salazie.webp",
+      "/images/generated/lm/piton-des-neiges.webp",
+      "/images/generated/lm/cap-mechant.webp",
+      "/images/generated/lm/saint-paul-reunion.webp",
+      "/images/generated/lm/trou-de-fer.webp",
+      "/images/generated/lm/hell-bourg.webp",
+    ],
+    bestTimeToVisit: "May to November (cooler, drier season)",
+    weather:
+      "Tropical but varied by altitude. The coast is warm (20-30 °C); the highlands and cirques are markedly cooler, especially at night. May-Nov is drier and best for hiking; Dec-Apr is hotter, wetter and the cyclone window.",
+    startingPrice: 110000,
+    highlights: [
+      "Piton de la Fournaise volcano",
+      "Cirque de Mafate (road-free)",
+      "Cirque de Cilaos & Salazie",
+      "UNESCO highland trails",
+      "Helicopter flight over the cirques",
+      "Saint-Gilles lagoon beaches",
+      "Canyoning & paragliding",
+      "Creole cuisine & markets",
+    ],
+    thingsToKnow: [
+      "Réunion is French territory - Indian passport holders need a France/Schengen-style visa (a short-stay visa for the French overseas departments); plan visa timelines well ahead.",
+      "Currency is the Euro (EUR); it is a developed French region, so costs are European, not budget-island.",
+      "The interior is mountainous and weather changes fast - carry layers, proper shoes and rain gear for the cirques even in the dry season.",
+      "Cirque de Mafate has no roads and is reached only on foot or by helicopter - plan guided hikes in advance.",
+      "A hired car is the easiest way to explore the coast and volcano road; mountain roads are winding.",
+    ],
+    popularExperiences: [
+      {
+        title: "Piton de la Fournaise",
+        description:
+          "Drive the lunar Plaine des Sables to the rim of one of the world's most active volcanoes and hike its lava fields.",
+        icon: "🌋",
+      },
+      {
+        title: "Helicopter Over the Cirques",
+        description:
+          "Soar above Mafate, Cilaos and Salazie, the Trou de Fer waterfall and the smoking volcano - the island's signature flight.",
+        icon: "🚁",
+      },
+      {
+        title: "Trek into Mafate",
+        description:
+          "Hike into the road-free cirque, staying in remote mountain gîtes reachable only on foot - a true wilderness immersion.",
+        icon: "🥾",
+      },
+      {
+        title: "Canyoning & Paragliding",
+        description:
+          "Abseil waterfalls in lush canyons, or launch off the heights above Saint-Leu for one of the world's best coastal paraglides.",
+        icon: "🪂",
+      },
+    ],
+    featured: false,
+  },
+
+  {
+    name: "Cambodia & Laos",
+    slug: "cambodia-laos",
+    region: "International",
+    country: "Cambodia & Laos",
+    category: "leisure",
+    tagline: "Angkor temples & the Mekong's gentle heart",
+    description:
+      "Sunrise over Angkor Wat, the jungle-wrapped faces of the Bayon, the calm Buddhist temples of Luang Prabang and the slow Mekong — Cambodia and Laos are Southeast Asia at its most timeless.",
+    longDescription:
+      "Cambodia's Siem Reap is the gateway to Angkor, the largest religious monument on earth — Angkor Wat at sunrise, the smiling stone faces of the Bayon and the tree-rooted ruins of Ta Prohm. Phnom Penh adds the riverfront capital, the Royal Palace and the moving history of the Killing Fields and S-21.\n\nLaos slows everything down. Luang Prabang, a UNESCO old town of gilded wats and French-colonial shophouses, wakes to the dawn alms-giving procession and ends at the turquoise tiers of the Kuang Si waterfalls. A Mekong river cruise to the Pak Ou caves ties the two countries together into one gentle, culture-rich journey.",
+    heroImage: "/images/generated/cambodia-laos-w1.webp",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=800&h=600&fit=crop",
+      "/images/generated/cambodia-laos-w1.webp",
+      "/images/generated/cambodia-laos-w2.webp",
+      "/images/generated/cambodia-laos-w3.webp",
+      "/images/generated/cambodia-laos-w4.webp",
+    ],
+    bestTimeToVisit: "November to March (cool, dry season)",
+    weather:
+      "Tropical monsoon climate. November to March is cool and dry (best for temples); April to May is hot; June to October brings the green-season rains.",
+    startingPrice: 83000,
+    highlights: [
+      "Angkor Wat sunrise",
+      "Bayon & Ta Prohm temples",
+      "Luang Prabang old town",
+      "Kuang Si waterfalls",
+      "Mekong river & Pak Ou caves",
+      "Phnom Penh riverfront",
+    ],
+    thingsToKnow: [
+      "Indian passport holders get an e-visa / visa on arrival for both Cambodia and Laos — carry passport photos.",
+      "US dollars are widely used in Cambodia; Lao kip and USD both work in Laos.",
+      "Dress modestly at temples — shoulders and knees covered for Angkor and the wats.",
+      "Internal flights link Siem Reap, Phnom Penh and Luang Prabang to save long road days.",
+      "Tipping is appreciated but not expected; small amounts for guides and drivers are customary.",
+    ],
+    popularExperiences: [
+      {
+        title: "Angkor Wat Sunrise",
+        description:
+          "Reach the temple before dawn to watch the towers silhouette against a pink sky reflected in the moat.",
+        icon: "🌅",
+      },
+      {
+        title: "Luang Prabang Alms Giving",
+        description:
+          "Witness the serene dawn procession of saffron-robed monks collecting offerings through the old town.",
+        icon: "🧡",
+      },
+      {
+        title: "Kuang Si Waterfalls",
+        description:
+          "Swim in the turquoise limestone pools beneath a multi-tiered jungle waterfall outside Luang Prabang.",
+        icon: "💧",
+      },
+      {
+        title: "Mekong River Cruise",
+        description:
+          "Drift upriver to the Pak Ou caves, lined with thousands of Buddha statues left by pilgrims.",
+        icon: "🛶",
+      },
+    ],
+    featured: false,
+  },
+
+  {
+    name: "Oman",
+    slug: "oman",
+    region: "International",
+    country: "Oman",
+    category: "leisure",
+    tagline: "Wadis, dunes & the forts of Arabia",
+    description:
+      "The grand mosque and souqs of Muscat, the apricot dunes of the Wahiba Sands, turquoise wadis and clifftop forts — Oman is Arabia's most authentic and scenic corner.",
+    longDescription:
+      "Muscat is a low-rise capital of white mosques and old harbours — the Sultan Qaboos Grand Mosque, the Royal Opera House and the buzzing Muttrah Souq along the Corniche. Beyond the city, the interior holds the old capital of Nizwa with its round fort and Friday goat market, and the mountain villages of Jebel Akhdar terraced with roses and pomegranates.\n\nThe landscapes are the real draw: the rippling apricot dunes of the Wahiba Sands for a desert-camp night under the stars, and emerald canyons like Wadi Shab and Wadi Bani Khalid where you swim between palm-fringed pools. Far to the south, Salalah turns green and misty during the khareef monsoon — a different Arabia entirely.",
+    heroImage: "/images/generated/oman-w1.webp",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=800&h=600&fit=crop",
+      "/images/generated/oman-w1.webp",
+      "/images/generated/oman-w2.webp",
+      "/images/generated/oman-w3.webp",
+    ],
+    bestTimeToVisit: "October to March (Salalah: June to September for khareef)",
+    weather:
+      "Hot desert climate. October to March is warm and pleasant (best for touring); summers are very hot, except Salalah which turns cool and green in the khareef monsoon (Jun-Sep).",
+    startingPrice: 74000,
+    highlights: [
+      "Sultan Qaboos Grand Mosque",
+      "Muttrah Souq & Corniche",
+      "Wahiba Sands desert camp",
+      "Nizwa Fort & souq",
+      "Wadi Shab & Wadi Bani Khalid",
+      "Jebel Akhdar mountains",
+    ],
+    thingsToKnow: [
+      "Indian passport holders need an Oman e-visa — apply online in advance.",
+      "Dress modestly; cover shoulders and knees, and women carry a scarf for the Grand Mosque.",
+      "A 4x4 is needed for the Wahiba Sands and some wadis — use a guided transfer or driver.",
+      "Omani Rial (OMR) is one of the world's strongest currencies; cards are widely accepted.",
+      "Oman is very safe and relaxed; Fridays are the holy day with shorter morning hours.",
+    ],
+    popularExperiences: [
+      {
+        title: "Wahiba Sands Desert Camp",
+        description:
+          "Dune-bash into the apricot sands for sunset, a camp dinner and a night under the desert stars.",
+        icon: "🏜️",
+      },
+      {
+        title: "Wadi Swimming",
+        description:
+          "Hike and swim between the turquoise pools of Wadi Shab or Wadi Bani Khalid, ringed by date palms.",
+        icon: "💦",
+      },
+      {
+        title: "Nizwa Fort & Souq",
+        description:
+          "Climb the great round tower of Nizwa Fort and browse the silver, dates and the Friday goat market.",
+        icon: "🏰",
+      },
+      {
+        title: "Grand Mosque Visit",
+        description:
+          "Marvel at the vast hand-woven Persian carpet and Swarovski chandelier of the Sultan Qaboos Grand Mosque.",
+        icon: "🕌",
+      },
+    ],
+    featured: false,
+  },
+
+  {
+    name: "Saudi Arabia",
+    slug: "saudi-arabia",
+    region: "International",
+    country: "Saudi Arabia",
+    category: "leisure",
+    tagline: "AlUla, the Red Sea & desert heritage",
+    description:
+      "The Nabataean tombs of Hegra, the sandstone canyons of AlUla, the Edge of the World cliffs and old-town Jeddah — newly open Saudi Arabia is one of travel's great frontiers.",
+    longDescription:
+      "AlUla is the headline — Hegra (Madain Saleh), Saudi's first UNESCO site, with more than a hundred Nabataean rock-cut tombs cousin to Petra, plus the mud-brick AlUla old town and the natural sculpture of Elephant Rock glowing at sunset. The desert around it has become a stage for art and stargazing.\n\nRiyadh, the modern capital, mixes the restored mud-brick palaces of Diriyah with the dramatic Edge of the World escarpment a short drive away. On the Red Sea coast, Jeddah's UNESCO Al-Balad old town of coral-stone merchant houses leads to a corniche and some of the world's finest diving reefs. Saudi only opened to tourist visas recently, so it still feels genuinely undiscovered.",
+    heroImage: "/images/generated/saudi-arabia-w1.webp",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=800&h=600&fit=crop",
+      "/images/generated/saudi-arabia-w1.webp",
+      "/images/generated/saudi-arabia-w2.webp",
+      "/images/generated/saudi-arabia-w3.webp",
+      "/images/generated/saudi-arabia-w4.webp",
+    ],
+    bestTimeToVisit: "November to March (cool desert season)",
+    weather:
+      "Hot desert climate. November to March is cool and ideal for AlUla and Riyadh; summers are extremely hot inland, while Jeddah on the Red Sea is humid year-round.",
+    startingPrice: 95000,
+    highlights: [
+      "Hegra (Madain Saleh) tombs",
+      "AlUla old town & Elephant Rock",
+      "Edge of the World cliffs",
+      "Diriyah mud-brick palaces",
+      "Jeddah Al-Balad old town",
+      "Red Sea diving reefs",
+    ],
+    thingsToKnow: [
+      "Indian passport holders can get a Saudi tourist e-visa online — quick and straightforward.",
+      "Dress modestly; women no longer need an abaya but loose, covering clothing is respectful.",
+      "Alcohol is prohibited country-wide; Fridays and prayer times bring short closures.",
+      "AlUla sights are booked via the official experience platform — we arrange permits and timed entries.",
+      "Saudi Riyal (SAR); cards are widely accepted and the country is very safe for visitors.",
+    ],
+    popularExperiences: [
+      {
+        title: "Hegra Tombs Tour",
+        description:
+          "Explore the monumental Nabataean tombs of Saudi's first UNESCO World Heritage Site by guided coach.",
+        icon: "🪨",
+      },
+      {
+        title: "Elephant Rock Sunset",
+        description:
+          "Watch the giant natural sandstone arch glow amber at golden hour in the AlUla desert.",
+        icon: "🐘",
+      },
+      {
+        title: "Edge of the World",
+        description:
+          "Stand atop a sheer escarpment near Riyadh with the desert plain stretching endlessly below.",
+        icon: "🏔️",
+      },
+      {
+        title: "Jeddah Al-Balad Walk",
+        description:
+          "Wander the coral-stone houses and carved wooden balconies of Jeddah's UNESCO old town.",
+        icon: "🏛️",
+      },
+    ],
+    featured: false,
+  },
+
+  {
+    name: "Ireland",
+    slug: "ireland",
+    region: "International",
+    country: "Ireland",
+    category: "leisure",
+    tagline: "Emerald cliffs, castles & the Wild Atlantic Way",
+    description:
+      "The towering Cliffs of Moher, the Ring of Kerry's coast road, lively Dublin pubs and the Wild Atlantic Way — Ireland is green, warm-hearted and endlessly scenic.",
+    longDescription:
+      "Dublin is the spirited start — Trinity College and the Book of Kells, Temple Bar's music pubs and the Guinness Storehouse with its skyline gravity bar. From there the country opens into legend: Blarney Castle near Cork, the lakes and mountains of Killarney, and the dramatic coastal loop of the Ring of Kerry.\n\nThe Wild Atlantic Way threads the rugged west coast, peaking at the 200-metre Cliffs of Moher and the stony moonscape of the Burren, with bohemian, music-filled Galway as its hub. Everywhere there are castles, sheep-dotted greens, friendly snugs and the easy craic that makes Ireland feel like a holiday among friends.",
+    heroImage: "/images/generated/ireland-w1.webp",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?w=800&h=600&fit=crop",
+      "/images/generated/ireland-w1.webp",
+      "/images/generated/ireland-w2.webp",
+      "/images/generated/ireland-w3.webp",
+      "/images/generated/ireland-w4.webp",
+    ],
+    bestTimeToVisit: "May to September (mild, long daylight)",
+    weather:
+      "Mild, changeable maritime climate — pack layers and a rain shell any time of year. May to September is warmest with long daylight; the famous green comes from frequent light rain.",
+    startingPrice: 125000,
+    highlights: [
+      "Cliffs of Moher",
+      "Ring of Kerry coast road",
+      "Dublin: Trinity & Guinness",
+      "Galway & the Wild Atlantic Way",
+      "Killarney National Park",
+      "Blarney Castle",
+    ],
+    thingsToKnow: [
+      "Ireland is in the Schengen-separate Common Travel Area — Indian passport holders need an Irish visa (not Schengen).",
+      "Driving is on the left; distances are short but coastal roads are narrow and scenic, so allow time.",
+      "Euro (€) is used in the Republic of Ireland; Northern Ireland (UK) uses pound sterling.",
+      "Weather changes fast — a waterproof jacket and layers are essential even in summer.",
+      "Pubs are the social heart; tipping ~10% in restaurants is normal, rounding up at the bar is optional.",
+    ],
+    popularExperiences: [
+      {
+        title: "Cliffs of Moher",
+        description:
+          "Walk the cliff path 200 metres above the crashing Atlantic on Ireland's most dramatic coastline.",
+        icon: "🌊",
+      },
+      {
+        title: "Ring of Kerry Drive",
+        description:
+          "Loop the Iveragh peninsula past mountains, lakes, beaches and stone-walled green fields.",
+        icon: "🚗",
+      },
+      {
+        title: "Dublin Pub Night",
+        description:
+          "Catch live trad music and a pint in the lanes of Temple Bar in the heart of the capital.",
+        icon: "🍺",
+      },
+      {
+        title: "Blarney Castle",
+        description:
+          "Climb the medieval keep and kiss the famous Blarney Stone for the gift of the gab.",
+        icon: "🏰",
+      },
+    ],
+    featured: false,
+  },
+
+  {
+    name: "Russia",
+    slug: "russia",
+    region: "International",
+    country: "Russia",
+    category: "leisure",
+    tagline: "Moscow's Red Square & imperial St Petersburg",
+    description:
+      "Red Square and the onion domes of St Basil's, the treasures of the Hermitage, Peterhof's golden fountains and the high-speed Sapsan between two great capitals - Russia is grand, imperial and unforgettable.",
+    longDescription:
+      "Moscow is where it begins - Red Square framed by the candy-coloured domes of St Basil's, the Kremlin's cathedrals and armoury, and the palatial mosaic-and-chandelier metro stations that are sights in their own right. The Tretyakov Gallery, GUM department store and a Moscow River cruise round out the capital.\n\nA short Sapsan high-speed ride north lies St Petersburg, the imperial city of canals built by Peter the Great. The Hermitage in the Winter Palace holds one of the world's greatest art collections; the Church of the Saviour on Spilled Blood dazzles with mosaics; and Peterhof's grand cascade of gilded fountains overlooks the Gulf of Finland. Beyond the cities, the Golden Ring's white-stone monasteries and Mount Elbrus, Europe's highest peak, add history and adventure.",
+    heroImage: "/images/generated/russia-w1.webp",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=800&h=600&fit=crop",
+      "/images/generated/russia-w1.webp",
+      "/images/generated/russia-w2.webp",
+      "/images/generated/russia-w3.webp",
+      "/images/generated/russia-w4.webp",
+    ],
+    bestTimeToVisit: "May to September (mild summers, White Nights in June)",
+    weather:
+      "Continental climate. May to September is mild and the best time to visit, with St Petersburg's White Nights in June; winters are long, snowy and very cold but magical.",
+    startingPrice: 107000,
+    highlights: [
+      "Red Square & St Basil's",
+      "The Kremlin & Moscow metro",
+      "Hermitage Museum",
+      "Peterhof palace fountains",
+      "Sapsan high-speed train",
+      "Golden Ring monasteries",
+    ],
+    thingsToKnow: [
+      "Indian passport holders need a Russia visa or the e-visa - we assist with the full application.",
+      "The Sapsan high-speed train links Moscow and St Petersburg in about four hours - book ahead.",
+      "Russian Rouble (RUB); carry some cash as international cards may not work everywhere.",
+      "English is limited outside hotels and tourist sites - guided tours make a big difference.",
+      "Dress warmly for shoulder seasons and cover shoulders/knees when entering churches.",
+    ],
+    popularExperiences: [
+      {
+        title: "Red Square & the Kremlin",
+        description:
+          "Stand before St Basil's onion domes and tour the Kremlin's cathedrals and armoury.",
+        icon: "🧅",
+      },
+      {
+        title: "Hermitage Museum",
+        description:
+          "Explore the Winter Palace's vast galleries - one of the world's greatest art collections.",
+        icon: "🖼️",
+      },
+      {
+        title: "Peterhof Fountains",
+        description:
+          "Watch the grand cascade of gilded fountains tumble toward the Gulf of Finland.",
+        icon: "⛲",
+      },
+      {
+        title: "Moscow Metro Tour",
+        description:
+          "Ride between the marble, mosaic and chandelier-lit stations that double as underground palaces.",
+        icon: "🚇",
+      },
+    ],
+    featured: false,
+  },
+
 ]
 
 /* ─── Helper: get a destination by slug ─────────────────────────────────── */
@@ -3217,45 +3952,5 @@ export interface ComingSoonDestination {
   heroImage: string
 }
 
-export const comingSoonDestinations: ComingSoonDestination[] = [
-  {
-    name: "Cambodia & Laos",
-    slug: "cambodia-laos",
-    region: "International",
-    country: "Cambodia & Laos",
-    tagline: "Angkor temples & the Mekong's gentle heart",
-    heroImage: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=800&h=600&fit=crop",
-  },
-  {
-    name: "Oman",
-    slug: "oman",
-    region: "International",
-    country: "Oman",
-    tagline: "Wadis, dunes & the forts of Arabia",
-    heroImage: "https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=800&h=600&fit=crop",
-  },
-  {
-    name: "Saudi Arabia",
-    slug: "saudi-arabia",
-    region: "International",
-    country: "Saudi Arabia",
-    tagline: "AlUla, the Red Sea & desert heritage",
-    heroImage: "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=800&h=600&fit=crop",
-  },
-  {
-    name: "Ireland",
-    slug: "ireland",
-    region: "International",
-    country: "Ireland",
-    tagline: "Emerald cliffs, castles & the Wild Atlantic Way",
-    heroImage: "https://images.unsplash.com/photo-1590759668628-05b0fc34bb70?w=800&h=600&fit=crop",
-  },
-  {
-    name: "Russia",
-    slug: "russia",
-    region: "International",
-    country: "Russia",
-    tagline: "Moscow's Red Square & imperial St Petersburg",
-    heroImage: "https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=800&h=600&fit=crop",
-  },
-]
+// All previously coming-soon destinations are now live with full pages + packages.
+export const comingSoonDestinations: ComingSoonDestination[] = []

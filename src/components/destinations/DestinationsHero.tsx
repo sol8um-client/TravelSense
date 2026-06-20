@@ -8,7 +8,7 @@ import { motion, useInView } from "framer-motion"
 import { ArrowRight, MapPin, Search } from "lucide-react"
 import { formatCurrency } from "@/lib/utils"
 import type { DestinationCardData } from "./DestinationCard"
-import type { RegionTab } from "./DestinationGrid"
+import type { Scope } from "./DestinationGrid"
 
 /* Globe reused from the homepage - client-only, no SSR (WebGL). */
 const Globe3D = dynamic(() => import("@/components/home/Globe3D"), { ssr: false })
@@ -16,13 +16,7 @@ const Globe3D = dynamic(() => import("@/components/home/Globe3D"), { ssr: false 
 const EASE = "cubic-bezier(0.22,1,0.36,1)"
 const fmt = (n: number): string => formatCurrency(n)
 
-const JUMP_REGIONS: RegionTab[] = [
-  "North India",
-  "Northeast India",
-  "South India",
-  "West India",
-  "International",
-]
+const JUMP_REGIONS: string[] = ["Domestic", "International"]
 
 /* ─── Reveal (mirrors home-kit Reveal) ────────────────────────────────────── */
 interface RevealProps {
@@ -275,7 +269,7 @@ interface DestinationsHeroProps {
   totalCount: number
   query: string
   onQueryChange: (q: string) => void
-  onRegionJump: (r: RegionTab) => void
+  onJump: (scope: Scope, group: string) => void
 }
 
 export function DestinationsHero({
@@ -283,7 +277,7 @@ export function DestinationsHero({
   totalCount,
   query,
   onQueryChange,
-  onRegionJump,
+  onJump,
 }: DestinationsHeroProps) {
   const scrollToGrid = () => {
     document.getElementById("dest-grid")?.scrollIntoView({ behavior: "smooth" })
@@ -413,7 +407,7 @@ export function DestinationsHero({
                 <button
                   key={r}
                   onClick={() => {
-                    onRegionJump(r)
+                    onJump(r === "International" ? "international" : "domestic", "")
                     scrollToGrid()
                   }}
                   className="glass-pill"

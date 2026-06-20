@@ -68,10 +68,14 @@ import { cn } from "@/lib/utils"
 import { use3DTilt } from "@/hooks/use3DTilt"
 import { useLeadModal } from "@/components/shared/LeadCaptureModal"
 import { WhatsAppLink } from "@/components/shared/WhatsAppLink"
+import dynamic from "next/dynamic"
 import DestinationSpotlight from "./DestinationSpotlight"
-import StaticGlobe from "./StaticGlobe"
 import ARVRBanner from "./ARVRBanner"
 import { searchIndex } from "@/data/searchIndex"
+
+/* Rotating WebGL globe (the greyish frosted-glass globe) - client-only, no SSR.
+   `showTags` renders the destination photo-chips anchored to their real country. */
+const Globe3D = dynamic(() => import("./Globe3D"), { ssr: false })
 
 /* ─── Hooks ─── */
 
@@ -527,21 +531,33 @@ function HeroSection() {
       {/* 4. Floating travel icon particles */}
       <FloatingTravelIcons />
 
-      {/* 5. Static globe (Nano-Banana art + CSS motion, no WebGL) - all sizes.
+      {/* 5. Rotating WebGL globe (greyish frosted-glass earth) - all sizes.
              Mobile/tablet: a calm, glowing backdrop centred behind the text.
-             Desktop (lg+): present on the LEFT with live location image-pins. */}
+             Desktop (xl+): on the LEFT with live destination photo-tags that
+             rotate with the globe (showTags). */}
       {/* overflow-X-CLIP (not hidden): stops the wide globe causing a sideways
           scrollbar, but lets the round atmosphere glow bleed past the hero top &
           bottom and fade out naturally - `overflow-hidden` was slicing that glow
           into straight top/bottom edges (the "square border" around the globe). */}
       <div className="pointer-events-none absolute inset-0 z-[1] overflow-x-clip">
-        <StaticGlobe
-          className="absolute left-1/2 top-[47%] w-[104%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.82]
-                     sm:w-[86%] sm:opacity-[0.8]
-                     md:w-[62%] md:opacity-[0.7]
-                     lg:w-[53%] lg:opacity-[0.64]
-                     xl:left-0 xl:top-1/2 xl:h-[110%] xl:w-auto xl:-translate-x-[32%] xl:-translate-y-1/2 xl:opacity-100"
-        />
+        <div
+          className="absolute left-1/2 top-[47%] aspect-square w-[120%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.55]
+                     sm:w-[102%] sm:opacity-[0.55]
+                     md:w-[80%] md:opacity-[0.58]
+                     lg:w-[62%] lg:opacity-[0.6]
+                     xl:left-0 xl:top-1/2 xl:h-[104%] xl:w-auto xl:-translate-x-[31%] xl:-translate-y-1/2 xl:opacity-100
+                     2xl:-translate-x-[24%]"
+          // Soft circular feather on the very outer edge only - melts the globe's
+          // atmosphere into the page (premium faded-glow boundary) and hides the
+          // straight line where the WebGL canvas would otherwise clip the glow.
+          // Feathers just the outer ~12%, so the globe body stays fully present.
+          style={{
+            maskImage: "radial-gradient(circle closest-side at center, #000 88%, transparent 100%)",
+            WebkitMaskImage: "radial-gradient(circle closest-side at center, #000 88%, transparent 100%)",
+          }}
+        >
+          <Globe3D showTags colored />
+        </div>
       </div>
 
       {/* 7. Destination spotlight - auto-advancing showcase card in the right
@@ -552,14 +568,16 @@ function HeroSection() {
       </div>
 
       {/* Content - text shadow on mobile ensures readability over globe */}
-      <motion.div className="relative z-30 w-full max-w-5xl mx-auto px-6 text-center [text-shadow:0_1px_8px_rgba(255,255,255,0.8)] xl:[text-shadow:none] xl:max-w-[660px] xl:ml-auto xl:mr-[33%]" style={{ y: contentY }}>
+      <motion.div className="relative z-30 w-full max-w-5xl mx-auto px-6 text-center [text-shadow:0_1px_8px_rgba(255,255,255,0.8)] 2xl:[text-shadow:none] xl:max-w-[660px] xl:ml-auto xl:mr-[33%]" style={{ y: contentY }}>
         {/* Text block wrapped so a soft legibility scrim sits behind ONLY the
             headline / subtitle / search on phones + tablets (where they overlay
             the globe); the spotlight card below stays clear of it. */}
         <div className="relative">
-          {/* soft light scrim - keeps the dark text legible over the globe (below xl) */}
+          {/* soft light scrim - keeps the dark text legible over the globe. Active
+              through tablet AND iPad-landscape (xl); removed only on large desktop
+              (2xl) where the globe sits clear of the right-anchored title. */}
           <div
-            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[128%] w-[150%] -translate-x-1/2 -translate-y-1/2 xl:hidden"
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[128%] w-[150%] -translate-x-1/2 -translate-y-1/2 2xl:hidden"
             style={{ background: "radial-gradient(ellipse 56% 50% at 50% 50%, rgba(247,249,251,0.9) 0%, rgba(247,249,251,0.5) 40%, transparent 72%)" }}
           />
           {/* Live presence pill - rotating social proof */}
@@ -572,7 +590,7 @@ function HeroSection() {
 
         {/* Main headline - "Wake up in <rotating destination>." solid navy Fraunces,
             city in red italic. Destination cycles through heroCities. */}
-        <h1 className="font-heading text-[2.55rem] sm:text-[3.2rem] md:text-[3.8rem] lg:text-[4.3rem] font-medium leading-[1.04] tracking-[-0.025em] text-[#0A1425] [text-shadow:0_2px_18px_rgba(255,255,255,0.95)] xl:[text-shadow:none]">
+        <h1 className="font-heading text-[2.55rem] sm:text-[3.2rem] md:text-[3.8rem] lg:text-[4.3rem] font-medium leading-[1.04] tracking-[-0.025em] text-[#0A1425] [text-shadow:0_2px_18px_rgba(255,255,255,0.95)] 2xl:[text-shadow:none]">
           <span>Wake up in</span>
           <br />
           <span className="relative inline-block align-baseline">
@@ -651,7 +669,7 @@ function TrustBarSection() {
         className="pointer-events-none absolute left-1/2 top-[-16px] z-0 h-[130px] w-[min(1140px,96%)] -translate-x-1/2 rounded-[44px] sm:top-[-20px] sm:h-[160px]"
         style={{
           background:
-            "radial-gradient(ellipse 78% 168% at 27% 52%, rgba(255,255,255,0.66), rgba(255,255,255,0.28) 44%, transparent 76%)",
+            "radial-gradient(ellipse 78% 168% at 27% 52%, rgba(255,255,255,0.22), rgba(255,255,255,0.07) 44%, transparent 76%)",
           filter: "blur(24px)",
         }}
       />
@@ -660,7 +678,7 @@ function TrustBarSection() {
           sits behind the bar), while the sheen + edge highlights read as glass. */}
       <div
         className="glass-panel relative z-10 mx-auto max-w-[1120px] overflow-hidden rounded-[22px] px-5 py-3.5 sm:rounded-[26px] sm:px-9 sm:py-[18px]"
-        style={{ background: "rgba(252,253,255,0.34)" }}
+        style={{ background: "rgba(255,255,255,0.09)" }}
       >
         {/* liquid-glass sheen - a diagonal light streak (top-left) + a faint cool
             tint (lower-right) so the panel reads as refractive glass even over white */}
@@ -709,7 +727,7 @@ function TrustBarSection() {
                 WebkitMaskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)",
               }}
             >
-              <div className="flex w-max gap-2.5" style={{ animation: "marqueeX 32s linear infinite" }}>
+              <div className="flex w-max gap-2.5" style={{ animation: "marqueeX 32s linear infinite reverse" }}>
                 {[...RECENT_TRIPS, ...RECENT_TRIPS].map((r, i) => (
                   <span
                     key={i}
@@ -944,11 +962,11 @@ function LuggageTag({ destination, image }: { destination: string; image: string
 
 function ChaosCanvas() {
   return (
-    <div className="relative w-full h-[336px] overflow-hidden sm:h-[520px] sm:overflow-visible">
+    <div className="relative w-full h-[392px] overflow-hidden sm:h-[520px] sm:overflow-visible">
       {/* Mobile: the cards use fixed pixel positions tuned for a wide column, so
           they spilled past both screen edges on a phone. Scale the whole cluster
-          down to fit; full size from sm up. */}
-      <div className="absolute left-1/2 top-0 h-[520px] w-[544px] origin-top -translate-x-1/2 scale-[0.58] sm:relative sm:left-0 sm:h-[520px] sm:w-full sm:translate-x-0 sm:scale-100">
+          down to fit (but kept large enough to stay readable); full size from sm up. */}
+      <div className="absolute left-1/2 top-0 h-[520px] w-[544px] origin-top -translate-x-1/2 scale-[0.72] sm:relative sm:left-0 sm:h-[520px] sm:w-full sm:translate-x-0 sm:scale-100">
       {/* Boarding passes - overbooked / delayed */}
       <DraggablePiece initial={{ x: 30, y: 50 }} rotation={-7}>
         <BoardingPass tag="AA 1247" route={["DEL", "GOA"]} date="12 Dec" seat="14A" status={{ label: "Overbooked", color: "#C4324A" }} />
@@ -994,7 +1012,7 @@ function ChaosCanvas() {
       </DraggablePiece>
 
       {/* Drag hint - meaningful caption (per design) */}
-      <div className="pointer-events-none absolute bottom-1 left-1/2 -translate-x-1/2 whitespace-nowrap font-tech text-[8.5px] uppercase tracking-[0.18em] text-silver/45">
+      <div className="pointer-events-none absolute bottom-1 left-1/2 -translate-x-1/2 whitespace-nowrap font-tech text-[10px] uppercase tracking-[0.18em] text-silver/45 sm:text-[8.5px]">
         ↕ this is planning a trip yourself - drag to feel the mess
       </div>
       </div>
@@ -1841,32 +1859,56 @@ function USPSection() {
           </div>
         </div>
 
-        {/* Differentiator strip - 4-up LIQUID-GLASS cards (matches the site's
-            frosted-glass system instead of a plain icon + text row). */}
+        {/* Differentiator strip - 4 premium, interactive glass cards: per-pillar
+            accent colour, big index numeral, gradient icon tile, and a hover that
+            lifts the card, blooms an accent glow, draws an accent ring + a growing
+            underline. */}
         <div className="mt-20 sm:mt-24 pb-24 sm:pb-28">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
             {differentiators.map((d, i) => (
               <motion.div
                 key={d.title}
-                className="group glass-dark relative overflow-hidden rounded-[18px] p-5 transition-all duration-500 hover:-translate-y-1"
-                initial={{ opacity: 0, y: 22 }}
+                className="usp-card group glass-dark relative flex flex-col overflow-hidden rounded-[20px] p-6"
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -6 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: i * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: i * 0.09, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
-                {/* gold corner bloom on hover */}
+                {/* accent bloom (hover) */}
                 <span
-                  className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  style={{ background: "radial-gradient(closest-side, rgba(212,168,83,0.12), transparent)" }}
+                  className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{ background: `radial-gradient(closest-side, ${d.accent}55, transparent)` }}
                 />
-                <div
-                  className="flex h-12 w-12 items-center justify-center rounded-[14px] transition-transform duration-500 group-hover:scale-105"
-                  style={{ background: "rgba(196,50,74,0.12)", border: "1px solid rgba(196,50,74,0.20)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.10)" }}
+                {/* accent ring (hover) */}
+                <span
+                  className="pointer-events-none absolute inset-0 rounded-[20px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{ boxShadow: `inset 0 0 0 1px ${d.accent}66` }}
+                />
+                {/* big index numeral */}
+                <span
+                  className="pointer-events-none absolute right-4 top-1 font-heading text-[46px] font-medium leading-none text-white/[0.06] transition-all duration-500 group-hover:-translate-y-0.5 group-hover:text-white/[0.11]"
+                  style={{ fontVariationSettings: "'opsz' 144" }}
                 >
-                  <d.Icon className="h-5 w-5 text-secondary-light" strokeWidth={1.5} />
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                {/* gradient icon tile */}
+                <div
+                  className="relative flex h-12 w-12 items-center justify-center rounded-[14px] transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110"
+                  style={{
+                    background: `linear-gradient(150deg, ${d.accent}, ${d.accent}aa)`,
+                    boxShadow: `0 8px 22px ${d.accent}55, inset 0 1px 0 rgba(255,255,255,0.28)`,
+                  }}
+                >
+                  <d.Icon className="h-5 w-5 text-white" strokeWidth={1.6} />
                 </div>
-                <h4 className="mt-4 font-heading text-[16px] font-medium tracking-[-0.01em] text-white">{d.title}</h4>
-                <p className="mt-1.5 text-[12.5px] leading-relaxed text-white/50">{d.desc}</p>
+                <h4 className="relative mt-5 font-heading text-[17px] font-medium tracking-[-0.01em] text-white">{d.title}</h4>
+                <p className="relative mt-1.5 text-[12.5px] leading-relaxed text-white/55">{d.desc}</p>
+                {/* growing accent underline (hover) */}
+                <span
+                  className="mt-4 block h-[2px] w-9 rounded-full transition-all duration-500 group-hover:w-full"
+                  style={{ background: `linear-gradient(90deg, ${d.accent}, transparent)` }}
+                />
               </motion.div>
             ))}
           </div>
@@ -1878,11 +1920,11 @@ function USPSection() {
 
 /* Differentiators - the 4 USP pillars. Rendered as the strip inside USPSection
    (the prototype trimmed the old standalone flip-cards into this dark strip). */
-const differentiators: { Icon: LucideIcon; title: string; desc: string }[] = [
-  { Icon: MessageSquare, title: "Consultation First", desc: "We listen before we sell" },
-  { Icon: Shield, title: "Women-Led, Trust-Built", desc: "Safety & transparency first" },
-  { Icon: Compass, title: "All Travel, One Place", desc: "Leisure & Adventure" },
-  { Icon: Handshake, title: "Tech + Personal Touch", desc: "Smart tools, real humans" },
+const differentiators: { Icon: LucideIcon; title: string; desc: string; accent: string }[] = [
+  { Icon: MessageSquare, title: "Consultation First", desc: "We listen before we sell", accent: "#C4324A" },
+  { Icon: Shield, title: "Women-Led, Trust-Built", desc: "Safety & transparency first", accent: "#D4A853" },
+  { Icon: Compass, title: "All Travel, One Place", desc: "Leisure & Adventure", accent: "#2DA88A" },
+  { Icon: Handshake, title: "Tech + Personal Touch", desc: "Smart tools, real humans", accent: "#5B8DEF" },
 ]
 
 /* ═══════════════════════════════════════════════════════════════

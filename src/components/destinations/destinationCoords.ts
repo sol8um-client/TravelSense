@@ -59,6 +59,15 @@ export const DESTINATION_COORDS: Record<string, string> = {
   europe: "48.86°N · 2.35°E",
   australia: "33.87°S · 151.21°E",
   "new-zealand": "41.29°S · 174.78°E",
+  mauritius: "20.35°S · 57.55°E",
+  seychelles: "4.68°S · 55.49°E",
+  fiji: "17.71°S · 178.07°E",
+  "reunion-island": "21.11°S · 55.53°E",
+  "cambodia-laos": "13.41°N · 103.86°E",
+  oman: "23.59°N · 58.41°E",
+  "saudi-arabia": "24.71°N · 46.68°E",
+  ireland: "53.35°N · 6.26°W",
+  russia: "55.75°N · 37.62°E",
 }
 
 /** Safe accessor - falls back to a neutral label if a slug is missing. */

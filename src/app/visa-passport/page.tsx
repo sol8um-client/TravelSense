@@ -2,7 +2,7 @@ import { generatePageMetadata } from "@/lib/seo"
 import { JsonLd } from "@/components/shared/JsonLd"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
-import VisaInquiryForm from "@/components/booking/VisaInquiryForm"
+import VisaPassportForms from "@/components/booking/VisaPassportForms"
 import VisaChecklist from "@/components/booking/VisaChecklist"
 import VisaServicesPanel from "@/components/booking/VisaServicesPanel"
 import VisaPassportHero from "@/components/booking/VisaPassportHero"
@@ -150,9 +150,9 @@ export default function VisaPassportPage() {
                   fontVariationSettings: "'opsz' 144",
                 }}
               >
-                Submit a visa{" "}
+                Visa or passport,{" "}
                 <em style={{ fontStyle: "italic", fontWeight: 400, color: GOLD }}>
-                  inquiry.
+                  we&apos;ve got it.
                 </em>
               </h2>
               <p
@@ -163,11 +163,11 @@ export default function VisaPassportPage() {
                   color: "rgba(208,213,220,0.55)",
                 }}
               >
-                Share your travel details and our visa experts will guide you through
-                the process.
+                Pick a tab and share your details - our experts handle visa applications
+                and fresh or re-issue passport files end to end.
               </p>
             </div>
-            <VisaInquiryForm />
+            <VisaPassportForms />
           </div>
         </section>
 

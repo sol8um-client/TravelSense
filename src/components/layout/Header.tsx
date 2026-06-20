@@ -49,8 +49,8 @@ export function Header() {
   const handleDropdownEnter = useCallback((title: string) => setActiveDropdown(title), [])
   const handleDropdownLeave = useCallback(() => setActiveDropdown(null), [])
 
-  // Desktop bar surfaces the four core sections incl. the Services menu.
-  const primaryNav = mainNavItems.slice(0, 4)
+  // Desktop bar surfaces the core sections incl. About + the Services menu.
+  const primaryNav = mainNavItems.slice(0, 5)
 
   const onNavSearch = (e: React.FormEvent) => {
     e.preventDefault()

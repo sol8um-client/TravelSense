@@ -63,7 +63,7 @@ export async function POST(request: Request) {
   try {
     const query = destination.trim().toLowerCase()
 
-    const scored = packages
+    const allScored = packages
       .map((pkg) => {
         let score = 0
         let destinationMatched = false
@@ -135,11 +135,19 @@ export async function POST(request: Request) {
           destinationMatched,
         }
       })
-      .filter((pkg) => pkg.matchScore >= 25)
+
+    // Destination is the PRIMARY filter. If the traveller named a place we have
+    // packages for, show ONLY those - ranked by the rest of the fit (duration,
+    // budget, interests, style). We fall back to budget/interest suggestions
+    // ONLY when nothing matches the destination, so the user is never left empty.
+    const destMatches = allScored.filter((p) => p.destinationMatched)
+    const scored = (
+      destMatches.length > 0 ? destMatches : allScored.filter((p) => p.matchScore >= 25)
+    )
       .sort((a, b) => b.matchScore - a.matchScore)
       .slice(0, 6)
 
-    const anyDestinationMatch = scored.some((p) => p.destinationMatched)
+    const anyDestinationMatch = destMatches.length > 0
 
     const recommendations: ScoredPackage[] = scored.map(
       ({ destinationMatched: _omit, ...rest }) => rest

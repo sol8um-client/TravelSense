@@ -63,6 +63,21 @@ export const visaInquirySchema = z.object({
 
 export type VisaInquiryFormData = z.infer<typeof visaInquirySchema>
 
+// ─── Passport Application ─────────────────────────────────────────────────────
+
+export const passportApplicationSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.email("Please enter a valid email"),
+  phone: z.string().min(10, "Please enter a valid phone number"),
+  applicationType: z.enum(["fresh", "reissue"]),
+  passportType: z.enum(["normal", "tatkal"]),
+  city: z.string().min(2, "Please enter your city"),
+  dateOfBirth: z.string().optional(),
+  message: z.string().optional(),
+})
+
+export type PassportApplicationFormData = z.infer<typeof passportApplicationSchema>
+
 // ─── Itinerary Builder ──────────────────────────────────────────────────────
 
 export const itineraryFormSchema = z.object({

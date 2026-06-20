@@ -230,6 +230,18 @@ export function Footer() {
               </Link>
             </div>
           </div>
+          <p className="pb-5 text-center text-[10px] leading-relaxed text-white/30">
+            Globe imagery ©{" "}
+            <a
+              href="https://www.solarsystemscope.com/textures"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline-offset-2 transition-colors hover:text-white/60 hover:underline"
+            >
+              Solar System Scope
+            </a>{" "}
+            (CC BY 4.0)
+          </p>
         </Container>
       </div>
     </footer>

@@ -34,6 +34,7 @@ export const mainNavItems: NavItem[] = [
     ],
   },
   { title: "How it works", href: "/#how-it-works" },
+  { title: "About", href: "/about" },
   {
     title: "Services",
     href: "/services",
@@ -42,6 +43,11 @@ export const mainNavItems: NavItem[] = [
         title: "Itinerary Builder",
         href: "/itinerary-builder",
         description: "Create your perfect trip plan",
+      },
+      {
+        title: "MICE & Corporate",
+        href: "/mice",
+        description: "Meetings, incentives, conferences & events",
       },
       {
         title: "Hotel Booking",

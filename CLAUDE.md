@@ -582,6 +582,47 @@ pnpm dev
 
 ---
 
+## ⇄ MIGRATING MACHINES? See `MIGRATION.md`
+Moving this project + all Claude Code work to a new computer (e.g. Windows→Mac):
+read **`MIGRATION.md`** in the repo root. **Critical:** the GitHub remote is far
+behind — ~178 files are uncommitted (all of June's work lives only on the dev
+box), so copy the working folder + `.env.local` (gitignored) + the Claude
+`memory/` folder; don't rely on a fresh `git clone`. Deeper cross-session
+context lives in Claude memory: `~/.claude/projects/<cwd>/memory/` (index =
+`MEMORY.md`).
+
+---
+
+## Current Status — as of June 18, 2026 (LATEST)
+
+Phase 1 has been live on **travelsense.co.in** for weeks; June was a long run of
+client-feedback rounds. **Scale now: 215 packages across ~56 destinations**
+(31/31 international destinations have ≥3 packages; 0 "coming soon" left). All
+content is static TS in `src/data/`. **Deploys are manual** via
+`vercel deploy --prod --yes` (Vercel auto-deploy disconnected; CLI auth has been
+flaky → also works with `--token`).
+
+**Shipped in June 14–18 (all live):**
+- **Hero globe** restored to the rotating WebGL grey globe on `/destinations`, colored on homepage, with worldwide location tags; premium faded edge. Stats bar → liquid glass; USP cards redesigned; filter bars auto-hide on scroll.
+- **Cascade filters** on `/packages` AND `/destinations`: All / Domestic / International → India regions OR continents (`src/lib/geo.ts`) → destinations. Activity/"Explore" tag chips were later **removed** from those two filter bars per client (kept on the `/categories/[slug]` adventure page, where clicking e.g. Trek shows only trek packages).
+- **Itinerary Builder** now **destination-first** (`src/app/api/itinerary/route.ts`): if the typed place matches packages, returns only those.
+- **New pages/forms:** `/mice` (MICE & Corporate, in nav Services + Services page), **Passport application** form alongside Visa (`VisaPassportForms.tsx` tabs + `/api/passport-application`), **About** added to the nav bar (next to "How it works").
+- **International packages** bulk-added so every live intl destination has ≥3 (script `scripts/add_intl_packages_v2.py`); **Russia, Cambodia&Laos, Oman, Saudi, Ireland** promoted from coming-soon to full live destinations.
+- **Round-trip route map** loops back when start==end; itinerary day-title overlap fixed.
+- **MAJOR image overhaul (5 batches):** integrated the client's AI-generated images (destination heroes + day sets) from `Downloads` via `docs/IMAGE_PROMPTS.md`; then content-matched **every** itinerary day + package hero to its **actual landmark** from Wikipedia (self-hosted webp under `public/images/generated/lm/`), with a **geo-coordinate filter** that purged ~395 wrong matches (person/abstract pages), a **width filter** (no <850px heroes, no <450px days), and **per-package de-duplication**. Final: ~1,394 day images on specific landmark photos, 0 wrong/person images, 0 low-res heroes; duplicate-day packages 95→1 (only the 19-day `seven-sisters`). Live matcher = `scripts/reconcile_v4.py`. Full method: `memory/reference_image_pipeline.md`.
+
+**The authoritative, always-current status lives in Claude memory**
+(`memory/project_roadmap_status.md` has dated per-batch detail). This CLAUDE.md
+section is a snapshot; when in doubt, trust memory + the live site.
+
+**Still open / awaiting client:** real international rates; credentials (GA4,
+Meta Pixel, Razorpay, Brevo); founder photo + OG image; hotel API (client chose
+TBO, ₹1.2L one-time, pending). Optional polish: bespoke per-day images for the
+~80 generic days + the `seven-sisters` pool; swap Cambodia hero to the fetched
+Angkor Wat shot.
+
+---
+
 ## Current Status — Redesign LIVE + homepage hero polish (as of June 6, 2026)
 
 **Jun 6 update:** The full-site redesign is **LIVE on travelsense.co.in**. Spent the day on a deep **homepage hero polish + mobile-responsive QA** pass across ~6 client review rounds:

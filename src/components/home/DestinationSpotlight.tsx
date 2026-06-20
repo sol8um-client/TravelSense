@@ -138,11 +138,13 @@ export default function DestinationSpotlight({ className = "" }: { className?: s
   if (count === 0) return null
   const s = SLIDES[idx]
 
-  // slide+fade transition (respects direction)
+  // slide+fade transition. Forward (d>0, the auto-advance) slides LEFT→RIGHT so
+  // the photos move in sync with the globe's left-to-right rotation: the incoming
+  // card enters from the left and the outgoing card exits to the right.
   const variants = {
-    enter: (d: number) => ({ opacity: 0, x: d > 0 ? 36 : -36, scale: 1.015 }),
+    enter: (d: number) => ({ opacity: 0, x: d > 0 ? -36 : 36, scale: 1.015 }),
     center: { opacity: 1, x: 0, scale: 1 },
-    exit: (d: number) => ({ opacity: 0, x: d > 0 ? -36 : 36, scale: 1.015 }),
+    exit: (d: number) => ({ opacity: 0, x: d > 0 ? 36 : -36, scale: 1.015 }),
   }
 
   return (

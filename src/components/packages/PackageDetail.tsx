@@ -119,12 +119,16 @@ export interface AltDay {
 
 /** Short label for a route stop, derived from a day title. */
 function shortLabel(title: string): string {
-  const cut = title.split(/\s+[-·–-]\s+| with | via | to | & /i)[0].trim()
+  const cut = title.split(/\s+[-·–—]\s+| with | via | to | & /i)[0].trim()
   const cleaned = cut
     .replace(
-      /^(Arrive in|Arrival in|Arrive|Depart from|Departure from|Depart|Drive to|Fly to|Transfer to|Explore|Discover)\s+/i,
+      /^(Arrive in|Arrival in|Arrive|Depart from|Departure from|Depart|Drive back to|Drive to|Fly back to|Fly to|Transfer back to|Transfer to|Return to|Return|Back to|Explore|Discover)\s+/i,
       ""
     )
+    // Strip trailing day-type words so "Jaipur Arrival" / "Jaipur Departure" /
+    // "Delhi Sightseeing" all resolve to the place itself - this also lets a
+    // start==end trip register as a round trip (loop back to the same pin).
+    .replace(/\s+(Arrival|Departure|Sightseeing|Local Sightseeing|Leisure)$/i, "")
     .trim()
   const out = cleaned || cut
   return out.length > 16 ? `${out.slice(0, 15)}…` : out
@@ -177,7 +181,7 @@ export interface RouteStop {
  * 1000×580 viewBox (matching the prototype's hand-placed circuit feel).
  * Consecutive days that share the same place are merged into one pin.
  */
-function buildStops(itinerary: ItineraryDay[]): RouteStop[] {
+function buildStops(itinerary: ItineraryDay[]): { stops: RouteStop[]; loop: boolean } {
   // Collapse the itinerary into unique consecutive "places".
   const groups: { name: string; alt?: string; days: number[] }[] = []
   for (const d of itinerary) {
@@ -191,6 +195,22 @@ function buildStops(itinerary: ItineraryDay[]): RouteStop[] {
     } else {
       groups.push({ name, alt, days: [d.day] })
     }
+  }
+
+  // Round trip: starts and ends at the SAME place → merge the trailing pin into
+  // the first so the route loops back to that location on the map (e.g. a
+  // Jaipur → … → Jaipur circuit returns to the Jaipur pin, not a second one).
+  let loop = false
+  if (
+    groups.length >= 2 &&
+    groups[0].name.toLowerCase() === groups[groups.length - 1].name.toLowerCase()
+  ) {
+    loop = true
+    const first = groups[0]
+    const last = groups[groups.length - 1]
+    for (const dnum of last.days) if (!first.days.includes(dnum)) first.days.push(dnum)
+    if (!first.alt && last.alt) first.alt = last.alt
+    groups.pop()
   }
 
   // Cap at a sensible number of pins so the map stays legible.
@@ -210,12 +230,13 @@ function buildStops(itinerary: ItineraryDay[]): RouteStop[] {
   const usableW = W - padX * 2
   const ys = [370, 250, 150, 250, 370, 250]
   const n = pins.length
-  return pins.map((p, i) => {
+  const stops = pins.map((p, i) => {
     const t = n === 1 ? 0.5 : i / (n - 1)
     const x = Math.round(padX + t * usableW)
     const y = ys[i % ys.length]
     return { name: p.name, x, y, alt: p.alt, days: p.days }
   })
+  return { stops, loop }
 }
 
 /* ═══════════ ALTITUDE PROFILE - animated SVG climb chart ═══════════ */
@@ -444,10 +465,12 @@ function RouteMap({
   stops,
   activeDay,
   onPick,
+  loop = false,
 }: {
   stops: RouteStop[]
   activeDay: number
   onPick?: (day: number) => void
+  loop?: boolean
 }) {
   const arc = (a: RouteStop, b: RouteStop, lift: number) => {
     const mx = (a.x + b.x) / 2,
@@ -515,6 +538,30 @@ function RouteMap({
           </g>
         )
       })}
+
+      {/* round-trip return arc - sweeps low from the last stop back to the start
+          pin so a Jaipur → … → Jaipur circuit visibly closes the loop. */}
+      {loop && stops.length >= 2 && (() => {
+        const a = stops[stops.length - 1]
+        const b = stops[0]
+        const d = arc(a, b, -95)
+        return (
+          <g>
+            <path d={d} fill="none" stroke="rgba(255,179,163,0.18)" strokeWidth="1.5" strokeDasharray="2 5" />
+            <path
+              d={d}
+              fill="none"
+              stroke="url(#rmArc)"
+              strokeWidth="2"
+              strokeDasharray="3 6"
+              style={{ animation: "flightDash 6.2s linear infinite" }}
+            />
+            <circle r="3" fill={SALMON}>
+              <animateMotion dur="6.8s" repeatCount="indefinite" path={d} />
+            </circle>
+          </g>
+        )
+      })()}
 
       {/* pins */}
       {stops.map((s, i) => {
@@ -717,9 +764,12 @@ function DayByDay({ days, fallbackImage }: { days: ItineraryDay[]; fallbackImage
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
+          // Reserve the absolute title's zone so the centred day content (and its
+          // big day numeral) never rises up under the heading on shorter screens.
+          paddingTop: "clamp(150px, 18vh, 210px)",
         }}
       >
-        <div className="pkg-dbd-head" style={{ position: "absolute", top: "7vh", left: 0, right: 0, textAlign: "center" }}>
+        <div className="pkg-dbd-head" style={{ position: "absolute", top: "4.5vh", left: 0, right: 0, textAlign: "center" }}>
           <Eyebrow text={`${days.length} days · scroll to travel`} />
           <h2
             style={{
@@ -1031,7 +1081,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
   const showAltitude =
     altDays.length >= 2 &&
     ((maxAltitude ?? 0) - (minAltitude ?? 0) >= 800 || (maxAltitude ?? 0) >= 2500)
-  const stops = buildStops(itinerary)
+  const { stops, loop: routeLoop } = buildStops(itinerary)
   const showRoute = stops.length >= 2
 
   // Total drive distance across days that carry a distance value.
@@ -1526,7 +1576,7 @@ export function PackageDetail({ pkg }: PackageDetailProps) {
                     boxShadow: "0 30px 70px rgba(0,0,0,0.4)",
                   }}
                 >
-                  <RouteMap stops={stops} activeDay={focus} onPick={setFocus} />
+                  <RouteMap stops={stops} activeDay={focus} onPick={setFocus} loop={routeLoop} />
                 </div>
               </Reveal>
               <Reveal delay={0.16}>

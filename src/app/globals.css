@@ -173,6 +173,14 @@ html {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
+/* Text fields show focus via the caret + the field's own focus-within styling, so
+   suppress the global focus-visible box on them (it read as a "weird border" on the
+   search bars). Checkboxes/radios keep the ring. Buttons/links keep it too. */
+input:not([type="checkbox"]):not([type="radio"]):focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+}
 
 /* Selection color */
 ::selection {

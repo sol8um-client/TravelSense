@@ -3,8 +3,9 @@
 import { useMemo, useState } from "react"
 import { Compass, Search } from "lucide-react"
 import { DestinationsHero } from "./DestinationsHero"
-import { DestinationGrid, type RegionTab } from "./DestinationGrid"
+import { DestinationGrid, type Scope } from "./DestinationGrid"
 import type { DestinationCardData } from "./DestinationCard"
+import { groupOfDestination, isInternational } from "@/lib/geo"
 import { WhatsAppLink } from "@/components/shared/WhatsAppLink"
 
 interface DestinationsExplorerProps {
@@ -16,7 +17,8 @@ interface DestinationsExplorerProps {
  * and region-jump pills drive the same sticky region board + bento grid below.
  */
 export function DestinationsExplorer({ destinations }: DestinationsExplorerProps) {
-  const [region, setRegion] = useState<RegionTab>("All")
+  const [scope, setScope] = useState<Scope>("all")
+  const [group, setGroup] = useState("")
   const [query, setQuery] = useState("")
 
   // Featured destinations power the hero Spotlight carousel. Cap the filmstrip
@@ -34,14 +36,16 @@ export function DestinationsExplorer({ destinations }: DestinationsExplorerProps
     const ql = q.toLowerCase()
     return destinations.filter(
       (d) =>
-        (region === "All" || d.region === region) &&
+        (scope === "all" ||
+          (scope === "international" ? isInternational(d.region) : !isInternational(d.region))) &&
+        (!group || groupOfDestination(d.region, d.slug) === group) &&
         (!ql ||
           d.name.toLowerCase().includes(ql) ||
           (d.country ?? "").toLowerCase().includes(ql) ||
           d.region.toLowerCase().includes(ql) ||
           d.description.toLowerCase().includes(ql))
     ).length
-  }, [destinations, region, q])
+  }, [destinations, scope, group, q])
 
   const noMatches = q.length > 0 && filteredCount === 0
 
@@ -52,7 +56,10 @@ export function DestinationsExplorer({ destinations }: DestinationsExplorerProps
         totalCount={destinations.length}
         query={query}
         onQueryChange={setQuery}
-        onRegionJump={setRegion}
+        onJump={(s, g) => {
+          setScope(s)
+          setGroup(g)
+        }}
       />
 
       <section className="bg-brand-mesh" style={{ paddingBottom: 90 }}>
@@ -202,8 +209,10 @@ export function DestinationsExplorer({ destinations }: DestinationsExplorerProps
         ) : (
           <DestinationGrid
             destinations={destinations}
-            region={region}
-            onRegionChange={setRegion}
+            scope={scope}
+            onScopeChange={setScope}
+            group={group}
+            onGroupChange={setGroup}
             query={query}
             onQueryChange={setQuery}
           />

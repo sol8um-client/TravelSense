@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useMemo } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -10,6 +11,7 @@ import {
   Clock,
   Sparkles,
   MessageCircle,
+  Tag,
 } from "lucide-react"
 import { getCategoryBySlug } from "@/config/categories"
 import { formatCurrency } from "@/lib/utils"
@@ -40,6 +42,7 @@ export interface PackageItem {
   heroImage?: string
   difficulty?: string
   featured?: boolean
+  tags?: string[]
   destination?: { name: string; slug: string; region: string }
 }
 
@@ -54,6 +57,23 @@ export default function CategoryContent({
   // never have to cross the server→client boundary (only the slug + the plain
   // package list do). The config just imports lucide icons, safe on the client.
   const category = getCategoryBySlug(slug)
+  const [activeTag, setActiveTag] = useState<string>("")
+
+  // Activity tags across this category's packages, most common first - the chip
+  // row that lets a visitor narrow e.g. Adventure → Trek to ONLY trek packages.
+  const allTags = useMemo(() => {
+    const counts = new Map<string, number>()
+    for (const p of packages) for (const t of p.tags ?? []) counts.set(t, (counts.get(t) ?? 0) + 1)
+    return Array.from(counts.entries())
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .map(([t]) => t)
+  }, [packages])
+
+  const shownPackages = useMemo(
+    () => (activeTag ? packages.filter((p) => (p.tags ?? []).includes(activeTag)) : packages),
+    [packages, activeTag],
+  )
+
   if (!category) return null
   const Icon = category.icon
 
@@ -190,7 +210,50 @@ export default function CategoryContent({
             </h2>
           </motion.div>
 
-          {packages.length === 0 ? (
+          {/* Activity filter - pick e.g. Trek to show ONLY trek packages. */}
+          {allTags.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: EASE }}
+              className="mt-7 flex flex-wrap items-center gap-2.5"
+            >
+              <span className="inline-flex items-center gap-1.5 font-body text-[10.5px] font-semibold uppercase tracking-[0.16em] text-white/45">
+                <Tag className="h-3.5 w-3.5" strokeWidth={1.9} /> Filter
+              </span>
+              <button
+                onClick={() => setActiveTag("")}
+                className="rounded-full px-3.5 py-1.5 font-body text-[12.5px] font-semibold transition-colors"
+                style={{
+                  border: `1px solid ${activeTag === "" ? "transparent" : "rgba(255,255,255,0.18)"}`,
+                  background: activeTag === "" ? "var(--accent)" : "rgba(255,255,255,0.05)",
+                  color: activeTag === "" ? "var(--primary)" : "rgba(255,255,255,0.72)",
+                }}
+              >
+                All ({packages.length})
+              </button>
+              {allTags.map((t) => {
+                const active = activeTag === t
+                return (
+                  <button
+                    key={t}
+                    onClick={() => setActiveTag(active ? "" : t)}
+                    className="rounded-full px-3.5 py-1.5 font-body text-[12.5px] font-semibold transition-colors"
+                    style={{
+                      border: `1px solid ${active ? "transparent" : "rgba(255,255,255,0.18)"}`,
+                      background: active ? "var(--accent)" : "rgba(255,255,255,0.05)",
+                      color: active ? "var(--primary)" : "rgba(255,255,255,0.72)",
+                    }}
+                  >
+                    {t}
+                  </button>
+                )
+              })}
+            </motion.div>
+          )}
+
+          {shownPackages.length === 0 ? (
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -214,7 +277,7 @@ export default function CategoryContent({
             </motion.div>
           ) : (
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {packages.map((pkg, i) => {
+              {shownPackages.map((pkg, i) => {
                 const imgUrl =
                   pkg.heroImage ||
                   "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop"

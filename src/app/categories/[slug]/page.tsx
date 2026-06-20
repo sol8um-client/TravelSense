@@ -6,6 +6,7 @@ import {
 } from "@/config/categories"
 import { packages } from "@/data/packages"
 import { getDestinationBySlug } from "@/data/destinations"
+import { packageTags } from "@/data/packageTags"
 import {
   generatePageMetadata,
   breadcrumbSchema,
@@ -53,6 +54,18 @@ export async function generateMetadata({
 // Pulls live packages from src/data and filters by the category slug, so a
 // click on Adventure / Leisure / Educational shows exactly those packages.
 
+// Activity/vibe tags for a package, reusing the packageTags taxonomy. Drop the
+// over-broad category labels so chips only ever add a NEW way to slice
+// (Trek, River Rafting, Snow & Winter, Wildlife Safari, Beach...).
+function activityTagsFor(slug: string): string[] {
+  const t = packageTags[slug]
+  if (!t) return []
+  const merged = [...(t.activities ?? []), ...(t.vibes ?? [])]
+  return Array.from(new Set(merged)).filter(
+    (x) => /^[A-Z]/.test(x) && x !== "Leisure" && x !== "Adventure",
+  )
+}
+
 function getCategoryPackages(categorySlug: string): PackageItem[] {
   return packages
     .filter((p) => p.category === categorySlug)
@@ -70,6 +83,7 @@ function getCategoryPackages(categorySlug: string): PackageItem[] {
         heroImage: p.heroImage,
         difficulty: p.difficulty,
         featured: p.featured,
+        tags: activityTagsFor(p.slug),
         destination: {
           name: p.destinationName,
           slug: p.destinationSlug,
