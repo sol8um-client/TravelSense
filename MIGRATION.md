@@ -3,20 +3,31 @@ _Last updated: 2026-06-18. Move this project + all Claude Code work to a new Mac
 
 ---
 
-## 0. ⚠️ READ FIRST — the one thing that will bite you
+## 0. ✅ STATUS — everything is now pushed to GitHub
 
-This repo has **~178 uncommitted files**. The GitHub remote
-(`github.com/sol8um-client/TravelSense`, branch `main`) is stuck at an **old commit
-`b0a9a08`** — it is **missing ALL of June 2026's work** (international packages,
-Russia/MICE/passport/About-nav/cascade filters, and the entire image overhaul
-incl. 929 generated webp images).
+As of **2026-06-18, commit `37ab62e`**, ALL of June's work (international packages,
+Russia/MICE/passport/About-nav/cascade filters, and the full image overhaul incl.
+929 generated webp images) is **committed and pushed** to
+`github.com/sol8um-client/TravelSense` (branch `main`). Working tree is clean.
 
-> **A plain `git clone` on the Mac will LOSE everything done since early June.**
+So on the Mac you have **two equally-good options**:
+- **Easiest — `git clone`** (gets all code + images), then hand-copy the **one
+  gitignored file `.env.local`** from the pendrive. See Method A-clone below.
+- **Pendrive folder-copy** (fully offline, also brings `.git` + `.env.local`).
 
-So you must move the **working folder itself** (Method A below), and/or
-**commit + push first** (Method B) so the clone is current. Method A (pendrive)
-is the offline path you asked for and is the safest — it captures uncommitted
-code, the gitignored `.env.local`, and all local images in one shot.
+> The ONLY thing git does NOT carry is **`.env.local`** (gitignored secrets) and
+> your **Claude memory** (`~/.claude/...`). Both must be hand-copied either way.
+
+### Method A-clone (recommended, simplest)
+```bash
+mkdir -p ~/TravelSense && cd ~/TravelSense
+git clone https://github.com/sol8um-client/TravelSense.git travelsense
+cd travelsense
+# then copy .env.local from the pendrive into this folder:
+cp /Volumes/<PENDRIVE>/travelsense/.env.local .
+```
+Then jump to §4 (tools) → §5 (Claude memory) → §8 (verify). Skip §2/§3 unless
+you prefer fully-offline.
 
 ---
 
